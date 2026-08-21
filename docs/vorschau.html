@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speuzer-App – Vorschau</title>
+<style>
+  :root { --blau:#0b3c78; --hell:#f4f7fb; --rand:#dde4ec; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+         color:#1c2530; background:#fff; line-height:1.5; }
+  header { background:var(--blau); color:#fff; padding:22px 18px; }
+  header h1 { margin:0; font-size:1.2rem; }
+  header p { margin:6px 0 0; font-size:.88rem; opacity:.85; }
+  main { padding:18px; max-width:640px; margin:0 auto; }
+  h2 { font-size:.72rem; letter-spacing:.09em; text-transform:uppercase; color:#8798ab;
+       margin:22px 0 8px; }
+  a.karte { display:block; text-decoration:none; color:inherit; border:1px solid var(--rand);
+            border-radius:10px; padding:13px 15px; margin-bottom:9px; }
+  a.karte b { display:block; color:var(--blau); font-size:1rem; }
+  a.karte span { font-size:.83rem; color:#5a6b80; }
+  a.karte:after { content:"›"; float:right; color:#9fb0c4; font-weight:700; margin-top:-22px; }
+  .hinweis { font-size:.85rem; line-height:1.5; color:#4a5a6e; background:var(--hell);
+             border-left:3px solid var(--blau); border-radius:0 6px 6px 0; padding:11px 13px;
+             margin:16px 0 4px; }
+  footer { font-size:.78rem; color:#6b7a8d; padding:8px 18px 28px; max-width:640px; margin:0 auto; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Speuzer-App – Vorschau am Handy</h1>
+  <p>Die Inhalte, die in der App stecken, direkt im Browser</p>
+</header>
+<main>
+  <div class="hinweis">Die App selbst ist noch nicht im Store. Diese Seite zeigt dieselben
+    Inhalte, die die App lädt – so siehst du am Handy, wie es später aussieht.</div>
+
+  <h2>Termine</h2>
+  <a class="karte" href="https://shorturl.appack.de/sportfreunde04_Application_1780401660369">
+    <b>Terminkalender</b>
+    <span>Das echte Termine-Modul: alle Spiele plus Training der D3</span></a>
+
+  <h2>Spielplan &amp; Tabellen</h2>
+  <a class="karte" href="https://cdn.appack.de/sportfreunde04/workspace/Spiele-Alle-Mannschaften.html">
+    <b>Alle Mannschaften</b><span>Vereins-Widget und Einstieg</span></a>
+  <a class="karte" href="https://cdn.appack.de/sportfreunde04/workspace/Spielplan-Herren.html">
+    <b>Herren</b><span>Widget oben, ganze Saison unten</span></a>
+  <a class="karte" href="https://cdn.appack.de/sportfreunde04/workspace/Spielplan-A-Jugend.html">
+    <b>A-Jugend</b><span>Widget oben, ganze Saison unten</span></a>
+  <a class="karte" href="https://cdn.appack.de/sportfreunde04/workspace/Spielplan-D-Jugend.html">
+    <b>D-Jugend</b><span>Tabs D1, D2, D3</span></a>
+  <a class="karte" href="https://cdn.appack.de/sportfreunde04/workspace/Spielplan-E-Jugend.html">
+    <b>E-Jugend</b><span>Tabs E1, E2, E3 mit Quali-Hinweis</span></a>
+  <a class="karte" href="https://cdn.appack.de/sportfreunde04/workspace/Tabellen-D-Jugend.html">
+    <b>Tabellen</b><span>Alle Mannschaften, live von FUSSBALL.DE</span></a>
+
+  <h2>Kalender abonnieren</h2>
+  <a class="karte" href="./">
+    <b>Abo-Seite für Eltern</b>
+    <span>Hier kann jede Familie den Kalender ihrer Mannschaft ins Handy holen</span></a>
+
+  <h2>Datenschutz</h2>
+  <a class="karte" href="https://cdn.appack.de/sportfreunde04/workspace/Datenschutzerklaerung.html">
+    <b>Datenschutzerklärung der App</b>
+    <span>Mit dem neuen Abschnitt 11 zu den FUSSBALL.DE-Widgets</span></a>
+</main>
+<footer>
+  Interne Vorschau. Die Termine-Ansicht läuft über einen Einbettungs-Link von appack und ist ohne
+  Login erreichbar – bitte nicht öffentlich streuen.
+</footer>
+</body>
+</html>
