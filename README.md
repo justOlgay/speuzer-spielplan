@@ -583,3 +583,36 @@ Rundenangabe, Link zum Spiel). Der nächste sinnvolle Schritt ist deshalb, die T
 im Workflow einzulesen und durch `build_ics.py` zu normalisieren – dann null Handarbeit **und**
 einheitliche Optik. Dafür braucht es die Token-Links aller Mannschaften; die gehören **nicht**
 ins öffentliche Repo, sondern in ein GitHub-Actions-Secret.
+---
+
+## Zu-/Absage-Pilot D2 - Stand 21.08.2026
+
+Zweiter Pilot, andere Frage: nicht „woher kommen die Daten“, sondern „wie sagen Eltern zu
+oder ab“. Das kann ein abonnierter iCal-Kalender grundsätzlich nicht - er ist nur lesbar.
+Also braucht es **echte App-Termine**.
+
+**Was appack dafür mitbringt:** eine eingebaute **Teilnahme-Rückmeldung** (Daumen hoch /
+Fragezeichen / Daumen runter). Ein Anmeldeformular ist nicht nötig. Sobald sie aktiv ist,
+erscheinen zwei weitere Felder: **Gruppeneinladung** (alle Mitglieder der Gruppe werden
+automatisch eingeladen und zur Rückmeldung aufgefordert) und **Sichtbarkeit der Feedbackliste**.
+
+**Gebaut:** Kalender „Speuzer D2 - Spieltage (Pilot Zu-/Absage)“, orange `D9822B`,
+Schreibzugriff App-Administratoren + Trainer. Darin vier Termine - 23.08., 30.08., 05.09.,
+13.09.2026 - mit
+
+* Titel im Feed-Format: `Speuzer D2 · Heim gegen VFR Bockenheim 2` / `... · Auswärts bei ...`
+* Untertitel `Treffpunkt 10:30 Uhr · Anstoß 11:30 Uhr · Sportplatz Mainzer Landstraße`
+* **Start = Treffpunkt = Anstoß minus 60 Minuten** (Heim und Auswärts gleich), Ende = Anstoß + 2 h
+* Ort *FFV Sportfreunde 04, Mainzer Landstraße 480* bei Heimspielen, damit die Navigation in der App funktioniert
+* Details-Link auf das Spiel bei FUSSBALL.DE
+* Teilnahme-Rückmeldung an, Gruppeneinladung **Mannschaft D2**, Feedbackliste nur für
+  Terminverantwortliche, Onlinekonferenz aus
+
+**Damit nichts doppelt steht:** `NICHT_IN_APP_FEED = {"D3", "D2"}` in `build_ics.py`.
+`docs/app-kalender.ics` enthält jetzt **90 Spiele** (alles außer D2 und D3), `alle.ics` bleibt
+mit 134 Spielen vollständig. Geprüft im Modul *Termine*: jeder D2-Spieltag genau einmal.
+
+**Grenze des Ansatzes:** Verlegungen aus dem DFBnet laufen nur im generierten Feed mit. Ein
+selbst angelegter Spieltag muss von Hand nachgezogen werden - deshalb rollierend zwei bis drei
+Spieltage im Voraus anlegen, nicht die ganze Saison. Die Kurzanleitung für Trainer liegt als
+`Speuzer App - Zu-Absage Anleitung Trainer.pdf` im Vereinsordner.
