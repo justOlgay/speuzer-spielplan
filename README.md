@@ -531,3 +531,18 @@ einer Liga zu. Für die Kalender heißt das:
   mit Label eintragen (z. B. `"342xxx": "Hauptrunde · Kreisklasse B Gr. 3"`), pushen. Actions
   baut, Pages veröffentlicht, appack synchronisiert. **Die Quali-Spiele bleiben stehen** (andere
   Staffel = andere UID), es entstehen keine Doppelten, und niemand muss neu abonnieren.
+
+### App-Seiten im CMS: Stand 21.08.2026
+
+Alle vier Spielplan-Seiten sind auf die neue Optik gebracht und auf `cdn.appack.de`
+gegengeprüft: `Spielplan-Herren.html` (6.686 B), `Spielplan-A-Jugend.html` (6.558 B),
+`Spielplan-D-Jugend.html` (10.223 B), `Spielplan-E-Jugend.html` (6.830 B). Sie enthalten
+HEIM-/AUSW.-Chips, „Speuzer <Mannschaft>" in der Kopfzeile und richtige Umlaute.
+
+**Kniff, der viel Zeit spart:** Der CMS-Editor kann die Datei direkt von GitHub Pages holen –
+im Quellcode-Editor
+`const neu = await fetch('https://justolgay.github.io/speuzer-spielplan/app-d-jugend.html').then(r=>r.text())`
+und per `executeEdits` einsetzen. GitHub Pages schickt `Access-Control-Allow-Origin: *`,
+deshalb klappt das aus `cms.appack.de` heraus. Danach ein Zeichen tippen, wieder löschen und
+auf das Disketten-Icon im Editor-Tab klicken; das Icon wandert mit der Länge des Dateinamens,
+also vorher einen Screenshot machen statt zu raten.

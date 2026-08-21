@@ -76,6 +76,11 @@ GRUPPEN = {
 # Label je Staffelkennung. Leer = nur eine Staffel, dann keine Zwischenüberschrift.
 # Wenn der Kreis die E-Jugend nach der Quali einer Liga zuordnet: neue Kennung hier
 # eintragen (z. B. "Hauptrunde · Kreisklasse B Gr. 3") und die Spiele in spiele.csv nachtragen.
+# Mannschaften, deren Termine in der App aus dem TEAMPUNKT-Feed kommen (Spiele + Training).
+# Sie fehlen bewusst in app-kalender.ics, damit in der App keine Doppel-Termine entstehen.
+# Leere Menge = alles kommt wieder aus diesem Generator.
+PILOT_TEAMPUNKT = {"D3"}
+
 RUNDE = {
     "340610": "Qualifikationsrunde",
     "341435": "Qualifikationsrunde",
@@ -367,6 +372,13 @@ def main():
     # A-Jugend dort schon im Vereinskalender stehen -> keine Doppeltermine.
     jugend = [r for r in alle if TEAMS[r["team"]]["gruppe"] in ("d", "e")]
     schreibe_ics("jugend.ics", "Speuzer Jugend (D & E)", jugend, stamp, HINWEIS_QUALI)
+    # Der Feed, den die Vereins-App abonniert: alles ausser den TEAMPUNKT-Pilotmannschaften.
+    appfeed = [r for r in alle if r["team"] not in PILOT_TEAMPUNKT]
+    hinweis_app = HINWEIS_QUALI
+    if PILOT_TEAMPUNKT:
+        hinweis_app += (" Die Termine von %s kommen in der App aus dem TEAMPUNKT-Kalender."
+                        % ", ".join(sorted(PILOT_TEAMPUNKT)))
+    schreibe_ics("app-kalender.ics", "Speuzer Spielplan Mannschaften", appfeed, stamp, hinweis_app)
     for g in GRUPPEN:
         schreibe_app_seite(g, [r for r in alle if TEAMS[r["team"]]["gruppe"] == g])
     schreibe_index()
