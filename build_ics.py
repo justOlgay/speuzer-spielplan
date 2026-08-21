@@ -86,6 +86,9 @@ HINWEIS_E = ("Die E-Jugend spielt zuerst eine Qualifikationsrunde. "
              "Die Spiele der Hauptrunde kommen dazu, sobald der Kreis sie ansetzt.")
 HINWEIS_FG = ("F1, F2 und G-Jugend haben noch keine angesetzten Spiele \u2013 "
               "sobald der Kreis ansetzt, erscheinen sie hier.")
+HINWEIS_QUALI = ("Zurzeit stehen nur die Spiele der Qualifikationsrunde fest. Die Spiele der "
+                 "Hauptrunde kommen automatisch in dieses Abo, sobald der Kreis sie ansetzt \u2013 "
+                 "neu abonnieren muss niemand.")
 
 VTIMEZONE = """BEGIN:VTIMEZONE
 TZID:Europe/Berlin
@@ -148,10 +151,42 @@ def link(row):
     return FBDE_TEAM_BASE + TEAMS[row["team"]]["teamid"]
 
 
+def mannschaft(team):
+    """Unsere Teams heissen ueberall gleich: Speuzer Herren, Speuzer D2, ..."""
+    return "Speuzer %s" % TEAMS[team]["label"]
+
+
+def paarung(row):
+    """Heim - Gast, unsere Seite immer als 'Speuzer <Team>'."""
+    uns = mannschaft(row["team"])
+    if row["_heim"]:
+        return "%s \u2013 %s" % (uns, row["gast"])
+    return "%s \u2013 %s" % (row["heim"], uns)
+
+
 def titel(row):
-    kopf = "%s (%s) %s" % (TEAMS[row["team"]]["label"],
-                           "H" if row["_heim"] else "A", row["_gegner"])
-    return kopf + (" " + row["ergebnis"] if row["ergebnis"] else "")
+    """Einheitlicher Termintitel: Mannschaft, Heim/Auswaerts, Gegner, ggf. Ergebnis."""
+    wo = "Heim gegen" if row["_heim"] else "Ausw\u00e4rts bei"
+    kopf = "%s \u00b7 %s %s" % (mannschaft(row["team"]), wo, row["_gegner"])
+    if row["ergebnis"]:
+        kopf += " \u00b7 %s" % row["ergebnis"]
+    return kopf
+
+
+def beschreibung(row):
+    """Immer gleich aufgebaut, damit jeder Termin gleich aussieht."""
+    t = TEAMS[row["team"]]
+    z = [paarung(row),
+         "Mannschaft: %s" % mannschaft(row["team"]),
+         "Wettbewerb: %s" % t["info"]]
+    if RUNDE.get(row["staffel"]):
+        z.append("Runde: %s" % RUNDE[row["staffel"]])
+    z.append("%s \u00b7 Spielnummer %s \u00b7 Staffel %s"
+             % ("Heimspiel" if row["_heim"] else "Ausw\u00e4rtsspiel",
+                row["spielnr"], row["staffel"]))
+    z.append("Spielst\u00e4tte: %s" % (row["spielstaette"] or "siehe FUSSBALL.DE"))
+    z.append("Alle Infos zum Spiel: %s" % link(row))
+    return "\\n".join(esc(x) for x in z)
 
 
 def event(row, stamp):
@@ -163,8 +198,7 @@ def event(row, stamp):
          "DTSTART;TZID=Europe/Berlin:%s" % row["_start"].strftime(fmt),
          "DTEND;TZID=Europe/Berlin:%s" % ende.strftime(fmt),
          "SUMMARY:%s" % esc(titel(row)),
-         "DESCRIPTION:%s\\nSpiel-Nr. %s \\, Staffel %s\\nQuelle: DFBnet \\, Details: %s"
-         % (esc(row["heim"] + " - " + row["gast"]), row["spielnr"], row["staffel"], link(row)),
+         "DESCRIPTION:%s" % beschreibung(row),
          "URL:%s" % link(row), "CATEGORIES:Fussball", "TRANSP:OPAQUE"]
     if row["spielstaette"]:
         z.append("LOCATION:%s" % esc(row["spielstaette"]))
@@ -175,10 +209,15 @@ def event(row, stamp):
     return z
 
 
-def schreibe_ics(datei, kalendername, spiele, stamp):
+def schreibe_ics(datei, kalendername, spiele, stamp, hinweis=""):
+    beschr = ("Spielplan des FFV Sportfreunde 04, Saison 2026/27, Quelle DFBnet. "
+              "Verlegungen aktualisieren den bestehenden Termin.")
+    if hinweis:
+        beschr += " " + hinweis
     z = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//%s//Spielplan//DE" % VEREIN,
          "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
-         "X-WR-CALNAME:%s" % esc(kalendername), "X-WR-TIMEZONE:Europe/Berlin",
+         "X-WR-CALNAME:%s" % esc(kalendername),
+         "X-WR-CALDESC:%s" % esc(beschr), "X-WR-TIMEZONE:Europe/Berlin",
          "REFRESH-INTERVAL;VALUE=DURATION:PT6H", "X-PUBLISHED-TTL:PT6H", VTIMEZONE]
     for row in sorted(spiele, key=lambda r: r["_start"]):
         z += event(row, stamp)
@@ -212,7 +251,9 @@ td{padding:9px 12px;border-bottom:1px solid #e6ebf2;vertical-align:top}
 tr.next td{background:#eef6ff}
 .d{white-space:nowrap;font-variant-numeric:tabular-nums;color:#0b3c78;font-weight:600;width:96px}
 .t{font-size:.78rem;color:#5a6b80;font-weight:400}
-.ha{display:inline-block;min-width:20px;font-weight:700;color:#0b3c78}
+.ha{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 7px;border-radius:5px;margin-right:8px;vertical-align:1px}
+.ha.h{background:#0b3c78;color:#fff}
+.ha.a{background:#eef2f7;color:#0b3c78;border:1px solid #dde4ec}
 .res{float:right;font-weight:700;color:#0b3c78}
 .fuss{padding:14px;font-size:.78rem;color:#6b7a8d;line-height:1.5}
 td a{color:inherit;text-decoration:none;display:block}
@@ -223,10 +264,9 @@ tr.grp td{background:#f6f8fc;font-size:.7rem;letter-spacing:.09em;text-transform
 <div class="widgets">%WIDGETS%</div>
 <div class="kapitel">Ganze Saison</div>
 <table><tbody id="liste"></tbody></table>
-<div class="fuss">Oben die letzten und naechsten Spiele direkt von FUSSBALL.DE, unten die
-komplette Saison aus dem DFBnet. H = Heimspiel, A = Auswaerts.
-Tippen auf ein Spiel oeffnet die Spielseite auf FUSSBALL.DE.
-Kurzfristige Absagen kommen per Push, nicht ueber diese Seite.%HINWEIS%</div>
+<div class="fuss">Oben die letzten und nächsten Spiele direkt von FUSSBALL.DE, unten die
+komplette Saison aus dem DFBnet. Tippen auf ein Spiel öffnet die Spielseite auf FUSSBALL.DE.
+Kurzfristige Absagen kommen per Push, nicht über diese Seite.%HINWEIS%</div>
 <script>
 const STAFFEL = %STAFFEL%;
 const TEAMLINK = %TEAMLINK%;
@@ -237,7 +277,7 @@ function render(){
   const keys = Object.keys(STAFFEL);
   document.getElementById("tabs").innerHTML = keys.length < 2 ? "" : keys.map(t =>
     `<button class="tab${t===aktiv?" on":""}" onclick="aktiv='${t}';render()">${t}</button>`).join("");
-  document.getElementById("meta").textContent = STAFFEL[aktiv][1];
+  document.getElementById("meta").textContent = "Speuzer " + aktiv + " \u00b7 " + STAFFEL[aktiv][1];
   keys.forEach(t => {
     const box = document.getElementById("w-" + STAFFEL[t][0]);
     if (box) box.className = "wbox" + (t===aktiv ? " on" : "");
@@ -253,7 +293,7 @@ function render(){
     let kopf = "";
     if (s[7] && s[7] !== gruppe) { gruppe = s[7]; kopf = `<tr class="grp"><td colspan="2">${s[7]}</td></tr>`; }
     return kopf + `<tr class="${ist?"next":""}"><td class="d">${tag}<br><span class="t">${s[3]} Uhr</span></td>`
-      + `<td><a href="${url}" target="_blank" rel="noopener"><span class="ha">${s[1]}</span> ${s[4]}`
+      + `<td><a href="${url}" target="_blank" rel="noopener"><span class="ha ${s[1]==="H"?"h":"a"}">${s[1]==="H"?"Heim":"Ausw."}</span>${s[4]}`
       + `${s[5]?`<span class="res">${s[5]}</span>`:`<span class="pfeil">\\u203a</span>`}</a></td></tr>`;
   }).join("");
 }
@@ -299,10 +339,15 @@ def schreibe_app_seite(gruppe, spiele):
 def schreibe_index():
     zeilen = []
     for t, v in TEAMS.items():
-        zeilen.append('  { file:"%s.ics", name:"%s", meta:"%s" },'
-                      % (t.lower(), v["label"], v["info"]))
-    zeilen.append('  { file:"alle.ics", name:"Alle Mannschaften", meta:"Herren, A-, D- und E-Jugend in einem Kalender" },')
-    zeilen.append('  { file:"jugend.ics", name:"Nur Jugend (D/E)", meta:"D1 bis E3 in einem Kalender - liegt so in der Vereins-App" }')
+        note = HINWEIS_QUALI if v["gruppe"] == "e" else ""
+        zeilen.append('  { file:"%s.ics", name:"Speuzer %s", meta:"%s", note:"%s" },'
+                      % (t.lower(), v["label"], v["info"], note))
+    zeilen.append('  { file:"alle.ics", name:"Speuzer \u2013 alle Mannschaften", '
+                  'meta:"Herren, A-, D- und E-Jugend in einem Kalender \u00b7 so liegt er auch in der Vereins-App", '
+                  'note:"%s" },' % HINWEIS_QUALI)
+    zeilen.append('  { file:"jugend.ics", name:"Speuzer \u2013 nur Jugend", '
+                  'meta:"D1 bis E3 in einem Kalender, ohne Herren und A-Jugend", '
+                  'note:"%s" }' % HINWEIS_QUALI)
     html = (BASE / "vorlage_index.html").read_text(encoding="utf-8")
     (OUT / "index.html").write_text(html.replace("%TEAMS%", "\n".join(zeilen)),
                                     encoding="utf-8")
@@ -314,12 +359,14 @@ def main():
     alle = list(lade_spiele())
     for t, v in TEAMS.items():
         schreibe_ics("%s.ics" % t.lower(), "Speuzer %s" % v["label"],
-                     [r for r in alle if r["team"] == t], stamp)
-    schreibe_ics("alle.ics", "Speuzer Spielplan", alle, stamp)
+                     [r for r in alle if r["team"] == t], stamp,
+                     HINWEIS_QUALI if v["gruppe"] == "e" else "")
+    schreibe_ics("alle.ics", "Speuzer Spielplan (alle Mannschaften)", alle, stamp,
+                 HINWEIS_QUALI)
     # Nur Jugend (D + E): fuer das Abo in der Vereins-App, weil Herren und
     # A-Jugend dort schon im Vereinskalender stehen -> keine Doppeltermine.
     jugend = [r for r in alle if TEAMS[r["team"]]["gruppe"] in ("d", "e")]
-    schreibe_ics("jugend.ics", "Speuzer Jugend (D/E)", jugend, stamp)
+    schreibe_ics("jugend.ics", "Speuzer Jugend (D & E)", jugend, stamp, HINWEIS_QUALI)
     for g in GRUPPEN:
         schreibe_app_seite(g, [r for r in alle if TEAMS[r["team"]]["gruppe"] == g])
     schreibe_index()
