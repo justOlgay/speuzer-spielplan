@@ -3,7 +3,12 @@ VERSION:2.0
 PRODID:-//FFV Sportfreunde 04//Spielplan//DE
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Speuzer Jugend (D/E)
+X-WR-CALNAME:Speuzer Jugend (D & E)
+X-WR-CALDESC:Spielplan des FFV Sportfreunde 04\, Saison 2026/27\, Quelle 
+ DFBnet. Verlegungen aktualisieren den bestehenden Termin. Zurzeit stehen
+  nur die Spiele der Qualifikationsrunde fest. Die Spiele der Hauptrunde 
+ kommen automatisch in dieses Abo\, sobald der Kreis sie ansetzt – neu 
+ abonnieren muss niemand.
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
@@ -27,15 +32,18 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:341930-1@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260822T110000
 DTEND;TZID=Europe/Berlin:20260822T130000
-SUMMARY:E3 (H) FSV 1910 Bergen 3
-DESCRIPTION:FFV Sportfreunde 04 III - FSV 1910 Bergen 3\nSpiel-Nr. 1 \, S
- taffel 341930\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/
- x/-/spiel/031HO7VE4G000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E3 · Heim gegen FSV 1910 Bergen 3
+DESCRIPTION:Speuzer E3 – FSV 1910 Bergen 3\nMannschaft: Speuzer E3\nWet
+ tbewerb: 1. Kreisklasse · EJ Quali Gr. 22 · Kreis Frankfurt\nRunde: Qu
+ alifikationsrunde\nHeimspiel · Spielnummer 1 · Staffel 341930\nSpielst
+ ätte: Sportplatz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zu
+ m Spiel: https://www.fussball.de/spiel/x/-/spiel/031HO7VE4G000000VS5489B
+ UVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7VE4G000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -44,15 +52,18 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341435-1@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260822T113000
 DTEND;TZID=Europe/Berlin:20260822T133000
-SUMMARY:E2 (H) Spvgg. Kickers 1916 4
-DESCRIPTION:FFV Sportfreunde 04 II - Spvgg. Kickers 1916 4\nSpiel-Nr. 1 \
- , Staffel 341435\nQuelle: DFBnet \, Details: https://www.fussball.de/spi
- el/x/-/spiel/031HO7T0VC000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E2 · Heim gegen Spvgg. Kickers 1916 4
+DESCRIPTION:Speuzer E2 – Spvgg. Kickers 1916 4\nMannschaft: Speuzer E2\
+ nWettbewerb: 1. Kreisklasse · EJ Quali Gr. 18 · Kreis Frankfurt\nRunde
+ : Qualifikationsrunde\nHeimspiel · Spielnummer 1 · Staffel 341435\nSpi
+ elstätte: Sportplatz Mainzer Landstrasse\, Frankfurt am Main\nAlle Info
+ s zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031HO7T0VC000000VS5
+ 489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T0VC000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -61,15 +72,18 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-1@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260822T120000
 DTEND;TZID=Europe/Berlin:20260822T140000
-SUMMARY:E1 (H) VfL Germania 1894 1
-DESCRIPTION:FFV Sportfreunde 04 I - VfL Germania 1894 1\nSpiel-Nr. 1 \, S
- taffel 340610\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/
- x/-/spiel/031I12OVI0000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E1 · Heim gegen VfL Germania 1894 1
+DESCRIPTION:Speuzer E1 – VfL Germania 1894 1\nMannschaft: Speuzer E1\nW
+ ettbewerb: 1. Kreisklasse · EJ Quali Gr. 08 · Kreis Frankfurt\nRunde: 
+ Qualifikationsrunde\nHeimspiel · Spielnummer 1 · Staffel 340610\nSpiel
+ stätte: Sportplatz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos 
+ zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I12OVI0000000VS548
+ 9BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I12OVI0000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -78,15 +92,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-4@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260823T100000
 DTEND;TZID=Europe/Berlin:20260823T120000
-SUMMARY:D3 (H) VfL Germania 1894 2
-DESCRIPTION:FFV Sportfreunde 04 III - VfL Germania 1894 2\nSpiel-Nr. 4 \,
-  Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de/spie
- l/x/-/spiel/031I71TML8000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D3 · Heim gegen VfL Germania 1894 2
+DESCRIPTION:Speuzer D3 – VfL Germania 1894 2\nMannschaft: Speuzer D3\nW
+ ettbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nHeimspie
+ l · Spielnummer 4 · Staffel 341873\nSpielstätte: Sportplatz Mainzer L
+ andstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussba
+ ll.de/spiel/x/-/spiel/031I71TML8000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71TML8000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -95,15 +111,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-4@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260823T113000
 DTEND;TZID=Europe/Berlin:20260823T133000
-SUMMARY:D2 (H) VFR Bockenheim 2
-DESCRIPTION:FFV Sportfreunde 04 II - VFR Bockenheim 2\nSpiel-Nr. 4 \, Sta
- ffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x/
- -/spiel/031I71UTJ4000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D2 · Heim gegen VFR Bockenheim 2
+DESCRIPTION:Speuzer D2 – VFR Bockenheim 2\nMannschaft: Speuzer D2\nWett
+ bewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nHeimspiel 
+ · Spielnummer 4 · Staffel 341874\nSpielstätte: Sportplatz Mainzer Lan
+ dstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball
+ .de/spiel/x/-/spiel/031I71UTJ4000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71UTJ4000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -112,15 +130,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-4@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260823T130000
 DTEND;TZID=Europe/Berlin:20260823T150000
-SUMMARY:D1 (H) FG Seckbach 1
-DESCRIPTION:FFV Sportfreunde 04 I - FG Seckbach 1\nSpiel-Nr. 4 \, Staffel
-  340782\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x/-/sp
- iel/031I71O4F8000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D1 · Heim gegen FG Seckbach 1
+DESCRIPTION:Speuzer D1 – FG Seckbach 1\nMannschaft: Speuzer D1\nWettbew
+ erb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nHeimspiel · Spielnu
+ mmer 4 · Staffel 340782\nSpielstätte: Sportplatz Mainzer Landstrasse\,
+  Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel/
+ x/-/spiel/031I71O4F8000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71O4F8000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -129,15 +149,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-5@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260829T110000
 DTEND;TZID=Europe/Berlin:20260829T130000
-SUMMARY:E1 (A) SC Goldstein
-DESCRIPTION:SC Goldstein - FFV Sportfreunde 04 I\nSpiel-Nr. 5 \, Staffel 
- 340610\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x/-/spi
- el/031I12OVGO000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E1 · Auswärts bei SC Goldstein
+DESCRIPTION:SC Goldstein – Speuzer E1\nMannschaft: Speuzer E1\nWettbewe
+ rb: 1. Kreisklasse · EJ Quali Gr. 08 · Kreis Frankfurt\nRunde: Qualifi
+ kationsrunde\nAuswärtsspiel · Spielnummer 5 · Staffel 340610\nSpielst
+ ätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/
+ spiel/x/-/spiel/031I12OVGO000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I12OVGO000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -145,15 +167,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341435-5@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260829T123000
 DTEND;TZID=Europe/Berlin:20260829T143000
-SUMMARY:E2 (A) FSV 1910 Bergen 2
-DESCRIPTION:FSV 1910 Bergen 2 - FFV Sportfreunde 04 II\nSpiel-Nr. 5 \, St
- affel 341435\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x
- /-/spiel/031HO7T0TS000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E2 · Auswärts bei FSV 1910 Bergen 2
+DESCRIPTION:FSV 1910 Bergen 2 – Speuzer E2\nMannschaft: Speuzer E2\nWet
+ tbewerb: 1. Kreisklasse · EJ Quali Gr. 18 · Kreis Frankfurt\nRunde: Qu
+ alifikationsrunde\nAuswärtsspiel · Spielnummer 5 · Staffel 341435\nSp
+ ielstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussbal
+ l.de/spiel/x/-/spiel/031HO7T0TS000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T0TS000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -161,15 +185,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-10@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260830T100000
 DTEND;TZID=Europe/Berlin:20260830T120000
-SUMMARY:D3 (H) SC Weiss-Blau Frankfurt 3
-DESCRIPTION:FFV Sportfreunde 04 III - SC Weiss-Blau Frankfurt 3\nSpiel-Nr
- . 10 \, Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.
- de/spiel/x/-/spiel/031I71TNSC000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D3 · Heim gegen SC Weiss-Blau Frankfurt 3
+DESCRIPTION:Speuzer D3 – SC Weiss-Blau Frankfurt 3\nMannschaft: Speuzer
+  D3\nWettbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nHe
+ imspiel · Spielnummer 10 · Staffel 341873\nSpielstätte: Sportplatz Ma
+ inzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www
+ .fussball.de/spiel/x/-/spiel/031I71TNSC000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71TNSC000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -178,15 +204,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-10@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260830T113000
 DTEND;TZID=Europe/Berlin:20260830T133000
-SUMMARY:D2 (H) TSG Frankfurter Berg I
-DESCRIPTION:FFV Sportfreunde 04 II - TSG Frankfurter Berg I\nSpiel-Nr. 10
-  \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/s
- piel/x/-/spiel/031I71UURG000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D2 · Heim gegen TSG Frankfurter Berg I
+DESCRIPTION:Speuzer D2 – TSG Frankfurter Berg I\nMannschaft: Speuzer D2
+ \nWettbewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nHeims
+ piel · Spielnummer 10 · Staffel 341874\nSpielstätte: Sportplatz Mainz
+ er Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fu
+ ssball.de/spiel/x/-/spiel/031I71UURG000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71UURG000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -195,15 +223,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-10@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260830T130000
 DTEND;TZID=Europe/Berlin:20260830T150000
-SUMMARY:D1 (H) FFC Olympia 07 I
-DESCRIPTION:FFV Sportfreunde 04 I - FFC Olympia 07 I\nSpiel-Nr. 10 \, Sta
- ffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x/
- -/spiel/031I71O5OO000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D1 · Heim gegen FFC Olympia 07 I
+DESCRIPTION:Speuzer D1 – FFC Olympia 07 I\nMannschaft: Speuzer D1\nWett
+ bewerb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nHeimspiel · Spie
+ lnummer 10 · Staffel 340782\nSpielstätte: Sportplatz Mainzer Landstras
+ se\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/sp
+ iel/x/-/spiel/031I71O5OO000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71O5OO000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -212,15 +242,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341435-7@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260905T110000
 DTEND;TZID=Europe/Berlin:20260905T130000
-SUMMARY:E2 (A) DJK SW Griesheim 3
-DESCRIPTION:DJK SW Griesheim 3 - FFV Sportfreunde 04 II\nSpiel-Nr. 7 \, S
- taffel 341435\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/
- x/-/spiel/031HO7T0RC000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E2 · Auswärts bei DJK SW Griesheim 3
+DESCRIPTION:DJK SW Griesheim 3 – Speuzer E2\nMannschaft: Speuzer E2\nWe
+ ttbewerb: 1. Kreisklasse · EJ Quali Gr. 18 · Kreis Frankfurt\nRunde: Q
+ ualifikationsrunde\nAuswärtsspiel · Spielnummer 7 · Staffel 341435\nS
+ pielstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussba
+ ll.de/spiel/x/-/spiel/031HO7T0RC000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T0RC000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -228,15 +260,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341930-7@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260905T110000
 DTEND;TZID=Europe/Berlin:20260905T130000
-SUMMARY:E3 (A) SC Weiss-Blau Frankfurt II
-DESCRIPTION:SC Weiss-Blau Frankfurt II - FFV Sportfreunde 04 III\nSpiel-N
- r. 7 \, Staffel 341930\nQuelle: DFBnet \, Details: https://www.fussball.
- de/spiel/x/-/spiel/031HO7VE0K000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E3 · Auswärts bei SC Weiss-Blau Frankfurt II
+DESCRIPTION:SC Weiss-Blau Frankfurt II – Speuzer E3\nMannschaft: Speuze
+ r E3\nWettbewerb: 1. Kreisklasse · EJ Quali Gr. 22 · Kreis Frankfurt\n
+ Runde: Qualifikationsrunde\nAuswärtsspiel · Spielnummer 7 · Staffel 3
+ 41930\nSpielstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://ww
+ w.fussball.de/spiel/x/-/spiel/031HO7VE0K000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7VE0K000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -244,15 +278,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-13@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260905T123000
 DTEND;TZID=Europe/Berlin:20260905T143000
-SUMMARY:D2 (A) SV Blau-Gelb FFM 3
-DESCRIPTION:SV Blau-Gelb FFM 3 - FFV Sportfreunde 04 II\nSpiel-Nr. 13 \, 
- Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel
- /x/-/spiel/031I71UUF8000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D2 · Auswärts bei SV Blau-Gelb FFM 3
+DESCRIPTION:SV Blau-Gelb FFM 3 – Speuzer D2\nMannschaft: Speuzer D2\nWe
+ ttbewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nAuswärts
+ spiel · Spielnummer 13 · Staffel 341874\nSpielstätte: siehe FUSSBALL.
+ DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I71
+ UUF8000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71UUF8000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -260,15 +296,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-7@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260905T133000
 DTEND;TZID=Europe/Berlin:20260905T153000
-SUMMARY:E1 (A) SV07 Heddernheim 1
-DESCRIPTION:SV07 Heddernheim 1 - FFV Sportfreunde 04 I\nSpiel-Nr. 7 \, St
- affel 340610\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x
- /-/spiel/031I12OVDO000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E1 · Auswärts bei SV07 Heddernheim 1
+DESCRIPTION:SV07 Heddernheim 1 – Speuzer E1\nMannschaft: Speuzer E1\nWe
+ ttbewerb: 1. Kreisklasse · EJ Quali Gr. 08 · Kreis Frankfurt\nRunde: Q
+ ualifikationsrunde\nAuswärtsspiel · Spielnummer 7 · Staffel 340610\nS
+ pielstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussba
+ ll.de/spiel/x/-/spiel/031I12OVDO000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I12OVDO000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -276,15 +314,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-13@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260906T093000
 DTEND;TZID=Europe/Berlin:20260906T113000
-SUMMARY:D3 (A) SV Blau-Gelb FFM 2
-DESCRIPTION:SV Blau-Gelb FFM 2 - FFV Sportfreunde 04 III\nSpiel-Nr. 13 \,
-  Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de/spie
- l/x/-/spiel/031I71TNEO000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D3 · Auswärts bei SV Blau-Gelb FFM 2
+DESCRIPTION:SV Blau-Gelb FFM 2 – Speuzer D3\nMannschaft: Speuzer D3\nWe
+ ttbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nAuswärts
+ spiel · Spielnummer 13 · Staffel 341873\nSpielstätte: siehe FUSSBALL.
+ DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I71
+ TNEO000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71TNEO000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -292,15 +332,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-13@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260906T100000
 DTEND;TZID=Europe/Berlin:20260906T120000
-SUMMARY:D1 (A) FC JUZ Fechenheim 1
-DESCRIPTION:FC JUZ Fechenheim 1 - FFV Sportfreunde 04 I\nSpiel-Nr. 13 \, 
- Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel
- /x/-/spiel/031I71O5BS000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D1 · Auswärts bei FC JUZ Fechenheim 1
+DESCRIPTION:FC JUZ Fechenheim 1 – Speuzer D1\nMannschaft: Speuzer D1\nW
+ ettbewerb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nAuswärtsspiel
+  · Spielnummer 13 · Staffel 340782\nSpielstätte: siehe FUSSBALL.DE\nA
+ lle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I71O5BS0
+ 00000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71O5BS000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -308,15 +350,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341930-10@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260912T110000
 DTEND;TZID=Europe/Berlin:20260912T130000
-SUMMARY:E3 (H) SG Harheim 2
-DESCRIPTION:FFV Sportfreunde 04 III - SG Harheim 2\nSpiel-Nr. 10 \, Staff
- el 341930\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x/-/
- spiel/031HO7VDUS000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E3 · Heim gegen SG Harheim 2
+DESCRIPTION:Speuzer E3 – SG Harheim 2\nMannschaft: Speuzer E3\nWettbewe
+ rb: 1. Kreisklasse · EJ Quali Gr. 22 · Kreis Frankfurt\nRunde: Qualifi
+ kationsrunde\nHeimspiel · Spielnummer 10 · Staffel 341930\nSpielstätt
+ e: Sportplatz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Sp
+ iel: https://www.fussball.de/spiel/x/-/spiel/031HO7VDUS000000VS5489BUVVK
+ NMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7VDUS000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -325,15 +370,18 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341435-10@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260912T113000
 DTEND;TZID=Europe/Berlin:20260912T133000
-SUMMARY:E2 (H) SG Bornheim / GW 3
-DESCRIPTION:FFV Sportfreunde 04 II - SG Bornheim / GW 3\nSpiel-Nr. 10 \, 
- Staffel 341435\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel
- /x/-/spiel/031HO7T0PO000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E2 · Heim gegen SG Bornheim / GW 3
+DESCRIPTION:Speuzer E2 – SG Bornheim / GW 3\nMannschaft: Speuzer E2\nWe
+ ttbewerb: 1. Kreisklasse · EJ Quali Gr. 18 · Kreis Frankfurt\nRunde: Q
+ ualifikationsrunde\nHeimspiel · Spielnummer 10 · Staffel 341435\nSpiel
+ stätte: Sportplatz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos 
+ zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031HO7T0PO000000VS548
+ 9BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T0PO000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -342,15 +390,18 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-10@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260912T120000
 DTEND;TZID=Europe/Berlin:20260912T140000
-SUMMARY:E1 (H) SG Bornheim / GW 2
-DESCRIPTION:FFV Sportfreunde 04 I - SG Bornheim / GW 2\nSpiel-Nr. 10 \, S
- taffel 340610\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/
- x/-/spiel/031I12OVBK000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E1 · Heim gegen SG Bornheim / GW 2
+DESCRIPTION:Speuzer E1 – SG Bornheim / GW 2\nMannschaft: Speuzer E1\nWe
+ ttbewerb: 1. Kreisklasse · EJ Quali Gr. 08 · Kreis Frankfurt\nRunde: Q
+ ualifikationsrunde\nHeimspiel · Spielnummer 10 · Staffel 340610\nSpiel
+ stätte: Sportplatz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos 
+ zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I12OVBK000000VS548
+ 9BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I12OVBK000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -359,15 +410,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-22@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260913T100000
 DTEND;TZID=Europe/Berlin:20260913T120000
-SUMMARY:D3 (H) TV Preungesheim 1
-DESCRIPTION:FFV Sportfreunde 04 III - TV Preungesheim 1\nSpiel-Nr. 22 \, 
- Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel
- /x/-/spiel/031I71TNB8000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D3 · Heim gegen TV Preungesheim 1
+DESCRIPTION:Speuzer D3 – TV Preungesheim 1\nMannschaft: Speuzer D3\nWet
+ tbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nHeimspiel 
+ · Spielnummer 22 · Staffel 341873\nSpielstätte: Sportplatz Mainzer La
+ ndstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussbal
+ l.de/spiel/x/-/spiel/031I71TNB8000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71TNB8000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -376,15 +429,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-22@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260913T113000
 DTEND;TZID=Europe/Berlin:20260913T133000
-SUMMARY:D2 (H) Concordia Eschersheim II
-DESCRIPTION:FFV Sportfreunde 04 II - Concordia Eschersheim II\nSpiel-Nr. 
- 22 \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de
- /spiel/x/-/spiel/031I71UUB8000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D2 · Heim gegen Concordia Eschersheim II
+DESCRIPTION:Speuzer D2 – Concordia Eschersheim II\nMannschaft: Speuzer 
+ D2\nWettbewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nHei
+ mspiel · Spielnummer 22 · Staffel 341874\nSpielstätte: Sportplatz Mai
+ nzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.
+ fussball.de/spiel/x/-/spiel/031I71UUB8000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71UUB8000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -393,15 +448,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-22@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260913T130000
 DTEND;TZID=Europe/Berlin:20260913T150000
-SUMMARY:D1 (H) Concordia Eschersheim
-DESCRIPTION:FFV Sportfreunde 04 I - Concordia Eschersheim\nSpiel-Nr. 22 \
- , Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/spi
- el/x/-/spiel/031I71O57S000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D1 · Heim gegen Concordia Eschersheim
+DESCRIPTION:Speuzer D1 – Concordia Eschersheim\nMannschaft: Speuzer D1\
+ nWettbewerb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nHeimspiel ·
+  Spielnummer 22 · Staffel 340782\nSpielstätte: Sportplatz Mainzer Land
+ strasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.
+ de/spiel/x/-/spiel/031I71O57S000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71O57S000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -410,15 +467,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-29@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260920T110000
 DTEND;TZID=Europe/Berlin:20260920T130000
-SUMMARY:D2 (A) SG Harheim 2
-DESCRIPTION:SG Harheim 2 - FFV Sportfreunde 04 II\nSpiel-Nr. 29 \, Staffe
- l 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x/-/s
- piel/031I71UU4K000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D2 · Auswärts bei SG Harheim 2
+DESCRIPTION:SG Harheim 2 – Speuzer D2\nMannschaft: Speuzer D2\nWettbewe
+ rb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nAuswärtsspiel 
+ · Spielnummer 29 · Staffel 341874\nSpielstätte: siehe FUSSBALL.DE\nAl
+ le Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I71UU4K00
+ 0000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71UU4K000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -426,15 +485,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-29@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260920T110000
 DTEND;TZID=Europe/Berlin:20260920T130000
-SUMMARY:D3 (A) Spvgg. Oberrad IV
-DESCRIPTION:Spvgg. Oberrad IV - FFV Sportfreunde 04 III\nSpiel-Nr. 29 \, 
- Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel
- /x/-/spiel/031I71TN3S000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D3 · Auswärts bei Spvgg. Oberrad IV
+DESCRIPTION:Spvgg. Oberrad IV – Speuzer D3\nMannschaft: Speuzer D3\nWet
+ tbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nAuswärtss
+ piel · Spielnummer 29 · Staffel 341873\nSpielstätte: siehe FUSSBALL.D
+ E\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I71T
+ N3S000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71TN3S000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -442,15 +503,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-14@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260926T123000
 DTEND;TZID=Europe/Berlin:20260926T143000
-SUMMARY:E1 (A) 1. Rödelheimer FC 02 1
-DESCRIPTION:1. Rödelheimer FC 02 1 - FFV Sportfreunde 04 I\nSpiel-Nr. 14
-  \, Staffel 340610\nQuelle: DFBnet \, Details: https://www.fussball.de/s
- piel/x/-/spiel/031I12OVL0000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E1 · Auswärts bei 1. Rödelheimer FC 02 1
+DESCRIPTION:1. Rödelheimer FC 02 1 – Speuzer E1\nMannschaft: Speuzer E
+ 1\nWettbewerb: 1. Kreisklasse · EJ Quali Gr. 08 · Kreis Frankfurt\nRun
+ de: Qualifikationsrunde\nAuswärtsspiel · Spielnummer 14 · Staffel 340
+ 610\nSpielstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.
+ fussball.de/spiel/x/-/spiel/031I12OVL0000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I12OVL0000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -458,15 +521,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341435-14@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260926T123000
 DTEND;TZID=Europe/Berlin:20260926T143000
-SUMMARY:E2 (A) TSG 1888 Nieder-Erlenbach 2
-DESCRIPTION:TSG 1888 Nieder-Erlenbach 2 - FFV Sportfreunde 04 II\nSpiel-N
- r. 14 \, Staffel 341435\nQuelle: DFBnet \, Details: https://www.fussball
- .de/spiel/x/-/spiel/031HO7T12C000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E2 · Auswärts bei TSG 1888 Nieder-Erlenbach 2
+DESCRIPTION:TSG 1888 Nieder-Erlenbach 2 – Speuzer E2\nMannschaft: Speuz
+ er E2\nWettbewerb: 1. Kreisklasse · EJ Quali Gr. 18 · Kreis Frankfurt\
+ nRunde: Qualifikationsrunde\nAuswärtsspiel · Spielnummer 14 · Staffel
+  341435\nSpielstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://
+ www.fussball.de/spiel/x/-/spiel/031HO7T12C000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T12C000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -474,15 +539,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341930-14@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260926T123000
 DTEND;TZID=Europe/Berlin:20260926T143000
-SUMMARY:E3 (A) Riedberger SV II
-DESCRIPTION:Riedberger SV II - FFV Sportfreunde 04 III\nSpiel-Nr. 14 \, S
- taffel 341930\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/
- x/-/spiel/031HO7VE78000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E3 · Auswärts bei Riedberger SV II
+DESCRIPTION:Riedberger SV II – Speuzer E3\nMannschaft: Speuzer E3\nWett
+ bewerb: 1. Kreisklasse · EJ Quali Gr. 22 · Kreis Frankfurt\nRunde: Qua
+ lifikationsrunde\nAuswärtsspiel · Spielnummer 14 · Staffel 341930\nSp
+ ielstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussbal
+ l.de/spiel/x/-/spiel/031HO7VE78000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7VE78000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -490,15 +557,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-31@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260927T093000
 DTEND;TZID=Europe/Berlin:20260927T113000
-SUMMARY:D1 (A) FC Germ. 08 Ginnheim 1
-DESCRIPTION:FC Germ. 08 Ginnheim 1 - FFV Sportfreunde 04 I\nSpiel-Nr. 31 
- \, Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/sp
- iel/x/-/spiel/031I71O4J4000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D1 · Auswärts bei FC Germ. 08 Ginnheim 1
+DESCRIPTION:FC Germ. 08 Ginnheim 1 – Speuzer D1\nMannschaft: Speuzer D1
+ \nWettbewerb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nAuswärtssp
+ iel · Spielnummer 31 · Staffel 340782\nSpielstätte: siehe FUSSBALL.DE
+ \nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I71O4
+ J4000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71O4J4000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -506,15 +575,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-31@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260927T103000
 DTEND;TZID=Europe/Berlin:20260927T123000
-SUMMARY:D2 (A) FC Fortuna Frankfurt
-DESCRIPTION:FC Fortuna Frankfurt - FFV Sportfreunde 04 II\nSpiel-Nr. 31 \
- , Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/spi
- el/x/-/spiel/031I71UTNC000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D2 · Auswärts bei FC Fortuna Frankfurt
+DESCRIPTION:FC Fortuna Frankfurt – Speuzer D2\nMannschaft: Speuzer D2\n
+ Wettbewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nAuswär
+ tsspiel · Spielnummer 31 · Staffel 341874\nSpielstätte: siehe FUSSBAL
+ L.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I
+ 71UTNC000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71UTNC000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -522,15 +593,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-31@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260927T110000
 DTEND;TZID=Europe/Berlin:20260927T130000
-SUMMARY:D3 (A) TSG 51 Frankfurt II
-DESCRIPTION:TSG 51 Frankfurt II - FFV Sportfreunde 04 III\nSpiel-Nr. 31 \
- , Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de/spi
- el/x/-/spiel/031I71TMO8000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D3 · Auswärts bei TSG 51 Frankfurt II
+DESCRIPTION:TSG 51 Frankfurt II – Speuzer D3\nMannschaft: Speuzer D3\nW
+ ettbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nAuswärt
+ sspiel · Spielnummer 31 · Staffel 341873\nSpielstätte: siehe FUSSBALL
+ .DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I7
+ 1TMO8000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71TMO8000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -538,15 +611,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-38@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261024T110000
 DTEND;TZID=Europe/Berlin:20261024T130000
-SUMMARY:D3 (A) FSV 1910 Bergen 3
-DESCRIPTION:FSV 1910 Bergen 3 - FFV Sportfreunde 04 III\nSpiel-Nr. 38 \, 
- Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel
- /x/-/spiel/031I71TMD0000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D3 · Auswärts bei FSV 1910 Bergen 3
+DESCRIPTION:FSV 1910 Bergen 3 – Speuzer D3\nMannschaft: Speuzer D3\nWet
+ tbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nAuswärtss
+ piel · Spielnummer 38 · Staffel 341873\nSpielstätte: siehe FUSSBALL.D
+ E\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I71T
+ MD0000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71TMD0000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -554,15 +629,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-38@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261025T090000
 DTEND;TZID=Europe/Berlin:20261025T110000
-SUMMARY:D2 (A) 1. Rödelheimer FC 02 2
-DESCRIPTION:1. Rödelheimer FC 02 2 - FFV Sportfreunde 04 II\nSpiel-Nr. 3
- 8 \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/
- spiel/x/-/spiel/031I71UT9O000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D2 · Auswärts bei 1. Rödelheimer FC 02 2
+DESCRIPTION:1. Rödelheimer FC 02 2 – Speuzer D2\nMannschaft: Speuzer D
+ 2\nWettbewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nAusw
+ ärtsspiel · Spielnummer 38 · Staffel 341874\nSpielstätte: siehe FUSS
+ BALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/0
+ 31I71UT9O000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71UT9O000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -570,15 +647,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-38@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261025T103000
 DTEND;TZID=Europe/Berlin:20261025T123000
-SUMMARY:D1 (A) 1. Rödelheimer FC 02 1
-DESCRIPTION:1. Rödelheimer FC 02 1 - FFV Sportfreunde 04 I\nSpiel-Nr. 38
-  \, Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/s
- piel/x/-/spiel/031I71O44S000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D1 · Auswärts bei 1. Rödelheimer FC 02 1
+DESCRIPTION:1. Rödelheimer FC 02 1 – Speuzer D1\nMannschaft: Speuzer D
+ 1\nWettbewerb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nAuswärtss
+ piel · Spielnummer 38 · Staffel 340782\nSpielstätte: siehe FUSSBALL.D
+ E\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I71O
+ 44S000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71O44S000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -586,15 +665,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-46@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261101T100000
 DTEND;TZID=Europe/Berlin:20261101T120000
-SUMMARY:D3 (H) SG Bornheim / GW 2
-DESCRIPTION:FFV Sportfreunde 04 III - SG Bornheim / GW 2\nSpiel-Nr. 46 \,
-  Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de/spie
- l/x/-/spiel/031I71TM9C000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D3 · Heim gegen SG Bornheim / GW 2
+DESCRIPTION:Speuzer D3 – SG Bornheim / GW 2\nMannschaft: Speuzer D3\nWe
+ ttbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nHeimspiel
+  · Spielnummer 46 · Staffel 341873\nSpielstätte: Sportplatz Mainzer L
+ andstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussba
+ ll.de/spiel/x/-/spiel/031I71TM9C000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71TM9C000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -603,15 +684,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-46@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261101T113000
 DTEND;TZID=Europe/Berlin:20261101T133000
-SUMMARY:D2 (H) FC Union Niederrad 3
-DESCRIPTION:FFV Sportfreunde 04 II - FC Union Niederrad 3\nSpiel-Nr. 46 \
- , Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/spi
- el/x/-/spiel/031I71UT4G000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D2 · Heim gegen FC Union Niederrad 3
+DESCRIPTION:Speuzer D2 – FC Union Niederrad 3\nMannschaft: Speuzer D2\n
+ Wettbewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nHeimspi
+ el · Spielnummer 46 · Staffel 341874\nSpielstätte: Sportplatz Mainzer
+  Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fuss
+ ball.de/spiel/x/-/spiel/031I71UT4G000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71UT4G000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -620,15 +703,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-46@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261101T130000
 DTEND;TZID=Europe/Berlin:20261101T150000
-SUMMARY:D1 (H) FSV 1910 Bergen 1
-DESCRIPTION:FFV Sportfreunde 04 I - FSV 1910 Bergen 1\nSpiel-Nr. 46 \, St
- affel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x
- /-/spiel/031I71O3VS000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D1 · Heim gegen FSV 1910 Bergen 1
+DESCRIPTION:Speuzer D1 – FSV 1910 Bergen 1\nMannschaft: Speuzer D1\nWet
+ tbewerb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nHeimspiel · Spi
+ elnummer 46 · Staffel 340782\nSpielstätte: Sportplatz Mainzer Landstra
+ sse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/s
+ piel/x/-/spiel/031I71O3VS000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71O3VS000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -637,15 +722,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-53@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261107T110000
 DTEND;TZID=Europe/Berlin:20261107T130000
-SUMMARY:D2 (A) FC Germ. 08 Ginnheim 2
-DESCRIPTION:FC Germ. 08 Ginnheim 2 - FFV Sportfreunde 04 II\nSpiel-Nr. 53
-  \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/s
- piel/x/-/spiel/031I71USV4000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D2 · Auswärts bei FC Germ. 08 Ginnheim 2
+DESCRIPTION:FC Germ. 08 Ginnheim 2 – Speuzer D2\nMannschaft: Speuzer D2
+ \nWettbewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nAusw
+ ärtsspiel · Spielnummer 53 · Staffel 341874\nSpielstätte: siehe FUSS
+ BALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/0
+ 31I71USV4000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71USV4000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -653,15 +740,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-53@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261107T140000
 DTEND;TZID=Europe/Berlin:20261107T160000
-SUMMARY:D1 (A) FV 09 Eschersheim 2
-DESCRIPTION:FV 09 Eschersheim 2 - FFV Sportfreunde 04 I\nSpiel-Nr. 53 \, 
- Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel
- /x/-/spiel/031I71O3PO000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D1 · Auswärts bei FV 09 Eschersheim 2
+DESCRIPTION:FV 09 Eschersheim 2 – Speuzer D1\nMannschaft: Speuzer D1\nW
+ ettbewerb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nAuswärtsspiel
+  · Spielnummer 53 · Staffel 340782\nSpielstätte: siehe FUSSBALL.DE\nA
+ lle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I71O3PO0
+ 00000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71O3PO000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -669,15 +758,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-53@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261108T093000
 DTEND;TZID=Europe/Berlin:20261108T113000
-SUMMARY:D3 (A) DJK SW Griesheim 4
-DESCRIPTION:DJK SW Griesheim 4 - FFV Sportfreunde 04 III\nSpiel-Nr. 53 \,
-  Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de/spie
- l/x/-/spiel/031I71TM4S000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D3 · Auswärts bei DJK SW Griesheim 4
+DESCRIPTION:DJK SW Griesheim 4 – Speuzer D3\nMannschaft: Speuzer D3\nWe
+ ttbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nAuswärts
+ spiel · Spielnummer 53 · Staffel 341873\nSpielstätte: siehe FUSSBALL.
+ DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I71
+ TM4S000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71TM4S000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -685,15 +776,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-58@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261129T100000
 DTEND;TZID=Europe/Berlin:20261129T120000
-SUMMARY:D3 (H) SV Griesheim Tarik
-DESCRIPTION:FFV Sportfreunde 04 III - SV Griesheim Tarik\nSpiel-Nr. 58 \,
-  Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de/spie
- l/x/-/spiel/031I71TLV0000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D3 · Heim gegen SV Griesheim Tarik
+DESCRIPTION:Speuzer D3 – SV Griesheim Tarik\nMannschaft: Speuzer D3\nWe
+ ttbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nHeimspiel
+  · Spielnummer 58 · Staffel 341873\nSpielstätte: Sportplatz Mainzer L
+ andstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussba
+ ll.de/spiel/x/-/spiel/031I71TLV0000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71TLV0000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -702,15 +795,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-58@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261129T113000
 DTEND;TZID=Europe/Berlin:20261129T133000
-SUMMARY:D2 (H) Spvgg. 03 Fechenheim
-DESCRIPTION:FFV Sportfreunde 04 II - Spvgg. 03 Fechenheim\nSpiel-Nr. 58 \
- , Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/spi
- el/x/-/spiel/031I71USNS000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer D2 · Heim gegen Spvgg. 03 Fechenheim
+DESCRIPTION:Speuzer D2 – Spvgg. 03 Fechenheim\nMannschaft: Speuzer D2\n
+ Wettbewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nHeimspi
+ el · Spielnummer 58 · Staffel 341874\nSpielstätte: Sportplatz Mainzer
+  Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fuss
+ ball.de/spiel/x/-/spiel/031I71USNS000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71USNS000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -719,15 +814,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-58@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261129T130000
 DTEND;TZID=Europe/Berlin:20261129T150000
-SUMMARY:D1 (H) Spvgg. Kickers 1916 1
-DESCRIPTION:FFV Sportfreunde 04 I - Spvgg. Kickers 1916 1\nSpiel-Nr. 58 \
- , Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/man
- nschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D1 · Heim gegen Spvgg. Kickers 1916 1
+DESCRIPTION:Speuzer D1 – Spvgg. Kickers 1916 1\nMannschaft: Speuzer D1\
+ nWettbewerb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nHeimspiel ·
+  Spielnummer 58 · Staffel 340782\nSpielstätte: Sportplatz Mainzer Land
+ strasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.
+ de/mannschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -736,15 +833,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-63@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261206T090000
 DTEND;TZID=Europe/Berlin:20261206T110000
-SUMMARY:D2 (A) SV 1894 Sachsenhausen 1
-DESCRIPTION:SV 1894 Sachsenhausen 1 - FFV Sportfreunde 04 II\nSpiel-Nr. 6
- 3 \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/
- mannschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D2 · Auswärts bei SV 1894 Sachsenhausen 1
+DESCRIPTION:SV 1894 Sachsenhausen 1 – Speuzer D2\nMannschaft: Speuzer D
+ 2\nWettbewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nAusw
+ ärtsspiel · Spielnummer 63 · Staffel 341874\nSpielstätte: siehe FUSS
+ BALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/sa
+ ison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -752,15 +851,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-63@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261206T090000
 DTEND;TZID=Europe/Berlin:20261206T110000
-SUMMARY:D3 (A) TuS Makkabi Frankfurt 6
-DESCRIPTION:TuS Makkabi Frankfurt 6 - FFV Sportfreunde 04 III\nSpiel-Nr. 
- 63 \, Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de
- /mannschaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ
+SUMMARY:Speuzer D3 · Auswärts bei TuS Makkabi Frankfurt 6
+DESCRIPTION:TuS Makkabi Frankfurt 6 – Speuzer D3\nMannschaft: Speuzer D
+ 3\nWettbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nAusw
+ ärtsspiel · Spielnummer 63 · Staffel 341873\nSpielstätte: siehe FUSS
+ BALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/sa
+ ison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
  000000VS5489BRVS0D3BPJ
 CATEGORIES:Fussball
@@ -768,15 +869,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-63@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261206T110000
 DTEND;TZID=Europe/Berlin:20261206T130000
-SUMMARY:D1 (A) FC Germania 1911 Enkheim 1
-DESCRIPTION:FC Germania 1911 Enkheim 1 - FFV Sportfreunde 04 I\nSpiel-Nr.
-  63 \, Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.d
- e/mannschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D1 · Auswärts bei FC Germania 1911 Enkheim 1
+DESCRIPTION:FC Germania 1911 Enkheim 1 – Speuzer D1\nMannschaft: Speuze
+ r D1\nWettbewerb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nAuswär
+ tsspiel · Spielnummer 63 · Staffel 340782\nSpielstätte: siehe FUSSBAL
+ L.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/saiso
+ n/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -784,15 +887,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-130@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270213T140000
 DTEND;TZID=Europe/Berlin:20270213T160000
-SUMMARY:D2 (A) TSG Frankfurter Berg I
-DESCRIPTION:TSG Frankfurter Berg I - FFV Sportfreunde 04 II\nSpiel-Nr. 13
- 0 \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/
- mannschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D2 · Auswärts bei TSG Frankfurter Berg I
+DESCRIPTION:TSG Frankfurter Berg I – Speuzer D2\nMannschaft: Speuzer D2
+ \nWettbewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nAusw
+ ärtsspiel · Spielnummer 130 · Staffel 341874\nSpielstätte: siehe FUS
+ SBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/s
+ aison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -800,15 +905,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-130@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270214T090000
 DTEND;TZID=Europe/Berlin:20270214T110000
-SUMMARY:D1 (A) FFC Olympia 07 I
-DESCRIPTION:FFC Olympia 07 I - FFV Sportfreunde 04 I\nSpiel-Nr. 130 \, St
- affel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsch
- aft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D1 · Auswärts bei FFC Olympia 07 I
+DESCRIPTION:FFC Olympia 07 I – Speuzer D1\nMannschaft: Speuzer D1\nWett
+ bewerb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nAuswärtsspiel ·
+  Spielnummer 130 · Staffel 340782\nSpielstätte: siehe FUSSBALL.DE\nAll
+ e Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/saison/2627/te
+ am-id/011MIE88PK000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -816,15 +923,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-130@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270214T110000
 DTEND;TZID=Europe/Berlin:20270214T130000
-SUMMARY:D3 (A) SC Weiss-Blau Frankfurt 3
-DESCRIPTION:SC Weiss-Blau Frankfurt 3 - FFV Sportfreunde 04 III\nSpiel-Nr
- . 130 \, Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball
- .de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ
+SUMMARY:Speuzer D3 · Auswärts bei SC Weiss-Blau Frankfurt 3
+DESCRIPTION:SC Weiss-Blau Frankfurt 3 – Speuzer D3\nMannschaft: Speuzer
+  D3\nWettbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nAu
+ swärtsspiel · Spielnummer 130 · Staffel 341873\nSpielstätte: siehe F
+ USSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-
+ /saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
  000000VS5489BRVS0D3BPJ
 CATEGORIES:Fussball
@@ -832,15 +941,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-70@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270220T113000
 DTEND;TZID=Europe/Berlin:20270220T133000
-SUMMARY:D3 (A) VfL Germania 1894 2
-DESCRIPTION:VfL Germania 1894 2 - FFV Sportfreunde 04 III\nSpiel-Nr. 70 \
- , Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de/man
- nschaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ
+SUMMARY:Speuzer D3 · Auswärts bei VfL Germania 1894 2
+DESCRIPTION:VfL Germania 1894 2 – Speuzer D3\nMannschaft: Speuzer D3\nW
+ ettbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nAuswärt
+ sspiel · Spielnummer 70 · Staffel 341873\nSpielstätte: siehe FUSSBALL
+ .DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/saison
+ /2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
  000000VS5489BRVS0D3BPJ
 CATEGORIES:Fussball
@@ -848,15 +959,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-70@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270221T090000
 DTEND;TZID=Europe/Berlin:20270221T110000
-SUMMARY:D1 (A) FG Seckbach 1
-DESCRIPTION:FG Seckbach 1 - FFV Sportfreunde 04 I\nSpiel-Nr. 70 \, Staffe
- l 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/mannschaft/
- x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D1 · Auswärts bei FG Seckbach 1
+DESCRIPTION:FG Seckbach 1 – Speuzer D1\nMannschaft: Speuzer D1\nWettbew
+ erb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nAuswärtsspiel · Sp
+ ielnummer 70 · Staffel 340782\nSpielstätte: siehe FUSSBALL.DE\nAlle In
+ fos zum Spiel: https://www.fussball.de/mannschaft/x/-/saison/2627/team-i
+ d/011MIE88PK000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -864,15 +977,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-70@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270221T110000
 DTEND;TZID=Europe/Berlin:20270221T130000
-SUMMARY:D2 (A) VFR Bockenheim 2
-DESCRIPTION:VFR Bockenheim 2 - FFV Sportfreunde 04 II\nSpiel-Nr. 70 \, St
- affel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsch
- aft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D2 · Auswärts bei VFR Bockenheim 2
+DESCRIPTION:VFR Bockenheim 2 – Speuzer D2\nMannschaft: Speuzer D2\nWett
+ bewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nAuswärtssp
+ iel · Spielnummer 70 · Staffel 341874\nSpielstätte: siehe FUSSBALL.DE
+ \nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/saison/26
+ 27/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -880,15 +995,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-76@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270227T103000
 DTEND;TZID=Europe/Berlin:20270227T123000
-SUMMARY:D1 (A) Spvgg. Kickers 1916 1
-DESCRIPTION:Spvgg. Kickers 1916 1 - FFV Sportfreunde 04 I\nSpiel-Nr. 76 \
- , Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/man
- nschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D1 · Auswärts bei Spvgg. Kickers 1916 1
+DESCRIPTION:Spvgg. Kickers 1916 1 – Speuzer D1\nMannschaft: Speuzer D1\
+ nWettbewerb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nAuswärtsspi
+ el · Spielnummer 76 · Staffel 340782\nSpielstätte: siehe FUSSBALL.DE\
+ nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/saison/262
+ 7/team-id/011MIE88PK000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -896,15 +1013,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-76@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270227T104500
 DTEND;TZID=Europe/Berlin:20270227T124500
-SUMMARY:D2 (A) Spvgg. 03 Fechenheim
-DESCRIPTION:Spvgg. 03 Fechenheim - FFV Sportfreunde 04 II\nSpiel-Nr. 76 \
- , Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/man
- nschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D2 · Auswärts bei Spvgg. 03 Fechenheim
+DESCRIPTION:Spvgg. 03 Fechenheim – Speuzer D2\nMannschaft: Speuzer D2\n
+ Wettbewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nAuswär
+ tsspiel · Spielnummer 76 · Staffel 341874\nSpielstätte: siehe FUSSBAL
+ L.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/saiso
+ n/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -912,15 +1031,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-76@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270227T130000
 DTEND;TZID=Europe/Berlin:20270227T150000
-SUMMARY:D3 (A) SV Griesheim Tarik
-DESCRIPTION:SV Griesheim Tarik - FFV Sportfreunde 04 III\nSpiel-Nr. 76 \,
-  Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de/mann
- schaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ
+SUMMARY:Speuzer D3 · Auswärts bei SV Griesheim Tarik
+DESCRIPTION:SV Griesheim Tarik – Speuzer D3\nMannschaft: Speuzer D3\nWe
+ ttbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nAuswärts
+ spiel · Spielnummer 76 · Staffel 341873\nSpielstätte: siehe FUSSBALL.
+ DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/saison/
+ 2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
  000000VS5489BRVS0D3BPJ
 CATEGORIES:Fussball
@@ -928,15 +1049,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-81@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270307T100000
 DTEND;TZID=Europe/Berlin:20270307T120000
-SUMMARY:D3 (H) TuS Makkabi Frankfurt 6
-DESCRIPTION:FFV Sportfreunde 04 III - TuS Makkabi Frankfurt 6\nSpiel-Nr. 
- 81 \, Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de
- /mannschaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ
+SUMMARY:Speuzer D3 · Heim gegen TuS Makkabi Frankfurt 6
+DESCRIPTION:Speuzer D3 – TuS Makkabi Frankfurt 6\nMannschaft: Speuzer D
+ 3\nWettbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nHeim
+ spiel · Spielnummer 81 · Staffel 341873\nSpielstätte: Sportplatz Main
+ zer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.f
+ ussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS
+ 0D3BPJ
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
  000000VS5489BRVS0D3BPJ
 CATEGORIES:Fussball
@@ -945,15 +1069,18 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-81@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270307T113000
 DTEND;TZID=Europe/Berlin:20270307T133000
-SUMMARY:D2 (H) SV 1894 Sachsenhausen 1
-DESCRIPTION:FFV Sportfreunde 04 II - SV 1894 Sachsenhausen 1\nSpiel-Nr. 8
- 1 \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/
- mannschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D2 · Heim gegen SV 1894 Sachsenhausen 1
+DESCRIPTION:Speuzer D2 – SV 1894 Sachsenhausen 1\nMannschaft: Speuzer D
+ 2\nWettbewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nHeim
+ spiel · Spielnummer 81 · Staffel 341874\nSpielstätte: Sportplatz Main
+ zer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.f
+ ussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VT
+ R8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -962,15 +1089,18 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-81@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270307T130000
 DTEND;TZID=Europe/Berlin:20270307T150000
-SUMMARY:D1 (H) FC Germania 1911 Enkheim 1
-DESCRIPTION:FFV Sportfreunde 04 I - FC Germania 1911 Enkheim 1\nSpiel-Nr.
-  81 \, Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.d
- e/mannschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D1 · Heim gegen FC Germania 1911 Enkheim 1
+DESCRIPTION:Speuzer D1 – FC Germania 1911 Enkheim 1\nMannschaft: Speuze
+ r D1\nWettbewerb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nHeimspi
+ el · Spielnummer 81 · Staffel 340782\nSpielstätte: Sportplatz Mainzer
+  Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fuss
+ ball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C
+ 1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -979,15 +1109,18 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-85@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270314T100000
 DTEND;TZID=Europe/Berlin:20270314T120000
-SUMMARY:D3 (H) SV Blau-Gelb FFM 2
-DESCRIPTION:FFV Sportfreunde 04 III - SV Blau-Gelb FFM 2\nSpiel-Nr. 85 \,
-  Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de/mann
- schaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ
+SUMMARY:Speuzer D3 · Heim gegen SV Blau-Gelb FFM 2
+DESCRIPTION:Speuzer D3 – SV Blau-Gelb FFM 2\nMannschaft: Speuzer D3\nWe
+ ttbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nHeimspiel
+  · Spielnummer 85 · Staffel 341873\nSpielstätte: Sportplatz Mainzer L
+ andstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussba
+ ll.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BP
+ J
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
  000000VS5489BRVS0D3BPJ
 CATEGORIES:Fussball
@@ -996,15 +1129,18 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-85@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270314T113000
 DTEND;TZID=Europe/Berlin:20270314T133000
-SUMMARY:D2 (H) SV Blau-Gelb FFM 3
-DESCRIPTION:FFV Sportfreunde 04 II - SV Blau-Gelb FFM 3\nSpiel-Nr. 85 \, 
- Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/manns
- chaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D2 · Heim gegen SV Blau-Gelb FFM 3
+DESCRIPTION:Speuzer D2 – SV Blau-Gelb FFM 3\nMannschaft: Speuzer D2\nWe
+ ttbewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nHeimspiel
+  · Spielnummer 85 · Staffel 341874\nSpielstätte: Sportplatz Mainzer L
+ andstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussba
+ ll.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K
+ 7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -1013,15 +1149,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-85@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270314T130000
 DTEND;TZID=Europe/Berlin:20270314T150000
-SUMMARY:D1 (H) FC JUZ Fechenheim 1
-DESCRIPTION:FFV Sportfreunde 04 I - FC JUZ Fechenheim 1\nSpiel-Nr. 85 \, 
- Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/manns
- chaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D1 · Heim gegen FC JUZ Fechenheim 1
+DESCRIPTION:Speuzer D1 – FC JUZ Fechenheim 1\nMannschaft: Speuzer D1\nW
+ ettbewerb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nHeimspiel · S
+ pielnummer 85 · Staffel 340782\nSpielstätte: Sportplatz Mainzer Landst
+ rasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de
+ /mannschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -1030,15 +1168,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-94@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270410T120000
 DTEND;TZID=Europe/Berlin:20270410T140000
-SUMMARY:D2 (A) Concordia Eschersheim II
-DESCRIPTION:Concordia Eschersheim II - FFV Sportfreunde 04 II\nSpiel-Nr. 
- 94 \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de
- /mannschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D2 · Auswärts bei Concordia Eschersheim II
+DESCRIPTION:Concordia Eschersheim II – Speuzer D2\nMannschaft: Speuzer 
+ D2\nWettbewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nAus
+ wärtsspiel · Spielnummer 94 · Staffel 341874\nSpielstätte: siehe FUS
+ SBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/s
+ aison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -1046,15 +1186,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-94@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270411T090000
 DTEND;TZID=Europe/Berlin:20270411T110000
-SUMMARY:D3 (A) TV Preungesheim 1
-DESCRIPTION:TV Preungesheim 1 - FFV Sportfreunde 04 III\nSpiel-Nr. 94 \, 
- Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de/manns
- chaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ
+SUMMARY:Speuzer D3 · Auswärts bei TV Preungesheim 1
+DESCRIPTION:TV Preungesheim 1 – Speuzer D3\nMannschaft: Speuzer D3\nWet
+ tbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nAuswärtss
+ piel · Spielnummer 94 · Staffel 341873\nSpielstätte: siehe FUSSBALL.D
+ E\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/saison/2
+ 627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
  000000VS5489BRVS0D3BPJ
 CATEGORIES:Fussball
@@ -1062,15 +1204,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-94@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270411T093000
 DTEND;TZID=Europe/Berlin:20270411T113000
-SUMMARY:D1 (A) Concordia Eschersheim
-DESCRIPTION:Concordia Eschersheim - FFV Sportfreunde 04 I\nSpiel-Nr. 94 \
- , Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/man
- nschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D1 · Auswärts bei Concordia Eschersheim
+DESCRIPTION:Concordia Eschersheim – Speuzer D1\nMannschaft: Speuzer D1\
+ nWettbewerb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nAuswärtsspi
+ el · Spielnummer 94 · Staffel 340782\nSpielstätte: siehe FUSSBALL.DE\
+ nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/saison/262
+ 7/team-id/011MIE88PK000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -1078,15 +1222,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-101@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270418T100000
 DTEND;TZID=Europe/Berlin:20270418T120000
-SUMMARY:D3 (H) Spvgg. Oberrad IV
-DESCRIPTION:FFV Sportfreunde 04 III - Spvgg. Oberrad IV\nSpiel-Nr. 101 \,
-  Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de/mann
- schaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ
+SUMMARY:Speuzer D3 · Heim gegen Spvgg. Oberrad IV
+DESCRIPTION:Speuzer D3 – Spvgg. Oberrad IV\nMannschaft: Speuzer D3\nWet
+ tbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nHeimspiel 
+ · Spielnummer 101 · Staffel 341873\nSpielstätte: Sportplatz Mainzer L
+ andstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussba
+ ll.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BP
+ J
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
  000000VS5489BRVS0D3BPJ
 CATEGORIES:Fussball
@@ -1095,99 +1242,16 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-101@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270418T113000
 DTEND;TZID=Europe/Berlin:20270418T133000
-SUMMARY:D2 (H) SG Harheim 2
-DESCRIPTION:FFV Sportfreunde 04 II - SG Harheim 2\nSpiel-Nr. 101 \, Staff
- el 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/mannschaft
- /x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
-URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
- 000000VTVG0001VTR8C1K7
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
-END:VEVENT
-BEGIN:VEVENT
-UID:341873-103@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
-DTSTART;TZID=Europe/Berlin:20270425T100000
-DTEND;TZID=Europe/Berlin:20270425T120000
-SUMMARY:D3 (H) TSG 51 Frankfurt II
-DESCRIPTION:FFV Sportfreunde 04 III - TSG 51 Frankfurt II\nSpiel-Nr. 103 
- \, Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de/ma
- nnschaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ
-URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
- 000000VS5489BRVS0D3BPJ
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
-END:VEVENT
-BEGIN:VEVENT
-UID:341874-103@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
-DTSTART;TZID=Europe/Berlin:20270425T113000
-DTEND;TZID=Europe/Berlin:20270425T133000
-SUMMARY:D2 (H) FC Fortuna Frankfurt
-DESCRIPTION:FFV Sportfreunde 04 II - FC Fortuna Frankfurt\nSpiel-Nr. 103 
- \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/ma
- nnschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
-URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
- 000000VTVG0001VTR8C1K7
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
-END:VEVENT
-BEGIN:VEVENT
-UID:340782-103@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
-DTSTART;TZID=Europe/Berlin:20270425T130000
-DTEND;TZID=Europe/Berlin:20270425T150000
-SUMMARY:D1 (H) FC Germ. 08 Ginnheim 1
-DESCRIPTION:FFV Sportfreunde 04 I - FC Germ. 08 Ginnheim 1\nSpiel-Nr. 103
-  \, Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/m
- annschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
-URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
- 000000VTVG0001VTR8C1K7
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
-END:VEVENT
-BEGIN:VEVENT
-UID:341873-110@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
-DTSTART;TZID=Europe/Berlin:20270509T100000
-DTEND;TZID=Europe/Berlin:20270509T120000
-SUMMARY:D3 (H) FSV 1910 Bergen 3
-DESCRIPTION:FFV Sportfreunde 04 III - FSV 1910 Bergen 3\nSpiel-Nr. 110 \,
-  Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de/mann
- schaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ
-URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
- 000000VS5489BRVS0D3BPJ
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
-END:VEVENT
-BEGIN:VEVENT
-UID:341874-110@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
-DTSTART;TZID=Europe/Berlin:20270509T113000
-DTEND;TZID=Europe/Berlin:20270509T133000
-SUMMARY:D2 (H) 1. Rödelheimer FC 02 2
-DESCRIPTION:FFV Sportfreunde 04 II - 1. Rödelheimer FC 02 2\nSpiel-Nr. 1
- 10 \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de
+SUMMARY:Speuzer D2 · Heim gegen SG Harheim 2
+DESCRIPTION:Speuzer D2 – SG Harheim 2\nMannschaft: Speuzer D2\nWettbewe
+ rb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nHeimspiel · Sp
+ ielnummer 101 · Staffel 341874\nSpielstätte: Sportplatz Mainzer Landst
+ rasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de
  /mannschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
  000000VTVG0001VTR8C1K7
@@ -1196,16 +1260,119 @@ TRANSP:OPAQUE
 LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
+UID:341873-103@speuzer.sportfreunde04.de
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
+DTSTART;TZID=Europe/Berlin:20270425T100000
+DTEND;TZID=Europe/Berlin:20270425T120000
+SUMMARY:Speuzer D3 · Heim gegen TSG 51 Frankfurt II
+DESCRIPTION:Speuzer D3 – TSG 51 Frankfurt II\nMannschaft: Speuzer D3\nW
+ ettbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nHeimspie
+ l · Spielnummer 103 · Staffel 341873\nSpielstätte: Sportplatz Mainzer
+  Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fuss
+ ball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3
+ BPJ
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
+ 000000VS5489BRVS0D3BPJ
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-103@speuzer.sportfreunde04.de
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
+DTSTART;TZID=Europe/Berlin:20270425T113000
+DTEND;TZID=Europe/Berlin:20270425T133000
+SUMMARY:Speuzer D2 · Heim gegen FC Fortuna Frankfurt
+DESCRIPTION:Speuzer D2 – FC Fortuna Frankfurt\nMannschaft: Speuzer D2\n
+ Wettbewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nHeimspi
+ el · Spielnummer 103 · Staffel 341874\nSpielstätte: Sportplatz Mainze
+ r Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fus
+ sball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8
+ C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-103@speuzer.sportfreunde04.de
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
+DTSTART;TZID=Europe/Berlin:20270425T130000
+DTEND;TZID=Europe/Berlin:20270425T150000
+SUMMARY:Speuzer D1 · Heim gegen FC Germ. 08 Ginnheim 1
+DESCRIPTION:Speuzer D1 – FC Germ. 08 Ginnheim 1\nMannschaft: Speuzer D1
+ \nWettbewerb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nHeimspiel 
+ · Spielnummer 103 · Staffel 340782\nSpielstätte: Sportplatz Mainzer L
+ andstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussba
+ ll.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K
+ 7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-110@speuzer.sportfreunde04.de
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
+DTSTART;TZID=Europe/Berlin:20270509T100000
+DTEND;TZID=Europe/Berlin:20270509T120000
+SUMMARY:Speuzer D3 · Heim gegen FSV 1910 Bergen 3
+DESCRIPTION:Speuzer D3 – FSV 1910 Bergen 3\nMannschaft: Speuzer D3\nWet
+ tbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nHeimspiel 
+ · Spielnummer 110 · Staffel 341873\nSpielstätte: Sportplatz Mainzer L
+ andstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussba
+ ll.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BP
+ J
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
+ 000000VS5489BRVS0D3BPJ
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-110@speuzer.sportfreunde04.de
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
+DTSTART;TZID=Europe/Berlin:20270509T113000
+DTEND;TZID=Europe/Berlin:20270509T133000
+SUMMARY:Speuzer D2 · Heim gegen 1. Rödelheimer FC 02 2
+DESCRIPTION:Speuzer D2 – 1. Rödelheimer FC 02 2\nMannschaft: Speuzer D
+ 2\nWettbewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nHeim
+ spiel · Spielnummer 110 · Staffel 341874\nSpielstätte: Sportplatz Mai
+ nzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.
+ fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001V
+ TR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
 UID:340782-110@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270509T130000
 DTEND;TZID=Europe/Berlin:20270509T150000
-SUMMARY:D1 (H) 1. Rödelheimer FC 02 1
-DESCRIPTION:FFV Sportfreunde 04 I - 1. Rödelheimer FC 02 1\nSpiel-Nr. 11
- 0 \, Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/
- mannschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D1 · Heim gegen 1. Rödelheimer FC 02 1
+DESCRIPTION:Speuzer D1 – 1. Rödelheimer FC 02 1\nMannschaft: Speuzer D
+ 1\nWettbewerb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nHeimspiel 
+ · Spielnummer 110 · Staffel 340782\nSpielstätte: Sportplatz Mainzer L
+ andstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussba
+ ll.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K
+ 7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -1214,15 +1381,18 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-119@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270523T100000
 DTEND;TZID=Europe/Berlin:20270523T120000
-SUMMARY:D3 (H) DJK SW Griesheim 4
-DESCRIPTION:FFV Sportfreunde 04 III - DJK SW Griesheim 4\nSpiel-Nr. 119 \
- , Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de/man
- nschaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ
+SUMMARY:Speuzer D3 · Heim gegen DJK SW Griesheim 4
+DESCRIPTION:Speuzer D3 – DJK SW Griesheim 4\nMannschaft: Speuzer D3\nWe
+ ttbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nHeimspiel
+  · Spielnummer 119 · Staffel 341873\nSpielstätte: Sportplatz Mainzer 
+ Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussb
+ all.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3B
+ PJ
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
  000000VS5489BRVS0D3BPJ
 CATEGORIES:Fussball
@@ -1231,15 +1401,18 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-119@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270523T113000
 DTEND;TZID=Europe/Berlin:20270523T133000
-SUMMARY:D2 (H) FC Germ. 08 Ginnheim 2
-DESCRIPTION:FFV Sportfreunde 04 II - FC Germ. 08 Ginnheim 2\nSpiel-Nr. 11
- 9 \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/
- mannschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D2 · Heim gegen FC Germ. 08 Ginnheim 2
+DESCRIPTION:Speuzer D2 – FC Germ. 08 Ginnheim 2\nMannschaft: Speuzer D2
+ \nWettbewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nHeims
+ piel · Spielnummer 119 · Staffel 341874\nSpielstätte: Sportplatz Main
+ zer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.f
+ ussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VT
+ R8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -1248,15 +1421,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-119@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270523T130000
 DTEND;TZID=Europe/Berlin:20270523T150000
-SUMMARY:D1 (H) FV 09 Eschersheim 2
-DESCRIPTION:FFV Sportfreunde 04 I - FV 09 Eschersheim 2\nSpiel-Nr. 119 \,
-  Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/mann
- schaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D1 · Heim gegen FV 09 Eschersheim 2
+DESCRIPTION:Speuzer D1 – FV 09 Eschersheim 2\nMannschaft: Speuzer D1\nW
+ ettbewerb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nHeimspiel · S
+ pielnummer 119 · Staffel 340782\nSpielstätte: Sportplatz Mainzer Lands
+ trasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.d
+ e/mannschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -1265,15 +1440,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341874-124@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270530T090000
 DTEND;TZID=Europe/Berlin:20270530T110000
-SUMMARY:D2 (A) FC Union Niederrad 3
-DESCRIPTION:FC Union Niederrad 3 - FFV Sportfreunde 04 II\nSpiel-Nr. 124 
- \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/ma
- nnschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D2 · Auswärts bei FC Union Niederrad 3
+DESCRIPTION:FC Union Niederrad 3 – Speuzer D2\nMannschaft: Speuzer D2\n
+ Wettbewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt\nAuswär
+ tsspiel · Spielnummer 124 · Staffel 341874\nSpielstätte: siehe FUSSBA
+ LL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/sais
+ on/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -1281,15 +1458,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-124@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270530T093000
 DTEND;TZID=Europe/Berlin:20270530T113000
-SUMMARY:D3 (A) SG Bornheim / GW 2
-DESCRIPTION:SG Bornheim / GW 2 - FFV Sportfreunde 04 III\nSpiel-Nr. 124 \
- , Staffel 341873\nQuelle: DFBnet \, Details: https://www.fussball.de/man
- nschaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ
+SUMMARY:Speuzer D3 · Auswärts bei SG Bornheim / GW 2
+DESCRIPTION:SG Bornheim / GW 2 – Speuzer D3\nMannschaft: Speuzer D3\nWe
+ ttbewerb: 1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt\nAuswärts
+ spiel · Spielnummer 124 · Staffel 341873\nSpielstätte: siehe FUSSBALL
+ .DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/saison
+ /2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
  000000VS5489BRVS0D3BPJ
 CATEGORIES:Fussball
@@ -1297,15 +1476,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-124@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270530T100000
 DTEND;TZID=Europe/Berlin:20270530T120000
-SUMMARY:D1 (A) FSV 1910 Bergen 1
-DESCRIPTION:FSV 1910 Bergen 1 - FFV Sportfreunde 04 I\nSpiel-Nr. 124 \, S
- taffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsc
- haft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer D1 · Auswärts bei FSV 1910 Bergen 1
+DESCRIPTION:FSV 1910 Bergen 1 – Speuzer D1\nMannschaft: Speuzer D1\nWet
+ tbewerb: Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt\nAuswärtsspiel 
+ · Spielnummer 124 · Staffel 340782\nSpielstätte: siehe FUSSBALL.DE\nA
+ lle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/saison/2627/
+ team-id/011MIE88PK000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball

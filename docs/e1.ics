@@ -4,6 +4,11 @@ PRODID:-//FFV Sportfreunde 04//Spielplan//DE
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Speuzer E1
+X-WR-CALDESC:Spielplan des FFV Sportfreunde 04\, Saison 2026/27\, Quelle 
+ DFBnet. Verlegungen aktualisieren den bestehenden Termin. Zurzeit stehen
+  nur die Spiele der Qualifikationsrunde fest. Die Spiele der Hauptrunde 
+ kommen automatisch in dieses Abo\, sobald der Kreis sie ansetzt – neu 
+ abonnieren muss niemand.
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
@@ -27,15 +32,18 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:340610-1@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260822T120000
 DTEND;TZID=Europe/Berlin:20260822T140000
-SUMMARY:E1 (H) VfL Germania 1894 1
-DESCRIPTION:FFV Sportfreunde 04 I - VfL Germania 1894 1\nSpiel-Nr. 1 \, S
- taffel 340610\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/
- x/-/spiel/031I12OVI0000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E1 · Heim gegen VfL Germania 1894 1
+DESCRIPTION:Speuzer E1 – VfL Germania 1894 1\nMannschaft: Speuzer E1\nW
+ ettbewerb: 1. Kreisklasse · EJ Quali Gr. 08 · Kreis Frankfurt\nRunde: 
+ Qualifikationsrunde\nHeimspiel · Spielnummer 1 · Staffel 340610\nSpiel
+ stätte: Sportplatz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos 
+ zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I12OVI0000000VS548
+ 9BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I12OVI0000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -44,15 +52,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-5@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260829T110000
 DTEND;TZID=Europe/Berlin:20260829T130000
-SUMMARY:E1 (A) SC Goldstein
-DESCRIPTION:SC Goldstein - FFV Sportfreunde 04 I\nSpiel-Nr. 5 \, Staffel 
- 340610\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x/-/spi
- el/031I12OVGO000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E1 · Auswärts bei SC Goldstein
+DESCRIPTION:SC Goldstein – Speuzer E1\nMannschaft: Speuzer E1\nWettbewe
+ rb: 1. Kreisklasse · EJ Quali Gr. 08 · Kreis Frankfurt\nRunde: Qualifi
+ kationsrunde\nAuswärtsspiel · Spielnummer 5 · Staffel 340610\nSpielst
+ ätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/
+ spiel/x/-/spiel/031I12OVGO000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I12OVGO000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -60,15 +70,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-7@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260905T133000
 DTEND;TZID=Europe/Berlin:20260905T153000
-SUMMARY:E1 (A) SV07 Heddernheim 1
-DESCRIPTION:SV07 Heddernheim 1 - FFV Sportfreunde 04 I\nSpiel-Nr. 7 \, St
- affel 340610\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x
- /-/spiel/031I12OVDO000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E1 · Auswärts bei SV07 Heddernheim 1
+DESCRIPTION:SV07 Heddernheim 1 – Speuzer E1\nMannschaft: Speuzer E1\nWe
+ ttbewerb: 1. Kreisklasse · EJ Quali Gr. 08 · Kreis Frankfurt\nRunde: Q
+ ualifikationsrunde\nAuswärtsspiel · Spielnummer 7 · Staffel 340610\nS
+ pielstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussba
+ ll.de/spiel/x/-/spiel/031I12OVDO000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I12OVDO000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -76,15 +88,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-10@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260912T120000
 DTEND;TZID=Europe/Berlin:20260912T140000
-SUMMARY:E1 (H) SG Bornheim / GW 2
-DESCRIPTION:FFV Sportfreunde 04 I - SG Bornheim / GW 2\nSpiel-Nr. 10 \, S
- taffel 340610\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/
- x/-/spiel/031I12OVBK000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E1 · Heim gegen SG Bornheim / GW 2
+DESCRIPTION:Speuzer E1 – SG Bornheim / GW 2\nMannschaft: Speuzer E1\nWe
+ ttbewerb: 1. Kreisklasse · EJ Quali Gr. 08 · Kreis Frankfurt\nRunde: Q
+ ualifikationsrunde\nHeimspiel · Spielnummer 10 · Staffel 340610\nSpiel
+ stätte: Sportplatz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos 
+ zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I12OVBK000000VS548
+ 9BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I12OVBK000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -93,15 +108,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-14@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260926T123000
 DTEND;TZID=Europe/Berlin:20260926T143000
-SUMMARY:E1 (A) 1. Rödelheimer FC 02 1
-DESCRIPTION:1. Rödelheimer FC 02 1 - FFV Sportfreunde 04 I\nSpiel-Nr. 14
-  \, Staffel 340610\nQuelle: DFBnet \, Details: https://www.fussball.de/s
- piel/x/-/spiel/031I12OVL0000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E1 · Auswärts bei 1. Rödelheimer FC 02 1
+DESCRIPTION:1. Rödelheimer FC 02 1 – Speuzer E1\nMannschaft: Speuzer E
+ 1\nWettbewerb: 1. Kreisklasse · EJ Quali Gr. 08 · Kreis Frankfurt\nRun
+ de: Qualifikationsrunde\nAuswärtsspiel · Spielnummer 14 · Staffel 340
+ 610\nSpielstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.
+ fussball.de/spiel/x/-/spiel/031I12OVL0000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031I12OVL0000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball

@@ -18,7 +18,9 @@ td{padding:9px 12px;border-bottom:1px solid #e6ebf2;vertical-align:top}
 tr.next td{background:#eef6ff}
 .d{white-space:nowrap;font-variant-numeric:tabular-nums;color:#0b3c78;font-weight:600;width:96px}
 .t{font-size:.78rem;color:#5a6b80;font-weight:400}
-.ha{display:inline-block;min-width:20px;font-weight:700;color:#0b3c78}
+.ha{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 7px;border-radius:5px;margin-right:8px;vertical-align:1px}
+.ha.h{background:#0b3c78;color:#fff}
+.ha.a{background:#eef2f7;color:#0b3c78;border:1px solid #dde4ec}
 .res{float:right;font-weight:700;color:#0b3c78}
 .fuss{padding:14px;font-size:.78rem;color:#6b7a8d;line-height:1.5}
 td a{color:inherit;text-decoration:none;display:block}
@@ -31,10 +33,9 @@ tr.grp td{background:#f6f8fc;font-size:.7rem;letter-spacing:.09em;text-transform
 <div class="wbox" id="w-D3"><div class="fussballde_widget" data-id="81d9f5d7-9465-4aa5-ba6e-9830577ec0e6" data-type="team-matches" style="width:100%"></div></div></div>
 <div class="kapitel">Ganze Saison</div>
 <table><tbody id="liste"></tbody></table>
-<div class="fuss">Oben die letzten und naechsten Spiele direkt von FUSSBALL.DE, unten die
-komplette Saison aus dem DFBnet. H = Heimspiel, A = Auswaerts.
-Tippen auf ein Spiel oeffnet die Spielseite auf FUSSBALL.DE.
-Kurzfristige Absagen kommen per Push, nicht ueber diese Seite.
+<div class="fuss">Oben die letzten und nächsten Spiele direkt von FUSSBALL.DE, unten die
+komplette Saison aus dem DFBnet. Tippen auf ein Spiel öffnet die Spielseite auf FUSSBALL.DE.
+Kurzfristige Absagen kommen per Push, nicht über diese Seite.
 F1, F2 und G-Jugend haben noch keine angesetzten Spiele – sobald der Kreis ansetzt, erscheinen sie hier.</div>
 <script>
 const STAFFEL = {"D1":["D1","Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt"],"D2":["D2","1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt"],"D3":["D3","1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt"]};
@@ -110,7 +111,7 @@ function render(){
   const keys = Object.keys(STAFFEL);
   document.getElementById("tabs").innerHTML = keys.length < 2 ? "" : keys.map(t =>
     `<button class="tab${t===aktiv?" on":""}" onclick="aktiv='${t}';render()">${t}</button>`).join("");
-  document.getElementById("meta").textContent = STAFFEL[aktiv][1];
+  document.getElementById("meta").textContent = "Speuzer " + aktiv + " · " + STAFFEL[aktiv][1];
   keys.forEach(t => {
     const box = document.getElementById("w-" + STAFFEL[t][0]);
     if (box) box.className = "wbox" + (t===aktiv ? " on" : "");
@@ -126,7 +127,7 @@ function render(){
     let kopf = "";
     if (s[7] && s[7] !== gruppe) { gruppe = s[7]; kopf = `<tr class="grp"><td colspan="2">${s[7]}</td></tr>`; }
     return kopf + `<tr class="${ist?"next":""}"><td class="d">${tag}<br><span class="t">${s[3]} Uhr</span></td>`
-      + `<td><a href="${url}" target="_blank" rel="noopener"><span class="ha">${s[1]}</span> ${s[4]}`
+      + `<td><a href="${url}" target="_blank" rel="noopener"><span class="ha ${s[1]==="H"?"h":"a"}">${s[1]==="H"?"Heim":"Ausw."}</span>${s[4]}`
       + `${s[5]?`<span class="res">${s[5]}</span>`:`<span class="pfeil">\u203a</span>`}</a></td></tr>`;
   }).join("");
 }

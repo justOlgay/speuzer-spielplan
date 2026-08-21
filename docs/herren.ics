@@ -4,6 +4,8 @@ PRODID:-//FFV Sportfreunde 04//Spielplan//DE
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Speuzer Herren
+X-WR-CALDESC:Spielplan des FFV Sportfreunde 04\, Saison 2026/27\, Quelle 
+ DFBnet. Verlegungen aktualisieren den bestehenden Termin.
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
@@ -27,15 +29,17 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:341727-5@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260802T150000
 DTEND;TZID=Europe/Berlin:20260802T170000
-SUMMARY:Herren (A) TSG 51 Ffm
-DESCRIPTION:TSG 51 Ffm - FFV Sportfreunde 04 FFM\nSpiel-Nr. 5 \, Staffel 
- 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannschaft/x/
- -/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Auswärts bei TSG 51 Ffm
+DESCRIPTION:TSG 51 Ffm – Speuzer Herren\nMannschaft: Speuzer Herren\nWe
+ ttbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nAuswär
+ tsspiel · Spielnummer 5 · Staffel 341727\nSpielstätte: siehe FUSSBALL
+ .DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/saison
+ /2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -43,15 +47,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-30@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260816T153000
 DTEND;TZID=Europe/Berlin:20260816T173000
-SUMMARY:Herren (A) VFR Bockenheim
-DESCRIPTION:VFR Bockenheim - FFV Sportfreunde 04 FFM\nSpiel-Nr. 30 \, Sta
- ffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannscha
- ft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Auswärts bei VFR Bockenheim
+DESCRIPTION:VFR Bockenheim – Speuzer Herren\nMannschaft: Speuzer Herren
+ \nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nAus
+ wärtsspiel · Spielnummer 30 · Staffel 341727\nSpielstätte: siehe FUS
+ SBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/s
+ aison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -59,15 +65,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-38@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260823T150000
 DTEND;TZID=Europe/Berlin:20260823T170000
-SUMMARY:Herren (H) SG Praunheim 1908
-DESCRIPTION:FFV Sportfreunde 04 FFM - SG Praunheim 1908\nSpiel-Nr. 38 \, 
- Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel
- /x/-/spiel/031D0TFC4C000000VS5489BUVUR5FS5A
+SUMMARY:Speuzer Herren · Heim gegen SG Praunheim 1908
+DESCRIPTION:Speuzer Herren – SG Praunheim 1908\nMannschaft: Speuzer Her
+ ren\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\n
+ Heimspiel · Spielnummer 38 · Staffel 341727\nSpielstätte: Sportplatz 
+ Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://w
+ ww.fussball.de/spiel/x/-/spiel/031D0TFC4C000000VS5489BUVUR5FS5A
 URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFC4C000000VS5489BUVUR5F
  S5A
 CATEGORIES:Fussball
@@ -76,15 +84,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-54@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260830T130000
 DTEND;TZID=Europe/Berlin:20260830T150000
-SUMMARY:Herren (A) Spvgg. 02 Griesheim II
-DESCRIPTION:Spvgg. 02 Griesheim II - FFV Sportfreunde 04 FFM\nSpiel-Nr. 5
- 4 \, Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/
- spiel/x/-/spiel/031D0TFC0K000000VS5489BUVUR5FS5A
+SUMMARY:Speuzer Herren · Auswärts bei Spvgg. 02 Griesheim II
+DESCRIPTION:Spvgg. 02 Griesheim II – Speuzer Herren\nMannschaft: Speuze
+ r Herren\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankf
+ urt\nAuswärtsspiel · Spielnummer 54 · Staffel 341727\nSpielstätte: s
+ iehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/
+ -/spiel/031D0TFC0K000000VS5489BUVUR5FS5A
 URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFC0K000000VS5489BUVUR5F
  S5A
 CATEGORIES:Fussball
@@ -92,15 +102,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-56@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260906T150000
 DTEND;TZID=Europe/Berlin:20260906T170000
-SUMMARY:Herren (H) DJK SW Griesheim
-DESCRIPTION:FFV Sportfreunde 04 FFM - DJK SW Griesheim\nSpiel-Nr. 56 \, S
- taffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/
- x/-/spiel/031D0TFB1C000000VS5489BUVUR5FS5A
+SUMMARY:Speuzer Herren · Heim gegen DJK SW Griesheim
+DESCRIPTION:Speuzer Herren – DJK SW Griesheim\nMannschaft: Speuzer Herr
+ en\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nH
+ eimspiel · Spielnummer 56 · Staffel 341727\nSpielstätte: Sportplatz M
+ ainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://ww
+ w.fussball.de/spiel/x/-/spiel/031D0TFB1C000000VS5489BUVUR5FS5A
 URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFB1C000000VS5489BUVUR5F
  S5A
 CATEGORIES:Fussball
@@ -109,15 +121,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-65@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260909T190000
 DTEND;TZID=Europe/Berlin:20260909T210000
-SUMMARY:Herren (H) TSG Niederrad 1898
-DESCRIPTION:FFV Sportfreunde 04 FFM - TSG Niederrad 1898\nSpiel-Nr. 65 \,
-  Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/spie
- l/x/-/spiel/031D0TFEI8000000VS5489BUVUR5FS5A
+SUMMARY:Speuzer Herren · Heim gegen TSG Niederrad 1898
+DESCRIPTION:Speuzer Herren – TSG Niederrad 1898\nMannschaft: Speuzer He
+ rren\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\
+ nHeimspiel · Spielnummer 65 · Staffel 341727\nSpielstätte: Sportplatz
+  Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://
+ www.fussball.de/spiel/x/-/spiel/031D0TFEI8000000VS5489BUVUR5FS5A
 URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFEI8000000VS5489BUVUR5F
  S5A
 CATEGORIES:Fussball
@@ -126,15 +140,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-79@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260913T153000
 DTEND;TZID=Europe/Berlin:20260913T173000
-SUMMARY:Herren (A) SV Niederursel
-DESCRIPTION:SV Niederursel - FFV Sportfreunde 04 FFM\nSpiel-Nr. 79 \, Sta
- ffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x/
- -/spiel/031D0TFAQ4000000VS5489BUVUR5FS5A
+SUMMARY:Speuzer Herren · Auswärts bei SV Niederursel
+DESCRIPTION:SV Niederursel – Speuzer Herren\nMannschaft: Speuzer Herren
+ \nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nAus
+ wärtsspiel · Spielnummer 79 · Staffel 341727\nSpielstätte: siehe FUS
+ SBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/
+ 031D0TFAQ4000000VS5489BUVUR5FS5A
 URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFAQ4000000VS5489BUVUR5F
  S5A
 CATEGORIES:Fussball
@@ -142,15 +158,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-83@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260920T150000
 DTEND;TZID=Europe/Berlin:20260920T170000
-SUMMARY:Herren (H) SC Riedberg
-DESCRIPTION:FFV Sportfreunde 04 FFM - SC Riedberg\nSpiel-Nr. 83 \, Staffe
- l 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x/-/s
- piel/031D0TFA20000000VS5489BUVUR5FS5A
+SUMMARY:Speuzer Herren · Heim gegen SC Riedberg
+DESCRIPTION:Speuzer Herren – SC Riedberg\nMannschaft: Speuzer Herren\nW
+ ettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nHeimsp
+ iel · Spielnummer 83 · Staffel 341727\nSpielstätte: Sportplatz Mainze
+ r Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fus
+ sball.de/spiel/x/-/spiel/031D0TFA20000000VS5489BUVUR5FS5A
 URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFA20000000VS5489BUVUR5F
  S5A
 CATEGORIES:Fussball
@@ -159,15 +177,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-95@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260927T123000
 DTEND;TZID=Europe/Berlin:20260927T143000
-SUMMARY:Herren (A) FC Tempo Ffm II
-DESCRIPTION:FC Tempo Ffm II - FFV Sportfreunde 04 FFM\nSpiel-Nr. 95 \, St
- affel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x
- /-/spiel/031D0TF9OC000000VS5489BUVUR5FS5A
+SUMMARY:Speuzer Herren · Auswärts bei FC Tempo Ffm II
+DESCRIPTION:FC Tempo Ffm II – Speuzer Herren\nMannschaft: Speuzer Herre
+ n\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nAu
+ swärtsspiel · Spielnummer 95 · Staffel 341727\nSpielstätte: siehe FU
+ SSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel
+ /031D0TF9OC000000VS5489BUVUR5FS5A
 URL:https://www.fussball.de/spiel/x/-/spiel/031D0TF9OC000000VS5489BUVUR5F
  S5A
 CATEGORIES:Fussball
@@ -175,15 +195,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-101@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261004T150000
 DTEND;TZID=Europe/Berlin:20261004T170000
-SUMMARY:Herren (H) FV 1920 Hausen
-DESCRIPTION:FFV Sportfreunde 04 FFM - FV 1920 Hausen\nSpiel-Nr. 101 \, St
- affel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x
- /-/spiel/031D0TF94K000000VS5489BUVUR5FS5A
+SUMMARY:Speuzer Herren · Heim gegen FV 1920 Hausen
+DESCRIPTION:Speuzer Herren – FV 1920 Hausen\nMannschaft: Speuzer Herren
+ \nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nHei
+ mspiel · Spielnummer 101 · Staffel 341727\nSpielstätte: Sportplatz Ma
+ inzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www
+ .fussball.de/spiel/x/-/spiel/031D0TF94K000000VS5489BUVUR5FS5A
 URL:https://www.fussball.de/spiel/x/-/spiel/031D0TF94K000000VS5489BUVUR5F
  S5A
 CATEGORIES:Fussball
@@ -192,15 +214,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-111@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261011T150000
 DTEND;TZID=Europe/Berlin:20261011T170000
-SUMMARY:Herren (A) SV Eritrea Ffm
-DESCRIPTION:SV Eritrea Ffm - FFV Sportfreunde 04 FFM\nSpiel-Nr. 111 \, St
- affel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x
- /-/spiel/031D0TF8P0000000VS5489BUVUR5FS5A
+SUMMARY:Speuzer Herren · Auswärts bei SV Eritrea Ffm
+DESCRIPTION:SV Eritrea Ffm – Speuzer Herren\nMannschaft: Speuzer Herren
+ \nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nAus
+ wärtsspiel · Spielnummer 111 · Staffel 341727\nSpielstätte: siehe FU
+ SSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel
+ /031D0TF8P0000000VS5489BUVUR5FS5A
 URL:https://www.fussball.de/spiel/x/-/spiel/031D0TF8P0000000VS5489BUVUR5F
  S5A
 CATEGORIES:Fussball
@@ -208,15 +232,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-119@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261018T150000
 DTEND;TZID=Europe/Berlin:20261018T170000
-SUMMARY:Herren (H) FC Croatia Ffm
-DESCRIPTION:FFV Sportfreunde 04 FFM - FC Croatia Ffm\nSpiel-Nr. 119 \, St
- affel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsch
- aft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Heim gegen FC Croatia Ffm
+DESCRIPTION:Speuzer Herren – FC Croatia Ffm\nMannschaft: Speuzer Herren
+ \nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nHei
+ mspiel · Spielnummer 119 · Staffel 341727\nSpielstätte: Sportplatz Ma
+ inzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www
+ .fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001
+ VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -225,15 +252,18 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-128@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261025T150000
 DTEND;TZID=Europe/Berlin:20261025T170000
-SUMMARY:Herren (H) FC Corumspor Ffm
-DESCRIPTION:FFV Sportfreunde 04 FFM - FC Corumspor Ffm\nSpiel-Nr. 128 \, 
- Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/manns
- chaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Heim gegen FC Corumspor Ffm
+DESCRIPTION:Speuzer Herren – FC Corumspor Ffm\nMannschaft: Speuzer Herr
+ en\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nH
+ eimspiel · Spielnummer 128 · Staffel 341727\nSpielstätte: Sportplatz 
+ Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://w
+ ww.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG00
+ 01VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -242,15 +272,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-144@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261101T123000
 DTEND;TZID=Europe/Berlin:20261101T143000
-SUMMARY:Herren (A) Concordia Eschersheim II
-DESCRIPTION:Concordia Eschersheim II - FFV Sportfreunde 04 FFM\nSpiel-Nr.
-  144 \, Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.
- de/mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Auswärts bei Concordia Eschersheim II
+DESCRIPTION:Concordia Eschersheim II – Speuzer Herren\nMannschaft: Speu
+ zer Herren\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Fran
+ kfurt\nAuswärtsspiel · Spielnummer 144 · Staffel 341727\nSpielstätte
+ : siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/manns
+ chaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -258,15 +290,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-146@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261108T143000
 DTEND;TZID=Europe/Berlin:20261108T163000
-SUMMARY:Herren (H) SG Harheim II
-DESCRIPTION:FFV Sportfreunde 04 FFM - SG Harheim II\nSpiel-Nr. 146 \, Sta
- ffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannscha
- ft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Heim gegen SG Harheim II
+DESCRIPTION:Speuzer Herren – SG Harheim II\nMannschaft: Speuzer Herren\
+ nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nHeim
+ spiel · Spielnummer 146 · Staffel 341727\nSpielstätte: Sportplatz Mai
+ nzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.
+ fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001V
+ TR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -275,15 +310,18 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-156@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261115T150000
 DTEND;TZID=Europe/Berlin:20261115T170000
-SUMMARY:Herren (H) VFR Bockenheim
-DESCRIPTION:FFV Sportfreunde 04 FFM - VFR Bockenheim\nSpiel-Nr. 156 \, St
- affel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsch
- aft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Heim gegen VFR Bockenheim
+DESCRIPTION:Speuzer Herren – VFR Bockenheim\nMannschaft: Speuzer Herren
+ \nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nHei
+ mspiel · Spielnummer 156 · Staffel 341727\nSpielstätte: Sportplatz Ma
+ inzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www
+ .fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001
+ VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -292,15 +330,18 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-176@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261129T143000
 DTEND;TZID=Europe/Berlin:20261129T163000
-SUMMARY:Herren (H) TSG 51 Ffm
-DESCRIPTION:FFV Sportfreunde 04 FFM - TSG 51 Ffm\nSpiel-Nr. 176 \, Staffe
- l 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannschaft/
- x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Heim gegen TSG 51 Ffm
+DESCRIPTION:Speuzer Herren – TSG 51 Ffm\nMannschaft: Speuzer Herren\nWe
+ ttbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nHeimspi
+ el · Spielnummer 176 · Staffel 341727\nSpielstätte: Sportplatz Mainze
+ r Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fus
+ sball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8
+ C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -309,15 +350,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-182@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261206T120000
 DTEND;TZID=Europe/Berlin:20261206T140000
-SUMMARY:Herren (A) TSG Niederrad 1898
-DESCRIPTION:TSG Niederrad 1898 - FFV Sportfreunde 04 FFM\nSpiel-Nr. 182 \
- , Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/man
- nschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Auswärts bei TSG Niederrad 1898
+DESCRIPTION:TSG Niederrad 1898 – Speuzer Herren\nMannschaft: Speuzer He
+ rren\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\
+ nAuswärtsspiel · Spielnummer 182 · Staffel 341727\nSpielstätte: sieh
+ e FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/
+ x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -325,15 +368,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-200@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270228T150000
 DTEND;TZID=Europe/Berlin:20270228T170000
-SUMMARY:Herren (A) SG Praunheim 1908
-DESCRIPTION:SG Praunheim 1908 - FFV Sportfreunde 04 FFM\nSpiel-Nr. 200 \,
-  Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mann
- schaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Auswärts bei SG Praunheim 1908
+DESCRIPTION:SG Praunheim 1908 – Speuzer Herren\nMannschaft: Speuzer Her
+ ren\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\n
+ Auswärtsspiel · Spielnummer 200 · Staffel 341727\nSpielstätte: siehe
+  FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x
+ /-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -341,15 +386,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-216@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270307T153000
 DTEND;TZID=Europe/Berlin:20270307T173000
-SUMMARY:Herren (H) Spvgg. 02 Griesheim II
-DESCRIPTION:FFV Sportfreunde 04 FFM - Spvgg. 02 Griesheim II\nSpiel-Nr. 2
- 16 \, Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de
- /mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Heim gegen Spvgg. 02 Griesheim II
+DESCRIPTION:Speuzer Herren – Spvgg. 02 Griesheim II\nMannschaft: Speuze
+ r Herren\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankf
+ urt\nHeimspiel · Spielnummer 216 · Staffel 341727\nSpielstätte: Sport
+ platz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: htt
+ ps://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14000000
+ VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -358,15 +406,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-218@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270314T150000
 DTEND;TZID=Europe/Berlin:20270314T170000
-SUMMARY:Herren (A) DJK SW Griesheim
-DESCRIPTION:DJK SW Griesheim - FFV Sportfreunde 04 FFM\nSpiel-Nr. 218 \, 
- Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/manns
- chaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Auswärts bei DJK SW Griesheim
+DESCRIPTION:DJK SW Griesheim – Speuzer Herren\nMannschaft: Speuzer Herr
+ en\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nA
+ uswärtsspiel · Spielnummer 218 · Staffel 341727\nSpielstätte: siehe 
+ FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/
+ -/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -374,15 +424,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-232@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270321T153000
 DTEND;TZID=Europe/Berlin:20270321T173000
-SUMMARY:Herren (H) SV Niederursel
-DESCRIPTION:FFV Sportfreunde 04 FFM - SV Niederursel\nSpiel-Nr. 232 \, St
- affel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsch
- aft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Heim gegen SV Niederursel
+DESCRIPTION:Speuzer Herren – SV Niederursel\nMannschaft: Speuzer Herren
+ \nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nHei
+ mspiel · Spielnummer 232 · Staffel 341727\nSpielstätte: Sportplatz Ma
+ inzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www
+ .fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001
+ VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -391,15 +444,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-236@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270404T150000
 DTEND;TZID=Europe/Berlin:20270404T170000
-SUMMARY:Herren (A) SC Riedberg
-DESCRIPTION:SC Riedberg - FFV Sportfreunde 04 FFM\nSpiel-Nr. 236 \, Staff
- el 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannschaft
- /x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Auswärts bei SC Riedberg
+DESCRIPTION:SC Riedberg – Speuzer Herren\nMannschaft: Speuzer Herren\nW
+ ettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nAuswä
+ rtsspiel · Spielnummer 236 · Staffel 341727\nSpielstätte: siehe FUSSB
+ ALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/sai
+ son/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -407,15 +462,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-248@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270411T153000
 DTEND;TZID=Europe/Berlin:20270411T173000
-SUMMARY:Herren (H) FC Tempo Ffm II
-DESCRIPTION:FFV Sportfreunde 04 FFM - FC Tempo Ffm II\nSpiel-Nr. 248 \, S
- taffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsc
- haft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Heim gegen FC Tempo Ffm II
+DESCRIPTION:Speuzer Herren – FC Tempo Ffm II\nMannschaft: Speuzer Herre
+ n\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nHe
+ imspiel · Spielnummer 248 · Staffel 341727\nSpielstätte: Sportplatz M
+ ainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://ww
+ w.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG000
+ 1VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -424,15 +482,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-254@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270418T150000
 DTEND;TZID=Europe/Berlin:20270418T170000
-SUMMARY:Herren (A) FV 1920 Hausen
-DESCRIPTION:FV 1920 Hausen - FFV Sportfreunde 04 FFM\nSpiel-Nr. 254 \, St
- affel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsch
- aft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Auswärts bei FV 1920 Hausen
+DESCRIPTION:FV 1920 Hausen – Speuzer Herren\nMannschaft: Speuzer Herren
+ \nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nAus
+ wärtsspiel · Spielnummer 254 · Staffel 341727\nSpielstätte: siehe FU
+ SSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/
+ saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -440,15 +500,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-264@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270425T153000
 DTEND;TZID=Europe/Berlin:20270425T173000
-SUMMARY:Herren (H) SV Eritrea Ffm
-DESCRIPTION:FFV Sportfreunde 04 FFM - SV Eritrea Ffm\nSpiel-Nr. 264 \, St
- affel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsch
- aft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Heim gegen SV Eritrea Ffm
+DESCRIPTION:Speuzer Herren – SV Eritrea Ffm\nMannschaft: Speuzer Herren
+ \nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nHei
+ mspiel · Spielnummer 264 · Staffel 341727\nSpielstätte: Sportplatz Ma
+ inzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www
+ .fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001
+ VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -457,15 +520,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-272@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270502T150000
 DTEND;TZID=Europe/Berlin:20270502T170000
-SUMMARY:Herren (A) FC Croatia Ffm
-DESCRIPTION:FC Croatia Ffm - FFV Sportfreunde 04 FFM\nSpiel-Nr. 272 \, St
- affel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsch
- aft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Auswärts bei FC Croatia Ffm
+DESCRIPTION:FC Croatia Ffm – Speuzer Herren\nMannschaft: Speuzer Herren
+ \nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nAus
+ wärtsspiel · Spielnummer 272 · Staffel 341727\nSpielstätte: siehe FU
+ SSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/
+ saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -473,15 +538,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-281@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270509T150000
 DTEND;TZID=Europe/Berlin:20270509T170000
-SUMMARY:Herren (A) FC Corumspor Ffm
-DESCRIPTION:FC Corumspor Ffm - FFV Sportfreunde 04 FFM\nSpiel-Nr. 281 \, 
- Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/manns
- chaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Auswärts bei FC Corumspor Ffm
+DESCRIPTION:FC Corumspor Ffm – Speuzer Herren\nMannschaft: Speuzer Herr
+ en\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nA
+ uswärtsspiel · Spielnummer 281 · Staffel 341727\nSpielstätte: siehe 
+ FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/
+ -/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -489,15 +556,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-297@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270515T150000
 DTEND;TZID=Europe/Berlin:20270515T170000
-SUMMARY:Herren (H) Concordia Eschersheim II
-DESCRIPTION:FFV Sportfreunde 04 FFM - Concordia Eschersheim II\nSpiel-Nr.
-  297 \, Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.
- de/mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Heim gegen Concordia Eschersheim II
+DESCRIPTION:Speuzer Herren – Concordia Eschersheim II\nMannschaft: Speu
+ zer Herren\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Fran
+ kfurt\nHeimspiel · Spielnummer 297 · Staffel 341727\nSpielstätte: Spo
+ rtplatz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: h
+ ttps://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB140000
+ 00VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -506,15 +576,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-299@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270523T130000
 DTEND;TZID=Europe/Berlin:20270523T150000
-SUMMARY:Herren (A) SG Harheim II
-DESCRIPTION:SG Harheim II - FFV Sportfreunde 04 FFM\nSpiel-Nr. 299 \, Sta
- ffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannscha
- ft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+SUMMARY:Speuzer Herren · Auswärts bei SG Harheim II
+DESCRIPTION:SG Harheim II – Speuzer Herren\nMannschaft: Speuzer Herren\
+ nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nAusw
+ ärtsspiel · Spielnummer 299 · Staffel 341727\nSpielstätte: siehe FUS
+ SBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/s
+ aison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball

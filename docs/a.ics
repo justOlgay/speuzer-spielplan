@@ -4,6 +4,8 @@ PRODID:-//FFV Sportfreunde 04//Spielplan//DE
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Speuzer A-Jugend
+X-WR-CALDESC:Spielplan des FFV Sportfreunde 04\, Saison 2026/27\, Quelle 
+ DFBnet. Verlegungen aktualisieren den bestehenden Termin.
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
@@ -27,15 +29,17 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:343410-7@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260822T150000
 DTEND;TZID=Europe/Berlin:20260822T170000
-SUMMARY:A-Jugend (A) FV Bad Vilbel 1
-DESCRIPTION:FV Bad Vilbel 1 - FFV Sportfreunde 04 1\nSpiel-Nr. 7 \, Staff
- el 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x/-/
- spiel/031D5JEMAC000000VS5489BUVUR5FS5A
+SUMMARY:Speuzer A-Jugend · Auswärts bei FV Bad Vilbel 1
+DESCRIPTION:FV Bad Vilbel 1 – Speuzer A-Jugend\nMannschaft: Speuzer A-J
+ ugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankfurt\nAu
+ swärtsspiel · Spielnummer 7 · Staffel 343410\nSpielstätte: siehe FUS
+ SBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/
+ 031D5JEMAC000000VS5489BUVUR5FS5A
 URL:https://www.fussball.de/spiel/x/-/spiel/031D5JEMAC000000VS5489BUVUR5F
  S5A
 CATEGORIES:Fussball
@@ -43,15 +47,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-8@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260829T180000
 DTEND;TZID=Europe/Berlin:20260829T200000
-SUMMARY:A-Jugend (A) Spvgg. Langenselbold 1
-DESCRIPTION:Spvgg. Langenselbold 1 - FFV Sportfreunde 04 1\nSpiel-Nr. 8 \
- , Staffel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/spi
- el/x/-/spiel/031D5JELKG000000VS5489BUVUR5FS5A
+SUMMARY:Speuzer A-Jugend · Auswärts bei Spvgg. Langenselbold 1
+DESCRIPTION:Spvgg. Langenselbold 1 – Speuzer A-Jugend\nMannschaft: Speu
+ zer A-Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankf
+ urt\nAuswärtsspiel · Spielnummer 8 · Staffel 343410\nSpielstätte: si
+ ehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-
+ /spiel/031D5JELKG000000VS5489BUVUR5FS5A
 URL:https://www.fussball.de/spiel/x/-/spiel/031D5JELKG000000VS5489BUVUR5F
  S5A
 CATEGORIES:Fussball
@@ -59,15 +65,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-20@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260905T160000
 DTEND;TZID=Europe/Berlin:20260905T180000
-SUMMARY:A-Jugend (H) SV Viktoria Preussen 1
-DESCRIPTION:FFV Sportfreunde 04 1 - SV Viktoria Preussen 1\nSpiel-Nr. 20 
- \, Staffel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/sp
- iel/x/-/spiel/031D5JELH0000000VS5489BUVUR5FS5A
+SUMMARY:Speuzer A-Jugend · Heim gegen SV Viktoria Preussen 1
+DESCRIPTION:Speuzer A-Jugend – SV Viktoria Preussen 1\nMannschaft: Speu
+ zer A-Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankf
+ urt\nHeimspiel · Spielnummer 20 · Staffel 343410\nSpielstätte: Sportp
+ latz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: http
+ s://www.fussball.de/spiel/x/-/spiel/031D5JELH0000000VS5489BUVUR5FS5A
 URL:https://www.fussball.de/spiel/x/-/spiel/031D5JELH0000000VS5489BUVUR5F
  S5A
 CATEGORIES:Fussball
@@ -76,15 +84,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-25@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260912T150000
 DTEND;TZID=Europe/Berlin:20260912T170000
-SUMMARY:A-Jugend (A) 1. FC 1906 Erlensee 2
-DESCRIPTION:1. FC 1906 Erlensee 2 - FFV Sportfreunde 04 1\nSpiel-Nr. 25 \
- , Staffel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/spi
- el/x/-/spiel/031D5JEL3K000000VS5489BUVUR5FS5A
+SUMMARY:Speuzer A-Jugend · Auswärts bei 1. FC 1906 Erlensee 2
+DESCRIPTION:1. FC 1906 Erlensee 2 – Speuzer A-Jugend\nMannschaft: Speuz
+ er A-Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankfu
+ rt\nAuswärtsspiel · Spielnummer 25 · Staffel 343410\nSpielstätte: si
+ ehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-
+ /spiel/031D5JEL3K000000VS5489BUVUR5FS5A
 URL:https://www.fussball.de/spiel/x/-/spiel/031D5JEL3K000000VS5489BUVUR5F
  S5A
 CATEGORIES:Fussball
@@ -92,15 +102,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-34@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260919T160000
 DTEND;TZID=Europe/Berlin:20260919T180000
-SUMMARY:A-Jugend (H) TuS Makkabi Frankfurt 1
-DESCRIPTION:FFV Sportfreunde 04 1 - TuS Makkabi Frankfurt 1\nSpiel-Nr. 34
-  \, Staffel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/s
- piel/x/-/spiel/031D5JEKS8000000VS5489BUVUR5FS5A
+SUMMARY:Speuzer A-Jugend · Heim gegen TuS Makkabi Frankfurt 1
+DESCRIPTION:Speuzer A-Jugend – TuS Makkabi Frankfurt 1\nMannschaft: Spe
+ uzer A-Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frank
+ furt\nHeimspiel · Spielnummer 34 · Staffel 343410\nSpielstätte: Sport
+ platz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: htt
+ ps://www.fussball.de/spiel/x/-/spiel/031D5JEKS8000000VS5489BUVUR5FS5A
 URL:https://www.fussball.de/spiel/x/-/spiel/031D5JEKS8000000VS5489BUVUR5F
  S5A
 CATEGORIES:Fussball
@@ -109,15 +121,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-37@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260926T160000
 DTEND;TZID=Europe/Berlin:20260926T180000
-SUMMARY:A-Jugend (A) Spvgg. Oberrad 1
-DESCRIPTION:Spvgg. Oberrad 1 - FFV Sportfreunde 04 1\nSpiel-Nr. 37 \, Sta
- ffel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x/
- -/spiel/031D5JEKBG000000VS5489BUVUR5FS5A
+SUMMARY:Speuzer A-Jugend · Auswärts bei Spvgg. Oberrad 1
+DESCRIPTION:Spvgg. Oberrad 1 – Speuzer A-Jugend\nMannschaft: Speuzer A-
+ Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankfurt\nA
+ uswärtsspiel · Spielnummer 37 · Staffel 343410\nSpielstätte: siehe F
+ USSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spie
+ l/031D5JEKBG000000VS5489BUVUR5FS5A
 URL:https://www.fussball.de/spiel/x/-/spiel/031D5JEKBG000000VS5489BUVUR5F
  S5A
 CATEGORIES:Fussball
@@ -125,15 +139,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-48@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261003T160000
 DTEND;TZID=Europe/Berlin:20261003T180000
-SUMMARY:A-Jugend (H) Spvgg. Neu-Isenburg 2
-DESCRIPTION:FFV Sportfreunde 04 1 - Spvgg. Neu-Isenburg 2\nSpiel-Nr. 48 \
- , Staffel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/spi
- el/x/-/spiel/031D5JEK6G000000VS5489BUVUR5FS5A
+SUMMARY:Speuzer A-Jugend · Heim gegen Spvgg. Neu-Isenburg 2
+DESCRIPTION:Speuzer A-Jugend – Spvgg. Neu-Isenburg 2\nMannschaft: Speuz
+ er A-Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankfu
+ rt\nHeimspiel · Spielnummer 48 · Staffel 343410\nSpielstätte: Sportpl
+ atz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https
+ ://www.fussball.de/spiel/x/-/spiel/031D5JEK6G000000VS5489BUVUR5FS5A
 URL:https://www.fussball.de/spiel/x/-/spiel/031D5JEK6G000000VS5489BUVUR5F
  S5A
 CATEGORIES:Fussball
@@ -142,15 +158,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-55@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261017T160000
 DTEND;TZID=Europe/Berlin:20261017T180000
-SUMMARY:A-Jugend (H) Karbener SV 2
-DESCRIPTION:FFV Sportfreunde 04 1 - Karbener SV 2\nSpiel-Nr. 55 \, Staffe
- l 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x/-/s
- piel/031D5JEJ2G000000VS5489BUVUR5FS5A
+SUMMARY:Speuzer A-Jugend · Heim gegen Karbener SV 2
+DESCRIPTION:Speuzer A-Jugend – Karbener SV 2\nMannschaft: Speuzer A-Jug
+ end\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankfurt\nHeim
+ spiel · Spielnummer 55 · Staffel 343410\nSpielstätte: Sportplatz Main
+ zer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.f
+ ussball.de/spiel/x/-/spiel/031D5JEJ2G000000VS5489BUVUR5FS5A
 URL:https://www.fussball.de/spiel/x/-/spiel/031D5JEJ2G000000VS5489BUVUR5F
  S5A
 CATEGORIES:Fussball
@@ -159,15 +177,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-62@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261024T130000
 DTEND;TZID=Europe/Berlin:20261024T150000
-SUMMARY:A-Jugend (A) SG Oberhoechstadt 1
-DESCRIPTION:SG Oberhoechstadt 1 - FFV Sportfreunde 04 1\nSpiel-Nr. 62 \, 
- Staffel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel
- /x/-/spiel/031D5JEJRK000000VS5489BUVUR5FS5A
+SUMMARY:Speuzer A-Jugend · Auswärts bei SG Oberhoechstadt 1
+DESCRIPTION:SG Oberhoechstadt 1 – Speuzer A-Jugend\nMannschaft: Speuzer
+  A-Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankfurt
+ \nAuswärtsspiel · Spielnummer 62 · Staffel 343410\nSpielstätte: sieh
+ e FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/s
+ piel/031D5JEJRK000000VS5489BUVUR5FS5A
 URL:https://www.fussball.de/spiel/x/-/spiel/031D5JEJRK000000VS5489BUVUR5F
  S5A
 CATEGORIES:Fussball
@@ -175,15 +195,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-69@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261031T160000
 DTEND;TZID=Europe/Berlin:20261031T180000
-SUMMARY:A-Jugend (H) FC Bayern Alzenau 2
-DESCRIPTION:FFV Sportfreunde 04 1 - FC Bayern Alzenau 2\nSpiel-Nr. 69 \, 
- Staffel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/manns
- chaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
+SUMMARY:Speuzer A-Jugend · Heim gegen FC Bayern Alzenau 2
+DESCRIPTION:Speuzer A-Jugend – FC Bayern Alzenau 2\nMannschaft: Speuzer
+  A-Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankfurt
+ \nHeimspiel · Spielnummer 69 · Staffel 343410\nSpielstätte: Sportplat
+ z Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https:/
+ /www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G000000VV0A
+ G80NVUQ1MD7G
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -192,15 +215,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-74@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261108T110000
 DTEND;TZID=Europe/Berlin:20261108T130000
-SUMMARY:A-Jugend (A) FSV Bischofsheim 1
-DESCRIPTION:FSV Bischofsheim 1 - FFV Sportfreunde 04 1\nSpiel-Nr. 74 \, S
- taffel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsc
- haft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
+SUMMARY:Speuzer A-Jugend · Auswärts bei FSV Bischofsheim 1
+DESCRIPTION:FSV Bischofsheim 1 – Speuzer A-Jugend\nMannschaft: Speuzer 
+ A-Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankfurt\
+ nAuswärtsspiel · Spielnummer 74 · Staffel 343410\nSpielstätte: siehe
+  FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x
+ /-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -208,15 +233,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-83@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261121T160000
 DTEND;TZID=Europe/Berlin:20261121T180000
-SUMMARY:A-Jugend (H) JFV Nidda / Schotten 1
-DESCRIPTION:FFV Sportfreunde 04 1 - JFV Nidda / Schotten 1\nSpiel-Nr. 83 
- \, Staffel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/ma
- nnschaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
+SUMMARY:Speuzer A-Jugend · Heim gegen JFV Nidda / Schotten 1
+DESCRIPTION:Speuzer A-Jugend – JFV Nidda / Schotten 1\nMannschaft: Speu
+ zer A-Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankf
+ urt\nHeimspiel · Spielnummer 83 · Staffel 343410\nSpielstätte: Sportp
+ latz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: http
+ s://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G000000V
+ V0AG80NVUQ1MD7G
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -225,15 +253,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-86@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20261128T180000
 DTEND;TZID=Europe/Berlin:20261128T200000
-SUMMARY:A-Jugend (A) JSG Kirdorf 1
-DESCRIPTION:JSG Kirdorf 1 - FFV Sportfreunde 04 1\nSpiel-Nr. 86 \, Staffe
- l 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/mannschaft/
- x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
+SUMMARY:Speuzer A-Jugend · Auswärts bei JSG Kirdorf 1
+DESCRIPTION:JSG Kirdorf 1 – Speuzer A-Jugend\nMannschaft: Speuzer A-Jug
+ end\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankfurt\nAusw
+ ärtsspiel · Spielnummer 86 · Staffel 343410\nSpielstätte: siehe FUSS
+ BALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/sa
+ ison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -241,15 +271,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-98@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270227T160000
 DTEND;TZID=Europe/Berlin:20270227T180000
-SUMMARY:A-Jugend (H) FV Bad Vilbel 1
-DESCRIPTION:FFV Sportfreunde 04 1 - FV Bad Vilbel 1\nSpiel-Nr. 98 \, Staf
- fel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/mannschaf
- t/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
+SUMMARY:Speuzer A-Jugend · Heim gegen FV Bad Vilbel 1
+DESCRIPTION:Speuzer A-Jugend – FV Bad Vilbel 1\nMannschaft: Speuzer A-J
+ ugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankfurt\nHe
+ imspiel · Spielnummer 98 · Staffel 343410\nSpielstätte: Sportplatz Ma
+ inzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www
+ .fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80N
+ VUQ1MD7G
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -258,15 +291,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-104@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270306T180000
 DTEND;TZID=Europe/Berlin:20270306T200000
-SUMMARY:A-Jugend (A) JFV Nidda / Schotten 1
-DESCRIPTION:JFV Nidda / Schotten 1 - FFV Sportfreunde 04 1\nSpiel-Nr. 104
-  \, Staffel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/m
- annschaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
+SUMMARY:Speuzer A-Jugend · Auswärts bei JFV Nidda / Schotten 1
+DESCRIPTION:JFV Nidda / Schotten 1 – Speuzer A-Jugend\nMannschaft: Speu
+ zer A-Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankf
+ urt\nAuswärtsspiel · Spielnummer 104 · Staffel 343410\nSpielstätte: 
+ siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannsch
+ aft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -274,15 +309,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-111@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270313T180000
 DTEND;TZID=Europe/Berlin:20270313T200000
-SUMMARY:A-Jugend (A) SV Viktoria Preussen 1
-DESCRIPTION:SV Viktoria Preussen 1 - FFV Sportfreunde 04 1\nSpiel-Nr. 111
-  \, Staffel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/m
- annschaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
+SUMMARY:Speuzer A-Jugend · Auswärts bei SV Viktoria Preussen 1
+DESCRIPTION:SV Viktoria Preussen 1 – Speuzer A-Jugend\nMannschaft: Speu
+ zer A-Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankf
+ urt\nAuswärtsspiel · Spielnummer 111 · Staffel 343410\nSpielstätte: 
+ siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannsch
+ aft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -290,15 +327,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-116@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270320T160000
 DTEND;TZID=Europe/Berlin:20270320T180000
-SUMMARY:A-Jugend (H) 1. FC 1906 Erlensee 2
-DESCRIPTION:FFV Sportfreunde 04 1 - 1. FC 1906 Erlensee 2\nSpiel-Nr. 116 
- \, Staffel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/ma
- nnschaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
+SUMMARY:Speuzer A-Jugend · Heim gegen 1. FC 1906 Erlensee 2
+DESCRIPTION:Speuzer A-Jugend – 1. FC 1906 Erlensee 2\nMannschaft: Speuz
+ er A-Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankfu
+ rt\nHeimspiel · Spielnummer 116 · Staffel 343410\nSpielstätte: Sportp
+ latz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: http
+ s://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G000000V
+ V0AG80NVUQ1MD7G
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -307,15 +347,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-125@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270403T160000
 DTEND;TZID=Europe/Berlin:20270403T180000
-SUMMARY:A-Jugend (A) TuS Makkabi Frankfurt 1
-DESCRIPTION:TuS Makkabi Frankfurt 1 - FFV Sportfreunde 04 1\nSpiel-Nr. 12
- 5 \, Staffel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/
- mannschaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
+SUMMARY:Speuzer A-Jugend · Auswärts bei TuS Makkabi Frankfurt 1
+DESCRIPTION:TuS Makkabi Frankfurt 1 – Speuzer A-Jugend\nMannschaft: Spe
+ uzer A-Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frank
+ furt\nAuswärtsspiel · Spielnummer 125 · Staffel 343410\nSpielstätte:
+  siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannsc
+ haft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -323,15 +365,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-128@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270410T160000
 DTEND;TZID=Europe/Berlin:20270410T180000
-SUMMARY:A-Jugend (H) Spvgg. Oberrad 1
-DESCRIPTION:FFV Sportfreunde 04 1 - Spvgg. Oberrad 1\nSpiel-Nr. 128 \, St
- affel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsch
- aft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
+SUMMARY:Speuzer A-Jugend · Heim gegen Spvgg. Oberrad 1
+DESCRIPTION:Speuzer A-Jugend – Spvgg. Oberrad 1\nMannschaft: Speuzer A-
+ Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankfurt\nH
+ eimspiel · Spielnummer 128 · Staffel 343410\nSpielstätte: Sportplatz 
+ Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://w
+ ww.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG8
+ 0NVUQ1MD7G
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -340,15 +385,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-139@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270417T160000
 DTEND;TZID=Europe/Berlin:20270417T180000
-SUMMARY:A-Jugend (A) Spvgg. Neu-Isenburg 2
-DESCRIPTION:Spvgg. Neu-Isenburg 2 - FFV Sportfreunde 04 1\nSpiel-Nr. 139 
- \, Staffel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/ma
- nnschaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
+SUMMARY:Speuzer A-Jugend · Auswärts bei Spvgg. Neu-Isenburg 2
+DESCRIPTION:Spvgg. Neu-Isenburg 2 – Speuzer A-Jugend\nMannschaft: Speuz
+ er A-Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankfu
+ rt\nAuswärtsspiel · Spielnummer 139 · Staffel 343410\nSpielstätte: s
+ iehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannscha
+ ft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -356,15 +403,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-146@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270424T160000
 DTEND;TZID=Europe/Berlin:20270424T180000
-SUMMARY:A-Jugend (H) SG Oberhoechstadt 1
-DESCRIPTION:FFV Sportfreunde 04 1 - SG Oberhoechstadt 1\nSpiel-Nr. 146 \,
-  Staffel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/mann
- schaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
+SUMMARY:Speuzer A-Jugend · Heim gegen SG Oberhoechstadt 1
+DESCRIPTION:Speuzer A-Jugend – SG Oberhoechstadt 1\nMannschaft: Speuzer
+  A-Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankfurt
+ \nHeimspiel · Spielnummer 146 · Staffel 343410\nSpielstätte: Sportpla
+ tz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https:
+ //www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G000000VV0
+ AG80NVUQ1MD7G
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -373,15 +423,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-153@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270502T110000
 DTEND;TZID=Europe/Berlin:20270502T130000
-SUMMARY:A-Jugend (A) FC Bayern Alzenau 2
-DESCRIPTION:FC Bayern Alzenau 2 - FFV Sportfreunde 04 1\nSpiel-Nr. 153 \,
-  Staffel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/mann
- schaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
+SUMMARY:Speuzer A-Jugend · Auswärts bei FC Bayern Alzenau 2
+DESCRIPTION:FC Bayern Alzenau 2 – Speuzer A-Jugend\nMannschaft: Speuzer
+  A-Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankfurt
+ \nAuswärtsspiel · Spielnummer 153 · Staffel 343410\nSpielstätte: sie
+ he FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft
+ /x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -389,15 +441,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-158@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270508T160000
 DTEND;TZID=Europe/Berlin:20270508T180000
-SUMMARY:A-Jugend (H) FSV Bischofsheim 1
-DESCRIPTION:FFV Sportfreunde 04 1 - FSV Bischofsheim 1\nSpiel-Nr. 158 \, 
- Staffel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/manns
- chaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
+SUMMARY:Speuzer A-Jugend · Heim gegen FSV Bischofsheim 1
+DESCRIPTION:Speuzer A-Jugend – FSV Bischofsheim 1\nMannschaft: Speuzer 
+ A-Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankfurt\
+ nHeimspiel · Spielnummer 158 · Staffel 343410\nSpielstätte: Sportplat
+ z Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https:/
+ /www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G000000VV0A
+ G80NVUQ1MD7G
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -406,15 +461,18 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-163@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270522T160000
 DTEND;TZID=Europe/Berlin:20270522T180000
-SUMMARY:A-Jugend (H) JSG Kirdorf 1
-DESCRIPTION:FFV Sportfreunde 04 1 - JSG Kirdorf 1\nSpiel-Nr. 163 \, Staff
- el 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/mannschaft
- /x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
+SUMMARY:Speuzer A-Jugend · Heim gegen JSG Kirdorf 1
+DESCRIPTION:Speuzer A-Jugend – JSG Kirdorf 1\nMannschaft: Speuzer A-Jug
+ end\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankfurt\nHeim
+ spiel · Spielnummer 163 · Staffel 343410\nSpielstätte: Sportplatz Mai
+ nzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.
+ fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NV
+ UQ1MD7G
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -423,15 +481,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-174@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270530T181500
 DTEND;TZID=Europe/Berlin:20270530T201500
-SUMMARY:A-Jugend (A) Karbener SV 2
-DESCRIPTION:Karbener SV 2 - FFV Sportfreunde 04 1\nSpiel-Nr. 174 \, Staff
- el 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/mannschaft
- /x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
+SUMMARY:Speuzer A-Jugend · Auswärts bei Karbener SV 2
+DESCRIPTION:Karbener SV 2 – Speuzer A-Jugend\nMannschaft: Speuzer A-Jug
+ end\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankfurt\nAusw
+ ärtsspiel · Spielnummer 174 · Staffel 343410\nSpielstätte: siehe FUS
+ SBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/s
+ aison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -439,15 +499,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-176@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20270605T180000
 DTEND;TZID=Europe/Berlin:20270605T200000
-SUMMARY:A-Jugend (H) Spvgg. Langenselbold 1
-DESCRIPTION:FFV Sportfreunde 04 1 - Spvgg. Langenselbold 1\nSpiel-Nr. 176
-  \, Staffel 343410\nQuelle: DFBnet \, Details: https://www.fussball.de/m
- annschaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G
+SUMMARY:Speuzer A-Jugend · Heim gegen Spvgg. Langenselbold 1
+DESCRIPTION:Speuzer A-Jugend – Spvgg. Langenselbold 1\nMannschaft: Speu
+ zer A-Jugend\nWettbewerb: Gruppenliga · AJGL Frankfurt · Region Frankf
+ urt\nHeimspiel · Spielnummer 176 · Staffel 343410\nSpielstätte: Sport
+ platz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: htt
+ ps://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G000000
+ VV0AG80NVUQ1MD7G
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball

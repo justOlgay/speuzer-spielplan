@@ -16,6 +16,9 @@
   .team { border:1px solid var(--rand); border-radius:10px; padding:14px 16px; margin-bottom:14px; }
   .team h2 { margin:0 0 2px; font-size:1.05rem; color:var(--blau); }
   .team .meta { font-size:.82rem; color:#5a6b80; margin-bottom:12px; }
+  .team .note { font-size:.8rem; line-height:1.45; color:#4a5a6e; background:var(--hell);
+                border-left:3px solid var(--blau); border-radius:0 6px 6px 0;
+                padding:9px 11px; margin:-4px 0 12px; }
   a.btn { display:block; text-align:center; text-decoration:none; font-weight:600;
           padding:11px 14px; border-radius:8px; margin-bottom:8px; font-size:.95rem; }
   a.primary { background:var(--blau); color:#fff; }
@@ -53,16 +56,16 @@
 </footer>
 <script>
 const TEAMS = [
-  { file:"herren.ics", name:"Herren", meta:"Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt" },
-  { file:"a.ics", name:"A-Jugend", meta:"Gruppenliga · AJGL Frankfurt · Region Frankfurt" },
-  { file:"d1.ics", name:"D1", meta:"Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt" },
-  { file:"d2.ics", name:"D2", meta:"1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt" },
-  { file:"d3.ics", name:"D3", meta:"1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt" },
-  { file:"e1.ics", name:"E1", meta:"1. Kreisklasse · EJ Quali Gr. 08 · Kreis Frankfurt" },
-  { file:"e2.ics", name:"E2", meta:"1. Kreisklasse · EJ Quali Gr. 18 · Kreis Frankfurt" },
-  { file:"e3.ics", name:"E3", meta:"1. Kreisklasse · EJ Quali Gr. 22 · Kreis Frankfurt" },
-  { file:"alle.ics", name:"Alle Mannschaften", meta:"Herren, A-, D- und E-Jugend in einem Kalender" },
-  { file:"jugend.ics", name:"Nur Jugend (D/E)", meta:"D1 bis E3 in einem Kalender - liegt so in der Vereins-App" }
+  { file:"herren.ics", name:"Speuzer Herren", meta:"Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt", note:"" },
+  { file:"a.ics", name:"Speuzer A-Jugend", meta:"Gruppenliga · AJGL Frankfurt · Region Frankfurt", note:"" },
+  { file:"d1.ics", name:"Speuzer D1", meta:"Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt", note:"" },
+  { file:"d2.ics", name:"Speuzer D2", meta:"1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt", note:"" },
+  { file:"d3.ics", name:"Speuzer D3", meta:"1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt", note:"" },
+  { file:"e1.ics", name:"Speuzer E1", meta:"1. Kreisklasse · EJ Quali Gr. 08 · Kreis Frankfurt", note:"Zurzeit stehen nur die Spiele der Qualifikationsrunde fest. Die Spiele der Hauptrunde kommen automatisch in dieses Abo, sobald der Kreis sie ansetzt – neu abonnieren muss niemand." },
+  { file:"e2.ics", name:"Speuzer E2", meta:"1. Kreisklasse · EJ Quali Gr. 18 · Kreis Frankfurt", note:"Zurzeit stehen nur die Spiele der Qualifikationsrunde fest. Die Spiele der Hauptrunde kommen automatisch in dieses Abo, sobald der Kreis sie ansetzt – neu abonnieren muss niemand." },
+  { file:"e3.ics", name:"Speuzer E3", meta:"1. Kreisklasse · EJ Quali Gr. 22 · Kreis Frankfurt", note:"Zurzeit stehen nur die Spiele der Qualifikationsrunde fest. Die Spiele der Hauptrunde kommen automatisch in dieses Abo, sobald der Kreis sie ansetzt – neu abonnieren muss niemand." },
+  { file:"alle.ics", name:"Speuzer – alle Mannschaften", meta:"Herren, A-, D- und E-Jugend in einem Kalender · so liegt er auch in der Vereins-App", note:"Zurzeit stehen nur die Spiele der Qualifikationsrunde fest. Die Spiele der Hauptrunde kommen automatisch in dieses Abo, sobald der Kreis sie ansetzt – neu abonnieren muss niemand." },
+  { file:"jugend.ics", name:"Speuzer – nur Jugend", meta:"D1 bis E3 in einem Kalender, ohne Herren und A-Jugend", note:"Zurzeit stehen nur die Spiele der Qualifikationsrunde fest. Die Spiele der Hauptrunde kommen automatisch in dieses Abo, sobald der Kreis sie ansetzt – neu abonnieren muss niemand." }
 ];
 const basis = location.href.replace(/[^/]*$/, "");
 const ziel = document.getElementById("teams");
@@ -71,7 +74,8 @@ for (const t of TEAMS) {
   const webcal = url.replace(/^https?:/, "webcal:");
   const box = document.createElement("section");
   box.className = "team";
-  box.innerHTML = `<h2>${t.name}</h2><div class="meta">${t.meta}</div>`;
+  box.innerHTML = `<h2>${t.name}</h2><div class="meta">${t.meta}</div>`
+    + (t.note ? `<div class="note">${t.note}</div>` : "");
   const a1 = document.createElement("a");
   a1.className = "btn primary"; a1.href = webcal; a1.textContent = "Im Kalender abonnieren";
   const a2 = document.createElement("a");

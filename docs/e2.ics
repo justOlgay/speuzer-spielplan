@@ -4,6 +4,11 @@ PRODID:-//FFV Sportfreunde 04//Spielplan//DE
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Speuzer E2
+X-WR-CALDESC:Spielplan des FFV Sportfreunde 04\, Saison 2026/27\, Quelle 
+ DFBnet. Verlegungen aktualisieren den bestehenden Termin. Zurzeit stehen
+  nur die Spiele der Qualifikationsrunde fest. Die Spiele der Hauptrunde 
+ kommen automatisch in dieses Abo\, sobald der Kreis sie ansetzt – neu 
+ abonnieren muss niemand.
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
@@ -27,15 +32,18 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:341435-1@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260822T113000
 DTEND;TZID=Europe/Berlin:20260822T133000
-SUMMARY:E2 (H) Spvgg. Kickers 1916 4
-DESCRIPTION:FFV Sportfreunde 04 II - Spvgg. Kickers 1916 4\nSpiel-Nr. 1 \
- , Staffel 341435\nQuelle: DFBnet \, Details: https://www.fussball.de/spi
- el/x/-/spiel/031HO7T0VC000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E2 · Heim gegen Spvgg. Kickers 1916 4
+DESCRIPTION:Speuzer E2 – Spvgg. Kickers 1916 4\nMannschaft: Speuzer E2\
+ nWettbewerb: 1. Kreisklasse · EJ Quali Gr. 18 · Kreis Frankfurt\nRunde
+ : Qualifikationsrunde\nHeimspiel · Spielnummer 1 · Staffel 341435\nSpi
+ elstätte: Sportplatz Mainzer Landstrasse\, Frankfurt am Main\nAlle Info
+ s zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031HO7T0VC000000VS5
+ 489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T0VC000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -44,15 +52,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341435-5@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260829T123000
 DTEND;TZID=Europe/Berlin:20260829T143000
-SUMMARY:E2 (A) FSV 1910 Bergen 2
-DESCRIPTION:FSV 1910 Bergen 2 - FFV Sportfreunde 04 II\nSpiel-Nr. 5 \, St
- affel 341435\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x
- /-/spiel/031HO7T0TS000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E2 · Auswärts bei FSV 1910 Bergen 2
+DESCRIPTION:FSV 1910 Bergen 2 – Speuzer E2\nMannschaft: Speuzer E2\nWet
+ tbewerb: 1. Kreisklasse · EJ Quali Gr. 18 · Kreis Frankfurt\nRunde: Qu
+ alifikationsrunde\nAuswärtsspiel · Spielnummer 5 · Staffel 341435\nSp
+ ielstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussbal
+ l.de/spiel/x/-/spiel/031HO7T0TS000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T0TS000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -60,15 +70,17 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341435-7@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260905T110000
 DTEND;TZID=Europe/Berlin:20260905T130000
-SUMMARY:E2 (A) DJK SW Griesheim 3
-DESCRIPTION:DJK SW Griesheim 3 - FFV Sportfreunde 04 II\nSpiel-Nr. 7 \, S
- taffel 341435\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/
- x/-/spiel/031HO7T0RC000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E2 · Auswärts bei DJK SW Griesheim 3
+DESCRIPTION:DJK SW Griesheim 3 – Speuzer E2\nMannschaft: Speuzer E2\nWe
+ ttbewerb: 1. Kreisklasse · EJ Quali Gr. 18 · Kreis Frankfurt\nRunde: Q
+ ualifikationsrunde\nAuswärtsspiel · Spielnummer 7 · Staffel 341435\nS
+ pielstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussba
+ ll.de/spiel/x/-/spiel/031HO7T0RC000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T0RC000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -76,15 +88,18 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341435-10@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260912T113000
 DTEND;TZID=Europe/Berlin:20260912T133000
-SUMMARY:E2 (H) SG Bornheim / GW 3
-DESCRIPTION:FFV Sportfreunde 04 II - SG Bornheim / GW 3\nSpiel-Nr. 10 \, 
- Staffel 341435\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel
- /x/-/spiel/031HO7T0PO000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E2 · Heim gegen SG Bornheim / GW 3
+DESCRIPTION:Speuzer E2 – SG Bornheim / GW 3\nMannschaft: Speuzer E2\nWe
+ ttbewerb: 1. Kreisklasse · EJ Quali Gr. 18 · Kreis Frankfurt\nRunde: Q
+ ualifikationsrunde\nHeimspiel · Spielnummer 10 · Staffel 341435\nSpiel
+ stätte: Sportplatz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos 
+ zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031HO7T0PO000000VS548
+ 9BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T0PO000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -93,15 +108,17 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341435-14@speuzer.sportfreunde04.de
-DTSTAMP:20260821T060753Z
-LAST-MODIFIED:20260821T060753Z
-SEQUENCE:2
+DTSTAMP:20260821T070912Z
+LAST-MODIFIED:20260821T070912Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Berlin:20260926T123000
 DTEND;TZID=Europe/Berlin:20260926T143000
-SUMMARY:E2 (A) TSG 1888 Nieder-Erlenbach 2
-DESCRIPTION:TSG 1888 Nieder-Erlenbach 2 - FFV Sportfreunde 04 II\nSpiel-N
- r. 14 \, Staffel 341435\nQuelle: DFBnet \, Details: https://www.fussball
- .de/spiel/x/-/spiel/031HO7T12C000000VS5489BUVVKNMR0J
+SUMMARY:Speuzer E2 · Auswärts bei TSG 1888 Nieder-Erlenbach 2
+DESCRIPTION:TSG 1888 Nieder-Erlenbach 2 – Speuzer E2\nMannschaft: Speuz
+ er E2\nWettbewerb: 1. Kreisklasse · EJ Quali Gr. 18 · Kreis Frankfurt\
+ nRunde: Qualifikationsrunde\nAuswärtsspiel · Spielnummer 14 · Staffel
+  341435\nSpielstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://
+ www.fussball.de/spiel/x/-/spiel/031HO7T12C000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T12C000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
