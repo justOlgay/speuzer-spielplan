@@ -400,3 +400,64 @@ Im Kalender-Menü („…") steht **„ICal-Feed kopieren"**. Alles, was einmal 
 App-Termin existiert, können Eltern also direkt aus der App heraus im Handy-Kalender
 abonnieren – ohne GitHub. Für Phase 2 (Zu-/Absage über Anmeldeformulare) ist das der
 interessantere Weg: echte Termine in der App, Feed zum Abonnieren obendrauf.
+
+---
+
+## Stand 21.08.2026 – Kalender-Abo ist live
+
+### Wo alles liegt
+
+| Was | Wo |
+|---|---|
+| Repository | `github.com/justOlgay/speuzer-spielplan` (öffentlich) |
+| Abo-Seite für Eltern | `https://justolgay.github.io/speuzer-spielplan/` |
+| Kalender je Mannschaft | `…/herren.ics`, `a.ics`, `d1.ics` … `e3.ics` |
+| Alle Mannschaften | `…/alle.ics` (134 Spiele) |
+| **Nur Jugend (D + E)** | `…/jugend.ics` (78 Spiele) – **das steckt in der App** |
+
+GitHub Pages liefert `.ics` mit `Content-Type: text/calendar` – geprüft, appack akzeptiert es.
+Pages-Quelle: Branch `main`, Ordner `/docs`. Actions-Rechte stehen auf **Read and write**,
+damit der Workflow die neu gebauten Dateien zurückschreiben darf.
+
+### Warum in der App nur die Jugend hängt
+
+Der **Vereinskalender** in der App enthielt bereits die Spiele von **Herren und A-Junioren**
+(Format „Heim – Gast (Mannschaft)", 1:45 Dauer, gepflegt von jemand anderem). Ein Abo auf
+`alle.ics` hätte diese Spiele doppelt angezeigt. Deshalb:
+
+- **Vereinskalender** → bleibt zuständig für Herren und A-Junioren.
+- **„Spielplan Jugend (D & E)"** → Abo auf `jugend.ics`, deckt D1–D3 und E1–E3 ab, also genau
+  das, was dort noch fehlte. 78 Termine, keine Doppelten.
+
+Wer später zusammenlegen will, hat zwei Wege: die Spiele im Vereinskalender löschen und das
+Abo auf `alle.ics` umstellen – oder es so lassen. Kein technischer Zwang.
+
+### Kalender in der App (appack)
+
+- Name: **Spielplan Jugend (D & E)**, Farbe `1E4DD8`, Lesezugriff unbegrenzt,
+  Schreibzugriff niemand (es ist ein Abo).
+- appack legt aus `CATEGORIES` automatisch die Kategorie **Fussball** an – Eltern können damit
+  in der App filtern.
+- Das Modul **Termine** hat eine eigene Kalender-Auswahl
+  (*Einstellungen → Kalender*). Ein neuer Kalender ist dort **nicht automatisch aktiv** –
+  Haken setzen, sonst tauchen die Termine nirgends auf. Ebenfalls dort: *Zeitraum → Events
+  anzeigen bis Ende*; das stand auf „Dieses Jahr" und zeigte deshalb keine Rückrunde. Jetzt
+  **„Nächstes Jahr: 01.01.26 – 31.12.27"**.
+- Der Sync läuft von selbst (beobachtet: 07:42 und 07:54 Uhr) und lässt sich über
+  „…" → *Kalender synchronisieren* sofort auslösen. Achtung: die Bestätigung sagt, dass beim
+  Synchronisieren **alle bestehenden Termine des Kalenders gelöscht** werden – bei einem
+  Abo-Kalender ist das harmlos, in einem selbst gepflegten Kalender nicht.
+
+### Zeitabweichung, die geprüft werden muss
+
+A-Jugend am **22.08.2026**: unser DFBnet-Export sagt **15:00**, der Vereinskalender sagt
+**16:00**. Eine der beiden Quellen ist veraltet. FUSSBALL.DE bzw. DFBnet entscheidet – und
+danach die Zeile in `spiele.csv` oder der Termin im Vereinskalender korrigieren.
+
+### Was der Workflow tut
+
+`.github/workflows/build.yml` läuft täglich um 04:12 UTC und bei jeder Änderung an
+`spiele.csv` oder `build_ics.py`, baut alle `.ics`-Dateien neu und committet sie. Neue Spiele
+nachtragen heißt also: **eine Zeile in `spiele.csv` – fertig.** Die UID bleibt
+`<staffel>-<spielnummer>`, deshalb ändert sich ein verlegtes Spiel bei den Eltern im Handy,
+statt ein zweites Mal aufzutauchen.

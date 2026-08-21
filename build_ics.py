@@ -7,6 +7,7 @@ Umgebung: SEQ -> Sequenznummer (in GitHub Actions: GITHUB_RUN_NUMBER)
 Ausgabe in docs/:
   <team>.ics          je Mannschaft, abonnierbar in der Vereins-App und im Handy
   alle.ics            alle Mannschaften in einem Kalender
+  jugend.ics          nur D- und E-Jugend (Abo in der Vereins-App)
   index.html          Abo-Seite fuer Eltern
   app-<gruppe>.html   Spielplan-Seiten fuer die Vereins-App (eine je Altersklasse)
 
@@ -300,11 +301,12 @@ def schreibe_index():
     for t, v in TEAMS.items():
         zeilen.append('  { file:"%s.ics", name:"%s", meta:"%s" },'
                       % (t.lower(), v["label"], v["info"]))
-    zeilen.append('  { file:"alle.ics", name:"Alle Mannschaften", meta:"Herren, A-, D- und E-Jugend in einem Kalender" }')
+    zeilen.append('  { file:"alle.ics", name:"Alle Mannschaften", meta:"Herren, A-, D- und E-Jugend in einem Kalender" },')
+    zeilen.append('  { file:"jugend.ics", name:"Nur Jugend (D/E)", meta:"D1 bis E3 in einem Kalender - liegt so in der Vereins-App" }')
     html = (BASE / "vorlage_index.html").read_text(encoding="utf-8")
     (OUT / "index.html").write_text(html.replace("%TEAMS%", "\n".join(zeilen)),
                                     encoding="utf-8")
-    print("index.html         %3d Kalender" % (len(TEAMS) + 1))
+    print("index.html         %3d Kalender" % (len(TEAMS) + 2))
 
 
 def main():
@@ -314,6 +316,10 @@ def main():
         schreibe_ics("%s.ics" % t.lower(), "Speuzer %s" % v["label"],
                      [r for r in alle if r["team"] == t], stamp)
     schreibe_ics("alle.ics", "Speuzer Spielplan", alle, stamp)
+    # Nur Jugend (D + E): fuer das Abo in der Vereins-App, weil Herren und
+    # A-Jugend dort schon im Vereinskalender stehen -> keine Doppeltermine.
+    jugend = [r for r in alle if TEAMS[r["team"]]["gruppe"] in ("d", "e")]
+    schreibe_ics("jugend.ics", "Speuzer Jugend (D/E)", jugend, stamp)
     for g in GRUPPEN:
         schreibe_app_seite(g, [r for r in alle if TEAMS[r["team"]]["gruppe"] == g])
     schreibe_index()
