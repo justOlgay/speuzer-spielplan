@@ -1,0 +1,523 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FFV Sportfreunde 04//Spielplan//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Speuzer Herren
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+X-LIC-LOCATION:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:341727-5@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260802T150000
+DTEND;TZID=Europe/Berlin:20260802T170000
+SUMMARY:Herren (A) TSG 51 Ffm
+DESCRIPTION:TSG 51 Ffm - FFV Sportfreunde 04 FFM\nSpiel-Nr. 5 \, Staffel 
+ 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannschaft/x/
+ -/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-30@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260816T153000
+DTEND;TZID=Europe/Berlin:20260816T173000
+SUMMARY:Herren (A) VFR Bockenheim
+DESCRIPTION:VFR Bockenheim - FFV Sportfreunde 04 FFM\nSpiel-Nr. 30 \, Sta
+ ffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannscha
+ ft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-38@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260823T150000
+DTEND;TZID=Europe/Berlin:20260823T170000
+SUMMARY:Herren (H) SG Praunheim 1908
+DESCRIPTION:FFV Sportfreunde 04 FFM - SG Praunheim 1908\nSpiel-Nr. 38 \, 
+ Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel
+ /x/-/spiel/031D0TFC4C000000VS5489BUVUR5FS5A
+URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFC4C000000VS5489BUVUR5F
+ S5A
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-54@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260830T130000
+DTEND;TZID=Europe/Berlin:20260830T150000
+SUMMARY:Herren (A) Spvgg. 02 Griesheim II
+DESCRIPTION:Spvgg. 02 Griesheim II - FFV Sportfreunde 04 FFM\nSpiel-Nr. 5
+ 4 \, Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/
+ spiel/x/-/spiel/031D0TFC0K000000VS5489BUVUR5FS5A
+URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFC0K000000VS5489BUVUR5F
+ S5A
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-56@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260906T150000
+DTEND;TZID=Europe/Berlin:20260906T170000
+SUMMARY:Herren (H) DJK SW Griesheim
+DESCRIPTION:FFV Sportfreunde 04 FFM - DJK SW Griesheim\nSpiel-Nr. 56 \, S
+ taffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/
+ x/-/spiel/031D0TFB1C000000VS5489BUVUR5FS5A
+URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFB1C000000VS5489BUVUR5F
+ S5A
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-65@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260909T190000
+DTEND;TZID=Europe/Berlin:20260909T210000
+SUMMARY:Herren (H) TSG Niederrad 1898
+DESCRIPTION:FFV Sportfreunde 04 FFM - TSG Niederrad 1898\nSpiel-Nr. 65 \,
+  Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/spie
+ l/x/-/spiel/031D0TFEI8000000VS5489BUVUR5FS5A
+URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFEI8000000VS5489BUVUR5F
+ S5A
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-79@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260913T153000
+DTEND;TZID=Europe/Berlin:20260913T173000
+SUMMARY:Herren (A) SV Niederursel
+DESCRIPTION:SV Niederursel - FFV Sportfreunde 04 FFM\nSpiel-Nr. 79 \, Sta
+ ffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x/
+ -/spiel/031D0TFAQ4000000VS5489BUVUR5FS5A
+URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFAQ4000000VS5489BUVUR5F
+ S5A
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-83@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260920T150000
+DTEND;TZID=Europe/Berlin:20260920T170000
+SUMMARY:Herren (H) SC Riedberg
+DESCRIPTION:FFV Sportfreunde 04 FFM - SC Riedberg\nSpiel-Nr. 83 \, Staffe
+ l 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x/-/s
+ piel/031D0TFA20000000VS5489BUVUR5FS5A
+URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFA20000000VS5489BUVUR5F
+ S5A
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-95@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260927T123000
+DTEND;TZID=Europe/Berlin:20260927T143000
+SUMMARY:Herren (A) FC Tempo Ffm II
+DESCRIPTION:FC Tempo Ffm II - FFV Sportfreunde 04 FFM\nSpiel-Nr. 95 \, St
+ affel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x
+ /-/spiel/031D0TF9OC000000VS5489BUVUR5FS5A
+URL:https://www.fussball.de/spiel/x/-/spiel/031D0TF9OC000000VS5489BUVUR5F
+ S5A
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-101@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20261004T150000
+DTEND;TZID=Europe/Berlin:20261004T170000
+SUMMARY:Herren (H) FV 1920 Hausen
+DESCRIPTION:FFV Sportfreunde 04 FFM - FV 1920 Hausen\nSpiel-Nr. 101 \, St
+ affel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x
+ /-/spiel/031D0TF94K000000VS5489BUVUR5FS5A
+URL:https://www.fussball.de/spiel/x/-/spiel/031D0TF94K000000VS5489BUVUR5F
+ S5A
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-111@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20261011T150000
+DTEND;TZID=Europe/Berlin:20261011T170000
+SUMMARY:Herren (A) SV Eritrea Ffm
+DESCRIPTION:SV Eritrea Ffm - FFV Sportfreunde 04 FFM\nSpiel-Nr. 111 \, St
+ affel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x
+ /-/spiel/031D0TF8P0000000VS5489BUVUR5FS5A
+URL:https://www.fussball.de/spiel/x/-/spiel/031D0TF8P0000000VS5489BUVUR5F
+ S5A
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-119@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20261018T150000
+DTEND;TZID=Europe/Berlin:20261018T170000
+SUMMARY:Herren (H) FC Croatia Ffm
+DESCRIPTION:FFV Sportfreunde 04 FFM - FC Croatia Ffm\nSpiel-Nr. 119 \, St
+ affel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsch
+ aft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-128@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20261025T150000
+DTEND;TZID=Europe/Berlin:20261025T170000
+SUMMARY:Herren (H) FC Corumspor Ffm
+DESCRIPTION:FFV Sportfreunde 04 FFM - FC Corumspor Ffm\nSpiel-Nr. 128 \, 
+ Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/manns
+ chaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-144@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20261101T123000
+DTEND;TZID=Europe/Berlin:20261101T143000
+SUMMARY:Herren (A) Concordia Eschersheim II
+DESCRIPTION:Concordia Eschersheim II - FFV Sportfreunde 04 FFM\nSpiel-Nr.
+  144 \, Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.
+ de/mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-146@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20261108T143000
+DTEND;TZID=Europe/Berlin:20261108T163000
+SUMMARY:Herren (H) SG Harheim II
+DESCRIPTION:FFV Sportfreunde 04 FFM - SG Harheim II\nSpiel-Nr. 146 \, Sta
+ ffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannscha
+ ft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-156@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20261115T150000
+DTEND;TZID=Europe/Berlin:20261115T170000
+SUMMARY:Herren (H) VFR Bockenheim
+DESCRIPTION:FFV Sportfreunde 04 FFM - VFR Bockenheim\nSpiel-Nr. 156 \, St
+ affel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsch
+ aft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-176@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20261129T143000
+DTEND;TZID=Europe/Berlin:20261129T163000
+SUMMARY:Herren (H) TSG 51 Ffm
+DESCRIPTION:FFV Sportfreunde 04 FFM - TSG 51 Ffm\nSpiel-Nr. 176 \, Staffe
+ l 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannschaft/
+ x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-182@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20261206T120000
+DTEND;TZID=Europe/Berlin:20261206T140000
+SUMMARY:Herren (A) TSG Niederrad 1898
+DESCRIPTION:TSG Niederrad 1898 - FFV Sportfreunde 04 FFM\nSpiel-Nr. 182 \
+ , Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/man
+ nschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-200@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270228T150000
+DTEND;TZID=Europe/Berlin:20270228T170000
+SUMMARY:Herren (A) SG Praunheim 1908
+DESCRIPTION:SG Praunheim 1908 - FFV Sportfreunde 04 FFM\nSpiel-Nr. 200 \,
+  Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mann
+ schaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-216@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270307T153000
+DTEND;TZID=Europe/Berlin:20270307T173000
+SUMMARY:Herren (H) Spvgg. 02 Griesheim II
+DESCRIPTION:FFV Sportfreunde 04 FFM - Spvgg. 02 Griesheim II\nSpiel-Nr. 2
+ 16 \, Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de
+ /mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-218@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270314T150000
+DTEND;TZID=Europe/Berlin:20270314T170000
+SUMMARY:Herren (A) DJK SW Griesheim
+DESCRIPTION:DJK SW Griesheim - FFV Sportfreunde 04 FFM\nSpiel-Nr. 218 \, 
+ Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/manns
+ chaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-232@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270321T153000
+DTEND;TZID=Europe/Berlin:20270321T173000
+SUMMARY:Herren (H) SV Niederursel
+DESCRIPTION:FFV Sportfreunde 04 FFM - SV Niederursel\nSpiel-Nr. 232 \, St
+ affel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsch
+ aft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-236@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270404T150000
+DTEND;TZID=Europe/Berlin:20270404T170000
+SUMMARY:Herren (A) SC Riedberg
+DESCRIPTION:SC Riedberg - FFV Sportfreunde 04 FFM\nSpiel-Nr. 236 \, Staff
+ el 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannschaft
+ /x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-248@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270411T153000
+DTEND;TZID=Europe/Berlin:20270411T173000
+SUMMARY:Herren (H) FC Tempo Ffm II
+DESCRIPTION:FFV Sportfreunde 04 FFM - FC Tempo Ffm II\nSpiel-Nr. 248 \, S
+ taffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsc
+ haft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-254@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270418T150000
+DTEND;TZID=Europe/Berlin:20270418T170000
+SUMMARY:Herren (A) FV 1920 Hausen
+DESCRIPTION:FV 1920 Hausen - FFV Sportfreunde 04 FFM\nSpiel-Nr. 254 \, St
+ affel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsch
+ aft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-264@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270425T153000
+DTEND;TZID=Europe/Berlin:20270425T173000
+SUMMARY:Herren (H) SV Eritrea Ffm
+DESCRIPTION:FFV Sportfreunde 04 FFM - SV Eritrea Ffm\nSpiel-Nr. 264 \, St
+ affel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsch
+ aft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-272@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270502T150000
+DTEND;TZID=Europe/Berlin:20270502T170000
+SUMMARY:Herren (A) FC Croatia Ffm
+DESCRIPTION:FC Croatia Ffm - FFV Sportfreunde 04 FFM\nSpiel-Nr. 272 \, St
+ affel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsch
+ aft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-281@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270509T150000
+DTEND;TZID=Europe/Berlin:20270509T170000
+SUMMARY:Herren (A) FC Corumspor Ffm
+DESCRIPTION:FC Corumspor Ffm - FFV Sportfreunde 04 FFM\nSpiel-Nr. 281 \, 
+ Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/manns
+ chaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-297@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270515T150000
+DTEND;TZID=Europe/Berlin:20270515T170000
+SUMMARY:Herren (H) Concordia Eschersheim II
+DESCRIPTION:FFV Sportfreunde 04 FFM - Concordia Eschersheim II\nSpiel-Nr.
+  297 \, Staffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.
+ de/mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-299@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270523T130000
+DTEND;TZID=Europe/Berlin:20270523T150000
+SUMMARY:Herren (A) SG Harheim II
+DESCRIPTION:SG Harheim II - FFV Sportfreunde 04 FFM\nSpiel-Nr. 299 \, Sta
+ ffel 341727\nQuelle: DFBnet \, Details: https://www.fussball.de/mannscha
+ ft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spielplan D-Jugend</title>
+<script type="text/javascript" src="https://www.fussball.de/widgets.js"></script><style>
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:#1c2530;background:#fff;font-size:15px}
+.tabs{display:flex;gap:6px;padding:12px 12px 0;overflow-x:auto}
+.tab{flex:1 0 auto;min-width:74px;text-align:center;padding:9px 12px;border-radius:8px 8px 0 0;background:#eef2f7;color:#0b3c78;font-weight:600;cursor:pointer;border:none;font-size:15px}
+.tab.on{background:#0b3c78;color:#fff}
+.meta{padding:10px 14px 2px;font-size:.8rem;color:#5a6b80}
+.widgets{padding:2px 4px 0}
+.wbox{display:none}
+.wbox.on{display:block}
+.kapitel{display:flex;align-items:center;gap:10px;padding:18px 14px 6px;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:#8798ab;font-weight:700}
+.kapitel:after{content:"";flex:1;height:1px;background:#e6ebf2}
+table{width:100%;border-collapse:collapse}
+td{padding:9px 12px;border-bottom:1px solid #e6ebf2;vertical-align:top}
+tr.next td{background:#eef6ff}
+.d{white-space:nowrap;font-variant-numeric:tabular-nums;color:#0b3c78;font-weight:600;width:96px}
+.t{font-size:.78rem;color:#5a6b80;font-weight:400}
+.ha{display:inline-block;min-width:20px;font-weight:700;color:#0b3c78}
+.res{float:right;font-weight:700;color:#0b3c78}
+.fuss{padding:14px;font-size:.78rem;color:#6b7a8d;line-height:1.5}
+td a{color:inherit;text-decoration:none;display:block}
+.pfeil{color:#9fb0c4;font-weight:700;padding-left:6px}
+tr.grp td{background:#f6f8fc;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:#7286a0;font-weight:700;padding:11px 12px}
+</style></head><body>
+<div class="tabs" id="tabs"></div><div class="meta" id="meta"></div>
+<div class="widgets"><div class="wbox on" id="w-D1"><div class="fussballde_widget" data-id="97c0160c-4b7a-40e1-ac86-3c8a4b3c6f76" data-type="team-matches" style="width:100%"></div></div>
+<div class="wbox" id="w-D2"><div class="fussballde_widget" data-id="1e1dcbe7-34a6-4727-9744-68096138a415" data-type="team-matches" style="width:100%"></div></div>
+<div class="wbox" id="w-D3"><div class="fussballde_widget" data-id="81d9f5d7-9465-4aa5-ba6e-9830577ec0e6" data-type="team-matches" style="width:100%"></div></div></div>
+<div class="kapitel">Ganze Saison</div>
+<table><tbody id="liste"></tbody></table>
+<div class="fuss">Oben die letzten und naechsten Spiele direkt von FUSSBALL.DE, unten die
+komplette Saison aus dem DFBnet. H = Heimspiel, A = Auswaerts.
+Tippen auf ein Spiel oeffnet die Spielseite auf FUSSBALL.DE.
+Kurzfristige Absagen kommen per Push, nicht ueber diese Seite.
+F1, F2 und G-Jugend haben noch keine angesetzten Spiele – sobald der Kreis ansetzt, erscheinen sie hier.</div>
+<script>
+const STAFFEL = {"D1":["D1","Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt"],"D2":["D2","1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt"],"D3":["D3","1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt"]};
+const TEAMLINK = {"D1":"https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7","D2":"https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7","D3":"https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ"};
+const S = [
+["D1","H","2026-08-23","13:00","FG Seckbach 1","","031I71O4F8000000VS5489BUVVKNMR0J",""],
+["D1","H","2026-08-30","13:00","FFC Olympia 07 I","","031I71O5OO000000VS5489BUVVKNMR0J",""],
+["D1","A","2026-09-06","10:00","FC JUZ Fechenheim 1","","031I71O5BS000000VS5489BUVVKNMR0J",""],
+["D1","H","2026-09-13","13:00","Concordia Eschersheim","","031I71O57S000000VS5489BUVVKNMR0J",""],
+["D1","A","2026-09-27","09:30","FC Germ. 08 Ginnheim 1","","031I71O4J4000000VS5489BUVVKNMR0J",""],
+["D1","A","2026-10-25","10:30","1. Rödelheimer FC 02 1","","031I71O44S000000VS5489BUVVKNMR0J",""],
+["D1","H","2026-11-01","13:00","FSV 1910 Bergen 1","","031I71O3VS000000VS5489BUVVKNMR0J",""],
+["D1","A","2026-11-07","14:00","FV 09 Eschersheim 2","","031I71O3PO000000VS5489BUVVKNMR0J",""],
+["D1","H","2026-11-29","13:00","Spvgg. Kickers 1916 1","","",""],
+["D1","A","2026-12-06","11:00","FC Germania 1911 Enkheim 1","","",""],
+["D1","A","2027-02-14","09:00","FFC Olympia 07 I","","",""],
+["D1","A","2027-02-21","09:00","FG Seckbach 1","","",""],
+["D1","A","2027-02-27","10:30","Spvgg. Kickers 1916 1","","",""],
+["D1","H","2027-03-07","13:00","FC Germania 1911 Enkheim 1","","",""],
+["D1","H","2027-03-14","13:00","FC JUZ Fechenheim 1","","",""],
+["D1","A","2027-04-11","09:30","Concordia Eschersheim","","",""],
+["D1","H","2027-04-25","13:00","FC Germ. 08 Ginnheim 1","","",""],
+["D1","H","2027-05-09","13:00","1. Rödelheimer FC 02 1","","",""],
+["D1","H","2027-05-23","13:00","FV 09 Eschersheim 2","","",""],
+["D1","A","2027-05-30","10:00","FSV 1910 Bergen 1","","",""],
+["D2","H","2026-08-23","11:30","VFR Bockenheim 2","","031I71UTJ4000000VS5489BUVVKNMR0J",""],
+["D2","H","2026-08-30","11:30","TSG Frankfurter Berg I","","031I71UURG000000VS5489BUVVKNMR0J",""],
+["D2","A","2026-09-05","12:30","SV Blau-Gelb FFM 3","","031I71UUF8000000VS5489BUVVKNMR0J",""],
+["D2","H","2026-09-13","11:30","Concordia Eschersheim II","","031I71UUB8000000VS5489BUVVKNMR0J",""],
+["D2","A","2026-09-20","11:00","SG Harheim 2","","031I71UU4K000000VS5489BUVVKNMR0J",""],
+["D2","A","2026-09-27","10:30","FC Fortuna Frankfurt","","031I71UTNC000000VS5489BUVVKNMR0J",""],
+["D2","A","2026-10-25","09:00","1. Rödelheimer FC 02 2","","031I71UT9O000000VS5489BUVVKNMR0J",""],
+["D2","H","2026-11-01","11:30","FC Union Niederrad 3","","031I71UT4G000000VS5489BUVVKNMR0J",""],
+["D2","A","2026-11-07","11:00","FC Germ. 08 Ginnheim 2","","031I71USV4000000VS5489BUVVKNMR0J",""],
+["D2","H","2026-11-29","11:30","Spvgg. 03 Fechenheim","","031I71USNS000000VS5489BUVVKNMR0J",""],
+["D2","A","2026-12-06","09:00","SV 1894 Sachsenhausen 1","","",""],
+["D2","A","2027-02-13","14:00","TSG Frankfurter Berg I","","",""],
+["D2","A","2027-02-21","11:00","VFR Bockenheim 2","","",""],
+["D2","A","2027-02-27","10:45","Spvgg. 03 Fechenheim","","",""],
+["D2","H","2027-03-07","11:30","SV 1894 Sachsenhausen 1","","",""],
+["D2","H","2027-03-14","11:30","SV Blau-Gelb FFM 3","","",""],
+["D2","A","2027-04-10","12:00","Concordia Eschersheim II","","",""],
+["D2","H","2027-04-18","11:30","SG Harheim 2","","",""],
+["D2","H","2027-04-25","11:30","FC Fortuna Frankfurt","","",""],
+["D2","H","2027-05-09","11:30","1. Rödelheimer FC 02 2","","",""],
+["D2","H","2027-05-23","11:30","FC Germ. 08 Ginnheim 2","","",""],
+["D2","A","2027-05-30","09:00","FC Union Niederrad 3","","",""],
+["D3","H","2026-08-23","10:00","VfL Germania 1894 2","","031I71TML8000000VS5489BUVVKNMR0J",""],
+["D3","H","2026-08-30","10:00","SC Weiss-Blau Frankfurt 3","","031I71TNSC000000VS5489BUVVKNMR0J",""],
+["D3","A","2026-09-06","09:30","SV Blau-Gelb FFM 2","","031I71TNEO000000VS5489BUVVKNMR0J",""],
+["D3","H","2026-09-13","10:00","TV Preungesheim 1","","031I71TNB8000000VS5489BUVVKNMR0J",""],
+["D3","A","2026-09-20","11:00","Spvgg. Oberrad IV","","031I71TN3S000000VS5489BUVVKNMR0J",""],
+["D3","A","2026-09-27","11:00","TSG 51 Frankfurt II","","031I71TMO8000000VS5489BUVVKNMR0J",""],
+["D3","A","2026-10-24","11:00","FSV 1910 Bergen 3","","031I71TMD0000000VS5489BUVVKNMR0J",""],
+["D3","H","2026-11-01","10:00","SG Bornheim / GW 2","","031I71TM9C000000VS5489BUVVKNMR0J",""],
+["D3","A","2026-11-08","09:30","DJK SW Griesheim 4","","031I71TM4S000000VS5489BUVVKNMR0J",""],
+["D3","H","2026-11-29","10:00","SV Griesheim Tarik","","031I71TLV0000000VS5489BUVVKNMR0J",""],
+["D3","A","2026-12-06","09:00","TuS Makkabi Frankfurt 6","","",""],
+["D3","A","2027-02-14","11:00","SC Weiss-Blau Frankfurt 3","","",""],
+["D3","A","2027-02-20","11:30","VfL Germania 1894 2","","",""],
+["D3","A","2027-02-27","13:00","SV Griesheim Tarik","","",""],
+["D3","H","2027-03-07","10:00","TuS Makkabi Frankfurt 6","","",""],
+["D3","H","2027-03-14","10:00","SV Blau-Gelb FFM 2","","",""],
+["D3","A","2027-04-11","09:00","TV Preungesheim 1","","",""],
+["D3","H","2027-04-18","10:00","Spvgg. Oberrad IV","","",""],
+["D3","H","2027-04-25","10:00","TSG 51 Frankfurt II","","",""],
+["D3","H","2027-05-09","10:00","FSV 1910 Bergen 3","","",""],
+["D3","H","2027-05-23","10:00","DJK SW Griesheim 4","","",""],
+["D3","A","2027-05-30","09:30","SG Bornheim / GW 2","","",""]];
+const heute = new Date();
+let aktiv = Object.keys(STAFFEL)[0];
+function render(){
+  const keys = Object.keys(STAFFEL);
+  document.getElementById("tabs").innerHTML = keys.length < 2 ? "" : keys.map(t =>
+    `<button class="tab${t===aktiv?" on":""}" onclick="aktiv='${t}';render()">${t}</button>`).join("");
+  document.getElementById("meta").textContent = STAFFEL[aktiv][1];
+  keys.forEach(t => {
+    const box = document.getElementById("w-" + STAFFEL[t][0]);
+    if (box) box.className = "wbox" + (t===aktiv ? " on" : "");
+  });
+  const spiele = S.filter(s => s[0]===aktiv);
+  const naechstes = spiele.find(s => new Date(s[2]+"T"+s[3]) >= heute);
+  let gruppe = null;
+  document.getElementById("liste").innerHTML = spiele.map(s => {
+    const d = new Date(s[2]+"T"+s[3]);
+    const tag = d.toLocaleDateString("de-DE",{weekday:"short",day:"2-digit",month:"2-digit"});
+    const ist = naechstes && s[2]===naechstes[2] && s[4]===naechstes[4];
+    const url = s[6] ? "https://www.fussball.de/spiel/x/-/spiel/"+s[6] : TEAMLINK[s[0]];
+    let kopf = "";
+    if (s[7] && s[7] !== gruppe) { gruppe = s[7]; kopf = `<tr class="grp"><td colspan="2">${s[7]}</td></tr>`; }
+    return kopf + `<tr class="${ist?"next":""}"><td class="d">${tag}<br><span class="t">${s[3]} Uhr</span></td>`
+      + `<td><a href="${url}" target="_blank" rel="noopener"><span class="ha">${s[1]}</span> ${s[4]}`
+      + `${s[5]?`<span class="res">${s[5]}</span>`:`<span class="pfeil">\u203a</span>`}</a></td></tr>`;
+  }).join("");
+}
+render();
+</script></body></html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spielplan A-Jugend</title>
+<script type="text/javascript" src="https://www.fussball.de/widgets.js"></script><style>
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:#1c2530;background:#fff;font-size:15px}
+.tabs{display:flex;gap:6px;padding:12px 12px 0;overflow-x:auto}
+.tab{flex:1 0 auto;min-width:74px;text-align:center;padding:9px 12px;border-radius:8px 8px 0 0;background:#eef2f7;color:#0b3c78;font-weight:600;cursor:pointer;border:none;font-size:15px}
+.tab.on{background:#0b3c78;color:#fff}
+.meta{padding:10px 14px 2px;font-size:.8rem;color:#5a6b80}
+.widgets{padding:2px 4px 0}
+.wbox{display:none}
+.wbox.on{display:block}
+.kapitel{display:flex;align-items:center;gap:10px;padding:18px 14px 6px;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:#8798ab;font-weight:700}
+.kapitel:after{content:"";flex:1;height:1px;background:#e6ebf2}
+table{width:100%;border-collapse:collapse}
+td{padding:9px 12px;border-bottom:1px solid #e6ebf2;vertical-align:top}
+tr.next td{background:#eef6ff}
+.d{white-space:nowrap;font-variant-numeric:tabular-nums;color:#0b3c78;font-weight:600;width:96px}
+.t{font-size:.78rem;color:#5a6b80;font-weight:400}
+.ha{display:inline-block;min-width:20px;font-weight:700;color:#0b3c78}
+.res{float:right;font-weight:700;color:#0b3c78}
+.fuss{padding:14px;font-size:.78rem;color:#6b7a8d;line-height:1.5}
+td a{color:inherit;text-decoration:none;display:block}
+.pfeil{color:#9fb0c4;font-weight:700;padding-left:6px}
+tr.grp td{background:#f6f8fc;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:#7286a0;font-weight:700;padding:11px 12px}
+</style></head><body>
+<div class="tabs" id="tabs"></div><div class="meta" id="meta"></div>
+<div class="widgets"><div class="wbox on" id="w-A"><div class="fussballde_widget" data-id="7f1d494c-ad2d-47d0-bb61-f4f0106ac2c4" data-type="team-matches" style="width:100%"></div></div></div>
+<div class="kapitel">Ganze Saison</div>
+<table><tbody id="liste"></tbody></table>
+<div class="fuss">Oben die letzten und naechsten Spiele direkt von FUSSBALL.DE, unten die
+komplette Saison aus dem DFBnet. H = Heimspiel, A = Auswaerts.
+Tippen auf ein Spiel oeffnet die Spielseite auf FUSSBALL.DE.
+Kurzfristige Absagen kommen per Push, nicht ueber diese Seite.</div>
+<script>
+const STAFFEL = {"A-Jugend":["A","Gruppenliga · AJGL Frankfurt · Region Frankfurt"]};
+const TEAMLINK = {"A-Jugend":"https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G"};
+const S = [
+["A-Jugend","A","2026-08-22","15:00","FV Bad Vilbel 1","","031D5JEMAC000000VS5489BUVUR5FS5A",""],
+["A-Jugend","A","2026-08-29","18:00","Spvgg. Langenselbold 1","","031D5JELKG000000VS5489BUVUR5FS5A",""],
+["A-Jugend","H","2026-09-05","16:00","SV Viktoria Preussen 1","","031D5JELH0000000VS5489BUVUR5FS5A",""],
+["A-Jugend","A","2026-09-12","15:00","1. FC 1906 Erlensee 2","","031D5JEL3K000000VS5489BUVUR5FS5A",""],
+["A-Jugend","H","2026-09-19","16:00","TuS Makkabi Frankfurt 1","","031D5JEKS8000000VS5489BUVUR5FS5A",""],
+["A-Jugend","A","2026-09-26","16:00","Spvgg. Oberrad 1","","031D5JEKBG000000VS5489BUVUR5FS5A",""],
+["A-Jugend","H","2026-10-03","16:00","Spvgg. Neu-Isenburg 2","","031D5JEK6G000000VS5489BUVUR5FS5A",""],
+["A-Jugend","H","2026-10-17","16:00","Karbener SV 2","","031D5JEJ2G000000VS5489BUVUR5FS5A",""],
+["A-Jugend","A","2026-10-24","13:00","SG Oberhoechstadt 1","","031D5JEJRK000000VS5489BUVUR5FS5A",""],
+["A-Jugend","H","2026-10-31","16:00","FC Bayern Alzenau 2","","",""],
+["A-Jugend","A","2026-11-08","11:00","FSV Bischofsheim 1","","",""],
+["A-Jugend","H","2026-11-21","16:00","JFV Nidda / Schotten 1","","",""],
+["A-Jugend","A","2026-11-28","18:00","JSG Kirdorf 1","","",""],
+["A-Jugend","H","2027-02-27","16:00","FV Bad Vilbel 1","","",""],
+["A-Jugend","A","2027-03-06","18:00","JFV Nidda / Schotten 1","","",""],
+["A-Jugend","A","2027-03-13","18:00","SV Viktoria Preussen 1","","",""],
+["A-Jugend","H","2027-03-20","16:00","1. FC 1906 Erlensee 2","","",""],
+["A-Jugend","A","2027-04-03","16:00","TuS Makkabi Frankfurt 1","","",""],
+["A-Jugend","H","2027-04-10","16:00","Spvgg. Oberrad 1","","",""],
+["A-Jugend","A","2027-04-17","16:00","Spvgg. Neu-Isenburg 2","","",""],
+["A-Jugend","H","2027-04-24","16:00","SG Oberhoechstadt 1","","",""],
+["A-Jugend","A","2027-05-02","11:00","FC Bayern Alzenau 2","","",""],
+["A-Jugend","H","2027-05-08","16:00","FSV Bischofsheim 1","","",""],
+["A-Jugend","H","2027-05-22","16:00","JSG Kirdorf 1","","",""],
+["A-Jugend","A","2027-05-30","18:15","Karbener SV 2","","",""],
+["A-Jugend","H","2027-06-05","18:00","Spvgg. Langenselbold 1","","",""]];
+const heute = new Date();
+let aktiv = Object.keys(STAFFEL)[0];
+function render(){
+  const keys = Object.keys(STAFFEL);
+  document.getElementById("tabs").innerHTML = keys.length < 2 ? "" : keys.map(t =>
+    `<button class="tab${t===aktiv?" on":""}" onclick="aktiv='${t}';render()">${t}</button>`).join("");
+  document.getElementById("meta").textContent = STAFFEL[aktiv][1];
+  keys.forEach(t => {
+    const box = document.getElementById("w-" + STAFFEL[t][0]);
+    if (box) box.className = "wbox" + (t===aktiv ? " on" : "");
+  });
+  const spiele = S.filter(s => s[0]===aktiv);
+  const naechstes = spiele.find(s => new Date(s[2]+"T"+s[3]) >= heute);
+  let gruppe = null;
+  document.getElementById("liste").innerHTML = spiele.map(s => {
+    const d = new Date(s[2]+"T"+s[3]);
+    const tag = d.toLocaleDateString("de-DE",{weekday:"short",day:"2-digit",month:"2-digit"});
+    const ist = naechstes && s[2]===naechstes[2] && s[4]===naechstes[4];
+    const url = s[6] ? "https://www.fussball.de/spiel/x/-/spiel/"+s[6] : TEAMLINK[s[0]];
+    let kopf = "";
+    if (s[7] && s[7] !== gruppe) { gruppe = s[7]; kopf = `<tr class="grp"><td colspan="2">${s[7]}</td></tr>`; }
+    return kopf + `<tr class="${ist?"next":""}"><td class="d">${tag}<br><span class="t">${s[3]} Uhr</span></td>`
+      + `<td><a href="${url}" target="_blank" rel="noopener"><span class="ha">${s[1]}</span> ${s[4]}`
+      + `${s[5]?`<span class="res">${s[5]}</span>`:`<span class="pfeil">\u203a</span>`}</a></td></tr>`;
+  }).join("");
+}
+render();
+</script></body></html>

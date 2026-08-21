@@ -1,0 +1,358 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FFV Sportfreunde 04//Spielplan//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Speuzer D1
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+X-LIC-LOCATION:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:340782-4@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260823T130000
+DTEND;TZID=Europe/Berlin:20260823T150000
+SUMMARY:D1 (H) FG Seckbach 1
+DESCRIPTION:FFV Sportfreunde 04 I - FG Seckbach 1\nSpiel-Nr. 4 \, Staffel
+  340782\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x/-/sp
+ iel/031I71O4F8000000VS5489BUVVKNMR0J
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71O4F8000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-10@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260830T130000
+DTEND;TZID=Europe/Berlin:20260830T150000
+SUMMARY:D1 (H) FFC Olympia 07 I
+DESCRIPTION:FFV Sportfreunde 04 I - FFC Olympia 07 I\nSpiel-Nr. 10 \, Sta
+ ffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x/
+ -/spiel/031I71O5OO000000VS5489BUVVKNMR0J
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71O5OO000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-13@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260906T100000
+DTEND;TZID=Europe/Berlin:20260906T120000
+SUMMARY:D1 (A) FC JUZ Fechenheim 1
+DESCRIPTION:FC JUZ Fechenheim 1 - FFV Sportfreunde 04 I\nSpiel-Nr. 13 \, 
+ Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel
+ /x/-/spiel/031I71O5BS000000VS5489BUVVKNMR0J
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71O5BS000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-22@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260913T130000
+DTEND;TZID=Europe/Berlin:20260913T150000
+SUMMARY:D1 (H) Concordia Eschersheim
+DESCRIPTION:FFV Sportfreunde 04 I - Concordia Eschersheim\nSpiel-Nr. 22 \
+ , Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/spi
+ el/x/-/spiel/031I71O57S000000VS5489BUVVKNMR0J
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71O57S000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-31@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260927T093000
+DTEND;TZID=Europe/Berlin:20260927T113000
+SUMMARY:D1 (A) FC Germ. 08 Ginnheim 1
+DESCRIPTION:FC Germ. 08 Ginnheim 1 - FFV Sportfreunde 04 I\nSpiel-Nr. 31 
+ \, Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/sp
+ iel/x/-/spiel/031I71O4J4000000VS5489BUVVKNMR0J
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71O4J4000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-38@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20261025T103000
+DTEND;TZID=Europe/Berlin:20261025T123000
+SUMMARY:D1 (A) 1. Rödelheimer FC 02 1
+DESCRIPTION:1. Rödelheimer FC 02 1 - FFV Sportfreunde 04 I\nSpiel-Nr. 38
+  \, Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/s
+ piel/x/-/spiel/031I71O44S000000VS5489BUVVKNMR0J
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71O44S000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-46@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20261101T130000
+DTEND;TZID=Europe/Berlin:20261101T150000
+SUMMARY:D1 (H) FSV 1910 Bergen 1
+DESCRIPTION:FFV Sportfreunde 04 I - FSV 1910 Bergen 1\nSpiel-Nr. 46 \, St
+ affel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x
+ /-/spiel/031I71O3VS000000VS5489BUVVKNMR0J
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71O3VS000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-53@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20261107T140000
+DTEND;TZID=Europe/Berlin:20261107T160000
+SUMMARY:D1 (A) FV 09 Eschersheim 2
+DESCRIPTION:FV 09 Eschersheim 2 - FFV Sportfreunde 04 I\nSpiel-Nr. 53 \, 
+ Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel
+ /x/-/spiel/031I71O3PO000000VS5489BUVVKNMR0J
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71O3PO000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-58@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20261129T130000
+DTEND;TZID=Europe/Berlin:20261129T150000
+SUMMARY:D1 (H) Spvgg. Kickers 1916 1
+DESCRIPTION:FFV Sportfreunde 04 I - Spvgg. Kickers 1916 1\nSpiel-Nr. 58 \
+ , Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/man
+ nschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-63@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20261206T110000
+DTEND;TZID=Europe/Berlin:20261206T130000
+SUMMARY:D1 (A) FC Germania 1911 Enkheim 1
+DESCRIPTION:FC Germania 1911 Enkheim 1 - FFV Sportfreunde 04 I\nSpiel-Nr.
+  63 \, Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.d
+ e/mannschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-130@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270214T090000
+DTEND;TZID=Europe/Berlin:20270214T110000
+SUMMARY:D1 (A) FFC Olympia 07 I
+DESCRIPTION:FFC Olympia 07 I - FFV Sportfreunde 04 I\nSpiel-Nr. 130 \, St
+ affel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsch
+ aft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-70@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270221T090000
+DTEND;TZID=Europe/Berlin:20270221T110000
+SUMMARY:D1 (A) FG Seckbach 1
+DESCRIPTION:FG Seckbach 1 - FFV Sportfreunde 04 I\nSpiel-Nr. 70 \, Staffe
+ l 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/mannschaft/
+ x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-76@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270227T103000
+DTEND;TZID=Europe/Berlin:20270227T123000
+SUMMARY:D1 (A) Spvgg. Kickers 1916 1
+DESCRIPTION:Spvgg. Kickers 1916 1 - FFV Sportfreunde 04 I\nSpiel-Nr. 76 \
+ , Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/man
+ nschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-81@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270307T130000
+DTEND;TZID=Europe/Berlin:20270307T150000
+SUMMARY:D1 (H) FC Germania 1911 Enkheim 1
+DESCRIPTION:FFV Sportfreunde 04 I - FC Germania 1911 Enkheim 1\nSpiel-Nr.
+  81 \, Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.d
+ e/mannschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-85@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270314T130000
+DTEND;TZID=Europe/Berlin:20270314T150000
+SUMMARY:D1 (H) FC JUZ Fechenheim 1
+DESCRIPTION:FFV Sportfreunde 04 I - FC JUZ Fechenheim 1\nSpiel-Nr. 85 \, 
+ Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/manns
+ chaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-94@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270411T093000
+DTEND;TZID=Europe/Berlin:20270411T113000
+SUMMARY:D1 (A) Concordia Eschersheim
+DESCRIPTION:Concordia Eschersheim - FFV Sportfreunde 04 I\nSpiel-Nr. 94 \
+ , Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/man
+ nschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-103@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270425T130000
+DTEND;TZID=Europe/Berlin:20270425T150000
+SUMMARY:D1 (H) FC Germ. 08 Ginnheim 1
+DESCRIPTION:FFV Sportfreunde 04 I - FC Germ. 08 Ginnheim 1\nSpiel-Nr. 103
+  \, Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/m
+ annschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-110@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270509T130000
+DTEND;TZID=Europe/Berlin:20270509T150000
+SUMMARY:D1 (H) 1. Rödelheimer FC 02 1
+DESCRIPTION:FFV Sportfreunde 04 I - 1. Rödelheimer FC 02 1\nSpiel-Nr. 11
+ 0 \, Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/
+ mannschaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-119@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270523T130000
+DTEND;TZID=Europe/Berlin:20270523T150000
+SUMMARY:D1 (H) FV 09 Eschersheim 2
+DESCRIPTION:FFV Sportfreunde 04 I - FV 09 Eschersheim 2\nSpiel-Nr. 119 \,
+  Staffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/mann
+ schaft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340782-124@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270530T100000
+DTEND;TZID=Europe/Berlin:20270530T120000
+SUMMARY:D1 (A) FSV 1910 Bergen 1
+DESCRIPTION:FSV 1910 Bergen 1 - FFV Sportfreunde 04 I\nSpiel-Nr. 124 \, S
+ taffel 340782\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsc
+ haft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

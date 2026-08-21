@@ -1,0 +1,391 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FFV Sportfreunde 04//Spielplan//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Speuzer D2
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+X-LIC-LOCATION:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:341874-4@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260823T113000
+DTEND;TZID=Europe/Berlin:20260823T133000
+SUMMARY:D2 (H) VFR Bockenheim 2
+DESCRIPTION:FFV Sportfreunde 04 II - VFR Bockenheim 2\nSpiel-Nr. 4 \, Sta
+ ffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x/
+ -/spiel/031I71UTJ4000000VS5489BUVVKNMR0J
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71UTJ4000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-10@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260830T113000
+DTEND;TZID=Europe/Berlin:20260830T133000
+SUMMARY:D2 (H) TSG Frankfurter Berg I
+DESCRIPTION:FFV Sportfreunde 04 II - TSG Frankfurter Berg I\nSpiel-Nr. 10
+  \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/s
+ piel/x/-/spiel/031I71UURG000000VS5489BUVVKNMR0J
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71UURG000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-13@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260905T123000
+DTEND;TZID=Europe/Berlin:20260905T143000
+SUMMARY:D2 (A) SV Blau-Gelb FFM 3
+DESCRIPTION:SV Blau-Gelb FFM 3 - FFV Sportfreunde 04 II\nSpiel-Nr. 13 \, 
+ Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel
+ /x/-/spiel/031I71UUF8000000VS5489BUVVKNMR0J
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71UUF8000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-22@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260913T113000
+DTEND;TZID=Europe/Berlin:20260913T133000
+SUMMARY:D2 (H) Concordia Eschersheim II
+DESCRIPTION:FFV Sportfreunde 04 II - Concordia Eschersheim II\nSpiel-Nr. 
+ 22 \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de
+ /spiel/x/-/spiel/031I71UUB8000000VS5489BUVVKNMR0J
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71UUB8000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-29@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260920T110000
+DTEND;TZID=Europe/Berlin:20260920T130000
+SUMMARY:D2 (A) SG Harheim 2
+DESCRIPTION:SG Harheim 2 - FFV Sportfreunde 04 II\nSpiel-Nr. 29 \, Staffe
+ l 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/spiel/x/-/s
+ piel/031I71UU4K000000VS5489BUVVKNMR0J
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71UU4K000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-31@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20260927T103000
+DTEND;TZID=Europe/Berlin:20260927T123000
+SUMMARY:D2 (A) FC Fortuna Frankfurt
+DESCRIPTION:FC Fortuna Frankfurt - FFV Sportfreunde 04 II\nSpiel-Nr. 31 \
+ , Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/spi
+ el/x/-/spiel/031I71UTNC000000VS5489BUVVKNMR0J
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71UTNC000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-38@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20261025T090000
+DTEND;TZID=Europe/Berlin:20261025T110000
+SUMMARY:D2 (A) 1. Rödelheimer FC 02 2
+DESCRIPTION:1. Rödelheimer FC 02 2 - FFV Sportfreunde 04 II\nSpiel-Nr. 3
+ 8 \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/
+ spiel/x/-/spiel/031I71UT9O000000VS5489BUVVKNMR0J
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71UT9O000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-46@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20261101T113000
+DTEND;TZID=Europe/Berlin:20261101T133000
+SUMMARY:D2 (H) FC Union Niederrad 3
+DESCRIPTION:FFV Sportfreunde 04 II - FC Union Niederrad 3\nSpiel-Nr. 46 \
+ , Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/spi
+ el/x/-/spiel/031I71UT4G000000VS5489BUVVKNMR0J
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71UT4G000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-53@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20261107T110000
+DTEND;TZID=Europe/Berlin:20261107T130000
+SUMMARY:D2 (A) FC Germ. 08 Ginnheim 2
+DESCRIPTION:FC Germ. 08 Ginnheim 2 - FFV Sportfreunde 04 II\nSpiel-Nr. 53
+  \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/s
+ piel/x/-/spiel/031I71USV4000000VS5489BUVVKNMR0J
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71USV4000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-58@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20261129T113000
+DTEND;TZID=Europe/Berlin:20261129T133000
+SUMMARY:D2 (H) Spvgg. 03 Fechenheim
+DESCRIPTION:FFV Sportfreunde 04 II - Spvgg. 03 Fechenheim\nSpiel-Nr. 58 \
+ , Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/spi
+ el/x/-/spiel/031I71USNS000000VS5489BUVVKNMR0J
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71USNS000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-63@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20261206T090000
+DTEND;TZID=Europe/Berlin:20261206T110000
+SUMMARY:D2 (A) SV 1894 Sachsenhausen 1
+DESCRIPTION:SV 1894 Sachsenhausen 1 - FFV Sportfreunde 04 II\nSpiel-Nr. 6
+ 3 \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/
+ mannschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-130@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270213T140000
+DTEND;TZID=Europe/Berlin:20270213T160000
+SUMMARY:D2 (A) TSG Frankfurter Berg I
+DESCRIPTION:TSG Frankfurter Berg I - FFV Sportfreunde 04 II\nSpiel-Nr. 13
+ 0 \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/
+ mannschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-70@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270221T110000
+DTEND;TZID=Europe/Berlin:20270221T130000
+SUMMARY:D2 (A) VFR Bockenheim 2
+DESCRIPTION:VFR Bockenheim 2 - FFV Sportfreunde 04 II\nSpiel-Nr. 70 \, St
+ affel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/mannsch
+ aft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-76@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270227T104500
+DTEND;TZID=Europe/Berlin:20270227T124500
+SUMMARY:D2 (A) Spvgg. 03 Fechenheim
+DESCRIPTION:Spvgg. 03 Fechenheim - FFV Sportfreunde 04 II\nSpiel-Nr. 76 \
+ , Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/man
+ nschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-81@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270307T113000
+DTEND;TZID=Europe/Berlin:20270307T133000
+SUMMARY:D2 (H) SV 1894 Sachsenhausen 1
+DESCRIPTION:FFV Sportfreunde 04 II - SV 1894 Sachsenhausen 1\nSpiel-Nr. 8
+ 1 \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/
+ mannschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-85@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270314T113000
+DTEND;TZID=Europe/Berlin:20270314T133000
+SUMMARY:D2 (H) SV Blau-Gelb FFM 3
+DESCRIPTION:FFV Sportfreunde 04 II - SV Blau-Gelb FFM 3\nSpiel-Nr. 85 \, 
+ Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/manns
+ chaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-94@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270410T120000
+DTEND;TZID=Europe/Berlin:20270410T140000
+SUMMARY:D2 (A) Concordia Eschersheim II
+DESCRIPTION:Concordia Eschersheim II - FFV Sportfreunde 04 II\nSpiel-Nr. 
+ 94 \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de
+ /mannschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-101@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270418T113000
+DTEND;TZID=Europe/Berlin:20270418T133000
+SUMMARY:D2 (H) SG Harheim 2
+DESCRIPTION:FFV Sportfreunde 04 II - SG Harheim 2\nSpiel-Nr. 101 \, Staff
+ el 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/mannschaft
+ /x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-103@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270425T113000
+DTEND;TZID=Europe/Berlin:20270425T133000
+SUMMARY:D2 (H) FC Fortuna Frankfurt
+DESCRIPTION:FFV Sportfreunde 04 II - FC Fortuna Frankfurt\nSpiel-Nr. 103 
+ \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/ma
+ nnschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-110@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270509T113000
+DTEND;TZID=Europe/Berlin:20270509T133000
+SUMMARY:D2 (H) 1. Rödelheimer FC 02 2
+DESCRIPTION:FFV Sportfreunde 04 II - 1. Rödelheimer FC 02 2\nSpiel-Nr. 1
+ 10 \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de
+ /mannschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-119@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270523T113000
+DTEND;TZID=Europe/Berlin:20270523T133000
+SUMMARY:D2 (H) FC Germ. 08 Ginnheim 2
+DESCRIPTION:FFV Sportfreunde 04 II - FC Germ. 08 Ginnheim 2\nSpiel-Nr. 11
+ 9 \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/
+ mannschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341874-124@speuzer.sportfreunde04.de
+DTSTAMP:20260820T161404Z
+LAST-MODIFIED:20260820T161404Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Berlin:20270530T090000
+DTEND;TZID=Europe/Berlin:20270530T110000
+SUMMARY:D2 (A) FC Union Niederrad 3
+DESCRIPTION:FC Union Niederrad 3 - FFV Sportfreunde 04 II\nSpiel-Nr. 124 
+ \, Staffel 341874\nQuelle: DFBnet \, Details: https://www.fussball.de/ma
+ nnschaft/x/-/saison/2627/team-id/011MIF9LDC000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIF9LDC
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
