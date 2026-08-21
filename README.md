@@ -461,3 +461,73 @@ danach die Zeile in `spiele.csv` oder der Termin im Vereinskalender korrigieren.
 nachtragen heißt also: **eine Zeile in `spiele.csv` – fertig.** Die UID bleibt
 `<staffel>-<spielnummer>`, deshalb ändert sich ein verlegtes Spiel bei den Eltern im Handy,
 statt ein zweites Mal aufzutauchen.
+
+---
+
+## Stand 21.08.2026, 09:30 – eine Quelle, einheitliche Darstellung
+
+### Alle acht Mannschaften kommen jetzt aus dem Feed
+
+Der Kalender in der App heißt **„Spielplan (alle Mannschaften)"** und abonniert `alle.ics`
+(134 Spiele, Herren bis E3). Der **Vereinskalender** ist im Modul *Termine* **abgewählt** –
+er enthielt 23 von Hand eingetragene Spiele von Herren und A-Junioren (nur Hinrunde, letzter
+Eintrag 06.12.), die jetzt doppelt gewesen wären. **Gelöscht wurde nichts**: der Kalender und
+seine Einträge liegen unverändert im CMS, sie werden nur nicht mehr angezeigt. Wer ihn
+loswerden will, löscht ihn unter *Kalender* → „…" → *Löschen*; sinnvoller ist, ihn für echte
+Vereinstermine zu verwenden (Jahreshauptversammlung, Sommerfest, Weihnachtsfeier) – dafür ist
+ein „Vereinskalender" gedacht.
+
+Nebeneffekt: die falsche Uhrzeit der A-Jugend am 22.08. (16:00 statt 15:00) ist damit weg.
+Solange Termine an zwei Stellen gepflegt werden, entstehen solche Abweichungen immer wieder –
+jetzt gibt es nur noch eine Quelle, und die ist DFBnet.
+
+### Einheitliche Termindarstellung
+
+Titel, für alle Mannschaften gleich aufgebaut:
+
+```
+Speuzer D2 · Heim gegen VFR Bockenheim 2
+Speuzer A-Jugend · Auswärts bei FV Bad Vilbel 1
+Speuzer Herren · Heim gegen SG Praunheim 1908 · 2:1      (wenn ein Ergebnis in der CSV steht)
+```
+
+Mannschaft zuerst, weil das der Teil ist, der auf dem Handy in der Monatsansicht übrig bleibt.
+Danach Heim/Auswärts – die Frage, die Eltern als Nächstes haben – dann der Gegner.
+Unsere Teams heißen überall **„Speuzer <Mannschaft>"**, in den Kalendernamen, in den Titeln
+und in der Beschreibung.
+
+Die Beschreibung hat in jedem Termin dieselben Zeilen:
+
+```
+Speuzer D2 – VFR Bockenheim 2
+Mannschaft: Speuzer D2
+Wettbewerb: 1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt
+Runde: Qualifikationsrunde                      (nur wenn es eine gibt, siehe E-Jugend)
+Heimspiel · Spielnummer 4 · Staffel 341874
+Spielstätte: Sportplatz Mainzer Landstrasse, Frankfurt am Main
+Alle Infos zum Spiel: https://www.fussball.de/spiel/...
+```
+
+Zusätzlich trägt jeder Kalender ein `X-WR-CALDESC` mit einer Kurzbeschreibung, und jeder Termin
+die Kategorie `Fussball` – appack legt daraus automatisch eine Kategorie an, nach der Eltern in
+der App filtern können.
+
+Auf den App-Seiten steht statt des kryptischen „H" / „A" jetzt ein Chip **HEIM** (gefüllt) bzw.
+**AUSW.** (outline), und über der Liste steht „Speuzer E1 · 1. Kreisklasse · EJ Quali Gr. 08".
+
+### E-Jugend-Quali: was der Kalender daraus macht
+
+Die E-Jugend spielt zuerst eine Qualifikationsrunde, danach ordnet der Kreis die Mannschaften
+einer Liga zu. Für die Kalender heißt das:
+
+- Jeder Quali-Termin trägt in der Beschreibung die Zeile **„Runde: Qualifikationsrunde"** –
+  das steuert der `RUNDE`-Eintrag je Staffelkennung in `build_ics.py`.
+- Die Kalender der E-Mannschaften und die Sammelkalender (`alle.ics`, `jugend.ics`) haben in
+  `X-WR-CALDESC` den Hinweis, dass zurzeit nur die Quali feststeht und die Hauptrunde
+  automatisch dazukommt.
+- Auf der Abo-Seite steht derselbe Hinweis als hervorgehobener Kasten unter E1, E2, E3 und den
+  Sammelkalendern – damit niemand denkt, der Kalender sei kaputt, weil nur fünf Spiele drin sind.
+- Wenn die Hauptrunde angesetzt ist: neue Zeilen in `spiele.csv`, neue Staffelkennung in `RUNDE`
+  mit Label eintragen (z. B. `"342xxx": "Hauptrunde · Kreisklasse B Gr. 3"`), pushen. Actions
+  baut, Pages veröffentlicht, appack synchronisiert. **Die Quali-Spiele bleiben stehen** (andere
+  Staffel = andere UID), es entstehen keine Doppelten, und niemand muss neu abonnieren.
