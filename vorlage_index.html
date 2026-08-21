@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speuzer Spielpläne abonnieren</title>
+<style>
+  :root { --blau:#0b3c78; --hell:#f4f7fb; --rand:#dde4ec; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+         color:#1c2530; background:#fff; line-height:1.5; }
+  header { background:var(--blau); color:#fff; padding:22px 18px; }
+  header h1 { margin:0; font-size:1.25rem; }
+  header p { margin:6px 0 0; font-size:.9rem; opacity:.85; }
+  main { padding:18px; max-width:640px; margin:0 auto; }
+  .team { border:1px solid var(--rand); border-radius:10px; padding:14px 16px; margin-bottom:14px; }
+  .team h2 { margin:0 0 2px; font-size:1.05rem; color:var(--blau); }
+  .team .meta { font-size:.82rem; color:#5a6b80; margin-bottom:12px; }
+  a.btn { display:block; text-align:center; text-decoration:none; font-weight:600;
+          padding:11px 14px; border-radius:8px; margin-bottom:8px; font-size:.95rem; }
+  a.primary { background:var(--blau); color:#fff; }
+  a.secondary { background:var(--hell); color:var(--blau); border:1px solid var(--rand); }
+  details { margin-top:20px; border-top:1px solid var(--rand); padding-top:14px; }
+  summary { cursor:pointer; font-weight:600; color:var(--blau); }
+  details p, details li { font-size:.88rem; }
+  code { background:var(--hell); padding:1px 5px; border-radius:4px; font-size:.85em; word-break:break-all; }
+  footer { font-size:.78rem; color:#6b7a8d; padding:0 18px 26px; max-width:640px; margin:0 auto; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Speuzer – Spielpläne abonnieren</h1>
+  <p>Saison 2026/27 · Quelle: DFBnet · einmal abonnieren, dann automatisch aktuell</p>
+</header>
+<main id="teams"></main>
+<main>
+  <details>
+    <summary>So funktioniert das Abo</summary>
+    <p><strong>iPhone / iPad:</strong> auf „Im Kalender abonnieren" tippen und bestätigen. Unter
+      Einstellungen → Apps → Kalender → Accounts → Abonnierte Kalender kann man das Aktualisierungs­intervall
+      auf „Jede Stunde" stellen.</p>
+    <p><strong>Android / Google Kalender:</strong> „Link kopieren", dann am Rechner auf
+      calendar.google.com → Weitere Kalender → Per URL. Google aktualisiert abonnierte Kalender
+      nur alle paar Stunden, im Extremfall dauert es bis zu 72 Stunden.</p>
+    <p><strong>Outlook:</strong> Kalender hinzufügen → Aus dem Internet abonnieren → Link einfügen.</p>
+    <p>Wichtig: kurzfristige Absagen kommen weiter per Push in der Vereins-App – der Kalender ist
+      für die Planung, nicht für Last-Minute-Infos.</p>
+  </details>
+</main>
+<footer>
+  Spieltermine automatisch erzeugt aus dem DFBnet-Spielplan. Verlegungen werden im bestehenden
+  Termin aktualisiert, es entstehen keine Doppel-Einträge. Fragen: Jugendleitung.
+</footer>
+<script>
+const TEAMS = [
+%TEAMS%
+];
+const basis = location.href.replace(/[^/]*$/, "");
+const ziel = document.getElementById("teams");
+for (const t of TEAMS) {
+  const url = basis + t.file;
+  const webcal = url.replace(/^https?:/, "webcal:");
+  const box = document.createElement("section");
+  box.className = "team";
+  box.innerHTML = `<h2>${t.name}</h2><div class="meta">${t.meta}</div>`;
+  const a1 = document.createElement("a");
+  a1.className = "btn primary"; a1.href = webcal; a1.textContent = "Im Kalender abonnieren";
+  const a2 = document.createElement("a");
+  a2.className = "btn secondary"; a2.href = "#"; a2.textContent = "Link kopieren";
+  a2.onclick = e => { e.preventDefault();
+    navigator.clipboard.writeText(url).then(() => { a2.textContent = "Link kopiert ✓";
+      setTimeout(() => a2.textContent = "Link kopieren", 2000); }); };
+  box.append(a1, a2);
+  ziel.append(box);
+}
+</script>
+</body>
+</html>
