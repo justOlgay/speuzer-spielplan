@@ -546,3 +546,40 @@ und per `executeEdits` einsetzen. GitHub Pages schickt `Access-Control-Allow-Ori
 deshalb klappt das aus `cms.appack.de` heraus. Danach ein Zeichen tippen, wieder löschen und
 auf das Disketten-Icon im Editor-Tab klicken; das Icon wandert mit der Länge des Dateinamens,
 also vorher einen Screenshot machen statt zu raten.
+
+---
+
+## TEAMPUNKT-Pilot D3 (ab 21.08.2026)
+
+Über die TEAMPUNKT-App lässt sich je Mannschaft eine Kalender-Synchronisierung einrichten;
+dabei entsteht ein Link `https://teampunkt.dfbnet.org/teamapi/ical/<Token>`. appack akzeptiert
+diesen Feed (Content-Type stimmt). Für die **D3** läuft er als Pilot.
+
+**Was drin ist:** 112 künftige Termine – 22 Ligaspiele **und 90 Trainingseinheiten**, mit
+echter Adresse (Mainzer Landstraße 480) statt nur Platzname. Gepflegt wird das von DFBnet,
+also kommen Verlegungen und die E-Jugend-Hauptrunde später von selbst.
+
+**Damit nichts doppelt erscheint:** `build_ics.py` kennt jetzt `PILOT_TEAMPUNKT = {"D3"}` und
+erzeugt zusätzlich **`docs/app-kalender.ics`** – alles außer den Pilotmannschaften
+(aktuell 112 Spiele). Der App-Kalender „Spielplan Mannschaften" abonniert diese Datei,
+`alle.ics` bleibt vollständig für Eltern, die alles wollen. Pilot beenden heißt: `PILOT_TEAMPUNKT`
+leeren, pushen, in appack wieder `alle.ics` eintragen und den Pilotkalender abwählen.
+
+**Kalender in appack:** „Spielplan Mannschaften" (blau `1E4DD8`, 112 Spiele aus dem Generator)
+und „Speuzer D3 - Spiele und Training (Pilot)" (grün `1F7757`, TEAMPUNKT). Beide im Modul
+*Termine* aktiv. Geprüft: 222 künftige Termine, **0 Doppelte**, D3-Spiele genau einmal.
+
+**Der sichtbare Unterschied – und der Grund, TEAMPUNKT eher als Datenquelle zu nutzen:**
+
+| Quelle | Titel im Kalender |
+|---|---|
+| Unser Generator | `Speuzer E1 · Heim gegen VfL Germania 1894 1` |
+| TEAMPUNKT roh | `VfL Germania 1894 2 - Speuzer D3 (26/27) (D-Junioren)` |
+| TEAMPUNKT roh | `Freitag Training` (ohne Mannschaft, ohne Ort im Titel) |
+
+TEAMPUNKT liefert also die besseren **Daten** (automatisch, mit Training und Adresse), unser
+Generator die bessere **Darstellung** (Mannschaft zuerst, Heim/Auswärts, Kategorie „Fussball",
+Rundenangabe, Link zum Spiel). Der nächste sinnvolle Schritt ist deshalb, die TEAMPUNKT-Feeds
+im Workflow einzulesen und durch `build_ics.py` zu normalisieren – dann null Handarbeit **und**
+einheitliche Optik. Dafür braucht es die Token-Links aller Mannschaften; die gehören **nicht**
+ins öffentliche Repo, sondern in ein GitHub-Actions-Secret.
