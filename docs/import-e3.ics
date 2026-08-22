@@ -1,0 +1,111 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FFV Sportfreunde 04//Import//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Import Speuzer E3 – Spieltage für die App
+X-WR-CALDESC:Zum Hochladen in einen appack-Kalender über „ICS importie
+ ren“. Terminstart ist der Treffpunkt (Anstoß minus 60 Minuten). Nach 
+ dem Import je Termin noch: Untertitel einsetzen\, Teilnahme-Rückmeldung
+  anschalten\, Gruppe einladen. Diese Datei nur EINMAL importieren\, sons
+ t stehen die Termine doppelt.
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+X-LIC-LOCATION:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:341930-1-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20260822T100000
+DTEND;TZID=Europe/Berlin:20260822T130000
+SUMMARY:Speuzer E3 · Heim gegen FSV 1910 Bergen 3
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
+ :00 Uhr · Heimspiel\nSpeuzer E3 – FSV 1910 Bergen 3\nTreffpunkt: 10:0
+ 0 Uhr\nAnstoß: 11:00 Uhr\nHeimspiel · 1. Kreisklasse · EJ Quali Gr. 2
+ 2 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätte: Sportpla
+ tz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https:
+ //www.fussball.de/spiel/x/-/spiel/031HO7VE4G000000VS5489BUVVKNMR0J\nBitt
+ e per Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer
+  Kind dabei ist – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/031HO7VE4G000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341930-7-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20260905T100000
+DTEND;TZID=Europe/Berlin:20260905T130000
+SUMMARY:Speuzer E3 · Auswärts bei SC Weiss-Blau Frankfurt II
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
+ :00 Uhr · Auswärtsspiel\nSC Weiss-Blau Frankfurt II – Speuzer E3\nTr
+ effpunkt: 10:00 Uhr\nAnstoß: 11:00 Uhr\nAuswärtsspiel · 1. Kreisklass
+ e · EJ Quali Gr. 22 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpi
+ elstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball
+ .de/spiel/x/-/spiel/031HO7VE0K000000VS5489BUVVKNMR0J\nBitte per Daumen h
+ och / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei is
+ t – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/031HO7VE0K000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341930-10-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20260912T100000
+DTEND;TZID=Europe/Berlin:20260912T130000
+SUMMARY:Speuzer E3 · Heim gegen SG Harheim 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
+ :00 Uhr · Heimspiel\nSpeuzer E3 – SG Harheim 2\nTreffpunkt: 10:00 Uhr
+ \nAnstoß: 11:00 Uhr\nHeimspiel · 1. Kreisklasse · EJ Quali Gr. 22 · 
+ Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätte: Sportplatz Ma
+ inzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www
+ .fussball.de/spiel/x/-/spiel/031HO7VDUS000000VS5489BUVVKNMR0J\nBitte per
+  Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind
+  dabei ist – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/031HO7VDUS000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341930-14-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20260926T113000
+DTEND;TZID=Europe/Berlin:20260926T143000
+SUMMARY:Speuzer E3 · Auswärts bei Riedberger SV II
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:30 Uhr · Anstoß 12
+ :30 Uhr · Auswärtsspiel\nRiedberger SV II – Speuzer E3\nTreffpunkt: 
+ 11:30 Uhr\nAnstoß: 12:30 Uhr\nAuswärtsspiel · 1. Kreisklasse · EJ Qu
+ ali Gr. 22 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätte:
+  siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/
+ x/-/spiel/031HO7VE78000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Frag
+ ezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am b
+ esten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/031HO7VE78000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

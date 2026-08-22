@@ -1,0 +1,471 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FFV Sportfreunde 04//Import//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Import Speuzer D3 – Spieltage für die App
+X-WR-CALDESC:Zum Hochladen in einen appack-Kalender über „ICS importie
+ ren“. Terminstart ist der Treffpunkt (Anstoß minus 60 Minuten). Nach 
+ dem Import je Termin noch: Untertitel einsetzen\, Teilnahme-Rückmeldung
+  anschalten\, Gruppe einladen. Diese Datei nur EINMAL importieren\, sons
+ t stehen die Termine doppelt.
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+X-LIC-LOCATION:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:341873-4-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20260823T090000
+DTEND;TZID=Europe/Berlin:20260823T120000
+SUMMARY:Speuzer D3 · Heim gegen VfL Germania 1894 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Anstoß 10
+ :00 Uhr · Heimspiel\nSpeuzer D3 – VfL Germania 1894 2\nTreffpunkt: 09
+ :00 Uhr\nAnstoß: 10:00 Uhr\nHeimspiel · 1. Kreisklasse · DJ KK F Gr. 
+ 04 · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Fr
+ ankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-
+ /spiel/031I71TML8000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Frageze
+ ichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am best
+ en bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71TML8000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-10-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20260830T090000
+DTEND;TZID=Europe/Berlin:20260830T120000
+SUMMARY:Speuzer D3 · Heim gegen SC Weiss-Blau Frankfurt 3
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Anstoß 10
+ :00 Uhr · Heimspiel\nSpeuzer D3 – SC Weiss-Blau Frankfurt 3\nTreffpun
+ kt: 09:00 Uhr\nAnstoß: 10:00 Uhr\nHeimspiel · 1. Kreisklasse · DJ KK 
+ F Gr. 04 · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrass
+ e\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spi
+ el/x/-/spiel/031I71TNSC000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / F
+ ragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – a
+ m besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71TNSC000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-13-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20260906T083000
+DTEND;TZID=Europe/Berlin:20260906T113000
+SUMMARY:Speuzer D3 · Auswärts bei SV Blau-Gelb FFM 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:30 Uhr · Anstoß 09
+ :30 Uhr · Auswärtsspiel\nSV Blau-Gelb FFM 2 – Speuzer D3\nTreffpunkt
+ : 08:30 Uhr\nAnstoß: 09:30 Uhr\nAuswärtsspiel · 1. Kreisklasse · DJ 
+ KK F Gr. 04 · Kreis Frankfurt\nSpielstätte: siehe FUSSBALL.DE\nAlle In
+ fos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I71TNEO000000V
+ S5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezeichen / Daumen runter zu
+ rückmelden\, ob euer Kind dabei ist – am besten bis zum Abend vor dem
+  Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71TNEO000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-22-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20260913T090000
+DTEND;TZID=Europe/Berlin:20260913T120000
+SUMMARY:Speuzer D3 · Heim gegen TV Preungesheim 1
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Anstoß 10
+ :00 Uhr · Heimspiel\nSpeuzer D3 – TV Preungesheim 1\nTreffpunkt: 09:0
+ 0 Uhr\nAnstoß: 10:00 Uhr\nHeimspiel · 1. Kreisklasse · DJ KK F Gr. 04
+  · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Fran
+ kfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/s
+ piel/031I71TNB8000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezeic
+ hen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten
+  bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71TNB8000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-29-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20260920T100000
+DTEND;TZID=Europe/Berlin:20260920T130000
+SUMMARY:Speuzer D3 · Auswärts bei Spvgg. Oberrad IV
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
+ :00 Uhr · Auswärtsspiel\nSpvgg. Oberrad IV – Speuzer D3\nTreffpunkt:
+  10:00 Uhr\nAnstoß: 11:00 Uhr\nAuswärtsspiel · 1. Kreisklasse · DJ K
+ K F Gr. 04 · Kreis Frankfurt\nSpielstätte: siehe FUSSBALL.DE\nAlle Inf
+ os zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I71TN3S000000VS
+ 5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezeichen / Daumen runter zur
+ ückmelden\, ob euer Kind dabei ist – am besten bis zum Abend vor dem 
+ Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71TN3S000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-31-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20260927T100000
+DTEND;TZID=Europe/Berlin:20260927T130000
+SUMMARY:Speuzer D3 · Auswärts bei TSG 51 Frankfurt II
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
+ :00 Uhr · Auswärtsspiel\nTSG 51 Frankfurt II – Speuzer D3\nTreffpunk
+ t: 10:00 Uhr\nAnstoß: 11:00 Uhr\nAuswärtsspiel · 1. Kreisklasse · DJ
+  KK F Gr. 04 · Kreis Frankfurt\nSpielstätte: siehe FUSSBALL.DE\nAlle I
+ nfos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I71TMO8000000
+ VS5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezeichen / Daumen runter z
+ urückmelden\, ob euer Kind dabei ist – am besten bis zum Abend vor de
+ m Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71TMO8000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-38-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20261024T100000
+DTEND;TZID=Europe/Berlin:20261024T130000
+SUMMARY:Speuzer D3 · Auswärts bei FSV 1910 Bergen 3
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
+ :00 Uhr · Auswärtsspiel\nFSV 1910 Bergen 3 – Speuzer D3\nTreffpunkt:
+  10:00 Uhr\nAnstoß: 11:00 Uhr\nAuswärtsspiel · 1. Kreisklasse · DJ K
+ K F Gr. 04 · Kreis Frankfurt\nSpielstätte: siehe FUSSBALL.DE\nAlle Inf
+ os zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I71TMD0000000VS
+ 5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezeichen / Daumen runter zur
+ ückmelden\, ob euer Kind dabei ist – am besten bis zum Abend vor dem 
+ Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71TMD0000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-46-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20261101T090000
+DTEND;TZID=Europe/Berlin:20261101T120000
+SUMMARY:Speuzer D3 · Heim gegen SG Bornheim / GW 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Anstoß 10
+ :00 Uhr · Heimspiel\nSpeuzer D3 – SG Bornheim / GW 2\nTreffpunkt: 09:
+ 00 Uhr\nAnstoß: 10:00 Uhr\nHeimspiel · 1. Kreisklasse · DJ KK F Gr. 0
+ 4 · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Fra
+ nkfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/
+ spiel/031I71TM9C000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezei
+ chen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am beste
+ n bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71TM9C000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-53-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20261108T083000
+DTEND;TZID=Europe/Berlin:20261108T113000
+SUMMARY:Speuzer D3 · Auswärts bei DJK SW Griesheim 4
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:30 Uhr · Anstoß 09
+ :30 Uhr · Auswärtsspiel\nDJK SW Griesheim 4 – Speuzer D3\nTreffpunkt
+ : 08:30 Uhr\nAnstoß: 09:30 Uhr\nAuswärtsspiel · 1. Kreisklasse · DJ 
+ KK F Gr. 04 · Kreis Frankfurt\nSpielstätte: siehe FUSSBALL.DE\nAlle In
+ fos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I71TM4S000000V
+ S5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezeichen / Daumen runter zu
+ rückmelden\, ob euer Kind dabei ist – am besten bis zum Abend vor dem
+  Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71TM4S000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-58-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20261129T090000
+DTEND;TZID=Europe/Berlin:20261129T120000
+SUMMARY:Speuzer D3 · Heim gegen SV Griesheim Tarik
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Anstoß 10
+ :00 Uhr · Heimspiel\nSpeuzer D3 – SV Griesheim Tarik\nTreffpunkt: 09:
+ 00 Uhr\nAnstoß: 10:00 Uhr\nHeimspiel · 1. Kreisklasse · DJ KK F Gr. 0
+ 4 · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Fra
+ nkfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/
+ spiel/031I71TLV0000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezei
+ chen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am beste
+ n bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/031I71TLV0000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-63-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20261206T080000
+DTEND;TZID=Europe/Berlin:20261206T110000
+SUMMARY:Speuzer D3 · Auswärts bei TuS Makkabi Frankfurt 6
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:00 Uhr · Anstoß 09
+ :00 Uhr · Auswärtsspiel\nTuS Makkabi Frankfurt 6 – Speuzer D3\nTreff
+ punkt: 08:00 Uhr\nAnstoß: 09:00 Uhr\nAuswärtsspiel · 1. Kreisklasse 
+ · DJ KK F Gr. 04 · Kreis Frankfurt\nSpielstätte: siehe FUSSBALL.DE\nA
+ lle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/saison/2627/
+ team-id/02USD4SHUG000000VS5489BRVS0D3BPJ\nBitte per Daumen hoch / Fragez
+ eichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am bes
+ ten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
+ 000000VS5489BRVS0D3BPJ
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-130-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20270214T100000
+DTEND;TZID=Europe/Berlin:20270214T130000
+SUMMARY:Speuzer D3 · Auswärts bei SC Weiss-Blau Frankfurt 3
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
+ :00 Uhr · Auswärtsspiel\nSC Weiss-Blau Frankfurt 3 – Speuzer D3\nTre
+ ffpunkt: 10:00 Uhr\nAnstoß: 11:00 Uhr\nAuswärtsspiel · 1. Kreisklasse
+  · DJ KK F Gr. 04 · Kreis Frankfurt\nSpielstätte: siehe FUSSBALL.DE\n
+ Alle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/saison/2627
+ /team-id/02USD4SHUG000000VS5489BRVS0D3BPJ\nBitte per Daumen hoch / Frage
+ zeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am be
+ sten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
+ 000000VS5489BRVS0D3BPJ
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-70-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20270220T103000
+DTEND;TZID=Europe/Berlin:20270220T133000
+SUMMARY:Speuzer D3 · Auswärts bei VfL Germania 1894 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:30 Uhr · Anstoß 11
+ :30 Uhr · Auswärtsspiel\nVfL Germania 1894 2 – Speuzer D3\nTreffpunk
+ t: 10:30 Uhr\nAnstoß: 11:30 Uhr\nAuswärtsspiel · 1. Kreisklasse · DJ
+  KK F Gr. 04 · Kreis Frankfurt\nSpielstätte: siehe FUSSBALL.DE\nAlle I
+ nfos zum Spiel: https://www.fussball.de/mannschaft/x/-/saison/2627/team-
+ id/02USD4SHUG000000VS5489BRVS0D3BPJ\nBitte per Daumen hoch / Fragezeiche
+ n / Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten b
+ is zum Abend vor dem Spiel.
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
+ 000000VS5489BRVS0D3BPJ
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-76-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20270227T120000
+DTEND;TZID=Europe/Berlin:20270227T150000
+SUMMARY:Speuzer D3 · Auswärts bei SV Griesheim Tarik
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 12:00 Uhr · Anstoß 13
+ :00 Uhr · Auswärtsspiel\nSV Griesheim Tarik – Speuzer D3\nTreffpunkt
+ : 12:00 Uhr\nAnstoß: 13:00 Uhr\nAuswärtsspiel · 1. Kreisklasse · DJ 
+ KK F Gr. 04 · Kreis Frankfurt\nSpielstätte: siehe FUSSBALL.DE\nAlle In
+ fos zum Spiel: https://www.fussball.de/mannschaft/x/-/saison/2627/team-i
+ d/02USD4SHUG000000VS5489BRVS0D3BPJ\nBitte per Daumen hoch / Fragezeichen
+  / Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten bi
+ s zum Abend vor dem Spiel.
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
+ 000000VS5489BRVS0D3BPJ
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-81-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20270307T090000
+DTEND;TZID=Europe/Berlin:20270307T120000
+SUMMARY:Speuzer D3 · Heim gegen TuS Makkabi Frankfurt 6
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Anstoß 10
+ :00 Uhr · Heimspiel\nSpeuzer D3 – TuS Makkabi Frankfurt 6\nTreffpunkt
+ : 09:00 Uhr\nAnstoß: 10:00 Uhr\nHeimspiel · 1. Kreisklasse · DJ KK F 
+ Gr. 04 · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\
+ , Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/manns
+ chaft/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ\nBitte pe
+ r Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kin
+ d dabei ist – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
+ 000000VS5489BRVS0D3BPJ
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-85-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20270314T090000
+DTEND;TZID=Europe/Berlin:20270314T120000
+SUMMARY:Speuzer D3 · Heim gegen SV Blau-Gelb FFM 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Anstoß 10
+ :00 Uhr · Heimspiel\nSpeuzer D3 – SV Blau-Gelb FFM 2\nTreffpunkt: 09:
+ 00 Uhr\nAnstoß: 10:00 Uhr\nHeimspiel · 1. Kreisklasse · DJ KK F Gr. 0
+ 4 · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Fra
+ nkfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft
+ /x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ\nBitte per Dau
+ men hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dab
+ ei ist – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
+ 000000VS5489BRVS0D3BPJ
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-94-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20270411T080000
+DTEND;TZID=Europe/Berlin:20270411T110000
+SUMMARY:Speuzer D3 · Auswärts bei TV Preungesheim 1
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:00 Uhr · Anstoß 09
+ :00 Uhr · Auswärtsspiel\nTV Preungesheim 1 – Speuzer D3\nTreffpunkt:
+  08:00 Uhr\nAnstoß: 09:00 Uhr\nAuswärtsspiel · 1. Kreisklasse · DJ K
+ K F Gr. 04 · Kreis Frankfurt\nSpielstätte: siehe FUSSBALL.DE\nAlle Inf
+ os zum Spiel: https://www.fussball.de/mannschaft/x/-/saison/2627/team-id
+ /02USD4SHUG000000VS5489BRVS0D3BPJ\nBitte per Daumen hoch / Fragezeichen 
+ / Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten bis
+  zum Abend vor dem Spiel.
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
+ 000000VS5489BRVS0D3BPJ
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-101-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20270418T090000
+DTEND;TZID=Europe/Berlin:20270418T120000
+SUMMARY:Speuzer D3 · Heim gegen Spvgg. Oberrad IV
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Anstoß 10
+ :00 Uhr · Heimspiel\nSpeuzer D3 – Spvgg. Oberrad IV\nTreffpunkt: 09:0
+ 0 Uhr\nAnstoß: 10:00 Uhr\nHeimspiel · 1. Kreisklasse · DJ KK F Gr. 04
+  · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Fran
+ kfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/
+ x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ\nBitte per Daum
+ en hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabe
+ i ist – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
+ 000000VS5489BRVS0D3BPJ
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-103-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20270425T090000
+DTEND;TZID=Europe/Berlin:20270425T120000
+SUMMARY:Speuzer D3 · Heim gegen TSG 51 Frankfurt II
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Anstoß 10
+ :00 Uhr · Heimspiel\nSpeuzer D3 – TSG 51 Frankfurt II\nTreffpunkt: 09
+ :00 Uhr\nAnstoß: 10:00 Uhr\nHeimspiel · 1. Kreisklasse · DJ KK F Gr. 
+ 04 · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Fr
+ ankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaf
+ t/x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ\nBitte per Da
+ umen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind da
+ bei ist – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
+ 000000VS5489BRVS0D3BPJ
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-110-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20270509T090000
+DTEND;TZID=Europe/Berlin:20270509T120000
+SUMMARY:Speuzer D3 · Heim gegen FSV 1910 Bergen 3
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Anstoß 10
+ :00 Uhr · Heimspiel\nSpeuzer D3 – FSV 1910 Bergen 3\nTreffpunkt: 09:0
+ 0 Uhr\nAnstoß: 10:00 Uhr\nHeimspiel · 1. Kreisklasse · DJ KK F Gr. 04
+  · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Fran
+ kfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/
+ x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ\nBitte per Daum
+ en hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabe
+ i ist – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
+ 000000VS5489BRVS0D3BPJ
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-119-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20270523T090000
+DTEND;TZID=Europe/Berlin:20270523T120000
+SUMMARY:Speuzer D3 · Heim gegen DJK SW Griesheim 4
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Anstoß 10
+ :00 Uhr · Heimspiel\nSpeuzer D3 – DJK SW Griesheim 4\nTreffpunkt: 09:
+ 00 Uhr\nAnstoß: 10:00 Uhr\nHeimspiel · 1. Kreisklasse · DJ KK F Gr. 0
+ 4 · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Fra
+ nkfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft
+ /x/-/saison/2627/team-id/02USD4SHUG000000VS5489BRVS0D3BPJ\nBitte per Dau
+ men hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dab
+ ei ist – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
+ 000000VS5489BRVS0D3BPJ
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341873-124-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20270530T083000
+DTEND;TZID=Europe/Berlin:20270530T113000
+SUMMARY:Speuzer D3 · Auswärts bei SG Bornheim / GW 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:30 Uhr · Anstoß 09
+ :30 Uhr · Auswärtsspiel\nSG Bornheim / GW 2 – Speuzer D3\nTreffpunkt
+ : 08:30 Uhr\nAnstoß: 09:30 Uhr\nAuswärtsspiel · 1. Kreisklasse · DJ 
+ KK F Gr. 04 · Kreis Frankfurt\nSpielstätte: siehe FUSSBALL.DE\nAlle In
+ fos zum Spiel: https://www.fussball.de/mannschaft/x/-/saison/2627/team-i
+ d/02USD4SHUG000000VS5489BRVS0D3BPJ\nBitte per Daumen hoch / Fragezeichen
+  / Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten bi
+ s zum Abend vor dem Spiel.
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02USD4SHUG
+ 000000VS5489BRVS0D3BPJ
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

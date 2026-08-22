@@ -1,0 +1,131 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FFV Sportfreunde 04//Import//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Import Speuzer E2 – Spieltage für die App
+X-WR-CALDESC:Zum Hochladen in einen appack-Kalender über „ICS importie
+ ren“. Terminstart ist der Treffpunkt (Anstoß minus 60 Minuten). Nach 
+ dem Import je Termin noch: Untertitel einsetzen\, Teilnahme-Rückmeldung
+  anschalten\, Gruppe einladen. Diese Datei nur EINMAL importieren\, sons
+ t stehen die Termine doppelt.
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+X-LIC-LOCATION:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:341435-1-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20260822T103000
+DTEND;TZID=Europe/Berlin:20260822T133000
+SUMMARY:Speuzer E2 · Heim gegen Spvgg. Kickers 1916 4
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:30 Uhr · Anstoß 11
+ :30 Uhr · Heimspiel\nSpeuzer E2 – Spvgg. Kickers 1916 4\nTreffpunkt: 
+ 10:30 Uhr\nAnstoß: 11:30 Uhr\nHeimspiel · 1. Kreisklasse · EJ Quali G
+ r. 18 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätte: Spor
+ tplatz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: ht
+ tps://www.fussball.de/spiel/x/-/spiel/031HO7T0VC000000VS5489BUVVKNMR0J\n
+ Bitte per Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob 
+ euer Kind dabei ist – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T0VC000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341435-5-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20260829T113000
+DTEND;TZID=Europe/Berlin:20260829T143000
+SUMMARY:Speuzer E2 · Auswärts bei FSV 1910 Bergen 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:30 Uhr · Anstoß 12
+ :30 Uhr · Auswärtsspiel\nFSV 1910 Bergen 2 – Speuzer E2\nTreffpunkt:
+  11:30 Uhr\nAnstoß: 12:30 Uhr\nAuswärtsspiel · 1. Kreisklasse · EJ Q
+ uali Gr. 18 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätte
+ : siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel
+ /x/-/spiel/031HO7T0TS000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Fra
+ gezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am 
+ besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T0TS000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341435-7-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20260905T100000
+DTEND;TZID=Europe/Berlin:20260905T130000
+SUMMARY:Speuzer E2 · Auswärts bei DJK SW Griesheim 3
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
+ :00 Uhr · Auswärtsspiel\nDJK SW Griesheim 3 – Speuzer E2\nTreffpunkt
+ : 10:00 Uhr\nAnstoß: 11:00 Uhr\nAuswärtsspiel · 1. Kreisklasse · EJ 
+ Quali Gr. 18 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätt
+ e: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spie
+ l/x/-/spiel/031HO7T0RC000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Fr
+ agezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am
+  besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T0RC000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341435-10-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20260912T103000
+DTEND;TZID=Europe/Berlin:20260912T133000
+SUMMARY:Speuzer E2 · Heim gegen SG Bornheim / GW 3
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:30 Uhr · Anstoß 11
+ :30 Uhr · Heimspiel\nSpeuzer E2 – SG Bornheim / GW 3\nTreffpunkt: 10:
+ 30 Uhr\nAnstoß: 11:30 Uhr\nHeimspiel · 1. Kreisklasse · EJ Quali Gr. 
+ 18 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätte: Sportpl
+ atz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https
+ ://www.fussball.de/spiel/x/-/spiel/031HO7T0PO000000VS5489BUVVKNMR0J\nBit
+ te per Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob eue
+ r Kind dabei ist – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T0PO000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341435-14-app@speuzer.sportfreunde04.de
+DTSTAMP:20260822T050107Z
+SEQUENCE:6
+DTSTART;TZID=Europe/Berlin:20260926T113000
+DTEND;TZID=Europe/Berlin:20260926T143000
+SUMMARY:Speuzer E2 · Auswärts bei TSG 1888 Nieder-Erlenbach 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:30 Uhr · Anstoß 12
+ :30 Uhr · Auswärtsspiel\nTSG 1888 Nieder-Erlenbach 2 – Speuzer E2\nT
+ reffpunkt: 11:30 Uhr\nAnstoß: 12:30 Uhr\nAuswärtsspiel · 1. Kreisklas
+ se · EJ Quali Gr. 18 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSp
+ ielstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussbal
+ l.de/spiel/x/-/spiel/031HO7T12C000000VS5489BUVVKNMR0J\nBitte per Daumen 
+ hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei i
+ st – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T12C000000VS5489BUVVKNM
+ R0J
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
