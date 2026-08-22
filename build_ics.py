@@ -10,6 +10,8 @@ Ausgabe in docs/:
   jugend.ics          nur D- und E-Jugend (Abo in der Vereins-App)
   index.html          Abo-Seite fuer Eltern
   app-<gruppe>.html   Spielplan-Seiten fuer die Vereins-App (eine je Altersklasse)
+  import-<team>.ics   zum Hochladen in einen appack-Kalender ("ICS importieren"): erzeugt
+                      echte App-Termine mit Zu-/Absage. Start = Treffpunkt, nur kuenftige Spiele.
 
 Die UID eines Termins bleibt stabil (Staffelkennung + DFBnet-Spielnummer), damit
 eine Verlegung den bestehenden Termin aendert statt einen zweiten anzulegen.
@@ -24,6 +26,7 @@ OUT.mkdir(exist_ok=True)
 VEREIN = "FFV Sportfreunde 04"
 DOMAIN = "speuzer.sportfreunde04.de"
 DAUER_STUNDEN = 2
+TREFFPUNKT_MIN = 60          # Treffpunkt = Anstoss minus 60 Minuten (Regel des Vereins)
 ALARM = "--alarm" in sys.argv
 SEQ = int(os.environ.get("SEQ", "0"))
 
@@ -82,6 +85,11 @@ GRUPPEN = {
 #   D2 -> echte App-Termine mit Teilnahme-Rueckmeldung (Pilot Zu-/Absage)
 # Leere Menge = alles kommt wieder aus diesem Generator.
 NICHT_IN_APP_FEED = {"D3", "D2"}
+
+# Spieltage, die in der App schon von Hand angelegt sind, sollen NICHT nochmal importiert
+# werden. Je Mannschaft das Datum, ab dem der Import starten darf (Tag mitgezaehlt).
+# D2: 23.08., 30.08., 05.09., 13.09. und 20.09.2026 liegen bereits als App-Termine.
+IMPORT_AB = {"D2": "21.09.2026"}
 
 RUNDE = {
     "340610": "Qualifikationsrunde",
@@ -171,13 +179,25 @@ def paarung(row):
     return "%s \u2013 %s" % (row["heim"], uns)
 
 
-def titel(row):
+def titel(row, mit_ergebnis=True):
     """Einheitlicher Termintitel: Mannschaft, Heim/Auswaerts, Gegner, ggf. Ergebnis."""
     wo = "Heim gegen" if row["_heim"] else "Ausw\u00e4rts bei"
     kopf = "%s \u00b7 %s %s" % (mannschaft(row["team"]), wo, row["_gegner"])
-    if row["ergebnis"]:
+    if mit_ergebnis and row["ergebnis"]:
         kopf += " \u00b7 %s" % row["ergebnis"]
     return kopf
+
+
+def treffpunkt(row):
+    return row["_start"] - datetime.timedelta(minutes=TREFFPUNKT_MIN)
+
+
+def untertitel(row):
+    """Text fuer das Feld 'Untertitel' in appack. Der Import kann das Feld nicht fuellen,
+    darum steht die Zeile zum Kopieren oben in der Beschreibung."""
+    return "Treffpunkt %s Uhr \u00b7 Ansto\u00df %s Uhr \u00b7 %s" % (
+        treffpunkt(row).strftime("%H:%M"), row["zeit"],
+        "Heimspiel" if row["_heim"] else "Ausw\u00e4rtsspiel")
 
 
 def beschreibung(row):
@@ -235,6 +255,73 @@ def schreibe_ics(datei, kalendername, spiele, stamp, hinweis=""):
     (OUT / datei).write_text("\r\n".join(fold(x) for x in flach) + "\r\n",
                              encoding="utf-8", newline="")
     print("%-18s %3d Spiele" % (datei, len(spiele)))
+
+
+# ------------------------------------------------------- Import-Dateien fuer appack
+IMPORT_HINWEIS = ("Bitte per Daumen hoch / Fragezeichen / Daumen runter zur\u00fcckmelden, "
+                  "ob euer Kind dabei ist \u2013 am besten bis zum Abend vor dem Spiel.")
+
+
+def import_beschreibung(row):
+    """Wie beschreibung(), aber aus Elternsicht und mit der Untertitel-Zeile zum Kopieren.
+    Achtung: appack macht beim Import aus den Zeilenumbruechen einen Absatz."""
+    t = TEAMS[row["team"]]
+    z = ["Untertitel (zum Kopieren): %s" % untertitel(row),
+         paarung(row),
+         "Treffpunkt: %s Uhr" % treffpunkt(row).strftime("%H:%M"),
+         "Ansto\u00df: %s Uhr" % row["zeit"],
+         "%s \u00b7 %s" % ("Heimspiel" if row["_heim"] else "Ausw\u00e4rtsspiel", t["info"])]
+    if RUNDE.get(row["staffel"]):
+        z.append("Runde: %s" % RUNDE[row["staffel"]])
+    z.append("Spielst\u00e4tte: %s" % (row["spielstaette"] or "siehe FUSSBALL.DE"))
+    z.append("Alle Infos zum Spiel: %s" % link(row))
+    z.append(IMPORT_HINWEIS)
+    return "\\n".join(esc(x) for x in z)
+
+
+def import_event(row, stamp):
+    """Ein Termin fuer den appack-Import: Start = Treffpunkt, Ende = Ansto\u00df + 2 h.
+    Bewusst OHNE LOCATION - appack legt daraus sonst bei jedem Import einen neuen Ort an."""
+    fmt = "%Y%m%dT%H%M%S"
+    ende = row["_start"] + datetime.timedelta(hours=DAUER_STUNDEN)
+    return ["BEGIN:VEVENT",
+            "UID:%s-%s-app@%s" % (row["staffel"], row["spielnr"], DOMAIN),
+            "DTSTAMP:%s" % stamp, "SEQUENCE:%d" % SEQ,
+            "DTSTART;TZID=Europe/Berlin:%s" % treffpunkt(row).strftime(fmt),
+            "DTEND;TZID=Europe/Berlin:%s" % ende.strftime(fmt),
+            "SUMMARY:%s" % esc(titel(row, mit_ergebnis=False)),
+            "DESCRIPTION:%s" % import_beschreibung(row),
+            "URL:%s" % link(row), "CATEGORIES:Fussball", "TRANSP:OPAQUE",
+            "END:VEVENT"]
+
+
+def schreibe_import(team, spiele, stamp):
+    """Eine Datei je Mannschaft, nur kuenftige Spiele - Vergangenes will niemand importieren."""
+    ab = datetime.datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+    if IMPORT_AB.get(team):
+        tag, monat, jahr = (int(x) for x in IMPORT_AB[team].split("."))
+        ab = max(ab, datetime.datetime(jahr, monat, tag))
+    kuenftig = sorted((r for r in spiele if r["_start"] >= ab), key=lambda r: r["_start"])
+    name = "Import %s \u2013 Spieltage f\u00fcr die App" % mannschaft(team)
+    beschr = ("Zum Hochladen in einen appack-Kalender \u00fcber \u201eICS importieren\u201c. "
+              "Terminstart ist der Treffpunkt (Ansto\u00df minus %d Minuten). Nach dem Import je "
+              "Termin noch: Untertitel einsetzen, Teilnahme-R\u00fcckmeldung anschalten, "
+              "Gruppe einladen. Diese Datei nur EINMAL importieren, sonst stehen die Termine "
+              "doppelt." % TREFFPUNKT_MIN)
+    z = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//%s//Import//DE" % VEREIN,
+         "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
+         "X-WR-CALNAME:%s" % esc(name), "X-WR-CALDESC:%s" % esc(beschr),
+         "X-WR-TIMEZONE:Europe/Berlin", VTIMEZONE]
+    for row in kuenftig:
+        z += import_event(row, stamp)
+    z.append("END:VCALENDAR")
+    flach = []
+    for e in z:
+        flach.extend(e.replace("\r\n", "\n").split("\n"))
+    datei = "import-%s.ics" % team.lower()
+    (OUT / datei).write_text("\r\n".join(fold(x) for x in flach) + "\r\n",
+                             encoding="utf-8", newline="")
+    print("%-18s %3d Spieltage (Treffpunkt als Start)" % (datei, len(kuenftig)))
 
 
 # ------------------------------------------------------------------ App-Seiten
@@ -381,6 +468,8 @@ def main():
         hinweis_app += (" Die Termine von %s liegen in der App in eigenen Kalendern."
                         % ", ".join(sorted(NICHT_IN_APP_FEED)))
     schreibe_ics("app-kalender.ics", "Speuzer Spielplan Mannschaften", appfeed, stamp, hinweis_app)
+    for t in TEAMS:
+        schreibe_import(t, [r for r in alle if r["team"] == t], stamp)
     for g in GRUPPEN:
         schreibe_app_seite(g, [r for r in alle if TEAMS[r["team"]]["gruppe"] == g])
     schreibe_index()

@@ -35,6 +35,7 @@ dafür, dass die Vereins-App (Appack) sie als externen iCal-Kalender akzeptiert.
 | `spiele.csv` | die einzige Datei, die gepflegt wird – ein Spiel pro Zeile, Semikolon-getrennt |
 | `build_ics.py` | erzeugt `docs/d1.ics`, `d2.ics`, `d3.ics` und `alle.ics` |
 | `docs/index.html` | Abo-Seite für Eltern, baut die Links selbst aus der eigenen Adresse |
+| `docs/import-<team>.ics` | **nicht abonnieren, sondern hochladen** – erzeugt in appack echte App-Termine mit Zu-/Absage (Start = Treffpunkt) |
 | `.github/workflows/build.yml` | baut bei jeder Änderung an `spiele.csv` neu, zusätzlich täglich |
 
 ## Pflege im Alltag
@@ -583,12 +584,13 @@ Rundenangabe, Link zum Spiel). Der nächste sinnvolle Schritt ist deshalb, die T
 im Workflow einzulesen und durch `build_ics.py` zu normalisieren – dann null Handarbeit **und**
 einheitliche Optik. Dafür braucht es die Token-Links aller Mannschaften; die gehören **nicht**
 ins öffentliche Repo, sondern in ein GitHub-Actions-Secret.
+
 ---
 
-## Zu-/Absage-Pilot D2 - Stand 21.08.2026
+## Zu-/Absage-Pilot D2 – Stand 21.08.2026
 
-Zweiter Pilot, andere Frage: nicht „woher kommen die Daten“, sondern „wie sagen Eltern zu
-oder ab“. Das kann ein abonnierter iCal-Kalender grundsätzlich nicht - er ist nur lesbar.
+Zweiter Pilot, andere Frage: nicht „woher kommen die Daten", sondern „wie sagen Eltern zu
+oder ab". Das kann ein abonnierter iCal-Kalender grundsätzlich nicht – er ist nur lesbar.
 Also braucht es **echte App-Termine**.
 
 **Was appack dafür mitbringt:** eine eingebaute **Teilnahme-Rückmeldung** (Daumen hoch /
@@ -596,14 +598,14 @@ Fragezeichen / Daumen runter). Ein Anmeldeformular ist nicht nötig. Sobald sie 
 erscheinen zwei weitere Felder: **Gruppeneinladung** (alle Mitglieder der Gruppe werden
 automatisch eingeladen und zur Rückmeldung aufgefordert) und **Sichtbarkeit der Feedbackliste**.
 
-**Gebaut:** Kalender „Speuzer D2 - Spieltage (Pilot Zu-/Absage)“, orange `D9822B`,
-Schreibzugriff App-Administratoren + Trainer. Darin vier Termine - 23.08., 30.08., 05.09.,
-13.09.2026 - mit
+**Gebaut:** Kalender „Speuzer D2 - Spieltage (Pilot Zu-/Absage)", orange `D9822B`,
+Schreibzugriff App-Administratoren + Trainer. Darin vier Termine – 23.08., 30.08., 05.09.,
+13.09.2026 – mit
 
-* Titel im Feed-Format: `Speuzer D2 · Heim gegen VFR Bockenheim 2` / `... · Auswärts bei ...`
+* Titel im Feed-Format: `Speuzer D2 · Heim gegen VFR Bockenheim 2` / `… · Auswärts bei …`
 * Untertitel `Treffpunkt 10:30 Uhr · Anstoß 11:30 Uhr · Sportplatz Mainzer Landstraße`
-* **Start = Treffpunkt = Anstoß minus 60 Minuten** (Heim und Auswärts gleich), Ende = Anstoß + 2 h
-* Ort *FFV Sportfreunde 04, Mainzer Landstraße 480* bei Heimspielen, damit die Navigation in der App funktioniert
+* **Start = Treffpunkt = Anstoß − 60 Minuten** (Heim und Auswärts gleich), Ende = Anstoß + 2 h
+* Ort *FFV Sportfreunde 04, Mainzer Landstraße 480* bei Heimspielen → Navigation in der App
 * Details-Link auf das Spiel bei FUSSBALL.DE
 * Teilnahme-Rückmeldung an, Gruppeneinladung **Mannschaft D2**, Feedbackliste nur für
   Terminverantwortliche, Onlinekonferenz aus
@@ -613,6 +615,49 @@ Schreibzugriff App-Administratoren + Trainer. Darin vier Termine - 23.08., 30.08
 mit 134 Spielen vollständig. Geprüft im Modul *Termine*: jeder D2-Spieltag genau einmal.
 
 **Grenze des Ansatzes:** Verlegungen aus dem DFBnet laufen nur im generierten Feed mit. Ein
-selbst angelegter Spieltag muss von Hand nachgezogen werden - deshalb rollierend zwei bis drei
+selbst angelegter Spieltag muss von Hand nachgezogen werden – deshalb rollierend zwei bis drei
 Spieltage im Voraus anlegen, nicht die ganze Saison. Die Kurzanleitung für Trainer liegt als
 `Speuzer App - Zu-Absage Anleitung Trainer.pdf` im Vereinsordner.
+
+
+## Import-Dateien: Spieltage als echte App-Termine (ab 21.08.2026)
+
+Abonnierte Kalender sind in appack **nur lesbar** – daran lässt sich keine Zu-/Absage hängen.
+Der **ICS-Import** (Kalender → „…" → *ICS importieren*) erzeugt dagegen echte, editierbare
+App-Termine. Dafür baut der Generator je Mannschaft eine eigene Datei:
+
+`https://justolgay.github.io/speuzer-spielplan/import-<team>.ics`
+(`import-herren.ics`, `import-a.ics`, `import-d1.ics` … `import-e3.ics`)
+
+**Was drin steckt**
+
+* **Start = Treffpunkt = Anstoß − `TREFFPUNKT_MIN` (60) Minuten**, Ende = Anstoß + 2 h
+* Titel im Feed-Format, ohne Ergebnis: `Speuzer D2 · Auswärts bei FC Fortuna Frankfurt`
+* Beschreibung aus Elternsicht: Paarung, Treffpunkt, Anstoß, Wettbewerb, Spielstätte,
+  Link zum Spiel, Bitte um Rückmeldung. **Erste Zeile ist die fertige Untertitel-Zeile**
+  zum Kopieren, weil der Import das Feld *Untertitel* nicht füllt
+* `CATEGORIES:Fussball`, `URL` = Spielseite bei FUSSBALL.DE
+* **kein `LOCATION`** – appack legt daraus bei jedem Import einen neuen Ort an
+* nur **künftige** Spiele; `IMPORT_AB` schließt zusätzlich Spieltage aus, die in der App schon
+  von Hand angelegt sind (aktuell `{"D2": "21.09.2026"}`)
+* eigene UIDs (`<staffel>-<spielnr>-app@…`), damit sie nicht mit dem Abo-Feed kollidieren
+
+**Was der Import überträgt** – Titel, Start/Ende mit Zeitzone, Beschreibung, `URL` →
+Details-(Link), `CATEGORIES` → Kategorie. **Was er nicht kann:** Untertitel,
+Teilnahme-Rückmeldung, Gruppeneinladung, Badge. Zeilenumbrüche in der Beschreibung werden zu
+einem Absatz zusammengezogen.
+
+**Ablauf je Mannschaft** (einmal ca. 10 Minuten, danach ~20 Sekunden pro Spieltag)
+
+1. Kalender anlegen: `Speuzer <Team> - Spieltage`, Schreibzugriff App-Administratoren + Trainer,
+   im Modul *Termine* aktivieren.
+2. `import-<team>.ics` herunterladen, im Kalendermenü *ICS importieren* wählen. **Jede Datei nur
+   einmal importieren**, sonst stehen die Termine doppelt.
+3. Je Termin: Untertitel aus der ersten Beschreibungszeile einsetzen, Beschreibung um die
+   Untertitel-Zeile kürzen, **Teilnahme-Rückmeldung** an, **Gruppeneinladung** = Mannschaft.
+4. Mannschaft in `NICHT_IN_APP_FEED` eintragen und pushen, damit dieselben Spiele nicht
+   zusätzlich aus `app-kalender.ics` kommen.
+
+**Grenze:** Verlegungen aus dem DFBnet laufen nur im Abo-Feed automatisch mit. Ein importierter
+Termin muss von Hand nachgezogen werden – deshalb lieber in Etappen importieren als die ganze
+Saison auf einmal.
