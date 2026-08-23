@@ -29,29 +29,9 @@ RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:341930-1-app@speuzer.sportfreunde04.de
-DTSTAMP:20260822T051322Z
-SEQUENCE:7
-DTSTART;TZID=Europe/Berlin:20260822T100000
-DTEND;TZID=Europe/Berlin:20260822T130000
-SUMMARY:Speuzer E3 · Heim gegen FSV 1910 Bergen 3
-DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
- :00 Uhr · Heimspiel\nSpeuzer E3 – FSV 1910 Bergen 3\nTreffpunkt: 10:0
- 0 Uhr\nAnstoß: 11:00 Uhr\nHeimspiel · 1. Kreisklasse · EJ Quali Gr. 2
- 2 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätte: Sportpla
- tz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https:
- //www.fussball.de/spiel/x/-/spiel/031HO7VE4G000000VS5489BUVVKNMR0J\nBitt
- e per Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer
-  Kind dabei ist – am besten bis zum Abend vor dem Spiel.
-URL:https://www.fussball.de/spiel/x/-/spiel/031HO7VE4G000000VS5489BUVVKNM
- R0J
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
 UID:341930-7-app@speuzer.sportfreunde04.de
-DTSTAMP:20260822T051322Z
-SEQUENCE:7
+DTSTAMP:20260823T054749Z
+SEQUENCE:8
 DTSTART;TZID=Europe/Berlin:20260905T100000
 DTEND;TZID=Europe/Berlin:20260905T130000
 SUMMARY:Speuzer E3 · Auswärts bei SC Weiss-Blau Frankfurt II
@@ -70,8 +50,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341930-10-app@speuzer.sportfreunde04.de
-DTSTAMP:20260822T051322Z
-SEQUENCE:7
+DTSTAMP:20260823T054749Z
+SEQUENCE:8
 DTSTART;TZID=Europe/Berlin:20260912T100000
 DTEND;TZID=Europe/Berlin:20260912T130000
 SUMMARY:Speuzer E3 · Heim gegen SG Harheim 2
@@ -90,8 +70,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341930-14-app@speuzer.sportfreunde04.de
-DTSTAMP:20260822T051322Z
-SEQUENCE:7
+DTSTAMP:20260823T054749Z
+SEQUENCE:8
 DTSTART;TZID=Europe/Berlin:20260926T113000
 DTEND;TZID=Europe/Berlin:20260926T143000
 SUMMARY:Speuzer E3 · Auswärts bei Riedberger SV II
