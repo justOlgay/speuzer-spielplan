@@ -746,7 +746,9 @@ Auslesen: Ergebnismeldung → Vereinsspielplan → Zeitraum setzen → **SUCHEN 
 (der erste Klick übernimmt nur die Felder) → Reiter SPIELSTÄTTE → die Tabelle mit der Spalte
 `Adresse` per JS auslesen.
 
-**App-Seite für F und G:** `app-fg-jugend.html`, Gruppe `fg` in `GRUPPEN`. Da es keine
+**Eigene App-Seiten für F und G:** `app-f-jugend.html` (Gruppe `f`, Tabs F1/F2) und
+`app-g-jugend.html` (Gruppe `g`, nur G1). F- und G-Jugend sind eigene Jugenden, deshalb je eine
+eigene Seite und je ein eigener Eintrag in der App-Liste. Da es keine
 FUSSBALL.DE-Widgets gibt, bleibt der Widget-Bereich leer (`widgets` filtert auf `TEAMS[t]["widget"]`)
 und `TEAMLINK` ist leer. In der Spielliste steht bei Festivals „Kinderfestival bei uns" bzw.
 „Kinderfestival bei <Verein>", bei Pokal und Freundschaftsspielen „Pokal: <Gegner>" –
