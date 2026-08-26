@@ -7,19 +7,7 @@
 // Meldet die eigene Hoehe an die einbettende Seite in der Vereins-App,
 // damit dort kein zweiter Scrollbalken entsteht.
 function speuzerHoehe(){try{parent.postMessage({speuzerHeight:document.documentElement.scrollHeight},"*");}catch(e){}}
-// Das FUSSBALL.DE-Widget ist an eine Domain gebunden. Laeuft die Seite woanders
-// (z.B. eingebettet in der Vereins-App), meldet es einen Konfigurationsfehler.
-// Diese Meldung wollen wir Eltern nicht zeigen - dann wird der Block entfernt.
-function speuzerWidgetPruefen(){
-  var w=document.getElementById("widgets"); if(!w) return;
-  var t=w.textContent; if(!t){t="";}
-  var kaputt = t.indexOf("Widget-Konfiguration")>=0;
-  if(!kaputt){kaputt = t.indexOf("kann nicht angezeigt werden")>=0;}
-  if(kaputt){w.parentNode.removeChild(w); speuzerHoehe();}
-}
-addEventListener("load",function(){speuzerHoehe();
-  setTimeout(function(){speuzerWidgetPruefen();speuzerHoehe();},1200);
-  setTimeout(function(){speuzerWidgetPruefen();speuzerHoehe();},4000);
+addEventListener("load",function(){speuzerHoehe();setTimeout(speuzerHoehe,1200);setTimeout(speuzerHoehe,4000);
   if(window.ResizeObserver){new ResizeObserver(speuzerHoehe).observe(document.body);}});
 </script><style>
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:#1c2530;background:#fff;font-size:15px}
@@ -48,6 +36,13 @@ tr.grp td{background:#f6f8fc;font-size:.7rem;letter-spacing:.09em;text-transform
 </style></head><body>
 <div class="tabs" id="tabs"></div><div class="meta" id="meta"></div>
 <div class="widgets" id="widgets"></div>
+<script>
+// Das FUSSBALL.DE-Widget ist an die Vereins-Domain gebunden. Direkt auf GitHub
+// Pages geoeffnet zeigt es nur eine Fehlermeldung - die sieht niemand gerne.
+// In der Vereins-App laeuft diese Seite eingebettet, dort funktioniert es.
+(function(){var w=document.getElementById("widgets");
+if(w && window.top===window.self){w.parentNode.removeChild(w);}})();
+</script>
 <div class="kapitel">Ganze Saison</div>
 <table><tbody id="liste"></tbody></table>
 <div class="fuss">Alle Spiele der Saison direkt aus dem DFBnet. Tippen auf ein Spiel
