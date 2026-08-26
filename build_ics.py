@@ -86,6 +86,7 @@ GRUPPEN = {
     "a":      dict(titel="A-Jugend", datei="app-a-jugend.html"),
     "d":      dict(titel="D-Jugend", datei="app-d-jugend.html"),
     "e":      dict(titel="E-Jugend", datei="app-e-jugend.html"),
+    "fg":     dict(titel="F- und G-Jugend", datei="app-fg-jugend.html"),
 }
 
 # Label je Staffelkennung. Leer = nur eine Staffel, dann keine Zwischenüberschrift.
@@ -111,8 +112,10 @@ RUNDE = {
 
 HINWEIS_E = ("Die E-Jugend spielt zuerst eine Qualifikationsrunde. "
              "Die Spiele der Hauptrunde kommen dazu, sobald der Kreis sie ansetzt.")
-HINWEIS_FG = ("F1, F2 und G-Jugend haben noch keine angesetzten Spiele \u2013 "
-              "sobald der Kreis ansetzt, erscheinen sie hier.")
+HINWEIS_KINDER = ("F- und G-Jugend spielen im Kinderfu\u00dfball: keine Ligaspiele, sondern "
+                  "Kinderfestivals \u2013 entweder bei uns oder bei einem anderen Verein. "
+                  "Der Kreis setzt sie in Bl\u00f6cken an, deshalb reicht der Plan nur wenige "
+                  "Wochen voraus.")
 HINWEIS_QUALI = ("Zurzeit stehen nur die Spiele der Qualifikationsrunde fest. Die Spiele der "
                  "Hauptrunde kommen automatisch in dieses Abo, sobald der Kreis sie ansetzt \u2013 "
                  "neu abonnieren muss niemand.")
@@ -589,23 +592,33 @@ def js_obj(d):
 def schreibe_app_seite(gruppe, spiele):
     teams = [k for k, v in TEAMS.items() if v["gruppe"] == gruppe]
     labels = {TEAMS[t]["label"]: '["%s","%s"]' % (t, TEAMS[t]["info"]) for t in teams}
-    links = {TEAMS[t]["label"]: '"%s"' % (FBDE_TEAM_BASE + TEAMS[t]["teamid"]) for t in teams}
+    links = {TEAMS[t]["label"]: '"%s"' % (FBDE_TEAM_BASE + TEAMS[t]["teamid"])
+             for t in teams if TEAMS[t].get("teamid")}
     daten = []
     for row in sorted(spiele, key=lambda r: (teams.index(r["team"]), r["_start"])):
+        if row["_wb"] == FESTIVAL:
+            gegner = "Kinderfestival %s" % ("bei uns" if row["_heim"]
+                                            else "bei %s" % row["_gegner"])
+        elif row["_wb"] != "Meisterschaft":
+            gegner = "%s: %s" % (row["_wb"].replace("Kreispokal", "Pokal"), row["_gegner"])
+        else:
+            gegner = row["_gegner"]
         daten.append('["%s","%s","%s","%s","%s","%s","%s","%s"]' % (
             TEAMS[row["team"]]["label"], "H" if row["_heim"] else "A",
             row["_start"].strftime("%Y-%m-%d"), row["_start"].strftime("%H:%M"),
-            row["_gegner"].replace('"', ""), row["ergebnis"], row["fbid"],
+            gegner.replace('"', ""), row["ergebnis"], row["fbid"],
             RUNDE.get(row["staffel"], "")))
     hinweis = ""
     if gruppe == "e":
         hinweis = "\n" + HINWEIS_E
-    if gruppe == "d":
-        hinweis = "\n" + HINWEIS_FG
+    if gruppe == "fg":
+        hinweis = "\n" + HINWEIS_KINDER
+    # Kinderfussball hat keine FUSSBALL.DE-Widgets - dann bleibt der Bereich leer.
     widgets = "\n".join(
         '<div class="wbox%s" id="w-%s"><div class="fussballde_widget" '
         'data-id="%s" data-type="team-matches" style="width:100%%"></div></div>'
-        % (" on" if i == 0 else "", t, TEAMS[t]["widget"]) for i, t in enumerate(teams))
+        % (" on" if i == 0 else "", t, TEAMS[t]["widget"])
+        for i, t in enumerate(teams) if TEAMS[t].get("widget"))
     html = (SEITE.replace("%TITEL%", GRUPPEN[gruppe]["titel"])
                  .replace("%WIDGETS%", widgets)
                  .replace("%HINWEIS%", hinweis)

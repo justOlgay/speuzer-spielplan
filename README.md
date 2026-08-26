@@ -734,9 +734,23 @@ und `untertitel()` behandeln das eigen: statt „Anstoß" heißt es **„Beginn"
 Spielstätte steht in der Beschreibung „beim gastgebenden Verein – Adresse gibt der Trainer
 bekannt", weil das DFBnet zu Festivals nur den Gastgeber nennt.
 
-**Treffpunkt:** vorerst dieselbe Regel wie bei Ligaspielen, also `TREFFPUNKT_MIN` = 60 Minuten
-vorher. Falls bei den Fünf- bis Siebenjährigen etwas anderes gilt, ist das eine Zahl an einer
-Stelle.
+**Treffpunkt:** dieselbe Regel wie bei Ligaspielen, `TREFFPUNKT_MIN` = 60 Minuten vorher –
+von Olgay am 26.08.2026 ausdrücklich für Festivals bestätigt.
+
+**Spielstätten kommen jetzt aus DFBnet.** Im Vereinsspielplan gibt es den Reiter **SPIELSTÄTTE**
+mit Adresse je Spiel. Für August bis Oktober sind damit **88 Zeilen** in `spiele.csv` befüllt:
+**51 Auswärtsadressen neu** (vorher leer, jetzt Navigation auch auswärts) und **37 korrigiert** –
+denn die Annahme „Heimspiel = Mainzer Landstraße" ist falsch. Die **Herren und die A-Jugend
+spielen zu Hause am Rebstock** (Am Römerhof 9), einzelne Jugendspiele auf anderen Plätzen.
+Auslesen: Ergebnismeldung → Vereinsspielplan → Zeitraum setzen → **SUCHEN zweimal klicken**
+(der erste Klick übernimmt nur die Felder) → Reiter SPIELSTÄTTE → die Tabelle mit der Spalte
+`Adresse` per JS auslesen.
+
+**App-Seite für F und G:** `app-fg-jugend.html`, Gruppe `fg` in `GRUPPEN`. Da es keine
+FUSSBALL.DE-Widgets gibt, bleibt der Widget-Bereich leer (`widgets` filtert auf `TEAMS[t]["widget"]`)
+und `TEAMLINK` ist leer. In der Spielliste steht bei Festivals „Kinderfestival bei uns" bzw.
+„Kinderfestival bei <Verein>", bei Pokal und Freundschaftsspielen „Pokal: <Gegner>" –
+damit sieht kein Sonderspiel wie ein Ligaspiel aus.
 
 **Was noch fehlt:** die Kinderfestivals sind nur bis **31.10.2026** angesetzt (weiter reicht die
 Ausschreibung nicht), und die **E-Jugend-Hauptrunde** hat der Kreis noch nicht eingeteilt – im
