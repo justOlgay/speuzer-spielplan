@@ -7,7 +7,19 @@
 // Meldet die eigene Hoehe an die einbettende Seite in der Vereins-App,
 // damit dort kein zweiter Scrollbalken entsteht.
 function speuzerHoehe(){try{parent.postMessage({speuzerHeight:document.documentElement.scrollHeight},"*");}catch(e){}}
-addEventListener("load",function(){speuzerHoehe();setTimeout(speuzerHoehe,1200);setTimeout(speuzerHoehe,4000);
+// Das FUSSBALL.DE-Widget ist an eine Domain gebunden. Laeuft die Seite woanders
+// (z.B. eingebettet in der Vereins-App), meldet es einen Konfigurationsfehler.
+// Diese Meldung wollen wir Eltern nicht zeigen - dann wird der Block entfernt.
+function speuzerWidgetPruefen(){
+  var w=document.getElementById("widgets"); if(!w) return;
+  var t=w.textContent; if(!t){t="";}
+  var kaputt = t.indexOf("Widget-Konfiguration")>=0;
+  if(!kaputt){kaputt = t.indexOf("kann nicht angezeigt werden")>=0;}
+  if(kaputt){w.parentNode.removeChild(w); speuzerHoehe();}
+}
+addEventListener("load",function(){speuzerHoehe();
+  setTimeout(function(){speuzerWidgetPruefen();speuzerHoehe();},1200);
+  setTimeout(function(){speuzerWidgetPruefen();speuzerHoehe();},4000);
   if(window.ResizeObserver){new ResizeObserver(speuzerHoehe).observe(document.body);}});
 </script><style>
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:#1c2530;background:#fff;font-size:15px}
@@ -35,12 +47,12 @@ td a{color:inherit;text-decoration:none;display:block}
 tr.grp td{background:#f6f8fc;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:#7286a0;font-weight:700;padding:11px 12px}
 </style></head><body>
 <div class="tabs" id="tabs"></div><div class="meta" id="meta"></div>
-<div class="widgets"><div class="wbox on" id="w-A"><div class="fussballde_widget" data-id="7f1d494c-ad2d-47d0-bb61-f4f0106ac2c4" data-type="team-matches" style="width:100%"></div></div></div>
+<div class="widgets" id="widgets"><div class="wbox on" id="w-A"><div class="fussballde_widget" data-id="7f1d494c-ad2d-47d0-bb61-f4f0106ac2c4" data-type="team-matches" style="width:100%"></div></div></div>
 <div class="kapitel">Ganze Saison</div>
 <table><tbody id="liste"></tbody></table>
-<div class="fuss">Oben die letzten und nächsten Spiele direkt von FUSSBALL.DE, unten die
-komplette Saison aus dem DFBnet. Tippen auf ein Spiel öffnet die Spielseite auf FUSSBALL.DE.
-Kurzfristige Absagen kommen per Push, nicht über diese Seite.</div>
+<div class="fuss">Alle Spiele der Saison direkt aus dem DFBnet. Tippen auf ein Spiel
+öffnet die Spielseite auf FUSSBALL.DE. Kurzfristige Absagen kommen per Push,
+nicht über diese Seite.</div>
 <script>
 const STAFFEL = {"A-Jugend":["A","Gruppenliga · AJGL Frankfurt · Region Frankfurt"]};
 const TEAMLINK = {"A-Jugend":"https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G"};
