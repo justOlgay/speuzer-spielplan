@@ -29,92 +29,98 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:340221-24@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260905T103000
 DTEND;TZID=Europe/Berlin:20260905T123000
 SUMMARY:Speuzer G1 · Kinderfestival bei FC Kalbach I / 1 2
 DESCRIPTION:Kinderfestival bei FC Kalbach I / 1 2\nMannschaft: Speuzer G1
  \nWettbewerb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel · Spiel
- nummer 24 · Staffel 340221\nSpielstätte: beim gastgebenden Verein – 
- Adresse gibt der Trainer bekannt
+ nummer 24 · Staffel 340221\nSpielstätte: Am Hopfenbrunnen 51\, 60437 F
+ rankfurt am Main
 CATEGORIES:Fussball
 TRANSP:OPAQUE
+LOCATION:Am Hopfenbrunnen 51\, 60437 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340221-51@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260912T090000
 DTEND;TZID=Europe/Berlin:20260912T110000
 SUMMARY:Speuzer G1 · Kinderfestival bei FFC Olympia 07 IV
 DESCRIPTION:Kinderfestival bei FFC Olympia 07 IV\nMannschaft: Speuzer G1\
  nWettbewerb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel · Spieln
- ummer 51 · Staffel 340221\nSpielstätte: beim gastgebenden Verein – A
- dresse gibt der Trainer bekannt
+ ummer 51 · Staffel 340221\nSpielstätte: Ostparkstr. 16\, 60385 Frankfu
+ rt am Main
 CATEGORIES:Fussball
 TRANSP:OPAQUE
+LOCATION:Ostparkstr. 16\, 60385 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340221-73@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260919T090000
 DTEND;TZID=Europe/Berlin:20260919T110000
 SUMMARY:Speuzer G1 · Kinderfestival bei SV Bonames
 DESCRIPTION:Kinderfestival bei SV Bonames\nMannschaft: Speuzer G1\nWettbe
  werb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel · Spielnummer 7
- 3 · Staffel 340221\nSpielstätte: beim gastgebenden Verein – Adresse 
- gibt der Trainer bekannt
+ 3 · Staffel 340221\nSpielstätte: Harheimer Weg 44\, 60437 Frankfurt am
+  Main
 CATEGORIES:Fussball
 TRANSP:OPAQUE
+LOCATION:Harheimer Weg 44\, 60437 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340221-86@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260926T090000
 DTEND;TZID=Europe/Berlin:20260926T110000
 SUMMARY:Speuzer G1 · Kinderfestival bei BSC SW 1919 Ffm. 2
 DESCRIPTION:Kinderfestival bei BSC SW 1919 Ffm. 2\nMannschaft: Speuzer G1
  \nWettbewerb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel · Spiel
- nummer 86 · Staffel 340221\nSpielstätte: beim gastgebenden Verein – 
- Adresse gibt der Trainer bekannt
+ nummer 86 · Staffel 340221\nSpielstätte: Eschersheimer Landstr. 328\, 
+ 60320 Frankfurt am Main
 CATEGORIES:Fussball
 TRANSP:OPAQUE
+LOCATION:Eschersheimer Landstr. 328\, 60320 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340221-109@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20261024T090000
 DTEND;TZID=Europe/Berlin:20261024T110000
 SUMMARY:Speuzer G1 · Kinderfestival bei FC Kalbach I / 1 2
 DESCRIPTION:Kinderfestival bei FC Kalbach I / 1 2\nMannschaft: Speuzer G1
  \nWettbewerb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel · Spiel
- nummer 109 · Staffel 340221\nSpielstätte: beim gastgebenden Verein –
-  Adresse gibt der Trainer bekannt
+ nummer 109 · Staffel 340221\nSpielstätte: Am Hopfenbrunnen 51\, 60437 
+ Frankfurt am Main
 CATEGORIES:Fussball
 TRANSP:OPAQUE
+LOCATION:Am Hopfenbrunnen 51\, 60437 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340221-142@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20261031T110000
 DTEND;TZID=Europe/Berlin:20261031T130000
 SUMMARY:Speuzer G1 · Kinderfestival bei SG Harheim 2 / 2
 DESCRIPTION:Kinderfestival bei SG Harheim 2 / 2\nMannschaft: Speuzer G1\n
  Wettbewerb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel · Spielnu
- mmer 142 · Staffel 340221\nSpielstätte: beim gastgebenden Verein – A
- dresse gibt der Trainer bekannt
+ mmer 142 · Staffel 340221\nSpielstätte: Riedhalsstr.\, 60437 Frankfurt
+  am Main
 CATEGORIES:Fussball
 TRANSP:OPAQUE
+LOCATION:Riedhalsstr.\, 60437 Frankfurt am Main
 END:VEVENT
 END:VCALENDAR

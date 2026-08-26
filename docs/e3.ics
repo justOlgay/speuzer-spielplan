@@ -32,78 +32,82 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:341930-1@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260822T110000
 DTEND;TZID=Europe/Berlin:20260822T130000
 SUMMARY:Speuzer E3 · Heim gegen FSV 1910 Bergen 3
 DESCRIPTION:Speuzer E3 – FSV 1910 Bergen 3\nMannschaft: Speuzer E3\nWet
  tbewerb: 1. Kreisklasse · EJ Quali Gr. 22 · Kreis Frankfurt\nRunde: Qu
  alifikationsrunde\nHeimspiel · Spielnummer 1 · Staffel 341930\nSpielst
- ätte: Sportplatz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zu
- m Spiel: https://www.fussball.de/spiel/x/-/spiel/031HO7VE4G000000VS5489B
- UVVKNMR0J
+ ätte: Mainzer Landstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Sp
+ iel: https://www.fussball.de/spiel/x/-/spiel/031HO7VE4G000000VS5489BUVVK
+ NMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7VE4G000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
 TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341930-7@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260905T110000
 DTEND;TZID=Europe/Berlin:20260905T130000
 SUMMARY:Speuzer E3 · Auswärts bei SC Weiss-Blau Frankfurt II
 DESCRIPTION:SC Weiss-Blau Frankfurt II – Speuzer E3\nMannschaft: Speuze
  r E3\nWettbewerb: 1. Kreisklasse · EJ Quali Gr. 22 · Kreis Frankfurt\n
  Runde: Qualifikationsrunde\nAuswärtsspiel · Spielnummer 7 · Staffel 3
- 41930\nSpielstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://ww
- w.fussball.de/spiel/x/-/spiel/031HO7VE0K000000VS5489BUVVKNMR0J
+ 41930\nSpielstätte: Holzhecke 16 /Sandhöfer Wiesen\, 60528 Frankfurt a
+ m Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/03
+ 1HO7VE0K000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7VE0K000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
 TRANSP:OPAQUE
+LOCATION:Holzhecke 16 /Sandhöfer Wiesen\, 60528 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341930-10@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260912T110000
 DTEND;TZID=Europe/Berlin:20260912T130000
 SUMMARY:Speuzer E3 · Heim gegen SG Harheim 2
 DESCRIPTION:Speuzer E3 – SG Harheim 2\nMannschaft: Speuzer E3\nWettbewe
  rb: 1. Kreisklasse · EJ Quali Gr. 22 · Kreis Frankfurt\nRunde: Qualifi
  kationsrunde\nHeimspiel · Spielnummer 10 · Staffel 341930\nSpielstätt
- e: Sportplatz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Sp
- iel: https://www.fussball.de/spiel/x/-/spiel/031HO7VDUS000000VS5489BUVVK
- NMR0J
+ e: Mainzer Landstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel:
+  https://www.fussball.de/spiel/x/-/spiel/031HO7VDUS000000VS5489BUVVKNMR0
+ J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7VDUS000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
 TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341930-14@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260926T123000
 DTEND;TZID=Europe/Berlin:20260926T143000
 SUMMARY:Speuzer E3 · Auswärts bei Riedberger SV II
 DESCRIPTION:Riedberger SV II – Speuzer E3\nMannschaft: Speuzer E3\nWett
  bewerb: 1. Kreisklasse · EJ Quali Gr. 22 · Kreis Frankfurt\nRunde: Qua
  lifikationsrunde\nAuswärtsspiel · Spielnummer 14 · Staffel 341930\nSp
- ielstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussbal
- l.de/spiel/x/-/spiel/031HO7VE78000000VS5489BUVVKNMR0J
+ ielstätte: Am Hopfenbrunnen 51\, 60437 Frankfurt am Main\nAlle Infos zu
+ m Spiel: https://www.fussball.de/spiel/x/-/spiel/031HO7VE78000000VS5489B
+ UVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7VE78000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
 TRANSP:OPAQUE
+LOCATION:Am Hopfenbrunnen 51\, 60437 Frankfurt am Main
 END:VEVENT
 END:VCALENDAR

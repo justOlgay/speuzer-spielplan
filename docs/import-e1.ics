@@ -30,19 +30,19 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:940399-24-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260826T170000
 DTEND;TZID=Europe/Berlin:20260826T200000
 SUMMARY:Speuzer E1 · Pokal\, Heim gegen 1. Rödelheimer FC 02 1
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 17:00 Uhr · Anstoß 18
  :00 Uhr · Heimspiel\nSpeuzer E1 – 1. Rödelheimer FC 02 1\nTreffpunkt
  : 17:00 Uhr\nAnstoß: 18:00 Uhr\nHeimspiel · Kreispokal\nSpielstätte: 
- Sportplatz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel
- : https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIDBD8C0
- 00000VTVG0001VTR8C1K7\nBitte per Daumen hoch / Fragezeichen / Daumen run
- ter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Abend v
- or dem Spiel.
+ Mainzer Landstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: ht
+ tps://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIDBD8C00000
+ 0VTVG0001VTR8C1K7\nBitte per Daumen hoch / Fragezeichen / Daumen runter 
+ zurückmelden\, ob euer Kind dabei ist – am besten bis zum Abend vor d
+ em Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIDBD8C
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -50,19 +50,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-5-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260829T100000
 DTEND;TZID=Europe/Berlin:20260829T130000
 SUMMARY:Speuzer E1 · Auswärts bei SC Goldstein
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
  :00 Uhr · Auswärtsspiel\nSC Goldstein – Speuzer E1\nTreffpunkt: 10:0
  0 Uhr\nAnstoß: 11:00 Uhr\nAuswärtsspiel · 1. Kreisklasse · EJ Quali 
- Gr. 08 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätte: sie
- he FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/
- spiel/031I12OVGO000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezei
- chen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am beste
- n bis zum Abend vor dem Spiel.
+ Gr. 08 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätte: Str
+ aßburger Str.\, 60529 Frankfurt am Main\nAlle Infos zum Spiel: https://
+ www.fussball.de/spiel/x/-/spiel/031I12OVGO000000VS5489BUVVKNMR0J\nBitte 
+ per Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer K
+ ind dabei ist – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/spiel/x/-/spiel/031I12OVGO000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -70,8 +70,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-7-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260905T123000
 DTEND;TZID=Europe/Berlin:20260905T153000
 SUMMARY:Speuzer E1 · Auswärts bei SV07 Heddernheim 1
@@ -79,10 +79,10 @@ DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 12:30 Uhr · Anstoß 13
  :30 Uhr · Auswärtsspiel\nSV07 Heddernheim 1 – Speuzer E1\nTreffpunkt
  : 12:30 Uhr\nAnstoß: 13:30 Uhr\nAuswärtsspiel · 1. Kreisklasse · EJ 
  Quali Gr. 08 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätt
- e: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spie
- l/x/-/spiel/031I12OVDO000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Fr
- agezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am
-  besten bis zum Abend vor dem Spiel.
+ e: Alexander-Riese-Weg\, 60439 Frankfurt am Main\nAlle Infos zum Spiel: 
+ https://www.fussball.de/spiel/x/-/spiel/031I12OVDO000000VS5489BUVVKNMR0J
+ \nBitte per Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, o
+ b euer Kind dabei ist – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/spiel/x/-/spiel/031I12OVDO000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -90,19 +90,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-10-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260912T110000
 DTEND;TZID=Europe/Berlin:20260912T140000
 SUMMARY:Speuzer E1 · Heim gegen SG Bornheim / GW 2
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:00 Uhr · Anstoß 12
  :00 Uhr · Heimspiel\nSpeuzer E1 – SG Bornheim / GW 2\nTreffpunkt: 11:
  00 Uhr\nAnstoß: 12:00 Uhr\nHeimspiel · 1. Kreisklasse · EJ Quali Gr. 
- 08 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätte: Sportpl
- atz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https
- ://www.fussball.de/spiel/x/-/spiel/031I12OVBK000000VS5489BUVVKNMR0J\nBit
- te per Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob eue
- r Kind dabei ist – am besten bis zum Abend vor dem Spiel.
+ 08 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätte: Mainzer
+  Landstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://w
+ ww.fussball.de/spiel/x/-/spiel/031I12OVBK000000VS5489BUVVKNMR0J\nBitte p
+ er Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Ki
+ nd dabei ist – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/spiel/x/-/spiel/031I12OVBK000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -110,8 +110,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-14-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260926T113000
 DTEND;TZID=Europe/Berlin:20260926T143000
 SUMMARY:Speuzer E1 · Auswärts bei 1. Rödelheimer FC 02 1
@@ -119,10 +119,10 @@ DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:30 Uhr · Anstoß 12
  :30 Uhr · Auswärtsspiel\n1. Rödelheimer FC 02 1 – Speuzer E1\nTreff
  punkt: 11:30 Uhr\nAnstoß: 12:30 Uhr\nAuswärtsspiel · 1. Kreisklasse 
  · EJ Quali Gr. 08 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpiel
- stätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.d
- e/spiel/x/-/spiel/031I12OVL0000000VS5489BUVVKNMR0J\nBitte per Daumen hoc
- h / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist 
- – am besten bis zum Abend vor dem Spiel.
+ stätte: Bottenhorner Weg\, 60489 Frankfurt am Main\nAlle Infos zum Spie
+ l: https://www.fussball.de/spiel/x/-/spiel/031I12OVL0000000VS5489BUVVKNM
+ R0J\nBitte per Daumen hoch / Fragezeichen / Daumen runter zurückmelden\
+ , ob euer Kind dabei ist – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/spiel/x/-/spiel/031I12OVL0000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball

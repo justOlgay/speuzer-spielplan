@@ -30,8 +30,8 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:341930-7-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260905T100000
 DTEND;TZID=Europe/Berlin:20260905T130000
 SUMMARY:Speuzer E3 · Auswärts bei SC Weiss-Blau Frankfurt II
@@ -39,10 +39,11 @@ DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
  :00 Uhr · Auswärtsspiel\nSC Weiss-Blau Frankfurt II – Speuzer E3\nTr
  effpunkt: 10:00 Uhr\nAnstoß: 11:00 Uhr\nAuswärtsspiel · 1. Kreisklass
  e · EJ Quali Gr. 22 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpi
- elstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball
- .de/spiel/x/-/spiel/031HO7VE0K000000VS5489BUVVKNMR0J\nBitte per Daumen h
- och / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei is
- t – am besten bis zum Abend vor dem Spiel.
+ elstätte: Holzhecke 16 /Sandhöfer Wiesen\, 60528 Frankfurt am Main\nAl
+ le Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031HO7VE0K00
+ 0000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezeichen / Daumen runt
+ er zurückmelden\, ob euer Kind dabei ist – am besten bis zum Abend vo
+ r dem Spiel.
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7VE0K000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -50,19 +51,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341930-10-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260912T100000
 DTEND;TZID=Europe/Berlin:20260912T130000
 SUMMARY:Speuzer E3 · Heim gegen SG Harheim 2
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
  :00 Uhr · Heimspiel\nSpeuzer E3 – SG Harheim 2\nTreffpunkt: 10:00 Uhr
  \nAnstoß: 11:00 Uhr\nHeimspiel · 1. Kreisklasse · EJ Quali Gr. 22 · 
- Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätte: Sportplatz Ma
- inzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www
- .fussball.de/spiel/x/-/spiel/031HO7VDUS000000VS5489BUVVKNMR0J\nBitte per
-  Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind
-  dabei ist – am besten bis zum Abend vor dem Spiel.
+ Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätte: Mainzer Lands
+ tr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fus
+ sball.de/spiel/x/-/spiel/031HO7VDUS000000VS5489BUVVKNMR0J\nBitte per Dau
+ men hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dab
+ ei ist – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7VDUS000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -70,8 +71,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341930-14-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260926T113000
 DTEND;TZID=Europe/Berlin:20260926T143000
 SUMMARY:Speuzer E3 · Auswärts bei Riedberger SV II
@@ -79,10 +80,10 @@ DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:30 Uhr · Anstoß 12
  :30 Uhr · Auswärtsspiel\nRiedberger SV II – Speuzer E3\nTreffpunkt: 
  11:30 Uhr\nAnstoß: 12:30 Uhr\nAuswärtsspiel · 1. Kreisklasse · EJ Qu
  ali Gr. 22 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätte:
-  siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/
- x/-/spiel/031HO7VE78000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Frag
- ezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am b
- esten bis zum Abend vor dem Spiel.
+  Am Hopfenbrunnen 51\, 60437 Frankfurt am Main\nAlle Infos zum Spiel: ht
+ tps://www.fussball.de/spiel/x/-/spiel/031HO7VE78000000VS5489BUVVKNMR0J\n
+ Bitte per Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob 
+ euer Kind dabei ist – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7VE78000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball

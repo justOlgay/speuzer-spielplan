@@ -29,112 +29,109 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:340233-33@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260829T090000
 DTEND;TZID=Europe/Berlin:20260829T110000
 SUMMARY:Speuzer F1 · Kinderfestival bei VFR Bockenheim 1
 DESCRIPTION:Kinderfestival bei VFR Bockenheim 1\nMannschaft: Speuzer F1\n
  Wettbewerb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel · Spielnu
- mmer 33 · Staffel 340233\nSpielstätte: beim gastgebenden Verein – Ad
- resse gibt der Trainer bekannt
+ mmer 33 · Staffel 340233\nSpielstätte: Ginnheimer Landstr. 37\, 60487 
+ Frankfurt am Main
 CATEGORIES:Fussball
 TRANSP:OPAQUE
+LOCATION:Ginnheimer Landstr. 37\, 60487 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340233-62@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260905T100000
 DTEND;TZID=Europe/Berlin:20260905T120000
 SUMMARY:Speuzer F1 · Kinderfestival zu Hause
 DESCRIPTION:Kinderfestival bei uns\nMannschaft: Speuzer F1\nWettbewerb: K
  inderfestival · Kreis Frankfurt\nHeimspiel · Spielnummer 62 · Staffel
-  340233\nSpielstätte: Sportplatz Mainzer Landstrasse\, Frankfurt am Mai
- n
+  340233\nSpielstätte: Mainzer Landstr. 480\, 60326 Frankfurt am Main
 CATEGORIES:Fussball
 TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340233-142@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260912T100000
 DTEND;TZID=Europe/Berlin:20260912T120000
 SUMMARY:Speuzer F1 · Kinderfestival zu Hause
 DESCRIPTION:Kinderfestival bei uns\nMannschaft: Speuzer F1\nWettbewerb: K
  inderfestival · Kreis Frankfurt\nHeimspiel · Spielnummer 142 · Staffe
- l 340233\nSpielstätte: Sportplatz Mainzer Landstrasse\, Frankfurt am Ma
- in
+ l 340233\nSpielstätte: Mainzer Landstr. 480\, 60326 Frankfurt am Main
 CATEGORIES:Fussball
 TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340233-163@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260919T090000
 DTEND;TZID=Europe/Berlin:20260919T110000
 SUMMARY:Speuzer F1 · Kinderfestival bei FV 09 Eschersheim I
 DESCRIPTION:Kinderfestival bei FV 09 Eschersheim I\nMannschaft: Speuzer F
  1\nWettbewerb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel · Spie
- lnummer 163 · Staffel 340233\nSpielstätte: beim gastgebenden Verein 
- – Adresse gibt der Trainer bekannt
+ lnummer 163 · Staffel 340233\nSpielstätte: Berkersheimer Weg 120\, 604
+ 33 Frankfurt am Main
 CATEGORIES:Fussball
 TRANSP:OPAQUE
+LOCATION:Berkersheimer Weg 120\, 60433 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340233-237@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260926T100000
 DTEND;TZID=Europe/Berlin:20260926T120000
 SUMMARY:Speuzer F1 · Kinderfestival zu Hause
 DESCRIPTION:Kinderfestival bei uns\nMannschaft: Speuzer F1\nWettbewerb: K
  inderfestival · Kreis Frankfurt\nHeimspiel · Spielnummer 237 · Staffe
- l 340233\nSpielstätte: Sportplatz Mainzer Landstrasse\, Frankfurt am Ma
- in
+ l 340233\nSpielstätte: Mainzer Landstr. 480\, 60326 Frankfurt am Main
 CATEGORIES:Fussball
 TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340233-283@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20261024T100000
 DTEND;TZID=Europe/Berlin:20261024T120000
 SUMMARY:Speuzer F1 · Kinderfestival zu Hause
 DESCRIPTION:Kinderfestival bei uns\nMannschaft: Speuzer F1\nWettbewerb: K
  inderfestival · Kreis Frankfurt\nHeimspiel · Spielnummer 283 · Staffe
- l 340233\nSpielstätte: Sportplatz Mainzer Landstrasse\, Frankfurt am Ma
- in
+ l 340233\nSpielstätte: Mainzer Landstr. 480\, 60326 Frankfurt am Main
 CATEGORIES:Fussball
 TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340233-343@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20261031T100000
 DTEND;TZID=Europe/Berlin:20261031T120000
 SUMMARY:Speuzer F1 · Kinderfestival zu Hause
 DESCRIPTION:Kinderfestival bei uns\nMannschaft: Speuzer F1\nWettbewerb: K
  inderfestival · Kreis Frankfurt\nHeimspiel · Spielnummer 343 · Staffe
- l 340233\nSpielstätte: Sportplatz Mainzer Landstrasse\, Frankfurt am Ma
- in
+ l 340233\nSpielstätte: Mainzer Landstr. 480\, 60326 Frankfurt am Main
 CATEGORIES:Fussball
 TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
 END:VEVENT
 END:VCALENDAR

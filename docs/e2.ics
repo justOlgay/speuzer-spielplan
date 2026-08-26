@@ -32,96 +32,101 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:341435-1@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260822T113000
 DTEND;TZID=Europe/Berlin:20260822T133000
 SUMMARY:Speuzer E2 · Heim gegen Spvgg. Kickers 1916 4
 DESCRIPTION:Speuzer E2 – Spvgg. Kickers 1916 4\nMannschaft: Speuzer E2\
  nWettbewerb: 1. Kreisklasse · EJ Quali Gr. 18 · Kreis Frankfurt\nRunde
  : Qualifikationsrunde\nHeimspiel · Spielnummer 1 · Staffel 341435\nSpi
- elstätte: Sportplatz Mainzer Landstrasse\, Frankfurt am Main\nAlle Info
- s zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031HO7T0VC000000VS5
- 489BUVVKNMR0J
+ elstätte: Mainzer Landstr. 480\, 60326 Frankfurt am Main\nAlle Infos zu
+ m Spiel: https://www.fussball.de/spiel/x/-/spiel/031HO7T0VC000000VS5489B
+ UVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T0VC000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
 TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341435-5@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260829T123000
 DTEND;TZID=Europe/Berlin:20260829T143000
 SUMMARY:Speuzer E2 · Auswärts bei FSV 1910 Bergen 2
 DESCRIPTION:FSV 1910 Bergen 2 – Speuzer E2\nMannschaft: Speuzer E2\nWet
  tbewerb: 1. Kreisklasse · EJ Quali Gr. 18 · Kreis Frankfurt\nRunde: Qu
  alifikationsrunde\nAuswärtsspiel · Spielnummer 5 · Staffel 341435\nSp
- ielstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussbal
- l.de/spiel/x/-/spiel/031HO7T0TS000000VS5489BUVVKNMR0J
+ ielstätte: Landgraben\, 60388 Frankfurt am Main\nAlle Infos zum Spiel: 
+ https://www.fussball.de/spiel/x/-/spiel/031HO7T0TS000000VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T0TS000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
 TRANSP:OPAQUE
+LOCATION:Landgraben\, 60388 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341435-7@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260905T110000
 DTEND;TZID=Europe/Berlin:20260905T130000
 SUMMARY:Speuzer E2 · Auswärts bei DJK SW Griesheim 3
 DESCRIPTION:DJK SW Griesheim 3 – Speuzer E2\nMannschaft: Speuzer E2\nWe
  ttbewerb: 1. Kreisklasse · EJ Quali Gr. 18 · Kreis Frankfurt\nRunde: Q
  ualifikationsrunde\nAuswärtsspiel · Spielnummer 7 · Staffel 341435\nS
- pielstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussba
- ll.de/spiel/x/-/spiel/031HO7T0RC000000VS5489BUVVKNMR0J
+ pielstätte: Am Römerhof 9\, 60486 Frankfurt am Main\nAlle Infos zum Sp
+ iel: https://www.fussball.de/spiel/x/-/spiel/031HO7T0RC000000VS5489BUVVK
+ NMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T0RC000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
 TRANSP:OPAQUE
+LOCATION:Am Römerhof 9\, 60486 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341435-10@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260912T113000
 DTEND;TZID=Europe/Berlin:20260912T133000
 SUMMARY:Speuzer E2 · Heim gegen SG Bornheim / GW 3
 DESCRIPTION:Speuzer E2 – SG Bornheim / GW 3\nMannschaft: Speuzer E2\nWe
  ttbewerb: 1. Kreisklasse · EJ Quali Gr. 18 · Kreis Frankfurt\nRunde: Q
  ualifikationsrunde\nHeimspiel · Spielnummer 10 · Staffel 341435\nSpiel
- stätte: Sportplatz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos 
- zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031HO7T0PO000000VS548
- 9BUVVKNMR0J
+ stätte: Mainzer Landstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum 
+ Spiel: https://www.fussball.de/spiel/x/-/spiel/031HO7T0PO000000VS5489BUV
+ VKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T0PO000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
 TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341435-14@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260926T123000
 DTEND;TZID=Europe/Berlin:20260926T143000
 SUMMARY:Speuzer E2 · Auswärts bei TSG 1888 Nieder-Erlenbach 2
 DESCRIPTION:TSG 1888 Nieder-Erlenbach 2 – Speuzer E2\nMannschaft: Speuz
  er E2\nWettbewerb: 1. Kreisklasse · EJ Quali Gr. 18 · Kreis Frankfurt\
  nRunde: Qualifikationsrunde\nAuswärtsspiel · Spielnummer 14 · Staffel
-  341435\nSpielstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://
- www.fussball.de/spiel/x/-/spiel/031HO7T12C000000VS5489BUVVKNMR0J
+  341435\nSpielstätte: Am Riedsteg 125\, 60437 Frankfurt am Main\nAlle I
+ nfos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031HO7T12C000000
+ VS5489BUVVKNMR0J
 URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T12C000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
 TRANSP:OPAQUE
+LOCATION:Am Riedsteg 125\, 60437 Frankfurt am Main
 END:VEVENT
 END:VCALENDAR

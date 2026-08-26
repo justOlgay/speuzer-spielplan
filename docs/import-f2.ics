@@ -30,113 +30,113 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:340231-24-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260829T080000
 DTEND;TZID=Europe/Berlin:20260829T110000
 SUMMARY:Speuzer F2 · Kinderfestival bei SG Praunheim II
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:00 Uhr · Beginn 09:
  00 Uhr · auswärts\nKinderfestival bei SG Praunheim II\nTreffpunkt: 08:
  00 Uhr\nBeginn: 09:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielstätt
- e: siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Daumen runt
- er zurückmelden\, ob euer Kind dabei ist – am besten bis zum Abend vo
- r dem Spiel.
+ e: Praunheimer Hohl\, 60488 Frankfurt am Main\nBitte per Daumen hoch / F
+ ragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – a
+ m besten bis zum Abend vor dem Spiel.
 CATEGORIES:Fussball
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340231-58-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260905T100000
 DTEND;TZID=Europe/Berlin:20260905T130000
 SUMMARY:Speuzer F2 · Kinderfestival bei SV Blau-Gelb FFM 4
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Beginn 11:
  00 Uhr · auswärts\nKinderfestival bei SV Blau-Gelb FFM 4\nTreffpunkt: 
  10:00 Uhr\nBeginn: 11:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielst
- ätte: siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Daumen 
- runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Aben
- d vor dem Spiel.
+ ätte: Am Ginnheimer Wäldchen 2-4\, 60431 Frankfurt am Main\nBitte per 
+ Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind 
+ dabei ist – am besten bis zum Abend vor dem Spiel.
 CATEGORIES:Fussball
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340231-80-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260912T100000
 DTEND;TZID=Europe/Berlin:20260912T130000
 SUMMARY:Speuzer F2 · Kinderfestival bei FC Tempo Ffm 2
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Beginn 11:
  00 Uhr · auswärts\nKinderfestival bei FC Tempo Ffm 2\nTreffpunkt: 10:0
  0 Uhr\nBeginn: 11:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielstätte
- : siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Daumen runte
- r zurückmelden\, ob euer Kind dabei ist – am besten bis zum Abend vor
-  dem Spiel.
+ : Am Ginnheimer Wäldchen 9\, 60431 Frankfurt am Main\nBitte per Daumen 
+ hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei i
+ st – am besten bis zum Abend vor dem Spiel.
 CATEGORIES:Fussball
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340231-130-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260919T100000
 DTEND;TZID=Europe/Berlin:20260919T130000
 SUMMARY:Speuzer F2 · Kinderfestival bei TSG 1888 Nieder-Erlenbach 2
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Beginn 11:
  00 Uhr · auswärts\nKinderfestival bei TSG 1888 Nieder-Erlenbach 2\nTre
  ffpunkt: 10:00 Uhr\nBeginn: 11:00 Uhr\nAuswärtsspiel · Kinderfestival\
- nSpielstätte: siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen /
-  Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten bis 
- zum Abend vor dem Spiel.
+ nSpielstätte: Am Riedsteg 125\, 60437 Frankfurt am Main\nBitte per Daum
+ en hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabe
+ i ist – am besten bis zum Abend vor dem Spiel.
 CATEGORIES:Fussball
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340231-165-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260926T080000
 DTEND;TZID=Europe/Berlin:20260926T110000
 SUMMARY:Speuzer F2 · Kinderfestival bei DJK SW Griesheim 4
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:00 Uhr · Beginn 09:
  00 Uhr · auswärts\nKinderfestival bei DJK SW Griesheim 4\nTreffpunkt: 
  08:00 Uhr\nBeginn: 09:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielst
- ätte: siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Daumen 
- runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Aben
- d vor dem Spiel.
+ ätte: Am Römerhof 9\, 60486 Frankfurt am Main\nBitte per Daumen hoch /
+  Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist –
+  am besten bis zum Abend vor dem Spiel.
 CATEGORIES:Fussball
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340231-198-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20261024T093000
 DTEND;TZID=Europe/Berlin:20261024T123000
 SUMMARY:Speuzer F2 · Kinderfestival bei Spvgg. 03 Fechenheim III
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:30 Uhr · Beginn 10:
  30 Uhr · auswärts\nKinderfestival bei Spvgg. 03 Fechenheim III\nTreffp
  unkt: 09:30 Uhr\nBeginn: 10:30 Uhr\nAuswärtsspiel · Kinderfestival\nSp
- ielstätte: siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Da
- umen runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum
-  Abend vor dem Spiel.
+ ielstätte: Pfortenstr. 55\, 60386 Frankfurt am Main\nBitte per Daumen h
+ och / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei is
+ t – am besten bis zum Abend vor dem Spiel.
 CATEGORIES:Fussball
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340231-213-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20261031T083000
 DTEND;TZID=Europe/Berlin:20261031T113000
 SUMMARY:Speuzer F2 · Kinderfestival bei Concordia Eschersheim 2
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:30 Uhr · Beginn 09:
  30 Uhr · auswärts\nKinderfestival bei Concordia Eschersheim 2\nTreffpu
  nkt: 08:30 Uhr\nBeginn: 09:30 Uhr\nAuswärtsspiel · Kinderfestival\nSpi
- elstätte: siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Dau
- men runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum 
- Abend vor dem Spiel.
+ elstätte: Eschersheimer Landstr. 328\, 60320 Frankfurt am Main\nBitte p
+ er Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Ki
+ nd dabei ist – am besten bis zum Abend vor dem Spiel.
 CATEGORIES:Fussball
 TRANSP:OPAQUE
 END:VEVENT

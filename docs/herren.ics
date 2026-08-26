@@ -29,271 +29,277 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:341727-5@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260802T150000
 DTEND;TZID=Europe/Berlin:20260802T170000
 SUMMARY:Speuzer Herren · Auswärts bei TSG 51 Ffm
 DESCRIPTION:TSG 51 Ffm – Speuzer Herren\nMannschaft: Speuzer Herren\nWe
  ttbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nAuswär
- tsspiel · Spielnummer 5 · Staffel 341727\nSpielstätte: siehe FUSSBALL
- .DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/saison
- /2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+ tsspiel · Spielnummer 5 · Staffel 341727\nSpielstätte: Niedwiesenstr.
+  124\, 60431 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussba
+ ll.de/mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K
+ 7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
 TRANSP:OPAQUE
+LOCATION:Niedwiesenstr. 124\, 60431 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-30@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260816T153000
 DTEND;TZID=Europe/Berlin:20260816T173000
 SUMMARY:Speuzer Herren · Auswärts bei VFR Bockenheim
 DESCRIPTION:VFR Bockenheim – Speuzer Herren\nMannschaft: Speuzer Herren
  \nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nAus
- wärtsspiel · Spielnummer 30 · Staffel 341727\nSpielstätte: siehe FUS
- SBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/s
- aison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
-URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
- 000000VTVG0001VTR8C1K7
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
-UID:341727-38@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
-DTSTART;TZID=Europe/Berlin:20260823T150000
-DTEND;TZID=Europe/Berlin:20260823T170000
-SUMMARY:Speuzer Herren · Heim gegen SG Praunheim 1908
-DESCRIPTION:Speuzer Herren – SG Praunheim 1908\nMannschaft: Speuzer Her
- ren\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\n
- Heimspiel · Spielnummer 38 · Staffel 341727\nSpielstätte: Sportplatz 
- Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://w
- ww.fussball.de/spiel/x/-/spiel/031D0TFC4C000000VS5489BUVUR5FS5A
-URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFC4C000000VS5489BUVUR5F
- S5A
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
-END:VEVENT
-BEGIN:VEVENT
-UID:341727-54@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
-DTSTART;TZID=Europe/Berlin:20260830T130000
-DTEND;TZID=Europe/Berlin:20260830T150000
-SUMMARY:Speuzer Herren · Auswärts bei Spvgg. 02 Griesheim II
-DESCRIPTION:Spvgg. 02 Griesheim II – Speuzer Herren\nMannschaft: Speuze
- r Herren\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankf
- urt\nAuswärtsspiel · Spielnummer 54 · Staffel 341727\nSpielstätte: s
- iehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/
- -/spiel/031D0TFC0K000000VS5489BUVUR5FS5A
-URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFC0K000000VS5489BUVUR5F
- S5A
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
-UID:940158-15@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
-DTSTART;TZID=Europe/Berlin:20260902T193000
-DTEND;TZID=Europe/Berlin:20260902T213000
-SUMMARY:Speuzer Herren · Pokal\, Heim gegen Concordia Eschersheim
-DESCRIPTION:Speuzer Herren – Concordia Eschersheim\nMannschaft: Speuzer
-  Herren\nWettbewerb: Kreispokal · Kreis Frankfurt\nHeimspiel · Spielnu
- mmer 15 · Staffel 940158\nSpielstätte: Sportplatz Mainzer Landstrasse\
- , Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/manns
- chaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
-URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
- 000000VTVG0001VTR8C1K7
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
-END:VEVENT
-BEGIN:VEVENT
-UID:341727-56@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
-DTSTART;TZID=Europe/Berlin:20260906T150000
-DTEND;TZID=Europe/Berlin:20260906T170000
-SUMMARY:Speuzer Herren · Heim gegen DJK SW Griesheim
-DESCRIPTION:Speuzer Herren – DJK SW Griesheim\nMannschaft: Speuzer Herr
- en\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nH
- eimspiel · Spielnummer 56 · Staffel 341727\nSpielstätte: Sportplatz M
- ainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://ww
- w.fussball.de/spiel/x/-/spiel/031D0TFB1C000000VS5489BUVUR5FS5A
-URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFB1C000000VS5489BUVUR5F
- S5A
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
-END:VEVENT
-BEGIN:VEVENT
-UID:341727-65@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
-DTSTART;TZID=Europe/Berlin:20260909T190000
-DTEND;TZID=Europe/Berlin:20260909T210000
-SUMMARY:Speuzer Herren · Heim gegen TSG Niederrad 1898
-DESCRIPTION:Speuzer Herren – TSG Niederrad 1898\nMannschaft: Speuzer He
- rren\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\
- nHeimspiel · Spielnummer 65 · Staffel 341727\nSpielstätte: Sportplatz
-  Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://
- www.fussball.de/spiel/x/-/spiel/031D0TFEI8000000VS5489BUVUR5FS5A
-URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFEI8000000VS5489BUVUR5F
- S5A
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
-END:VEVENT
-BEGIN:VEVENT
-UID:341727-79@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
-DTSTART;TZID=Europe/Berlin:20260913T153000
-DTEND;TZID=Europe/Berlin:20260913T173000
-SUMMARY:Speuzer Herren · Auswärts bei SV Niederursel
-DESCRIPTION:SV Niederursel – Speuzer Herren\nMannschaft: Speuzer Herren
- \nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nAus
- wärtsspiel · Spielnummer 79 · Staffel 341727\nSpielstätte: siehe FUS
- SBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/
- 031D0TFAQ4000000VS5489BUVUR5FS5A
-URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFAQ4000000VS5489BUVUR5F
- S5A
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
-UID:341727-83@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
-DTSTART;TZID=Europe/Berlin:20260920T150000
-DTEND;TZID=Europe/Berlin:20260920T170000
-SUMMARY:Speuzer Herren · Heim gegen SC Riedberg
-DESCRIPTION:Speuzer Herren – SC Riedberg\nMannschaft: Speuzer Herren\nW
- ettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nHeimsp
- iel · Spielnummer 83 · Staffel 341727\nSpielstätte: Sportplatz Mainze
- r Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fus
- sball.de/spiel/x/-/spiel/031D0TFA20000000VS5489BUVUR5FS5A
-URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFA20000000VS5489BUVUR5F
- S5A
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
-END:VEVENT
-BEGIN:VEVENT
-UID:341727-95@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
-DTSTART;TZID=Europe/Berlin:20260927T123000
-DTEND;TZID=Europe/Berlin:20260927T143000
-SUMMARY:Speuzer Herren · Auswärts bei FC Tempo Ffm II
-DESCRIPTION:FC Tempo Ffm II – Speuzer Herren\nMannschaft: Speuzer Herre
- n\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nAu
- swärtsspiel · Spielnummer 95 · Staffel 341727\nSpielstätte: siehe FU
- SSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel
- /031D0TF9OC000000VS5489BUVUR5FS5A
-URL:https://www.fussball.de/spiel/x/-/spiel/031D0TF9OC000000VS5489BUVUR5F
- S5A
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
-UID:341727-101@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
-DTSTART;TZID=Europe/Berlin:20261004T150000
-DTEND;TZID=Europe/Berlin:20261004T170000
-SUMMARY:Speuzer Herren · Heim gegen FV 1920 Hausen
-DESCRIPTION:Speuzer Herren – FV 1920 Hausen\nMannschaft: Speuzer Herren
- \nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nHei
- mspiel · Spielnummer 101 · Staffel 341727\nSpielstätte: Sportplatz Ma
- inzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www
- .fussball.de/spiel/x/-/spiel/031D0TF94K000000VS5489BUVUR5FS5A
-URL:https://www.fussball.de/spiel/x/-/spiel/031D0TF94K000000VS5489BUVUR5F
- S5A
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
-END:VEVENT
-BEGIN:VEVENT
-UID:341727-111@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
-DTSTART;TZID=Europe/Berlin:20261011T150000
-DTEND;TZID=Europe/Berlin:20261011T170000
-SUMMARY:Speuzer Herren · Auswärts bei SV Eritrea Ffm
-DESCRIPTION:SV Eritrea Ffm – Speuzer Herren\nMannschaft: Speuzer Herren
- \nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nAus
- wärtsspiel · Spielnummer 111 · Staffel 341727\nSpielstätte: siehe FU
- SSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel
- /031D0TF8P0000000VS5489BUVUR5FS5A
-URL:https://www.fussball.de/spiel/x/-/spiel/031D0TF8P0000000VS5489BUVUR5F
- S5A
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
-UID:341727-119@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
-DTSTART;TZID=Europe/Berlin:20261018T150000
-DTEND;TZID=Europe/Berlin:20261018T170000
-SUMMARY:Speuzer Herren · Heim gegen FC Croatia Ffm
-DESCRIPTION:Speuzer Herren – FC Croatia Ffm\nMannschaft: Speuzer Herren
- \nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nHei
- mspiel · Spielnummer 119 · Staffel 341727\nSpielstätte: Sportplatz Ma
- inzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www
- .fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001
- VTR8C1K7
-URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
- 000000VTVG0001VTR8C1K7
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
-END:VEVENT
-BEGIN:VEVENT
-UID:341727-128@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
-DTSTART;TZID=Europe/Berlin:20261025T150000
-DTEND;TZID=Europe/Berlin:20261025T170000
-SUMMARY:Speuzer Herren · Heim gegen FC Corumspor Ffm
-DESCRIPTION:Speuzer Herren – FC Corumspor Ffm\nMannschaft: Speuzer Herr
- en\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nH
- eimspiel · Spielnummer 128 · Staffel 341727\nSpielstätte: Sportplatz 
- Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://w
+ wärtsspiel · Spielnummer 30 · Staffel 341727\nSpielstätte: Ginnheime
+ r Landstr. 37\, 60487 Frankfurt am Main\nAlle Infos zum Spiel: https://w
  ww.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG00
  01VTR8C1K7
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
 TRANSP:OPAQUE
-LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
+LOCATION:Ginnheimer Landstr. 37\, 60487 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-38@speuzer.sportfreunde04.de
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
+DTSTART;TZID=Europe/Berlin:20260823T150000
+DTEND;TZID=Europe/Berlin:20260823T170000
+SUMMARY:Speuzer Herren · Heim gegen SG Praunheim 1908
+DESCRIPTION:Speuzer Herren – SG Praunheim 1908\nMannschaft: Speuzer Her
+ ren\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\n
+ Heimspiel · Spielnummer 38 · Staffel 341727\nSpielstätte: Am Römerho
+ f 9\, 60486 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussbal
+ l.de/spiel/x/-/spiel/031D0TFC4C000000VS5489BUVUR5FS5A
+URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFC4C000000VS5489BUVUR5F
+ S5A
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Am Römerhof 9\, 60486 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-54@speuzer.sportfreunde04.de
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
+DTSTART;TZID=Europe/Berlin:20260830T130000
+DTEND;TZID=Europe/Berlin:20260830T150000
+SUMMARY:Speuzer Herren · Auswärts bei Spvgg. 02 Griesheim II
+DESCRIPTION:Spvgg. 02 Griesheim II – Speuzer Herren\nMannschaft: Speuze
+ r Herren\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankf
+ urt\nAuswärtsspiel · Spielnummer 54 · Staffel 341727\nSpielstätte: E
+ ichenstr. 40\, 65933 Frankfurt am Main\nAlle Infos zum Spiel: https://ww
+ w.fussball.de/spiel/x/-/spiel/031D0TFC0K000000VS5489BUVUR5FS5A
+URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFC0K000000VS5489BUVUR5F
+ S5A
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Eichenstr. 40\, 65933 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:940158-15@speuzer.sportfreunde04.de
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
+DTSTART;TZID=Europe/Berlin:20260902T193000
+DTEND;TZID=Europe/Berlin:20260902T213000
+SUMMARY:Speuzer Herren · Pokal\, Heim gegen Concordia Eschersheim
+DESCRIPTION:Speuzer Herren – Concordia Eschersheim\nMannschaft: Speuzer
+  Herren\nWettbewerb: Kreispokal · Kreis Frankfurt\nHeimspiel · Spielnu
+ mmer 15 · Staffel 940158\nSpielstätte: Am Römerhof 9\, 60486 Frankfur
+ t am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/
+ saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Am Römerhof 9\, 60486 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-56@speuzer.sportfreunde04.de
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
+DTSTART;TZID=Europe/Berlin:20260906T150000
+DTEND;TZID=Europe/Berlin:20260906T170000
+SUMMARY:Speuzer Herren · Heim gegen DJK SW Griesheim
+DESCRIPTION:Speuzer Herren – DJK SW Griesheim\nMannschaft: Speuzer Herr
+ en\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nH
+ eimspiel · Spielnummer 56 · Staffel 341727\nSpielstätte: Am Römerhof
+  9\, 60486 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball
+ .de/spiel/x/-/spiel/031D0TFB1C000000VS5489BUVUR5FS5A
+URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFB1C000000VS5489BUVUR5F
+ S5A
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Am Römerhof 9\, 60486 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-65@speuzer.sportfreunde04.de
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
+DTSTART;TZID=Europe/Berlin:20260909T190000
+DTEND;TZID=Europe/Berlin:20260909T210000
+SUMMARY:Speuzer Herren · Heim gegen TSG Niederrad 1898
+DESCRIPTION:Speuzer Herren – TSG Niederrad 1898\nMannschaft: Speuzer He
+ rren\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\
+ nHeimspiel · Spielnummer 65 · Staffel 341727\nSpielstätte: Am Römerh
+ of 9\, 60486 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussba
+ ll.de/spiel/x/-/spiel/031D0TFEI8000000VS5489BUVUR5FS5A
+URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFEI8000000VS5489BUVUR5F
+ S5A
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Am Römerhof 9\, 60486 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-79@speuzer.sportfreunde04.de
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
+DTSTART;TZID=Europe/Berlin:20260913T153000
+DTEND;TZID=Europe/Berlin:20260913T173000
+SUMMARY:Speuzer Herren · Auswärts bei SV Niederursel
+DESCRIPTION:SV Niederursel – Speuzer Herren\nMannschaft: Speuzer Herren
+ \nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nAus
+ wärtsspiel · Spielnummer 79 · Staffel 341727\nSpielstätte: Dorfwiese
+ nweg\, 60439 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussba
+ ll.de/spiel/x/-/spiel/031D0TFAQ4000000VS5489BUVUR5FS5A
+URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFAQ4000000VS5489BUVUR5F
+ S5A
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Dorfwiesenweg\, 60439 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-83@speuzer.sportfreunde04.de
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
+DTSTART;TZID=Europe/Berlin:20260920T150000
+DTEND;TZID=Europe/Berlin:20260920T170000
+SUMMARY:Speuzer Herren · Heim gegen SC Riedberg
+DESCRIPTION:Speuzer Herren – SC Riedberg\nMannschaft: Speuzer Herren\nW
+ ettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nHeimsp
+ iel · Spielnummer 83 · Staffel 341727\nSpielstätte: Am Römerhof 9\, 
+ 60486 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/s
+ piel/x/-/spiel/031D0TFA20000000VS5489BUVUR5FS5A
+URL:https://www.fussball.de/spiel/x/-/spiel/031D0TFA20000000VS5489BUVUR5F
+ S5A
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Am Römerhof 9\, 60486 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-95@speuzer.sportfreunde04.de
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
+DTSTART;TZID=Europe/Berlin:20260927T123000
+DTEND;TZID=Europe/Berlin:20260927T143000
+SUMMARY:Speuzer Herren · Auswärts bei FC Tempo Ffm II
+DESCRIPTION:FC Tempo Ffm II – Speuzer Herren\nMannschaft: Speuzer Herre
+ n\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nAu
+ swärtsspiel · Spielnummer 95 · Staffel 341727\nSpielstätte: Am Ginnh
+ eimer Wäldchen 9\, 60431 Frankfurt am Main\nAlle Infos zum Spiel: https
+ ://www.fussball.de/spiel/x/-/spiel/031D0TF9OC000000VS5489BUVUR5FS5A
+URL:https://www.fussball.de/spiel/x/-/spiel/031D0TF9OC000000VS5489BUVUR5F
+ S5A
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Am Ginnheimer Wäldchen 9\, 60431 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-101@speuzer.sportfreunde04.de
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
+DTSTART;TZID=Europe/Berlin:20261004T150000
+DTEND;TZID=Europe/Berlin:20261004T170000
+SUMMARY:Speuzer Herren · Heim gegen FV 1920 Hausen
+DESCRIPTION:Speuzer Herren – FV 1920 Hausen\nMannschaft: Speuzer Herren
+ \nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nHei
+ mspiel · Spielnummer 101 · Staffel 341727\nSpielstätte: Am Römerhof 
+ 9\, 60486 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.
+ de/spiel/x/-/spiel/031D0TF94K000000VS5489BUVUR5FS5A
+URL:https://www.fussball.de/spiel/x/-/spiel/031D0TF94K000000VS5489BUVUR5F
+ S5A
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Am Römerhof 9\, 60486 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-111@speuzer.sportfreunde04.de
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
+DTSTART;TZID=Europe/Berlin:20261011T150000
+DTEND;TZID=Europe/Berlin:20261011T170000
+SUMMARY:Speuzer Herren · Auswärts bei SV Eritrea Ffm
+DESCRIPTION:SV Eritrea Ffm – Speuzer Herren\nMannschaft: Speuzer Herren
+ \nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nAus
+ wärtsspiel · Spielnummer 111 · Staffel 341727\nSpielstätte: Ginnheim
+ er Landstr. 37\, 60487 Frankfurt am Main\nAlle Infos zum Spiel: https://
+ www.fussball.de/spiel/x/-/spiel/031D0TF8P0000000VS5489BUVUR5FS5A
+URL:https://www.fussball.de/spiel/x/-/spiel/031D0TF8P0000000VS5489BUVUR5F
+ S5A
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Ginnheimer Landstr. 37\, 60487 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-119@speuzer.sportfreunde04.de
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
+DTSTART;TZID=Europe/Berlin:20261018T150000
+DTEND;TZID=Europe/Berlin:20261018T170000
+SUMMARY:Speuzer Herren · Heim gegen FC Croatia Ffm
+DESCRIPTION:Speuzer Herren – FC Croatia Ffm\nMannschaft: Speuzer Herren
+ \nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nHei
+ mspiel · Spielnummer 119 · Staffel 341727\nSpielstätte: Am Römerhof 
+ 9\, 60486 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.
+ de/mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Am Römerhof 9\, 60486 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341727-128@speuzer.sportfreunde04.de
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
+DTSTART;TZID=Europe/Berlin:20261025T150000
+DTEND;TZID=Europe/Berlin:20261025T170000
+SUMMARY:Speuzer Herren · Heim gegen FC Corumspor Ffm
+DESCRIPTION:Speuzer Herren – FC Corumspor Ffm\nMannschaft: Speuzer Herr
+ en\nWettbewerb: Kreisliga A · KLA Frankfurt Gr. 1 · Kreis Frankfurt\nH
+ eimspiel · Spielnummer 128 · Staffel 341727\nSpielstätte: Am Römerho
+ f 9\, 60486 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussbal
+ l.de/mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Am Römerhof 9\, 60486 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-144@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20261101T123000
 DTEND;TZID=Europe/Berlin:20261101T143000
 SUMMARY:Speuzer Herren · Auswärts bei Concordia Eschersheim II
@@ -309,9 +315,9 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-146@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20261108T143000
 DTEND;TZID=Europe/Berlin:20261108T163000
 SUMMARY:Speuzer Herren · Heim gegen SG Harheim II
@@ -329,9 +335,9 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-156@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20261115T150000
 DTEND;TZID=Europe/Berlin:20261115T170000
 SUMMARY:Speuzer Herren · Heim gegen VFR Bockenheim
@@ -349,9 +355,9 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-176@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20261129T143000
 DTEND;TZID=Europe/Berlin:20261129T163000
 SUMMARY:Speuzer Herren · Heim gegen TSG 51 Ffm
@@ -369,9 +375,9 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-182@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20261206T120000
 DTEND;TZID=Europe/Berlin:20261206T140000
 SUMMARY:Speuzer Herren · Auswärts bei TSG Niederrad 1898
@@ -387,9 +393,9 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-200@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270228T150000
 DTEND;TZID=Europe/Berlin:20270228T170000
 SUMMARY:Speuzer Herren · Auswärts bei SG Praunheim 1908
@@ -405,9 +411,9 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-216@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270307T153000
 DTEND;TZID=Europe/Berlin:20270307T173000
 SUMMARY:Speuzer Herren · Heim gegen Spvgg. 02 Griesheim II
@@ -425,9 +431,9 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-218@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270314T150000
 DTEND;TZID=Europe/Berlin:20270314T170000
 SUMMARY:Speuzer Herren · Auswärts bei DJK SW Griesheim
@@ -443,9 +449,9 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-232@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270321T153000
 DTEND;TZID=Europe/Berlin:20270321T173000
 SUMMARY:Speuzer Herren · Heim gegen SV Niederursel
@@ -463,9 +469,9 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-236@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270404T150000
 DTEND;TZID=Europe/Berlin:20270404T170000
 SUMMARY:Speuzer Herren · Auswärts bei SC Riedberg
@@ -481,9 +487,9 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-248@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270411T153000
 DTEND;TZID=Europe/Berlin:20270411T173000
 SUMMARY:Speuzer Herren · Heim gegen FC Tempo Ffm II
@@ -501,9 +507,9 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-254@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270418T150000
 DTEND;TZID=Europe/Berlin:20270418T170000
 SUMMARY:Speuzer Herren · Auswärts bei FV 1920 Hausen
@@ -519,9 +525,9 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-264@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270425T153000
 DTEND;TZID=Europe/Berlin:20270425T173000
 SUMMARY:Speuzer Herren · Heim gegen SV Eritrea Ffm
@@ -539,9 +545,9 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-272@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270502T150000
 DTEND;TZID=Europe/Berlin:20270502T170000
 SUMMARY:Speuzer Herren · Auswärts bei FC Croatia Ffm
@@ -557,9 +563,9 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-281@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270509T150000
 DTEND;TZID=Europe/Berlin:20270509T170000
 SUMMARY:Speuzer Herren · Auswärts bei FC Corumspor Ffm
@@ -575,9 +581,9 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-297@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270515T150000
 DTEND;TZID=Europe/Berlin:20270515T170000
 SUMMARY:Speuzer Herren · Heim gegen Concordia Eschersheim II
@@ -595,9 +601,9 @@ LOCATION:Sportplatz Mainzer Landstrasse\, Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-299@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-LAST-MODIFIED:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+LAST-MODIFIED:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270523T130000
 DTEND;TZID=Europe/Berlin:20270523T150000
 SUMMARY:Speuzer Herren · Auswärts bei SG Harheim II

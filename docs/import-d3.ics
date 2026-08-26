@@ -30,19 +30,19 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:341873-10-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260830T090000
 DTEND;TZID=Europe/Berlin:20260830T120000
 SUMMARY:Speuzer D3 · Heim gegen SC Weiss-Blau Frankfurt 3
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Anstoß 10
  :00 Uhr · Heimspiel\nSpeuzer D3 – SC Weiss-Blau Frankfurt 3\nTreffpun
  kt: 09:00 Uhr\nAnstoß: 10:00 Uhr\nHeimspiel · 1. Kreisklasse · DJ KK 
- F Gr. 04 · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrass
- e\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spi
- el/x/-/spiel/031I71TNSC000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / F
- ragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – a
- m besten bis zum Abend vor dem Spiel.
+ F Gr. 04 · Kreis Frankfurt\nSpielstätte: Mainzer Landstr. 480\, 60326 
+ Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x
+ /-/spiel/031I71TNSC000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Frage
+ zeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am be
+ sten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71TNSC000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -50,19 +50,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-13-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260906T083000
 DTEND;TZID=Europe/Berlin:20260906T113000
 SUMMARY:Speuzer D3 · Auswärts bei SV Blau-Gelb FFM 2
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:30 Uhr · Anstoß 09
  :30 Uhr · Auswärtsspiel\nSV Blau-Gelb FFM 2 – Speuzer D3\nTreffpunkt
  : 08:30 Uhr\nAnstoß: 09:30 Uhr\nAuswärtsspiel · 1. Kreisklasse · DJ 
- KK F Gr. 04 · Kreis Frankfurt\nSpielstätte: siehe FUSSBALL.DE\nAlle In
- fos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I71TNEO000000V
- S5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezeichen / Daumen runter zu
- rückmelden\, ob euer Kind dabei ist – am besten bis zum Abend vor dem
-  Spiel.
+ KK F Gr. 04 · Kreis Frankfurt\nSpielstätte: Am Ginnheimer Wäldchen 2-
+ 4\, 60431 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.
+ de/spiel/x/-/spiel/031I71TNEO000000VS5489BUVVKNMR0J\nBitte per Daumen ho
+ ch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist
+  – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71TNEO000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -70,19 +70,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-22-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260913T090000
 DTEND;TZID=Europe/Berlin:20260913T120000
 SUMMARY:Speuzer D3 · Heim gegen TV Preungesheim 1
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Anstoß 10
  :00 Uhr · Heimspiel\nSpeuzer D3 – TV Preungesheim 1\nTreffpunkt: 09:0
  0 Uhr\nAnstoß: 10:00 Uhr\nHeimspiel · 1. Kreisklasse · DJ KK F Gr. 04
-  · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Fran
- kfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/s
- piel/031I71TNB8000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezeic
- hen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten
-  bis zum Abend vor dem Spiel.
+  · Kreis Frankfurt\nSpielstätte: Mainzer Landstr. 480\, 60326 Frankfur
+ t am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel
+ /031I71TNB8000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezeichen 
+ / Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten bis
+  zum Abend vor dem Spiel.
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71TNB8000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -90,19 +90,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-29-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260920T100000
 DTEND;TZID=Europe/Berlin:20260920T130000
 SUMMARY:Speuzer D3 · Auswärts bei Spvgg. Oberrad IV
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
  :00 Uhr · Auswärtsspiel\nSpvgg. Oberrad IV – Speuzer D3\nTreffpunkt:
   10:00 Uhr\nAnstoß: 11:00 Uhr\nAuswärtsspiel · 1. Kreisklasse · DJ K
- K F Gr. 04 · Kreis Frankfurt\nSpielstätte: siehe FUSSBALL.DE\nAlle Inf
- os zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I71TN3S000000VS
- 5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezeichen / Daumen runter zur
- ückmelden\, ob euer Kind dabei ist – am besten bis zum Abend vor dem 
- Spiel.
+ K F Gr. 04 · Kreis Frankfurt\nSpielstätte: Buchrainstr.\, 60599 Frankf
+ urt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spi
+ el/031I71TN3S000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezeiche
+ n / Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten b
+ is zum Abend vor dem Spiel.
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71TN3S000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -110,19 +110,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-31-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20260927T100000
 DTEND;TZID=Europe/Berlin:20260927T130000
 SUMMARY:Speuzer D3 · Auswärts bei TSG 51 Frankfurt II
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
  :00 Uhr · Auswärtsspiel\nTSG 51 Frankfurt II – Speuzer D3\nTreffpunk
  t: 10:00 Uhr\nAnstoß: 11:00 Uhr\nAuswärtsspiel · 1. Kreisklasse · DJ
-  KK F Gr. 04 · Kreis Frankfurt\nSpielstätte: siehe FUSSBALL.DE\nAlle I
- nfos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I71TMO8000000
- VS5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezeichen / Daumen runter z
- urückmelden\, ob euer Kind dabei ist – am besten bis zum Abend vor de
- m Spiel.
+  KK F Gr. 04 · Kreis Frankfurt\nSpielstätte: Niedwiesenstr. 124\, 6043
+ 1 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel
+ /x/-/spiel/031I71TMO8000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Fra
+ gezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am 
+ besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71TMO8000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -130,19 +130,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-38-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20261024T100000
 DTEND;TZID=Europe/Berlin:20261024T130000
 SUMMARY:Speuzer D3 · Auswärts bei FSV 1910 Bergen 3
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
  :00 Uhr · Auswärtsspiel\nFSV 1910 Bergen 3 – Speuzer D3\nTreffpunkt:
   10:00 Uhr\nAnstoß: 11:00 Uhr\nAuswärtsspiel · 1. Kreisklasse · DJ K
- K F Gr. 04 · Kreis Frankfurt\nSpielstätte: siehe FUSSBALL.DE\nAlle Inf
- os zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I71TMD0000000VS
- 5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezeichen / Daumen runter zur
- ückmelden\, ob euer Kind dabei ist – am besten bis zum Abend vor dem 
- Spiel.
+ K F Gr. 04 · Kreis Frankfurt\nSpielstätte: Landgraben\, 60388 Frankfur
+ t am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel
+ /031I71TMD0000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezeichen 
+ / Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten bis
+  zum Abend vor dem Spiel.
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71TMD0000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
@@ -150,8 +150,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-46-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20261101T090000
 DTEND;TZID=Europe/Berlin:20261101T120000
 SUMMARY:Speuzer D3 · Heim gegen SG Bornheim / GW 2
@@ -170,8 +170,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-53-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20261108T083000
 DTEND;TZID=Europe/Berlin:20261108T113000
 SUMMARY:Speuzer D3 · Auswärts bei DJK SW Griesheim 4
@@ -190,8 +190,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-58-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20261129T090000
 DTEND;TZID=Europe/Berlin:20261129T120000
 SUMMARY:Speuzer D3 · Heim gegen SV Griesheim Tarik
@@ -210,8 +210,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-63-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20261206T080000
 DTEND;TZID=Europe/Berlin:20261206T110000
 SUMMARY:Speuzer D3 · Auswärts bei TuS Makkabi Frankfurt 6
@@ -230,8 +230,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-130-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270214T100000
 DTEND;TZID=Europe/Berlin:20270214T130000
 SUMMARY:Speuzer D3 · Auswärts bei SC Weiss-Blau Frankfurt 3
@@ -250,8 +250,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-70-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270220T103000
 DTEND;TZID=Europe/Berlin:20270220T133000
 SUMMARY:Speuzer D3 · Auswärts bei VfL Germania 1894 2
@@ -270,8 +270,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-76-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270227T120000
 DTEND;TZID=Europe/Berlin:20270227T150000
 SUMMARY:Speuzer D3 · Auswärts bei SV Griesheim Tarik
@@ -290,8 +290,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-81-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270307T090000
 DTEND;TZID=Europe/Berlin:20270307T120000
 SUMMARY:Speuzer D3 · Heim gegen TuS Makkabi Frankfurt 6
@@ -310,8 +310,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-85-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270314T090000
 DTEND;TZID=Europe/Berlin:20270314T120000
 SUMMARY:Speuzer D3 · Heim gegen SV Blau-Gelb FFM 2
@@ -330,8 +330,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-94-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270411T080000
 DTEND;TZID=Europe/Berlin:20270411T110000
 SUMMARY:Speuzer D3 · Auswärts bei TV Preungesheim 1
@@ -350,8 +350,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-101-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270418T090000
 DTEND;TZID=Europe/Berlin:20270418T120000
 SUMMARY:Speuzer D3 · Heim gegen Spvgg. Oberrad IV
@@ -370,8 +370,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-103-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270425T090000
 DTEND;TZID=Europe/Berlin:20270425T120000
 SUMMARY:Speuzer D3 · Heim gegen TSG 51 Frankfurt II
@@ -390,8 +390,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-110-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270509T090000
 DTEND;TZID=Europe/Berlin:20270509T120000
 SUMMARY:Speuzer D3 · Heim gegen FSV 1910 Bergen 3
@@ -410,8 +410,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-119-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270523T090000
 DTEND;TZID=Europe/Berlin:20270523T120000
 SUMMARY:Speuzer D3 · Heim gegen DJK SW Griesheim 4
@@ -430,8 +430,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341873-124-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T100729Z
-SEQUENCE:14
+DTSTAMP:20260826T105055Z
+SEQUENCE:15
 DTSTART;TZID=Europe/Berlin:20270530T083000
 DTEND;TZID=Europe/Berlin:20270530T113000
 SUMMARY:Speuzer D3 · Auswärts bei SG Bornheim / GW 2
