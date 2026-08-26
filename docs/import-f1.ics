@@ -1,0 +1,143 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FFV Sportfreunde 04//Import//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Import Speuzer F1 – Spieltage für die App
+X-WR-CALDESC:Zum Hochladen in einen appack-Kalender über „ICS importie
+ ren“. Terminstart ist der Treffpunkt (Anstoß minus 60 Minuten). Nach 
+ dem Import je Termin noch: Untertitel einsetzen\, Teilnahme-Rückmeldung
+  anschalten\, Gruppe einladen. Diese Datei nur EINMAL importieren\, sons
+ t stehen die Termine doppelt.
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+X-LIC-LOCATION:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:340233-33-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260829T080000
+DTEND;TZID=Europe/Berlin:20260829T110000
+SUMMARY:Speuzer F1 · Kinderfestival bei VFR Bockenheim 1
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:00 Uhr · Beginn 09:
+ 00 Uhr · auswärts\nKinderfestival bei VFR Bockenheim 1\nTreffpunkt: 08
+ :00 Uhr\nBeginn: 09:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielstät
+ te: siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Daumen run
+ ter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Abend v
+ or dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340233-62-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260905T090000
+DTEND;TZID=Europe/Berlin:20260905T120000
+SUMMARY:Speuzer F1 · Kinderfestival zu Hause
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Beginn 10:
+ 00 Uhr · bei uns\nKinderfestival bei uns\nTreffpunkt: 09:00 Uhr\nBeginn
+ : 10:00 Uhr\nHeimspiel · Kinderfestival\nSpielstätte: Sportplatz Mainz
+ er Landstrasse\, Frankfurt am Main\nBitte per Daumen hoch / Fragezeichen
+  / Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten bi
+ s zum Abend vor dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340233-142-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260912T090000
+DTEND;TZID=Europe/Berlin:20260912T120000
+SUMMARY:Speuzer F1 · Kinderfestival zu Hause
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Beginn 10:
+ 00 Uhr · bei uns\nKinderfestival bei uns\nTreffpunkt: 09:00 Uhr\nBeginn
+ : 10:00 Uhr\nHeimspiel · Kinderfestival\nSpielstätte: Sportplatz Mainz
+ er Landstrasse\, Frankfurt am Main\nBitte per Daumen hoch / Fragezeichen
+  / Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten bi
+ s zum Abend vor dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340233-163-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260919T080000
+DTEND;TZID=Europe/Berlin:20260919T110000
+SUMMARY:Speuzer F1 · Kinderfestival bei FV 09 Eschersheim I
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:00 Uhr · Beginn 09:
+ 00 Uhr · auswärts\nKinderfestival bei FV 09 Eschersheim I\nTreffpunkt:
+  08:00 Uhr\nBeginn: 09:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielst
+ ätte: siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Daumen 
+ runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Aben
+ d vor dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340233-237-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260926T090000
+DTEND;TZID=Europe/Berlin:20260926T120000
+SUMMARY:Speuzer F1 · Kinderfestival zu Hause
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Beginn 10:
+ 00 Uhr · bei uns\nKinderfestival bei uns\nTreffpunkt: 09:00 Uhr\nBeginn
+ : 10:00 Uhr\nHeimspiel · Kinderfestival\nSpielstätte: Sportplatz Mainz
+ er Landstrasse\, Frankfurt am Main\nBitte per Daumen hoch / Fragezeichen
+  / Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten bi
+ s zum Abend vor dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340233-283-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20261024T090000
+DTEND;TZID=Europe/Berlin:20261024T120000
+SUMMARY:Speuzer F1 · Kinderfestival zu Hause
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Beginn 10:
+ 00 Uhr · bei uns\nKinderfestival bei uns\nTreffpunkt: 09:00 Uhr\nBeginn
+ : 10:00 Uhr\nHeimspiel · Kinderfestival\nSpielstätte: Sportplatz Mainz
+ er Landstrasse\, Frankfurt am Main\nBitte per Daumen hoch / Fragezeichen
+  / Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten bi
+ s zum Abend vor dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340233-343-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20261031T090000
+DTEND;TZID=Europe/Berlin:20261031T120000
+SUMMARY:Speuzer F1 · Kinderfestival zu Hause
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Beginn 10:
+ 00 Uhr · bei uns\nKinderfestival bei uns\nTreffpunkt: 09:00 Uhr\nBeginn
+ : 10:00 Uhr\nHeimspiel · Kinderfestival\nSpielstätte: Sportplatz Mainz
+ er Landstrasse\, Frankfurt am Main\nBitte per Daumen hoch / Fragezeichen
+  / Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten bi
+ s zum Abend vor dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

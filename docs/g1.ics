@@ -1,0 +1,120 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FFV Sportfreunde 04//Spielplan//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Speuzer G1
+X-WR-CALDESC:Spielplan des FFV Sportfreunde 04\, Saison 2026/27\, Quelle 
+ DFBnet. Verlegungen aktualisieren den bestehenden Termin.
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+X-LIC-LOCATION:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:340221-24@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+LAST-MODIFIED:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260905T103000
+DTEND;TZID=Europe/Berlin:20260905T123000
+SUMMARY:Speuzer G1 · Kinderfestival bei FC Kalbach I / 1 2
+DESCRIPTION:Kinderfestival bei FC Kalbach I / 1 2\nMannschaft: Speuzer G1
+ \nWettbewerb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel · Spiel
+ nummer 24 · Staffel 340221\nSpielstätte: beim gastgebenden Verein – 
+ Adresse gibt der Trainer bekannt
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340221-51@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+LAST-MODIFIED:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260912T090000
+DTEND;TZID=Europe/Berlin:20260912T110000
+SUMMARY:Speuzer G1 · Kinderfestival bei FFC Olympia 07 IV
+DESCRIPTION:Kinderfestival bei FFC Olympia 07 IV\nMannschaft: Speuzer G1\
+ nWettbewerb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel · Spieln
+ ummer 51 · Staffel 340221\nSpielstätte: beim gastgebenden Verein – A
+ dresse gibt der Trainer bekannt
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340221-73@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+LAST-MODIFIED:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260919T090000
+DTEND;TZID=Europe/Berlin:20260919T110000
+SUMMARY:Speuzer G1 · Kinderfestival bei SV Bonames
+DESCRIPTION:Kinderfestival bei SV Bonames\nMannschaft: Speuzer G1\nWettbe
+ werb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel · Spielnummer 7
+ 3 · Staffel 340221\nSpielstätte: beim gastgebenden Verein – Adresse 
+ gibt der Trainer bekannt
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340221-86@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+LAST-MODIFIED:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260926T090000
+DTEND;TZID=Europe/Berlin:20260926T110000
+SUMMARY:Speuzer G1 · Kinderfestival bei BSC SW 1919 Ffm. 2
+DESCRIPTION:Kinderfestival bei BSC SW 1919 Ffm. 2\nMannschaft: Speuzer G1
+ \nWettbewerb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel · Spiel
+ nummer 86 · Staffel 340221\nSpielstätte: beim gastgebenden Verein – 
+ Adresse gibt der Trainer bekannt
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340221-109@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+LAST-MODIFIED:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20261024T090000
+DTEND;TZID=Europe/Berlin:20261024T110000
+SUMMARY:Speuzer G1 · Kinderfestival bei FC Kalbach I / 1 2
+DESCRIPTION:Kinderfestival bei FC Kalbach I / 1 2\nMannschaft: Speuzer G1
+ \nWettbewerb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel · Spiel
+ nummer 109 · Staffel 340221\nSpielstätte: beim gastgebenden Verein –
+  Adresse gibt der Trainer bekannt
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340221-142@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+LAST-MODIFIED:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20261031T110000
+DTEND;TZID=Europe/Berlin:20261031T130000
+SUMMARY:Speuzer G1 · Kinderfestival bei SG Harheim 2 / 2
+DESCRIPTION:Kinderfestival bei SG Harheim 2 / 2\nMannschaft: Speuzer G1\n
+ Wettbewerb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel · Spielnu
+ mmer 142 · Staffel 340221\nSpielstätte: beim gastgebenden Verein – A
+ dresse gibt der Trainer bekannt
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

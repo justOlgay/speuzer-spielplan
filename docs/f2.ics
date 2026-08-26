@@ -1,0 +1,135 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FFV Sportfreunde 04//Spielplan//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Speuzer F2
+X-WR-CALDESC:Spielplan des FFV Sportfreunde 04\, Saison 2026/27\, Quelle 
+ DFBnet. Verlegungen aktualisieren den bestehenden Termin.
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+X-LIC-LOCATION:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:340231-24@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+LAST-MODIFIED:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260829T090000
+DTEND;TZID=Europe/Berlin:20260829T110000
+SUMMARY:Speuzer F2 · Kinderfestival bei SG Praunheim II
+DESCRIPTION:Kinderfestival bei SG Praunheim II\nMannschaft: Speuzer F2\nW
+ ettbewerb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel · Spielnum
+ mer 24 · Staffel 340231\nSpielstätte: beim gastgebenden Verein – Adr
+ esse gibt der Trainer bekannt
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340231-58@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+LAST-MODIFIED:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260905T110000
+DTEND;TZID=Europe/Berlin:20260905T130000
+SUMMARY:Speuzer F2 · Kinderfestival bei SV Blau-Gelb FFM 4
+DESCRIPTION:Kinderfestival bei SV Blau-Gelb FFM 4\nMannschaft: Speuzer F2
+ \nWettbewerb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel · Spiel
+ nummer 58 · Staffel 340231\nSpielstätte: beim gastgebenden Verein – 
+ Adresse gibt der Trainer bekannt
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340231-80@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+LAST-MODIFIED:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260912T110000
+DTEND;TZID=Europe/Berlin:20260912T130000
+SUMMARY:Speuzer F2 · Kinderfestival bei FC Tempo Ffm 2
+DESCRIPTION:Kinderfestival bei FC Tempo Ffm 2\nMannschaft: Speuzer F2\nWe
+ ttbewerb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel · Spielnumm
+ er 80 · Staffel 340231\nSpielstätte: beim gastgebenden Verein – Adre
+ sse gibt der Trainer bekannt
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340231-130@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+LAST-MODIFIED:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260919T110000
+DTEND;TZID=Europe/Berlin:20260919T130000
+SUMMARY:Speuzer F2 · Kinderfestival bei TSG 1888 Nieder-Erlenbach 2
+DESCRIPTION:Kinderfestival bei TSG 1888 Nieder-Erlenbach 2\nMannschaft: S
+ peuzer F2\nWettbewerb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel
+  · Spielnummer 130 · Staffel 340231\nSpielstätte: beim gastgebenden V
+ erein – Adresse gibt der Trainer bekannt
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340231-165@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+LAST-MODIFIED:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260926T090000
+DTEND;TZID=Europe/Berlin:20260926T110000
+SUMMARY:Speuzer F2 · Kinderfestival bei DJK SW Griesheim 4
+DESCRIPTION:Kinderfestival bei DJK SW Griesheim 4\nMannschaft: Speuzer F2
+ \nWettbewerb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel · Spiel
+ nummer 165 · Staffel 340231\nSpielstätte: beim gastgebenden Verein –
+  Adresse gibt der Trainer bekannt
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340231-198@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+LAST-MODIFIED:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20261024T103000
+DTEND;TZID=Europe/Berlin:20261024T123000
+SUMMARY:Speuzer F2 · Kinderfestival bei Spvgg. 03 Fechenheim III
+DESCRIPTION:Kinderfestival bei Spvgg. 03 Fechenheim III\nMannschaft: Speu
+ zer F2\nWettbewerb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel ·
+  Spielnummer 198 · Staffel 340231\nSpielstätte: beim gastgebenden Vere
+ in – Adresse gibt der Trainer bekannt
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340231-213@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+LAST-MODIFIED:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20261031T093000
+DTEND;TZID=Europe/Berlin:20261031T113000
+SUMMARY:Speuzer F2 · Kinderfestival bei Concordia Eschersheim 2
+DESCRIPTION:Kinderfestival bei Concordia Eschersheim 2\nMannschaft: Speuz
+ er F2\nWettbewerb: Kinderfestival · Kreis Frankfurt\nAuswärtsspiel · 
+ Spielnummer 213 · Staffel 340231\nSpielstätte: beim gastgebenden Verei
+ n – Adresse gibt der Trainer bekannt
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

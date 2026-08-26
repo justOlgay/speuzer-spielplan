@@ -1,0 +1,143 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FFV Sportfreunde 04//Import//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Import Speuzer F2 – Spieltage für die App
+X-WR-CALDESC:Zum Hochladen in einen appack-Kalender über „ICS importie
+ ren“. Terminstart ist der Treffpunkt (Anstoß minus 60 Minuten). Nach 
+ dem Import je Termin noch: Untertitel einsetzen\, Teilnahme-Rückmeldung
+  anschalten\, Gruppe einladen. Diese Datei nur EINMAL importieren\, sons
+ t stehen die Termine doppelt.
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+X-LIC-LOCATION:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:340231-24-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260829T080000
+DTEND;TZID=Europe/Berlin:20260829T110000
+SUMMARY:Speuzer F2 · Kinderfestival bei SG Praunheim II
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:00 Uhr · Beginn 09:
+ 00 Uhr · auswärts\nKinderfestival bei SG Praunheim II\nTreffpunkt: 08:
+ 00 Uhr\nBeginn: 09:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielstätt
+ e: siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Daumen runt
+ er zurückmelden\, ob euer Kind dabei ist – am besten bis zum Abend vo
+ r dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340231-58-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260905T100000
+DTEND;TZID=Europe/Berlin:20260905T130000
+SUMMARY:Speuzer F2 · Kinderfestival bei SV Blau-Gelb FFM 4
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Beginn 11:
+ 00 Uhr · auswärts\nKinderfestival bei SV Blau-Gelb FFM 4\nTreffpunkt: 
+ 10:00 Uhr\nBeginn: 11:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielst
+ ätte: siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Daumen 
+ runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Aben
+ d vor dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340231-80-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260912T100000
+DTEND;TZID=Europe/Berlin:20260912T130000
+SUMMARY:Speuzer F2 · Kinderfestival bei FC Tempo Ffm 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Beginn 11:
+ 00 Uhr · auswärts\nKinderfestival bei FC Tempo Ffm 2\nTreffpunkt: 10:0
+ 0 Uhr\nBeginn: 11:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielstätte
+ : siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Daumen runte
+ r zurückmelden\, ob euer Kind dabei ist – am besten bis zum Abend vor
+  dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340231-130-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260919T100000
+DTEND;TZID=Europe/Berlin:20260919T130000
+SUMMARY:Speuzer F2 · Kinderfestival bei TSG 1888 Nieder-Erlenbach 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Beginn 11:
+ 00 Uhr · auswärts\nKinderfestival bei TSG 1888 Nieder-Erlenbach 2\nTre
+ ffpunkt: 10:00 Uhr\nBeginn: 11:00 Uhr\nAuswärtsspiel · Kinderfestival\
+ nSpielstätte: siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen /
+  Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten bis 
+ zum Abend vor dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340231-165-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260926T080000
+DTEND;TZID=Europe/Berlin:20260926T110000
+SUMMARY:Speuzer F2 · Kinderfestival bei DJK SW Griesheim 4
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:00 Uhr · Beginn 09:
+ 00 Uhr · auswärts\nKinderfestival bei DJK SW Griesheim 4\nTreffpunkt: 
+ 08:00 Uhr\nBeginn: 09:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielst
+ ätte: siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Daumen 
+ runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Aben
+ d vor dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340231-198-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20261024T093000
+DTEND;TZID=Europe/Berlin:20261024T123000
+SUMMARY:Speuzer F2 · Kinderfestival bei Spvgg. 03 Fechenheim III
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:30 Uhr · Beginn 10:
+ 30 Uhr · auswärts\nKinderfestival bei Spvgg. 03 Fechenheim III\nTreffp
+ unkt: 09:30 Uhr\nBeginn: 10:30 Uhr\nAuswärtsspiel · Kinderfestival\nSp
+ ielstätte: siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Da
+ umen runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum
+  Abend vor dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340231-213-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20261031T083000
+DTEND;TZID=Europe/Berlin:20261031T113000
+SUMMARY:Speuzer F2 · Kinderfestival bei Concordia Eschersheim 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:30 Uhr · Beginn 09:
+ 30 Uhr · auswärts\nKinderfestival bei Concordia Eschersheim 2\nTreffpu
+ nkt: 08:30 Uhr\nBeginn: 09:30 Uhr\nAuswärtsspiel · Kinderfestival\nSpi
+ elstätte: siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Dau
+ men runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum 
+ Abend vor dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

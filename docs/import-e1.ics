@@ -29,9 +29,29 @@ RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
+UID:940399-24-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260826T170000
+DTEND;TZID=Europe/Berlin:20260826T200000
+SUMMARY:Speuzer E1 · Pokal\, Heim gegen 1. Rödelheimer FC 02 1
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 17:00 Uhr · Anstoß 18
+ :00 Uhr · Heimspiel\nSpeuzer E1 – 1. Rödelheimer FC 02 1\nTreffpunkt
+ : 17:00 Uhr\nAnstoß: 18:00 Uhr\nHeimspiel · Kreispokal\nSpielstätte: 
+ Sportplatz Mainzer Landstrasse\, Frankfurt am Main\nAlle Infos zum Spiel
+ : https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIDBD8C0
+ 00000VTVG0001VTR8C1K7\nBitte per Daumen hoch / Fragezeichen / Daumen run
+ ter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Abend v
+ or dem Spiel.
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIDBD8C
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
 UID:340610-5-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T083846Z
-SEQUENCE:13
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
 DTSTART;TZID=Europe/Berlin:20260829T100000
 DTEND;TZID=Europe/Berlin:20260829T130000
 SUMMARY:Speuzer E1 · Auswärts bei SC Goldstein
@@ -50,8 +70,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-7-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T083846Z
-SEQUENCE:13
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
 DTSTART;TZID=Europe/Berlin:20260905T123000
 DTEND;TZID=Europe/Berlin:20260905T153000
 SUMMARY:Speuzer E1 · Auswärts bei SV07 Heddernheim 1
@@ -70,8 +90,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-10-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T083846Z
-SEQUENCE:13
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
 DTSTART;TZID=Europe/Berlin:20260912T110000
 DTEND;TZID=Europe/Berlin:20260912T140000
 SUMMARY:Speuzer E1 · Heim gegen SG Bornheim / GW 2
@@ -90,8 +110,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-14-app@speuzer.sportfreunde04.de
-DTSTAMP:20260826T083846Z
-SEQUENCE:13
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
 DTSTART;TZID=Europe/Berlin:20260926T113000
 DTEND;TZID=Europe/Berlin:20260926T143000
 SUMMARY:Speuzer E1 · Auswärts bei 1. Rödelheimer FC 02 1

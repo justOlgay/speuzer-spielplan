@@ -1,0 +1,127 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FFV Sportfreunde 04//Import//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Import Speuzer G1 – Spieltage für die App
+X-WR-CALDESC:Zum Hochladen in einen appack-Kalender über „ICS importie
+ ren“. Terminstart ist der Treffpunkt (Anstoß minus 60 Minuten). Nach 
+ dem Import je Termin noch: Untertitel einsetzen\, Teilnahme-Rückmeldung
+  anschalten\, Gruppe einladen. Diese Datei nur EINMAL importieren\, sons
+ t stehen die Termine doppelt.
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+X-LIC-LOCATION:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:340221-24-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260905T093000
+DTEND;TZID=Europe/Berlin:20260905T123000
+SUMMARY:Speuzer G1 · Kinderfestival bei FC Kalbach I / 1 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:30 Uhr · Beginn 10:
+ 30 Uhr · auswärts\nKinderfestival bei FC Kalbach I / 1 2\nTreffpunkt: 
+ 09:30 Uhr\nBeginn: 10:30 Uhr\nAuswärtsspiel · Kinderfestival\nSpielst
+ ätte: siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Daumen 
+ runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Aben
+ d vor dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340221-51-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260912T080000
+DTEND;TZID=Europe/Berlin:20260912T110000
+SUMMARY:Speuzer G1 · Kinderfestival bei FFC Olympia 07 IV
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:00 Uhr · Beginn 09:
+ 00 Uhr · auswärts\nKinderfestival bei FFC Olympia 07 IV\nTreffpunkt: 0
+ 8:00 Uhr\nBeginn: 09:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielstä
+ tte: siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Daumen ru
+ nter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Abend 
+ vor dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340221-73-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260919T080000
+DTEND;TZID=Europe/Berlin:20260919T110000
+SUMMARY:Speuzer G1 · Kinderfestival bei SV Bonames
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:00 Uhr · Beginn 09:
+ 00 Uhr · auswärts\nKinderfestival bei SV Bonames\nTreffpunkt: 08:00 Uh
+ r\nBeginn: 09:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielstätte: si
+ ehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Daumen runter zu
+ rückmelden\, ob euer Kind dabei ist – am besten bis zum Abend vor dem
+  Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340221-86-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20260926T080000
+DTEND;TZID=Europe/Berlin:20260926T110000
+SUMMARY:Speuzer G1 · Kinderfestival bei BSC SW 1919 Ffm. 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:00 Uhr · Beginn 09:
+ 00 Uhr · auswärts\nKinderfestival bei BSC SW 1919 Ffm. 2\nTreffpunkt: 
+ 08:00 Uhr\nBeginn: 09:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielst
+ ätte: siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Daumen 
+ runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Aben
+ d vor dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340221-109-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20261024T080000
+DTEND;TZID=Europe/Berlin:20261024T110000
+SUMMARY:Speuzer G1 · Kinderfestival bei FC Kalbach I / 1 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:00 Uhr · Beginn 09:
+ 00 Uhr · auswärts\nKinderfestival bei FC Kalbach I / 1 2\nTreffpunkt: 
+ 08:00 Uhr\nBeginn: 09:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielst
+ ätte: siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Daumen 
+ runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Aben
+ d vor dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340221-142-app@speuzer.sportfreunde04.de
+DTSTAMP:20260826T100729Z
+SEQUENCE:14
+DTSTART;TZID=Europe/Berlin:20261031T100000
+DTEND;TZID=Europe/Berlin:20261031T130000
+SUMMARY:Speuzer G1 · Kinderfestival bei SG Harheim 2 / 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Beginn 11:
+ 00 Uhr · auswärts\nKinderfestival bei SG Harheim 2 / 2\nTreffpunkt: 10
+ :00 Uhr\nBeginn: 11:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielstät
+ te: siehe FUSSBALL.DE\nBitte per Daumen hoch / Fragezeichen / Daumen run
+ ter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Abend v
+ or dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
