@@ -2,7 +2,14 @@
 <html lang="de"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Spielplan A-Jugend</title>
-<script type="text/javascript" src="https://www.fussball.de/widgets.js"></script><style>
+<script type="text/javascript" src="https://www.fussball.de/widgets.js"></script>
+<script>
+// Meldet die eigene Hoehe an die einbettende Seite in der Vereins-App,
+// damit dort kein zweiter Scrollbalken entsteht.
+function speuzerHoehe(){try{parent.postMessage({speuzerHeight:document.documentElement.scrollHeight},"*");}catch(e){}}
+addEventListener("load",function(){speuzerHoehe();setTimeout(speuzerHoehe,1200);setTimeout(speuzerHoehe,4000);
+  if(window.ResizeObserver){new ResizeObserver(speuzerHoehe).observe(document.body);}});
+</script><style>
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:#1c2530;background:#fff;font-size:15px}
 .tabs{display:flex;gap:6px;padding:12px 12px 0;overflow-x:auto}
 .tab{flex:1 0 auto;min-width:74px;text-align:center;padding:9px 12px;border-radius:8px 8px 0 0;background:#eef2f7;color:#0b3c78;font-weight:600;cursor:pointer;border:none;font-size:15px}
