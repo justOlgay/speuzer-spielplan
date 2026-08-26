@@ -1,135 +1,166 @@
-team;staffel;spielnr;datum;zeit;heim;gast;spielstaette;ergebnis;fbid
-HERREN;341727;5;02.08.2026;15:00;TSG 51 Ffm;FFV Sportfreunde 04 FFM;;;
-HERREN;341727;30;16.08.2026;15:30;VFR Bockenheim;FFV Sportfreunde 04 FFM;;;
-HERREN;341727;38;23.08.2026;15:00;FFV Sportfreunde 04 FFM;SG Praunheim 1908;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031D0TFC4C000000VS5489BUVUR5FS5A
-HERREN;341727;54;30.08.2026;13:00;Spvgg. 02 Griesheim II;FFV Sportfreunde 04 FFM;;;031D0TFC0K000000VS5489BUVUR5FS5A
-HERREN;341727;56;06.09.2026;15:00;FFV Sportfreunde 04 FFM;DJK SW Griesheim;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031D0TFB1C000000VS5489BUVUR5FS5A
-HERREN;341727;65;09.09.2026;19:00;FFV Sportfreunde 04 FFM;TSG Niederrad 1898;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031D0TFEI8000000VS5489BUVUR5FS5A
-HERREN;341727;79;13.09.2026;15:30;SV Niederursel;FFV Sportfreunde 04 FFM;;;031D0TFAQ4000000VS5489BUVUR5FS5A
-HERREN;341727;83;20.09.2026;15:00;FFV Sportfreunde 04 FFM;SC Riedberg;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031D0TFA20000000VS5489BUVUR5FS5A
-HERREN;341727;95;27.09.2026;12:30;FC Tempo Ffm II;FFV Sportfreunde 04 FFM;;;031D0TF9OC000000VS5489BUVUR5FS5A
-HERREN;341727;101;04.10.2026;15:00;FFV Sportfreunde 04 FFM;FV 1920 Hausen;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031D0TF94K000000VS5489BUVUR5FS5A
-HERREN;341727;111;11.10.2026;15:00;SV Eritrea Ffm;FFV Sportfreunde 04 FFM;;;031D0TF8P0000000VS5489BUVUR5FS5A
-HERREN;341727;119;18.10.2026;15:00;FFV Sportfreunde 04 FFM;FC Croatia Ffm;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-HERREN;341727;128;25.10.2026;15:00;FFV Sportfreunde 04 FFM;FC Corumspor Ffm;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-HERREN;341727;144;01.11.2026;12:30;Concordia Eschersheim II;FFV Sportfreunde 04 FFM;;;
-HERREN;341727;146;08.11.2026;14:30;FFV Sportfreunde 04 FFM;SG Harheim II;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-HERREN;341727;156;15.11.2026;15:00;FFV Sportfreunde 04 FFM;VFR Bockenheim;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-HERREN;341727;176;29.11.2026;14:30;FFV Sportfreunde 04 FFM;TSG 51 Ffm;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-HERREN;341727;182;06.12.2026;12:00;TSG Niederrad 1898;FFV Sportfreunde 04 FFM;;;
-HERREN;341727;200;28.02.2027;15:00;SG Praunheim 1908;FFV Sportfreunde 04 FFM;;;
-HERREN;341727;216;07.03.2027;15:30;FFV Sportfreunde 04 FFM;Spvgg. 02 Griesheim II;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-HERREN;341727;218;14.03.2027;15:00;DJK SW Griesheim;FFV Sportfreunde 04 FFM;;;
-HERREN;341727;232;21.03.2027;15:30;FFV Sportfreunde 04 FFM;SV Niederursel;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-HERREN;341727;236;04.04.2027;15:00;SC Riedberg;FFV Sportfreunde 04 FFM;;;
-HERREN;341727;248;11.04.2027;15:30;FFV Sportfreunde 04 FFM;FC Tempo Ffm II;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-HERREN;341727;254;18.04.2027;15:00;FV 1920 Hausen;FFV Sportfreunde 04 FFM;;;
-HERREN;341727;264;25.04.2027;15:30;FFV Sportfreunde 04 FFM;SV Eritrea Ffm;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-HERREN;341727;272;02.05.2027;15:00;FC Croatia Ffm;FFV Sportfreunde 04 FFM;;;
-HERREN;341727;281;09.05.2027;15:00;FC Corumspor Ffm;FFV Sportfreunde 04 FFM;;;
-HERREN;341727;297;15.05.2027;15:00;FFV Sportfreunde 04 FFM;Concordia Eschersheim II;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-HERREN;341727;299;23.05.2027;13:00;SG Harheim II;FFV Sportfreunde 04 FFM;;;
-A;343410;7;22.08.2026;15:00;FV Bad Vilbel 1;FFV Sportfreunde 04 1;;;031D5JEMAC000000VS5489BUVUR5FS5A
-A;343410;8;29.08.2026;18:00;Spvgg. Langenselbold 1;FFV Sportfreunde 04 1;;;031D5JELKG000000VS5489BUVUR5FS5A
-A;343410;20;05.09.2026;16:00;FFV Sportfreunde 04 1;SV Viktoria Preussen 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031D5JELH0000000VS5489BUVUR5FS5A
-A;343410;25;12.09.2026;15:00;1. FC 1906 Erlensee 2;FFV Sportfreunde 04 1;;;031D5JEL3K000000VS5489BUVUR5FS5A
-A;343410;34;19.09.2026;16:00;FFV Sportfreunde 04 1;TuS Makkabi Frankfurt 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031D5JEKS8000000VS5489BUVUR5FS5A
-A;343410;37;26.09.2026;16:00;Spvgg. Oberrad 1;FFV Sportfreunde 04 1;;;031D5JEKBG000000VS5489BUVUR5FS5A
-A;343410;48;03.10.2026;16:00;FFV Sportfreunde 04 1;Spvgg. Neu-Isenburg 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031D5JEK6G000000VS5489BUVUR5FS5A
-A;343410;55;17.10.2026;16:00;FFV Sportfreunde 04 1;Karbener SV 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031D5JEJ2G000000VS5489BUVUR5FS5A
-A;343410;62;24.10.2026;13:00;SG Oberhoechstadt 1;FFV Sportfreunde 04 1;;;031D5JEJRK000000VS5489BUVUR5FS5A
-A;343410;69;31.10.2026;16:00;FFV Sportfreunde 04 1;FC Bayern Alzenau 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-A;343410;74;08.11.2026;11:00;FSV Bischofsheim 1;FFV Sportfreunde 04 1;;;
-A;343410;83;21.11.2026;16:00;FFV Sportfreunde 04 1;JFV Nidda / Schotten 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-A;343410;86;28.11.2026;18:00;JSG Kirdorf 1;FFV Sportfreunde 04 1;;;
-A;343410;98;27.02.2027;16:00;FFV Sportfreunde 04 1;FV Bad Vilbel 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-A;343410;104;06.03.2027;18:00;JFV Nidda / Schotten 1;FFV Sportfreunde 04 1;;;
-A;343410;111;13.03.2027;18:00;SV Viktoria Preussen 1;FFV Sportfreunde 04 1;;;
-A;343410;116;20.03.2027;16:00;FFV Sportfreunde 04 1;1. FC 1906 Erlensee 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-A;343410;125;03.04.2027;16:00;TuS Makkabi Frankfurt 1;FFV Sportfreunde 04 1;;;
-A;343410;128;10.04.2027;16:00;FFV Sportfreunde 04 1;Spvgg. Oberrad 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-A;343410;139;17.04.2027;16:00;Spvgg. Neu-Isenburg 2;FFV Sportfreunde 04 1;;;
-A;343410;146;24.04.2027;16:00;FFV Sportfreunde 04 1;SG Oberhoechstadt 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-A;343410;153;02.05.2027;11:00;FC Bayern Alzenau 2;FFV Sportfreunde 04 1;;;
-A;343410;158;08.05.2027;16:00;FFV Sportfreunde 04 1;FSV Bischofsheim 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-A;343410;163;22.05.2027;16:00;FFV Sportfreunde 04 1;JSG Kirdorf 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-A;343410;174;30.05.2027;18:15;Karbener SV 2;FFV Sportfreunde 04 1;;;
-A;343410;176;05.06.2027;18:00;FFV Sportfreunde 04 1;Spvgg. Langenselbold 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-D1;340782;4;23.08.2026;13:00;FFV Sportfreunde 04 I;FG Seckbach 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71O4F8000000VS5489BUVVKNMR0J
-D1;340782;10;30.08.2026;13:00;FFV Sportfreunde 04 I;FFC Olympia 07 I;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71O5OO000000VS5489BUVVKNMR0J
-D1;340782;13;06.09.2026;10:00;FC JUZ Fechenheim 1;FFV Sportfreunde 04 I;;;031I71O5BS000000VS5489BUVVKNMR0J
-D1;340782;22;13.09.2026;13:00;FFV Sportfreunde 04 I;Concordia Eschersheim;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71O57S000000VS5489BUVVKNMR0J
-D1;340782;31;27.09.2026;09:30;FC Germ. 08 Ginnheim 1;FFV Sportfreunde 04 I;;;031I71O4J4000000VS5489BUVVKNMR0J
-D1;340782;38;25.10.2026;10:30;1. Rödelheimer FC 02 1;FFV Sportfreunde 04 I;;;031I71O44S000000VS5489BUVVKNMR0J
-D1;340782;46;01.11.2026;13:00;FFV Sportfreunde 04 I;FSV 1910 Bergen 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71O3VS000000VS5489BUVVKNMR0J
-D1;340782;53;07.11.2026;14:00;FV 09 Eschersheim 2;FFV Sportfreunde 04 I;;;031I71O3PO000000VS5489BUVVKNMR0J
-D1;340782;58;29.11.2026;13:00;FFV Sportfreunde 04 I;Spvgg. Kickers 1916 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-D1;340782;63;06.12.2026;11:00;FC Germania 1911 Enkheim 1;FFV Sportfreunde 04 I;;;
-D1;340782;130;14.02.2027;09:00;FFC Olympia 07 I;FFV Sportfreunde 04 I;;;
-D1;340782;70;21.02.2027;09:00;FG Seckbach 1;FFV Sportfreunde 04 I;;;
-D1;340782;76;27.02.2027;10:30;Spvgg. Kickers 1916 1;FFV Sportfreunde 04 I;;;
-D1;340782;81;07.03.2027;13:00;FFV Sportfreunde 04 I;FC Germania 1911 Enkheim 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-D1;340782;85;14.03.2027;13:00;FFV Sportfreunde 04 I;FC JUZ Fechenheim 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-D1;340782;94;11.04.2027;09:30;Concordia Eschersheim;FFV Sportfreunde 04 I;;;
-D1;340782;103;25.04.2027;13:00;FFV Sportfreunde 04 I;FC Germ. 08 Ginnheim 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-D1;340782;110;09.05.2027;13:00;FFV Sportfreunde 04 I;1. Rödelheimer FC 02 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-D1;340782;119;23.05.2027;13:00;FFV Sportfreunde 04 I;FV 09 Eschersheim 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-D1;340782;124;30.05.2027;10:00;FSV 1910 Bergen 1;FFV Sportfreunde 04 I;;;
-D2;341874;4;23.08.2026;11:30;FFV Sportfreunde 04 II;VFR Bockenheim 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71UTJ4000000VS5489BUVVKNMR0J
-D2;341874;10;30.08.2026;11:30;FFV Sportfreunde 04 II;TSG Frankfurter Berg I;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71UURG000000VS5489BUVVKNMR0J
-D2;341874;13;05.09.2026;12:30;SV Blau-Gelb FFM 3;FFV Sportfreunde 04 II;;;031I71UUF8000000VS5489BUVVKNMR0J
-D2;341874;22;13.09.2026;11:30;FFV Sportfreunde 04 II;Concordia Eschersheim II;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71UUB8000000VS5489BUVVKNMR0J
-D2;341874;29;20.09.2026;11:00;SG Harheim 2;FFV Sportfreunde 04 II;;;031I71UU4K000000VS5489BUVVKNMR0J
-D2;341874;31;27.09.2026;10:30;FC Fortuna Frankfurt;FFV Sportfreunde 04 II;;;031I71UTNC000000VS5489BUVVKNMR0J
-D2;341874;38;25.10.2026;09:00;1. Rödelheimer FC 02 2;FFV Sportfreunde 04 II;;;031I71UT9O000000VS5489BUVVKNMR0J
-D2;341874;46;01.11.2026;11:30;FFV Sportfreunde 04 II;FC Union Niederrad 3;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71UT4G000000VS5489BUVVKNMR0J
-D2;341874;53;07.11.2026;11:00;FC Germ. 08 Ginnheim 2;FFV Sportfreunde 04 II;;;031I71USV4000000VS5489BUVVKNMR0J
-D2;341874;58;29.11.2026;11:30;FFV Sportfreunde 04 II;Spvgg. 03 Fechenheim;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71USNS000000VS5489BUVVKNMR0J
-D2;341874;63;06.12.2026;09:00;SV 1894 Sachsenhausen 1;FFV Sportfreunde 04 II;;;
-D2;341874;130;13.02.2027;14:00;TSG Frankfurter Berg I;FFV Sportfreunde 04 II;;;
-D2;341874;70;21.02.2027;11:00;VFR Bockenheim 2;FFV Sportfreunde 04 II;;;
-D2;341874;76;27.02.2027;10:45;Spvgg. 03 Fechenheim;FFV Sportfreunde 04 II;;;
-D2;341874;81;07.03.2027;11:30;FFV Sportfreunde 04 II;SV 1894 Sachsenhausen 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-D2;341874;85;14.03.2027;11:30;FFV Sportfreunde 04 II;SV Blau-Gelb FFM 3;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-D2;341874;94;10.04.2027;12:00;Concordia Eschersheim II;FFV Sportfreunde 04 II;;;
-D2;341874;101;18.04.2027;11:30;FFV Sportfreunde 04 II;SG Harheim 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-D2;341874;103;25.04.2027;11:30;FFV Sportfreunde 04 II;FC Fortuna Frankfurt;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-D2;341874;110;09.05.2027;11:30;FFV Sportfreunde 04 II;1. Rödelheimer FC 02 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-D2;341874;119;23.05.2027;11:30;FFV Sportfreunde 04 II;FC Germ. 08 Ginnheim 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-D2;341874;124;30.05.2027;09:00;FC Union Niederrad 3;FFV Sportfreunde 04 II;;;
-D3;341873;4;23.08.2026;10:00;FFV Sportfreunde 04 III;VfL Germania 1894 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71TML8000000VS5489BUVVKNMR0J
-D3;341873;10;30.08.2026;10:00;FFV Sportfreunde 04 III;SC Weiss-Blau Frankfurt 3;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71TNSC000000VS5489BUVVKNMR0J
-D3;341873;13;06.09.2026;09:30;SV Blau-Gelb FFM 2;FFV Sportfreunde 04 III;;;031I71TNEO000000VS5489BUVVKNMR0J
-D3;341873;22;13.09.2026;10:00;FFV Sportfreunde 04 III;TV Preungesheim 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71TNB8000000VS5489BUVVKNMR0J
-D3;341873;29;20.09.2026;11:00;Spvgg. Oberrad IV;FFV Sportfreunde 04 III;;;031I71TN3S000000VS5489BUVVKNMR0J
-D3;341873;31;27.09.2026;11:00;TSG 51 Frankfurt II;FFV Sportfreunde 04 III;;;031I71TMO8000000VS5489BUVVKNMR0J
-D3;341873;38;24.10.2026;11:00;FSV 1910 Bergen 3;FFV Sportfreunde 04 III;;;031I71TMD0000000VS5489BUVVKNMR0J
-D3;341873;46;01.11.2026;10:00;FFV Sportfreunde 04 III;SG Bornheim / GW 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71TM9C000000VS5489BUVVKNMR0J
-D3;341873;53;08.11.2026;09:30;DJK SW Griesheim 4;FFV Sportfreunde 04 III;;;031I71TM4S000000VS5489BUVVKNMR0J
-D3;341873;58;29.11.2026;10:00;FFV Sportfreunde 04 III;SV Griesheim Tarik;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71TLV0000000VS5489BUVVKNMR0J
-D3;341873;63;06.12.2026;09:00;TuS Makkabi Frankfurt 6;FFV Sportfreunde 04 III;;;
-D3;341873;130;14.02.2027;11:00;SC Weiss-Blau Frankfurt 3;FFV Sportfreunde 04 III;;;
-D3;341873;70;20.02.2027;11:30;VfL Germania 1894 2;FFV Sportfreunde 04 III;;;
-D3;341873;76;27.02.2027;13:00;SV Griesheim Tarik;FFV Sportfreunde 04 III;;;
-D3;341873;81;07.03.2027;10:00;FFV Sportfreunde 04 III;TuS Makkabi Frankfurt 6;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-D3;341873;85;14.03.2027;10:00;FFV Sportfreunde 04 III;SV Blau-Gelb FFM 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-D3;341873;94;11.04.2027;09:00;TV Preungesheim 1;FFV Sportfreunde 04 III;;;
-D3;341873;101;18.04.2027;10:00;FFV Sportfreunde 04 III;Spvgg. Oberrad IV;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-D3;341873;103;25.04.2027;10:00;FFV Sportfreunde 04 III;TSG 51 Frankfurt II;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-D3;341873;110;09.05.2027;10:00;FFV Sportfreunde 04 III;FSV 1910 Bergen 3;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-D3;341873;119;23.05.2027;10:00;FFV Sportfreunde 04 III;DJK SW Griesheim 4;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;
-D3;341873;124;30.05.2027;09:30;SG Bornheim / GW 2;FFV Sportfreunde 04 III;;;
-E1;340610;1;22.08.2026;12:00;FFV Sportfreunde 04 I;VfL Germania 1894 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I12OVI0000000VS5489BUVVKNMR0J
-E1;340610;5;29.08.2026;11:00;SC Goldstein;FFV Sportfreunde 04 I;;;031I12OVGO000000VS5489BUVVKNMR0J
-E1;340610;7;05.09.2026;13:30;SV07 Heddernheim 1;FFV Sportfreunde 04 I;;;031I12OVDO000000VS5489BUVVKNMR0J
-E1;340610;10;12.09.2026;12:00;FFV Sportfreunde 04 I;SG Bornheim / GW 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I12OVBK000000VS5489BUVVKNMR0J
-E1;340610;14;26.09.2026;12:30;1. Rödelheimer FC 02 1;FFV Sportfreunde 04 I;;;031I12OVL0000000VS5489BUVVKNMR0J
-E2;341435;1;22.08.2026;11:30;FFV Sportfreunde 04 II;Spvgg. Kickers 1916 4;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031HO7T0VC000000VS5489BUVVKNMR0J
-E2;341435;5;29.08.2026;12:30;FSV 1910 Bergen 2;FFV Sportfreunde 04 II;;;031HO7T0TS000000VS5489BUVVKNMR0J
-E2;341435;7;05.09.2026;11:00;DJK SW Griesheim 3;FFV Sportfreunde 04 II;;;031HO7T0RC000000VS5489BUVVKNMR0J
-E2;341435;10;12.09.2026;11:30;FFV Sportfreunde 04 II;SG Bornheim / GW 3;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031HO7T0PO000000VS5489BUVVKNMR0J
-E2;341435;14;26.09.2026;12:30;TSG 1888 Nieder-Erlenbach 2;FFV Sportfreunde 04 II;;;031HO7T12C000000VS5489BUVVKNMR0J
-E3;341930;1;22.08.2026;11:00;FFV Sportfreunde 04 III;FSV 1910 Bergen 3;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031HO7VE4G000000VS5489BUVVKNMR0J
-E3;341930;7;05.09.2026;11:00;SC Weiss-Blau Frankfurt II;FFV Sportfreunde 04 III;;;031HO7VE0K000000VS5489BUVVKNMR0J
-E3;341930;10;12.09.2026;11:00;FFV Sportfreunde 04 III;SG Harheim 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031HO7VDUS000000VS5489BUVVKNMR0J
-E3;341930;14;26.09.2026;12:30;Riedberger SV II;FFV Sportfreunde 04 III;;;031HO7VE78000000VS5489BUVVKNMR0J
+team;staffel;spielnr;datum;zeit;heim;gast;spielstaette;ergebnis;fbid;wettbewerb
+HERREN;341727;5;02.08.2026;15:00;TSG 51 Ffm;FFV Sportfreunde 04 FFM;;;;Meisterschaft
+HERREN;341727;30;16.08.2026;15:30;VFR Bockenheim;FFV Sportfreunde 04 FFM;;;;Meisterschaft
+HERREN;341727;38;23.08.2026;15:00;FFV Sportfreunde 04 FFM;SG Praunheim 1908;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031D0TFC4C000000VS5489BUVUR5FS5A;Meisterschaft
+HERREN;341727;54;30.08.2026;13:00;Spvgg. 02 Griesheim II;FFV Sportfreunde 04 FFM;;;031D0TFC0K000000VS5489BUVUR5FS5A;Meisterschaft
+HERREN;341727;56;06.09.2026;15:00;FFV Sportfreunde 04 FFM;DJK SW Griesheim;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031D0TFB1C000000VS5489BUVUR5FS5A;Meisterschaft
+HERREN;341727;65;09.09.2026;19:00;FFV Sportfreunde 04 FFM;TSG Niederrad 1898;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031D0TFEI8000000VS5489BUVUR5FS5A;Meisterschaft
+HERREN;341727;79;13.09.2026;15:30;SV Niederursel;FFV Sportfreunde 04 FFM;;;031D0TFAQ4000000VS5489BUVUR5FS5A;Meisterschaft
+HERREN;341727;83;20.09.2026;15:00;FFV Sportfreunde 04 FFM;SC Riedberg;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031D0TFA20000000VS5489BUVUR5FS5A;Meisterschaft
+HERREN;341727;95;27.09.2026;12:30;FC Tempo Ffm II;FFV Sportfreunde 04 FFM;;;031D0TF9OC000000VS5489BUVUR5FS5A;Meisterschaft
+HERREN;341727;101;04.10.2026;15:00;FFV Sportfreunde 04 FFM;FV 1920 Hausen;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031D0TF94K000000VS5489BUVUR5FS5A;Meisterschaft
+HERREN;341727;111;11.10.2026;15:00;SV Eritrea Ffm;FFV Sportfreunde 04 FFM;;;031D0TF8P0000000VS5489BUVUR5FS5A;Meisterschaft
+HERREN;341727;119;18.10.2026;15:00;FFV Sportfreunde 04 FFM;FC Croatia Ffm;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+HERREN;341727;128;25.10.2026;15:00;FFV Sportfreunde 04 FFM;FC Corumspor Ffm;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+HERREN;341727;144;01.11.2026;12:30;Concordia Eschersheim II;FFV Sportfreunde 04 FFM;;;;Meisterschaft
+HERREN;341727;146;08.11.2026;14:30;FFV Sportfreunde 04 FFM;SG Harheim II;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+HERREN;341727;156;15.11.2026;15:00;FFV Sportfreunde 04 FFM;VFR Bockenheim;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+HERREN;341727;176;29.11.2026;14:30;FFV Sportfreunde 04 FFM;TSG 51 Ffm;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+HERREN;341727;182;06.12.2026;12:00;TSG Niederrad 1898;FFV Sportfreunde 04 FFM;;;;Meisterschaft
+HERREN;341727;200;28.02.2027;15:00;SG Praunheim 1908;FFV Sportfreunde 04 FFM;;;;Meisterschaft
+HERREN;341727;216;07.03.2027;15:30;FFV Sportfreunde 04 FFM;Spvgg. 02 Griesheim II;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+HERREN;341727;218;14.03.2027;15:00;DJK SW Griesheim;FFV Sportfreunde 04 FFM;;;;Meisterschaft
+HERREN;341727;232;21.03.2027;15:30;FFV Sportfreunde 04 FFM;SV Niederursel;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+HERREN;341727;236;04.04.2027;15:00;SC Riedberg;FFV Sportfreunde 04 FFM;;;;Meisterschaft
+HERREN;341727;248;11.04.2027;15:30;FFV Sportfreunde 04 FFM;FC Tempo Ffm II;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+HERREN;341727;254;18.04.2027;15:00;FV 1920 Hausen;FFV Sportfreunde 04 FFM;;;;Meisterschaft
+HERREN;341727;264;25.04.2027;15:30;FFV Sportfreunde 04 FFM;SV Eritrea Ffm;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+HERREN;341727;272;02.05.2027;15:00;FC Croatia Ffm;FFV Sportfreunde 04 FFM;;;;Meisterschaft
+HERREN;341727;281;09.05.2027;15:00;FC Corumspor Ffm;FFV Sportfreunde 04 FFM;;;;Meisterschaft
+HERREN;341727;297;15.05.2027;15:00;FFV Sportfreunde 04 FFM;Concordia Eschersheim II;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+HERREN;341727;299;23.05.2027;13:00;SG Harheim II;FFV Sportfreunde 04 FFM;;;;Meisterschaft
+A;343410;7;22.08.2026;15:00;FV Bad Vilbel 1;FFV Sportfreunde 04 1;;;031D5JEMAC000000VS5489BUVUR5FS5A;Meisterschaft
+A;343410;8;29.08.2026;18:00;Spvgg. Langenselbold 1;FFV Sportfreunde 04 1;;;031D5JELKG000000VS5489BUVUR5FS5A;Meisterschaft
+A;343410;20;05.09.2026;16:00;FFV Sportfreunde 04 1;SV Viktoria Preussen 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031D5JELH0000000VS5489BUVUR5FS5A;Meisterschaft
+A;343410;25;12.09.2026;15:00;1. FC 1906 Erlensee 2;FFV Sportfreunde 04 1;;;031D5JEL3K000000VS5489BUVUR5FS5A;Meisterschaft
+A;343410;34;19.09.2026;16:00;FFV Sportfreunde 04 1;TuS Makkabi Frankfurt 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031D5JEKS8000000VS5489BUVUR5FS5A;Meisterschaft
+A;343410;37;26.09.2026;16:00;Spvgg. Oberrad 1;FFV Sportfreunde 04 1;;;031D5JEKBG000000VS5489BUVUR5FS5A;Meisterschaft
+A;343410;48;03.10.2026;16:00;FFV Sportfreunde 04 1;Spvgg. Neu-Isenburg 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031D5JEK6G000000VS5489BUVUR5FS5A;Meisterschaft
+A;343410;55;17.10.2026;16:00;FFV Sportfreunde 04 1;Karbener SV 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031D5JEJ2G000000VS5489BUVUR5FS5A;Meisterschaft
+A;343410;62;24.10.2026;13:00;SG Oberhoechstadt 1;FFV Sportfreunde 04 1;;;031D5JEJRK000000VS5489BUVUR5FS5A;Meisterschaft
+A;343410;69;31.10.2026;16:00;FFV Sportfreunde 04 1;FC Bayern Alzenau 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+A;343410;74;08.11.2026;11:00;FSV Bischofsheim 1;FFV Sportfreunde 04 1;;;;Meisterschaft
+A;343410;83;21.11.2026;16:00;FFV Sportfreunde 04 1;JFV Nidda / Schotten 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+A;343410;86;28.11.2026;18:00;JSG Kirdorf 1;FFV Sportfreunde 04 1;;;;Meisterschaft
+A;343410;98;27.02.2027;16:00;FFV Sportfreunde 04 1;FV Bad Vilbel 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+A;343410;104;06.03.2027;18:00;JFV Nidda / Schotten 1;FFV Sportfreunde 04 1;;;;Meisterschaft
+A;343410;111;13.03.2027;18:00;SV Viktoria Preussen 1;FFV Sportfreunde 04 1;;;;Meisterschaft
+A;343410;116;20.03.2027;16:00;FFV Sportfreunde 04 1;1. FC 1906 Erlensee 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+A;343410;125;03.04.2027;16:00;TuS Makkabi Frankfurt 1;FFV Sportfreunde 04 1;;;;Meisterschaft
+A;343410;128;10.04.2027;16:00;FFV Sportfreunde 04 1;Spvgg. Oberrad 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+A;343410;139;17.04.2027;16:00;Spvgg. Neu-Isenburg 2;FFV Sportfreunde 04 1;;;;Meisterschaft
+A;343410;146;24.04.2027;16:00;FFV Sportfreunde 04 1;SG Oberhoechstadt 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+A;343410;153;02.05.2027;11:00;FC Bayern Alzenau 2;FFV Sportfreunde 04 1;;;;Meisterschaft
+A;343410;158;08.05.2027;16:00;FFV Sportfreunde 04 1;FSV Bischofsheim 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+A;343410;163;22.05.2027;16:00;FFV Sportfreunde 04 1;JSG Kirdorf 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+A;343410;174;30.05.2027;18:15;Karbener SV 2;FFV Sportfreunde 04 1;;;;Meisterschaft
+A;343410;176;05.06.2027;18:00;FFV Sportfreunde 04 1;Spvgg. Langenselbold 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+D1;340782;4;23.08.2026;13:00;FFV Sportfreunde 04 I;FG Seckbach 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71O4F8000000VS5489BUVVKNMR0J;Meisterschaft
+D1;340782;10;30.08.2026;13:00;FFV Sportfreunde 04 I;FFC Olympia 07 I;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71O5OO000000VS5489BUVVKNMR0J;Meisterschaft
+D1;340782;13;06.09.2026;10:00;FC JUZ Fechenheim 1;FFV Sportfreunde 04 I;;;031I71O5BS000000VS5489BUVVKNMR0J;Meisterschaft
+D1;340782;22;13.09.2026;13:00;FFV Sportfreunde 04 I;Concordia Eschersheim;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71O57S000000VS5489BUVVKNMR0J;Meisterschaft
+D1;340782;31;27.09.2026;09:30;FC Germ. 08 Ginnheim 1;FFV Sportfreunde 04 I;;;031I71O4J4000000VS5489BUVVKNMR0J;Meisterschaft
+D1;340782;38;25.10.2026;10:30;1. Rödelheimer FC 02 1;FFV Sportfreunde 04 I;;;031I71O44S000000VS5489BUVVKNMR0J;Meisterschaft
+D1;340782;46;01.11.2026;13:00;FFV Sportfreunde 04 I;FSV 1910 Bergen 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71O3VS000000VS5489BUVVKNMR0J;Meisterschaft
+D1;340782;53;07.11.2026;14:00;FV 09 Eschersheim 2;FFV Sportfreunde 04 I;;;031I71O3PO000000VS5489BUVVKNMR0J;Meisterschaft
+D1;340782;58;29.11.2026;13:00;FFV Sportfreunde 04 I;Spvgg. Kickers 1916 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+D1;340782;63;06.12.2026;11:00;FC Germania 1911 Enkheim 1;FFV Sportfreunde 04 I;;;;Meisterschaft
+D1;340782;130;14.02.2027;09:00;FFC Olympia 07 I;FFV Sportfreunde 04 I;;;;Meisterschaft
+D1;340782;70;21.02.2027;09:00;FG Seckbach 1;FFV Sportfreunde 04 I;;;;Meisterschaft
+D1;340782;76;27.02.2027;10:30;Spvgg. Kickers 1916 1;FFV Sportfreunde 04 I;;;;Meisterschaft
+D1;340782;81;07.03.2027;13:00;FFV Sportfreunde 04 I;FC Germania 1911 Enkheim 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+D1;340782;85;14.03.2027;13:00;FFV Sportfreunde 04 I;FC JUZ Fechenheim 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+D1;340782;94;11.04.2027;09:30;Concordia Eschersheim;FFV Sportfreunde 04 I;;;;Meisterschaft
+D1;340782;103;25.04.2027;13:00;FFV Sportfreunde 04 I;FC Germ. 08 Ginnheim 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+D1;340782;110;09.05.2027;13:00;FFV Sportfreunde 04 I;1. Rödelheimer FC 02 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+D1;340782;119;23.05.2027;13:00;FFV Sportfreunde 04 I;FV 09 Eschersheim 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+D1;340782;124;30.05.2027;10:00;FSV 1910 Bergen 1;FFV Sportfreunde 04 I;;;;Meisterschaft
+D2;341874;4;23.08.2026;11:30;FFV Sportfreunde 04 II;VFR Bockenheim 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71UTJ4000000VS5489BUVVKNMR0J;Meisterschaft
+D2;341874;10;30.08.2026;11:30;FFV Sportfreunde 04 II;TSG Frankfurter Berg I;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71UURG000000VS5489BUVVKNMR0J;Meisterschaft
+D2;341874;13;05.09.2026;12:30;SV Blau-Gelb FFM 3;FFV Sportfreunde 04 II;;;031I71UUF8000000VS5489BUVVKNMR0J;Meisterschaft
+D2;341874;22;13.09.2026;11:30;FFV Sportfreunde 04 II;Concordia Eschersheim II;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71UUB8000000VS5489BUVVKNMR0J;Meisterschaft
+D2;341874;29;20.09.2026;11:00;SG Harheim 2;FFV Sportfreunde 04 II;;;031I71UU4K000000VS5489BUVVKNMR0J;Meisterschaft
+D2;341874;31;27.09.2026;10:30;FC Fortuna Frankfurt;FFV Sportfreunde 04 II;;;031I71UTNC000000VS5489BUVVKNMR0J;Meisterschaft
+D2;341874;38;25.10.2026;09:00;1. Rödelheimer FC 02 2;FFV Sportfreunde 04 II;;;031I71UT9O000000VS5489BUVVKNMR0J;Meisterschaft
+D2;341874;46;01.11.2026;11:30;FFV Sportfreunde 04 II;FC Union Niederrad 3;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71UT4G000000VS5489BUVVKNMR0J;Meisterschaft
+D2;341874;53;07.11.2026;11:00;FC Germ. 08 Ginnheim 2;FFV Sportfreunde 04 II;;;031I71USV4000000VS5489BUVVKNMR0J;Meisterschaft
+D2;341874;58;29.11.2026;11:30;FFV Sportfreunde 04 II;Spvgg. 03 Fechenheim;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71USNS000000VS5489BUVVKNMR0J;Meisterschaft
+D2;341874;63;06.12.2026;09:00;SV 1894 Sachsenhausen 1;FFV Sportfreunde 04 II;;;;Meisterschaft
+D2;341874;130;13.02.2027;14:00;TSG Frankfurter Berg I;FFV Sportfreunde 04 II;;;;Meisterschaft
+D2;341874;70;21.02.2027;11:00;VFR Bockenheim 2;FFV Sportfreunde 04 II;;;;Meisterschaft
+D2;341874;76;27.02.2027;10:45;Spvgg. 03 Fechenheim;FFV Sportfreunde 04 II;;;;Meisterschaft
+D2;341874;81;07.03.2027;11:30;FFV Sportfreunde 04 II;SV 1894 Sachsenhausen 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+D2;341874;85;14.03.2027;11:30;FFV Sportfreunde 04 II;SV Blau-Gelb FFM 3;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+D2;341874;94;10.04.2027;12:00;Concordia Eschersheim II;FFV Sportfreunde 04 II;;;;Meisterschaft
+D2;341874;101;18.04.2027;11:30;FFV Sportfreunde 04 II;SG Harheim 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+D2;341874;103;25.04.2027;11:30;FFV Sportfreunde 04 II;FC Fortuna Frankfurt;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+D2;341874;110;09.05.2027;11:30;FFV Sportfreunde 04 II;1. Rödelheimer FC 02 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+D2;341874;119;23.05.2027;11:30;FFV Sportfreunde 04 II;FC Germ. 08 Ginnheim 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+D2;341874;124;30.05.2027;09:00;FC Union Niederrad 3;FFV Sportfreunde 04 II;;;;Meisterschaft
+D3;341873;4;23.08.2026;10:00;FFV Sportfreunde 04 III;VfL Germania 1894 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71TML8000000VS5489BUVVKNMR0J;Meisterschaft
+D3;341873;10;30.08.2026;10:00;FFV Sportfreunde 04 III;SC Weiss-Blau Frankfurt 3;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71TNSC000000VS5489BUVVKNMR0J;Meisterschaft
+D3;341873;13;06.09.2026;09:30;SV Blau-Gelb FFM 2;FFV Sportfreunde 04 III;;;031I71TNEO000000VS5489BUVVKNMR0J;Meisterschaft
+D3;341873;22;13.09.2026;10:00;FFV Sportfreunde 04 III;TV Preungesheim 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71TNB8000000VS5489BUVVKNMR0J;Meisterschaft
+D3;341873;29;20.09.2026;11:00;Spvgg. Oberrad IV;FFV Sportfreunde 04 III;;;031I71TN3S000000VS5489BUVVKNMR0J;Meisterschaft
+D3;341873;31;27.09.2026;11:00;TSG 51 Frankfurt II;FFV Sportfreunde 04 III;;;031I71TMO8000000VS5489BUVVKNMR0J;Meisterschaft
+D3;341873;38;24.10.2026;11:00;FSV 1910 Bergen 3;FFV Sportfreunde 04 III;;;031I71TMD0000000VS5489BUVVKNMR0J;Meisterschaft
+D3;341873;46;01.11.2026;10:00;FFV Sportfreunde 04 III;SG Bornheim / GW 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71TM9C000000VS5489BUVVKNMR0J;Meisterschaft
+D3;341873;53;08.11.2026;09:30;DJK SW Griesheim 4;FFV Sportfreunde 04 III;;;031I71TM4S000000VS5489BUVVKNMR0J;Meisterschaft
+D3;341873;58;29.11.2026;10:00;FFV Sportfreunde 04 III;SV Griesheim Tarik;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I71TLV0000000VS5489BUVVKNMR0J;Meisterschaft
+D3;341873;63;06.12.2026;09:00;TuS Makkabi Frankfurt 6;FFV Sportfreunde 04 III;;;;Meisterschaft
+D3;341873;130;14.02.2027;11:00;SC Weiss-Blau Frankfurt 3;FFV Sportfreunde 04 III;;;;Meisterschaft
+D3;341873;70;20.02.2027;11:30;VfL Germania 1894 2;FFV Sportfreunde 04 III;;;;Meisterschaft
+D3;341873;76;27.02.2027;13:00;SV Griesheim Tarik;FFV Sportfreunde 04 III;;;;Meisterschaft
+D3;341873;81;07.03.2027;10:00;FFV Sportfreunde 04 III;TuS Makkabi Frankfurt 6;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+D3;341873;85;14.03.2027;10:00;FFV Sportfreunde 04 III;SV Blau-Gelb FFM 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+D3;341873;94;11.04.2027;09:00;TV Preungesheim 1;FFV Sportfreunde 04 III;;;;Meisterschaft
+D3;341873;101;18.04.2027;10:00;FFV Sportfreunde 04 III;Spvgg. Oberrad IV;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+D3;341873;103;25.04.2027;10:00;FFV Sportfreunde 04 III;TSG 51 Frankfurt II;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+D3;341873;110;09.05.2027;10:00;FFV Sportfreunde 04 III;FSV 1910 Bergen 3;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+D3;341873;119;23.05.2027;10:00;FFV Sportfreunde 04 III;DJK SW Griesheim 4;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Meisterschaft
+D3;341873;124;30.05.2027;09:30;SG Bornheim / GW 2;FFV Sportfreunde 04 III;;;;Meisterschaft
+E1;340610;1;22.08.2026;12:00;FFV Sportfreunde 04 I;VfL Germania 1894 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I12OVI0000000VS5489BUVVKNMR0J;Meisterschaft
+E1;340610;5;29.08.2026;11:00;SC Goldstein;FFV Sportfreunde 04 I;;;031I12OVGO000000VS5489BUVVKNMR0J;Meisterschaft
+E1;340610;7;05.09.2026;13:30;SV07 Heddernheim 1;FFV Sportfreunde 04 I;;;031I12OVDO000000VS5489BUVVKNMR0J;Meisterschaft
+E1;340610;10;12.09.2026;12:00;FFV Sportfreunde 04 I;SG Bornheim / GW 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031I12OVBK000000VS5489BUVVKNMR0J;Meisterschaft
+E1;340610;14;26.09.2026;12:30;1. Rödelheimer FC 02 1;FFV Sportfreunde 04 I;;;031I12OVL0000000VS5489BUVVKNMR0J;Meisterschaft
+E2;341435;1;22.08.2026;11:30;FFV Sportfreunde 04 II;Spvgg. Kickers 1916 4;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031HO7T0VC000000VS5489BUVVKNMR0J;Meisterschaft
+E2;341435;5;29.08.2026;12:30;FSV 1910 Bergen 2;FFV Sportfreunde 04 II;;;031HO7T0TS000000VS5489BUVVKNMR0J;Meisterschaft
+E2;341435;7;05.09.2026;11:00;DJK SW Griesheim 3;FFV Sportfreunde 04 II;;;031HO7T0RC000000VS5489BUVVKNMR0J;Meisterschaft
+E2;341435;10;12.09.2026;11:30;FFV Sportfreunde 04 II;SG Bornheim / GW 3;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031HO7T0PO000000VS5489BUVVKNMR0J;Meisterschaft
+E2;341435;14;26.09.2026;12:30;TSG 1888 Nieder-Erlenbach 2;FFV Sportfreunde 04 II;;;031HO7T12C000000VS5489BUVVKNMR0J;Meisterschaft
+E3;341930;1;22.08.2026;11:00;FFV Sportfreunde 04 III;FSV 1910 Bergen 3;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031HO7VE4G000000VS5489BUVVKNMR0J;Meisterschaft
+E3;341930;7;05.09.2026;11:00;SC Weiss-Blau Frankfurt II;FFV Sportfreunde 04 III;;;031HO7VE0K000000VS5489BUVVKNMR0J;Meisterschaft
+E3;341930;10;12.09.2026;11:00;FFV Sportfreunde 04 III;SG Harheim 2;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;031HO7VDUS000000VS5489BUVVKNMR0J;Meisterschaft
+E3;341930;14;26.09.2026;12:30;Riedberger SV II;FFV Sportfreunde 04 III;;;031HO7VE78000000VS5489BUVVKNMR0J;Meisterschaft
+F1;340233;33;29.08.2026;09:00;VFR Bockenheim 1;FFV Sportfreunde 04 I;;;;Kinderfestival
+F1;340233;62;05.09.2026;10:00;FFV Sportfreunde 04 I;;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Kinderfestival
+F1;340233;142;12.09.2026;10:00;FFV Sportfreunde 04 I;;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Kinderfestival
+F1;340233;163;19.09.2026;09:00;FV 09 Eschersheim I;FFV Sportfreunde 04 I;;;;Kinderfestival
+F1;340233;237;26.09.2026;10:00;FFV Sportfreunde 04 I;;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Kinderfestival
+F1;340233;283;24.10.2026;10:00;FFV Sportfreunde 04 I;;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Kinderfestival
+F1;340233;343;31.10.2026;10:00;FFV Sportfreunde 04 I;;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Kinderfestival
+F2;340231;24;29.08.2026;09:00;SG Praunheim II;FFV Sportfreunde 04 II;;;;Kinderfestival
+F2;340231;58;05.09.2026;11:00;SV Blau-Gelb FFM 4;FFV Sportfreunde 04 II;;;;Kinderfestival
+F2;340231;80;12.09.2026;11:00;FC Tempo Ffm 2;FFV Sportfreunde 04 II;;;;Kinderfestival
+F2;340231;130;19.09.2026;11:00;TSG 1888 Nieder-Erlenbach 2;FFV Sportfreunde 04 II;;;;Kinderfestival
+F2;340231;165;26.09.2026;09:00;DJK SW Griesheim 4;FFV Sportfreunde 04 II;;;;Kinderfestival
+F2;340231;198;24.10.2026;10:30;Spvgg. 03 Fechenheim III;FFV Sportfreunde 04 II;;;;Kinderfestival
+F2;340231;213;31.10.2026;09:30;Concordia Eschersheim 2;FFV Sportfreunde 04 II;;;;Kinderfestival
+G1;340221;24;05.09.2026;10:30;FC Kalbach I / 1 2;FFV Sportfreunde 04 I;;;;Kinderfestival
+G1;340221;51;12.09.2026;09:00;FFC Olympia 07 IV;FFV Sportfreunde 04 I;;;;Kinderfestival
+G1;340221;73;19.09.2026;09:00;SV Bonames;FFV Sportfreunde 04 I;;;;Kinderfestival
+G1;340221;86;26.09.2026;09:00;BSC SW 1919 Ffm. 2;FFV Sportfreunde 04 I;;;;Kinderfestival
+G1;340221;109;24.10.2026;09:00;FC Kalbach I / 1 2;FFV Sportfreunde 04 I;;;;Kinderfestival
+G1;340221;142;31.10.2026;11:00;SG Harheim 2 / 2;FFV Sportfreunde 04 I;;;;Kinderfestival
+E1;940399;9;15.08.2026;09:00;SV07 Heddernheim 1;FFV Sportfreunde 04 I;;;;Kreispokal
+A;940282;5;15.08.2026;19:00;FFV Sportfreunde 04 1;SC Riedberg;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Kreispokal
+D1;940397;8;16.08.2026;09:00;1. Rödelheimer FC 02 1;FFV Sportfreunde 04 I;;;;Kreispokal
+E1;940399;24;26.08.2026;18:00;FFV Sportfreunde 04 I;1. Rödelheimer FC 02 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Kreispokal
+A;940282;13;26.08.2026;20:00;Spvgg. Oberrad 1;FFV Sportfreunde 04 1;;;;Kreispokal
+D1;940397;24;02.09.2026;17:15;SG Riederwald 1;FFV Sportfreunde 04 I;;;;Kreispokal
+HERREN;940158;15;02.09.2026;19:30;FFV Sportfreunde 04 FFM;Concordia Eschersheim;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Kreispokal
+A;540202;4;08.08.2026;16:00;FFV Sportfreunde 04 1;JSG Dieburg-Klein-Zimmern 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Freundschaftsspiel
+D1;540072;2;18.08.2026;18:15;1. Rödelheimer FC 02 1;FFV Sportfreunde 04 I;;;;Freundschaftsspiel
+E1;540210;65;20.08.2026;17:30;FFV Sportfreunde 04 I;SV Blau-Gelb FFM 1;Sportplatz Mainzer Landstrasse, Frankfurt am Main;;;Freundschaftsspiel
+A;540049;7;20.08.2026;19:00;SG Sossenheim;FFV Sportfreunde 04 1;;;;Freundschaftsspiel

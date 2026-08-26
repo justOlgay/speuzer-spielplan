@@ -32,7 +32,7 @@ dafür, dass die Vereins-App (Appack) sie als externen iCal-Kalender akzeptiert.
 
 | Datei | Zweck |
 |---|---|
-| `spiele.csv` | die einzige Datei, die gepflegt wird – ein Spiel pro Zeile, Semikolon-getrennt |
+| `spiele.csv` | die einzige Datei, die gepflegt wird – ein Spiel pro Zeile, Semikolon-getrennt, letzte Spalte `wettbewerb` |
 | `build_ics.py` | erzeugt `docs/d1.ics`, `d2.ics`, `d3.ics` und `alle.ics` |
 | `docs/index.html` | Abo-Seite für Eltern, baut die Links selbst aus der eigenen Adresse |
 | `docs/import-<team>.ics` | **nicht abonnieren, sondern hochladen** – erzeugt in appack echte App-Termine mit Zu-/Absage (Start = Treffpunkt) |
@@ -700,3 +700,44 @@ den TEAMPUNKT-Feed kommen und sonst doppelt stünden. In appack wird also **einm
 
 Ergebnis: 946 Einheiten in den Einzelkalendern, 814 im Sammelkalender (10 Mannschaften), mit
 `icalendar` geparst, Wochentage und Ferienlücken geprüft.
+
+
+## Andere Wettbewerbe: Pokal, Freundschaftsspiele, Kinderfußball (ab 26.08.2026)
+
+Bis dahin enthielt `spiele.csv` nur **Meisterschaftsspiele**. Ein Blick in den DFBnet-Vereinsspielplan
+zeigte, dass damit für den Zeitraum August bis Oktober **36 Termine fehlten** – siehe
+`Verein/Speuzer App - Was im Spielplan fehlt.pdf`.
+
+**Neue Spalte `wettbewerb`** mit vier Werten: `Meisterschaft` (Standard), `Kreispokal`,
+`Freundschaftsspiel`, `Kinderfestival`. Alte Zeilen wurden auf `Meisterschaft` gesetzt.
+
+**Drei neue Mannschaften in `TEAMS`:** F1 (Staffel 340233, F-Junioren 4+1 Gr. 2), F2 (340231,
+4vs4 Gr. 4) und G1 (340221, G-Junioren 3vs3 Gr. 4). Sie spielen im **Kinderfußball**, also
+Kinderfestivals statt Ligaspielen. Sie haben **kein fussball.de-Widget und keine Team-ID**
+(`widget=None`, `teamid=None`) – `link()` gibt dann einen leeren String zurück und der Termin
+bekommt gar kein `URL`-Feld statt eines kaputten Links. Ihre Gruppe ist `fg`, die **nicht** in
+`GRUPPEN` steht: es gibt also bewusst keine App-Seite mit Widgets für F und G, aber Kalender,
+Import-Dateien und Abo-Seite entstehen automatisch.
+
+**Titel je Wettbewerb** (`titel()`):
+
+| Wettbewerb | Beispiel |
+|---|---|
+| Meisterschaft | `Speuzer D1 · Heim gegen FG Seckbach 1` |
+| Kreispokal | `Speuzer E1 · Pokal, Heim gegen 1. Rödelheimer FC 02 1` |
+| Freundschaftsspiel | `Speuzer A-Jugend · Freundschaftsspiel, Auswärts bei SG Sossenheim` |
+| Kinderfestival | `Speuzer G1 · Kinderfestival bei SV Bonames` / `… zu Hause` |
+
+Beim Kinderfestival gibt es **keinen einzelnen Gegner** – in `spiele.csv` steht in `heim` der
+gastgebende Verein (bei Heimspielen wir selbst), `gast` bleibt bei Heimspielen leer. `paarung()`
+und `untertitel()` behandeln das eigen: statt „Anstoß" heißt es **„Beginn"**, und ohne
+Spielstätte steht in der Beschreibung „beim gastgebenden Verein – Adresse gibt der Trainer
+bekannt", weil das DFBnet zu Festivals nur den Gastgeber nennt.
+
+**Treffpunkt:** vorerst dieselbe Regel wie bei Ligaspielen, also `TREFFPUNKT_MIN` = 60 Minuten
+vorher. Falls bei den Fünf- bis Siebenjährigen etwas anderes gilt, ist das eine Zahl an einer
+Stelle.
+
+**Was noch fehlt:** die Kinderfestivals sind nur bis **31.10.2026** angesetzt (weiter reicht die
+Ausschreibung nicht), und die **E-Jugend-Hauptrunde** hat der Kreis noch nicht eingeteilt – im
+Zeitraum Oktober bis Dezember gibt es null E-Jugend-Spiele. Beides Anfang Oktober nachziehen.

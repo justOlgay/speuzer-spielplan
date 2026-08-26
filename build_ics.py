@@ -67,7 +67,19 @@ TEAMS = {
                    info="1. Kreisklasse \u00b7 EJ Quali Gr. 22 \u00b7 Kreis Frankfurt",
                    widget="15839ff7-ac56-422d-9853-b240229822ec",
                    teamid="02PS0CFJCO000000VS5489B1VVQNIHJA"),
+    "F1":     dict(label="F1", staffel="340233", gruppe="fg",
+                   info="Kinderfu\u00dfball \u00b7 F-Junioren 4+1 Gr. 2 \u00b7 Kreis Frankfurt",
+                   widget=None, teamid=None),
+    "F2":     dict(label="F2", staffel="340231", gruppe="fg",
+                   info="Kinderfu\u00dfball \u00b7 F-Junioren 4vs4 Gr. 4 \u00b7 Kreis Frankfurt",
+                   widget=None, teamid=None),
+    "G1":     dict(label="G1", staffel="340221", gruppe="fg",
+                   info="Kinderfu\u00dfball \u00b7 G-Junioren 3vs3 Gr. 4 \u00b7 Kreis Frankfurt",
+                   widget=None, teamid=None),
 }
+
+# Wettbewerbe ausserhalb der Meisterschaft: eigene Staffelkennungen, eigene Titel.
+FESTIVAL = "Kinderfestival"
 
 GRUPPEN = {
     "herren": dict(titel="Herren", datei="app-herren.html"),
@@ -157,13 +169,16 @@ def lade_spiele():
             row["_start"] = datetime.datetime(jahr, monat, tag, stunde, minute)
             row["_heim"] = row["heim"].startswith(VEREIN)
             row["_gegner"] = row["gast"] if row["_heim"] else row["heim"]
+            row["_wb"] = row.get("wettbewerb") or "Meisterschaft"
             yield row
 
 
 def link(row):
+    """Leerer String, wenn es weder Spiel- noch Mannschaftsseite gibt (Kinderfussball)."""
     if row.get("fbid"):
         return FBDE_SPIEL + row["fbid"]
-    return FBDE_TEAM_BASE + TEAMS[row["team"]]["teamid"]
+    tid = TEAMS[row["team"]].get("teamid")
+    return FBDE_TEAM_BASE + tid if tid else ""
 
 
 def mannschaft(team):
@@ -174,15 +189,24 @@ def mannschaft(team):
 def paarung(row):
     """Heim - Gast, unsere Seite immer als 'Speuzer <Team>'."""
     uns = mannschaft(row["team"])
+    if row["_wb"] == FESTIVAL:
+        return "Kinderfestival %s" % ("bei uns" if row["_heim"] else "bei %s" % row["_gegner"])
     if row["_heim"]:
         return "%s \u2013 %s" % (uns, row["gast"])
     return "%s \u2013 %s" % (row["heim"], uns)
 
 
 def titel(row, mit_ergebnis=True):
-    """Einheitlicher Termintitel: Mannschaft, Heim/Auswaerts, Gegner, ggf. Ergebnis."""
-    wo = "Heim gegen" if row["_heim"] else "Ausw\u00e4rts bei"
-    kopf = "%s \u00b7 %s %s" % (mannschaft(row["team"]), wo, row["_gegner"])
+    """Einheitlicher Termintitel. Kinderfestivals haben keinen einzelnen Gegner,
+    Pokal und Freundschaftsspiele bekommen den Wettbewerb dazu."""
+    uns = mannschaft(row["team"])
+    if row["_wb"] == FESTIVAL:
+        kopf = "%s \u00b7 Kinderfestival %s" % (
+            uns, "zu Hause" if row["_heim"] else "bei %s" % row["_gegner"])
+    else:
+        wo = "Heim gegen" if row["_heim"] else "Ausw\u00e4rts bei"
+        vor = {"Kreispokal": "Pokal, ", "Freundschaftsspiel": "Freundschaftsspiel, "}.get(row["_wb"], "")
+        kopf = "%s \u00b7 %s%s %s" % (uns, vor, wo, row["_gegner"])
     if mit_ergebnis and row["ergebnis"]:
         kopf += " \u00b7 %s" % row["ergebnis"]
     return kopf
@@ -195,6 +219,10 @@ def treffpunkt(row):
 def untertitel(row):
     """Text fuer das Feld 'Untertitel' in appack. Der Import kann das Feld nicht fuellen,
     darum steht die Zeile zum Kopieren oben in der Beschreibung."""
+    if row["_wb"] == FESTIVAL:
+        return "Treffpunkt %s Uhr \u00b7 Beginn %s Uhr \u00b7 %s" % (
+            treffpunkt(row).strftime("%H:%M"), row["zeit"],
+            "bei uns" if row["_heim"] else "ausw\u00e4rts")
     return "Treffpunkt %s Uhr \u00b7 Ansto\u00df %s Uhr \u00b7 %s" % (
         treffpunkt(row).strftime("%H:%M"), row["zeit"],
         "Heimspiel" if row["_heim"] else "Ausw\u00e4rtsspiel")
@@ -203,16 +231,23 @@ def untertitel(row):
 def beschreibung(row):
     """Immer gleich aufgebaut, damit jeder Termin gleich aussieht."""
     t = TEAMS[row["team"]]
+    wb = t["info"] if row["_wb"] == "Meisterschaft" else "%s \u00b7 Kreis Frankfurt" % row["_wb"]
     z = [paarung(row),
          "Mannschaft: %s" % mannschaft(row["team"]),
-         "Wettbewerb: %s" % t["info"]]
+         "Wettbewerb: %s" % wb]
     if RUNDE.get(row["staffel"]):
         z.append("Runde: %s" % RUNDE[row["staffel"]])
     z.append("%s \u00b7 Spielnummer %s \u00b7 Staffel %s"
              % ("Heimspiel" if row["_heim"] else "Ausw\u00e4rtsspiel",
                 row["spielnr"], row["staffel"]))
-    z.append("Spielst\u00e4tte: %s" % (row["spielstaette"] or "siehe FUSSBALL.DE"))
-    z.append("Alle Infos zum Spiel: %s" % link(row))
+    if row["spielstaette"]:
+        z.append("Spielst\u00e4tte: %s" % row["spielstaette"])
+    elif row["_wb"] == FESTIVAL:
+        z.append("Spielst\u00e4tte: beim gastgebenden Verein \u2013 Adresse gibt der Trainer bekannt")
+    else:
+        z.append("Spielst\u00e4tte: siehe FUSSBALL.DE")
+    if link(row):
+        z.append("Alle Infos zum Spiel: %s" % link(row))
     return "\\n".join(esc(x) for x in z)
 
 
@@ -226,7 +261,9 @@ def event(row, stamp):
          "DTEND;TZID=Europe/Berlin:%s" % ende.strftime(fmt),
          "SUMMARY:%s" % esc(titel(row)),
          "DESCRIPTION:%s" % beschreibung(row),
-         "URL:%s" % link(row), "CATEGORIES:Fussball", "TRANSP:OPAQUE"]
+         "CATEGORIES:Fussball", "TRANSP:OPAQUE"]
+    if link(row):
+        z.insert(-2, "URL:%s" % link(row))
     if row["spielstaette"]:
         z.append("LOCATION:%s" % esc(row["spielstaette"]))
     if ALARM:
@@ -414,12 +451,14 @@ def import_beschreibung(row):
     z = ["Untertitel (zum Kopieren): %s" % untertitel(row),
          paarung(row),
          "Treffpunkt: %s Uhr" % treffpunkt(row).strftime("%H:%M"),
-         "Ansto\u00df: %s Uhr" % row["zeit"],
-         "%s \u00b7 %s" % ("Heimspiel" if row["_heim"] else "Ausw\u00e4rtsspiel", t["info"])]
+         ("Beginn: %s Uhr" if row["_wb"] == FESTIVAL else "Ansto\u00df: %s Uhr") % row["zeit"],
+         "%s \u00b7 %s" % ("Heimspiel" if row["_heim"] else "Ausw\u00e4rtsspiel",
+                            t["info"] if row["_wb"] == "Meisterschaft" else row["_wb"])]
     if RUNDE.get(row["staffel"]):
         z.append("Runde: %s" % RUNDE[row["staffel"]])
     z.append("Spielst\u00e4tte: %s" % (row["spielstaette"] or "siehe FUSSBALL.DE"))
-    z.append("Alle Infos zum Spiel: %s" % link(row))
+    if link(row):
+        z.append("Alle Infos zum Spiel: %s" % link(row))
     z.append(IMPORT_HINWEIS)
     return "\\n".join(esc(x) for x in z)
 
@@ -429,15 +468,17 @@ def import_event(row, stamp):
     Bewusst OHNE LOCATION - appack legt daraus sonst bei jedem Import einen neuen Ort an."""
     fmt = "%Y%m%dT%H%M%S"
     ende = row["_start"] + datetime.timedelta(hours=DAUER_STUNDEN)
-    return ["BEGIN:VEVENT",
-            "UID:%s-%s-app@%s" % (row["staffel"], row["spielnr"], DOMAIN),
-            "DTSTAMP:%s" % stamp, "SEQUENCE:%d" % SEQ,
-            "DTSTART;TZID=Europe/Berlin:%s" % treffpunkt(row).strftime(fmt),
-            "DTEND;TZID=Europe/Berlin:%s" % ende.strftime(fmt),
-            "SUMMARY:%s" % esc(titel(row, mit_ergebnis=False)),
-            "DESCRIPTION:%s" % import_beschreibung(row),
-            "URL:%s" % link(row), "CATEGORIES:Fussball", "TRANSP:OPAQUE",
-            "END:VEVENT"]
+    z = ["BEGIN:VEVENT",
+         "UID:%s-%s-app@%s" % (row["staffel"], row["spielnr"], DOMAIN),
+         "DTSTAMP:%s" % stamp, "SEQUENCE:%d" % SEQ,
+         "DTSTART;TZID=Europe/Berlin:%s" % treffpunkt(row).strftime(fmt),
+         "DTEND;TZID=Europe/Berlin:%s" % ende.strftime(fmt),
+         "SUMMARY:%s" % esc(titel(row, mit_ergebnis=False)),
+         "DESCRIPTION:%s" % import_beschreibung(row)]
+    if link(row):
+        z.append("URL:%s" % link(row))
+    z += ["CATEGORIES:Fussball", "TRANSP:OPAQUE", "END:VEVENT"]
+    return z
 
 
 def schreibe_import(team, spiele, stamp):
