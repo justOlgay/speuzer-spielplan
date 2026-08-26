@@ -1,0 +1,1081 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FFV Sportfreunde 04//Training//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Speuzer Herren – Training
+X-WR-CALDESC:Trainingszeiten der Saison 2026/27\, Stand 26.08.2026. In de
+ n hessischen Schulferien und an Feiertagen ist kein Training eingetragen
+ . Kurzfristige Absagen kommen über die Vereins-App.
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT24H
+X-PUBLISHED-TTL:PT24H
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+X-LIC-LOCATION:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:training-herren-20260901-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20260901T193000
+DTEND;TZID=Europe/Berlin:20260901T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20260903-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20260903T193000
+DTEND;TZID=Europe/Berlin:20260903T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20260908-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20260908T193000
+DTEND;TZID=Europe/Berlin:20260908T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20260910-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20260910T193000
+DTEND;TZID=Europe/Berlin:20260910T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20260915-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20260915T193000
+DTEND;TZID=Europe/Berlin:20260915T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20260917-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20260917T193000
+DTEND;TZID=Europe/Berlin:20260917T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20260922-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20260922T193000
+DTEND;TZID=Europe/Berlin:20260922T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20260924-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20260924T193000
+DTEND;TZID=Europe/Berlin:20260924T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20260929-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20260929T193000
+DTEND;TZID=Europe/Berlin:20260929T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261001-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261001T193000
+DTEND;TZID=Europe/Berlin:20261001T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261020-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261020T193000
+DTEND;TZID=Europe/Berlin:20261020T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261022-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261022T193000
+DTEND;TZID=Europe/Berlin:20261022T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261027-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261027T193000
+DTEND;TZID=Europe/Berlin:20261027T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261029-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261029T193000
+DTEND;TZID=Europe/Berlin:20261029T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261103-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261103T193000
+DTEND;TZID=Europe/Berlin:20261103T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261105-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261105T193000
+DTEND;TZID=Europe/Berlin:20261105T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261110-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261110T193000
+DTEND;TZID=Europe/Berlin:20261110T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261112-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261112T193000
+DTEND;TZID=Europe/Berlin:20261112T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261117-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261117T193000
+DTEND;TZID=Europe/Berlin:20261117T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261119-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261119T193000
+DTEND;TZID=Europe/Berlin:20261119T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261124-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261124T193000
+DTEND;TZID=Europe/Berlin:20261124T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261126-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261126T193000
+DTEND;TZID=Europe/Berlin:20261126T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261201-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261201T193000
+DTEND;TZID=Europe/Berlin:20261201T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261203-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261203T193000
+DTEND;TZID=Europe/Berlin:20261203T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261208-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261208T193000
+DTEND;TZID=Europe/Berlin:20261208T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261210-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261210T193000
+DTEND;TZID=Europe/Berlin:20261210T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261215-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261215T193000
+DTEND;TZID=Europe/Berlin:20261215T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261217-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261217T193000
+DTEND;TZID=Europe/Berlin:20261217T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20261222-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20261222T193000
+DTEND;TZID=Europe/Berlin:20261222T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270114-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270114T193000
+DTEND;TZID=Europe/Berlin:20270114T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270119-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270119T193000
+DTEND;TZID=Europe/Berlin:20270119T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270121-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270121T193000
+DTEND;TZID=Europe/Berlin:20270121T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270126-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270126T193000
+DTEND;TZID=Europe/Berlin:20270126T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270128-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270128T193000
+DTEND;TZID=Europe/Berlin:20270128T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270202-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270202T193000
+DTEND;TZID=Europe/Berlin:20270202T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270204-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270204T193000
+DTEND;TZID=Europe/Berlin:20270204T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270209-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270209T193000
+DTEND;TZID=Europe/Berlin:20270209T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270211-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270211T193000
+DTEND;TZID=Europe/Berlin:20270211T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270216-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270216T193000
+DTEND;TZID=Europe/Berlin:20270216T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270218-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270218T193000
+DTEND;TZID=Europe/Berlin:20270218T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270223-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270223T193000
+DTEND;TZID=Europe/Berlin:20270223T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270225-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270225T193000
+DTEND;TZID=Europe/Berlin:20270225T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270302-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270302T193000
+DTEND;TZID=Europe/Berlin:20270302T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270304-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270304T193000
+DTEND;TZID=Europe/Berlin:20270304T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270309-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270309T193000
+DTEND;TZID=Europe/Berlin:20270309T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270311-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270311T193000
+DTEND;TZID=Europe/Berlin:20270311T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270316-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270316T193000
+DTEND;TZID=Europe/Berlin:20270316T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270318-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270318T193000
+DTEND;TZID=Europe/Berlin:20270318T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270406-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270406T193000
+DTEND;TZID=Europe/Berlin:20270406T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270408-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270408T193000
+DTEND;TZID=Europe/Berlin:20270408T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270413-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270413T193000
+DTEND;TZID=Europe/Berlin:20270413T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270415-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270415T193000
+DTEND;TZID=Europe/Berlin:20270415T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270420-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270420T193000
+DTEND;TZID=Europe/Berlin:20270420T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270422-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270422T193000
+DTEND;TZID=Europe/Berlin:20270422T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270427-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270427T193000
+DTEND;TZID=Europe/Berlin:20270427T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270429-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270429T193000
+DTEND;TZID=Europe/Berlin:20270429T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270504-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270504T193000
+DTEND;TZID=Europe/Berlin:20270504T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270511-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270511T193000
+DTEND;TZID=Europe/Berlin:20270511T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270513-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270513T193000
+DTEND;TZID=Europe/Berlin:20270513T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270518-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270518T193000
+DTEND;TZID=Europe/Berlin:20270518T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270520-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270520T193000
+DTEND;TZID=Europe/Berlin:20270520T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270525-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270525T193000
+DTEND;TZID=Europe/Berlin:20270525T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270601-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270601T193000
+DTEND;TZID=Europe/Berlin:20270601T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270603-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270603T193000
+DTEND;TZID=Europe/Berlin:20270603T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270608-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270608T193000
+DTEND;TZID=Europe/Berlin:20270608T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270610-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270610T193000
+DTEND;TZID=Europe/Berlin:20270610T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270615-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270615T193000
+DTEND;TZID=Europe/Berlin:20270615T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270617-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270617T193000
+DTEND;TZID=Europe/Berlin:20270617T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270622-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270622T193000
+DTEND;TZID=Europe/Berlin:20270622T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:training-herren-20270624-1930@speuzer.sportfreunde04.de
+DTSTAMP:20260826T082258Z
+SEQUENCE:12
+DTSTART;TZID=Europe/Berlin:20270624T193000
+DTEND;TZID=Europe/Berlin:20270624T210000
+SUMMARY:Speuzer Herren · Training
+DESCRIPTION:Training Herren\nPlatz: linke Hälfte\, Tor 1\n19:30 bis 21:0
+ 0 Uhr\nBitte Schienbeinschoner und ausreichend Wasser mitbringen.\nAbsag
+ en und Änderungen kommen über die Vereins-App.
+LOCATION:FFV Sportfreunde 04\, Mainzer Landstraße 480\, 60326 Frankfurt 
+ am Main
+CATEGORIES:Training
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
