@@ -36,6 +36,7 @@ dafür, dass die Vereins-App (Appack) sie als externen iCal-Kalender akzeptiert.
 | `build_ics.py` | erzeugt `docs/d1.ics`, `d2.ics`, `d3.ics` und `alle.ics` |
 | `docs/index.html` | Abo-Seite für Eltern, baut die Links selbst aus der eigenen Adresse |
 | `docs/import-<team>.ics` | **nicht abonnieren, sondern hochladen** – erzeugt in appack echte App-Termine mit Zu-/Absage (Start = Treffpunkt) |
+| `docs/training-<team>.ics` | Trainingszeiten als Einzeltermine, ohne Ferien und Feiertage – zum Abonnieren **und** zum Importieren |
 | `.github/workflows/build.yml` | baut bei jeder Änderung an `spiele.csv` neu, zusätzlich täglich |
 
 ## Pflege im Alltag
@@ -661,3 +662,36 @@ einem Absatz zusammengezogen.
 **Grenze:** Verlegungen aus dem DFBnet laufen nur im Abo-Feed automatisch mit. Ein importierter
 Termin muss von Hand nachgezogen werden – deshalb lieber in Etappen importieren als die ganze
 Saison auf einmal.
+
+
+## Trainingszeiten (ab 26.08.2026)
+
+Neben den Spielen erzeugt der Generator für **elf Mannschaften** einen Trainingskalender:
+`training-herren.ics`, `training-a.ics`, `training-d1.ics` … `training-d3.ics`,
+`training-e1.ics` … `training-e3.ics`, `training-f1.ics`, `training-f2.ics`, `training-g1.ics`.
+F1, F2 und G1 haben keine Pflichtspiele und stehen deshalb nicht in `TEAMS` – ihre Labels
+kommen aus `TRAINING_LABEL`.
+
+**Quelle** ist `Aufteilung Sportplatz/Aufteilung Trainingsplatz 26-27.xlsx` (Version 1.2), von
+Olgay am 26.08.2026 bestätigt. Die Tabelle `TRAINING` hält je Mannschaft
+`(Wochentag, Beginn, Ende, Platz)`.
+
+**Einzeltermine statt Serie.** Bewusst kein `RRULE`: appack importiert Serien nicht zuverlässig,
+und einzelne Termine lassen sich in der App absagen oder verschieben, ohne die ganze Reihe
+anzufassen. Zeitraum `TRAINING_VON` = 31.08.2026 bis `TRAINING_BIS` = 27.06.2027 (letzter Tag vor
+den hessischen Sommerferien). UID-Form `training-<team>-<JJJJMMTT>-<HHMM>@…` – stabil, damit ein
+erneuter Import keine Dubletten erzeugt.
+
+**Ferien und Feiertage** stehen in `FREI` und werden übersprungen (Hessen 26/27, geprüft am
+26.08.2026): Herbstferien 05.–17.10.2026, Weihnachtsferien 23.12.2026–12.01.2027, Osterferien
+22.03.–02.04.2027, dazu Christi Himmelfahrt 06.05., Pfingstmontag 17.05. und Fronleichnam
+27.05.2027. Hessen hat keine Winter- und keine Pfingstferien. Wenn in den Ferien doch trainiert
+wird: Zeitraum aus `FREI` entfernen und neu bauen.
+
+Jeder Termin trägt `CATEGORIES:Training` (in der App als eigene Kategorie filterbar) und als
+`LOCATION` die Adresse des Sportplatzes, damit die Navigation auch beim Training funktioniert.
+Beim **Import in appack** legt das Feld einen Ort an – wenn „FFV Sportfreunde 04, Mainzer
+Landstraße 480" schon existiert, vorher prüfen, ob appack ihn wiederverwendet.
+
+Ergebnis: 946 Einheiten über alle Mannschaften, mit `icalendar` geparst, Wochentage und
+Ferienlücken geprüft.

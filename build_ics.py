@@ -257,6 +257,116 @@ def schreibe_ics(datei, kalendername, spiele, stamp, hinweis=""):
     print("%-18s %3d Spiele" % (datei, len(spiele)))
 
 
+# ---------------------------------------------------------------- Trainingszeiten
+# Quelle: "Aufteilung Sportplatz/Aufteilung Trainingsplatz 26-27.xlsx", Version 1.2,
+# von Olgay am 26.08.2026 bestaetigt. Wochentag, Beginn, Ende, Platz.
+WOCHENTAG = {"MO": 0, "DI": 1, "MI": 2, "DO": 3, "FR": 4}
+
+TRAINING = {
+    "HERREN": [("DI", "19:30", "21:00", "linke H\u00e4lfte, Tor 1"),
+               ("DO", "19:30", "21:00", "linke H\u00e4lfte, Tor 1")],
+    "A":      [("MO", "19:00", "21:00", "linke H\u00e4lfte, Tor 1"),
+               ("MI", "19:00", "20:30", "linke H\u00e4lfte, Tor 1")],
+    "D1":     [("DI", "17:30", "19:30", "linke H\u00e4lfte, Tor 1"),
+               ("MI", "17:30", "19:00", "linke H\u00e4lfte, Tor 1"),
+               ("FR", "17:30", "19:30", "linke H\u00e4lfte, Tor 1")],
+    "D2":     [("DI", "17:30", "19:30", "linke H\u00e4lfte, Tor 2"),
+               ("MI", "17:30", "19:00", "linke H\u00e4lfte, Tor 2"),
+               ("FR", "17:30", "19:30", "linke H\u00e4lfte, Tor 2")],
+    "D3":     [("DI", "17:30", "19:30", "rechte H\u00e4lfte, Tor 1"),
+               ("FR", "17:30", "19:30", "rechte H\u00e4lfte, Tor 1")],
+    "E1":     [("MO", "17:30", "19:00", "rechte H\u00e4lfte"),
+               ("MI", "17:30", "19:00", "rechte H\u00e4lfte"),
+               ("DO", "17:30", "19:00", "linke H\u00e4lfte, Tor 1")],
+    "E2":     [("MO", "17:30", "19:00", "linke H\u00e4lfte, Tor 2"),
+               ("DI", "16:30", "18:00", "rechte H\u00e4lfte, Tor 1"),
+               ("DO", "17:30", "19:00", "rechte H\u00e4lfte, Tor 1")],
+    "E3":     [("MO", "16:00", "17:30", "rechte H\u00e4lfte"),
+               ("MI", "16:00", "17:30", "rechte H\u00e4lfte")],
+    "F1":     [("MO", "17:30", "19:00", "linke H\u00e4lfte, Tor 1"),
+               ("MI", "17:30", "19:00", "rechte H\u00e4lfte, Tor 2")],
+    "F2":     [("DI", "17:30", "19:00", "K\u00e4fig"),
+               ("DO", "17:30", "19:00", "rechte H\u00e4lfte, Tor 2")],
+    "G1":     [("MO", "17:30", "19:00", "Court")],
+}
+
+# Mannschaften ohne Pflichtspiele stehen nicht in TEAMS - Label fuer den Kalendernamen.
+TRAINING_LABEL = {"F1": "F1", "F2": "F2", "G1": "G1"}
+
+TRAINING_VON = datetime.date(2026, 8, 31)   # erster Montag nach der Bestaetigung
+TRAINING_BIS = datetime.date(2027, 6, 27)   # letzter Tag vor den Sommerferien
+
+# Schulferien Hessen 26/27 und Feiertage, die auf einen Trainingstag fallen.
+# Quelle: feiertage-deutschland.de / schulferien.eu, geprueft am 26.08.2026.
+FREI = [
+    (datetime.date(2026, 10, 5),  datetime.date(2026, 10, 17), "Herbstferien"),
+    (datetime.date(2026, 12, 23), datetime.date(2027, 1, 12),  "Weihnachtsferien"),
+    (datetime.date(2027, 3, 22),  datetime.date(2027, 4, 2),   "Osterferien"),
+    (datetime.date(2027, 5, 6),   datetime.date(2027, 5, 6),   "Christi Himmelfahrt"),
+    (datetime.date(2027, 5, 17),  datetime.date(2027, 5, 17),  "Pfingstmontag"),
+    (datetime.date(2027, 5, 27),  datetime.date(2027, 5, 27),  "Fronleichnam"),
+]
+SPORTPLATZ = "FFV Sportfreunde 04, Mainzer Landstra\u00dfe 480, 60326 Frankfurt am Main"
+
+
+def ist_frei(tag):
+    for von, bis, _ in FREI:
+        if von <= tag <= bis:
+            return True
+    return False
+
+
+def trainingstermine(team):
+    """Einzeltermine statt Serie - appack importiert Serien nicht zuverlaessig."""
+    out = []
+    for kuerzel, beginn, ende, platz in TRAINING[team]:
+        tag = TRAINING_VON
+        while tag.weekday() != WOCHENTAG[kuerzel]:
+            tag += datetime.timedelta(days=1)
+        while tag <= TRAINING_BIS:
+            if not ist_frei(tag):
+                out.append((tag, beginn, ende, platz))
+            tag += datetime.timedelta(days=7)
+    return sorted(out)
+
+
+def schreibe_training(team, stamp):
+    label = TEAMS[team]["label"] if team in TEAMS else TRAINING_LABEL[team]
+    name = "Speuzer %s \u2013 Training" % label
+    beschr = ("Trainingszeiten der Saison 2026/27, Stand 26.08.2026. In den hessischen "
+              "Schulferien und an Feiertagen ist kein Training eingetragen. "
+              "Kurzfristige Absagen kommen \u00fcber die Vereins-App.")
+    z = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//%s//Training//DE" % VEREIN,
+         "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
+         "X-WR-CALNAME:%s" % esc(name), "X-WR-CALDESC:%s" % esc(beschr),
+         "X-WR-TIMEZONE:Europe/Berlin",
+         "REFRESH-INTERVAL;VALUE=DURATION:PT24H", "X-PUBLISHED-TTL:PT24H", VTIMEZONE]
+    for tag, beginn, ende, platz in trainingstermine(team):
+        d = tag.strftime("%Y%m%d")
+        z += ["BEGIN:VEVENT",
+              "UID:training-%s-%s-%s@%s" % (team.lower(), d, beginn.replace(":", ""), DOMAIN),
+              "DTSTAMP:%s" % stamp, "SEQUENCE:%d" % SEQ,
+              "DTSTART;TZID=Europe/Berlin:%sT%s00" % (d, beginn.replace(":", "")),
+              "DTEND;TZID=Europe/Berlin:%sT%s00" % (d, ende.replace(":", "")),
+              "SUMMARY:%s" % esc("Speuzer %s \u00b7 Training" % label),
+              "DESCRIPTION:%s" % "\\n".join(esc(x) for x in [
+                  "Training %s" % label,
+                  "Platz: %s" % platz,
+                  "%s bis %s Uhr" % (beginn, ende),
+                  "Bitte Schienbeinschoner und ausreichend Wasser mitbringen.",
+                  "Absagen und \u00c4nderungen kommen \u00fcber die Vereins-App."]),
+              "LOCATION:%s" % esc(SPORTPLATZ),
+              "CATEGORIES:Training", "TRANSP:OPAQUE", "END:VEVENT"]
+    z.append("END:VCALENDAR")
+    flach = []
+    for e in z:
+        flach.extend(e.replace("\r\n", "\n").split("\n"))
+    datei = "training-%s.ics" % team.lower()
+    (OUT / datei).write_text("\r\n".join(fold(x) for x in flach) + "\r\n",
+                             encoding="utf-8", newline="")
+    print("%-18s %3d Einheiten" % (datei, len(trainingstermine(team))))
+
+
 # ------------------------------------------------------- Import-Dateien fuer appack
 IMPORT_HINWEIS = ("Bitte per Daumen hoch / Fragezeichen / Daumen runter zur\u00fcckmelden, "
                   "ob euer Kind dabei ist \u2013 am besten bis zum Abend vor dem Spiel.")
@@ -441,11 +551,17 @@ def schreibe_index():
                   'note:"%s" },' % HINWEIS_QUALI)
     zeilen.append('  { file:"jugend.ics", name:"Speuzer \u2013 nur Jugend", '
                   'meta:"D1 bis E3 in einem Kalender, ohne Herren und A-Jugend", '
-                  'note:"%s" }' % HINWEIS_QUALI)
+                  'note:"%s" },' % HINWEIS_QUALI)
+    for t in TRAINING:
+        label = TEAMS[t]["label"] if t in TEAMS else TRAINING_LABEL[t]
+        tage = " \u00b7 ".join("%s %s\u2013%s" % (k, a, b) for k, a, b, _ in TRAINING[t])
+        zeilen.append('  { file:"training-%s.ics", name:"Speuzer %s \u2013 Training", '
+                      'meta:"%s", note:"" },' % (t.lower(), label, tage))
+    zeilen[-1] = zeilen[-1].rstrip(",")
     html = (BASE / "vorlage_index.html").read_text(encoding="utf-8")
     (OUT / "index.html").write_text(html.replace("%TEAMS%", "\n".join(zeilen)),
                                     encoding="utf-8")
-    print("index.html         %3d Kalender" % (len(TEAMS) + 2))
+    print("index.html         %3d Kalender" % (len(TEAMS) + 2 + len(TRAINING)))
 
 
 def main():
@@ -470,6 +586,8 @@ def main():
     schreibe_ics("app-kalender.ics", "Speuzer Spielplan Mannschaften", appfeed, stamp, hinweis_app)
     for t in TEAMS:
         schreibe_import(t, [r for r in alle if r["team"] == t], stamp)
+    for t in TRAINING:
+        schreibe_training(t, stamp)
     for g in GRUPPEN:
         schreibe_app_seite(g, [r for r in alle if TEAMS[r["team"]]["gruppe"] == g])
     schreibe_index()
