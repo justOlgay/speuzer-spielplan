@@ -293,6 +293,10 @@ TRAINING = {
 # Mannschaften ohne Pflichtspiele stehen nicht in TEAMS - Label fuer den Kalendernamen.
 TRAINING_LABEL = {"F1": "F1", "F2": "F2", "G1": "G1"}
 
+# Die D3 liefert ihre Trainings schon ueber den TEAMPUNKT-Feed in die App -
+# deshalb gehoert sie nicht in den Sammelkalender, sonst steht alles doppelt.
+NICHT_IN_TRAINING_SAMMEL = {"D3"}
+
 TRAINING_VON = datetime.date(2026, 8, 31)   # erster Montag nach der Bestaetigung
 TRAINING_BIS = datetime.date(2027, 6, 27)   # letzter Tag vor den Sommerferien
 
@@ -330,17 +334,9 @@ def trainingstermine(team):
     return sorted(out)
 
 
-def schreibe_training(team, stamp):
-    label = TEAMS[team]["label"] if team in TEAMS else TRAINING_LABEL[team]
-    name = "Speuzer %s \u2013 Training" % label
-    beschr = ("Trainingszeiten der Saison 2026/27, Stand 26.08.2026. In den hessischen "
-              "Schulferien und an Feiertagen ist kein Training eingetragen. "
-              "Kurzfristige Absagen kommen \u00fcber die Vereins-App.")
-    z = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//%s//Training//DE" % VEREIN,
-         "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
-         "X-WR-CALNAME:%s" % esc(name), "X-WR-CALDESC:%s" % esc(beschr),
-         "X-WR-TIMEZONE:Europe/Berlin",
-         "REFRESH-INTERVAL;VALUE=DURATION:PT24H", "X-PUBLISHED-TTL:PT24H", VTIMEZONE]
+def training_events(team, stamp, label=None):
+    label = label or (TEAMS[team]["label"] if team in TEAMS else TRAINING_LABEL[team])
+    z = []
     for tag, beginn, ende, platz in trainingstermine(team):
         d = tag.strftime("%Y%m%d")
         z += ["BEGIN:VEVENT",
@@ -357,14 +353,53 @@ def schreibe_training(team, stamp):
                   "Absagen und \u00c4nderungen kommen \u00fcber die Vereins-App."]),
               "LOCATION:%s" % esc(SPORTPLATZ),
               "CATEGORIES:Training", "TRANSP:OPAQUE", "END:VEVENT"]
-    z.append("END:VCALENDAR")
+    return z
+
+
+def training_kopf(name, beschr):
+    return ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//%s//Training//DE" % VEREIN,
+            "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
+            "X-WR-CALNAME:%s" % esc(name), "X-WR-CALDESC:%s" % esc(beschr),
+            "X-WR-TIMEZONE:Europe/Berlin",
+            "REFRESH-INTERVAL;VALUE=DURATION:PT24H", "X-PUBLISHED-TTL:PT24H", VTIMEZONE]
+
+
+def training_datei(datei, zeilen, anzahl, was):
     flach = []
-    for e in z:
+    for e in zeilen:
         flach.extend(e.replace("\r\n", "\n").split("\n"))
-    datei = "training-%s.ics" % team.lower()
     (OUT / datei).write_text("\r\n".join(fold(x) for x in flach) + "\r\n",
                              encoding="utf-8", newline="")
-    print("%-18s %3d Einheiten" % (datei, len(trainingstermine(team))))
+    print("%-18s %3d %s" % (datei, anzahl, was))
+
+
+def schreibe_training_sammel(stamp):
+    """Ein Kalender fuer die Vereins-App: alle Mannschaften ausser den TEAMPUNKT-Piloten."""
+    teams = [t for t in TRAINING if t not in NICHT_IN_TRAINING_SAMMEL]
+    beschr = ("Trainingszeiten aller Mannschaften, Saison 2026/27. In den hessischen Schulferien "
+              "und an Feiertagen ist kein Training eingetragen.")
+    if NICHT_IN_TRAINING_SAMMEL:
+        beschr += (" Die Trainings von %s kommen in der App aus dem TEAMPUNKT-Kalender."
+                   % ", ".join(sorted(NICHT_IN_TRAINING_SAMMEL)))
+    z = training_kopf("Speuzer \u2013 Trainingszeiten aller Mannschaften", beschr)
+    n = 0
+    for t in teams:
+        ev = training_events(t, stamp)
+        z += ev
+        n += ev.count("BEGIN:VEVENT")
+    z.append("END:VCALENDAR")
+    training_datei("training-alle.ics", z, n, "Einheiten (%d Mannschaften)" % len(teams))
+
+
+def schreibe_training(team, stamp):
+    label = TEAMS[team]["label"] if team in TEAMS else TRAINING_LABEL[team]
+    name = "Speuzer %s \u2013 Training" % label
+    beschr = ("Trainingszeiten der Saison 2026/27, Stand 26.08.2026. In den hessischen "
+              "Schulferien und an Feiertagen ist kein Training eingetragen. "
+              "Kurzfristige Absagen kommen \u00fcber die Vereins-App.")
+    z = training_kopf(name, beschr) + training_events(team, stamp, label)
+    z.append("END:VCALENDAR")
+    training_datei("training-%s.ics" % team.lower(), z, len(trainingstermine(team)), "Einheiten")
 
 
 # ------------------------------------------------------- Import-Dateien fuer appack
@@ -552,16 +587,22 @@ def schreibe_index():
     zeilen.append('  { file:"jugend.ics", name:"Speuzer \u2013 nur Jugend", '
                   'meta:"D1 bis E3 in einem Kalender, ohne Herren und A-Jugend", '
                   'note:"%s" },' % HINWEIS_QUALI)
+    zeilen.append('  { file:"training-alle.ics", '
+                  'name:"Speuzer \u2013 Training aller Mannschaften", '
+                  'meta:"alle Trainingszeiten in einem Kalender \u00b7 so liegt er auch in der '
+                  'Vereins-App", note:"" },')
     for t in TRAINING:
         label = TEAMS[t]["label"] if t in TEAMS else TRAINING_LABEL[t]
         tage = " \u00b7 ".join("%s %s\u2013%s" % (k, a, b) for k, a, b, _ in TRAINING[t])
+        note = ("Die Trainings der D3 stehen in der App schon im TEAMPUNKT-Kalender \u2013 "
+                "wer beides abonniert, sieht sie doppelt." if t in NICHT_IN_TRAINING_SAMMEL else "")
         zeilen.append('  { file:"training-%s.ics", name:"Speuzer %s \u2013 Training", '
-                      'meta:"%s", note:"" },' % (t.lower(), label, tage))
+                      'meta:"%s", note:"%s" },' % (t.lower(), label, tage, note))
     zeilen[-1] = zeilen[-1].rstrip(",")
     html = (BASE / "vorlage_index.html").read_text(encoding="utf-8")
     (OUT / "index.html").write_text(html.replace("%TEAMS%", "\n".join(zeilen)),
                                     encoding="utf-8")
-    print("index.html         %3d Kalender" % (len(TEAMS) + 2 + len(TRAINING)))
+    print("index.html         %3d Kalender" % (len(TEAMS) + 3 + len(TRAINING)))
 
 
 def main():
@@ -588,6 +629,7 @@ def main():
         schreibe_import(t, [r for r in alle if r["team"] == t], stamp)
     for t in TRAINING:
         schreibe_training(t, stamp)
+    schreibe_training_sammel(stamp)
     for g in GRUPPEN:
         schreibe_app_seite(g, [r for r in alle if TEAMS[r["team"]]["gruppe"] == g])
     schreibe_index()

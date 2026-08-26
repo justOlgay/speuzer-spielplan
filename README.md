@@ -693,5 +693,10 @@ Jeder Termin trägt `CATEGORIES:Training` (in der App als eigene Kategorie filte
 Beim **Import in appack** legt das Feld einen Ort an – wenn „FFV Sportfreunde 04, Mainzer
 Landstraße 480" schon existiert, vorher prüfen, ob appack ihn wiederverwendet.
 
-Ergebnis: 946 Einheiten über alle Mannschaften, mit `icalendar` geparst, Wochentage und
-Ferienlücken geprüft.
+**Ein Sammelkalender für die App:** `training-alle.ics` enthält alle Mannschaften **außer denen
+in `NICHT_IN_TRAINING_SAMMEL`** – aktuell die **D3**, weil deren Trainings in der App schon über
+den TEAMPUNKT-Feed kommen und sonst doppelt stünden. In appack wird also **einmal**
+`training-alle.ics` abonniert statt elf Einzelkalender.
+
+Ergebnis: 946 Einheiten in den Einzelkalendern, 814 im Sammelkalender (10 Mannschaften), mit
+`icalendar` geparst, Wochentage und Ferienlücken geprüft.
