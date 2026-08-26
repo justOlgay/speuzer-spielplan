@@ -67,13 +67,13 @@ TEAMS = {
                    info="1. Kreisklasse \u00b7 EJ Quali Gr. 22 \u00b7 Kreis Frankfurt",
                    widget="15839ff7-ac56-422d-9853-b240229822ec",
                    teamid="02PS0CFJCO000000VS5489B1VVQNIHJA"),
-    "F1":     dict(label="F1", staffel="340233", gruppe="fg",
+    "F1":     dict(label="F1", staffel="340233", gruppe="f",
                    info="Kinderfu\u00dfball \u00b7 F-Junioren 4+1 Gr. 2 \u00b7 Kreis Frankfurt",
                    widget=None, teamid=None),
-    "F2":     dict(label="F2", staffel="340231", gruppe="fg",
+    "F2":     dict(label="F2", staffel="340231", gruppe="f",
                    info="Kinderfu\u00dfball \u00b7 F-Junioren 4vs4 Gr. 4 \u00b7 Kreis Frankfurt",
                    widget=None, teamid=None),
-    "G1":     dict(label="G1", staffel="340221", gruppe="fg",
+    "G1":     dict(label="G1", staffel="340221", gruppe="g",
                    info="Kinderfu\u00dfball \u00b7 G-Junioren 3vs3 Gr. 4 \u00b7 Kreis Frankfurt",
                    widget=None, teamid=None),
 }
@@ -86,7 +86,8 @@ GRUPPEN = {
     "a":      dict(titel="A-Jugend", datei="app-a-jugend.html"),
     "d":      dict(titel="D-Jugend", datei="app-d-jugend.html"),
     "e":      dict(titel="E-Jugend", datei="app-e-jugend.html"),
-    "fg":     dict(titel="F- und G-Jugend", datei="app-fg-jugend.html"),
+    "f":      dict(titel="F-Jugend", datei="app-f-jugend.html"),
+    "g":      dict(titel="G-Jugend", datei="app-g-jugend.html"),
 }
 
 # Label je Staffelkennung. Leer = nur eine Staffel, dann keine Zwischenüberschrift.
@@ -112,10 +113,9 @@ RUNDE = {
 
 HINWEIS_E = ("Die E-Jugend spielt zuerst eine Qualifikationsrunde. "
              "Die Spiele der Hauptrunde kommen dazu, sobald der Kreis sie ansetzt.")
-HINWEIS_KINDER = ("F- und G-Jugend spielen im Kinderfu\u00dfball: keine Ligaspiele, sondern "
-                  "Kinderfestivals \u2013 entweder bei uns oder bei einem anderen Verein. "
-                  "Der Kreis setzt sie in Bl\u00f6cken an, deshalb reicht der Plan nur wenige "
-                  "Wochen voraus.")
+HINWEIS_KINDER = ("Im Kinderfu\u00dfball gibt es keine Ligaspiele, sondern Kinderfestivals \u2013 "
+                  "entweder bei uns oder bei einem anderen Verein. Der Kreis setzt sie in "
+                  "Bl\u00f6cken an, deshalb reicht der Plan nur wenige Wochen voraus.")
 HINWEIS_QUALI = ("Zurzeit stehen nur die Spiele der Qualifikationsrunde fest. Die Spiele der "
                  "Hauptrunde kommen automatisch in dieses Abo, sobald der Kreis sie ansetzt \u2013 "
                  "neu abonnieren muss niemand.")
@@ -625,7 +625,7 @@ def schreibe_app_seite(gruppe, spiele):
     hinweis = ""
     if gruppe == "e":
         hinweis = "\n" + HINWEIS_E
-    if gruppe == "fg":
+    if gruppe in ("f", "g"):
         hinweis = "\n" + HINWEIS_KINDER
     # Kinderfussball hat keine FUSSBALL.DE-Widgets - dann bleibt der Bereich leer.
     widgets = "\n".join(
