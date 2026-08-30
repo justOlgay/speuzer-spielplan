@@ -29,29 +29,9 @@ RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:340610-5-app@speuzer.sportfreunde04.de
-DTSTAMP:20260829T041314Z
-SEQUENCE:21
-DTSTART;TZID=Europe/Berlin:20260829T100000
-DTEND;TZID=Europe/Berlin:20260829T130000
-SUMMARY:Speuzer E1 · Auswärts bei SC Goldstein
-DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
- :00 Uhr · Auswärtsspiel\nSC Goldstein – Speuzer E1\nTreffpunkt: 10:0
- 0 Uhr\nAnstoß: 11:00 Uhr\nAuswärtsspiel · 1. Kreisklasse · EJ Quali 
- Gr. 08 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätte: Str
- aßburger Str.\, 60529 Frankfurt am Main\nAlle Infos zum Spiel: https://
- www.fussball.de/spiel/x/-/spiel/031I12OVGO000000VS5489BUVVKNMR0J\nBitte 
- per Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer K
- ind dabei ist – am besten bis zum Abend vor dem Spiel.
-URL:https://www.fussball.de/spiel/x/-/spiel/031I12OVGO000000VS5489BUVVKNM
- R0J
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
 UID:340610-7-app@speuzer.sportfreunde04.de
-DTSTAMP:20260829T041314Z
-SEQUENCE:21
+DTSTAMP:20260830T041313Z
+SEQUENCE:22
 DTSTART;TZID=Europe/Berlin:20260905T123000
 DTEND;TZID=Europe/Berlin:20260905T153000
 SUMMARY:Speuzer E1 · Auswärts bei SV07 Heddernheim 1
@@ -70,8 +50,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-10-app@speuzer.sportfreunde04.de
-DTSTAMP:20260829T041314Z
-SEQUENCE:21
+DTSTAMP:20260830T041313Z
+SEQUENCE:22
 DTSTART;TZID=Europe/Berlin:20260912T110000
 DTEND;TZID=Europe/Berlin:20260912T140000
 SUMMARY:Speuzer E1 · Heim gegen SG Bornheim / GW 2
@@ -90,8 +70,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-14-app@speuzer.sportfreunde04.de
-DTSTAMP:20260829T041314Z
-SEQUENCE:21
+DTSTAMP:20260830T041313Z
+SEQUENCE:22
 DTSTART;TZID=Europe/Berlin:20260926T113000
 DTEND;TZID=Europe/Berlin:20260926T143000
 SUMMARY:Speuzer E1 · Auswärts bei 1. Rödelheimer FC 02 1

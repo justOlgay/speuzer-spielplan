@@ -29,29 +29,9 @@ RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:341435-5-app@speuzer.sportfreunde04.de
-DTSTAMP:20260829T041314Z
-SEQUENCE:21
-DTSTART;TZID=Europe/Berlin:20260829T113000
-DTEND;TZID=Europe/Berlin:20260829T143000
-SUMMARY:Speuzer E2 · Auswärts bei FSV 1910 Bergen 2
-DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:30 Uhr · Anstoß 12
- :30 Uhr · Auswärtsspiel\nFSV 1910 Bergen 2 – Speuzer E2\nTreffpunkt:
-  11:30 Uhr\nAnstoß: 12:30 Uhr\nAuswärtsspiel · 1. Kreisklasse · EJ Q
- uali Gr. 18 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätte
- : Landgraben\, 60388 Frankfurt am Main\nAlle Infos zum Spiel: https://ww
- w.fussball.de/spiel/x/-/spiel/031HO7T0TS000000VS5489BUVVKNMR0J\nBitte pe
- r Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kin
- d dabei ist – am besten bis zum Abend vor dem Spiel.
-URL:https://www.fussball.de/spiel/x/-/spiel/031HO7T0TS000000VS5489BUVVKNM
- R0J
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
 UID:341435-7-app@speuzer.sportfreunde04.de
-DTSTAMP:20260829T041314Z
-SEQUENCE:21
+DTSTAMP:20260830T041313Z
+SEQUENCE:22
 DTSTART;TZID=Europe/Berlin:20260905T100000
 DTEND;TZID=Europe/Berlin:20260905T130000
 SUMMARY:Speuzer E2 · Auswärts bei DJK SW Griesheim 3
@@ -70,8 +50,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341435-10-app@speuzer.sportfreunde04.de
-DTSTAMP:20260829T041314Z
-SEQUENCE:21
+DTSTAMP:20260830T041313Z
+SEQUENCE:22
 DTSTART;TZID=Europe/Berlin:20260912T103000
 DTEND;TZID=Europe/Berlin:20260912T133000
 SUMMARY:Speuzer E2 · Heim gegen SG Bornheim / GW 3
@@ -90,8 +70,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341435-14-app@speuzer.sportfreunde04.de
-DTSTAMP:20260829T041314Z
-SEQUENCE:21
+DTSTAMP:20260830T041313Z
+SEQUENCE:22
 DTSTART;TZID=Europe/Berlin:20260926T113000
 DTEND;TZID=Europe/Berlin:20260926T143000
 SUMMARY:Speuzer E2 · Auswärts bei TSG 1888 Nieder-Erlenbach 2
