@@ -518,7 +518,6 @@ SEITE = """<!DOCTYPE html>
 <html lang="de"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Spielplan %TITEL%</title>
-<script type="text/javascript" src="https://www.fussball.de/widgets.js"></script>
 <script>
 // Meldet die eigene Hoehe an die einbettende Seite in der Vereins-App,
 // damit dort kein zweiter Scrollbalken entsteht.
@@ -531,9 +530,6 @@ addEventListener("load",function(){speuzerHoehe();setTimeout(speuzerHoehe,1200);
 .tab{flex:1 0 auto;min-width:74px;text-align:center;padding:9px 12px;border-radius:8px 8px 0 0;background:#eef2f7;color:#0b3c78;font-weight:600;cursor:pointer;border:none;font-size:15px}
 .tab.on{background:#0b3c78;color:#fff}
 .meta{padding:10px 14px 2px;font-size:.8rem;color:#5a6b80}
-.widgets{padding:2px 4px 0}
-.wbox{display:none}
-.wbox.on{display:block}
 .kapitel{display:flex;align-items:center;gap:10px;padding:18px 14px 6px;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:#8798ab;font-weight:700}
 .kapitel:after{content:"";flex:1;height:1px;background:#e6ebf2}
 table{width:100%;border-collapse:collapse}
@@ -551,14 +547,6 @@ td a{color:inherit;text-decoration:none;display:block}
 tr.grp td{background:#f6f8fc;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:#7286a0;font-weight:700;padding:11px 12px}
 </style></head><body>
 <div class="tabs" id="tabs"></div><div class="meta" id="meta"></div>
-<div class="widgets" id="widgets">%WIDGETS%</div>
-<script>
-// Das FUSSBALL.DE-Widget ist an die Vereins-Domain gebunden. Direkt auf GitHub
-// Pages geoeffnet zeigt es nur eine Fehlermeldung - die sieht niemand gerne.
-// In der Vereins-App laeuft diese Seite eingebettet, dort funktioniert es.
-(function(){var w=document.getElementById("widgets");
-if(w && window.top===window.self){w.parentNode.removeChild(w);}})();
-</script>
 <div class="kapitel">Ganze Saison</div>
 <table><tbody id="liste"></tbody></table>
 <div class="fuss">Alle Spiele der Saison direkt aus dem DFBnet. Tippen auf ein Spiel
@@ -576,8 +564,6 @@ function render(){
     `<button class="tab${t===aktiv?" on":""}" onclick="aktiv='${t}';render()">${t}</button>`).join("");
   document.getElementById("meta").textContent = "Speuzer " + aktiv + " \u00b7 " + STAFFEL[aktiv][1];
   keys.forEach(t => {
-    const box = document.getElementById("w-" + STAFFEL[t][0]);
-    if (box) box.className = "wbox" + (t===aktiv ? " on" : "");
   });
   const spiele = S.filter(s => s[0]===aktiv);
   const naechstes = spiele.find(s => new Date(s[2]+"T"+s[3]) >= heute);
@@ -627,14 +613,10 @@ def schreibe_app_seite(gruppe, spiele):
         hinweis = "\n" + HINWEIS_E
     if gruppe in ("f", "g"):
         hinweis = "\n" + HINWEIS_KINDER
-    # Kinderfussball hat keine FUSSBALL.DE-Widgets - dann bleibt der Bereich leer.
-    widgets = "\n".join(
-        '<div class="wbox%s" id="w-%s"><div class="fussballde_widget" '
-        'data-id="%s" data-type="team-matches" style="width:100%%"></div></div>'
-        % (" on" if i == 0 else "", t, TEAMS[t]["widget"])
-        for i, t in enumerate(teams) if TEAMS[t].get("widget"))
+    # Das FUSSBALL.DE-Spielplan-Widget ist an die Vereinsdomain gebunden und zeigt in
+    # der App nur eine Fehlermeldung (Befund 31.08.2026, Ticket 2623142 bei appack).
+    # Deshalb steht hier keins mehr - die Liste unten kommt ohnehin aus dem DFBnet.
     html = (SEITE.replace("%TITEL%", GRUPPEN[gruppe]["titel"])
-                 .replace("%WIDGETS%", widgets)
                  .replace("%HINWEIS%", hinweis)
                  .replace("%STAFFEL%", js_obj(labels))
                  .replace("%TEAMLINK%", js_obj(links))
