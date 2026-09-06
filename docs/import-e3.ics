@@ -29,30 +29,9 @@ RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:341930-7-app@speuzer.sportfreunde04.de
-DTSTAMP:20260905T041945Z
-SEQUENCE:29
-DTSTART;TZID=Europe/Berlin:20260905T100000
-DTEND;TZID=Europe/Berlin:20260905T130000
-SUMMARY:Speuzer E3 · Auswärts bei SC Weiss-Blau Frankfurt II
-DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
- :00 Uhr · Auswärtsspiel\nSC Weiss-Blau Frankfurt II – Speuzer E3\nTr
- effpunkt: 10:00 Uhr\nAnstoß: 11:00 Uhr\nAuswärtsspiel · 1. Kreisklass
- e · EJ Quali Gr. 22 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpi
- elstätte: Holzhecke 16 /Sandhöfer Wiesen\, 60528 Frankfurt am Main\nAl
- le Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031HO7VE0K00
- 0000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezeichen / Daumen runt
- er zurückmelden\, ob euer Kind dabei ist – am besten bis zum Abend vo
- r dem Spiel.
-URL:https://www.fussball.de/spiel/x/-/spiel/031HO7VE0K000000VS5489BUVVKNM
- R0J
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
 UID:341930-10-app@speuzer.sportfreunde04.de
-DTSTAMP:20260905T041945Z
-SEQUENCE:29
+DTSTAMP:20260906T042030Z
+SEQUENCE:30
 DTSTART;TZID=Europe/Berlin:20260912T100000
 DTEND;TZID=Europe/Berlin:20260912T130000
 SUMMARY:Speuzer E3 · Heim gegen SG Harheim 2
@@ -71,8 +50,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341930-14-app@speuzer.sportfreunde04.de
-DTSTAMP:20260905T041945Z
-SEQUENCE:29
+DTSTAMP:20260906T042030Z
+SEQUENCE:30
 DTSTART;TZID=Europe/Berlin:20260926T113000
 DTEND;TZID=Europe/Berlin:20260926T143000
 SUMMARY:Speuzer E3 · Auswärts bei Riedberger SV II

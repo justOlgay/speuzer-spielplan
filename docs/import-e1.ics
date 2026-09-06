@@ -29,29 +29,9 @@ RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:340610-7-app@speuzer.sportfreunde04.de
-DTSTAMP:20260905T041945Z
-SEQUENCE:29
-DTSTART;TZID=Europe/Berlin:20260905T123000
-DTEND;TZID=Europe/Berlin:20260905T153000
-SUMMARY:Speuzer E1 · Auswärts bei SV07 Heddernheim 1
-DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 12:30 Uhr · Anstoß 13
- :30 Uhr · Auswärtsspiel\nSV07 Heddernheim 1 – Speuzer E1\nTreffpunkt
- : 12:30 Uhr\nAnstoß: 13:30 Uhr\nAuswärtsspiel · 1. Kreisklasse · EJ 
- Quali Gr. 08 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätt
- e: Alexander-Riese-Weg\, 60439 Frankfurt am Main\nAlle Infos zum Spiel: 
- https://www.fussball.de/spiel/x/-/spiel/031I12OVDO000000VS5489BUVVKNMR0J
- \nBitte per Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, o
- b euer Kind dabei ist – am besten bis zum Abend vor dem Spiel.
-URL:https://www.fussball.de/spiel/x/-/spiel/031I12OVDO000000VS5489BUVVKNM
- R0J
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
 UID:340610-10-app@speuzer.sportfreunde04.de
-DTSTAMP:20260905T041945Z
-SEQUENCE:29
+DTSTAMP:20260906T042030Z
+SEQUENCE:30
 DTSTART;TZID=Europe/Berlin:20260912T110000
 DTEND;TZID=Europe/Berlin:20260912T140000
 SUMMARY:Speuzer E1 · Heim gegen SG Bornheim / GW 2
@@ -70,8 +50,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-14-app@speuzer.sportfreunde04.de
-DTSTAMP:20260905T041945Z
-SEQUENCE:29
+DTSTAMP:20260906T042030Z
+SEQUENCE:30
 DTSTART;TZID=Europe/Berlin:20260926T113000
 DTEND;TZID=Europe/Berlin:20260926T143000
 SUMMARY:Speuzer E1 · Auswärts bei 1. Rödelheimer FC 02 1
