@@ -303,8 +303,8 @@ def schreibe_ics(datei, kalendername, spiele, stamp, hinweis=""):
 WOCHENTAG = {"MO": 0, "DI": 1, "MI": 2, "DO": 3, "FR": 4}
 
 TRAINING = {
-    "HERREN": [("DI", "19:30", "21:00", "linke H\u00e4lfte, Tor 1"),
-               ("DO", "19:30", "21:00", "linke H\u00e4lfte, Tor 1")],
+    "HERREN": [("MI", "19:30", "21:00", "SW Griesheim (Bezirkssportanlage am Rebstock)"),
+               ("FR", "19:30", "21:00", "SW Griesheim (Bezirkssportanlage am Rebstock)")],
     "A":      [("MO", "19:00", "21:00", "linke H\u00e4lfte, Tor 1"),
                ("MI", "19:00", "20:30", "linke H\u00e4lfte, Tor 1")],
     "D1":     [("DI", "17:30", "19:30", "linke H\u00e4lfte, Tor 1"),
@@ -351,6 +351,9 @@ FREI = [
     (datetime.date(2027, 5, 27),  datetime.date(2027, 5, 27),  "Fronleichnam"),
 ]
 SPORTPLATZ = "FFV Sportfreunde 04, Mainzer Landstra\u00dfe 480, 60326 Frankfurt am Main"
+ORT_EXTERN = {
+    "HERREN": "Bezirkssportanlage am Rebstock, Am R\u00f6merhof 9, 60486 Frankfurt am Main",
+}
 
 
 def ist_frei(tag):
@@ -391,7 +394,7 @@ def training_events(team, stamp, label=None):
                   "%s bis %s Uhr" % (beginn, ende),
                   "Bitte Schienbeinschoner und ausreichend Wasser mitbringen.",
                   "Absagen und \u00c4nderungen kommen \u00fcber die Vereins-App."]),
-              "LOCATION:%s" % esc(SPORTPLATZ),
+              "LOCATION:%s" % esc(ORT_EXTERN.get(team, SPORTPLATZ)),
               "CATEGORIES:Training", "TRANSP:OPAQUE", "END:VEVENT"]
     return z
 
