@@ -29,29 +29,9 @@ RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:340610-10-app@speuzer.sportfreunde04.de
-DTSTAMP:20260912T042021Z
-SEQUENCE:37
-DTSTART;TZID=Europe/Berlin:20260912T110000
-DTEND;TZID=Europe/Berlin:20260912T140000
-SUMMARY:Speuzer E1 · Heim gegen SG Bornheim / GW 2
-DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:00 Uhr · Anstoß 12
- :00 Uhr · Heimspiel\nSpeuzer E1 – SG Bornheim / GW 2\nTreffpunkt: 11:
- 00 Uhr\nAnstoß: 12:00 Uhr\nHeimspiel · 1. Kreisklasse · EJ Quali Gr. 
- 08 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätte: Mainzer
-  Landstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://w
- ww.fussball.de/spiel/x/-/spiel/031I12OVBK000000VS5489BUVVKNMR0J\nBitte p
- er Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Ki
- nd dabei ist – am besten bis zum Abend vor dem Spiel.
-URL:https://www.fussball.de/spiel/x/-/spiel/031I12OVBK000000VS5489BUVVKNM
- R0J
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
 UID:340610-14-app@speuzer.sportfreunde04.de
-DTSTAMP:20260912T042021Z
-SEQUENCE:37
+DTSTAMP:20260913T042032Z
+SEQUENCE:38
 DTSTART;TZID=Europe/Berlin:20260926T113000
 DTEND;TZID=Europe/Berlin:20260926T143000
 SUMMARY:Speuzer E1 · Auswärts bei 1. Rödelheimer FC 02 1

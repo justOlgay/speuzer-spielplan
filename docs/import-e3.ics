@@ -29,29 +29,9 @@ RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:341930-10-app@speuzer.sportfreunde04.de
-DTSTAMP:20260912T042021Z
-SEQUENCE:37
-DTSTART;TZID=Europe/Berlin:20260912T100000
-DTEND;TZID=Europe/Berlin:20260912T130000
-SUMMARY:Speuzer E3 · Heim gegen SG Harheim 2
-DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
- :00 Uhr · Heimspiel\nSpeuzer E3 – SG Harheim 2\nTreffpunkt: 10:00 Uhr
- \nAnstoß: 11:00 Uhr\nHeimspiel · 1. Kreisklasse · EJ Quali Gr. 22 · 
- Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpielstätte: Mainzer Lands
- tr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fus
- sball.de/spiel/x/-/spiel/031HO7VDUS000000VS5489BUVVKNMR0J\nBitte per Dau
- men hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dab
- ei ist – am besten bis zum Abend vor dem Spiel.
-URL:https://www.fussball.de/spiel/x/-/spiel/031HO7VDUS000000VS5489BUVVKNM
- R0J
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
 UID:341930-14-app@speuzer.sportfreunde04.de
-DTSTAMP:20260912T042021Z
-SEQUENCE:37
+DTSTAMP:20260913T042032Z
+SEQUENCE:38
 DTSTART;TZID=Europe/Berlin:20260926T113000
 DTEND;TZID=Europe/Berlin:20260926T143000
 SUMMARY:Speuzer E3 · Auswärts bei Riedberger SV II

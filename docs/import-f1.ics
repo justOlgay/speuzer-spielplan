@@ -29,25 +29,9 @@ RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:340233-142-app@speuzer.sportfreunde04.de
-DTSTAMP:20260912T042021Z
-SEQUENCE:37
-DTSTART;TZID=Europe/Berlin:20260912T090000
-DTEND;TZID=Europe/Berlin:20260912T120000
-SUMMARY:Speuzer F1 · Kinderfestival zu Hause
-DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Beginn 10:
- 00 Uhr · bei uns\nKinderfestival bei uns\nTreffpunkt: 09:00 Uhr\nBeginn
- : 10:00 Uhr\nHeimspiel · Kinderfestival\nSpielstätte: Mainzer Landstr.
-  480\, 60326 Frankfurt am Main\nBitte per Daumen hoch / Fragezeichen / D
- aumen runter zurückmelden\, ob euer Kind dabei ist – am besten bis zu
- m Abend vor dem Spiel.
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
 UID:340233-163-app@speuzer.sportfreunde04.de
-DTSTAMP:20260912T042021Z
-SEQUENCE:37
+DTSTAMP:20260913T042032Z
+SEQUENCE:38
 DTSTART;TZID=Europe/Berlin:20260919T080000
 DTEND;TZID=Europe/Berlin:20260919T110000
 SUMMARY:Speuzer F1 · Kinderfestival bei FV 09 Eschersheim I
@@ -62,8 +46,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340233-237-app@speuzer.sportfreunde04.de
-DTSTAMP:20260912T042021Z
-SEQUENCE:37
+DTSTAMP:20260913T042032Z
+SEQUENCE:38
 DTSTART;TZID=Europe/Berlin:20260926T090000
 DTEND;TZID=Europe/Berlin:20260926T120000
 SUMMARY:Speuzer F1 · Kinderfestival zu Hause
@@ -78,8 +62,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340233-283-app@speuzer.sportfreunde04.de
-DTSTAMP:20260912T042021Z
-SEQUENCE:37
+DTSTAMP:20260913T042032Z
+SEQUENCE:38
 DTSTART;TZID=Europe/Berlin:20261024T090000
 DTEND;TZID=Europe/Berlin:20261024T120000
 SUMMARY:Speuzer F1 · Kinderfestival zu Hause
@@ -94,8 +78,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340233-343-app@speuzer.sportfreunde04.de
-DTSTAMP:20260912T042021Z
-SEQUENCE:37
+DTSTAMP:20260913T042032Z
+SEQUENCE:38
 DTSTART;TZID=Europe/Berlin:20261031T090000
 DTEND;TZID=Europe/Berlin:20261031T120000
 SUMMARY:Speuzer F1 · Kinderfestival zu Hause
