@@ -29,25 +29,9 @@ RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:340233-163-app@speuzer.sportfreunde04.de
-DTSTAMP:20260919T042009Z
-SEQUENCE:44
-DTSTART;TZID=Europe/Berlin:20260919T080000
-DTEND;TZID=Europe/Berlin:20260919T110000
-SUMMARY:Speuzer F1 · Kinderfestival bei FV 09 Eschersheim I
-DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:00 Uhr · Beginn 09:
- 00 Uhr · auswärts\nKinderfestival bei FV 09 Eschersheim I\nTreffpunkt:
-  08:00 Uhr\nBeginn: 09:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielst
- ätte: Berkersheimer Weg 120\, 60433 Frankfurt am Main\nBitte per Daumen
-  hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei 
- ist – am besten bis zum Abend vor dem Spiel.
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
 UID:340233-237-app@speuzer.sportfreunde04.de
-DTSTAMP:20260919T042009Z
-SEQUENCE:44
+DTSTAMP:20260920T042048Z
+SEQUENCE:45
 DTSTART;TZID=Europe/Berlin:20260926T090000
 DTEND;TZID=Europe/Berlin:20260926T120000
 SUMMARY:Speuzer F1 · Kinderfestival zu Hause
@@ -62,8 +46,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340233-283-app@speuzer.sportfreunde04.de
-DTSTAMP:20260919T042009Z
-SEQUENCE:44
+DTSTAMP:20260920T042048Z
+SEQUENCE:45
 DTSTART;TZID=Europe/Berlin:20261024T090000
 DTEND;TZID=Europe/Berlin:20261024T120000
 SUMMARY:Speuzer F1 · Kinderfestival zu Hause
@@ -78,8 +62,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340233-343-app@speuzer.sportfreunde04.de
-DTSTAMP:20260919T042009Z
-SEQUENCE:44
+DTSTAMP:20260920T042048Z
+SEQUENCE:45
 DTSTART;TZID=Europe/Berlin:20261031T090000
 DTEND;TZID=Europe/Berlin:20261031T120000
 SUMMARY:Speuzer F1 · Kinderfestival zu Hause
