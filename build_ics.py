@@ -553,8 +553,8 @@ tr.grp td{background:#f6f8fc;font-size:.7rem;letter-spacing:.09em;text-transform
 <div class="kapitel">Ganze Saison</div>
 <table><tbody id="liste"></tbody></table>
 <div class="fuss">Alle Spiele der Saison direkt aus dem DFBnet. Tippen auf ein Spiel
-öffnet die Spielseite auf FUSSBALL.DE. Kurzfristige Absagen kommen per Push,
-nicht über diese Seite.%HINWEIS%</div>
+öffnet die Spielseite auf FUSSBALL.DE. Kurzfristige Absagen kommen vom Trainerteam – per
+App-Nachricht oder direkt.%HINWEIS%</div>
 <script>
 const STAFFEL = %STAFFEL%;
 const TEAMLINK = %TEAMLINK%;
