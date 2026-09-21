@@ -56,11 +56,15 @@ const S = [
 ["F2","A","2026-10-24","10:30","Kinderfestival bei Spvgg. 03 Fechenheim III","","",""],
 ["F2","A","2026-10-31","09:30","Kinderfestival bei Concordia Eschersheim 2","","",""]];
 const heute = new Date();
-let aktiv = Object.keys(STAFFEL)[0];
+// Team-Vorauswahl per Adresse: app-d-jugend.html#D3 oeffnet den Reiter D3
+// (Website-Teamseiten der Sportfreunde nutzen das, 21.09.2026).
+function ausAdresse(){ try { const k = decodeURIComponent(location.hash.slice(1)); return STAFFEL[k] ? k : null; } catch (e) { return null; } }
+let aktiv = ausAdresse() || Object.keys(STAFFEL)[0];
+window.addEventListener("hashchange", function(){ const k = ausAdresse(); if (k && k !== aktiv) { aktiv = k; render(); } });
 function render(){
   const keys = Object.keys(STAFFEL);
   document.getElementById("tabs").innerHTML = keys.length < 2 ? "" : keys.map(t =>
-    `<button class="tab${t===aktiv?" on":""}" onclick="aktiv='${t}';render()">${t}</button>`).join("");
+    `<button class="tab${t===aktiv?" on":""}" onclick="aktiv='${t}';history.replaceState(null,'','#'+encodeURIComponent('${t}'));render()">${t}</button>`).join("");
   document.getElementById("meta").textContent = "Speuzer " + aktiv + " · " + STAFFEL[aktiv][1];
   keys.forEach(t => {
   });
