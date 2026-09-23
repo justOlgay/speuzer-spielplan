@@ -583,6 +583,7 @@ addEventListener("load",function(){speuzerHoehe();setTimeout(speuzerHoehe,1200);
 table{width:100%;border-collapse:collapse}
 td{padding:9px 12px;border-bottom:1px solid #D8DBEA;vertical-align:top}
 tr.next td{background:#E4E7FA}
+tr.vorbei td{color:#7A7F99}tr.vorbei .d{color:#7A7F99}tr.vorbei .ha{opacity:.55}
 .d{white-space:nowrap;font-variant-numeric:tabular-nums;color:#0B0E4A;font-weight:600;width:96px}
 .t{font-size:.78rem;color:#3F4360;font-weight:400}
 .ha{display:inline-block;box-sizing:border-box;width:48px;text-align:center;font-size:.66rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 0;border-radius:5px;margin-right:8px;vertical-align:1px}
@@ -599,7 +600,7 @@ td.n .ha{flex:0 0 48px;margin:1px 0 0}
 tr.grp td{background:#F3F5FC;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:#5B6079;font-weight:700;padding:11px 12px}
 </style></head><body>
 <div class="tabs" id="tabs"></div><div class="meta" id="meta"></div>
-<div class="kapitel">Ganze Saison</div>
+<div class="kapitel">%KAPITEL%</div>
 <table><tbody id="liste"></tbody></table>
 <div class="fuss">%KLICK%Kurzfristige Absagen kommen vom Trainerteam – per Nachricht oder direkt.%HINWEIS%</div>
 <script>
@@ -611,12 +612,16 @@ const heute = new Date();
 // (Website-Teamseiten der Sportfreunde nutzen das, 21.09.2026).
 function ausAdresse(){ try { const k = decodeURIComponent(location.hash.slice(1)); return STAFFEL[k] ? k : null; } catch (e) { return null; } }
 let aktiv = ausAdresse() || Object.keys(STAFFEL)[0];
+// ?einzeln: eingebettet auf der Teamseite (Website/App) – nur dieses Team,
+// kein Umschalter zu den anderen Teams der Altersklasse.
+const EINZELN = /[?&]einzeln(?:&|=|$)/.test(location.search);
+if (EINZELN) { const h = document.getElementById("hinweis-kinder"); if (h) h.remove(); }
 window.addEventListener("hashchange", function(){ const k = ausAdresse(); if (k && k !== aktiv) { aktiv = k; render(); } });
 function hin(url, inhalt){
   return url ? `<a href="${url}" target="_blank" rel="noopener">${inhalt}</a>` : `<span class="ohne">${inhalt}</span>`;
 }
 function render(){
-  const keys = Object.keys(STAFFEL);
+  const keys = EINZELN ? [aktiv] : Object.keys(STAFFEL);
   const tabsEl = document.getElementById("tabs");
   // Bei nur einer Mannschaft keine Reiterleiste - sonst bleibt die leere Pille
   // (Hintergrund/Rand des Umschalters) sichtbar, obwohl kein Reiter drin ist.
@@ -641,7 +646,8 @@ function render(){
     if (s[7] && s[7] !== gruppe) { gruppe = s[7]; kopf = `<tr class="grp"><td colspan="3">${s[7]}</td></tr>`; }
     // Ergebnis bzw. Pfeil steht in einer eigenen, schmalen Spalte, damit er am
     // Zeilenende nicht allein in eine neue Zeile umbricht.
-    return kopf + `<tr class="${ist?"next":""}"><td class="d">${tag}<br><span class="t">${s[3]} Uhr</span></td>`
+    const vorbei = !ist && d < heute;
+    return kopf + `<tr class="${ist?"next":(vorbei?"vorbei":"")}"><td class="d">${tag}<br><span class="t">${s[3]} Uhr</span></td>`
       + `<td class="n">${hin(url, `<span class="ha ${s[1]==="H"?"h":"a"}">${s[1]==="H"?"Heim":"Ausw."}</span><span>${s[4]}</span>`)}</td>`
       + `<td class="chev">${hin(url, s[5] ? `<span class="res">${s[5]}</span>` : (url ? `<span class="pfeil">\\u203a</span>` : ""))}</td></tr>`;
   }).join("");
@@ -705,12 +711,14 @@ def schreibe_app_seite(gruppe, spiele):
     if gruppe == "e":
         hinweis = "\n" + HINWEIS_E
     if gruppe in ("f", "g"):
-        hinweis = "\n" + HINWEIS_KINDER
+        # eingebettet (?einzeln) erklaert die Teamseite das Kinderfestival selbst
+        hinweis = '\n<span id="hinweis-kinder">' + HINWEIS_KINDER + '</span>'
     # Das FUSSBALL.DE-Spielplan-Widget ist an die Vereinsdomain gebunden und zeigt in
     # der App nur eine Fehlermeldung (Befund 31.08.2026, Ticket 2623142 bei appack).
     # Deshalb steht hier keins mehr - die Liste unten kommt ohnehin aus dem DFBnet.
     html = (SEITE.replace("%TITEL%", GRUPPEN[gruppe]["titel"])
                  .replace("%HINWEIS%", hinweis)
+                 .replace("%KAPITEL%", "Bisher angesetzt" if gruppe in ("f", "g") else "Ganze Saison")
                  # Kinderfussball hat keine Spielseiten auf FUSSBALL.DE (Zeilen ohne Link)
                  .replace("%KLICK%", "" if gruppe in ("f", "g")
                           else "Ein Klick bzw. Tipp auf ein Spiel öffnet die Spielseite auf FUSSBALL.DE.\n")
