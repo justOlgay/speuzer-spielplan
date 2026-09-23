@@ -16,7 +16,7 @@ Ausgabe in docs/:
 Die UID eines Termins bleibt stabil (Staffelkennung + DFBnet-Spielnummer), damit
 eine Verlegung den bestehenden Termin aendert statt einen zweiten anzulegen.
 """
-import csv, os, sys, datetime, pathlib
+import csv, os, re, sys, datetime, pathlib
 
 BASE = pathlib.Path(__file__).parent
 CSV_FILE = BASE / "spiele.csv"
@@ -88,6 +88,18 @@ GRUPPEN = {
     "e":      dict(titel="E-Jugend", datei="app-e-jugend.html"),
     "f":      dict(titel="F-Jugend", datei="app-f-jugend.html"),
     "g":      dict(titel="G-Jugend", datei="app-g-jugend.html"),
+}
+
+# Team-Label fuer die Kopfzeile der App-Seite, wie es auch auf den Mannschaftsseiten
+# der Website steht (z. B. "D3-Jugend" statt nur "D3"; data/teams.json im Repo
+# speuzer-website-prototyp). Nur fuer die Kopfzeile - die Reiter selbst behalten das
+# kurze Kuerzel TEAMS[t]["label"], sonst passt die URL-Raute (#D3) nicht mehr zum
+# Reiter-Text. Mannschaften in Ein-Team-Gruppen (Herren, A, G1) stehen hier bewusst
+# nicht drin, die Kopfzeile nimmt dort den Gruppentitel (siehe schreibe_app_seite).
+VOLLLABEL = {
+    "D1": "D1-Jugend", "D2": "D2-Jugend", "D3": "D3-Jugend",
+    "E1": "E1-Jugend", "E2": "E2-Jugend", "E3": "E3-Jugend",
+    "F1": "F1-Jugend", "F2": "F2-Jugend",
 }
 
 # Label je Staffelkennung. Leer = nur eine Staffel, dann keine Zwischenüberschrift.
@@ -517,6 +529,38 @@ def schreibe_import(team, spiele, stamp):
 
 
 # ------------------------------------------------------------------ App-Seiten
+# Gegnernamen aus DFBnet sind fuer die App-Seite manchmal nicht direkt lesbar. Die
+# Bereinigung betrifft NUR die Anzeige auf der App-Seite - spiele.csv und die
+# .ics-Dateien (Kalender, Import) bleiben unveraendert.
+#
+# 1) Rohartefakt "<Name> / <nur Ziffern>" (z. B. "FC Kalbach I / 1 2",
+#    "SG Harheim 2 / 2") -> der Teil ab dem Schraegstrich faellt weg.
+#    Vorsicht: Manche Mannschaften heissen wirklich "<Verein> / <Verein> <Nr>"
+#    (z. B. "SG Bornheim / GW 2", "JFV Nidda / Schotten 1") - das sind echte,
+#    aus zwei Vereinen zusammengesetzte Namen und werden nicht angefasst. Der
+#    Unterschied: beim echten Namen stehen nach dem Schraegstrich Buchstaben,
+#    beim Rohartefakt nur Ziffern.
+_DOPPELTE_ZAHL = re.compile(r"\s*/\s*[0-9]+(?:\s+[0-9]+)*$")
+# 2) "FFM"/"Ffm"/"Ffm." -> "Frankfurt", aber nur als Ortskuerzel am Ende des
+#    Namens (ggf. gefolgt von einer Mannschaftsnummer wie "2" oder "II") - nicht
+#    mitten im Namen, wo es das nicht gibt.
+_ORTSKUERZEL_FFM = re.compile(r"\b[Ff][Ff][Mm]\.?(?=\s+[IVXivx0-9]+$|$)")
+# 3) "VFR" (komplett gross, wie es in spiele.csv steht) -> "VfR".
+_VFR = re.compile(r"\bVFR\b")
+
+
+def bereinige_gegner(name):
+    """Macht einen Gegnernamen aus DFBnet fuer die App-Seite lesbar. Reine
+    Anzeige-Bereinigung, siehe Kommentare an den einzelnen Mustern oben. Im
+    Zweifel (Muster passt nicht eindeutig) bleibt der Name unveraendert."""
+    if not name:
+        return name
+    name = _DOPPELTE_ZAHL.sub("", name)
+    name = _VFR.sub("VfR", name)
+    name = _ORTSKUERZEL_FFM.sub("Frankfurt", name)
+    return name.strip()
+
+
 SEITE = """<!DOCTYPE html>
 <html lang="de"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -528,33 +572,33 @@ function speuzerHoehe(){try{parent.postMessage({speuzerHeight:document.documentE
 addEventListener("load",function(){speuzerHoehe();setTimeout(speuzerHoehe,1200);setTimeout(speuzerHoehe,4000);
   if(window.ResizeObserver){new ResizeObserver(speuzerHoehe).observe(document.body);}});
 </script><style>
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:#1c2530;background:#fff;font-size:15px}
-.tabs{display:flex;gap:6px;padding:12px 12px 0;overflow-x:auto}
-.tab{flex:1 0 auto;min-width:74px;text-align:center;padding:9px 12px;border-radius:8px 8px 0 0;background:#eef2f7;color:#0b3c78;font-weight:600;cursor:pointer;border:none;font-size:15px}
-.tab.on{background:#0b3c78;color:#fff}
-.meta{padding:10px 14px 2px;font-size:.8rem;color:#5a6b80}
-.kapitel{display:flex;align-items:center;gap:10px;padding:18px 14px 6px;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:#8798ab;font-weight:700}
-.kapitel:after{content:"";flex:1;height:1px;background:#e6ebf2}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:#12142B;background:#F5F6FB;font-size:15px}
+.tabs{display:flex;gap:4px;margin:12px 12px 0;padding:4px;background:#E4E7FA;border-radius:999px;overflow-x:auto}
+.tab{flex:1 0 auto;min-width:74px;text-align:center;padding:9px 12px;border-radius:999px;background:transparent;color:#191793;font-weight:600;cursor:pointer;border:none;font-size:15px}
+.tab.on{background:#fff;color:#0B0E4A;box-shadow:0 1px 2px rgba(11,14,74,.06),0 1px 1px rgba(11,14,74,.04)}
+.meta{padding:10px 14px 2px;font-size:.8rem;color:#3F4360}
+.kapitel{display:flex;align-items:center;gap:10px;padding:18px 14px 6px;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:#5B6079;font-weight:700}
+.kapitel:after{content:"";flex:1;height:1px;background:#D8DBEA}
 table{width:100%;border-collapse:collapse}
-td{padding:9px 12px;border-bottom:1px solid #e6ebf2;vertical-align:top}
-tr.next td{background:#eef6ff}
-.d{white-space:nowrap;font-variant-numeric:tabular-nums;color:#0b3c78;font-weight:600;width:96px}
-.t{font-size:.78rem;color:#5a6b80;font-weight:400}
-.ha{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 7px;border-radius:5px;margin-right:8px;vertical-align:1px}
-.ha.h{background:#0b3c78;color:#fff}
-.ha.a{background:#eef2f7;color:#0b3c78;border:1px solid #dde4ec}
-.res{float:right;font-weight:700;color:#0b3c78}
-.fuss{padding:14px;font-size:.78rem;color:#6b7a8d;line-height:1.5}
+td{padding:9px 12px;border-bottom:1px solid #D8DBEA;vertical-align:top}
+tr.next td{background:#E4E7FA}
+.d{white-space:nowrap;font-variant-numeric:tabular-nums;color:#0B0E4A;font-weight:600;width:96px}
+.t{font-size:.78rem;color:#3F4360;font-weight:400}
+.ha{display:inline-block;box-sizing:border-box;width:48px;text-align:center;font-size:.66rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 0;border-radius:5px;margin-right:8px;vertical-align:1px}
+.ha.h{background:#0B0E4A;color:#fff}
+.ha.a{background:#E4E7FA;color:#191793;border:1px solid #D8DBEA}
+.chev{width:44px;text-align:right;white-space:nowrap}
+.res{font-weight:700;color:#0B0E4A}
+.fuss{padding:14px;font-size:.78rem;color:#5B6079;line-height:1.5}
 td a{color:inherit;text-decoration:none;display:block}
-.pfeil{color:#9fb0c4;font-weight:700;padding-left:6px}
-tr.grp td{background:#f6f8fc;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:#7286a0;font-weight:700;padding:11px 12px}
+.pfeil{color:#5B6079;font-weight:700;padding-left:6px}
+tr.grp td{background:#F3F5FC;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:#5B6079;font-weight:700;padding:11px 12px}
 </style></head><body>
 <div class="tabs" id="tabs"></div><div class="meta" id="meta"></div>
 <div class="kapitel">Ganze Saison</div>
 <table><tbody id="liste"></tbody></table>
-<div class="fuss">Alle Spiele der Saison direkt aus dem DFBnet. Tippen auf ein Spiel
-öffnet die Spielseite auf FUSSBALL.DE. Kurzfristige Absagen kommen vom Trainerteam – per
-App-Nachricht oder direkt.%HINWEIS%</div>
+<div class="fuss">Ein Klick bzw. Tipp auf ein Spiel öffnet die Spielseite auf FUSSBALL.DE.
+Kurzfristige Absagen kommen vom Trainerteam – per Nachricht oder direkt.%HINWEIS%</div>
 <script>
 const STAFFEL = %STAFFEL%;
 const TEAMLINK = %TEAMLINK%;
@@ -567,9 +611,16 @@ let aktiv = ausAdresse() || Object.keys(STAFFEL)[0];
 window.addEventListener("hashchange", function(){ const k = ausAdresse(); if (k && k !== aktiv) { aktiv = k; render(); } });
 function render(){
   const keys = Object.keys(STAFFEL);
-  document.getElementById("tabs").innerHTML = keys.length < 2 ? "" : keys.map(t =>
+  const tabsEl = document.getElementById("tabs");
+  // Bei nur einer Mannschaft keine Reiterleiste - sonst bleibt die leere Pille
+  // (Hintergrund/Rand des Umschalters) sichtbar, obwohl kein Reiter drin ist.
+  tabsEl.style.display = keys.length < 2 ? "none" : "flex";
+  tabsEl.innerHTML = keys.length < 2 ? "" : keys.map(t =>
     `<button class="tab${t===aktiv?" on":""}" onclick="aktiv='${t}';history.replaceState(null,'','#'+encodeURIComponent('${t}'));render()">${t}</button>`).join("");
-  document.getElementById("meta").textContent = "Speuzer " + aktiv + " \u00b7 " + STAFFEL[aktiv][1];
+  // STAFFEL[aktiv][2] ist die Kopfzeilen-Bezeichnung (Gruppentitel bei nur einer
+  // Mannschaft, sonst das Team-Label wie auf der Website, z. B. "D3-Jugend") -
+  // bewusst nicht "aktiv" selbst, das bleibt das kurze Reiter-/URL-Kuerzel.
+  document.getElementById("meta").textContent = "Speuzer " + STAFFEL[aktiv][2] + " \u00b7 " + STAFFEL[aktiv][1];
   keys.forEach(t => {
   });
   const spiele = S.filter(s => s[0]===aktiv);
@@ -581,10 +632,12 @@ function render(){
     const ist = naechstes && s[2]===naechstes[2] && s[4]===naechstes[4];
     const url = s[6] ? "https://www.fussball.de/spiel/x/-/spiel/"+s[6] : TEAMLINK[s[0]];
     let kopf = "";
-    if (s[7] && s[7] !== gruppe) { gruppe = s[7]; kopf = `<tr class="grp"><td colspan="2">${s[7]}</td></tr>`; }
+    if (s[7] && s[7] !== gruppe) { gruppe = s[7]; kopf = `<tr class="grp"><td colspan="3">${s[7]}</td></tr>`; }
+    // Ergebnis bzw. Pfeil steht in einer eigenen, schmalen Spalte, damit er am
+    // Zeilenende nicht allein in eine neue Zeile umbricht.
     return kopf + `<tr class="${ist?"next":""}"><td class="d">${tag}<br><span class="t">${s[3]} Uhr</span></td>`
-      + `<td><a href="${url}" target="_blank" rel="noopener"><span class="ha ${s[1]==="H"?"h":"a"}">${s[1]==="H"?"Heim":"Ausw."}</span>${s[4]}`
-      + `${s[5]?`<span class="res">${s[5]}</span>`:`<span class="pfeil">\\u203a</span>`}</a></td></tr>`;
+      + `<td><a href="${url}" target="_blank" rel="noopener"><span class="ha ${s[1]==="H"?"h":"a"}">${s[1]==="H"?"Heim":"Ausw."}</span>${s[4]}</a></td>`
+      + `<td class="chev"><a href="${url}" target="_blank" rel="noopener">${s[5]?`<span class="res">${s[5]}</span>`:`<span class="pfeil">\\u203a</span>`}</a></td></tr>`;
   }).join("");
 }
 render();
@@ -598,18 +651,26 @@ def js_obj(d):
 
 def schreibe_app_seite(gruppe, spiele):
     teams = [k for k, v in TEAMS.items() if v["gruppe"] == gruppe]
-    labels = {TEAMS[t]["label"]: '["%s","%s"]' % (t, TEAMS[t]["info"]) for t in teams}
+    # Kopfzeile: bei nur einer Mannschaft in der Gruppe der Gruppentitel
+    # ("Speuzer G-Jugend" statt "Speuzer G1"), sonst das Team-Label wie auf der
+    # Website ("D3-Jugend"). Die Reiter selbst behalten das kurze Kuerzel
+    # TEAMS[t]["label"], sonst passt die URL-Raute (z.B. #D3) nicht mehr dazu.
+    kopf = {t: (GRUPPEN[gruppe]["titel"] if len(teams) < 2
+                else VOLLLABEL.get(t, TEAMS[t]["label"])) for t in teams}
+    labels = {TEAMS[t]["label"]: '["%s","%s","%s"]' % (t, TEAMS[t]["info"], kopf[t])
+              for t in teams}
     links = {TEAMS[t]["label"]: '"%s"' % (FBDE_TEAM_BASE + TEAMS[t]["teamid"])
              for t in teams if TEAMS[t].get("teamid")}
     daten = []
     for row in sorted(spiele, key=lambda r: (teams.index(r["team"]), r["_start"])):
+        gegnername = bereinige_gegner(row["_gegner"])
         if row["_wb"] == FESTIVAL:
             gegner = "Kinderfestival %s" % ("bei uns" if row["_heim"]
-                                            else "bei %s" % row["_gegner"])
+                                            else "bei %s" % gegnername)
         elif row["_wb"] != "Meisterschaft":
-            gegner = "%s: %s" % (row["_wb"].replace("Kreispokal", "Pokal"), row["_gegner"])
+            gegner = "%s: %s" % (row["_wb"].replace("Kreispokal", "Pokal"), gegnername)
         else:
-            gegner = row["_gegner"]
+            gegner = gegnername
         daten.append('["%s","%s","%s","%s","%s","%s","%s","%s"]' % (
             TEAMS[row["team"]]["label"], "H" if row["_heim"] else "A",
             row["_start"].strftime("%Y-%m-%d"), row["_start"].strftime("%H:%M"),
