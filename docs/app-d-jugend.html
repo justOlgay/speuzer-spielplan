@@ -120,7 +120,7 @@ let aktiv = ausAdresse() || Object.keys(STAFFEL)[0];
 // ?einzeln: eingebettet auf der Teamseite (Website/App) – nur dieses Team,
 // kein Umschalter zu den anderen Teams der Altersklasse.
 const EINZELN = /[?&]einzeln(?:&|=|$)/.test(location.search);
-if (EINZELN) { const h = document.getElementById("hinweis-kinder"); if (h) h.remove(); document.getElementById("meta").hidden = true; document.querySelector(".fuss").hidden = true; }
+if (EINZELN) { const h = document.getElementById("hinweis-kinder"); if (h) h.remove(); document.getElementById("meta").hidden = true; document.querySelector(".fuss").hidden = true; document.querySelector(".kapitel").hidden = true; }
 window.addEventListener("hashchange", function(){ const k = ausAdresse(); if (k && k !== aktiv) { aktiv = k; render(); } });
 function hin(url, inhalt){
   return url ? `<a href="${url}" target="_blank" rel="noopener">${inhalt}</a>` : `<span class="ohne">${inhalt}</span>`;
