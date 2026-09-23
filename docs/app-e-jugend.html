@@ -9,7 +9,8 @@ function speuzerHoehe(){try{parent.postMessage({speuzerHeight:document.documentE
 addEventListener("load",function(){speuzerHoehe();setTimeout(speuzerHoehe,1200);setTimeout(speuzerHoehe,4000);
   if(window.ResizeObserver){new ResizeObserver(speuzerHoehe).observe(document.body);}});
 </script><style>
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:#12142B;background:#F5F6FB;font-size:15px}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url("https://justolgay.github.io/speuzer-website-prototyp/assets/fonts/inter.woff2") format('woff2')}
+*{box-sizing:border-box}body{margin:0;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:#12142B;background:#F5F6FB;font-size:15px}
 .tabs{display:flex;gap:4px;margin:12px 12px 0;padding:4px;background:#E4E7FA;border-radius:999px;overflow-x:auto}
 .tab{flex:1 0 auto;min-width:74px;text-align:center;padding:9px 12px;border-radius:999px;background:transparent;color:#191793;font-weight:600;cursor:pointer;border:none;font-size:15px}
 .tab.on{background:#fff;color:#0B0E4A;box-shadow:0 1px 2px rgba(11,14,74,.06),0 1px 1px rgba(11,14,74,.04)}
@@ -27,7 +28,10 @@ tr.next td{background:#E4E7FA}
 .chev{width:44px;text-align:right;white-space:nowrap}
 .res{font-weight:700;color:#0B0E4A}
 .fuss{padding:14px;font-size:.78rem;color:#5B6079;line-height:1.5}
-td a{color:inherit;text-decoration:none;display:block}
+td a,td .ohne{color:inherit;text-decoration:none;display:block}
+/* Gegnername laeuft buendig neben dem Heim/Ausw.-Chip weiter statt darunter */
+td.n a,td.n .ohne{display:flex;align-items:flex-start;gap:8px}
+td.n .ha{flex:0 0 48px;margin:1px 0 0}
 .pfeil{color:#5B6079;font-weight:700;padding-left:6px}
 tr.grp td{background:#F3F5FC;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:#5B6079;font-weight:700;padding:11px 12px}
 </style></head><body>
@@ -41,29 +45,32 @@ Die E-Jugend spielt zuerst eine Qualifikationsrunde. Die Spiele der Hauptrunde k
 const STAFFEL = {"E1":["E1","1. Kreisklasse · EJ Quali Gr. 08 · Kreis Frankfurt","E1-Jugend"],"E2":["E2","1. Kreisklasse · EJ Quali Gr. 18 · Kreis Frankfurt","E2-Jugend"],"E3":["E3","1. Kreisklasse · EJ Quali Gr. 22 · Kreis Frankfurt","E3-Jugend"]};
 const TEAMLINK = {"E1":"https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIDBD8C000000VTVG0001VTR8C1K7","E2":"https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE1KH4000000VTVG0001VTR8C1K7","E3":"https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02PS0CFJCO000000VS5489B1VVQNIHJA"};
 const S = [
-["E1","A","2026-08-15","09:00","Pokal: SV07 Heddernheim 1","","",""],
-["E1","H","2026-08-20","17:30","Freundschaftsspiel: SV Blau-Gelb Frankfurt 1","","",""],
-["E1","H","2026-08-22","12:00","VfL Germania 1894 1","","031I12OVI0000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
-["E1","H","2026-08-26","18:00","Pokal: 1. Rödelheimer FC 02 1","","",""],
+["E1","A","2026-08-15","09:00","Pokal: SV07 Heddernheim 1","","",""],
+["E1","H","2026-08-20","17:30","Freundschaftsspiel: SV Blau-Gelb Frankfurt 1","","",""],
+["E1","H","2026-08-22","12:00","VfL Germania 1894 1","","031I12OVI0000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
+["E1","H","2026-08-26","18:00","Pokal: 1. Rödelheimer FC 02 1","","",""],
 ["E1","A","2026-08-29","11:00","SC Goldstein","","031I12OVGO000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
-["E1","A","2026-09-05","13:30","SV07 Heddernheim 1","","031I12OVDO000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
-["E1","H","2026-09-12","12:00","SG Bornheim / GW 2","","031I12OVBK000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
-["E1","A","2026-09-26","12:30","1. Rödelheimer FC 02 1","","031I12OVL0000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
-["E2","H","2026-08-22","11:30","Spvgg. Kickers 1916 4","","031HO7T0VC000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
-["E2","A","2026-08-29","12:30","FSV 1910 Bergen 2","","031HO7T0TS000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
-["E2","A","2026-09-05","11:00","DJK SW Griesheim 3","","031HO7T0RC000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
-["E2","H","2026-09-12","11:30","SG Bornheim / GW 3","","031HO7T0PO000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
-["E2","A","2026-09-26","12:30","TSG 1888 Nieder-Erlenbach 2","","031HO7T12C000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
-["E3","H","2026-08-22","11:00","FSV 1910 Bergen 3","","031HO7VE4G000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
-["E3","A","2026-09-05","11:00","SC Weiss-Blau Frankfurt II","","031HO7VE0K000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
-["E3","H","2026-09-12","11:00","SG Harheim 2","","031HO7VDUS000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
-["E3","A","2026-09-26","12:30","Riedberger SV II","","031HO7VE78000000VS5489BUVVKNMR0J","Qualifikationsrunde"]];
+["E1","A","2026-09-05","13:30","SV07 Heddernheim 1","","031I12OVDO000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
+["E1","H","2026-09-12","12:00","SG Bornheim / GW 2","","031I12OVBK000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
+["E1","A","2026-09-26","12:30","1. Rödelheimer FC 02 1","","031I12OVL0000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
+["E2","H","2026-08-22","11:30","Spvgg. Kickers 1916 4","","031HO7T0VC000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
+["E2","A","2026-08-29","12:30","FSV 1910 Bergen 2","","031HO7T0TS000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
+["E2","A","2026-09-05","11:00","DJK SW Griesheim 3","","031HO7T0RC000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
+["E2","H","2026-09-12","11:30","SG Bornheim / GW 3","","031HO7T0PO000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
+["E2","A","2026-09-26","12:30","TSG 1888 Nieder-Erlenbach 2","","031HO7T12C000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
+["E3","H","2026-08-22","11:00","FSV 1910 Bergen 3","","031HO7VE4G000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
+["E3","A","2026-09-05","11:00","SC Weiss-Blau Frankfurt II","","031HO7VE0K000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
+["E3","H","2026-09-12","11:00","SG Harheim 2","","031HO7VDUS000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
+["E3","A","2026-09-26","12:30","Riedberger SV II","","031HO7VE78000000VS5489BUVVKNMR0J","Qualifikationsrunde"]];
 const heute = new Date();
 // Team-Vorauswahl per Adresse: app-d-jugend.html#D3 oeffnet den Reiter D3
 // (Website-Teamseiten der Sportfreunde nutzen das, 21.09.2026).
 function ausAdresse(){ try { const k = decodeURIComponent(location.hash.slice(1)); return STAFFEL[k] ? k : null; } catch (e) { return null; } }
 let aktiv = ausAdresse() || Object.keys(STAFFEL)[0];
 window.addEventListener("hashchange", function(){ const k = ausAdresse(); if (k && k !== aktiv) { aktiv = k; render(); } });
+function hin(url, inhalt){
+  return url ? `<a href="${url}" target="_blank" rel="noopener">${inhalt}</a>` : `<span class="ohne">${inhalt}</span>`;
+}
 function render(){
   const keys = Object.keys(STAFFEL);
   const tabsEl = document.getElementById("tabs");
@@ -76,8 +83,6 @@ function render(){
   // Mannschaft, sonst das Team-Label wie auf der Website, z. B. "D3-Jugend") -
   // bewusst nicht "aktiv" selbst, das bleibt das kurze Reiter-/URL-Kuerzel.
   document.getElementById("meta").textContent = "Speuzer " + STAFFEL[aktiv][2] + " · " + STAFFEL[aktiv][1];
-  keys.forEach(t => {
-  });
   const spiele = S.filter(s => s[0]===aktiv);
   const naechstes = spiele.find(s => new Date(s[2]+"T"+s[3]) >= heute);
   let gruppe = null;
@@ -85,14 +90,16 @@ function render(){
     const d = new Date(s[2]+"T"+s[3]);
     const tag = d.toLocaleDateString("de-DE",{weekday:"short",day:"2-digit",month:"2-digit"});
     const ist = naechstes && s[2]===naechstes[2] && s[4]===naechstes[4];
-    const url = s[6] ? "https://www.fussball.de/spiel/x/-/spiel/"+s[6] : TEAMLINK[s[0]];
+    // Kinderfussball (F/G) hat weder Spiel- noch Mannschaftsseite auf FUSSBALL.DE:
+    // dann Zeile ohne Link und ohne Pfeil statt href="undefined".
+    const url = s[6] ? "https://www.fussball.de/spiel/x/-/spiel/"+s[6] : (TEAMLINK[s[0]] || "");
     let kopf = "";
     if (s[7] && s[7] !== gruppe) { gruppe = s[7]; kopf = `<tr class="grp"><td colspan="3">${s[7]}</td></tr>`; }
     // Ergebnis bzw. Pfeil steht in einer eigenen, schmalen Spalte, damit er am
     // Zeilenende nicht allein in eine neue Zeile umbricht.
     return kopf + `<tr class="${ist?"next":""}"><td class="d">${tag}<br><span class="t">${s[3]} Uhr</span></td>`
-      + `<td><a href="${url}" target="_blank" rel="noopener"><span class="ha ${s[1]==="H"?"h":"a"}">${s[1]==="H"?"Heim":"Ausw."}</span>${s[4]}</a></td>`
-      + `<td class="chev"><a href="${url}" target="_blank" rel="noopener">${s[5]?`<span class="res">${s[5]}</span>`:`<span class="pfeil">\u203a</span>`}</a></td></tr>`;
+      + `<td class="n">${hin(url, `<span class="ha ${s[1]==="H"?"h":"a"}">${s[1]==="H"?"Heim":"Ausw."}</span><span>${s[4]}</span>`)}</td>`
+      + `<td class="chev">${hin(url, s[5] ? `<span class="res">${s[5]}</span>` : (url ? `<span class="pfeil">\u203a</span>` : ""))}</td></tr>`;
   }).join("");
 }
 render();

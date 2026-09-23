@@ -9,7 +9,8 @@ function speuzerHoehe(){try{parent.postMessage({speuzerHeight:document.documentE
 addEventListener("load",function(){speuzerHoehe();setTimeout(speuzerHoehe,1200);setTimeout(speuzerHoehe,4000);
   if(window.ResizeObserver){new ResizeObserver(speuzerHoehe).observe(document.body);}});
 </script><style>
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:#12142B;background:#F5F6FB;font-size:15px}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url("https://justolgay.github.io/speuzer-website-prototyp/assets/fonts/inter.woff2") format('woff2')}
+*{box-sizing:border-box}body{margin:0;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:#12142B;background:#F5F6FB;font-size:15px}
 .tabs{display:flex;gap:4px;margin:12px 12px 0;padding:4px;background:#E4E7FA;border-radius:999px;overflow-x:auto}
 .tab{flex:1 0 auto;min-width:74px;text-align:center;padding:9px 12px;border-radius:999px;background:transparent;color:#191793;font-weight:600;cursor:pointer;border:none;font-size:15px}
 .tab.on{background:#fff;color:#0B0E4A;box-shadow:0 1px 2px rgba(11,14,74,.06),0 1px 1px rgba(11,14,74,.04)}
@@ -27,7 +28,10 @@ tr.next td{background:#E4E7FA}
 .chev{width:44px;text-align:right;white-space:nowrap}
 .res{font-weight:700;color:#0B0E4A}
 .fuss{padding:14px;font-size:.78rem;color:#5B6079;line-height:1.5}
-td a{color:inherit;text-decoration:none;display:block}
+td a,td .ohne{color:inherit;text-decoration:none;display:block}
+/* Gegnername laeuft buendig neben dem Heim/Ausw.-Chip weiter statt darunter */
+td.n a,td.n .ohne{display:flex;align-items:flex-start;gap:8px}
+td.n .ha{flex:0 0 48px;margin:1px 0 0}
 .pfeil{color:#5B6079;font-weight:700;padding-left:6px}
 tr.grp td{background:#F3F5FC;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:#5B6079;font-weight:700;padding:11px 12px}
 </style></head><body>
@@ -40,42 +44,45 @@ Kurzfristige Absagen kommen vom Trainerteam – per Nachricht oder direkt.</div>
 const STAFFEL = {"A-Jugend":["A","Gruppenliga · AJGL Frankfurt · Region Frankfurt","A-Jugend"]};
 const TEAMLINK = {"A-Jugend":"https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G"};
 const S = [
-["A-Jugend","H","2026-08-08","16:00","Freundschaftsspiel: JSG Dieburg-Klein-Zimmern 1","","",""],
+["A-Jugend","H","2026-08-08","16:00","Freundschaftsspiel: JSG Dieburg-Klein-Zimmern 1","","",""],
 ["A-Jugend","H","2026-08-15","19:00","Pokal: SC Riedberg","","",""],
 ["A-Jugend","A","2026-08-20","19:00","Freundschaftsspiel: SG Sossenheim","","",""],
-["A-Jugend","A","2026-08-22","15:00","FV Bad Vilbel 1","","031D5JEMAC000000VS5489BUVUR5FS5A",""],
-["A-Jugend","A","2026-08-26","20:00","Pokal: Spvgg. Oberrad 1","","",""],
-["A-Jugend","A","2026-08-29","18:00","Spvgg. Langenselbold 1","","031D5JELKG000000VS5489BUVUR5FS5A",""],
-["A-Jugend","H","2026-09-05","16:00","SV Viktoria Preussen 1","","031D5JELH0000000VS5489BUVUR5FS5A",""],
-["A-Jugend","A","2026-09-12","15:00","1. FC 1906 Erlensee 2","","031D5JEL3K000000VS5489BUVUR5FS5A",""],
-["A-Jugend","H","2026-09-19","16:00","TuS Makkabi Frankfurt 1","","031D5JEKS8000000VS5489BUVUR5FS5A",""],
-["A-Jugend","A","2026-09-26","16:00","Spvgg. Oberrad 1","","031D5JEKBG000000VS5489BUVUR5FS5A",""],
-["A-Jugend","H","2026-10-03","16:00","Spvgg. Neu-Isenburg 2","","031D5JEK6G000000VS5489BUVUR5FS5A",""],
-["A-Jugend","H","2026-10-17","16:00","Karbener SV 2","","031D5JEJ2G000000VS5489BUVUR5FS5A",""],
-["A-Jugend","A","2026-10-24","13:00","SG Oberhoechstadt 1","","031D5JEJRK000000VS5489BUVUR5FS5A",""],
-["A-Jugend","H","2026-10-31","16:00","FC Bayern Alzenau 2","","",""],
-["A-Jugend","A","2026-11-08","11:00","FSV Bischofsheim 1","","",""],
-["A-Jugend","H","2026-11-21","16:00","JFV Nidda / Schotten 1","","",""],
-["A-Jugend","A","2026-11-28","18:00","JSG Kirdorf 1","","",""],
-["A-Jugend","H","2027-02-27","16:00","FV Bad Vilbel 1","","",""],
-["A-Jugend","A","2027-03-06","18:00","JFV Nidda / Schotten 1","","",""],
-["A-Jugend","A","2027-03-13","18:00","SV Viktoria Preussen 1","","",""],
-["A-Jugend","H","2027-03-20","16:00","1. FC 1906 Erlensee 2","","",""],
-["A-Jugend","A","2027-04-03","16:00","TuS Makkabi Frankfurt 1","","",""],
-["A-Jugend","H","2027-04-10","16:00","Spvgg. Oberrad 1","","",""],
-["A-Jugend","A","2027-04-17","16:00","Spvgg. Neu-Isenburg 2","","",""],
-["A-Jugend","H","2027-04-24","16:00","SG Oberhoechstadt 1","","",""],
-["A-Jugend","A","2027-05-02","11:00","FC Bayern Alzenau 2","","",""],
-["A-Jugend","H","2027-05-08","16:00","FSV Bischofsheim 1","","",""],
-["A-Jugend","H","2027-05-22","16:00","JSG Kirdorf 1","","",""],
-["A-Jugend","A","2027-05-30","18:15","Karbener SV 2","","",""],
-["A-Jugend","H","2027-06-05","18:00","Spvgg. Langenselbold 1","","",""]];
+["A-Jugend","A","2026-08-22","15:00","FV Bad Vilbel 1","","031D5JEMAC000000VS5489BUVUR5FS5A",""],
+["A-Jugend","A","2026-08-26","20:00","Pokal: Spvgg. Oberrad 1","","",""],
+["A-Jugend","A","2026-08-29","18:00","Spvgg. Langenselbold 1","","031D5JELKG000000VS5489BUVUR5FS5A",""],
+["A-Jugend","H","2026-09-05","16:00","SV Viktoria Preussen 1","","031D5JELH0000000VS5489BUVUR5FS5A",""],
+["A-Jugend","A","2026-09-12","15:00","1. FC 1906 Erlensee 2","","031D5JEL3K000000VS5489BUVUR5FS5A",""],
+["A-Jugend","H","2026-09-19","16:00","TuS Makkabi Frankfurt 1","","031D5JEKS8000000VS5489BUVUR5FS5A",""],
+["A-Jugend","A","2026-09-26","16:00","Spvgg. Oberrad 1","","031D5JEKBG000000VS5489BUVUR5FS5A",""],
+["A-Jugend","H","2026-10-03","16:00","Spvgg. Neu-Isenburg 2","","031D5JEK6G000000VS5489BUVUR5FS5A",""],
+["A-Jugend","H","2026-10-17","16:00","Karbener SV 2","","031D5JEJ2G000000VS5489BUVUR5FS5A",""],
+["A-Jugend","A","2026-10-24","13:00","SG Oberhoechstadt 1","","031D5JEJRK000000VS5489BUVUR5FS5A",""],
+["A-Jugend","H","2026-10-31","16:00","FC Bayern Alzenau 2","","",""],
+["A-Jugend","A","2026-11-08","11:00","FSV Bischofsheim 1","","",""],
+["A-Jugend","H","2026-11-21","16:00","JFV Nidda / Schotten 1","","",""],
+["A-Jugend","A","2026-11-28","18:00","JSG Kirdorf 1","","",""],
+["A-Jugend","H","2027-02-27","16:00","FV Bad Vilbel 1","","",""],
+["A-Jugend","A","2027-03-06","18:00","JFV Nidda / Schotten 1","","",""],
+["A-Jugend","A","2027-03-13","18:00","SV Viktoria Preussen 1","","",""],
+["A-Jugend","H","2027-03-20","16:00","1. FC 1906 Erlensee 2","","",""],
+["A-Jugend","A","2027-04-03","16:00","TuS Makkabi Frankfurt 1","","",""],
+["A-Jugend","H","2027-04-10","16:00","Spvgg. Oberrad 1","","",""],
+["A-Jugend","A","2027-04-17","16:00","Spvgg. Neu-Isenburg 2","","",""],
+["A-Jugend","H","2027-04-24","16:00","SG Oberhoechstadt 1","","",""],
+["A-Jugend","A","2027-05-02","11:00","FC Bayern Alzenau 2","","",""],
+["A-Jugend","H","2027-05-08","16:00","FSV Bischofsheim 1","","",""],
+["A-Jugend","H","2027-05-22","16:00","JSG Kirdorf 1","","",""],
+["A-Jugend","A","2027-05-30","18:15","Karbener SV 2","","",""],
+["A-Jugend","H","2027-06-05","18:00","Spvgg. Langenselbold 1","","",""]];
 const heute = new Date();
 // Team-Vorauswahl per Adresse: app-d-jugend.html#D3 oeffnet den Reiter D3
 // (Website-Teamseiten der Sportfreunde nutzen das, 21.09.2026).
 function ausAdresse(){ try { const k = decodeURIComponent(location.hash.slice(1)); return STAFFEL[k] ? k : null; } catch (e) { return null; } }
 let aktiv = ausAdresse() || Object.keys(STAFFEL)[0];
 window.addEventListener("hashchange", function(){ const k = ausAdresse(); if (k && k !== aktiv) { aktiv = k; render(); } });
+function hin(url, inhalt){
+  return url ? `<a href="${url}" target="_blank" rel="noopener">${inhalt}</a>` : `<span class="ohne">${inhalt}</span>`;
+}
 function render(){
   const keys = Object.keys(STAFFEL);
   const tabsEl = document.getElementById("tabs");
@@ -88,8 +95,6 @@ function render(){
   // Mannschaft, sonst das Team-Label wie auf der Website, z. B. "D3-Jugend") -
   // bewusst nicht "aktiv" selbst, das bleibt das kurze Reiter-/URL-Kuerzel.
   document.getElementById("meta").textContent = "Speuzer " + STAFFEL[aktiv][2] + " · " + STAFFEL[aktiv][1];
-  keys.forEach(t => {
-  });
   const spiele = S.filter(s => s[0]===aktiv);
   const naechstes = spiele.find(s => new Date(s[2]+"T"+s[3]) >= heute);
   let gruppe = null;
@@ -97,14 +102,16 @@ function render(){
     const d = new Date(s[2]+"T"+s[3]);
     const tag = d.toLocaleDateString("de-DE",{weekday:"short",day:"2-digit",month:"2-digit"});
     const ist = naechstes && s[2]===naechstes[2] && s[4]===naechstes[4];
-    const url = s[6] ? "https://www.fussball.de/spiel/x/-/spiel/"+s[6] : TEAMLINK[s[0]];
+    // Kinderfussball (F/G) hat weder Spiel- noch Mannschaftsseite auf FUSSBALL.DE:
+    // dann Zeile ohne Link und ohne Pfeil statt href="undefined".
+    const url = s[6] ? "https://www.fussball.de/spiel/x/-/spiel/"+s[6] : (TEAMLINK[s[0]] || "");
     let kopf = "";
     if (s[7] && s[7] !== gruppe) { gruppe = s[7]; kopf = `<tr class="grp"><td colspan="3">${s[7]}</td></tr>`; }
     // Ergebnis bzw. Pfeil steht in einer eigenen, schmalen Spalte, damit er am
     // Zeilenende nicht allein in eine neue Zeile umbricht.
     return kopf + `<tr class="${ist?"next":""}"><td class="d">${tag}<br><span class="t">${s[3]} Uhr</span></td>`
-      + `<td><a href="${url}" target="_blank" rel="noopener"><span class="ha ${s[1]==="H"?"h":"a"}">${s[1]==="H"?"Heim":"Ausw."}</span>${s[4]}</a></td>`
-      + `<td class="chev"><a href="${url}" target="_blank" rel="noopener">${s[5]?`<span class="res">${s[5]}</span>`:`<span class="pfeil">\u203a</span>`}</a></td></tr>`;
+      + `<td class="n">${hin(url, `<span class="ha ${s[1]==="H"?"h":"a"}">${s[1]==="H"?"Heim":"Ausw."}</span><span>${s[4]}</span>`)}</td>`
+      + `<td class="chev">${hin(url, s[5] ? `<span class="res">${s[5]}</span>` : (url ? `<span class="pfeil">\u203a</span>` : ""))}</td></tr>`;
   }).join("");
 }
 render();
