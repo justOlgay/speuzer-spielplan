@@ -601,8 +601,7 @@ tr.grp td{background:#F3F5FC;font-size:.7rem;letter-spacing:.09em;text-transform
 <div class="tabs" id="tabs"></div><div class="meta" id="meta"></div>
 <div class="kapitel">Ganze Saison</div>
 <table><tbody id="liste"></tbody></table>
-<div class="fuss">Ein Klick bzw. Tipp auf ein Spiel öffnet die Spielseite auf FUSSBALL.DE.
-Kurzfristige Absagen kommen vom Trainerteam – per Nachricht oder direkt.%HINWEIS%</div>
+<div class="fuss">%KLICK%Kurzfristige Absagen kommen vom Trainerteam – per Nachricht oder direkt.%HINWEIS%</div>
 <script>
 const STAFFEL = %STAFFEL%;
 const TEAMLINK = %TEAMLINK%;
@@ -652,6 +651,23 @@ render();
 """
 
 
+def staffel_lesbar(info):
+    """Wie staffelLesbar() der Website (src/vorlagen/hilfen.mjs): Liga plus
+    Gruppe statt DFBnet-Kuerzel, im Kinderfussball die Spielform ausgeschrieben.
+    "1. Kreisklasse \u00b7 DJ KK F Gr. 04 \u00b7 Kreis Frankfurt" -> "1. Kreisklasse, Gruppe 4"."""
+    teile = [x.strip() for x in info.split("\u00b7")]
+    liga, rest = teile[0], (teile[1] if len(teile) > 1 else "")
+    m = re.search(r"Gr\.?\s*0*(\d+)\s*$", rest)
+    gruppe = ", Gruppe\u00a0%s" % m.group(1) if m else ""
+    if liga == "Kinderfu\u00dfball":
+        plus = re.search(r"(\d+)\+1", rest)
+        vs = re.search(r"(\d+)\s*vs\s*(\d+)", rest, re.I)
+        form = ("%s gegen %s plus Torwart" % (plus.group(1), plus.group(1)) if plus
+                else "%s gegen %s" % vs.groups() if vs else "")
+        return "%s \u00b7 %s%s" % (liga, form, gruppe) if form else liga + gruppe
+    return liga + gruppe
+
+
 def js_obj(d):
     return "{" + ",".join('"%s":%s' % (k, v) for k, v in d.items()) + "}"
 
@@ -664,7 +680,7 @@ def schreibe_app_seite(gruppe, spiele):
     # TEAMS[t]["label"], sonst passt die URL-Raute (z.B. #D3) nicht mehr dazu.
     kopf = {t: (GRUPPEN[gruppe]["titel"] if len(teams) < 2
                 else VOLLLABEL.get(t, TEAMS[t]["label"])) for t in teams}
-    labels = {TEAMS[t]["label"]: '["%s","%s","%s"]' % (t, TEAMS[t]["info"], kopf[t])
+    labels = {TEAMS[t]["label"]: '["%s","%s","%s"]' % (t, staffel_lesbar(TEAMS[t]["info"]), kopf[t])
               for t in teams}
     links = {TEAMS[t]["label"]: '"%s"' % (FBDE_TEAM_BASE + TEAMS[t]["teamid"])
              for t in teams if TEAMS[t].get("teamid")}
@@ -672,7 +688,7 @@ def schreibe_app_seite(gruppe, spiele):
     for row in sorted(spiele, key=lambda r: (teams.index(r["team"]), r["_start"])):
         gegnername = bereinige_gegner(row["_gegner"])
         if row["_wb"] == FESTIVAL:
-            gegner = "Kinderfestival %s" % ("bei uns" if row["_heim"]
+            gegner = "Kinderfestival %s" % ("bei\u00a0uns" if row["_heim"]
                                             else "bei %s" % gegnername)
         elif row["_wb"] != "Meisterschaft":
             gegner = "%s: %s" % (row["_wb"].replace("Kreispokal", "Pokal"), gegnername)
@@ -695,6 +711,9 @@ def schreibe_app_seite(gruppe, spiele):
     # Deshalb steht hier keins mehr - die Liste unten kommt ohnehin aus dem DFBnet.
     html = (SEITE.replace("%TITEL%", GRUPPEN[gruppe]["titel"])
                  .replace("%HINWEIS%", hinweis)
+                 # Kinderfussball hat keine Spielseiten auf FUSSBALL.DE (Zeilen ohne Link)
+                 .replace("%KLICK%", "" if gruppe in ("f", "g")
+                          else "Ein Klick bzw. Tipp auf ein Spiel öffnet die Spielseite auf FUSSBALL.DE.\n")
                  .replace("%STAFFEL%", js_obj(labels))
                  .replace("%TEAMLINK%", js_obj(links))
                  .replace("%DATEN%", "[\n" + ",\n".join(daten) + "]"))
