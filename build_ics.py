@@ -310,36 +310,38 @@ def schreibe_ics(datei, kalendername, spiele, stamp, hinweis=""):
 
 
 # ---------------------------------------------------------------- Trainingszeiten
-# Quelle: "Aufteilung Sportplatz/Aufteilung Trainingsplatz 26-27.xlsx", Version 1.2,
-# von Olgay am 26.08.2026 bestaetigt. Wochentag, Beginn, Ende, Platz.
+# Quelle: "Aufteilung Sportplatz/Aufteilung Trainingsplatz 26-27.xlsx", Version 1.3
+# (Stand 10.09.2026), Platzteile einheitlich benannt (Olgay 24.09.2026: "so einheitlich
+# und unkompliziert wie moeglich"): Tor 1-4 = Platzviertel (links Tor 1/2, rechts
+# Tor 3/4), linke/rechte Haelfte, ganzer Platz, Kaefig, Court. Wochentag, Beginn, Ende, Platz.
 WOCHENTAG = {"MO": 0, "DI": 1, "MI": 2, "DO": 3, "FR": 4}
 
 TRAINING = {
-    "HERREN": [("MI", "19:30", "21:00", "SW Griesheim (Bezirkssportanlage am Rebstock)"),
-               ("FR", "19:30", "21:00", "SW Griesheim (Bezirkssportanlage am Rebstock)")],
-    "A":      [("MO", "19:00", "21:00", "linke H\u00e4lfte, Tor 1"),
-               ("MI", "19:00", "20:30", "linke H\u00e4lfte, Tor 1")],
-    "D1":     [("DI", "17:30", "19:30", "linke H\u00e4lfte, Tor 1"),
-               ("MI", "17:30", "19:00", "linke H\u00e4lfte, Tor 1"),
-               ("FR", "17:30", "19:30", "linke H\u00e4lfte, Tor 1")],
-    "D2":     [("DI", "17:30", "19:30", "linke H\u00e4lfte, Tor 2"),
-               ("MI", "17:30", "19:00", "linke H\u00e4lfte, Tor 2"),
-               ("FR", "17:30", "19:30", "linke H\u00e4lfte, Tor 2")],
-    "D3":     [("DI", "17:30", "19:30", "rechte H\u00e4lfte, Tor 1"),
-               ("FR", "17:30", "19:30", "rechte H\u00e4lfte, Tor 1")],
+    "HERREN": [("MI", "19:30", "21:00", "Bezirkssportanlage am Rebstock (SW Griesheim)"),
+               ("FR", "19:30", "21:00", "Bezirkssportanlage am Rebstock (SW Griesheim)")],
+    "A":      [("MO", "19:00", "21:00", "ganzer Platz"),
+               ("MI", "19:00", "20:30", "ganzer Platz")],
+    "D1":     [("DI", "17:30", "19:30", "Tor 1"),
+               ("MI", "17:30", "19:00", "Tor 1"),
+               ("FR", "17:30", "19:30", "Tor 1")],
+    "D2":     [("DI", "17:30", "19:30", "Tor 2"),
+               ("MI", "17:30", "19:00", "Tor 2"),
+               ("FR", "17:30", "19:30", "Tor 2")],
+    "D3":     [("DI", "17:30", "19:30", "rechte H\u00e4lfte"),
+               ("FR", "17:30", "19:30", "rechte H\u00e4lfte")],
     "E1":     [("MO", "17:30", "19:00", "rechte H\u00e4lfte"),
-               ("MI", "17:30", "19:00", "rechte H\u00e4lfte"),
-               ("DO", "17:30", "19:00", "linke H\u00e4lfte, Tor 1")],
-    "E2":     [("MO", "17:30", "19:00", "linke H\u00e4lfte, Tor 2"),
-               ("DI", "16:30", "18:00", "rechte H\u00e4lfte, Tor 1"),
-               ("DO", "17:30", "19:00", "rechte H\u00e4lfte, Tor 1")],
+               ("MI", "17:30", "19:00", "Tor 3"),
+               ("DO", "17:30", "19:00", "linke H\u00e4lfte")],
+    "E2":     [("MO", "17:30", "19:00", "Tor 2"),
+               ("DI", "16:30", "18:00", "rechte H\u00e4lfte"),
+               ("DO", "17:30", "19:00", "Tor 3")],
     "E3":     [("MO", "16:00", "17:30", "rechte H\u00e4lfte"),
                ("MI", "16:00", "17:30", "rechte H\u00e4lfte")],
-    "F1":     [("MO", "17:30", "19:00", "linke H\u00e4lfte, Tor 1"),
-               ("MI", "17:30", "19:00", "rechte H\u00e4lfte, Tor 2")],
+    "F1":     [("MO", "17:30", "19:00", "Tor 1"),
+               ("MI", "17:30", "19:00", "Tor 4")],
     "F2":     [("DI", "17:30", "19:00", "K\u00e4fig"),
-               ("DO", "17:30", "19:00", "rechte H\u00e4lfte, Tor 2")],
-    "G1":     [("MO", "17:30", "19:00", "Court")],
+               ("DO", "17:30", "19:00", "Tor 4")],
+    "G1":     [("MO", "17:30", "19:00", "Court und K\u00e4fig")],
 }
 
 # Mannschaften ohne Pflichtspiele stehen nicht in TEAMS - Label fuer den Kalendernamen.
