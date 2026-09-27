@@ -28,24 +28,4 @@ DTSTART:19701025T030000
 RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
-BEGIN:VEVENT
-UID:340610-14-app@speuzer.sportfreunde04.de
-DTSTAMP:20260926T091812Z
-SEQUENCE:60
-DTSTART;TZID=Europe/Berlin:20260926T113000
-DTEND;TZID=Europe/Berlin:20260926T143000
-SUMMARY:Speuzer E1 · Auswärts bei 1. Rödelheimer FC 02 1
-DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:30 Uhr · Anstoß 12
- :30 Uhr · Auswärtsspiel\n1. Rödelheimer FC 02 1 – Speuzer E1\nTreff
- punkt: 11:30 Uhr\nAnstoß: 12:30 Uhr\nAuswärtsspiel · 1. Kreisklasse 
- · EJ Quali Gr. 08 · Kreis Frankfurt\nRunde: Qualifikationsrunde\nSpiel
- stätte: Bottenhorner Weg\, 60489 Frankfurt am Main\nAlle Infos zum Spie
- l: https://www.fussball.de/spiel/x/-/spiel/031I12OVL0000000VS5489BUVVKNM
- R0J\nBitte per Daumen hoch / Fragezeichen / Daumen runter zurückmelden\
- , ob euer Kind dabei ist – am besten bis zum Abend vor dem Spiel.
-URL:https://www.fussball.de/spiel/x/-/spiel/031I12OVL0000000VS5489BUVVKNM
- R0J
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
 END:VCALENDAR
