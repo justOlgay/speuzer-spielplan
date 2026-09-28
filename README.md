@@ -551,7 +551,14 @@ also vorher einen Screenshot machen statt zu raten.
 
 ---
 
-## TEAMPUNKT-Pilot D3 (ab 21.08.2026)
+## TEAMPUNKT-Pilot D3 (ab 21.08.2026) – beendet am 28.09.2026
+
+> **Stand 28.09.2026:** Pilot beendet (Olgays Entscheidung: D3 genauso wie alle anderen
+> Mannschaften). `NICHT_IN_APP_FEED` und `NICHT_IN_TRAINING_SAMMEL` sind leer, D3-Spiele stehen
+> in `app-kalender.ics`, D3-Trainings in `training-alle.ics`. Der Kalender „Speuzer D3 - Spiele
+> und Training (Pilot)" besteht weiter, ist im Modul *Termine* aber nicht mehr verknüpft.
+> Hinweis: TEAMPUNKT führte D3-Trainings auch in den Herbstferien; der Generator lässt Ferien
+> und Feiertage wie bei allen Mannschaften aus (`FREI`).
 
 Über die TEAMPUNKT-App lässt sich je Mannschaft eine Kalender-Synchronisierung einrichten;
 dabei entsteht ein Link `https://teampunkt.dfbnet.org/teamapi/ical/<Token>`. appack akzeptiert
@@ -588,7 +595,12 @@ ins öffentliche Repo, sondern in ein GitHub-Actions-Secret.
 
 ---
 
-## Zu-/Absage-Pilot D2 – Stand 21.08.2026
+## Zu-/Absage-Pilot D2 – Stand 21.08.2026 (beendet am 28.09.2026)
+
+> **Stand 28.09.2026:** Die D2-Spiele stehen wieder im gemeinsamen Feed `app-kalender.ics`
+> (Olgay: „D2 Spiele und alle anderen Spiele gehören zwingend rein“). Der Pilotkalender enthielt
+> nur noch vergangene Spieltage und ist im Modul *Termine* nicht mehr verknüpft. Zu-/Absage
+> wird später für alle Mannschaften neu gelöst.
 
 Zweiter Pilot, andere Frage: nicht „woher kommen die Daten", sondern „wie sagen Eltern zu
 oder ab". Das kann ein abonnierter iCal-Kalender grundsätzlich nicht – er ist nur lesbar.
@@ -757,3 +769,12 @@ damit sieht kein Sonderspiel wie ein Ligaspiel aus.
 **Was noch fehlt:** die Kinderfestivals sind nur bis **31.10.2026** angesetzt (weiter reicht die
 Ausschreibung nicht), und die **E-Jugend-Hauptrunde** hat der Kreis noch nicht eingeteilt – im
 Zeitraum Oktober bis Dezember gibt es null E-Jugend-Spiele. Beides Anfang Oktober nachziehen.
+
+## Winterhalle (ab 28.09.2026)
+
+G1, F1 und F2 trainieren über den Winter in der Halle; Tage und Zeiten weichen dann ab.
+Solange Zeitraum, Halle und Zeiten fehlen, tragen ihre Trainingstermine den Hinweis
+`HALLE_HINWEIS`. Sobald die Angaben da sind, in `build_ics.py` unter `HALLE` je Mannschaft
+`von`, `bis` und `zeiten` (Tag, Beginn, Ende, Ort) eintragen und den Hinweis mit `HALLE_OFFEN`
+für diese Mannschaft entfernen. Im Zeitraum ersetzen die Hallenzeiten die Platzzeiten; der
+Ort steht dann im Feld `LOCATION`, die Beschreibung sagt „Halle: …“ statt „Platz: …“.

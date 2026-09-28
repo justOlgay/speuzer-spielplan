@@ -107,10 +107,11 @@ VOLLLABEL = {
 # eintragen (z. B. "Hauptrunde · Kreisklasse B Gr. 3") und die Spiele in spiele.csv nachtragen.
 # Mannschaften, deren Termine in der App aus einer anderen Quelle kommen und deshalb NICHT in
 # app-kalender.ics gehoeren - sonst stehen sie doppelt im Terminkalender.
-#   D3 -> TEAMPUNKT-Feed (Spiele + Training)
-#   D2 -> echte App-Termine mit Teilnahme-Rueckmeldung (Pilot Zu-/Absage)
-# Leere Menge = alles kommt wieder aus diesem Generator.
-NICHT_IN_APP_FEED = {"D3", "D2"}
+# Seit 28.09.2026 leer (Olgays Entscheidung: alle Mannschaften gleich, D2- und D3-Spiele
+# gehoeren zwingend in den gemeinsamen Spielplan). Die Pilotkalender "Speuzer D3 - Spiele und
+# Training (Pilot)" (TEAMPUNKT) und "Speuzer D2 - Spieltage (Pilot Zu-/Absage)" sind im Modul
+# Termine nicht mehr verknuepft. Leere Menge = alles kommt aus diesem Generator.
+NICHT_IN_APP_FEED = set()
 
 # Spieltage, die in der App schon von Hand angelegt sind, sollen NICHT nochmal importiert
 # werden. Je Mannschaft das Datum, ab dem der Import starten darf (Tag mitgezaehlt).
@@ -347,9 +348,21 @@ TRAINING = {
 # Mannschaften ohne Pflichtspiele stehen nicht in TEAMS - Label fuer den Kalendernamen.
 TRAINING_LABEL = {"F1": "F1", "F2": "F2", "G1": "G1"}
 
-# Die D3 liefert ihre Trainings schon ueber den TEAMPUNKT-Feed in die App -
-# deshalb gehoert sie nicht in den Sammelkalender, sonst steht alles doppelt.
-NICHT_IN_TRAINING_SAMMEL = {"D3"}
+# Mannschaften, deren Trainings in der App aus einer anderen Quelle kommen. Seit 28.09.2026
+# leer: auch die D3 steht im Sammelkalender (vorher TEAMPUNKT-Pilot).
+NICHT_IN_TRAINING_SAMMEL = set()
+
+# Winterhalle: G1, F1 und F2 trainieren ueber den Winter in der Halle, Tage und Zeiten
+# weichen dann ab. Sobald Zeitraum, Halle und Zeiten feststehen, hier eintragen, z. B.
+#   "G1": dict(von=datetime.date(2026, 11, 2), bis=datetime.date(2027, 3, 12),
+#              zeiten=[("FR", "16:00", "17:00", "Sporthalle ..., Strasse Nr, PLZ Ort")]),
+# Im Zeitraum ersetzen diese Zeiten die Platzzeiten aus TRAINING (vierter Wert = Ort).
+HALLE = {}
+# Solange fuer diese Mannschaften keine Hallenzeiten eingetragen sind, bekommen ihre
+# Trainingstermine einen Hinweis.
+HALLE_OFFEN = {"G1", "F1", "F2"}
+HALLE_HINWEIS = ("\u00dcber den Winter trainiert die Mannschaft in der Halle. Zeitraum, Halle und "
+                 "Zeiten folgen, bis dahin gelten die Zeiten auf dem Platz.")
 
 TRAINING_VON = datetime.date(2026, 8, 31)   # erster Montag nach der Bestaetigung
 TRAINING_BIS = datetime.date(2027, 6, 27)   # letzter Tag vor den Sommerferien
@@ -377,38 +390,54 @@ def ist_frei(tag):
     return False
 
 
-def trainingstermine(team):
-    """Einzeltermine statt Serie - appack importiert Serien nicht zuverlaessig."""
+def _termine_aus(zeiten, von, bis):
     out = []
-    for kuerzel, beginn, ende, platz in TRAINING[team]:
-        tag = TRAINING_VON
+    for kuerzel, beginn, ende, ort in zeiten:
+        tag = von
         while tag.weekday() != WOCHENTAG[kuerzel]:
             tag += datetime.timedelta(days=1)
-        while tag <= TRAINING_BIS:
+        while tag <= bis:
             if not ist_frei(tag):
-                out.append((tag, beginn, ende, platz))
+                out.append((tag, beginn, ende, ort))
             tag += datetime.timedelta(days=7)
+    return out
+
+
+def trainingstermine(team):
+    """Einzeltermine statt Serie - appack importiert Serien nicht zuverlaessig.
+    Liefert (Tag, Beginn, Ende, Platz, Halle?) - in der Hallenzeit (HALLE) ist Platz der Ort."""
+    halle = HALLE.get(team)
+    out = []
+    for tag, beginn, ende, platz in _termine_aus(TRAINING[team], TRAINING_VON, TRAINING_BIS):
+        if halle and halle["von"] <= tag <= halle["bis"]:
+            continue
+        out.append((tag, beginn, ende, platz, False))
+    if halle:
+        for tag, beginn, ende, ort in _termine_aus(halle["zeiten"], halle["von"], halle["bis"]):
+            out.append((tag, beginn, ende, ort, True))
     return sorted(out)
 
 
 def training_events(team, stamp, label=None):
     label = label or (TEAMS[team]["label"] if team in TEAMS else TRAINING_LABEL[team])
     z = []
-    for tag, beginn, ende, platz in trainingstermine(team):
+    for tag, beginn, ende, platz, in_halle in trainingstermine(team):
         d = tag.strftime("%Y%m%d")
+        zeilen = ["Training %s" % label,
+                  ("Halle: %s" if in_halle else "Platz: %s") % platz,
+                  "%s bis %s Uhr" % (beginn, ende),
+                  "Bitte Schienbeinschoner und ausreichend Wasser mitbringen.",
+                  "Absagen und \u00c4nderungen kommen \u00fcber die Vereins-App."]
+        if team in HALLE_OFFEN and team not in HALLE:
+            zeilen.insert(3, HALLE_HINWEIS)
         z += ["BEGIN:VEVENT",
               "UID:training-%s-%s-%s@%s" % (team.lower(), d, beginn.replace(":", ""), DOMAIN),
               "DTSTAMP:%s" % stamp, "SEQUENCE:%d" % SEQ,
               "DTSTART;TZID=Europe/Berlin:%sT%s00" % (d, beginn.replace(":", "")),
               "DTEND;TZID=Europe/Berlin:%sT%s00" % (d, ende.replace(":", "")),
               "SUMMARY:%s" % esc("Speuzer %s \u00b7 Training" % label),
-              "DESCRIPTION:%s" % "\\n".join(esc(x) for x in [
-                  "Training %s" % label,
-                  "Platz: %s" % platz,
-                  "%s bis %s Uhr" % (beginn, ende),
-                  "Bitte Schienbeinschoner und ausreichend Wasser mitbringen.",
-                  "Absagen und \u00c4nderungen kommen \u00fcber die Vereins-App."]),
-              "LOCATION:%s" % esc(ORT_EXTERN.get(team, SPORTPLATZ)),
+              "DESCRIPTION:%s" % "\\n".join(esc(x) for x in zeilen),
+              "LOCATION:%s" % esc(platz if in_halle else ORT_EXTERN.get(team, SPORTPLATZ)),
               "CATEGORIES:Training", "TRANSP:OPAQUE", "END:VEVENT"]
     return z
 
@@ -431,12 +460,12 @@ def training_datei(datei, zeilen, anzahl, was):
 
 
 def schreibe_training_sammel(stamp):
-    """Ein Kalender fuer die Vereins-App: alle Mannschaften ausser den TEAMPUNKT-Piloten."""
+    """Ein Kalender fuer die Vereins-App: alle Mannschaften (ausser NICHT_IN_TRAINING_SAMMEL)."""
     teams = [t for t in TRAINING if t not in NICHT_IN_TRAINING_SAMMEL]
     beschr = ("Trainingszeiten aller Mannschaften, Saison 2026/27. In den hessischen Schulferien "
               "und an Feiertagen ist kein Training eingetragen.")
     if NICHT_IN_TRAINING_SAMMEL:
-        beschr += (" Die Trainings von %s kommen in der App aus dem TEAMPUNKT-Kalender."
+        beschr += (" Die Trainings von %s stehen in der App in einem eigenen Kalender."
                    % ", ".join(sorted(NICHT_IN_TRAINING_SAMMEL)))
     z = training_kopf("Speuzer \u2013 Trainingszeiten aller Mannschaften", beschr)
     n = 0
@@ -750,8 +779,7 @@ def schreibe_index():
     for t in TRAINING:
         label = TEAMS[t]["label"] if t in TEAMS else TRAINING_LABEL[t]
         tage = " \u00b7 ".join("%s %s\u2013%s" % (k, a, b) for k, a, b, _ in TRAINING[t])
-        note = ("Die Trainings der D3 stehen in der App schon im TEAMPUNKT-Kalender \u2013 "
-                "wer beides abonniert, sieht sie doppelt." if t in NICHT_IN_TRAINING_SAMMEL else "")
+        note = HALLE_HINWEIS if (t in HALLE_OFFEN and t not in HALLE) else ""
         zeilen.append('  { file:"training-%s.ics", name:"Speuzer %s \u2013 Training", '
                       'meta:"%s", note:"%s" },' % (t.lower(), label, tage, note))
     zeilen[-1] = zeilen[-1].rstrip(",")
@@ -774,7 +802,7 @@ def main():
     # A-Jugend dort schon im Vereinskalender stehen -> keine Doppeltermine.
     jugend = [r for r in alle if TEAMS[r["team"]]["gruppe"] in ("d", "e")]
     schreibe_ics("jugend.ics", "Speuzer Jugend (D & E)", jugend, stamp, HINWEIS_QUALI)
-    # Der Feed, den die Vereins-App abonniert: alles ausser den TEAMPUNKT-Pilotmannschaften.
+    # Der Feed, den die Vereins-App abonniert (seit 28.09.2026 alle Mannschaften).
     appfeed = [r for r in alle if r["team"] not in NICHT_IN_APP_FEED]
     hinweis_app = HINWEIS_QUALI
     if NICHT_IN_APP_FEED:
