@@ -695,10 +695,12 @@ den hessischen Sommerferien). UID-Form `training-<team>-<JJJJMMTT>-<HHMM>@…` �
 erneuter Import keine Dubletten erzeugt.
 
 **Ferien und Feiertage** stehen in `FREI` und werden übersprungen (Hessen 26/27, geprüft am
-26.08.2026): Herbstferien 05.–17.10.2026, Weihnachtsferien 23.12.2026–12.01.2027, Osterferien
-22.03.–02.04.2027, dazu Christi Himmelfahrt 06.05., Pfingstmontag 17.05. und Fronleichnam
-27.05.2027. Hessen hat keine Winter- und keine Pfingstferien. Wenn in den Ferien doch trainiert
-wird: Zeitraum aus `FREI` entfernen und neu bauen.
+26.08.2026 und am 12.10.2026 gegen die Ferientermine des Hessischen Kultusministeriums,
+`https://kultus.hessen.de/schulsystem/ferien/ferientermine`): Herbstferien 05.–17.10.2026,
+Weihnachtsferien 23.12.2026–12.01.2027, Osterferien 22.03.–02.04.2027, dazu Christi Himmelfahrt
+06.05., Pfingstmontag 17.05. und Fronleichnam 27.05.2027. Hessen hat keine Winter- und keine
+Pfingstferien. Die vier beweglichen Ferientage legt jede Schule selbst fest; sie sind nicht
+eingetragen. Wenn in den Ferien doch trainiert wird: Zeitraum aus `FREI` entfernen und neu bauen.
 
 Jeder Termin trägt `CATEGORIES:Training` (in der App als eigene Kategorie filterbar) und als
 `LOCATION` die Adresse des Sportplatzes, damit die Navigation auch beim Training funktioniert.
@@ -770,11 +772,76 @@ damit sieht kein Sonderspiel wie ein Ligaspiel aus.
 Ausschreibung nicht), und die **E-Jugend-Hauptrunde** hat der Kreis noch nicht eingeteilt – im
 Zeitraum Oktober bis Dezember gibt es null E-Jugend-Spiele. Beides Anfang Oktober nachziehen.
 
-## Winterhalle (ab 28.09.2026)
+## Winterhalle (Vorkehrung 28.09.2026, eingetragen 12.10.2026)
 
-G1, F1 und F2 trainieren über den Winter in der Halle; Tage und Zeiten weichen dann ab.
-Solange Zeitraum, Halle und Zeiten fehlen, tragen ihre Trainingstermine den Hinweis
-`HALLE_HINWEIS`. Sobald die Angaben da sind, in `build_ics.py` unter `HALLE` je Mannschaft
-`von`, `bis` und `zeiten` (Tag, Beginn, Ende, Ort) eintragen und den Hinweis mit `HALLE_OFFEN`
-für diese Mannschaft entfernen. Im Zeitraum ersetzen die Hallenzeiten die Platzzeiten; der
-Ort steht dann im Feld `LOCATION`, die Beschreibung sagt „Halle: …“ statt „Platz: …“.
+G1, F1 und F2 trainieren von November bis Februar in der Halle statt auf dem Platz. Die Angaben
+stammen von der Jugendleitung (12.10.2026): G1 mittwochs Hellerhofschule, F1 donnerstags
+Paul-Hindemith-Schule, F2 donnerstags Ackermannschule, jeweils 17:30 bis 19:00 Uhr, „November bis
+einschließlich Februar, Ferien ausgenommen“. Sie stehen in `build_ics.py` unter `HALLE`:
+
+| Mannschaft | Tag und Zeit | Ort (`LOCATION`) | Zeitraum |
+|---|---|---|---|
+| G1 | Mittwoch, 17:30–19:00 Uhr | Sporthalle Hellerhofschule, Idsteiner Straße 47, 60326 Frankfurt am Main | 01.11.2026–28.02.2027 |
+| F1 | Donnerstag, 17:30–19:00 Uhr | Sporthalle Paul-Hindemith-Schule, Schwalbacher Straße 71-77, 60326 Frankfurt am Main | 01.11.2026–28.02.2027 |
+| F2 | Donnerstag, 17:30–19:00 Uhr | Sporthalle Ackermannschule, Ackermannstraße 35-37, 60326 Frankfurt am Main | 01.11.2026–28.02.2027 |
+
+**Was der Generator daraus macht**
+
+* Im Zeitraum (beide Tage eingeschlossen) ersetzen die Hallentermine die Platztermine aus
+  `TRAINING` (G1 Mo, F1 Mo/Mi, F2 Di/Do entfallen). Vor dem 01.11.2026 und ab dem 01.03.2027
+  gelten wieder die Platzzeiten, unverändert. Erste Hallenstunde: Mi 04.11. (G1), Do 05.11.
+  (F1, F2); letzte: Mi 24.02. (G1), Do 25.02.2027 (F1, F2).
+* Ferien und Feiertage (`FREI`) fallen auch in der Halle weg: keine Termine vom 23.12.2026 bis
+  12.01.2027; letzte Stunde vor den Ferien Mi 16.12. (G1) bzw. Do 17.12. (F1, F2), erste danach
+  Mi 13.01. bzw. Do 14.01.2027. Je Mannschaft 14 Hallentermine.
+* Jeder Hallentermin trägt als `LOCATION` die Hallenadresse; die Beschreibung sagt „Halle: …“
+  statt „Platz: …“ und „Bitte Hallenschuhe, Schienbeinschoner und Wasser mitbringen.“ statt
+  „Bitte Schienbeinschoner und ausreichend Wasser mitbringen.“ (die Platztermine behalten ihren
+  Satz). Titel, Kategorie und UID-Form (`training-<team>-<JJJJMMTT>-1730@…`) wie bei jedem
+  Training. Die Terminseite der Website und der App zeigt den Mitbring-Satz als Hinweis
+  (Haus-Symbol, Fußnote unter dem Wochenplan), weil er „Hallen…“ enthält.
+* Der Hinweis „Zeitraum, Halle und Zeiten folgen …“ (`HALLE_HINWEIS`) steht nicht mehr in den
+  Terminen; `HALLE_OFFEN` ist leer. Neue Mannschaft, deren Halle noch nicht feststeht: in
+  `HALLE_OFFEN` eintragen, dann bekommt sie den Hinweis wieder.
+* `training-alle.ics`, der Sammelkalender, den die App abonniert, enthält dieselben Hallentermine.
+* Auf der Abo-Seite (`docs/index.html`) steht unter G1, F1 und F2 statt des „folgen“-Hinweises ein
+  Satz im selben Wortlaut wie auf den Mannschaftsseiten der Website („November bis Februar:
+  mittwochs 17:30–19:00 Uhr in der Halle der Hellerhofschule.“), erzeugt aus `HALLE` von
+  `halle_note()`.
+
+**Quellen der Adressen** (abgerufen am 12.10.2026; alle 60326 Frankfurt am Main). Die Hallen
+stehen auf den Schulgeländen, die Hallenanschrift ist die Schulanschrift.
+
+| Halle | Beleg Schule | Beleg Halle |
+|---|---|---|
+| Hellerhofschule, Idsteiner Straße 47 | Impressum der Schule (`https://www.hellerhofschule.de/impressum/`); Schulverzeichnis Hessen 2026/27, Schulnr. 3160 | Gebäudeliste, S. 47: Idsteiner Straße 47 „Sporthalle (2011)“; Bauprojekt des Stadtschulamts (Doppelturnhalle auf dem Schulgrundstück); Schule: „zwei Hallen“ (`https://www.hellerhofschule.de/sportpartner/`) |
+| Paul-Hindemith-Schule, Schwalbacher Straße 71-77 | Impressum der Schule (`https://paul-hindemith-schule.de/impressum`); Schulverzeichnis Hessen, Schulnr. 6121 | Gebäudeliste, S. 81: Schwalbacher Straße 71 „Sporthalle“; Standortliste BasKIDball (`https://baskidball.de/standorte/frankfurt/`): „Paul Hindemith Schule, Schwalbacherstr. 71-77“ |
+| Ackermannschule, Ackermannstraße 35-37 | Schulverzeichnis Hessen, Schulnr. 3123 (Ackermannstraße 37) | Gebäudeliste, S. 1: Ackermannstraße 35 „Sporthalle Ackermann“ |
+
+* Schulverzeichnis Hessen: Hessisches Kultusministerium, „Öffentliche Schulen im Schuljahr
+  2026/2027 mit Angaben zum Ganztagsprofil“ (Stichtag 01.08.2026),
+  `https://kultus.hessen.de/sites/kultus.hessen.de/files/2026-08/gesamtuebersicht_aller_ganztaegig_arbeitenden_schulen_inklusive_der_paktschulen_im_sj_2026-2027.pdf`.
+* Gebäudeliste: Stadt Frankfurt am Main, Energiemanagement, „AKS-Liste“ (Liegenschaften und Gebäude
+  mit Straße und Hausnummer, Stand 07.06.2023),
+  `https://energiemanagement.stadt-frankfurt.de/Betriebsoptimierung/Gebaeudeautomation/AKS-Liste.pdf`.
+* Bauprojekt Hellerhofschule: Stadt Frankfurt, Stadtschulamt,
+  `https://energiemanagement.stadt-frankfurt.de/Investive-Massnahmen/Bauprojekte/Hellerhofschule.pdf`.
+* Auf dem Gelände der Ackermannschule steht außerdem die „Sporthalle Bürgermeister“ der
+  Bürgermeister-Grimm-Schule. Angenommen ist die „Sporthalle Ackermann“; welche Halle und welchen
+  Eingang die Mannschaft nutzt, ist nicht belegt.
+
+**Ablauf nach einem Push** (Stand 12.10.2026): Der Workflow `.github/workflows/build.yml` startet
+bei jeder Änderung an `build_ics.py`, baut alle `.ics` neu und committet sie unter `docs/`;
+GitHub Pages veröffentlicht sie. Der App-Kalender „Trainingszeiten Mannschaften“ ist ein Abo auf
+`training-alle.ics` (geprüft am 12.10.2026: alle 763 App-Termine ab diesem Tag sind inhaltsgleich mit
+der veröffentlichten Datei). Er gleicht sich selbst alle 20 Minuten ab (beobachtet am 12.10.2026 um
+07:54, 08:14, 08:34 und 08:54 Uhr UTC; der Abgleich löscht und legt alle Termine neu an und dauert
+rund 30 Sekunden, in dieser Zeit ist der Kalender kurz unvollständig). Sofort:
+CMS › Kalender › „…“ › „Kalender synchronisieren“ (bei einem Abo harmlos). Die Terminseite der
+Website und der App liest diesen Kalender und zeigt „Halle: …“ mit Routenlink.
+
+**Pflege.** Zeiten oder Halle ändern: `HALLE` in `build_ics.py` anpassen und `TRAINING_STAND`
+(Datenstand, steht als „Stand …“ in der Beschreibung jedes Trainingskalenders; seit 12.10.2026
+„Stand 12.10.2026“) auf das Datum der Änderung setzen. Die Mannschaftsseiten der Website und der
+App zeigen den Satz aus `data/teams.json` › `trainingHinweis` im Repo `speuzer-website-prototyp`;
+er muss bei jeder Änderung mit angepasst werden.

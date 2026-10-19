@@ -154,7 +154,7 @@ END:VTIMEZONE"""
 
 
 def esc(text):
-    return (text.replace("\\", "\\\\").replace(";", "\;")
+    return (text.replace("\\", "\\\\").replace(";", "\\;")
                 .replace(",", "\\,").replace("\n", "\\n"))
 
 
@@ -353,22 +353,62 @@ TRAINING_LABEL = {"F1": "F1", "F2": "F2", "G1": "G1"}
 NICHT_IN_TRAINING_SAMMEL = set()
 
 # Winterhalle: G1, F1 und F2 trainieren ueber den Winter in der Halle, Tage und Zeiten
-# weichen dann ab. Sobald Zeitraum, Halle und Zeiten feststehen, hier eintragen, z. B.
-#   "G1": dict(von=datetime.date(2026, 11, 2), bis=datetime.date(2027, 3, 12),
-#              zeiten=[("FR", "16:00", "17:00", "Sporthalle ..., Strasse Nr, PLZ Ort")]),
-# Im Zeitraum ersetzen diese Zeiten die Platzzeiten aus TRAINING (vierter Wert = Ort).
-HALLE = {}
-# Solange fuer diese Mannschaften keine Hallenzeiten eingetragen sind, bekommen ihre
-# Trainingstermine einen Hinweis.
-HALLE_OFFEN = {"G1", "F1", "F2"}
+# weichen dann ab. Je Mannschaft: von und bis (beide Tage eingeschlossen) und zeiten =
+# [(Tag, Beginn, Ende, Ort)]. Im Zeitraum ersetzen diese Zeiten die Platzzeiten aus TRAINING;
+# der Ort steht im Feld LOCATION und in der Beschreibung als "Halle: ...". Ferien und Feiertage
+# (FREI) fallen auch in der Halle weg.
+#
+# Zeiten: Angaben der Jugendleitung vom 12.10.2026 - G1 mittwochs Hellerhofschule, F1
+# donnerstags Paul-Hindemith-Schule, F2 donnerstags Ackermannschule, jeweils 17:30 bis 19:00
+# Uhr, "November bis einschliesslich Februar, Ferien ausgenommen" (daraus 01.11.2026 bis
+# 28.02.2027). Vor dem 01.11. und ab dem 01.03. gelten wieder die Platzzeiten.
+#
+# Adressen (alle 60326 Frankfurt am Main, abgerufen am 12.10.2026). Die Hallen stehen auf den
+# Schulgelaenden, die Hallenanschrift ist die Schulanschrift:
+#   Hellerhofschule, Idsteiner Strasse 47
+#     - Schule: hellerhofschule.de/impressum/; Schulverzeichnis Hessen 2026/27, Schulnr. 3160
+#     - Halle: Stadt Frankfurt, Energiemanagement, Gebaeudeliste (AKS-Liste, S. 47):
+#       Idsteiner Strasse 47 "Sporthalle (2011)"
+#   Paul-Hindemith-Schule, Schwalbacher Strasse 71-77
+#     - Schule: paul-hindemith-schule.de/impressum; Schulverzeichnis Hessen, Schulnr. 6121
+#     - Halle: Gebaeudeliste (S. 81): Schwalbacher Strasse 71 "Sporthalle"
+#   Ackermannschule, Ackermannstrasse 35-37 (Schulverzeichnis Hessen, Schulnr. 3123: Nr. 37)
+#     - Halle: Gebaeudeliste (S. 1): Ackermannstrasse 35 "Sporthalle Ackermann"; auf dem
+#       Gelaende steht noch die "Sporthalle Buergermeister" der Buergermeister-Grimm-Schule
+# Schulverzeichnis: kultus.hessen.de, "Oeffentliche Schulen im Schuljahr 2026/2027 mit Angaben
+# zum Ganztagsprofil" (PDF, Stichtag 01.08.2026). Gebaeudeliste: energiemanagement.stadt-
+# frankfurt.de/Betriebsoptimierung/Gebaeudeautomation/AKS-Liste.pdf (Stand 07.06.2023).
+HALLE = {
+    "G1": dict(von=datetime.date(2026, 11, 1), bis=datetime.date(2027, 2, 28),
+               zeiten=[("MI", "17:30", "19:00",
+                        "Sporthalle Hellerhofschule, Idsteiner Stra\u00dfe 47, 60326 Frankfurt am Main")]),
+    "F1": dict(von=datetime.date(2026, 11, 1), bis=datetime.date(2027, 2, 28),
+               zeiten=[("DO", "17:30", "19:00",
+                        "Sporthalle Paul-Hindemith-Schule, Schwalbacher Stra\u00dfe 71-77, 60326 Frankfurt am Main")]),
+    "F2": dict(von=datetime.date(2026, 11, 1), bis=datetime.date(2027, 2, 28),
+               zeiten=[("DO", "17:30", "19:00",
+                        "Sporthalle Ackermannschule, Ackermannstra\u00dfe 35-37, 60326 Frankfurt am Main")]),
+}
+# Mannschaften, die in der Halle trainieren, deren Zeiten aber noch fehlen: ihre Trainingstermine
+# bekommen HALLE_HINWEIS. Seit 12.10.2026 leer (alle drei Hallen stehen in HALLE).
+HALLE_OFFEN = set()
 HALLE_HINWEIS = ("\u00dcber den Winter trainiert die Mannschaft in der Halle. Zeitraum, Halle und "
                  "Zeiten folgen, bis dahin gelten die Zeiten auf dem Platz.")
 
 TRAINING_VON = datetime.date(2026, 8, 31)   # erster Montag nach der Bestaetigung
 TRAINING_BIS = datetime.date(2027, 6, 27)   # letzter Tag vor den Sommerferien
+# Datenstand der Trainingszeiten, steht in der Beschreibung jedes Trainingskalenders
+# ("Stand ..."). Gemeint ist der Stand der Termine im Kalender, nicht der Stand der
+# Platzaufteilung (die steht oben bei TRAINING). Bei jeder inhaltlichen Aenderung an TRAINING,
+# HALLE oder FREI anpassen. 26.08.2026 = erste Fassung, 12.10.2026 = Winterhalle eingetragen.
+TRAINING_STAND = "12.10.2026"
 
 # Schulferien Hessen 26/27 und Feiertage, die auf einen Trainingstag fallen.
-# Quelle: feiertage-deutschland.de / schulferien.eu, geprueft am 26.08.2026.
+# Ferien: Hessisches Kultusministerium, kultus.hessen.de/schulsystem/ferien/ferientermine (erster
+# und letzter Ferientag), abgerufen am 12.10.2026: Herbstferien 05.10.-17.10.2026, Weihnachts-
+# ferien 23.12.2026-12.01.2027, Osterferien 22.03.-02.04.2027 - stimmt mit den Eintraegen unten
+# ueberein. Nicht erfasst: die vier beweglichen Ferientage, die jede Schule selbst festlegt.
+# Feiertage: feiertage-deutschland.de / schulferien.eu, geprueft am 26.08.2026.
 FREI = [
     (datetime.date(2026, 10, 5),  datetime.date(2026, 10, 17), "Herbstferien"),
     (datetime.date(2026, 12, 23), datetime.date(2027, 1, 12),  "Weihnachtsferien"),
@@ -418,15 +458,36 @@ def trainingstermine(team):
     return sorted(out)
 
 
+MONAT = ["Januar", "Februar", "M\u00e4rz", "April", "Mai", "Juni", "Juli", "August",
+         "September", "Oktober", "November", "Dezember"]
+TAG_ADVERB = {"MO": "montags", "DI": "dienstags", "MI": "mittwochs", "DO": "donnerstags", "FR": "freitags"}
+
+
+def halle_note(team):
+    """Kurzer Hinweis fuer die Abo-Seite (index.html), im selben Wortlaut wie der Satz auf den
+    Mannschaftsseiten der Website (data/teams.json trainingHinweis): "November bis Februar:
+    donnerstags 17:30-19:00 Uhr in der Halle der Ackermannschule." Leer ohne Hallenzeiten."""
+    halle = HALLE.get(team)
+    if not halle:
+        return HALLE_HINWEIS if team in HALLE_OFFEN else ""
+    zeiten = " und ".join("%s %s\u2013%s Uhr in der Halle der %s"
+                          % (TAG_ADVERB[k], a, b, ort.split(",")[0].replace("Sporthalle ", ""))
+                          for k, a, b, ort in halle["zeiten"])
+    return ("%s bis %s: %s."
+            % (MONAT[halle["von"].month - 1], MONAT[halle["bis"].month - 1], zeiten))
+
+
 def training_events(team, stamp, label=None):
     label = label or (TEAMS[team]["label"] if team in TEAMS else TRAINING_LABEL[team])
     z = []
     for tag, beginn, ende, platz, in_halle in trainingstermine(team):
         d = tag.strftime("%Y%m%d")
+        mitbringen = ("Bitte Hallenschuhe, Schienbeinschoner und Wasser mitbringen." if in_halle
+                      else "Bitte Schienbeinschoner und ausreichend Wasser mitbringen.")
         zeilen = ["Training %s" % label,
                   ("Halle: %s" if in_halle else "Platz: %s") % platz,
                   "%s bis %s Uhr" % (beginn, ende),
-                  "Bitte Schienbeinschoner und ausreichend Wasser mitbringen.",
+                  mitbringen,
                   "Absagen und \u00c4nderungen kommen \u00fcber die Vereins-App."]
         if team in HALLE_OFFEN and team not in HALLE:
             zeilen.insert(3, HALLE_HINWEIS)
@@ -480,9 +541,9 @@ def schreibe_training_sammel(stamp):
 def schreibe_training(team, stamp):
     label = TEAMS[team]["label"] if team in TEAMS else TRAINING_LABEL[team]
     name = "Speuzer %s \u2013 Training" % label
-    beschr = ("Trainingszeiten der Saison 2026/27, Stand 26.08.2026. In den hessischen "
+    beschr = ("Trainingszeiten der Saison 2026/27, Stand %s. In den hessischen "
               "Schulferien und an Feiertagen ist kein Training eingetragen. "
-              "Kurzfristige Absagen kommen \u00fcber die Vereins-App.")
+              "Kurzfristige Absagen kommen \u00fcber die Vereins-App." % TRAINING_STAND)
     z = training_kopf(name, beschr) + training_events(team, stamp, label)
     z.append("END:VCALENDAR")
     training_datei("training-%s.ics" % team.lower(), z, len(trainingstermine(team)), "Einheiten")
@@ -779,7 +840,7 @@ def schreibe_index():
     for t in TRAINING:
         label = TEAMS[t]["label"] if t in TEAMS else TRAINING_LABEL[t]
         tage = " \u00b7 ".join("%s %s\u2013%s" % (k, a, b) for k, a, b, _ in TRAINING[t])
-        note = HALLE_HINWEIS if (t in HALLE_OFFEN and t not in HALLE) else ""
+        note = halle_note(t)
         zeilen.append('  { file:"training-%s.ics", name:"Speuzer %s \u2013 Training", '
                       'meta:"%s", note:"%s" },' % (t.lower(), label, tage, note))
     zeilen[-1] = zeilen[-1].rstrip(",")
