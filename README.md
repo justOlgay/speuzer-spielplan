@@ -783,7 +783,7 @@ einschließlich Februar, Ferien ausgenommen“. Sie stehen in `build_ics.py` unt
 |---|---|---|---|
 | G1 | Mittwoch, 17:30–19:00 Uhr | Sporthalle Hellerhofschule, Idsteiner Straße 47, 60326 Frankfurt am Main | 01.11.2026–28.02.2027 |
 | F1 | Donnerstag, 17:30–19:00 Uhr | Sporthalle Paul-Hindemith-Schule, Schwalbacher Straße 71-77, 60326 Frankfurt am Main | 01.11.2026–28.02.2027 |
-| F2 | Donnerstag, 17:30–19:00 Uhr | Sporthalle Ackermannschule, Ackermannstraße 35-37, 60326 Frankfurt am Main | 01.11.2026–28.02.2027 |
+| F2 | Donnerstag, 17:30–19:00 Uhr | Sporthalle Ackermannschule, Ackermannstraße 37, 60326 Frankfurt am Main | 01.11.2026–28.02.2027 |
 
 **Was der Generator daraus macht**
 
@@ -816,7 +816,7 @@ stehen auf den Schulgeländen, die Hallenanschrift ist die Schulanschrift.
 |---|---|---|
 | Hellerhofschule, Idsteiner Straße 47 | Impressum der Schule (`https://www.hellerhofschule.de/impressum/`); Schulverzeichnis Hessen 2026/27, Schulnr. 3160 | Gebäudeliste, S. 47: Idsteiner Straße 47 „Sporthalle (2011)“; Bauprojekt des Stadtschulamts (Doppelturnhalle auf dem Schulgrundstück); Schule: „zwei Hallen“ (`https://www.hellerhofschule.de/sportpartner/`) |
 | Paul-Hindemith-Schule, Schwalbacher Straße 71-77 | Impressum der Schule (`https://paul-hindemith-schule.de/impressum`); Schulverzeichnis Hessen, Schulnr. 6121 | Gebäudeliste, S. 81: Schwalbacher Straße 71 „Sporthalle“; Standortliste BasKIDball (`https://baskidball.de/standorte/frankfurt/`): „Paul Hindemith Schule, Schwalbacherstr. 71-77“ |
-| Ackermannschule, Ackermannstraße 35-37 | Schulverzeichnis Hessen, Schulnr. 3123 (Ackermannstraße 37) | Gebäudeliste, S. 1: Ackermannstraße 35 „Sporthalle Ackermann“ |
+| Ackermannschule, Ackermannstraße 37 | Schulverzeichnis Hessen, Schulnr. 3123 (Ackermannstraße 37); Rückmeldung des Vereins 19.10.2026: Schule in der Ackermannstraße 37 | Gebäudeliste, S. 1: Ackermannstraße 35 „Sporthalle Ackermann“ (Hallenanschrift wie bei den anderen beiden die Schulanschrift) |
 
 * Schulverzeichnis Hessen: Hessisches Kultusministerium, „Öffentliche Schulen im Schuljahr
   2026/2027 mit Angaben zum Ganztagsprofil“ (Stichtag 01.08.2026),

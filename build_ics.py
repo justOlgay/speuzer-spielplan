@@ -372,8 +372,9 @@ NICHT_IN_TRAINING_SAMMEL = set()
 #   Paul-Hindemith-Schule, Schwalbacher Strasse 71-77
 #     - Schule: paul-hindemith-schule.de/impressum; Schulverzeichnis Hessen, Schulnr. 6121
 #     - Halle: Gebaeudeliste (S. 81): Schwalbacher Strasse 71 "Sporthalle"
-#   Ackermannschule, Ackermannstrasse 35-37 (Schulverzeichnis Hessen, Schulnr. 3123: Nr. 37)
-#     - Halle: Gebaeudeliste (S. 1): Ackermannstrasse 35 "Sporthalle Ackermann"; auf dem
+#   Ackermannschule, Ackermannstrasse 37 (Schulverzeichnis Hessen, Schulnr. 3123; Rueckmeldung des Vereins 19.10.2026: Schule = Nr. 37)
+#     - Halle: Gebaeudeliste (S. 1): Ackermannstrasse 35 "Sporthalle Ackermann" (Hallenanschrift wie bei den
+#       anderen beiden Schulen die Schulanschrift, darum Nr. 37); auf dem
 #       Gelaende steht noch die "Sporthalle Buergermeister" der Buergermeister-Grimm-Schule
 # Schulverzeichnis: kultus.hessen.de, "Oeffentliche Schulen im Schuljahr 2026/2027 mit Angaben
 # zum Ganztagsprofil" (PDF, Stichtag 01.08.2026). Gebaeudeliste: energiemanagement.stadt-
@@ -387,7 +388,7 @@ HALLE = {
                         "Sporthalle Paul-Hindemith-Schule, Schwalbacher Stra\u00dfe 71-77, 60326 Frankfurt am Main")]),
     "F2": dict(von=datetime.date(2026, 11, 1), bis=datetime.date(2027, 2, 28),
                zeiten=[("DO", "17:30", "19:00",
-                        "Sporthalle Ackermannschule, Ackermannstra\u00dfe 35-37, 60326 Frankfurt am Main")]),
+                        "Sporthalle Ackermannschule, Ackermannstra\u00dfe 37, 60326 Frankfurt am Main")]),
 }
 # Mannschaften, die in der Halle trainieren, deren Zeiten aber noch fehlen: ihre Trainingstermine
 # bekommen HALLE_HINWEIS. Seit 12.10.2026 leer (alle drei Hallen stehen in HALLE).
