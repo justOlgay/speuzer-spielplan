@@ -33,7 +33,7 @@
 <body>
 <header>
   <h1>Speuzer – Spielpläne abonnieren</h1>
-  <p>Saison 2026/27 · Quelle: DFBnet · einmal abonnieren, dann automatisch aktuell</p>
+  <p>Saison 2026/27 · Quelle: DFBnet · einmal abonnieren, neu abonnieren muss niemand</p>
 </header>
 <main id="teams"></main>
 <main>
@@ -51,8 +51,9 @@
   </details>
 </main>
 <footer>
-  Spieltermine automatisch erzeugt aus dem DFBnet-Spielplan. Verlegungen werden im bestehenden
-  Termin aktualisiert, es entstehen keine Doppel-Einträge. Fragen: Jugendleitung.
+  Spieltermine aus dem DFBnet-Spielplan, vom Verein gepflegt. Neue und verlegte Spiele trägt der Verein nach,
+  sobald der Kreis sie ansetzt; Verlegungen werden im bestehenden Termin aktualisiert, es entstehen keine
+  Doppel-Einträge. Fragen: Jugendleitung.
 </footer>
 <script>
 const TEAMS = [
@@ -61,14 +62,14 @@ const TEAMS = [
   { file:"d1.ics", name:"Speuzer D1", meta:"Kreisliga A · DJKL F Gr 1 · Kreis Frankfurt", note:"" },
   { file:"d2.ics", name:"Speuzer D2", meta:"1. Kreisklasse · DJ KK F Gr. 05 · Kreis Frankfurt", note:"" },
   { file:"d3.ics", name:"Speuzer D3", meta:"1. Kreisklasse · DJ KK F Gr. 04 · Kreis Frankfurt", note:"" },
-  { file:"e1.ics", name:"Speuzer E1", meta:"1. Kreisklasse · EJ Quali Gr. 08 · Kreis Frankfurt", note:"Zurzeit stehen nur die Spiele der Qualifikationsrunde fest. Die Spiele der Hauptrunde kommen automatisch in dieses Abo, sobald der Kreis sie ansetzt – neu abonnieren muss niemand." },
-  { file:"e2.ics", name:"Speuzer E2", meta:"1. Kreisklasse · EJ Quali Gr. 18 · Kreis Frankfurt", note:"Zurzeit stehen nur die Spiele der Qualifikationsrunde fest. Die Spiele der Hauptrunde kommen automatisch in dieses Abo, sobald der Kreis sie ansetzt – neu abonnieren muss niemand." },
-  { file:"e3.ics", name:"Speuzer E3", meta:"1. Kreisklasse · EJ Quali Gr. 22 · Kreis Frankfurt", note:"Zurzeit stehen nur die Spiele der Qualifikationsrunde fest. Die Spiele der Hauptrunde kommen automatisch in dieses Abo, sobald der Kreis sie ansetzt – neu abonnieren muss niemand." },
+  { file:"e1.ics", name:"Speuzer E1", meta:"1. Kreisliga · EJKL F · Kreis Frankfurt", note:"Neue und verlegte Spiele trägt der Verein nach, sobald der Kreis sie ansetzt – neu abonnieren muss niemand." },
+  { file:"e2.ics", name:"Speuzer E2", meta:"1. Kreisklasse · EJKK F Gr.6 · Kreis Frankfurt", note:"Neue und verlegte Spiele trägt der Verein nach, sobald der Kreis sie ansetzt – neu abonnieren muss niemand." },
+  { file:"e3.ics", name:"Speuzer E3", meta:"1. Kreisklasse · EJKK F Gr.10 · Kreis Frankfurt", note:"Neue und verlegte Spiele trägt der Verein nach, sobald der Kreis sie ansetzt – neu abonnieren muss niemand." },
   { file:"f1.ics", name:"Speuzer F1", meta:"Kinderfußball · F-Junioren 4+1 Gr. 2 · Kreis Frankfurt", note:"" },
   { file:"f2.ics", name:"Speuzer F2", meta:"Kinderfußball · F-Junioren 4vs4 Gr. 4 · Kreis Frankfurt", note:"" },
   { file:"g1.ics", name:"Speuzer G1", meta:"Kinderfußball · G-Junioren 3vs3 Gr. 4 · Kreis Frankfurt", note:"" },
-  { file:"alle.ics", name:"Speuzer – alle Mannschaften", meta:"Herren, A-, D- und E-Jugend in einem Kalender · so liegt er auch in der Vereins-App", note:"Zurzeit stehen nur die Spiele der Qualifikationsrunde fest. Die Spiele der Hauptrunde kommen automatisch in dieses Abo, sobald der Kreis sie ansetzt – neu abonnieren muss niemand." },
-  { file:"jugend.ics", name:"Speuzer – nur Jugend", meta:"D1 bis E3 in einem Kalender, ohne Herren und A-Jugend", note:"Zurzeit stehen nur die Spiele der Qualifikationsrunde fest. Die Spiele der Hauptrunde kommen automatisch in dieses Abo, sobald der Kreis sie ansetzt – neu abonnieren muss niemand." },
+  { file:"alle.ics", name:"Speuzer – alle Mannschaften", meta:"Herren, A-, D- und E-Jugend in einem Kalender · so liegt er auch in der Vereins-App", note:"Neue und verlegte Spiele trägt der Verein nach, sobald der Kreis sie ansetzt – neu abonnieren muss niemand." },
+  { file:"jugend.ics", name:"Speuzer – nur Jugend", meta:"D1 bis E3 in einem Kalender, ohne Herren und A-Jugend", note:"Neue und verlegte Spiele trägt der Verein nach, sobald der Kreis sie ansetzt – neu abonnieren muss niemand." },
   { file:"training-alle.ics", name:"Speuzer – Training aller Mannschaften", meta:"alle Trainingszeiten in einem Kalender · so liegt er auch in der Vereins-App", note:"" },
   { file:"training-herren.ics", name:"Speuzer Herren – Training", meta:"MI 19:30–21:00 · FR 19:30–21:00", note:"" },
   { file:"training-a.ics", name:"Speuzer A-Jugend – Training", meta:"MO 19:00–21:00 · MI 19:00–20:30", note:"" },

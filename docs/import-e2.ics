@@ -28,4 +28,364 @@ DTSTART:19701025T030000
 RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
+BEGIN:VEVENT
+UID:341538-2-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261024T083000
+DTEND;TZID=Europe/Berlin:20261024T113000
+SUMMARY:Speuzer E2 · Auswärts bei SV Blau-Gelb FFM 4
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:30 Uhr · Anstoß 09
+ :30 Uhr · Auswärtsspiel\nSV Blau-Gelb FFM 4 – Speuzer E2\nTreffpunkt
+ : 08:30 Uhr\nAnstoß: 09:30 Uhr\nAuswärtsspiel · 1. Kreisklasse · EJK
+ K F Gr.6 · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: siehe FUSS
+ BALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/0
+ 328D7NA64000000VS5489BUVUFHD2VV\nBitte per Daumen hoch / Fragezeichen / 
+ Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten bis z
+ um Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7NA64000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341538-9-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261031T103000
+DTEND;TZID=Europe/Berlin:20261031T133000
+SUMMARY:Speuzer E2 · Heim gegen BSC SW 1919 Ffm. 3
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:30 Uhr · Anstoß 11
+ :30 Uhr · Heimspiel\nSpeuzer E2 – BSC SW 1919 Ffm. 3\nTreffpunkt: 10:
+ 30 Uhr\nAnstoß: 11:30 Uhr\nHeimspiel · 1. Kreisklasse · EJKK F Gr.6 
+ · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: Mainzer Landstr. 48
+ 0\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.
+ de/spiel/x/-/spiel/0328D7NA34000000VS5489BUVUFHD2VV\nBitte per Daumen ho
+ ch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist
+  – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7NA34000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341538-14-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261107T080000
+DTEND;TZID=Europe/Berlin:20261107T110000
+SUMMARY:Speuzer E2 · Auswärts bei SC Riedberg IV
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:00 Uhr · Anstoß 09
+ :00 Uhr · Auswärtsspiel\nSC Riedberg IV – Speuzer E2\nTreffpunkt: 08
+ :00 Uhr\nAnstoß: 09:00 Uhr\nAuswärtsspiel · 1. Kreisklasse · EJKK F 
+ Gr.6 · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: siehe FUSSBALL
+ .DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/0328D
+ 7N9U0000000VS5489BUVUFHD2VV\nBitte per Daumen hoch / Fragezeichen / Daum
+ en runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum A
+ bend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7N9U0000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341538-19-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261114T103000
+DTEND;TZID=Europe/Berlin:20261114T133000
+SUMMARY:Speuzer E2 · Heim gegen Spvgg. Oberrad IV
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:30 Uhr · Anstoß 11
+ :30 Uhr · Heimspiel\nSpeuzer E2 – Spvgg. Oberrad IV\nTreffpunkt: 10:3
+ 0 Uhr\nAnstoß: 11:30 Uhr\nHeimspiel · 1. Kreisklasse · EJKK F Gr.6 ·
+  Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: Mainzer Landstr. 480\
+ , 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de
+ /spiel/x/-/spiel/0328D7N9OS000000VS5489BUVUFHD2VV\nBitte per Daumen hoch
+  / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist 
+ – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7N9OS000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341538-22-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261121T113000
+DTEND;TZID=Europe/Berlin:20261121T143000
+SUMMARY:Speuzer E2 · Auswärts bei FC Kalbach II
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:30 Uhr · Anstoß 12
+ :30 Uhr · Auswärtsspiel\nFC Kalbach II – Speuzer E2\nTreffpunkt: 11:
+ 30 Uhr\nAnstoß: 12:30 Uhr\nAuswärtsspiel · 1. Kreisklasse · EJKK F G
+ r.6 · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: siehe FUSSBALL.
+ DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/0328D7
+ N9IS000000VS5489BUVUFHD2VV\nBitte per Daumen hoch / Fragezeichen / Daume
+ n runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Ab
+ end vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7N9IS000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341538-29-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261128T103000
+DTEND;TZID=Europe/Berlin:20261128T133000
+SUMMARY:Speuzer E2 · Heim gegen SC Weiss-Blau Frankfurt II
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:30 Uhr · Anstoß 11
+ :30 Uhr · Heimspiel\nSpeuzer E2 – SC Weiss-Blau Frankfurt II\nTreffpu
+ nkt: 10:30 Uhr\nAnstoß: 11:30 Uhr\nHeimspiel · 1. Kreisklasse · EJKK 
+ F Gr.6 · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: Mainzer Land
+ str. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fu
+ ssball.de/spiel/x/-/spiel/0328D7NAE0000000VS5489BUVUFHD2VV\nBitte per Da
+ umen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind da
+ bei ist – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7NAE0000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341538-31-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261205T113000
+DTEND;TZID=Europe/Berlin:20261205T143000
+SUMMARY:Speuzer E2 · Auswärts bei Spvgg. Kickers 1916 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:30 Uhr · Anstoß 12
+ :30 Uhr · Auswärtsspiel\nSpvgg. Kickers 1916 2 – Speuzer E2\nTreffpu
+ nkt: 11:30 Uhr\nAnstoß: 12:30 Uhr\nAuswärtsspiel · 1. Kreisklasse · 
+ EJKK F Gr.6 · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: siehe F
+ USSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spie
+ l/0328D7NAG8000000VS5489BUVUFHD2VV\nBitte per Daumen hoch / Fragezeichen
+  / Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten bi
+ s zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7NAG8000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341538-40-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261212T113000
+DTEND;TZID=Europe/Berlin:20261212T143000
+SUMMARY:Speuzer E2 · Auswärts bei SG Bornheim / GW 4
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:30 Uhr · Anstoß 12
+ :30 Uhr · Auswärtsspiel\nSG Bornheim / GW 4 – Speuzer E2\nTreffpunkt
+ : 11:30 Uhr\nAnstoß: 12:30 Uhr\nAuswärtsspiel · 1. Kreisklasse · EJK
+ K F Gr.6 · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: siehe FUSS
+ BALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/0
+ 328D7NAQG000000VS5489BUVUFHD2VV\nBitte per Daumen hoch / Fragezeichen / 
+ Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten bis z
+ um Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7NAQG000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341538-44-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270213T113000
+DTEND;TZID=Europe/Berlin:20270213T143000
+SUMMARY:Speuzer E2 · Auswärts bei 1. Rödelheimer FC 02 4
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:30 Uhr · Anstoß 12
+ :30 Uhr · Auswärtsspiel\n1. Rödelheimer FC 02 4 – Speuzer E2\nTreff
+ punkt: 11:30 Uhr\nAnstoß: 12:30 Uhr\nAuswärtsspiel · 1. Kreisklasse 
+ · EJKK F Gr.6 · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: sieh
+ e FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/s
+ piel/0328D7ND2K000000VS5489BUVUFHD2VV\nBitte per Daumen hoch / Fragezeic
+ hen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten
+  bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7ND2K000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341538-49-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270220T103000
+DTEND;TZID=Europe/Berlin:20270220T133000
+SUMMARY:Speuzer E2 · Heim gegen 1. Rödelheimer FC 02 4
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:30 Uhr · Anstoß 11
+ :30 Uhr · Heimspiel\nSpeuzer E2 – 1. Rödelheimer FC 02 4\nTreffpunkt
+ : 10:30 Uhr\nAnstoß: 11:30 Uhr\nHeimspiel · 1. Kreisklasse · EJKK F G
+ r.6 · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: Mainzer Landstr
+ . 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussb
+ all.de/spiel/x/-/spiel/0328D7NAV8000000VS5489BUVUFHD2VV\nBitte per Daume
+ n hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei
+  ist – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7NAV8000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341538-54-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270227T100000
+DTEND;TZID=Europe/Berlin:20270227T130000
+SUMMARY:Speuzer E2 · Auswärts bei Spvgg. Oberrad IV
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
+ :00 Uhr · Auswärtsspiel\nSpvgg. Oberrad IV – Speuzer E2\nTreffpunkt:
+  10:00 Uhr\nAnstoß: 11:00 Uhr\nAuswärtsspiel · 1. Kreisklasse · EJKK
+  F Gr.6 · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: siehe FUSSB
+ ALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/03
+ 28D7NBC0000000VS5489BUVUFHD2VV\nBitte per Daumen hoch / Fragezeichen / D
+ aumen runter zurückmelden\, ob euer Kind dabei ist – am besten bis zu
+ m Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7NBC0000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341538-57-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270306T103000
+DTEND;TZID=Europe/Berlin:20270306T133000
+SUMMARY:Speuzer E2 · Heim gegen FC Kalbach II
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:30 Uhr · Anstoß 11
+ :30 Uhr · Heimspiel\nSpeuzer E2 – FC Kalbach II\nTreffpunkt: 10:30 Uh
+ r\nAnstoß: 11:30 Uhr\nHeimspiel · 1. Kreisklasse · EJKK F Gr.6 · Kre
+ is Frankfurt\nRunde: Hauptrunde\nSpielstätte: Mainzer Landstr. 480\, 60
+ 326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spi
+ el/x/-/spiel/0328D7NB2O000000VS5489BUVUFHD2VV\nBitte per Daumen hoch / F
+ ragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – a
+ m besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7NB2O000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341538-64-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270313T080000
+DTEND;TZID=Europe/Berlin:20270313T110000
+SUMMARY:Speuzer E2 · Auswärts bei BSC SW 1919 Ffm. 3
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:00 Uhr · Anstoß 09
+ :00 Uhr · Auswärtsspiel\nBSC SW 1919 Ffm. 3 – Speuzer E2\nTreffpunkt
+ : 08:00 Uhr\nAnstoß: 09:00 Uhr\nAuswärtsspiel · 1. Kreisklasse · EJK
+ K F Gr.6 · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: siehe FUSS
+ BALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/0
+ 328D7NBQ8000000VS5489BUVUFHD2VV\nBitte per Daumen hoch / Fragezeichen / 
+ Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten bis z
+ um Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7NBQ8000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341538-66-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270410T103000
+DTEND;TZID=Europe/Berlin:20270410T133000
+SUMMARY:Speuzer E2 · Heim gegen Spvgg. Kickers 1916 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:30 Uhr · Anstoß 11
+ :30 Uhr · Heimspiel\nSpeuzer E2 – Spvgg. Kickers 1916 2\nTreffpunkt: 
+ 10:30 Uhr\nAnstoß: 11:30 Uhr\nHeimspiel · 1. Kreisklasse · EJKK F Gr.
+ 6 · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: Mainzer Landstr. 
+ 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussbal
+ l.de/spiel/x/-/spiel/0328D7NCC8000000VS5489BUVUFHD2VV\nBitte per Daumen 
+ hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei i
+ st – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7NCC8000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341538-74-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270417T100000
+DTEND;TZID=Europe/Berlin:20270417T130000
+SUMMARY:Speuzer E2 · Auswärts bei SC Weiss-Blau Frankfurt II
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
+ :00 Uhr · Auswärtsspiel\nSC Weiss-Blau Frankfurt II – Speuzer E2\nTr
+ effpunkt: 10:00 Uhr\nAnstoß: 11:00 Uhr\nAuswärtsspiel · 1. Kreisklass
+ e · EJKK F Gr.6 · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: si
+ ehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-
+ /spiel/0328D7NC98000000VS5489BUVUFHD2VV\nBitte per Daumen hoch / Frageze
+ ichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am best
+ en bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7NC98000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341538-77-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270424T103000
+DTEND;TZID=Europe/Berlin:20270424T133000
+SUMMARY:Speuzer E2 · Heim gegen SV Blau-Gelb FFM 4
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:30 Uhr · Anstoß 11
+ :30 Uhr · Heimspiel\nSpeuzer E2 – SV Blau-Gelb FFM 4\nTreffpunkt: 10:
+ 30 Uhr\nAnstoß: 11:30 Uhr\nHeimspiel · 1. Kreisklasse · EJKK F Gr.6 
+ · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: Mainzer Landstr. 48
+ 0\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.
+ de/spiel/x/-/spiel/0328D7NBUS000000VS5489BUVUFHD2VV\nBitte per Daumen ho
+ ch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist
+  – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7NBUS000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341538-85-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270515T103000
+DTEND;TZID=Europe/Berlin:20270515T133000
+SUMMARY:Speuzer E2 · Heim gegen SG Bornheim / GW 4
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:30 Uhr · Anstoß 11
+ :30 Uhr · Heimspiel\nSpeuzer E2 – SG Bornheim / GW 4\nTreffpunkt: 10:
+ 30 Uhr\nAnstoß: 11:30 Uhr\nHeimspiel · 1. Kreisklasse · EJKK F Gr.6 
+ · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: Mainzer Landstr. 48
+ 0\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.
+ de/spiel/x/-/spiel/0328D7NCRS000000VS5489BUVUFHD2VV\nBitte per Daumen ho
+ ch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist
+  – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7NCRS000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341538-89-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270522T103000
+DTEND;TZID=Europe/Berlin:20270522T133000
+SUMMARY:Speuzer E2 · Heim gegen SC Riedberg IV
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:30 Uhr · Anstoß 11
+ :30 Uhr · Heimspiel\nSpeuzer E2 – SC Riedberg IV\nTreffpunkt: 10:30 U
+ hr\nAnstoß: 11:30 Uhr\nHeimspiel · 1. Kreisklasse · EJKK F Gr.6 · Kr
+ eis Frankfurt\nRunde: Hauptrunde\nSpielstätte: Mainzer Landstr. 480\, 6
+ 0326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/sp
+ iel/x/-/spiel/0328D7NBIO000000VS5489BUVUFHD2VV\nBitte per Daumen hoch / 
+ Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – 
+ am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7NBIO000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
 END:VCALENDAR

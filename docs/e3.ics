@@ -5,10 +5,9 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Speuzer E3
 X-WR-CALDESC:Spielplan des FFV Sportfreunde 04\, Saison 2026/27\, Quelle 
- DFBnet. Verlegungen aktualisieren den bestehenden Termin. Zurzeit stehen
-  nur die Spiele der Qualifikationsrunde fest. Die Spiele der Hauptrunde 
- kommen automatisch in dieses Abo\, sobald der Kreis sie ansetzt – neu 
- abonnieren muss niemand.
+ DFBnet. Verlegungen aktualisieren den bestehenden Termin. Neue und verle
+ gte Spiele trägt der Verein nach\, sobald der Kreis sie ansetzt – neu
+  abonnieren muss niemand.
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
@@ -32,9 +31,9 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:341930-1@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-LAST-MODIFIED:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20260822T110000
 DTEND;TZID=Europe/Berlin:20260822T130000
 SUMMARY:Speuzer E3 · Heim gegen FSV 1910 Bergen 3
@@ -52,9 +51,9 @@ LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341930-7@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-LAST-MODIFIED:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20260905T110000
 DTEND;TZID=Europe/Berlin:20260905T130000
 SUMMARY:Speuzer E3 · Auswärts bei SC Weiss-Blau Frankfurt II
@@ -72,9 +71,9 @@ LOCATION:Holzhecke 16 /Sandhöfer Wiesen\, 60528 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341930-10@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-LAST-MODIFIED:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20260912T110000
 DTEND;TZID=Europe/Berlin:20260912T130000
 SUMMARY:Speuzer E3 · Heim gegen SG Harheim 2
@@ -92,9 +91,9 @@ LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:341930-14@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-LAST-MODIFIED:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20260926T123000
 DTEND;TZID=Europe/Berlin:20260926T143000
 SUMMARY:Speuzer E3 · Auswärts bei Riedberger SV II
@@ -109,5 +108,303 @@ URL:https://www.fussball.de/spiel/x/-/spiel/031HO7VE78000000VS5489BUVVKNM
 CATEGORIES:Fussball
 TRANSP:OPAQUE
 LOCATION:Am Hopfenbrunnen 51\, 60437 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341547-2@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261024T113000
+DTEND;TZID=Europe/Berlin:20261024T133000
+SUMMARY:Speuzer E3 · Auswärts bei TSG Niederrad 1898 2
+DESCRIPTION:TSG Niederrad 1898 2 – Speuzer E3\nMannschaft: Speuzer E3\n
+ Wettbewerb: 1. Kreisklasse · EJKK F Gr.10 · Kreis Frankfurt\nRunde: Ha
+ uptrunde\nAuswärtsspiel · Spielnummer 2 · Staffel 341547\nSpielstätt
+ e: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spie
+ l/x/-/spiel/0328D7Q7IS000000VS5489BUVUFHD2VV
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7Q7IS000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341547-9@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261031T113000
+DTEND;TZID=Europe/Berlin:20261031T133000
+SUMMARY:Speuzer E3 · Heim gegen FC Germania 1911 Enkheim 4
+DESCRIPTION:Speuzer E3 – FC Germania 1911 Enkheim 4\nMannschaft: Speuze
+ r E3\nWettbewerb: 1. Kreisklasse · EJKK F Gr.10 · Kreis Frankfurt\nRun
+ de: Hauptrunde\nHeimspiel · Spielnummer 9 · Staffel 341547\nSpielstät
+ te: Mainzer Landstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel
+ : https://www.fussball.de/spiel/x/-/spiel/0328D7Q7FS000000VS5489BUVUFHD2
+ VV
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7Q7FS000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341547-14@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261107T123000
+DTEND;TZID=Europe/Berlin:20261107T143000
+SUMMARY:Speuzer E3 · Auswärts bei SV Niederursel 3
+DESCRIPTION:SV Niederursel 3 – Speuzer E3\nMannschaft: Speuzer E3\nWett
+ bewerb: 1. Kreisklasse · EJKK F Gr.10 · Kreis Frankfurt\nRunde: Hauptr
+ unde\nAuswärtsspiel · Spielnummer 14 · Staffel 341547\nSpielstätte: 
+ siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x
+ /-/spiel/0328D7Q7AG000000VS5489BUVUFHD2VV
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7Q7AG000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341547-19@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261114T110000
+DTEND;TZID=Europe/Berlin:20261114T130000
+SUMMARY:Speuzer E3 · Heim gegen TG Sachsenhausen IV
+DESCRIPTION:Speuzer E3 – TG Sachsenhausen IV\nMannschaft: Speuzer E3\nW
+ ettbewerb: 1. Kreisklasse · EJKK F Gr.10 · Kreis Frankfurt\nRunde: Hau
+ ptrunde\nHeimspiel · Spielnummer 19 · Staffel 341547\nSpielstätte: Ma
+ inzer Landstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: http
+ s://www.fussball.de/spiel/x/-/spiel/0328D7Q75G000000VS5489BUVUFHD2VV
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7Q75G000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341547-22@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261121T100000
+DTEND;TZID=Europe/Berlin:20261121T120000
+SUMMARY:Speuzer E3 · Auswärts bei FV 09 Eschersheim II
+DESCRIPTION:FV 09 Eschersheim II – Speuzer E3\nMannschaft: Speuzer E3\n
+ Wettbewerb: 1. Kreisklasse · EJKK F Gr.10 · Kreis Frankfurt\nRunde: Ha
+ uptrunde\nAuswärtsspiel · Spielnummer 22 · Staffel 341547\nSpielstät
+ te: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spi
+ el/x/-/spiel/0328D7Q6US000000VS5489BUVUFHD2VV
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7Q6US000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341547-29@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261128T110000
+DTEND;TZID=Europe/Berlin:20261128T130000
+SUMMARY:Speuzer E3 · Heim gegen VFR Bockenheim 2
+DESCRIPTION:Speuzer E3 – VFR Bockenheim 2\nMannschaft: Speuzer E3\nWett
+ bewerb: 1. Kreisklasse · EJKK F Gr.10 · Kreis Frankfurt\nRunde: Hauptr
+ unde\nHeimspiel · Spielnummer 29 · Staffel 341547\nSpielstätte: Mainz
+ er Landstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https:/
+ /www.fussball.de/spiel/x/-/spiel/0328D7Q7PO000000VS5489BUVUFHD2VV
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7Q7PO000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341547-31@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261205T123000
+DTEND;TZID=Europe/Berlin:20261205T143000
+SUMMARY:Speuzer E3 · Auswärts bei FG Seckbach 3
+DESCRIPTION:FG Seckbach 3 – Speuzer E3\nMannschaft: Speuzer E3\nWettbew
+ erb: 1. Kreisklasse · EJKK F Gr.10 · Kreis Frankfurt\nRunde: Hauptrund
+ e\nAuswärtsspiel · Spielnummer 31 · Staffel 341547\nSpielstätte: sie
+ he FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/
+ spiel/0328D7Q7RO000000VS5489BUVUFHD2VV
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7Q7RO000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341547-40@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261212T100000
+DTEND;TZID=Europe/Berlin:20261212T120000
+SUMMARY:Speuzer E3 · Auswärts bei Concordia Eschersheim II
+DESCRIPTION:Concordia Eschersheim II – Speuzer E3\nMannschaft: Speuzer 
+ E3\nWettbewerb: 1. Kreisklasse · EJKK F Gr.10 · Kreis Frankfurt\nRunde
+ : Hauptrunde\nAuswärtsspiel · Spielnummer 40 · Staffel 341547\nSpiels
+ tätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de
+ /spiel/x/-/spiel/0328D7Q85K000000VS5489BUVUFHD2VV
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7Q85K000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341547-54@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270227T111500
+DTEND;TZID=Europe/Berlin:20270227T131500
+SUMMARY:Speuzer E3 · Auswärts bei TG Sachsenhausen IV
+DESCRIPTION:TG Sachsenhausen IV – Speuzer E3\nMannschaft: Speuzer E3\nW
+ ettbewerb: 1. Kreisklasse · EJKK F Gr.10 · Kreis Frankfurt\nRunde: Hau
+ ptrunde\nAuswärtsspiel · Spielnummer 54 · Staffel 341547\nSpielstätt
+ e: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spie
+ l/x/-/spiel/0328D7Q8N4000000VS5489BUVUFHD2VV
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7Q8N4000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341547-57@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270306T110000
+DTEND;TZID=Europe/Berlin:20270306T130000
+SUMMARY:Speuzer E3 · Heim gegen FV 09 Eschersheim II
+DESCRIPTION:Speuzer E3 – FV 09 Eschersheim II\nMannschaft: Speuzer E3\n
+ Wettbewerb: 1. Kreisklasse · EJKK F Gr.10 · Kreis Frankfurt\nRunde: Ha
+ uptrunde\nHeimspiel · Spielnummer 57 · Staffel 341547\nSpielstätte: M
+ ainzer Landstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: htt
+ ps://www.fussball.de/spiel/x/-/spiel/0328D7Q8DS000000VS5489BUVUFHD2VV
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7Q8DS000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341547-64@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270313T110000
+DTEND;TZID=Europe/Berlin:20270313T130000
+SUMMARY:Speuzer E3 · Auswärts bei FC Germania 1911 Enkheim 4
+DESCRIPTION:FC Germania 1911 Enkheim 4 – Speuzer E3\nMannschaft: Speuze
+ r E3\nWettbewerb: 1. Kreisklasse · EJKK F Gr.10 · Kreis Frankfurt\nRun
+ de: Hauptrunde\nAuswärtsspiel · Spielnummer 64 · Staffel 341547\nSpie
+ lstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.
+ de/spiel/x/-/spiel/0328D7Q94G000000VS5489BUVUFHD2VV
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7Q94G000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341547-66@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270410T110000
+DTEND;TZID=Europe/Berlin:20270410T130000
+SUMMARY:Speuzer E3 · Heim gegen FG Seckbach 3
+DESCRIPTION:Speuzer E3 – FG Seckbach 3\nMannschaft: Speuzer E3\nWettbew
+ erb: 1. Kreisklasse · EJKK F Gr.10 · Kreis Frankfurt\nRunde: Hauptrund
+ e\nHeimspiel · Spielnummer 66 · Staffel 341547\nSpielstätte: Mainzer 
+ Landstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://ww
+ w.fussball.de/spiel/x/-/spiel/0328D7Q9MG000000VS5489BUVUFHD2VV
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7Q9MG000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341547-74@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270417T100000
+DTEND;TZID=Europe/Berlin:20270417T120000
+SUMMARY:Speuzer E3 · Auswärts bei VFR Bockenheim 2
+DESCRIPTION:VFR Bockenheim 2 – Speuzer E3\nMannschaft: Speuzer E3\nWett
+ bewerb: 1. Kreisklasse · EJKK F Gr.10 · Kreis Frankfurt\nRunde: Hauptr
+ unde\nAuswärtsspiel · Spielnummer 74 · Staffel 341547\nSpielstätte: 
+ siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x
+ /-/spiel/0328D7Q9JC000000VS5489BUVUFHD2VV
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7Q9JC000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:341547-77@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270424T110000
+DTEND;TZID=Europe/Berlin:20270424T130000
+SUMMARY:Speuzer E3 · Heim gegen TSG Niederrad 1898 2
+DESCRIPTION:Speuzer E3 – TSG Niederrad 1898 2\nMannschaft: Speuzer E3\n
+ Wettbewerb: 1. Kreisklasse · EJKK F Gr.10 · Kreis Frankfurt\nRunde: Ha
+ uptrunde\nHeimspiel · Spielnummer 77 · Staffel 341547\nSpielstätte: M
+ ainzer Landstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: htt
+ ps://www.fussball.de/spiel/x/-/spiel/0328D7Q98S000000VS5489BUVUFHD2VV
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7Q98S000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341547-85@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270515T110000
+DTEND;TZID=Europe/Berlin:20270515T130000
+SUMMARY:Speuzer E3 · Heim gegen Concordia Eschersheim II
+DESCRIPTION:Speuzer E3 – Concordia Eschersheim II\nMannschaft: Speuzer 
+ E3\nWettbewerb: 1. Kreisklasse · EJKK F Gr.10 · Kreis Frankfurt\nRunde
+ : Hauptrunde\nHeimspiel · Spielnummer 85 · Staffel 341547\nSpielstätt
+ e: Mainzer Landstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel:
+  https://www.fussball.de/spiel/x/-/spiel/0328D7QA4C000000VS5489BUVUFHD2V
+ V
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7QA4C000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:341547-89@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270522T110000
+DTEND;TZID=Europe/Berlin:20270522T130000
+SUMMARY:Speuzer E3 · Heim gegen SV Niederursel 3
+DESCRIPTION:Speuzer E3 – SV Niederursel 3\nMannschaft: Speuzer E3\nWett
+ bewerb: 1. Kreisklasse · EJKK F Gr.10 · Kreis Frankfurt\nRunde: Hauptr
+ unde\nHeimspiel · Spielnummer 89 · Staffel 341547\nSpielstätte: Mainz
+ er Landstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https:/
+ /www.fussball.de/spiel/x/-/spiel/0328D7Q8TS000000VS5489BUVUFHD2VV
+URL:https://www.fussball.de/spiel/x/-/spiel/0328D7Q8TS000000VS5489BUVUFHD
+ 2VV
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
 END:VEVENT
 END:VCALENDAR

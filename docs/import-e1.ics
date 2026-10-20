@@ -28,4 +28,383 @@ DTSTART:19701025T030000
 RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
+BEGIN:VEVENT
+UID:340651-2-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261024T100000
+DTEND;TZID=Europe/Berlin:20261024T130000
+SUMMARY:Speuzer E1 · Auswärts bei SV Blau-Gelb FFM 1
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
+ :00 Uhr · Auswärtsspiel\nSV Blau-Gelb FFM 1 – Speuzer E1\nTreffpunkt
+ : 10:00 Uhr\nAnstoß: 11:00 Uhr\nAuswärtsspiel · 1. Kreisliga · EJKL 
+ F · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: siehe FUSSBALL.DE
+ \nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/03292CNH
+ 44000000VS5489BUVV5V31CI\nBitte per Daumen hoch / Fragezeichen / Daumen 
+ runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Aben
+ d vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNH44000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:940399-40-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261028T161500
+DTEND;TZID=Europe/Berlin:20261028T191500
+SUMMARY:Speuzer E1 · Pokal\, Heim gegen TSG Frankfurter Berg I
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 16:15 Uhr · Anstoß 17
+ :15 Uhr · Heimspiel\nSpeuzer E1 – TSG Frankfurter Berg I\nTreffpunkt:
+  16:15 Uhr\nAnstoß: 17:15 Uhr\nHeimspiel · Kreispokal\nSpielstätte: M
+ ainzer Landstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: htt
+ ps://www.fussball.de/spiel/x/-/spiel/0329HQAI20000000VS5489BUVV5V31CI\nB
+ itte per Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob e
+ uer Kind dabei ist – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/0329HQAI20000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-9-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261031T113000
+DTEND;TZID=Europe/Berlin:20261031T143000
+SUMMARY:Speuzer E1 · Heim gegen BSC SW 1919 Ffm. 1
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:30 Uhr · Anstoß 12
+ :30 Uhr · Heimspiel\nSpeuzer E1 – BSC SW 1919 Ffm. 1\nTreffpunkt: 11:
+ 30 Uhr\nAnstoß: 12:30 Uhr\nHeimspiel · 1. Kreisliga · EJKL F · Kreis
+  Frankfurt\nRunde: Hauptrunde\nSpielstätte: Mainzer Landstr. 480\, 6032
+ 6 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel
+ /x/-/spiel/03292CNH00000000VS5489BUVV5V31CI\nBitte per Daumen hoch / Fra
+ gezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am 
+ besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNH00000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-14-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261107T100000
+DTEND;TZID=Europe/Berlin:20261107T130000
+SUMMARY:Speuzer E1 · Auswärts bei SG Rot-Weiss Ffm.
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Anstoß 11
+ :00 Uhr · Auswärtsspiel\nSG Rot-Weiss Ffm. – Speuzer E1\nTreffpunkt:
+  10:00 Uhr\nAnstoß: 11:00 Uhr\nAuswärtsspiel · 1. Kreisliga · EJKL F
+  · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: siehe FUSSBALL.DE\
+ nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/03292CNGP
+ S000000VS5489BUVV5V31CI\nBitte per Daumen hoch / Fragezeichen / Daumen r
+ unter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Abend
+  vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNGPS000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-19-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261114T110000
+DTEND;TZID=Europe/Berlin:20261114T140000
+SUMMARY:Speuzer E1 · Heim gegen Spvgg. Oberrad
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:00 Uhr · Anstoß 12
+ :00 Uhr · Heimspiel\nSpeuzer E1 – Spvgg. Oberrad\nTreffpunkt: 11:00 U
+ hr\nAnstoß: 12:00 Uhr\nHeimspiel · 1. Kreisliga · EJKL F · Kreis Fra
+ nkfurt\nRunde: Hauptrunde\nSpielstätte: Mainzer Landstr. 480\, 60326 Fr
+ ankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-
+ /spiel/03292CNGL4000000VS5489BUVV5V31CI\nBitte per Daumen hoch / Frageze
+ ichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am best
+ en bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNGL4000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-22-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261121T090000
+DTEND;TZID=Europe/Berlin:20261121T120000
+SUMMARY:Speuzer E1 · Auswärts bei FV 09 Eschersheim I
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Anstoß 10
+ :00 Uhr · Auswärtsspiel\nFV 09 Eschersheim I – Speuzer E1\nTreffpunk
+ t: 09:00 Uhr\nAnstoß: 10:00 Uhr\nAuswärtsspiel · 1. Kreisliga · EJKL
+  F · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: siehe FUSSBALL.D
+ E\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/03292CN
+ GE0000000VS5489BUVV5V31CI\nBitte per Daumen hoch / Fragezeichen / Daumen
+  runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Abe
+ nd vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNGE0000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-29-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261128T110000
+DTEND;TZID=Europe/Berlin:20261128T140000
+SUMMARY:Speuzer E1 · Heim gegen TG Sachsenhausen I
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:00 Uhr · Anstoß 12
+ :00 Uhr · Heimspiel\nSpeuzer E1 – TG Sachsenhausen I\nTreffpunkt: 11:
+ 00 Uhr\nAnstoß: 12:00 Uhr\nHeimspiel · 1. Kreisliga · EJKL F · Kreis
+  Frankfurt\nRunde: Hauptrunde\nSpielstätte: Mainzer Landstr. 480\, 6032
+ 6 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel
+ /x/-/spiel/03292CNHBC000000VS5489BUVV5V31CI\nBitte per Daumen hoch / Fra
+ gezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am 
+ besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNHBC000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-31-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261205T124000
+DTEND;TZID=Europe/Berlin:20261205T154000
+SUMMARY:Speuzer E1 · Auswärts bei Spvgg. Kickers 1916 1
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 12:40 Uhr · Anstoß 13
+ :40 Uhr · Auswärtsspiel\nSpvgg. Kickers 1916 1 – Speuzer E1\nTreffpu
+ nkt: 12:40 Uhr\nAnstoß: 13:40 Uhr\nAuswärtsspiel · 1. Kreisliga · EJ
+ KL F · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: siehe FUSSBALL
+ .DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/03292
+ CNHDG000000VS5489BUVV5V31CI\nBitte per Daumen hoch / Fragezeichen / Daum
+ en runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum A
+ bend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNHDG000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-40-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261212T123000
+DTEND;TZID=Europe/Berlin:20261212T153000
+SUMMARY:Speuzer E1 · Auswärts bei SG Bornheim / GW 1
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 12:30 Uhr · Anstoß 13
+ :30 Uhr · Auswärtsspiel\nSG Bornheim / GW 1 – Speuzer E1\nTreffpunkt
+ : 12:30 Uhr\nAnstoß: 13:30 Uhr\nAuswärtsspiel · 1. Kreisliga · EJKL 
+ F · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: siehe FUSSBALL.DE
+ \nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/03292CNH
+ PG000000VS5489BUVV5V31CI\nBitte per Daumen hoch / Fragezeichen / Daumen 
+ runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Aben
+ d vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNHPG000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-44-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270213T103000
+DTEND;TZID=Europe/Berlin:20270213T133000
+SUMMARY:Speuzer E1 · Auswärts bei TSG Frankfurter Berg I
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:30 Uhr · Anstoß 11
+ :30 Uhr · Auswärtsspiel\nTSG Frankfurter Berg I – Speuzer E1\nTreffp
+ unkt: 10:30 Uhr\nAnstoß: 11:30 Uhr\nAuswärtsspiel · 1. Kreisliga · E
+ JKL F · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: siehe FUSSBAL
+ L.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/0329
+ 2CNJSK000000VS5489BUVV5V31CI\nBitte per Daumen hoch / Fragezeichen / Dau
+ men runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum 
+ Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNJSK000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-49-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270220T110000
+DTEND;TZID=Europe/Berlin:20270220T140000
+SUMMARY:Speuzer E1 · Heim gegen TSG Frankfurter Berg I
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:00 Uhr · Anstoß 12
+ :00 Uhr · Heimspiel\nSpeuzer E1 – TSG Frankfurter Berg I\nTreffpunkt:
+  11:00 Uhr\nAnstoß: 12:00 Uhr\nHeimspiel · 1. Kreisliga · EJKL F · K
+ reis Frankfurt\nRunde: Hauptrunde\nSpielstätte: Mainzer Landstr. 480\, 
+ 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/s
+ piel/x/-/spiel/03292CNHU0000000VS5489BUVV5V31CI\nBitte per Daumen hoch /
+  Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist –
+  am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNHU0000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-54-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270227T090000
+DTEND;TZID=Europe/Berlin:20270227T120000
+SUMMARY:Speuzer E1 · Auswärts bei Spvgg. Oberrad
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Anstoß 10
+ :00 Uhr · Auswärtsspiel\nSpvgg. Oberrad – Speuzer E1\nTreffpunkt: 09
+ :00 Uhr\nAnstoß: 10:00 Uhr\nAuswärtsspiel · 1. Kreisliga · EJKL F ·
+  Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: siehe FUSSBALL.DE\nAl
+ le Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/03292CNIBC00
+ 0000VS5489BUVV5V31CI\nBitte per Daumen hoch / Fragezeichen / Daumen runt
+ er zurückmelden\, ob euer Kind dabei ist – am besten bis zum Abend vo
+ r dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNIBC000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-57-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270306T110000
+DTEND;TZID=Europe/Berlin:20270306T140000
+SUMMARY:Speuzer E1 · Heim gegen FV 09 Eschersheim I
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:00 Uhr · Anstoß 12
+ :00 Uhr · Heimspiel\nSpeuzer E1 – FV 09 Eschersheim I\nTreffpunkt: 11
+ :00 Uhr\nAnstoß: 12:00 Uhr\nHeimspiel · 1. Kreisliga · EJKL F · Krei
+ s Frankfurt\nRunde: Hauptrunde\nSpielstätte: Mainzer Landstr. 480\, 603
+ 26 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spie
+ l/x/-/spiel/03292CNI28000000VS5489BUVV5V31CI\nBitte per Daumen hoch / Fr
+ agezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am
+  besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNI28000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-64-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270313T091500
+DTEND;TZID=Europe/Berlin:20270313T121500
+SUMMARY:Speuzer E1 · Auswärts bei BSC SW 1919 Ffm. 1
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:15 Uhr · Anstoß 10
+ :15 Uhr · Auswärtsspiel\nBSC SW 1919 Ffm. 1 – Speuzer E1\nTreffpunkt
+ : 09:15 Uhr\nAnstoß: 10:15 Uhr\nAuswärtsspiel · 1. Kreisliga · EJKL 
+ F · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: siehe FUSSBALL.DE
+ \nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/03292CNI
+ O0000000VS5489BUVV5V31CI\nBitte per Daumen hoch / Fragezeichen / Daumen 
+ runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Aben
+ d vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNIO0000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-66-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270410T110000
+DTEND;TZID=Europe/Berlin:20270410T140000
+SUMMARY:Speuzer E1 · Heim gegen Spvgg. Kickers 1916 1
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:00 Uhr · Anstoß 12
+ :00 Uhr · Heimspiel\nSpeuzer E1 – Spvgg. Kickers 1916 1\nTreffpunkt: 
+ 11:00 Uhr\nAnstoß: 12:00 Uhr\nHeimspiel · 1. Kreisliga · EJKL F · Kr
+ eis Frankfurt\nRunde: Hauptrunde\nSpielstätte: Mainzer Landstr. 480\, 6
+ 0326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/sp
+ iel/x/-/spiel/03292CNJ8S000000VS5489BUVV5V31CI\nBitte per Daumen hoch / 
+ Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – 
+ am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNJ8S000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-74-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270417T090000
+DTEND;TZID=Europe/Berlin:20270417T120000
+SUMMARY:Speuzer E1 · Auswärts bei TG Sachsenhausen I
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 09:00 Uhr · Anstoß 10
+ :00 Uhr · Auswärtsspiel\nTG Sachsenhausen I – Speuzer E1\nTreffpunkt
+ : 09:00 Uhr\nAnstoß: 10:00 Uhr\nAuswärtsspiel · 1. Kreisliga · EJKL 
+ F · Kreis Frankfurt\nRunde: Hauptrunde\nSpielstätte: siehe FUSSBALL.DE
+ \nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/03292CNJ
+ 68000000VS5489BUVV5V31CI\nBitte per Daumen hoch / Fragezeichen / Daumen 
+ runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum Aben
+ d vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNJ68000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-77-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270424T110000
+DTEND;TZID=Europe/Berlin:20270424T140000
+SUMMARY:Speuzer E1 · Heim gegen SV Blau-Gelb FFM 1
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:00 Uhr · Anstoß 12
+ :00 Uhr · Heimspiel\nSpeuzer E1 – SV Blau-Gelb FFM 1\nTreffpunkt: 11:
+ 00 Uhr\nAnstoß: 12:00 Uhr\nHeimspiel · 1. Kreisliga · EJKL F · Kreis
+  Frankfurt\nRunde: Hauptrunde\nSpielstätte: Mainzer Landstr. 480\, 6032
+ 6 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel
+ /x/-/spiel/03292CNISK000000VS5489BUVV5V31CI\nBitte per Daumen hoch / Fra
+ gezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am 
+ besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNISK000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-85-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270515T110000
+DTEND;TZID=Europe/Berlin:20270515T140000
+SUMMARY:Speuzer E1 · Heim gegen SG Bornheim / GW 1
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:00 Uhr · Anstoß 12
+ :00 Uhr · Heimspiel\nSpeuzer E1 – SG Bornheim / GW 1\nTreffpunkt: 11:
+ 00 Uhr\nAnstoß: 12:00 Uhr\nHeimspiel · 1. Kreisliga · EJKL F · Kreis
+  Frankfurt\nRunde: Hauptrunde\nSpielstätte: Mainzer Landstr. 480\, 6032
+ 6 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel
+ /x/-/spiel/03292CNJM4000000VS5489BUVV5V31CI\nBitte per Daumen hoch / Fra
+ gezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am 
+ besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNJM4000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-89-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270522T110000
+DTEND;TZID=Europe/Berlin:20270522T140000
+SUMMARY:Speuzer E1 · Heim gegen SG Rot-Weiss Ffm.
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 11:00 Uhr · Anstoß 12
+ :00 Uhr · Heimspiel\nSpeuzer E1 – SG Rot-Weiss Ffm.\nTreffpunkt: 11:0
+ 0 Uhr\nAnstoß: 12:00 Uhr\nHeimspiel · 1. Kreisliga · EJKL F · Kreis 
+ Frankfurt\nRunde: Hauptrunde\nSpielstätte: Mainzer Landstr. 480\, 60326
+  Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel/
+ x/-/spiel/03292CNIHS000000VS5489BUVV5V31CI\nBitte per Daumen hoch / Frag
+ ezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am b
+ esten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNIHS000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
 END:VCALENDAR

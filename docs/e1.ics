@@ -5,10 +5,9 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Speuzer E1
 X-WR-CALDESC:Spielplan des FFV Sportfreunde 04\, Saison 2026/27\, Quelle 
- DFBnet. Verlegungen aktualisieren den bestehenden Termin. Zurzeit stehen
-  nur die Spiele der Qualifikationsrunde fest. Die Spiele der Hauptrunde 
- kommen automatisch in dieses Abo\, sobald der Kreis sie ansetzt – neu 
- abonnieren muss niemand.
+ DFBnet. Verlegungen aktualisieren den bestehenden Termin. Neue und verle
+ gte Spiele trägt der Verein nach\, sobald der Kreis sie ansetzt – neu
+  abonnieren muss niemand.
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
@@ -32,9 +31,9 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:940399-9@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-LAST-MODIFIED:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20260815T090000
 DTEND;TZID=Europe/Berlin:20260815T110000
 SUMMARY:Speuzer E1 · Pokal\, Auswärts bei SV07 Heddernheim 1
@@ -51,9 +50,9 @@ LOCATION:Alexander-Riese-Weg\, 60439 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:540210-65@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-LAST-MODIFIED:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20260820T173000
 DTEND;TZID=Europe/Berlin:20260820T193000
 SUMMARY:Speuzer E1 · Freundschaftsspiel\, Heim gegen SV Blau-Gelb FFM 1
@@ -70,9 +69,9 @@ LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-1@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-LAST-MODIFIED:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20260822T120000
 DTEND;TZID=Europe/Berlin:20260822T140000
 SUMMARY:Speuzer E1 · Heim gegen VfL Germania 1894 1
@@ -90,9 +89,9 @@ LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:940399-24@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-LAST-MODIFIED:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20260826T180000
 DTEND;TZID=Europe/Berlin:20260826T200000
 SUMMARY:Speuzer E1 · Pokal\, Heim gegen 1. Rödelheimer FC 02 1
@@ -109,9 +108,9 @@ LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-5@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-LAST-MODIFIED:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20260829T110000
 DTEND;TZID=Europe/Berlin:20260829T130000
 SUMMARY:Speuzer E1 · Auswärts bei SC Goldstein
@@ -129,9 +128,9 @@ LOCATION:Straßburger Str.\, 60529 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-7@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-LAST-MODIFIED:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20260905T133000
 DTEND;TZID=Europe/Berlin:20260905T153000
 SUMMARY:Speuzer E1 · Auswärts bei SV07 Heddernheim 1
@@ -149,9 +148,9 @@ LOCATION:Alexander-Riese-Weg\, 60439 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-10@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-LAST-MODIFIED:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20260912T120000
 DTEND;TZID=Europe/Berlin:20260912T140000
 SUMMARY:Speuzer E1 · Heim gegen SG Bornheim / GW 2
@@ -169,9 +168,9 @@ LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
 END:VEVENT
 BEGIN:VEVENT
 UID:340610-14@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-LAST-MODIFIED:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20260926T123000
 DTEND;TZID=Europe/Berlin:20260926T143000
 SUMMARY:Speuzer E1 · Auswärts bei 1. Rödelheimer FC 02 1
@@ -186,5 +185,415 @@ URL:https://www.fussball.de/spiel/x/-/spiel/031I12OVL0000000VS5489BUVVKNM
 CATEGORIES:Fussball
 TRANSP:OPAQUE
 LOCATION:Bottenhorner Weg\, 60489 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:540072-233@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261003T110000
+DTEND;TZID=Europe/Berlin:20261003T130000
+SUMMARY:Speuzer E1 · Freundschaftsspiel\, Auswärts bei FC Germ. 08 Ginn
+ heim 2
+DESCRIPTION:FC Germ. 08 Ginnheim 2 – Speuzer E1\nMannschaft: Speuzer E1
+ \nWettbewerb: Freundschaftsspiel · Kreis Frankfurt\nAuswärtsspiel · S
+ pielnummer 233 · Staffel 540072\nSpielstätte: siehe FUSSBALL.DE\nAlle 
+ Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/03286D2FRC00000
+ 0VS5489BTVUCVBQ5B
+URL:https://www.fussball.de/spiel/x/-/spiel/03286D2FRC000000VS5489BTVUCVB
+ Q5B
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:540210-183@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261011T120000
+DTEND;TZID=Europe/Berlin:20261011T140000
+SUMMARY:Speuzer E1 · Freundschaftsspiel\, Auswärts bei FV 09 Eschershei
+ m I
+DESCRIPTION:FV 09 Eschersheim I – Speuzer E1\nMannschaft: Speuzer E1\nW
+ ettbewerb: Freundschaftsspiel · Kreis Frankfurt\nAuswärtsspiel · Spie
+ lnummer 183 · Staffel 540210\nSpielstätte: siehe FUSSBALL.DE\nAlle Inf
+ os zum Spiel: https://www.fussball.de/spiel/x/-/spiel/032AEOJHH8000000VS
+ 5489BTVU989P58
+URL:https://www.fussball.de/spiel/x/-/spiel/032AEOJHH8000000VS5489BTVU989
+ P58
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:540210-197@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261018T120000
+DTEND;TZID=Europe/Berlin:20261018T140000
+SUMMARY:Speuzer E1 · Freundschaftsspiel\, Heim gegen FC Germ. 08 Ginnhei
+ m 1
+DESCRIPTION:Speuzer E1 – FC Germ. 08 Ginnheim 1\nMannschaft: Speuzer E1
+ \nWettbewerb: Freundschaftsspiel · Kreis Frankfurt\nHeimspiel · Spieln
+ ummer 197 · Staffel 540210\nSpielstätte: Mainzer Landstr. 480\, 60326 
+ Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x
+ /-/spiel/032CMJN08G000000VS5489BTVU989P58
+URL:https://www.fussball.de/spiel/x/-/spiel/032CMJN08G000000VS5489BTVU989
+ P58
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-2@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261024T110000
+DTEND;TZID=Europe/Berlin:20261024T130000
+SUMMARY:Speuzer E1 · Auswärts bei SV Blau-Gelb FFM 1
+DESCRIPTION:SV Blau-Gelb FFM 1 – Speuzer E1\nMannschaft: Speuzer E1\nWe
+ ttbewerb: 1. Kreisliga · EJKL F · Kreis Frankfurt\nRunde: Hauptrunde\n
+ Auswärtsspiel · Spielnummer 2 · Staffel 340651\nSpielstätte: siehe F
+ USSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spie
+ l/03292CNH44000000VS5489BUVV5V31CI
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNH44000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:940399-40@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261028T171500
+DTEND;TZID=Europe/Berlin:20261028T191500
+SUMMARY:Speuzer E1 · Pokal\, Heim gegen TSG Frankfurter Berg I
+DESCRIPTION:Speuzer E1 – TSG Frankfurter Berg I\nMannschaft: Speuzer E1
+ \nWettbewerb: Kreispokal · Kreis Frankfurt\nHeimspiel · Spielnummer 40
+  · Staffel 940399\nSpielstätte: Mainzer Landstr. 480\, 60326 Frankfurt
+  am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/
+ 0329HQAI20000000VS5489BUVV5V31CI
+URL:https://www.fussball.de/spiel/x/-/spiel/0329HQAI20000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-9@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261031T123000
+DTEND;TZID=Europe/Berlin:20261031T143000
+SUMMARY:Speuzer E1 · Heim gegen BSC SW 1919 Ffm. 1
+DESCRIPTION:Speuzer E1 – BSC SW 1919 Ffm. 1\nMannschaft: Speuzer E1\nWe
+ ttbewerb: 1. Kreisliga · EJKL F · Kreis Frankfurt\nRunde: Hauptrunde\n
+ Heimspiel · Spielnummer 9 · Staffel 340651\nSpielstätte: Mainzer Land
+ str. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fu
+ ssball.de/spiel/x/-/spiel/03292CNH00000000VS5489BUVV5V31CI
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNH00000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-14@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261107T110000
+DTEND;TZID=Europe/Berlin:20261107T130000
+SUMMARY:Speuzer E1 · Auswärts bei SG Rot-Weiss Ffm.
+DESCRIPTION:SG Rot-Weiss Ffm. – Speuzer E1\nMannschaft: Speuzer E1\nWet
+ tbewerb: 1. Kreisliga · EJKL F · Kreis Frankfurt\nRunde: Hauptrunde\nA
+ uswärtsspiel · Spielnummer 14 · Staffel 340651\nSpielstätte: siehe F
+ USSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spie
+ l/03292CNGPS000000VS5489BUVV5V31CI
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNGPS000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-19@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261114T120000
+DTEND;TZID=Europe/Berlin:20261114T140000
+SUMMARY:Speuzer E1 · Heim gegen Spvgg. Oberrad
+DESCRIPTION:Speuzer E1 – Spvgg. Oberrad\nMannschaft: Speuzer E1\nWettbe
+ werb: 1. Kreisliga · EJKL F · Kreis Frankfurt\nRunde: Hauptrunde\nHeim
+ spiel · Spielnummer 19 · Staffel 340651\nSpielstätte: Mainzer Landstr
+ . 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussb
+ all.de/spiel/x/-/spiel/03292CNGL4000000VS5489BUVV5V31CI
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNGL4000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-22@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261121T100000
+DTEND;TZID=Europe/Berlin:20261121T120000
+SUMMARY:Speuzer E1 · Auswärts bei FV 09 Eschersheim I
+DESCRIPTION:FV 09 Eschersheim I – Speuzer E1\nMannschaft: Speuzer E1\nW
+ ettbewerb: 1. Kreisliga · EJKL F · Kreis Frankfurt\nRunde: Hauptrunde\
+ nAuswärtsspiel · Spielnummer 22 · Staffel 340651\nSpielstätte: siehe
+  FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/sp
+ iel/03292CNGE0000000VS5489BUVV5V31CI
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNGE0000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-29@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261128T120000
+DTEND;TZID=Europe/Berlin:20261128T140000
+SUMMARY:Speuzer E1 · Heim gegen TG Sachsenhausen I
+DESCRIPTION:Speuzer E1 – TG Sachsenhausen I\nMannschaft: Speuzer E1\nWe
+ ttbewerb: 1. Kreisliga · EJKL F · Kreis Frankfurt\nRunde: Hauptrunde\n
+ Heimspiel · Spielnummer 29 · Staffel 340651\nSpielstätte: Mainzer Lan
+ dstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.f
+ ussball.de/spiel/x/-/spiel/03292CNHBC000000VS5489BUVV5V31CI
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNHBC000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-31@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261205T134000
+DTEND;TZID=Europe/Berlin:20261205T154000
+SUMMARY:Speuzer E1 · Auswärts bei Spvgg. Kickers 1916 1
+DESCRIPTION:Spvgg. Kickers 1916 1 – Speuzer E1\nMannschaft: Speuzer E1\
+ nWettbewerb: 1. Kreisliga · EJKL F · Kreis Frankfurt\nRunde: Hauptrund
+ e\nAuswärtsspiel · Spielnummer 31 · Staffel 340651\nSpielstätte: sie
+ he FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/
+ spiel/03292CNHDG000000VS5489BUVV5V31CI
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNHDG000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-40@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261212T133000
+DTEND;TZID=Europe/Berlin:20261212T153000
+SUMMARY:Speuzer E1 · Auswärts bei SG Bornheim / GW 1
+DESCRIPTION:SG Bornheim / GW 1 – Speuzer E1\nMannschaft: Speuzer E1\nWe
+ ttbewerb: 1. Kreisliga · EJKL F · Kreis Frankfurt\nRunde: Hauptrunde\n
+ Auswärtsspiel · Spielnummer 40 · Staffel 340651\nSpielstätte: siehe 
+ FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spi
+ el/03292CNHPG000000VS5489BUVV5V31CI
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNHPG000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-44@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270213T113000
+DTEND;TZID=Europe/Berlin:20270213T133000
+SUMMARY:Speuzer E1 · Auswärts bei TSG Frankfurter Berg I
+DESCRIPTION:TSG Frankfurter Berg I – Speuzer E1\nMannschaft: Speuzer E1
+ \nWettbewerb: 1. Kreisliga · EJKL F · Kreis Frankfurt\nRunde: Hauptrun
+ de\nAuswärtsspiel · Spielnummer 44 · Staffel 340651\nSpielstätte: si
+ ehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-
+ /spiel/03292CNJSK000000VS5489BUVV5V31CI
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNJSK000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-49@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270220T120000
+DTEND;TZID=Europe/Berlin:20270220T140000
+SUMMARY:Speuzer E1 · Heim gegen TSG Frankfurter Berg I
+DESCRIPTION:Speuzer E1 – TSG Frankfurter Berg I\nMannschaft: Speuzer E1
+ \nWettbewerb: 1. Kreisliga · EJKL F · Kreis Frankfurt\nRunde: Hauptrun
+ de\nHeimspiel · Spielnummer 49 · Staffel 340651\nSpielstätte: Mainzer
+  Landstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://w
+ ww.fussball.de/spiel/x/-/spiel/03292CNHU0000000VS5489BUVV5V31CI
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNHU0000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-54@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270227T100000
+DTEND;TZID=Europe/Berlin:20270227T120000
+SUMMARY:Speuzer E1 · Auswärts bei Spvgg. Oberrad
+DESCRIPTION:Spvgg. Oberrad – Speuzer E1\nMannschaft: Speuzer E1\nWettbe
+ werb: 1. Kreisliga · EJKL F · Kreis Frankfurt\nRunde: Hauptrunde\nAusw
+ ärtsspiel · Spielnummer 54 · Staffel 340651\nSpielstätte: siehe FUSS
+ BALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/0
+ 3292CNIBC000000VS5489BUVV5V31CI
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNIBC000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-57@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270306T120000
+DTEND;TZID=Europe/Berlin:20270306T140000
+SUMMARY:Speuzer E1 · Heim gegen FV 09 Eschersheim I
+DESCRIPTION:Speuzer E1 – FV 09 Eschersheim I\nMannschaft: Speuzer E1\nW
+ ettbewerb: 1. Kreisliga · EJKL F · Kreis Frankfurt\nRunde: Hauptrunde\
+ nHeimspiel · Spielnummer 57 · Staffel 340651\nSpielstätte: Mainzer La
+ ndstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.
+ fussball.de/spiel/x/-/spiel/03292CNI28000000VS5489BUVV5V31CI
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNI28000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-64@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270313T101500
+DTEND;TZID=Europe/Berlin:20270313T121500
+SUMMARY:Speuzer E1 · Auswärts bei BSC SW 1919 Ffm. 1
+DESCRIPTION:BSC SW 1919 Ffm. 1 – Speuzer E1\nMannschaft: Speuzer E1\nWe
+ ttbewerb: 1. Kreisliga · EJKL F · Kreis Frankfurt\nRunde: Hauptrunde\n
+ Auswärtsspiel · Spielnummer 64 · Staffel 340651\nSpielstätte: siehe 
+ FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spi
+ el/03292CNIO0000000VS5489BUVV5V31CI
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNIO0000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-66@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270410T120000
+DTEND;TZID=Europe/Berlin:20270410T140000
+SUMMARY:Speuzer E1 · Heim gegen Spvgg. Kickers 1916 1
+DESCRIPTION:Speuzer E1 – Spvgg. Kickers 1916 1\nMannschaft: Speuzer E1\
+ nWettbewerb: 1. Kreisliga · EJKL F · Kreis Frankfurt\nRunde: Hauptrund
+ e\nHeimspiel · Spielnummer 66 · Staffel 340651\nSpielstätte: Mainzer 
+ Landstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://ww
+ w.fussball.de/spiel/x/-/spiel/03292CNJ8S000000VS5489BUVV5V31CI
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNJ8S000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-74@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270417T100000
+DTEND;TZID=Europe/Berlin:20270417T120000
+SUMMARY:Speuzer E1 · Auswärts bei TG Sachsenhausen I
+DESCRIPTION:TG Sachsenhausen I – Speuzer E1\nMannschaft: Speuzer E1\nWe
+ ttbewerb: 1. Kreisliga · EJKL F · Kreis Frankfurt\nRunde: Hauptrunde\n
+ Auswärtsspiel · Spielnummer 74 · Staffel 340651\nSpielstätte: siehe 
+ FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spi
+ el/03292CNJ68000000VS5489BUVV5V31CI
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNJ68000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-77@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270424T120000
+DTEND;TZID=Europe/Berlin:20270424T140000
+SUMMARY:Speuzer E1 · Heim gegen SV Blau-Gelb FFM 1
+DESCRIPTION:Speuzer E1 – SV Blau-Gelb FFM 1\nMannschaft: Speuzer E1\nWe
+ ttbewerb: 1. Kreisliga · EJKL F · Kreis Frankfurt\nRunde: Hauptrunde\n
+ Heimspiel · Spielnummer 77 · Staffel 340651\nSpielstätte: Mainzer Lan
+ dstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.f
+ ussball.de/spiel/x/-/spiel/03292CNISK000000VS5489BUVV5V31CI
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNISK000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-85@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270515T120000
+DTEND;TZID=Europe/Berlin:20270515T140000
+SUMMARY:Speuzer E1 · Heim gegen SG Bornheim / GW 1
+DESCRIPTION:Speuzer E1 – SG Bornheim / GW 1\nMannschaft: Speuzer E1\nWe
+ ttbewerb: 1. Kreisliga · EJKL F · Kreis Frankfurt\nRunde: Hauptrunde\n
+ Heimspiel · Spielnummer 85 · Staffel 340651\nSpielstätte: Mainzer Lan
+ dstr. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.f
+ ussball.de/spiel/x/-/spiel/03292CNJM4000000VS5489BUVV5V31CI
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNJM4000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
+END:VEVENT
+BEGIN:VEVENT
+UID:340651-89@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+LAST-MODIFIED:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270522T120000
+DTEND;TZID=Europe/Berlin:20270522T140000
+SUMMARY:Speuzer E1 · Heim gegen SG Rot-Weiss Ffm.
+DESCRIPTION:Speuzer E1 – SG Rot-Weiss Ffm.\nMannschaft: Speuzer E1\nWet
+ tbewerb: 1. Kreisliga · EJKL F · Kreis Frankfurt\nRunde: Hauptrunde\nH
+ eimspiel · Spielnummer 89 · Staffel 340651\nSpielstätte: Mainzer Land
+ str. 480\, 60326 Frankfurt am Main\nAlle Infos zum Spiel: https://www.fu
+ ssball.de/spiel/x/-/spiel/03292CNIHS000000VS5489BUVV5V31CI
+URL:https://www.fussball.de/spiel/x/-/spiel/03292CNIHS000000VS5489BUVV5V3
+ 1CI
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+LOCATION:Mainzer Landstr. 480\, 60326 Frankfurt am Main
 END:VEVENT
 END:VCALENDAR

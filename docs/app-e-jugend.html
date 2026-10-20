@@ -41,9 +41,9 @@ tr.grp td{background:#F3F5FC;font-size:.7rem;letter-spacing:.09em;text-transform
 <table><tbody id="liste"></tbody></table>
 <div class="fuss">Ein Klick bzw. Tipp auf ein Spiel öffnet die Spielseite auf FUSSBALL.DE.
 Kurzfristige Absagen kommen vom Trainerteam – per Nachricht oder direkt.
-Die E-Jugend spielt zuerst eine Qualifikationsrunde. Die Spiele der Hauptrunde kommen dazu, sobald der Kreis sie ansetzt.</div>
+Die E-Jugend spielt zuerst eine Qualifikationsrunde und danach die Hauptrunde in einer neuen Staffel; beide stehen in dieser Liste.</div>
 <script>
-const STAFFEL = {"E1":["E1","1. Kreisklasse, Gruppe 8","E1-Jugend"],"E2":["E2","1. Kreisklasse, Gruppe 18","E2-Jugend"],"E3":["E3","1. Kreisklasse, Gruppe 22","E3-Jugend"]};
+const STAFFEL = {"E1":["E1","1. Kreisliga","E1-Jugend"],"E2":["E2","1. Kreisklasse, Gruppe 6","E2-Jugend"],"E3":["E3","1. Kreisklasse, Gruppe 10","E3-Jugend"]};
 const TEAMLINK = {"E1":"https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIDBD8C000000VTVG0001VTR8C1K7","E2":"https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE1KH4000000VTVG0001VTR8C1K7","E3":"https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/02PS0CFJCO000000VS5489B1VVQNIHJA"};
 const S = [
 ["E1","A","2026-08-15","09:00","Pokal: SV07 Heddernheim 1","","",""],
@@ -54,15 +54,75 @@ const S = [
 ["E1","A","2026-09-05","13:30","SV07 Heddernheim 1","","031I12OVDO000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
 ["E1","H","2026-09-12","12:00","SG Bornheim / GW 2","","031I12OVBK000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
 ["E1","A","2026-09-26","12:30","1. Rödelheimer FC 02 1","","031I12OVL0000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
+["E1","A","2026-10-03","11:00","Freundschaftsspiel: FC Germ. 08 Ginnheim 2","","03286D2FRC000000VS5489BTVUCVBQ5B",""],
+["E1","A","2026-10-11","12:00","Freundschaftsspiel: FV 09 Eschersheim I","","032AEOJHH8000000VS5489BTVU989P58",""],
+["E1","H","2026-10-18","12:00","Freundschaftsspiel: FC Germ. 08 Ginnheim 1","","032CMJN08G000000VS5489BTVU989P58",""],
+["E1","A","2026-10-24","11:00","SV Blau-Gelb Frankfurt 1","","03292CNH44000000VS5489BUVV5V31CI","Hauptrunde"],
+["E1","H","2026-10-28","17:15","Pokal: TSG Frankfurter Berg I","","0329HQAI20000000VS5489BUVV5V31CI",""],
+["E1","H","2026-10-31","12:30","BSC SW 1919 Frankfurt 1","","03292CNH00000000VS5489BUVV5V31CI","Hauptrunde"],
+["E1","A","2026-11-07","11:00","SG Rot-Weiss Frankfurt","","03292CNGPS000000VS5489BUVV5V31CI","Hauptrunde"],
+["E1","H","2026-11-14","12:00","Spvgg. Oberrad","","03292CNGL4000000VS5489BUVV5V31CI","Hauptrunde"],
+["E1","A","2026-11-21","10:00","FV 09 Eschersheim I","","03292CNGE0000000VS5489BUVV5V31CI","Hauptrunde"],
+["E1","H","2026-11-28","12:00","TG Sachsenhausen I","","03292CNHBC000000VS5489BUVV5V31CI","Hauptrunde"],
+["E1","A","2026-12-05","13:40","Spvgg. Kickers 1916 1","","03292CNHDG000000VS5489BUVV5V31CI","Hauptrunde"],
+["E1","A","2026-12-12","13:30","SG Bornheim / GW 1","","03292CNHPG000000VS5489BUVV5V31CI","Hauptrunde"],
+["E1","A","2027-02-13","11:30","TSG Frankfurter Berg I","","03292CNJSK000000VS5489BUVV5V31CI","Hauptrunde"],
+["E1","H","2027-02-20","12:00","TSG Frankfurter Berg I","","03292CNHU0000000VS5489BUVV5V31CI","Hauptrunde"],
+["E1","A","2027-02-27","10:00","Spvgg. Oberrad","","03292CNIBC000000VS5489BUVV5V31CI","Hauptrunde"],
+["E1","H","2027-03-06","12:00","FV 09 Eschersheim I","","03292CNI28000000VS5489BUVV5V31CI","Hauptrunde"],
+["E1","A","2027-03-13","10:15","BSC SW 1919 Frankfurt 1","","03292CNIO0000000VS5489BUVV5V31CI","Hauptrunde"],
+["E1","H","2027-04-10","12:00","Spvgg. Kickers 1916 1","","03292CNJ8S000000VS5489BUVV5V31CI","Hauptrunde"],
+["E1","A","2027-04-17","10:00","TG Sachsenhausen I","","03292CNJ68000000VS5489BUVV5V31CI","Hauptrunde"],
+["E1","H","2027-04-24","12:00","SV Blau-Gelb Frankfurt 1","","03292CNISK000000VS5489BUVV5V31CI","Hauptrunde"],
+["E1","H","2027-05-15","12:00","SG Bornheim / GW 1","","03292CNJM4000000VS5489BUVV5V31CI","Hauptrunde"],
+["E1","H","2027-05-22","12:00","SG Rot-Weiss Frankfurt","","03292CNIHS000000VS5489BUVV5V31CI","Hauptrunde"],
 ["E2","H","2026-08-22","11:30","Spvgg. Kickers 1916 4","","031HO7T0VC000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
 ["E2","A","2026-08-29","12:30","FSV 1910 Bergen 2","","031HO7T0TS000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
 ["E2","A","2026-09-05","11:00","DJK SW Griesheim 3","","031HO7T0RC000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
 ["E2","H","2026-09-12","11:30","SG Bornheim / GW 3","","031HO7T0PO000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
+["E2","A","2026-09-19","11:00","Freundschaftsspiel: 1. Rödelheimer FC 02 4","","031U74MT5C000000VS5489BUVSORQI22",""],
 ["E2","A","2026-09-26","12:30","TSG 1888 Nieder-Erlenbach 2","","031HO7T12C000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
+["E2","A","2026-10-04","11:00","Freundschaftsspiel: SC Riedberg V","","0325JVPLD0000000VS5489BUVV5UN1SE",""],
+["E2","A","2026-10-11","10:00","Freundschaftsspiel: SV Bosnien-Herzegowina FFM 2 (FS)","","032AP41R80000000VS5489BTVU989P58",""],
+["E2","H","2026-10-19","18:00","Freundschaftsspiel: SFD Schwanheim E2","","032DLDVE10000000VS5489BUVSGKI48U",""],
+["E2","A","2026-10-24","09:30","SV Blau-Gelb Frankfurt 4","","0328D7NA64000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E2","H","2026-10-31","11:30","BSC SW 1919 Frankfurt 3","","0328D7NA34000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E2","A","2026-11-07","09:00","SC Riedberg IV","","0328D7N9U0000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E2","H","2026-11-14","11:30","Spvgg. Oberrad IV","","0328D7N9OS000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E2","A","2026-11-21","12:30","FC Kalbach II","","0328D7N9IS000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E2","H","2026-11-28","11:30","SC Weiss-Blau Frankfurt II","","0328D7NAE0000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E2","A","2026-12-05","12:30","Spvgg. Kickers 1916 2","","0328D7NAG8000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E2","A","2026-12-12","12:30","SG Bornheim / GW 4","","0328D7NAQG000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E2","A","2027-02-13","12:30","1. Rödelheimer FC 02 4","","0328D7ND2K000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E2","H","2027-02-20","11:30","1. Rödelheimer FC 02 4","","0328D7NAV8000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E2","A","2027-02-27","11:00","Spvgg. Oberrad IV","","0328D7NBC0000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E2","H","2027-03-06","11:30","FC Kalbach II","","0328D7NB2O000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E2","A","2027-03-13","09:00","BSC SW 1919 Frankfurt 3","","0328D7NBQ8000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E2","H","2027-04-10","11:30","Spvgg. Kickers 1916 2","","0328D7NCC8000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E2","A","2027-04-17","11:00","SC Weiss-Blau Frankfurt II","","0328D7NC98000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E2","H","2027-04-24","11:30","SV Blau-Gelb Frankfurt 4","","0328D7NBUS000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E2","H","2027-05-15","11:30","SG Bornheim / GW 4","","0328D7NCRS000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E2","H","2027-05-22","11:30","SC Riedberg IV","","0328D7NBIO000000VS5489BUVUFHD2VV","Hauptrunde"],
 ["E3","H","2026-08-22","11:00","FSV 1910 Bergen 3","","031HO7VE4G000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
 ["E3","A","2026-09-05","11:00","SC Weiss-Blau Frankfurt II","","031HO7VE0K000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
 ["E3","H","2026-09-12","11:00","SG Harheim 2","","031HO7VDUS000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
-["E3","A","2026-09-26","12:30","Riedberger SV II","","031HO7VE78000000VS5489BUVVKNMR0J","Qualifikationsrunde"]];
+["E3","A","2026-09-26","12:30","Riedberger SV II","","031HO7VE78000000VS5489BUVVKNMR0J","Qualifikationsrunde"],
+["E3","A","2026-10-24","11:30","TSG Niederrad 1898 2","","0328D7Q7IS000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E3","H","2026-10-31","11:30","FC Germania 1911 Enkheim 4","","0328D7Q7FS000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E3","A","2026-11-07","12:30","SV Niederursel 3","","0328D7Q7AG000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E3","H","2026-11-14","11:00","TG Sachsenhausen IV","","0328D7Q75G000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E3","A","2026-11-21","10:00","FV 09 Eschersheim II","","0328D7Q6US000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E3","H","2026-11-28","11:00","VfR Bockenheim 2","","0328D7Q7PO000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E3","A","2026-12-05","12:30","FG Seckbach 3","","0328D7Q7RO000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E3","A","2026-12-12","10:00","Concordia Eschersheim II","","0328D7Q85K000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E3","A","2027-02-27","11:15","TG Sachsenhausen IV","","0328D7Q8N4000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E3","H","2027-03-06","11:00","FV 09 Eschersheim II","","0328D7Q8DS000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E3","A","2027-03-13","11:00","FC Germania 1911 Enkheim 4","","0328D7Q94G000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E3","H","2027-04-10","11:00","FG Seckbach 3","","0328D7Q9MG000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E3","A","2027-04-17","10:00","VfR Bockenheim 2","","0328D7Q9JC000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E3","H","2027-04-24","11:00","TSG Niederrad 1898 2","","0328D7Q98S000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E3","H","2027-05-15","11:00","Concordia Eschersheim II","","0328D7QA4C000000VS5489BUVUFHD2VV","Hauptrunde"],
+["E3","H","2027-05-22","11:00","SV Niederursel 3","","0328D7Q8TS000000VS5489BUVUFHD2VV","Hauptrunde"]];
 const heute = new Date();
 // Team-Vorauswahl per Adresse: app-d-jugend.html#D3 oeffnet den Reiter D3
 // (Website-Teamseiten der Sportfreunde nutzen das, 21.09.2026).

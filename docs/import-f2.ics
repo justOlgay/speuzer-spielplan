@@ -30,8 +30,8 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:340231-198-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20261024T093000
 DTEND;TZID=Europe/Berlin:20261024T123000
 SUMMARY:Speuzer F2 · Kinderfestival bei Spvgg. 03 Fechenheim III
@@ -46,8 +46,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340231-213-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20261031T083000
 DTEND;TZID=Europe/Berlin:20261031T113000
 SUMMARY:Speuzer F2 · Kinderfestival bei Concordia Eschersheim 2
@@ -57,6 +57,22 @@ DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:30 Uhr · Beginn 09:
  elstätte: Eschersheimer Landstr. 328\, 60320 Frankfurt am Main\nBitte p
  er Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Ki
  nd dabei ist – am besten bis zum Abend vor dem Spiel.
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:340231-270-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261107T100000
+DTEND;TZID=Europe/Berlin:20261107T130000
+SUMMARY:Speuzer F2 · Kinderfestival bei FC Tempo Ffm 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Beginn 11:
+ 00 Uhr · auswärts\nKinderfestival bei FC Tempo Ffm 2\nTreffpunkt: 10:0
+ 0 Uhr\nBeginn: 11:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielstätte
+ : Am Ginnheimer Wäldchen 9\, 60431 Frankfurt am Main\nBitte per Daumen 
+ hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei i
+ st – am besten bis zum Abend vor dem Spiel.
 CATEGORIES:Fussball
 TRANSP:OPAQUE
 END:VEVENT

@@ -30,8 +30,8 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:343410-62-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20261024T120000
 DTEND;TZID=Europe/Berlin:20261024T150000
 SUMMARY:Speuzer A-Jugend · Auswärts bei SG Oberhoechstadt 1
@@ -50,8 +50,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-69-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20261031T150000
 DTEND;TZID=Europe/Berlin:20261031T180000
 SUMMARY:Speuzer A-Jugend · Heim gegen FC Bayern Alzenau 2
@@ -70,8 +70,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-74-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20261108T100000
 DTEND;TZID=Europe/Berlin:20261108T130000
 SUMMARY:Speuzer A-Jugend · Auswärts bei FSV Bischofsheim 1
@@ -90,19 +90,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-83-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20261121T150000
 DTEND;TZID=Europe/Berlin:20261121T180000
 SUMMARY:Speuzer A-Jugend · Heim gegen JFV Nidda / Schotten 1
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 15:00 Uhr · Anstoß 16
  :00 Uhr · Heimspiel\nSpeuzer A-Jugend – JFV Nidda / Schotten 1\nTreff
  punkt: 15:00 Uhr\nAnstoß: 16:00 Uhr\nHeimspiel · Gruppenliga · AJGL F
- rankfurt · Region Frankfurt\nSpielstätte: Sportplatz Mainzer Landstras
- se\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/ma
- nnschaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G\nBitte
-  per Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer 
- Kind dabei ist – am besten bis zum Abend vor dem Spiel.
+ rankfurt · Region Frankfurt\nSpielstätte: Am Römerhof 9\, 60486 Frank
+ furt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x
+ /-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G\nBitte per Daume
+ n hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei
+  ist – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -110,8 +110,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-86-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20261128T170000
 DTEND;TZID=Europe/Berlin:20261128T200000
 SUMMARY:Speuzer A-Jugend · Auswärts bei JSG Kirdorf 1
@@ -130,19 +130,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-98-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270227T150000
 DTEND;TZID=Europe/Berlin:20270227T180000
 SUMMARY:Speuzer A-Jugend · Heim gegen FV Bad Vilbel 1
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 15:00 Uhr · Anstoß 16
  :00 Uhr · Heimspiel\nSpeuzer A-Jugend – FV Bad Vilbel 1\nTreffpunkt: 
  15:00 Uhr\nAnstoß: 16:00 Uhr\nHeimspiel · Gruppenliga · AJGL Frankfur
- t · Region Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Fr
- ankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaf
- t/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G\nBitte per Da
- umen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind da
- bei ist – am besten bis zum Abend vor dem Spiel.
+ t · Region Frankfurt\nSpielstätte: Am Römerhof 9\, 60486 Frankfurt am
+  Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/sais
+ on/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G\nBitte per Daumen hoch 
+ / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist 
+ – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -150,8 +150,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-104-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270306T170000
 DTEND;TZID=Europe/Berlin:20270306T200000
 SUMMARY:Speuzer A-Jugend · Auswärts bei JFV Nidda / Schotten 1
@@ -170,8 +170,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-111-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270313T170000
 DTEND;TZID=Europe/Berlin:20270313T200000
 SUMMARY:Speuzer A-Jugend · Auswärts bei SV Viktoria Preussen 1
@@ -190,19 +190,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-116-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270320T150000
 DTEND;TZID=Europe/Berlin:20270320T180000
 SUMMARY:Speuzer A-Jugend · Heim gegen 1. FC 1906 Erlensee 2
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 15:00 Uhr · Anstoß 16
  :00 Uhr · Heimspiel\nSpeuzer A-Jugend – 1. FC 1906 Erlensee 2\nTreffp
  unkt: 15:00 Uhr\nAnstoß: 16:00 Uhr\nHeimspiel · Gruppenliga · AJGL Fr
- ankfurt · Region Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrass
- e\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/man
- nschaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G\nBitte 
- per Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer K
- ind dabei ist – am besten bis zum Abend vor dem Spiel.
+ ankfurt · Region Frankfurt\nSpielstätte: Am Römerhof 9\, 60486 Frankf
+ urt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/
+ -/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G\nBitte per Daumen
+  hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei 
+ ist – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -210,8 +210,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-125-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270403T150000
 DTEND;TZID=Europe/Berlin:20270403T180000
 SUMMARY:Speuzer A-Jugend · Auswärts bei TuS Makkabi Frankfurt 1
@@ -230,19 +230,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-128-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270410T150000
 DTEND;TZID=Europe/Berlin:20270410T180000
 SUMMARY:Speuzer A-Jugend · Heim gegen Spvgg. Oberrad 1
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 15:00 Uhr · Anstoß 16
  :00 Uhr · Heimspiel\nSpeuzer A-Jugend – Spvgg. Oberrad 1\nTreffpunkt:
   15:00 Uhr\nAnstoß: 16:00 Uhr\nHeimspiel · Gruppenliga · AJGL Frankfu
- rt · Region Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, F
- rankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannscha
- ft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G\nBitte per D
- aumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind d
- abei ist – am besten bis zum Abend vor dem Spiel.
+ rt · Region Frankfurt\nSpielstätte: Am Römerhof 9\, 60486 Frankfurt a
+ m Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/sai
+ son/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G\nBitte per Daumen hoch
+  / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist 
+ – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -250,8 +250,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-139-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270417T150000
 DTEND;TZID=Europe/Berlin:20270417T180000
 SUMMARY:Speuzer A-Jugend · Auswärts bei Spvgg. Neu-Isenburg 2
@@ -270,19 +270,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-146-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270424T150000
 DTEND;TZID=Europe/Berlin:20270424T180000
 SUMMARY:Speuzer A-Jugend · Heim gegen SG Oberhoechstadt 1
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 15:00 Uhr · Anstoß 16
  :00 Uhr · Heimspiel\nSpeuzer A-Jugend – SG Oberhoechstadt 1\nTreffpun
  kt: 15:00 Uhr\nAnstoß: 16:00 Uhr\nHeimspiel · Gruppenliga · AJGL Fran
- kfurt · Region Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\
- , Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/manns
- chaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G\nBitte pe
- r Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kin
- d dabei ist – am besten bis zum Abend vor dem Spiel.
+ kfurt · Region Frankfurt\nSpielstätte: Am Römerhof 9\, 60486 Frankfur
+ t am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/
+ saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G\nBitte per Daumen h
+ och / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei is
+ t – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -290,8 +290,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-153-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270502T100000
 DTEND;TZID=Europe/Berlin:20270502T130000
 SUMMARY:Speuzer A-Jugend · Auswärts bei FC Bayern Alzenau 2
@@ -310,19 +310,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-158-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270508T150000
 DTEND;TZID=Europe/Berlin:20270508T180000
 SUMMARY:Speuzer A-Jugend · Heim gegen FSV Bischofsheim 1
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 15:00 Uhr · Anstoß 16
  :00 Uhr · Heimspiel\nSpeuzer A-Jugend – FSV Bischofsheim 1\nTreffpunk
  t: 15:00 Uhr\nAnstoß: 16:00 Uhr\nHeimspiel · Gruppenliga · AJGL Frank
- furt · Region Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\,
-  Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannsc
- haft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G\nBitte per
-  Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind
-  dabei ist – am besten bis zum Abend vor dem Spiel.
+ furt · Region Frankfurt\nSpielstätte: Am Römerhof 9\, 60486 Frankfurt
+  am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/s
+ aison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G\nBitte per Daumen ho
+ ch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist
+  – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -330,19 +330,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-163-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270522T150000
 DTEND;TZID=Europe/Berlin:20270522T180000
 SUMMARY:Speuzer A-Jugend · Heim gegen JSG Kirdorf 1
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 15:00 Uhr · Anstoß 16
  :00 Uhr · Heimspiel\nSpeuzer A-Jugend – JSG Kirdorf 1\nTreffpunkt: 15
  :00 Uhr\nAnstoß: 16:00 Uhr\nHeimspiel · Gruppenliga · AJGL Frankfurt 
- · Region Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Fran
- kfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/
- x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G\nBitte per Daum
- en hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabe
- i ist – am besten bis zum Abend vor dem Spiel.
+ · Region Frankfurt\nSpielstätte: Am Römerhof 9\, 60486 Frankfurt am M
+ ain\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/saison
+ /2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G\nBitte per Daumen hoch / 
+ Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – 
+ am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball
@@ -350,8 +350,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-174-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270530T171500
 DTEND;TZID=Europe/Berlin:20270530T201500
 SUMMARY:Speuzer A-Jugend · Auswärts bei Karbener SV 2
@@ -370,19 +370,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:343410-176-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270605T170000
 DTEND;TZID=Europe/Berlin:20270605T200000
 SUMMARY:Speuzer A-Jugend · Heim gegen Spvgg. Langenselbold 1
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 17:00 Uhr · Anstoß 18
  :00 Uhr · Heimspiel\nSpeuzer A-Jugend – Spvgg. Langenselbold 1\nTreff
  punkt: 17:00 Uhr\nAnstoß: 18:00 Uhr\nHeimspiel · Gruppenliga · AJGL F
- rankfurt · Region Frankfurt\nSpielstätte: Sportplatz Mainzer Landstras
- se\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/ma
- nnschaft/x/-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G\nBitte
-  per Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer 
- Kind dabei ist – am besten bis zum Abend vor dem Spiel.
+ rankfurt · Region Frankfurt\nSpielstätte: Am Römerhof 9\, 60486 Frank
+ furt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x
+ /-/saison/2627/team-id/019ORCB50G000000VV0AG80NVUQ1MD7G\nBitte per Daume
+ n hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei
+  ist – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/019ORCB50G
  000000VV0AG80NVUQ1MD7G
 CATEGORIES:Fussball

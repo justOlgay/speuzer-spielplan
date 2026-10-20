@@ -30,8 +30,8 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:341727-128-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20261025T140000
 DTEND;TZID=Europe/Berlin:20261025T170000
 SUMMARY:Speuzer Herren · Heim gegen FC Corumspor Ffm
@@ -50,8 +50,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-144-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20261101T113000
 DTEND;TZID=Europe/Berlin:20261101T143000
 SUMMARY:Speuzer Herren · Auswärts bei Concordia Eschersheim II
@@ -70,19 +70,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-146-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20261108T133000
 DTEND;TZID=Europe/Berlin:20261108T163000
 SUMMARY:Speuzer Herren · Heim gegen SG Harheim II
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 13:30 Uhr · Anstoß 14
  :30 Uhr · Heimspiel\nSpeuzer Herren – SG Harheim II\nTreffpunkt: 13:3
  0 Uhr\nAnstoß: 14:30 Uhr\nHeimspiel · Kreisliga A · KLA Frankfurt Gr.
-  1 · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Fr
- ankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaf
- t/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7\nBitte per Da
- umen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind da
- bei ist – am besten bis zum Abend vor dem Spiel.
+  1 · Kreis Frankfurt\nSpielstätte: Am Römerhof 9\, 60486 Frankfurt am
+  Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/sais
+ on/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7\nBitte per Daumen hoch 
+ / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist 
+ – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -90,19 +90,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-156-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20261115T140000
 DTEND;TZID=Europe/Berlin:20261115T170000
 SUMMARY:Speuzer Herren · Heim gegen VFR Bockenheim
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 14:00 Uhr · Anstoß 15
  :00 Uhr · Heimspiel\nSpeuzer Herren – VFR Bockenheim\nTreffpunkt: 14:
  00 Uhr\nAnstoß: 15:00 Uhr\nHeimspiel · Kreisliga A · KLA Frankfurt Gr
- . 1 · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, F
- rankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannscha
- ft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7\nBitte per D
- aumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind d
- abei ist – am besten bis zum Abend vor dem Spiel.
+ . 1 · Kreis Frankfurt\nSpielstätte: Am Römerhof 9\, 60486 Frankfurt a
+ m Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/sai
+ son/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7\nBitte per Daumen hoch
+  / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist 
+ – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -110,19 +110,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-176-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20261129T133000
 DTEND;TZID=Europe/Berlin:20261129T163000
 SUMMARY:Speuzer Herren · Heim gegen TSG 51 Ffm
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 13:30 Uhr · Anstoß 14
  :30 Uhr · Heimspiel\nSpeuzer Herren – TSG 51 Ffm\nTreffpunkt: 13:30 U
  hr\nAnstoß: 14:30 Uhr\nHeimspiel · Kreisliga A · KLA Frankfurt Gr. 1 
- · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Frank
- furt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x
- /-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7\nBitte per Daume
- n hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei
-  ist – am besten bis zum Abend vor dem Spiel.
+ · Kreis Frankfurt\nSpielstätte: Am Römerhof 9\, 60486 Frankfurt am Ma
+ in\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/saison/
+ 2627/team-id/011MICFB14000000VTVG0001VTR8C1K7\nBitte per Daumen hoch / F
+ ragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – a
+ m besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -130,8 +130,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-182-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20261206T110000
 DTEND;TZID=Europe/Berlin:20261206T140000
 SUMMARY:Speuzer Herren · Auswärts bei TSG Niederrad 1898
@@ -149,9 +149,29 @@ CATEGORIES:Fussball
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
+UID:540014-207-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270131T120000
+DTEND;TZID=Europe/Berlin:20270131T150000
+SUMMARY:Speuzer Herren · Freundschaftsspiel\, Auswärts bei BSC Kelsterb
+ ach
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 12:00 Uhr · Anstoß 13
+ :00 Uhr · Auswärtsspiel\nBSC Kelsterbach – Speuzer Herren\nTreffpunk
+ t: 12:00 Uhr\nAnstoß: 13:00 Uhr\nAuswärtsspiel · Freundschaftsspiel\n
+ Spielstätte: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussb
+ all.de/spiel/x/-/spiel/032CANKFAK000000VS5489BTVU989P58\nBitte per Daume
+ n hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei
+  ist – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/032CANKFAK000000VS5489BTVU989
+ P58
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
 UID:341727-200-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270228T140000
 DTEND;TZID=Europe/Berlin:20270228T170000
 SUMMARY:Speuzer Herren · Auswärts bei SG Praunheim 1908
@@ -170,19 +190,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-216-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270307T143000
 DTEND;TZID=Europe/Berlin:20270307T173000
 SUMMARY:Speuzer Herren · Heim gegen Spvgg. 02 Griesheim II
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 14:30 Uhr · Anstoß 15
  :30 Uhr · Heimspiel\nSpeuzer Herren – Spvgg. 02 Griesheim II\nTreffpu
  nkt: 14:30 Uhr\nAnstoß: 15:30 Uhr\nHeimspiel · Kreisliga A · KLA Fran
- kfurt Gr. 1 · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstr
- asse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/
- mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7\nBit
- te per Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob eue
- r Kind dabei ist – am besten bis zum Abend vor dem Spiel.
+ kfurt Gr. 1 · Kreis Frankfurt\nSpielstätte: Am Römerhof 9\, 60486 Fra
+ nkfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft
+ /x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7\nBitte per Dau
+ men hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dab
+ ei ist – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -190,8 +210,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-218-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270314T140000
 DTEND;TZID=Europe/Berlin:20270314T170000
 SUMMARY:Speuzer Herren · Auswärts bei DJK SW Griesheim
@@ -210,19 +230,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-232-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270321T143000
 DTEND;TZID=Europe/Berlin:20270321T173000
 SUMMARY:Speuzer Herren · Heim gegen SV Niederursel
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 14:30 Uhr · Anstoß 15
  :30 Uhr · Heimspiel\nSpeuzer Herren – SV Niederursel\nTreffpunkt: 14:
  30 Uhr\nAnstoß: 15:30 Uhr\nHeimspiel · Kreisliga A · KLA Frankfurt Gr
- . 1 · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, F
- rankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannscha
- ft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7\nBitte per D
- aumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind d
- abei ist – am besten bis zum Abend vor dem Spiel.
+ . 1 · Kreis Frankfurt\nSpielstätte: Am Römerhof 9\, 60486 Frankfurt a
+ m Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/sai
+ son/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7\nBitte per Daumen hoch
+  / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist 
+ – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -230,8 +250,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-236-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270404T140000
 DTEND;TZID=Europe/Berlin:20270404T170000
 SUMMARY:Speuzer Herren · Auswärts bei SC Riedberg
@@ -250,19 +270,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-248-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270411T143000
 DTEND;TZID=Europe/Berlin:20270411T173000
 SUMMARY:Speuzer Herren · Heim gegen FC Tempo Ffm II
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 14:30 Uhr · Anstoß 15
  :30 Uhr · Heimspiel\nSpeuzer Herren – FC Tempo Ffm II\nTreffpunkt: 14
  :30 Uhr\nAnstoß: 15:30 Uhr\nHeimspiel · Kreisliga A · KLA Frankfurt G
- r. 1 · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, 
- Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannsch
- aft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7\nBitte per 
- Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind 
- dabei ist – am besten bis zum Abend vor dem Spiel.
+ r. 1 · Kreis Frankfurt\nSpielstätte: Am Römerhof 9\, 60486 Frankfurt 
+ am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/sa
+ ison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7\nBitte per Daumen hoc
+ h / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist 
+ – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -270,8 +290,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-254-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270418T140000
 DTEND;TZID=Europe/Berlin:20270418T170000
 SUMMARY:Speuzer Herren · Auswärts bei FV 1920 Hausen
@@ -290,19 +310,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-264-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270425T143000
 DTEND;TZID=Europe/Berlin:20270425T173000
 SUMMARY:Speuzer Herren · Heim gegen SV Eritrea Ffm
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 14:30 Uhr · Anstoß 15
  :30 Uhr · Heimspiel\nSpeuzer Herren – SV Eritrea Ffm\nTreffpunkt: 14:
  30 Uhr\nAnstoß: 15:30 Uhr\nHeimspiel · Kreisliga A · KLA Frankfurt Gr
- . 1 · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, F
- rankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannscha
- ft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7\nBitte per D
- aumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind d
- abei ist – am besten bis zum Abend vor dem Spiel.
+ . 1 · Kreis Frankfurt\nSpielstätte: Am Römerhof 9\, 60486 Frankfurt a
+ m Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/sai
+ son/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7\nBitte per Daumen hoch
+  / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist 
+ – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -310,8 +330,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-272-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270502T140000
 DTEND;TZID=Europe/Berlin:20270502T170000
 SUMMARY:Speuzer Herren · Auswärts bei FC Croatia Ffm
@@ -330,8 +350,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-281-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270509T140000
 DTEND;TZID=Europe/Berlin:20270509T170000
 SUMMARY:Speuzer Herren · Auswärts bei FC Corumspor Ffm
@@ -350,19 +370,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-297-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270515T140000
 DTEND;TZID=Europe/Berlin:20270515T170000
 SUMMARY:Speuzer Herren · Heim gegen Concordia Eschersheim II
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 14:00 Uhr · Anstoß 15
  :00 Uhr · Heimspiel\nSpeuzer Herren – Concordia Eschersheim II\nTreff
  punkt: 14:00 Uhr\nAnstoß: 15:00 Uhr\nHeimspiel · Kreisliga A · KLA Fr
- ankfurt Gr. 1 · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Lands
- trasse\, Frankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.d
- e/mannschaft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7\nB
- itte per Daumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob e
- uer Kind dabei ist – am besten bis zum Abend vor dem Spiel.
+ ankfurt Gr. 1 · Kreis Frankfurt\nSpielstätte: Am Römerhof 9\, 60486 F
+ rankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannscha
+ ft/x/-/saison/2627/team-id/011MICFB14000000VTVG0001VTR8C1K7\nBitte per D
+ aumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind d
+ abei ist – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MICFB14
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -370,8 +390,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:341727-299-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270523T120000
 DTEND;TZID=Europe/Berlin:20270523T150000
 SUMMARY:Speuzer Herren · Auswärts bei SG Harheim II

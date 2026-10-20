@@ -30,8 +30,8 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:340782-38-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20261025T093000
 DTEND;TZID=Europe/Berlin:20261025T123000
 SUMMARY:Speuzer D1 · Auswärts bei 1. Rödelheimer FC 02 1
@@ -50,28 +50,47 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-46-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20261101T120000
 DTEND;TZID=Europe/Berlin:20261101T150000
 SUMMARY:Speuzer D1 · Heim gegen FSV 1910 Bergen 1
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 12:00 Uhr · Anstoß 13
  :00 Uhr · Heimspiel\nSpeuzer D1 – FSV 1910 Bergen 1\nTreffpunkt: 12:0
  0 Uhr\nAnstoß: 13:00 Uhr\nHeimspiel · Kreisliga A · DJKL F Gr 1 · Kr
- eis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Frankfurt 
- am Main\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/0
- 31I71O3VS000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezeichen / 
- Daumen runter zurückmelden\, ob euer Kind dabei ist – am besten bis z
- um Abend vor dem Spiel.
+ eis Frankfurt\nSpielstätte: Mainzer Landstr. 480\, 60326 Frankfurt am M
+ ain\nAlle Infos zum Spiel: https://www.fussball.de/spiel/x/-/spiel/031I7
+ 1O3VS000000VS5489BUVVKNMR0J\nBitte per Daumen hoch / Fragezeichen / Daum
+ en runter zurückmelden\, ob euer Kind dabei ist – am besten bis zum A
+ bend vor dem Spiel.
 URL:https://www.fussball.de/spiel/x/-/spiel/031I71O3VS000000VS5489BUVVKNM
  R0J
 CATEGORIES:Fussball
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
+UID:940397-28-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20261104T173000
+DTEND;TZID=Europe/Berlin:20261104T203000
+SUMMARY:Speuzer D1 · Pokal\, Auswärts bei FSV 1910 Bergen 1
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 17:30 Uhr · Anstoß 18
+ :30 Uhr · Auswärtsspiel\nFSV 1910 Bergen 1 – Speuzer D1\nTreffpunkt:
+  17:30 Uhr\nAnstoß: 18:30 Uhr\nAuswärtsspiel · Kreispokal\nSpielstät
+ te: siehe FUSSBALL.DE\nAlle Infos zum Spiel: https://www.fussball.de/spi
+ el/x/-/spiel/03200NMP34000000VS5489BUVSORQI22\nBitte per Daumen hoch / F
+ ragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – a
+ m besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/spiel/x/-/spiel/03200NMP34000000VS5489BUVSORQ
+ I22
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
 UID:340782-53-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20261107T130000
 DTEND;TZID=Europe/Berlin:20261107T160000
 SUMMARY:Speuzer D1 · Auswärts bei FV 09 Eschersheim 2
@@ -90,19 +109,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-58-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20261129T120000
 DTEND;TZID=Europe/Berlin:20261129T150000
 SUMMARY:Speuzer D1 · Heim gegen Spvgg. Kickers 1916 1
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 12:00 Uhr · Anstoß 13
  :00 Uhr · Heimspiel\nSpeuzer D1 – Spvgg. Kickers 1916 1\nTreffpunkt: 
  12:00 Uhr\nAnstoß: 13:00 Uhr\nHeimspiel · Kreisliga A · DJKL F Gr 1 
- · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Frank
- furt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x
- /-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7\nBitte per Daume
- n hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei
-  ist – am besten bis zum Abend vor dem Spiel.
+ · Kreis Frankfurt\nSpielstätte: Mainzer Landstr. 480\, 60326 Frankfurt
+  am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/s
+ aison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7\nBitte per Daumen ho
+ ch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist
+  – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -110,8 +129,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-63-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20261206T100000
 DTEND;TZID=Europe/Berlin:20261206T130000
 SUMMARY:Speuzer D1 · Auswärts bei FC Germania 1911 Enkheim 1
@@ -130,8 +149,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-130-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270214T080000
 DTEND;TZID=Europe/Berlin:20270214T110000
 SUMMARY:Speuzer D1 · Auswärts bei FFC Olympia 07 I
@@ -150,8 +169,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-70-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270221T080000
 DTEND;TZID=Europe/Berlin:20270221T110000
 SUMMARY:Speuzer D1 · Auswärts bei FG Seckbach 1
@@ -170,8 +189,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-76-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270227T093000
 DTEND;TZID=Europe/Berlin:20270227T123000
 SUMMARY:Speuzer D1 · Auswärts bei Spvgg. Kickers 1916 1
@@ -190,19 +209,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-81-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270307T120000
 DTEND;TZID=Europe/Berlin:20270307T150000
 SUMMARY:Speuzer D1 · Heim gegen FC Germania 1911 Enkheim 1
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 12:00 Uhr · Anstoß 13
  :00 Uhr · Heimspiel\nSpeuzer D1 – FC Germania 1911 Enkheim 1\nTreffpu
  nkt: 12:00 Uhr\nAnstoß: 13:00 Uhr\nHeimspiel · Kreisliga A · DJKL F G
- r 1 · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, F
- rankfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannscha
- ft/x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7\nBitte per D
- aumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind d
- abei ist – am besten bis zum Abend vor dem Spiel.
+ r 1 · Kreis Frankfurt\nSpielstätte: Mainzer Landstr. 480\, 60326 Frank
+ furt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x
+ /-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7\nBitte per Daume
+ n hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei
+  ist – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -210,19 +229,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-85-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270314T120000
 DTEND;TZID=Europe/Berlin:20270314T150000
 SUMMARY:Speuzer D1 · Heim gegen FC JUZ Fechenheim 1
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 12:00 Uhr · Anstoß 13
  :00 Uhr · Heimspiel\nSpeuzer D1 – FC JUZ Fechenheim 1\nTreffpunkt: 12
  :00 Uhr\nAnstoß: 13:00 Uhr\nHeimspiel · Kreisliga A · DJKL F Gr 1 · 
- Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Frankfur
- t am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/
- saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7\nBitte per Daumen h
- och / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei is
- t – am besten bis zum Abend vor dem Spiel.
+ Kreis Frankfurt\nSpielstätte: Mainzer Landstr. 480\, 60326 Frankfurt am
+  Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/sais
+ on/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7\nBitte per Daumen hoch 
+ / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist 
+ – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -230,8 +249,8 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-94-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270411T083000
 DTEND;TZID=Europe/Berlin:20270411T113000
 SUMMARY:Speuzer D1 · Auswärts bei Concordia Eschersheim
@@ -250,19 +269,19 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-103-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270425T120000
 DTEND;TZID=Europe/Berlin:20270425T150000
 SUMMARY:Speuzer D1 · Heim gegen FC Germ. 08 Ginnheim 1
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 12:00 Uhr · Anstoß 13
  :00 Uhr · Heimspiel\nSpeuzer D1 – FC Germ. 08 Ginnheim 1\nTreffpunkt:
   12:00 Uhr\nAnstoß: 13:00 Uhr\nHeimspiel · Kreisliga A · DJKL F Gr 1 
- · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Frank
- furt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x
- /-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7\nBitte per Daume
- n hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei
-  ist – am besten bis zum Abend vor dem Spiel.
+ · Kreis Frankfurt\nSpielstätte: Mainzer Landstr. 480\, 60326 Frankfurt
+  am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/s
+ aison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7\nBitte per Daumen ho
+ ch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist
+  – am besten bis zum Abend vor dem Spiel.
 URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
  000000VTVG0001VTR8C1K7
 CATEGORIES:Fussball
@@ -270,35 +289,15 @@ TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:340782-110-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270509T120000
 DTEND;TZID=Europe/Berlin:20270509T150000
 SUMMARY:Speuzer D1 · Heim gegen 1. Rödelheimer FC 02 1
 DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 12:00 Uhr · Anstoß 13
  :00 Uhr · Heimspiel\nSpeuzer D1 – 1. Rödelheimer FC 02 1\nTreffpunkt
  : 12:00 Uhr\nAnstoß: 13:00 Uhr\nHeimspiel · Kreisliga A · DJKL F Gr 1
-  · Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Fran
- kfurt am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/
- x/-/saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7\nBitte per Daum
- en hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabe
- i ist – am besten bis zum Abend vor dem Spiel.
-URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
- 000000VTVG0001VTR8C1K7
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
-UID:340782-119-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
-DTSTART;TZID=Europe/Berlin:20270523T120000
-DTEND;TZID=Europe/Berlin:20270523T150000
-SUMMARY:Speuzer D1 · Heim gegen FV 09 Eschersheim 2
-DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 12:00 Uhr · Anstoß 13
- :00 Uhr · Heimspiel\nSpeuzer D1 – FV 09 Eschersheim 2\nTreffpunkt: 12
- :00 Uhr\nAnstoß: 13:00 Uhr\nHeimspiel · Kreisliga A · DJKL F Gr 1 · 
- Kreis Frankfurt\nSpielstätte: Sportplatz Mainzer Landstrasse\, Frankfur
+  · Kreis Frankfurt\nSpielstätte: Mainzer Landstr. 480\, 60326 Frankfur
  t am Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/
  saison/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7\nBitte per Daumen h
  och / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei is
@@ -309,9 +308,29 @@ CATEGORIES:Fussball
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
+UID:340782-119-app@speuzer.sportfreunde04.de
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
+DTSTART;TZID=Europe/Berlin:20270523T120000
+DTEND;TZID=Europe/Berlin:20270523T150000
+SUMMARY:Speuzer D1 · Heim gegen FV 09 Eschersheim 2
+DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 12:00 Uhr · Anstoß 13
+ :00 Uhr · Heimspiel\nSpeuzer D1 – FV 09 Eschersheim 2\nTreffpunkt: 12
+ :00 Uhr\nAnstoß: 13:00 Uhr\nHeimspiel · Kreisliga A · DJKL F Gr 1 · 
+ Kreis Frankfurt\nSpielstätte: Mainzer Landstr. 480\, 60326 Frankfurt am
+  Main\nAlle Infos zum Spiel: https://www.fussball.de/mannschaft/x/-/sais
+ on/2627/team-id/011MIE88PK000000VTVG0001VTR8C1K7\nBitte per Daumen hoch 
+ / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist 
+ – am besten bis zum Abend vor dem Spiel.
+URL:https://www.fussball.de/mannschaft/x/-/saison/2627/team-id/011MIE88PK
+ 000000VTVG0001VTR8C1K7
+CATEGORIES:Fussball
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
 UID:340782-124-app@speuzer.sportfreunde04.de
-DTSTAMP:20261019T145859Z
-SEQUENCE:86
+DTSTAMP:20261020T035611Z
+SEQUENCE:87
 DTSTART;TZID=Europe/Berlin:20270530T090000
 DTEND;TZID=Europe/Berlin:20270530T120000
 SUMMARY:Speuzer D1 · Auswärts bei FSV 1910 Bergen 1
