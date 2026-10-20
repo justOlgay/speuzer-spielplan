@@ -55,16 +55,16 @@ TEAMS = {
                    info="1. Kreisklasse \u00b7 DJ KK F Gr. 04 \u00b7 Kreis Frankfurt",
                    widget="81d9f5d7-9465-4aa5-ba6e-9830577ec0e6",
                    teamid="02USD4SHUG000000VS5489BRVS0D3BPJ"),
-    "E1":     dict(label="E1", staffel="340610", gruppe="e",
-                   info="1. Kreisklasse \u00b7 EJ Quali Gr. 08 \u00b7 Kreis Frankfurt",
+    "E1":     dict(label="E1", staffel="340651", gruppe="e",
+                   info="1. Kreisliga \u00b7 EJKL F \u00b7 Kreis Frankfurt",
                    widget="946f72f6-9ef2-4199-8b9d-6051948a2103",
                    teamid="011MIDBD8C000000VTVG0001VTR8C1K7"),
-    "E2":     dict(label="E2", staffel="341435", gruppe="e",
-                   info="1. Kreisklasse \u00b7 EJ Quali Gr. 18 \u00b7 Kreis Frankfurt",
+    "E2":     dict(label="E2", staffel="341538", gruppe="e",
+                   info="1. Kreisklasse \u00b7 EJKK F Gr.6 \u00b7 Kreis Frankfurt",
                    widget="52cf66bf-3feb-436d-80fa-831c186dbb64",
                    teamid="011MIE1KH4000000VTVG0001VTR8C1K7"),
-    "E3":     dict(label="E3", staffel="341930", gruppe="e",
-                   info="1. Kreisklasse \u00b7 EJ Quali Gr. 22 \u00b7 Kreis Frankfurt",
+    "E3":     dict(label="E3", staffel="341547", gruppe="e",
+                   info="1. Kreisklasse \u00b7 EJKK F Gr.10 \u00b7 Kreis Frankfurt",
                    widget="15839ff7-ac56-422d-9853-b240229822ec",
                    teamid="02PS0CFJCO000000VS5489B1VVQNIHJA"),
     "F1":     dict(label="F1", staffel="340233", gruppe="f",
@@ -122,15 +122,28 @@ RUNDE = {
     "340610": "Qualifikationsrunde",
     "341435": "Qualifikationsrunde",
     "341930": "Qualifikationsrunde",
+    # Hauptrunde der E-Jugend seit 24.10.2026 (E1 EJKL F, E2 EJKK F Gr.6, E3 EJKK F Gr.10)
+    "340651": "Hauptrunde",
+    "341538": "Hauptrunde",
+    "341547": "Hauptrunde",
 }
 
-HINWEIS_E = ("Die E-Jugend spielt zuerst eine Qualifikationsrunde. "
-             "Die Spiele der Hauptrunde kommen dazu, sobald der Kreis sie ansetzt.")
+# Wettbewerbszeile der Meisterschaftstermine je Staffelkennung, wenn sie von TEAMS[team]["info"] abweicht:
+# Die E-Jugend hat je Mannschaft zwei Meisterschaftsstaffeln (Quali und Hauptrunde), TEAMS[...]["info"]
+# nennt die aktuelle (Hauptrunde). So behalten die Quali-Termine ihre alte Wettbewerbszeile.
+INFO_STAFFEL = {
+    "340610": "1. Kreisklasse \u00b7 EJ Quali Gr. 08 \u00b7 Kreis Frankfurt",
+    "341435": "1. Kreisklasse \u00b7 EJ Quali Gr. 18 \u00b7 Kreis Frankfurt",
+    "341930": "1. Kreisklasse \u00b7 EJ Quali Gr. 22 \u00b7 Kreis Frankfurt",
+}
+
+HINWEIS_E = ("Die E-Jugend spielt zuerst eine Qualifikationsrunde und danach die Hauptrunde "
+             "in einer neuen Staffel; beide stehen in dieser Liste.")
 HINWEIS_KINDER = ("Im Kinderfu\u00dfball gibt es keine Ligaspiele, sondern Kinderfestivals \u2013 "
                   "entweder bei uns oder bei einem anderen Verein. Der Kreis setzt sie in "
                   "Bl\u00f6cken an, deshalb reicht der Plan nur wenige Wochen voraus.")
-HINWEIS_QUALI = ("Zurzeit stehen nur die Spiele der Qualifikationsrunde fest. Die Spiele der "
-                 "Hauptrunde kommen automatisch in dieses Abo, sobald der Kreis sie ansetzt \u2013 "
+# Name historisch (stand fuer den Quali-Hinweis); gilt jetzt fuer alle Sammel- und E-Kalender.
+HINWEIS_QUALI = ("Neue und verlegte Spiele tr\u00e4gt der Verein nach, sobald der Kreis sie ansetzt \u2013 "
                  "neu abonnieren muss niemand.")
 
 VTIMEZONE = """BEGIN:VTIMEZONE
@@ -247,7 +260,8 @@ def untertitel(row):
 def beschreibung(row):
     """Immer gleich aufgebaut, damit jeder Termin gleich aussieht."""
     t = TEAMS[row["team"]]
-    wb = t["info"] if row["_wb"] == "Meisterschaft" else "%s \u00b7 Kreis Frankfurt" % row["_wb"]
+    wb = (INFO_STAFFEL.get(row["staffel"], t["info"]) if row["_wb"] == "Meisterschaft"
+          else "%s \u00b7 Kreis Frankfurt" % row["_wb"])
     z = [paarung(row),
          "Mannschaft: %s" % mannschaft(row["team"]),
          "Wettbewerb: %s" % wb]
@@ -402,7 +416,7 @@ TRAINING_BIS = datetime.date(2027, 6, 27)   # letzter Tag vor den Sommerferien
 # ("Stand ..."). Gemeint ist der Stand der Termine im Kalender, nicht der Stand der
 # Platzaufteilung (die steht oben bei TRAINING). Bei jeder inhaltlichen Aenderung an TRAINING,
 # HALLE oder FREI anpassen. 26.08.2026 = erste Fassung, 12.10.2026 = Winterhalle eingetragen.
-TRAINING_STAND = "12.10.2026"
+TRAINING_STAND = "19.10.2026"
 
 # Schulferien Hessen 26/27 und Feiertage, die auf einen Trainingstag fallen.
 # Ferien: Hessisches Kultusministerium, kultus.hessen.de/schulsystem/ferien/ferientermine (erster
@@ -564,7 +578,8 @@ def import_beschreibung(row):
          "Treffpunkt: %s Uhr" % treffpunkt(row).strftime("%H:%M"),
          ("Beginn: %s Uhr" if row["_wb"] == FESTIVAL else "Ansto\u00df: %s Uhr") % row["zeit"],
          "%s \u00b7 %s" % ("Heimspiel" if row["_heim"] else "Ausw\u00e4rtsspiel",
-                            t["info"] if row["_wb"] == "Meisterschaft" else row["_wb"])]
+                            INFO_STAFFEL.get(row["staffel"], t["info"]) if row["_wb"] == "Meisterschaft"
+                            else row["_wb"])]
     if RUNDE.get(row["staffel"]):
         z.append("Runde: %s" % RUNDE[row["staffel"]])
     z.append("Spielst\u00e4tte: %s" % (row["spielstaette"] or "siehe FUSSBALL.DE"))

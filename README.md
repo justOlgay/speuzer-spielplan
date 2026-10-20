@@ -67,9 +67,12 @@ geändert ist als jede Bastellösung gepflegt wäre.
 
 ## Spielstätten
 
-Für Heimspiele ist `Sportplatz Mainzer Landstrasse, Frankfurt am Main` eingetragen,
-für Auswärtsspiele ist die Spalte leer. Wer die Auswärtsplätze ergänzen will, findet sie
-in DFBnet in der Staffelsicht im Reiter *Spielstätte*.
+Heimspiele stehen mit der Anschrift des Heimspielorts in der Spalte `spielstaette`: Herren und A-Jugend
+am Rebstock (`Am Römerhof 9, 60486 Frankfurt am Main`), alle übrigen Mannschaften auf dem Vereinsplatz
+(`Mainzer Landstr. 480, 60326 Frankfurt am Main`, so schreibt es FUSSBALL.DE; Stand 20.10.2026). Ausnahmen
+sind einzelne Spiele auf anderen Plätzen (z. B. das Kreispokal-Heimspiel der A-Jugend in Niederrad).
+Bei Auswärtsspielen steht die Adresse des Gegners, soweit bekannt, sonst ist die Spalte leer. Wer die
+Auswärtsplätze ergänzen will, findet sie in DFBnet in der Staffelsicht im Reiter *Spielstätte*.
 
 ## Die App-Seite (Spielplan in der Vereins-App)
 
@@ -182,9 +185,12 @@ verlangt es FUSSBALL.DE von Seitenbetreibern.
 | D1 | DJKL F Gr 1 | `1e9caaff-1559-444a-ad35-bb60f75e5dca` |
 | D2 | DJ KK F Gr. 05 | `a0e8a901-ccc9-4810-9fe4-c16f8dc6ca86` |
 | D3 | DJ KK F Gr. 04 | `f861a1b4-7b87-4b44-ae96-b217b8ba1758` |
-| E1 | EJ Quali Gr. 08 | `210e4f4f-cd22-4771-ae3b-423b6061afe1` |
-| E2 | EJ Quali Gr. 18 | `47a2d17f-97d4-45ab-87cd-cb6faf6e0d93` |
-| E3 | EJ Quali Gr. 22 | `8a18ef30-e4ac-4936-8049-18dfd14d08f4` |
+| E1 | EJKL F (Hauptrunde) | `2dd2b8ee-a1a9-4099-b4e0-0574b6476ed6` |
+| E2 | EJKK F Gr.6 (Hauptrunde) | `cb13562a-3cdb-46cf-b1a9-763956607217` |
+| E3 | EJKK F Gr.10 (Hauptrunde) | `8142dd55-bf78-4e85-a27d-689ea179656a` |
+
+E1 bis E3 sind seit 19.10.2026 auf die Hauptrunde umgestellt; die Quali-Widgets (`EJ Quali Gr. 08`,
+`EJ Quali Gr. 18`, `EJ Quali Gr. 22`) bestehen bei FUSSBALL.DE unverändert weiter.
 
 **A-Jugend offen:** Das Widget für die Gruppenliga (A-Junioren, Region Frankfurt, AJGL Frankfurt)
 lässt sich derzeit nicht anlegen – FUSSBALL.DE antwortet mit „Es ist ein unerwarteter Fehler
@@ -288,20 +294,34 @@ Vollständigkeit der Saisonliste und die Tabelle brauchen einen Handgriff.
 
 ### Checkliste, sobald die Hauptrunde angesetzt ist
 
-1. **DFBnet** → Ergebnismeldung → Staffeln, neue Staffelkennung je E-Mannschaft notieren,
-   Spieltag „Alle auswählen", Spielplan exportieren.
-2. **`spiele.csv`**: neue Zeilen anhängen (Team-Kürzel bleibt `E1`/`E2`/`E3`, nur `staffel`
-   ist neu). Die Quali-Spiele bleiben stehen – sie sind Historie und stören nicht.
-3. **`build_ics.py`** → `RUNDE`: die neuen Kennungen mit Label eintragen, z. B.
-   `"342xxx": "Hauptrunde · Kreisklasse B Gr. 3"`. Die App-Seite setzt dann automatisch eine
-   Zwischenüberschrift und trennt Quali von Hauptrunde.
+*Zuletzt so durchgeführt am 20.10.2026 für die Hauptrunde ab 24.10.2026: E1 Staffel 340651 (EJKL F),*
+*E2 341538 (EJKK F Gr.6), E3 341547 (EJKK F Gr.10).*
+
+1. **Spielplan holen**: DFBnet → Ergebnismeldung → Staffeln, neue Staffelkennung je E-Mannschaft notieren,
+   Spieltag „Alle auswählen", Spielplan exportieren. (Am 20.10.2026 wurde einmalig nach den öffentlichen
+   Spielplänen der Mannschaften bei FUSSBALL.DE nachgetragen; die Staffelkennung sind die ersten sechs
+   Stellen der Spielnummer.)
+2. **`spiele.csv`**: neue Zeilen anhängen (Team-Kürzel bleibt `E1`/`E2`/`E3`, nur `staffel` ist neu;
+   spielfreie Termine nicht eintragen). Die Quali-Spiele bleiben stehen – sie sind Historie und stören
+   nicht. Im selben Zug Pokal- und Freundschaftsspiele, Verlegungen und ausgefallene Spiele nachziehen
+   (ausgefallen: Datum stehen lassen, in `ergebnis` `abgesagt` eintragen).
+3. **`build_ics.py`**: (a) `TEAMS["E1"]` bis `TEAMS["E3"]`: `staffel` und `info` auf die neue Staffel
+   stellen (Wortlaut wie bei FUSSBALL.DE, z. B. `1. Kreisklasse · EJKK F Gr.6 · Kreis Frankfurt`);
+   (b) `INFO_STAFFEL`: die bisherige `info` unter der alten Kennung eintragen, damit die Quali-Termine
+   ihre alte Wettbewerbszeile behalten; (c) `RUNDE`: die neue Kennung mit Label eintragen
+   (`"340651": "Hauptrunde"`). Die App-Seite setzt dann automatisch eine Zwischenüberschrift und
+   trennt Quali von Hauptrunde.
 4. `python3 build_ics.py` – fertig für Kalender **und** App-Seite.
-5. **CMS**: `docs/app-e-jugend.html` in `Spielplan-E-Jugend.html` einsetzen (Quellcode
-   editieren, ein Zeichen tippen, `cmd+s`, danach auf `cdn.appack.de` gegenprüfen).
+5. **CMS**: früher `docs/app-e-jugend.html` in `Spielplan-E-Jugend.html` einsetzen (Quellcode
+   editieren, ein Zeichen tippen, `cmd+s`, danach auf `cdn.appack.de` gegenprüfen). Stand 20.10.2026
+   vermutlich überholt: Im Live-Stand von Website und App (Commit 9ac985d des Website-Repos) sind nur
+   `app-f-jugend.html` und `app-g-jugend.html` eingebunden; vor dem Einsetzen prüfen, ob
+   `Spielplan-E-Jugend.html` noch verwendet wird.
 6. **FUSSBALL.DE**: drei neue **Tabellen**-Widgets für die neuen Staffeln anlegen
    (Meine Widgets → Tabelle → Saison 26/27 → Hessen → Meisterschaften → E-Junioren → …),
-   Domain `cdn.appack.de`, und die `data-id` in `Tabellen-D-Jugend.html` austauschen.
-   Die alten Quali-Widgets können bleiben oder gelöscht werden.
+   Domain `cdn.appack.de`. Die IDs gehören seit der Neufassung der Website in `data/widgets.json` des
+   Website-Repos (statt `data-id` in `Tabellen-D-Jugend.html`). Die alten Quali-Widgets können bleiben
+   oder gelöscht werden. (19.10.2026 erledigt, IDs in der Tabelle oben.)
 7. Die ICS-Abos der Eltern brauchen **nichts**: Die UID ist `<staffel>-<spielnr>`, die neuen
    Spiele kommen als zusätzliche Termine an, nichts wird überschrieben, niemand muss neu
    abonnieren.
