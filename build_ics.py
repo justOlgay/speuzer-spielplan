@@ -44,7 +44,7 @@ TEAMS = {
                    widget="7f1d494c-ad2d-47d0-bb61-f4f0106ac2c4",
                    teamid="019ORCB50G000000VV0AG80NVUQ1MD7G"),
     "D1":     dict(label="D1", staffel="340782", gruppe="d",
-                   info="Kreisliga A \u00b7 DJKL F Gr 1 \u00b7 Kreis Frankfurt",
+                   info="1. Kreisliga \u00b7 DJKL F Gr 1 \u00b7 Kreis Frankfurt",
                    widget="97c0160c-4b7a-40e1-ac86-3c8a4b3c6f76",
                    teamid="011MIE88PK000000VTVG0001VTR8C1K7"),
     "D2":     dict(label="D2", staffel="341874", gruppe="d",

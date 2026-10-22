@@ -153,7 +153,7 @@ verlangt es FUSSBALL.DE von Seitenbetreibern.
 |---|---|---|---|---|---|
 | HERREN | Herren | Kreisliga A, KLA Frankfurt Gr. 1 | 341727 | 30 | `011MICFB14000000VTVG0001VTR8C1K7` |
 | A | A-Jugend | Gruppenliga, AJGL Frankfurt | 343410 | 26 | `019ORCB50G000000VV0AG80NVUQ1MD7G` |
-| D1 | D-Junioren I | Kreisliga A, DJKL F Gr 1 | 340782 | 20 | `011MIE88PK000000VTVG0001VTR8C1K7` |
+| D1 | D-Junioren I | 1. Kreisliga, DJKL F Gr 1 | 340782 | 20 | `011MIE88PK000000VTVG0001VTR8C1K7` |
 | D2 | D-Junioren II | 1. Kreisklasse, DJ KK F Gr. 05 | 341874 | 22 | `011MIF9LDC000000VTVG0001VTR8C1K7` |
 | D3 | D-Junioren III | 1. Kreisklasse, DJ KK F Gr. 04 | 341873 | 22 | `02USD4SHUG000000VS5489BRVS0D3BPJ` |
 | E1 | E-Junioren I | 1. Kreisklasse, EJ Quali Gr. 08 | 340610 | 5 | `011MIDBD8C000000VTVG0001VTR8C1K7` |
