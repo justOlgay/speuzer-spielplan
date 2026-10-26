@@ -41,6 +41,17 @@ dafür, dass die Vereins-App (Appack) sie als externen iCal-Kalender akzeptiert.
 
 ## Pflege im Alltag
 
+**Standard ist die tägliche automatische Fortschreibung:** `tools/nachtrag.py` läuft im täglichen Mac-Task, liest die ohnehin
+abgerufenen fussball.de-Pläne und trägt neue, verlegte und abgesagte Spiele in `spiele.csv` ein (Abschnitt „Automatische
+Aktualisierung“); gemeldet werden nur Änderungen und Auffälligkeiten. Von Hand bleiben die Sonderfälle: die Neuanlage einer
+Saison über DFBnet, ein Staffelwechsel mit mehr als sechs neuen Spielen je Mannschaft, Spielstätten und Auswärtsadressen
+nachtragen sowie Ergebnisse. Unabhängig vom Skript kontrolliert der rein lesende Wochen-Abgleich `tools/abgleich.py`
+(Donnerstag, Cloud-Routine) die Tabelle gegen fussball.de, und die Not-Aus-Datei
+`~/Library/Application Support/speuzer-spielplan-nachtrag/AUS` schaltet das Schreiben ab (dann nur noch Bericht). Wer von
+Hand eingreift: Zeigt fussball.de bei einem Spiel ab heute einen anderen Termin, stellt `nachtrag.py` ihn beim nächsten Lauf
+auf dessen Stand; eine von Hand eingetragene Absage bleibt stehen, solange fussball.de das Spiel nie abgesetzt hatte.
+Die Handgriffe für die Sonderfälle:
+
 **Spielverlegung:** `spiele.csv` im Browser öffnen (Stift-Symbol), Datum und/oder Uhrzeit
 in der betroffenen Zeile ändern, *Commit changes*. Der Workflow baut die Kalender neu;
 weil die UID gleich bleibt (`Staffelkennung-Spielnummer`), verschiebt sich in allen
@@ -59,11 +70,46 @@ unter *Vereinsmeldung* taugt dafür nicht, er erlaubt nur Zeiträume von maximal
 
 ## Bewusst nicht automatisiert
 
-Der Workflow holt die Daten **nicht** selbst von fussball.de. Dort werden Spielstände
-gezielt mit verschleierten Schriftarten ausgeliefert (Scraping-Abwehr), und automatisiertes
-Auslesen ist nutzungsrechtlich heikel. Der offizielle Weg ist der DFBnet-Zugang – und
-Verlegungen sind in der D-Jugend selten genug, dass eine Zeile in der CSV schneller
-geändert ist als jede Bastellösung gepflegt wäre.
+Der Kalender-Workflow (GitHub-Aktion, `build_ics.py`) liest nur `spiele.csv` und holt nichts von fussball.de. Das Fortschreiben
+der Tabelle übernimmt `tools/nachtrag.py` (nächster Abschnitt) auf dem Vereins-Mac, nur lesend und rücksichtsvoll: öffentliche
+Mannschaftspläne ohne Anmeldung, erkennbarer User-Agent, die G-Jugend höchstens einmal je 20 Stunden, alle übrigen Pläne
+kommen aus dem Cache des täglichen Tasks. Spielstände liest es nicht (fussball.de liefert sie bewusst mit verschleierten
+Schriftarten aus, und automatisiertes Auslesen bleibt nutzungsrechtlich heikel). **Handarbeit bleibt:** die Neuanlage einer
+Saison (offizieller Weg: DFBnet-Export, siehe „Neue Saison“), Ergebnisse, jedes Löschen von Zeilen, Korrekturen bei
+Heim/Auswärts, Gegner, Wettbewerbsart und Spielnummer, ein Staffelwechsel mit mehr als sechs neuen Spielen je Mannschaft
+(Mengenbremse) sowie Auswärtsadressen unbekannter Gegner.
+
+## Automatische Aktualisierung (`tools/nachtrag.py`)
+
+Das Skript schreibt `spiele.csv` aus den Mannschaftsplänen von fussball.de fort (Stand 26.10.2026). Es liest den Cache von
+`tools/abgleich.py` (füllt der tägliche Mac-Task), vergleicht mit der CSV und ändert **nur** dies; alles andere wird gemeldet,
+nie gelöscht:
+
+| Änderung | Bedingung | Wirkung in der CSV |
+|---|---|---|
+| ergänzt | Spiel bei fussball.de angesetzt, ab heute, mit Uhrzeit, Staffel und Spielnummer; fehlt in der CSV | neue Zeile hinter der letzten Zeile derselben Mannschaft und Staffel; Spielstätte und Schreibweisen aus bestehenden Zeilen |
+| verlegt | gleiche Staffel + Spielnummer, anderes Datum oder andere Uhrzeit | `datum`/`zeit` der Zeile (UID bleibt, der Termin wandert) |
+| abgesagt | bei fussball.de abgesetzt, „zg.“ oder Nichtantritt | `ergebnis` = `abgesagt`, Datum bleibt |
+| wieder angesetzt | in der CSV „abgesagt“, bei fussball.de wieder angesetzt und dort früher abgesetzt gewesen | `ergebnis` leer (bei neuem Termin auch `datum`/`zeit`) |
+
+**Schutzregeln.** Mengenbremse: mehr als 10 Änderungen insgesamt oder mehr als 6 je Mannschaft, dann wird nichts geschrieben.
+Je Mannschaft muss die Seite plausibel sein (lesbar, mindestens 60 % der CSV-Zeilen wiederzufinden), sonst wird sie übersprungen
+und gemeldet. Vorläufige Spiele, unklare Vermerke (Ausfall, Annuliert) und die Vergangenheit bleiben unberührt. Ein zweiter
+Lauf ändert nichts; unveränderte Zeilen bleiben Byte für Byte gleich (CRLF, Kopfzeile). Vor dem Schreiben wird die neue CSV
+neu gelesen und `build_ics.py` in einer temporären Kopie gebaut (Zahl der Termine stimmt). Git betrifft nur `spiele.csv`, nie mit
+Gewalt, nur bei sauberem Arbeitsbaum; scheitert der Push, bleibt der Commit lokal und wird am nächsten Tag nachgeholt. Der Arbeitsbaum
+dieses Repos muss dafür sauber bleiben (keine lokalen Änderungen, z. B. nach einem lokalen `build_ics.py`), sonst meldet der Nachtrag
+„Arbeitsbaum nicht sauber“ und schreibt nichts.
+
+**Aufruf** (aus dem Repo-Stamm, immer `python3 -I`):
+- ohne Optionen: nur Bericht; nichts wird geschrieben, abgerufen oder gepusht (`--nur-cache --heute JJJJ-MM-TT` zum Testen)
+- `--anwenden`: die CSV schreiben (Arbeitsbaum danach „schmutzig“: `git diff spiele.csv` ansehen, verwerfen mit `git checkout -- spiele.csv`)
+- `--anwenden --push`: zusätzlich `pull --rebase`, committen („Spieltabelle automatisch aktualisiert (n Änderungen)“) und pushen; so läuft der Task
+
+Die letzte Ausgabezeile ist maschinenlesbar: `NACHTRAG: unverändert` · `n geändert (…)` · `Auffällig, nicht übernommen – …` ·
+`Fehler – …`. **Not-Aus:** Existiert `~/Library/Application Support/speuzer-spielplan-nachtrag/AUS`, bleibt es beim Bericht (auch in
+der Sommerpause nützlich). Von Hand geänderte Termine überschreibt das Skript, sobald fussball.de etwas anderes zeigt.
+Tests: `python3 -I -B -m unittest discover -s tools -p 'test_nachtrag.py'` (kein Netzwerk, synthetische Seiten, Wegwerf-Klone).
 
 ## Spielstätten
 
@@ -328,13 +374,15 @@ Vollständigkeit der Saisonliste und die Tabelle brauchen einen Handgriff.
 
 Aufwand insgesamt: rund 20–30 Minuten für alle drei E-Mannschaften.
 
-### Warum es keine automatische Variante gibt
+### Staffelwechsel: was automatisch läuft und was Handarbeit bleibt
 
-Es gibt bei FUSSBALL.DE kein Widget „Tabelle der aktuellen Liga meiner Mannschaft" – Tabellen
-sind immer an eine Staffel gebunden. Und DFBnet hat keine offene Schnittstelle, aus der sich
-der Spielplan skriptgesteuert ziehen liesse; der Export läuft über die angemeldete Sitzung.
-Deshalb bleibt der Spielplan-Nachtrag Handarbeit – dafür ist er additiv und dank stabiler UID
-ohne Nebenwirkungen.
+Die ersten Spiele einer neuen Staffel trägt `tools/nachtrag.py` selbst ein. Bei mehr als sechs neuen Spielen je Mannschaft
+(oder mehr als zehn insgesamt) schreibt es nichts („Auffällig, nicht übernommen“); dann gilt die Checkliste oben. Beim ersten
+Spiel einer neuen Meisterschaftsstaffel weist es darauf hin, dass `build_ics.py` (Schritt 3) und das Tabellen-Widget
+(Schritt 6) von Hand nachzuziehen sind. Handarbeit bleibt das Tabellen-Widget: Es gibt bei FUSSBALL.DE kein Widget „Tabelle
+der aktuellen Liga meiner Mannschaft" – Tabellen sind immer an eine Staffel gebunden. DFBnet hat keine offene Schnittstelle
+(der Export läuft über die angemeldete Sitzung); `nachtrag.py` liest deshalb die öffentlichen Mannschaftspläne von
+FUSSBALL.DE. Der Nachtrag bleibt additiv und dank stabiler UID ohne Nebenwirkungen.
 
 ---
 
