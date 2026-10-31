@@ -1,0 +1,1731 @@
+{
+ "version": 1,
+ "saison": "2026/27",
+ "erzeugt": "2026-10-31",
+ "stand": {
+  "plan": "19.10.2026",
+  "spiele": "31.10.2026"
+ },
+ "platz": {
+  "kurz": "Mainzer Landstr. 480",
+  "adresse": "Mainzer Landstraße 480, 60326 Frankfurt am Main"
+ },
+ "teile": [
+  {
+   "id": "tor1",
+   "name": "Tor 1"
+  },
+  {
+   "id": "tor2",
+   "name": "Tor 2"
+  },
+  {
+   "id": "tor3",
+   "name": "Tor 3"
+  },
+  {
+   "id": "tor4",
+   "name": "Tor 4"
+  },
+  {
+   "id": "kaefig",
+   "name": "Käfig"
+  },
+  {
+   "id": "court",
+   "name": "Court"
+  }
+ ],
+ "belegung": {
+  "ganzer Platz": [
+   "tor1",
+   "tor2",
+   "tor3",
+   "tor4"
+  ],
+  "linke Hälfte": [
+   "tor1",
+   "tor2"
+  ],
+  "rechte Hälfte": [
+   "tor3",
+   "tor4"
+  ],
+  "Tor 1": [
+   "tor1"
+  ],
+  "Tor 2": [
+   "tor2"
+  ],
+  "Tor 3": [
+   "tor3"
+  ],
+  "Tor 4": [
+   "tor4"
+  ],
+  "Käfig": [
+   "kaefig"
+  ],
+  "Court": [
+   "court"
+  ],
+  "Court und Käfig": [
+   "kaefig",
+   "court"
+  ]
+ },
+ "mannschaften": [
+  {
+   "id": "herren",
+   "kurz": "Herren",
+   "name": "1. Herrenmannschaft",
+   "csv": "HERREN"
+  },
+  {
+   "id": "a-jugend",
+   "kurz": "A-Jugend",
+   "name": "A-Jugend",
+   "csv": "A"
+  },
+  {
+   "id": "d1",
+   "kurz": "D1",
+   "name": "D1-Jugend",
+   "csv": "D1"
+  },
+  {
+   "id": "d2",
+   "kurz": "D2",
+   "name": "D2-Jugend",
+   "csv": "D2"
+  },
+  {
+   "id": "d3",
+   "kurz": "D3",
+   "name": "D3-Jugend",
+   "csv": "D3"
+  },
+  {
+   "id": "e1",
+   "kurz": "E1",
+   "name": "E1-Jugend",
+   "csv": "E1"
+  },
+  {
+   "id": "e2",
+   "kurz": "E2",
+   "name": "E2-Jugend",
+   "csv": "E2"
+  },
+  {
+   "id": "e3",
+   "kurz": "E3",
+   "name": "E3-Jugend",
+   "csv": "E3"
+  },
+  {
+   "id": "f1",
+   "kurz": "F1",
+   "name": "F1-Jugend",
+   "csv": "F1"
+  },
+  {
+   "id": "f2",
+   "kurz": "F2",
+   "name": "F2-Jugend",
+   "csv": "F2"
+  },
+  {
+   "id": "g-jugend",
+   "kurz": "G-Jugend",
+   "name": "G-Jugend (Bambinis)",
+   "csv": "G1"
+  }
+ ],
+ "regeln": {
+  "trainingVon": "2026-08-31",
+  "trainingBis": "2027-06-27",
+  "frei": [
+   {
+    "von": "2026-10-05",
+    "bis": "2026-10-17",
+    "name": "Herbstferien"
+   },
+   {
+    "von": "2026-12-23",
+    "bis": "2027-01-12",
+    "name": "Weihnachtsferien"
+   },
+   {
+    "von": "2027-03-22",
+    "bis": "2027-04-02",
+    "name": "Osterferien"
+   },
+   {
+    "von": "2027-05-06",
+    "bis": "2027-05-06",
+    "name": "Christi Himmelfahrt"
+   },
+   {
+    "von": "2027-05-17",
+    "bis": "2027-05-17",
+    "name": "Pfingstmontag"
+   },
+   {
+    "von": "2027-05-27",
+    "bis": "2027-05-27",
+    "name": "Fronleichnam"
+   }
+  ],
+  "fenster": {
+   "werktag": [
+    "15:30",
+    "21:30"
+   ],
+   "wochenende": [
+    "09:00",
+    "18:00"
+   ]
+  },
+  "minFrei": 60,
+  "dauer": {
+   "D": 105,
+   "E": 90,
+   "F": 75,
+   "G": 75,
+   "A": 120,
+   "Herren": 120
+  },
+  "unserPlatz": "Mainzer Landstr. 480",
+  "navigation": [
+   "2026-06-29",
+   "2027-06-21"
+  ]
+ },
+ "training": [
+  {
+   "t": "a-jugend",
+   "tag": 0,
+   "von": "19:00",
+   "bis": "21:00",
+   "platz": "ganzer Platz",
+   "teile": [
+    "tor1",
+    "tor2",
+    "tor3",
+    "tor4"
+   ]
+  },
+  {
+   "t": "a-jugend",
+   "tag": 2,
+   "von": "19:00",
+   "bis": "20:30",
+   "platz": "ganzer Platz",
+   "teile": [
+    "tor1",
+    "tor2",
+    "tor3",
+    "tor4"
+   ]
+  },
+  {
+   "t": "d1",
+   "tag": 1,
+   "von": "17:30",
+   "bis": "19:30",
+   "platz": "Tor 1",
+   "teile": [
+    "tor1"
+   ]
+  },
+  {
+   "t": "d1",
+   "tag": 2,
+   "von": "17:30",
+   "bis": "19:00",
+   "platz": "Tor 1",
+   "teile": [
+    "tor1"
+   ]
+  },
+  {
+   "t": "d1",
+   "tag": 4,
+   "von": "17:30",
+   "bis": "19:30",
+   "platz": "Tor 1",
+   "teile": [
+    "tor1"
+   ]
+  },
+  {
+   "t": "d2",
+   "tag": 1,
+   "von": "17:30",
+   "bis": "19:30",
+   "platz": "Tor 2",
+   "teile": [
+    "tor2"
+   ]
+  },
+  {
+   "t": "d2",
+   "tag": 2,
+   "von": "17:30",
+   "bis": "19:00",
+   "platz": "Tor 2",
+   "teile": [
+    "tor2"
+   ]
+  },
+  {
+   "t": "d2",
+   "tag": 4,
+   "von": "17:30",
+   "bis": "19:30",
+   "platz": "Tor 2",
+   "teile": [
+    "tor2"
+   ]
+  },
+  {
+   "t": "d3",
+   "tag": 1,
+   "von": "17:30",
+   "bis": "19:30",
+   "platz": "rechte Hälfte",
+   "teile": [
+    "tor3",
+    "tor4"
+   ]
+  },
+  {
+   "t": "d3",
+   "tag": 4,
+   "von": "17:30",
+   "bis": "19:30",
+   "platz": "rechte Hälfte",
+   "teile": [
+    "tor3",
+    "tor4"
+   ]
+  },
+  {
+   "t": "e1",
+   "tag": 0,
+   "von": "17:30",
+   "bis": "19:00",
+   "platz": "rechte Hälfte",
+   "teile": [
+    "tor3",
+    "tor4"
+   ]
+  },
+  {
+   "t": "e1",
+   "tag": 2,
+   "von": "17:30",
+   "bis": "19:00",
+   "platz": "Tor 3",
+   "teile": [
+    "tor3"
+   ]
+  },
+  {
+   "t": "e1",
+   "tag": 3,
+   "von": "17:30",
+   "bis": "19:00",
+   "platz": "linke Hälfte",
+   "teile": [
+    "tor1",
+    "tor2"
+   ]
+  },
+  {
+   "t": "e2",
+   "tag": 0,
+   "von": "17:30",
+   "bis": "19:00",
+   "platz": "Tor 2",
+   "teile": [
+    "tor2"
+   ]
+  },
+  {
+   "t": "e2",
+   "tag": 1,
+   "von": "16:30",
+   "bis": "18:00",
+   "platz": "rechte Hälfte",
+   "teile": [
+    "tor3",
+    "tor4"
+   ]
+  },
+  {
+   "t": "e2",
+   "tag": 3,
+   "von": "17:30",
+   "bis": "19:00",
+   "platz": "Tor 3",
+   "teile": [
+    "tor3"
+   ]
+  },
+  {
+   "t": "e3",
+   "tag": 0,
+   "von": "16:00",
+   "bis": "17:30",
+   "platz": "rechte Hälfte",
+   "teile": [
+    "tor3",
+    "tor4"
+   ]
+  },
+  {
+   "t": "e3",
+   "tag": 2,
+   "von": "16:00",
+   "bis": "17:30",
+   "platz": "rechte Hälfte",
+   "teile": [
+    "tor3",
+    "tor4"
+   ]
+  },
+  {
+   "t": "f1",
+   "tag": 0,
+   "von": "17:30",
+   "bis": "19:00",
+   "platz": "Tor 1",
+   "teile": [
+    "tor1"
+   ]
+  },
+  {
+   "t": "f1",
+   "tag": 2,
+   "von": "17:30",
+   "bis": "19:00",
+   "platz": "Tor 4",
+   "teile": [
+    "tor4"
+   ]
+  },
+  {
+   "t": "f2",
+   "tag": 1,
+   "von": "17:30",
+   "bis": "19:00",
+   "platz": "Käfig",
+   "teile": [
+    "kaefig"
+   ]
+  },
+  {
+   "t": "f2",
+   "tag": 3,
+   "von": "17:30",
+   "bis": "19:00",
+   "platz": "Tor 4",
+   "teile": [
+    "tor4"
+   ]
+  },
+  {
+   "t": "g-jugend",
+   "tag": 0,
+   "von": "17:30",
+   "bis": "19:00",
+   "platz": "Court und Käfig",
+   "teile": [
+    "kaefig",
+    "court"
+   ]
+  }
+ ],
+ "halle": [
+  {
+   "t": "g-jugend",
+   "tag": 2,
+   "von": "17:30",
+   "bis": "19:00",
+   "ort": "Hellerhofschule",
+   "ab": "2026-11-01",
+   "bisDatum": "2027-02-28"
+  },
+  {
+   "t": "f1",
+   "tag": 3,
+   "von": "17:30",
+   "bis": "19:00",
+   "ort": "Paul-Hindemith-Schule",
+   "ab": "2026-11-01",
+   "bisDatum": "2027-02-28"
+  },
+  {
+   "t": "f2",
+   "tag": 3,
+   "von": "17:30",
+   "bis": "19:00",
+   "ort": "Ackermannschule",
+   "ab": "2026-11-01",
+   "bisDatum": "2027-02-28"
+  }
+ ],
+ "belegt": [
+  {
+   "tag": 1,
+   "von": "15:00",
+   "bis": "17:30",
+   "teile": [
+    "kaefig"
+   ]
+  },
+  {
+   "tag": 1,
+   "von": "15:30",
+   "bis": "17:00",
+   "teile": [
+    "tor1"
+   ]
+  },
+  {
+   "tag": 2,
+   "von": "15:00",
+   "bis": "17:30",
+   "teile": [
+    "kaefig"
+   ]
+  },
+  {
+   "tag": 3,
+   "von": "17:00",
+   "bis": "19:00",
+   "teile": [
+    "kaefig"
+   ]
+  },
+  {
+   "tag": 4,
+   "von": "14:00",
+   "bis": "19:00",
+   "teile": [
+    "kaefig"
+   ]
+  },
+  {
+   "tag": 0,
+   "von": "20:00",
+   "bis": "21:30",
+   "teile": [
+    "kaefig"
+   ]
+  },
+  {
+   "tag": 1,
+   "von": "20:00",
+   "bis": "21:30",
+   "teile": [
+    "kaefig"
+   ]
+  },
+  {
+   "tag": 4,
+   "von": "19:30",
+   "bis": "21:30",
+   "teile": [
+    "tor1",
+    "tor2",
+    "tor3",
+    "tor4"
+   ]
+  }
+ ],
+ "spiele": [
+  {
+   "d": "2026-07-03",
+   "z": "19:30",
+   "t": "herren",
+   "w": "Freundschaftsspiel",
+   "g": "SC Blau Weiß Neu-Isenburg",
+   "nr": "96",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2026-08-08",
+   "z": "16:00",
+   "t": "a-jugend",
+   "w": "Freundschaftsspiel",
+   "g": "JSG Dieburg-Klein-Zimmern 1",
+   "nr": "4",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2026-08-15",
+   "z": "19:00",
+   "t": "a-jugend",
+   "w": "Kreispokal",
+   "g": "SC Riedberg",
+   "nr": "5",
+   "dauer": null,
+   "ort": "Holzhecke 16 / Sandhöfer Wiesen"
+  },
+  {
+   "d": "2026-08-20",
+   "z": "17:30",
+   "t": "e1",
+   "w": "Freundschaftsspiel",
+   "g": "SV Blau-Gelb Frankfurt 1",
+   "nr": "65",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-08-22",
+   "z": "11:00",
+   "t": "e3",
+   "w": "Meisterschaft",
+   "g": "FSV 1910 Bergen 3",
+   "nr": "1",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-08-22",
+   "z": "11:30",
+   "t": "e2",
+   "w": "Meisterschaft",
+   "g": "Spvgg. Kickers 1916 4",
+   "nr": "1",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-08-22",
+   "z": "12:00",
+   "t": "e1",
+   "w": "Meisterschaft",
+   "g": "VfL Germania 1894 1",
+   "nr": "1",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-08-23",
+   "z": "10:00",
+   "t": "d3",
+   "w": "Meisterschaft",
+   "g": "VfL Germania 1894 2",
+   "nr": "4",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-08-23",
+   "z": "11:30",
+   "t": "d2",
+   "w": "Meisterschaft",
+   "g": "VfR Bockenheim 2",
+   "nr": "4",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-08-23",
+   "z": "13:00",
+   "t": "d1",
+   "w": "Meisterschaft",
+   "g": "FG Seckbach 1",
+   "nr": "4",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-08-23",
+   "z": "15:00",
+   "t": "herren",
+   "w": "Meisterschaft",
+   "g": "SG Praunheim 1908",
+   "nr": "38",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2026-08-26",
+   "z": "18:00",
+   "t": "e1",
+   "w": "Kreispokal",
+   "g": "1. Rödelheimer FC 02 1",
+   "nr": "24",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-08-30",
+   "z": "10:00",
+   "t": "d3",
+   "w": "Meisterschaft",
+   "g": "SC Weiss-Blau Frankfurt 3",
+   "nr": "10",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-08-30",
+   "z": "11:30",
+   "t": "d2",
+   "w": "Meisterschaft",
+   "g": "TSG Frankfurter Berg I",
+   "nr": "10",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-08-30",
+   "z": "13:00",
+   "t": "d1",
+   "w": "Meisterschaft",
+   "g": "FFC Olympia 07 I",
+   "nr": "10",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-09-02",
+   "z": "19:30",
+   "t": "herren",
+   "w": "Kreispokal",
+   "g": "Concordia Eschersheim",
+   "nr": "15",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2026-09-05",
+   "z": "10:00",
+   "t": "f1",
+   "w": "Kinderfestival",
+   "g": "",
+   "nr": "62",
+   "dauer": 75,
+   "ort": "u"
+  },
+  {
+   "d": "2026-09-05",
+   "z": "16:00",
+   "t": "a-jugend",
+   "w": "Meisterschaft",
+   "g": "SV Viktoria Preussen 1",
+   "nr": "20",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2026-09-06",
+   "z": "15:00",
+   "t": "herren",
+   "w": "Meisterschaft",
+   "g": "DJK SW Griesheim",
+   "nr": "56",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2026-09-09",
+   "z": "19:30",
+   "t": "herren",
+   "w": "Meisterschaft",
+   "g": "TSG Niederrad 1898",
+   "nr": "65",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2026-09-12",
+   "z": "10:00",
+   "t": "f1",
+   "w": "Kinderfestival",
+   "g": "",
+   "nr": "142",
+   "dauer": 75,
+   "ort": "u"
+  },
+  {
+   "d": "2026-09-12",
+   "z": "11:00",
+   "t": "e3",
+   "w": "Meisterschaft",
+   "g": "SG Harheim 2",
+   "nr": "10",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-09-12",
+   "z": "11:30",
+   "t": "e2",
+   "w": "Meisterschaft",
+   "g": "SG Bornheim / GW 3",
+   "nr": "10",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-09-12",
+   "z": "12:00",
+   "t": "e1",
+   "w": "Meisterschaft",
+   "g": "SG Bornheim / GW 2",
+   "nr": "10",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-09-13",
+   "z": "10:00",
+   "t": "d3",
+   "w": "Meisterschaft",
+   "g": "TV Preungesheim 1",
+   "nr": "22",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-09-13",
+   "z": "11:30",
+   "t": "d2",
+   "w": "Meisterschaft",
+   "g": "Concordia Eschersheim II",
+   "nr": "22",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-09-13",
+   "z": "13:00",
+   "t": "d1",
+   "w": "Meisterschaft",
+   "g": "Concordia Eschersheim",
+   "nr": "22",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-09-13",
+   "z": "14:30",
+   "t": "d3",
+   "w": "Freundschaftsspiel",
+   "g": "Hellas Rüsselsheim 1",
+   "nr": "143",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-09-19",
+   "z": "11:00",
+   "t": "d1",
+   "w": "Freundschaftsspiel",
+   "g": "SC Dortelweil 1",
+   "nr": "140",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-09-19",
+   "z": "11:00",
+   "t": "d1",
+   "w": "Freundschaftsspiel",
+   "g": "SC Dortelweil 3 (FS)",
+   "nr": "179",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-09-19",
+   "z": "16:00",
+   "t": "a-jugend",
+   "w": "Meisterschaft",
+   "g": "TuS Makkabi Frankfurt 1",
+   "nr": "34",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2026-09-20",
+   "z": "15:00",
+   "t": "herren",
+   "w": "Meisterschaft",
+   "g": "SC Riedberg",
+   "nr": "83",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2026-09-26",
+   "z": "10:00",
+   "t": "f1",
+   "w": "Kinderfestival",
+   "g": "",
+   "nr": "237",
+   "dauer": 75,
+   "ort": "u"
+  },
+  {
+   "d": "2026-10-03",
+   "z": "16:00",
+   "t": "a-jugend",
+   "w": "Meisterschaft",
+   "g": "Spvgg. Neu-Isenburg 2",
+   "nr": "48",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2026-10-04",
+   "z": "15:00",
+   "t": "herren",
+   "w": "Meisterschaft",
+   "g": "FV 1920 Hausen",
+   "nr": "101",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2026-10-17",
+   "z": "16:00",
+   "t": "a-jugend",
+   "w": "Meisterschaft",
+   "g": "Karbener SV 2",
+   "nr": "55",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2026-10-18",
+   "z": "12:00",
+   "t": "e1",
+   "w": "Freundschaftsspiel",
+   "g": "FC Germ. 08 Ginnheim 1",
+   "nr": "197",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-10-18",
+   "z": "15:00",
+   "t": "herren",
+   "w": "Meisterschaft",
+   "g": "FC Croatia Frankfurt",
+   "nr": "119",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2026-10-19",
+   "z": "18:00",
+   "t": "e2",
+   "w": "Freundschaftsspiel",
+   "g": "SFD Schwanheim E2",
+   "nr": "202",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-10-24",
+   "z": "10:00",
+   "t": "f1",
+   "w": "Kinderfestival",
+   "g": "",
+   "nr": "283",
+   "dauer": 75,
+   "ort": "u"
+  },
+  {
+   "d": "2026-10-25",
+   "z": "15:00",
+   "t": "herren",
+   "w": "Meisterschaft",
+   "g": "FC Corumspor Frankfurt",
+   "nr": "128",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2026-10-28",
+   "z": "17:15",
+   "t": "e1",
+   "w": "Kreispokal",
+   "g": "TSG Frankfurter Berg I",
+   "nr": "40",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-10-31",
+   "z": "10:00",
+   "t": "f1",
+   "w": "Kinderfestival",
+   "g": "",
+   "nr": "343",
+   "dauer": 75,
+   "ort": "u"
+  },
+  {
+   "d": "2026-10-31",
+   "z": "11:30",
+   "t": "e2",
+   "w": "Meisterschaft",
+   "g": "BSC SW 1919 Frankfurt 3",
+   "nr": "9",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-10-31",
+   "z": "11:30",
+   "t": "e3",
+   "w": "Meisterschaft",
+   "g": "FC Germania 1911 Enkheim 4",
+   "nr": "9",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-10-31",
+   "z": "12:30",
+   "t": "e1",
+   "w": "Meisterschaft",
+   "g": "BSC SW 1919 Frankfurt 1",
+   "nr": "9",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-10-31",
+   "z": "16:00",
+   "t": "a-jugend",
+   "w": "Meisterschaft",
+   "g": "FC Bayern Alzenau 2",
+   "nr": "69",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2026-11-01",
+   "z": "10:00",
+   "t": "d3",
+   "w": "Meisterschaft",
+   "g": "SG Bornheim / GW 2",
+   "nr": "46",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-11-01",
+   "z": "11:30",
+   "t": "d2",
+   "w": "Meisterschaft",
+   "g": "FC Union Niederrad 3",
+   "nr": "46",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-11-01",
+   "z": "11:30",
+   "t": "d3",
+   "w": "Freundschaftsspiel",
+   "g": "SV 09 Hofheim 2",
+   "nr": "299",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-11-01",
+   "z": "13:00",
+   "t": "d1",
+   "w": "Meisterschaft",
+   "g": "FSV 1910 Bergen 1",
+   "nr": "46",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-11-01",
+   "z": "14:30",
+   "t": "d2",
+   "w": "Freundschaftsspiel",
+   "g": "SpVgg 05/99 Bomber HG 2",
+   "nr": "300",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-11-01",
+   "z": "16:00",
+   "t": "e2",
+   "w": "Freundschaftsspiel",
+   "g": "SV Bosnien-Herzegowina FFM 2 (FS)",
+   "nr": "225",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-11-08",
+   "z": "14:30",
+   "t": "herren",
+   "w": "Meisterschaft",
+   "g": "SG Harheim II",
+   "nr": "146",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2026-11-14",
+   "z": "11:00",
+   "t": "e3",
+   "w": "Meisterschaft",
+   "g": "TG Sachsenhausen IV",
+   "nr": "19",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-11-14",
+   "z": "11:30",
+   "t": "e2",
+   "w": "Meisterschaft",
+   "g": "Spvgg. Oberrad IV",
+   "nr": "19",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-11-14",
+   "z": "12:00",
+   "t": "e1",
+   "w": "Meisterschaft",
+   "g": "Spvgg. Oberrad",
+   "nr": "19",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-11-14",
+   "z": "13:30",
+   "t": "f1",
+   "w": "Kinderfestival",
+   "g": "",
+   "nr": "3",
+   "dauer": 75,
+   "ort": "u"
+  },
+  {
+   "d": "2026-11-15",
+   "z": "13:00",
+   "t": "d1",
+   "w": "Freundschaftsspiel",
+   "g": "TuS Makkabi Frankfurt 5",
+   "nr": "284",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-11-15",
+   "z": "14:30",
+   "t": "herren",
+   "w": "Meisterschaft",
+   "g": "VfR Bockenheim",
+   "nr": "156",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2026-11-21",
+   "z": "16:00",
+   "t": "a-jugend",
+   "w": "Meisterschaft",
+   "g": "JFV Nidda / Schotten 1",
+   "nr": "83",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2026-11-28",
+   "z": "11:00",
+   "t": "e3",
+   "w": "Meisterschaft",
+   "g": "VfR Bockenheim 2",
+   "nr": "29",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-11-28",
+   "z": "11:30",
+   "t": "e2",
+   "w": "Meisterschaft",
+   "g": "SC Weiss-Blau Frankfurt II",
+   "nr": "29",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-11-28",
+   "z": "12:00",
+   "t": "e1",
+   "w": "Meisterschaft",
+   "g": "TG Sachsenhausen I",
+   "nr": "29",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2026-11-29",
+   "z": "10:00",
+   "t": "d3",
+   "w": "Meisterschaft",
+   "g": "SV Griesheim Tarik",
+   "nr": "58",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-11-29",
+   "z": "11:30",
+   "t": "d2",
+   "w": "Meisterschaft",
+   "g": "Spvgg. 03 Fechenheim",
+   "nr": "58",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-11-29",
+   "z": "13:00",
+   "t": "d1",
+   "w": "Meisterschaft",
+   "g": "Spvgg. Kickers 1916 1",
+   "nr": "58",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2026-11-29",
+   "z": "14:30",
+   "t": "herren",
+   "w": "Meisterschaft",
+   "g": "TSG 51 Frankfurt",
+   "nr": "176",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2026-12-13",
+   "z": "11:00",
+   "t": "e2",
+   "w": "Freundschaftsspiel",
+   "g": "SGK Bad Homburg 2",
+   "nr": "215",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2027-02-05",
+   "z": "19:30",
+   "t": "herren",
+   "w": "Freundschaftsspiel",
+   "g": "TG Sachsenhausen",
+   "nr": "170",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2027-02-14",
+   "z": "15:00",
+   "t": "herren",
+   "w": "Freundschaftsspiel",
+   "g": "FC Karben II",
+   "nr": "172",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2027-02-20",
+   "z": "11:30",
+   "t": "e2",
+   "w": "Meisterschaft",
+   "g": "1. Rödelheimer FC 02 4",
+   "nr": "49",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2027-02-20",
+   "z": "12:00",
+   "t": "e1",
+   "w": "Meisterschaft",
+   "g": "TSG Frankfurter Berg I",
+   "nr": "49",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2027-02-21",
+   "z": "15:00",
+   "t": "herren",
+   "w": "Freundschaftsspiel",
+   "g": "SV Pars Neu-Isenburg II",
+   "nr": "179",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2027-02-27",
+   "z": "16:00",
+   "t": "a-jugend",
+   "w": "Meisterschaft",
+   "g": "FV Bad Vilbel 1",
+   "nr": "98",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2027-03-06",
+   "z": "11:00",
+   "t": "e3",
+   "w": "Meisterschaft",
+   "g": "FV 09 Eschersheim II",
+   "nr": "57",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2027-03-06",
+   "z": "11:30",
+   "t": "e2",
+   "w": "Meisterschaft",
+   "g": "FC Kalbach II",
+   "nr": "57",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2027-03-06",
+   "z": "12:00",
+   "t": "e1",
+   "w": "Meisterschaft",
+   "g": "FV 09 Eschersheim I",
+   "nr": "57",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2027-03-07",
+   "z": "10:00",
+   "t": "d3",
+   "w": "Meisterschaft",
+   "g": "TuS Makkabi Frankfurt 6",
+   "nr": "81",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2027-03-07",
+   "z": "11:30",
+   "t": "d2",
+   "w": "Meisterschaft",
+   "g": "SV 1894 Sachsenhausen 1",
+   "nr": "81",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2027-03-07",
+   "z": "13:00",
+   "t": "d1",
+   "w": "Meisterschaft",
+   "g": "FC Germania 1911 Enkheim 1",
+   "nr": "81",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2027-03-07",
+   "z": "15:30",
+   "t": "herren",
+   "w": "Meisterschaft",
+   "g": "Spvgg. 02 Griesheim II",
+   "nr": "216",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2027-03-14",
+   "z": "10:00",
+   "t": "d3",
+   "w": "Meisterschaft",
+   "g": "SV Blau-Gelb Frankfurt 2",
+   "nr": "85",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2027-03-14",
+   "z": "11:30",
+   "t": "d2",
+   "w": "Meisterschaft",
+   "g": "SV Blau-Gelb Frankfurt 3",
+   "nr": "85",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2027-03-14",
+   "z": "13:00",
+   "t": "d1",
+   "w": "Meisterschaft",
+   "g": "FC JUZ Fechenheim 1",
+   "nr": "85",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2027-03-20",
+   "z": "16:00",
+   "t": "a-jugend",
+   "w": "Meisterschaft",
+   "g": "1. FC 1906 Erlensee 2",
+   "nr": "116",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2027-03-21",
+   "z": "15:30",
+   "t": "herren",
+   "w": "Meisterschaft",
+   "g": "SV Niederursel",
+   "nr": "232",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2027-04-10",
+   "z": "11:00",
+   "t": "e3",
+   "w": "Meisterschaft",
+   "g": "FG Seckbach 3",
+   "nr": "66",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2027-04-10",
+   "z": "11:30",
+   "t": "e2",
+   "w": "Meisterschaft",
+   "g": "Spvgg. Kickers 1916 2",
+   "nr": "66",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2027-04-10",
+   "z": "12:00",
+   "t": "e1",
+   "w": "Meisterschaft",
+   "g": "Spvgg. Kickers 1916 1",
+   "nr": "66",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2027-04-10",
+   "z": "16:00",
+   "t": "a-jugend",
+   "w": "Meisterschaft",
+   "g": "Spvgg. Oberrad 1",
+   "nr": "128",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2027-04-11",
+   "z": "15:30",
+   "t": "herren",
+   "w": "Meisterschaft",
+   "g": "FC Tempo Frankfurt II",
+   "nr": "248",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2027-04-18",
+   "z": "10:00",
+   "t": "d3",
+   "w": "Meisterschaft",
+   "g": "Spvgg. Oberrad IV",
+   "nr": "101",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2027-04-18",
+   "z": "11:30",
+   "t": "d2",
+   "w": "Meisterschaft",
+   "g": "SG Harheim 2",
+   "nr": "101",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2027-04-24",
+   "z": "11:00",
+   "t": "e3",
+   "w": "Meisterschaft",
+   "g": "TSG Niederrad 1898 2",
+   "nr": "77",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2027-04-24",
+   "z": "11:30",
+   "t": "e2",
+   "w": "Meisterschaft",
+   "g": "SV Blau-Gelb Frankfurt 4",
+   "nr": "77",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2027-04-24",
+   "z": "12:00",
+   "t": "e1",
+   "w": "Meisterschaft",
+   "g": "SV Blau-Gelb Frankfurt 1",
+   "nr": "77",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2027-04-24",
+   "z": "16:00",
+   "t": "a-jugend",
+   "w": "Meisterschaft",
+   "g": "SG Oberhoechstadt 1",
+   "nr": "146",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2027-04-25",
+   "z": "10:00",
+   "t": "d3",
+   "w": "Meisterschaft",
+   "g": "TSG 51 Frankfurt II",
+   "nr": "103",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2027-04-25",
+   "z": "11:30",
+   "t": "d2",
+   "w": "Meisterschaft",
+   "g": "FC Fortuna Frankfurt",
+   "nr": "103",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2027-04-25",
+   "z": "13:00",
+   "t": "d1",
+   "w": "Meisterschaft",
+   "g": "FC Germ. 08 Ginnheim 1",
+   "nr": "103",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2027-04-25",
+   "z": "15:30",
+   "t": "herren",
+   "w": "Meisterschaft",
+   "g": "SV Eritrea Frankfurt",
+   "nr": "264",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2027-05-08",
+   "z": "16:00",
+   "t": "a-jugend",
+   "w": "Meisterschaft",
+   "g": "FSV Bischofsheim 1",
+   "nr": "158",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2027-05-09",
+   "z": "10:00",
+   "t": "d3",
+   "w": "Meisterschaft",
+   "g": "FSV 1910 Bergen 3",
+   "nr": "110",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2027-05-09",
+   "z": "11:30",
+   "t": "d2",
+   "w": "Meisterschaft",
+   "g": "1. Rödelheimer FC 02 2",
+   "nr": "110",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2027-05-09",
+   "z": "13:00",
+   "t": "d1",
+   "w": "Meisterschaft",
+   "g": "1. Rödelheimer FC 02 1",
+   "nr": "110",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2027-05-15",
+   "z": "11:00",
+   "t": "e3",
+   "w": "Meisterschaft",
+   "g": "Concordia Eschersheim II",
+   "nr": "85",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2027-05-15",
+   "z": "11:30",
+   "t": "e2",
+   "w": "Meisterschaft",
+   "g": "SG Bornheim / GW 4",
+   "nr": "85",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2027-05-15",
+   "z": "12:00",
+   "t": "e1",
+   "w": "Meisterschaft",
+   "g": "SG Bornheim / GW 1",
+   "nr": "85",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2027-05-15",
+   "z": "15:00",
+   "t": "herren",
+   "w": "Meisterschaft",
+   "g": "Concordia Eschersheim II",
+   "nr": "297",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2027-05-22",
+   "z": "11:00",
+   "t": "e3",
+   "w": "Meisterschaft",
+   "g": "SV Niederursel 3",
+   "nr": "89",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2027-05-22",
+   "z": "11:30",
+   "t": "e2",
+   "w": "Meisterschaft",
+   "g": "SC Riedberg IV",
+   "nr": "89",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2027-05-22",
+   "z": "12:00",
+   "t": "e1",
+   "w": "Meisterschaft",
+   "g": "SG Rot-Weiss Frankfurt",
+   "nr": "89",
+   "dauer": 90,
+   "ort": "u"
+  },
+  {
+   "d": "2027-05-22",
+   "z": "16:00",
+   "t": "a-jugend",
+   "w": "Meisterschaft",
+   "g": "JSG Kirdorf 1",
+   "nr": "163",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  },
+  {
+   "d": "2027-05-23",
+   "z": "10:00",
+   "t": "d3",
+   "w": "Meisterschaft",
+   "g": "DJK SW Griesheim 4",
+   "nr": "119",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2027-05-23",
+   "z": "11:30",
+   "t": "d2",
+   "w": "Meisterschaft",
+   "g": "FC Germ. 08 Ginnheim 2",
+   "nr": "119",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2027-05-23",
+   "z": "13:00",
+   "t": "d1",
+   "w": "Meisterschaft",
+   "g": "FV 09 Eschersheim 2",
+   "nr": "119",
+   "dauer": 105,
+   "ort": "u"
+  },
+  {
+   "d": "2027-06-05",
+   "z": "18:00",
+   "t": "a-jugend",
+   "w": "Meisterschaft",
+   "g": "Spvgg. Langenselbold 1",
+   "nr": "176",
+   "dauer": null,
+   "ort": "Am Römerhof 9"
+  }
+ ]
+}

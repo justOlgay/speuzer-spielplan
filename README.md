@@ -928,3 +928,36 @@ Website und der App liest diesen Kalender und zeigt „Halle: …“ mit Routenl
 „Stand 12.10.2026“) auf das Datum der Änderung setzen. Die Mannschaftsseiten der Website und der
 App zeigen den Satz aus `data/teams.json` › `trainingHinweis` im Repo `speuzer-website-prototyp`;
 er muss bei jeder Änderung mit angepasst werden.
+
+## Platzbelegung (`docs/platzbelegung.json`)
+
+Stand 31.10.2026. Öffentliche Daten für die Seite „Platzbelegung“ auf Website und App: wer wann welchen Platzteil
+nutzt (Training, Winterhalle, andere Nutzung), alle Heimspiele mit Spielort und die Regeln, nach denen die Seite im
+Browser die freien Zeiten ausrechnet. Die Seite liest `https://justolgay.github.io/speuzer-spielplan/platzbelegung.json`
+zur Laufzeit; hier entsteht nur die Datei, gerechnet und gezeichnet wird im Browser.
+
+* **Erzeugung.** `build_ics.py` ruft am Ende jedes Laufs `platzbelegung.py` auf (`schreibe_platzbelegung()`); die
+  GitHub-Aktion baut die Datei täglich um 04:12 UTC mit den Kalendern und committet sie unter `docs/`. Eine Änderung an
+  `platzbelegung.py` startet die Aktion ebenfalls (`paths` in `build.yml`). Fehlt `platzbelegung.py` neben `build_ics.py`,
+  überspringt der Lauf nur diese Datei: so bleibt der Probelauf von `tools/nachtrag.py` (Kopie nur mit `build_ics.py`, mit
+  `python -I`) unverändert lauffähig. „erzeugt“ und „stand.spiele“ sind der Tag des Laufs (auf GitHub nach UTC).
+* **Quellen.** Aus `build_ics.py`: `TRAINING` (Training auf dem Platz; wer in `ORT_EXTERN` steht, trainiert auswärts und
+  fehlt, heute die Herren), `HALLE`, `FREI`, `TRAINING_VON`, `TRAINING_BIS`, `TRAINING_STAND` und `SPORTPLATZ`. Aus
+  `spiele.csv`: jede Zeile, deren `heim` mit „FFV Sportfreunde 04“ beginnt; beginnt die Spielstätte mit „Mainzer
+  Landstr. 480“, ist es unser Platz (`ort` = `u`, mit Spieldauer), sonst steht der Ort vor dem ersten Komma; der
+  Gegnername ist mit `bereinige_gegner()` wie auf den App-Spielplanseiten bereinigt („Ffm“ wird „Frankfurt“). In
+  `platzbelegung.py` selbst: `BELEGT` (andere Nutzung), die Platzteile, die Mannschaftsliste mit den Ids der Seite und die
+  Rechenregeln (Fenster werktags 15:30–21:30 und am Wochenende 09:00–18:00, freie Zeit ab 60 Minuten, Spieldauer D 105,
+  E 90, F und G 75, A und Herren 120 Minuten, Kinderfestival 75).
+* **Pflege.** `BELEGT` pflegt Olgay von Hand nach der Excel „Aufteilung Trainingsplatz 26-27“: jeder Block, der keiner
+  Mannschaft gehört, mit Wochentag, von, bis und Platzteil. Bei jeder Änderung an `BELEGT`, `TRAINING`, `HALLE` oder `FREI`
+  den `TRAINING_STAND` in `build_ics.py` auf das Datum setzen (er steht auf der Seite als Stand des Plans). Eine neue
+  Mannschaft in `TEAMS` und `TRAINING` gehört auch in `MANNSCHAFTEN`, sonst bricht der Lauf mit einer Meldung ab.
+* **Öffentlich, ohne Namen.** Die Datei und dieses Repo sind öffentlich. Weder in `BELEGT` noch in der Datei stehen Namen
+  von Personen oder Firmen, Telefonnummern, E-Mail-Adressen, Zellkoordinaten oder Kommentare aus der Excel: „belegt“ heißt
+  nur „andere Nutzung“, ohne Angabe, wer. Das prüft `test_platzbelegung.py` (Abschnitt Datenschutz).
+* **Aufbau.** `version` (1), `saison`, `erzeugt`, `stand` (`plan`, `spiele`), `platz`, `teile`, `belegung` (Platzangabe zu
+  Platzteilen), `mannschaften`, `regeln`, `training` (nur auf dem Platz), `halle` (Winterhalle), `belegt` und `spiele`, in
+  fester Reihenfolge, UTF-8, Einrückung 1: der tägliche Lauf soll nur echte Änderungen zeigen.
+* **Prüfen.** `python3 test_platzbelegung.py` (Exit 0 = in Ordnung): Aufbau, Verweise, Zahlen gegen `spiele.csv`,
+  Datenschutz, Wiederholbarkeit und zwei Läufe von `build_ics.py` in Wegwerf-Ordnern.

@@ -866,6 +866,21 @@ def schreibe_index():
     print("index.html         %3d Kalender" % (len(TEAMS) + 3 + len(TRAINING)))
 
 
+def schreibe_platzbelegung(alle):
+    """docs/platzbelegung.json: oeffentliche Daten der Seite "Platzbelegung" (Modul platzbelegung.py, siehe README).
+    Fehlt das Modul, entsteht die Datei nicht und der Lauf geht weiter: tools/nachtrag.py probiert build_ics.py in
+    einer Kopie nur mit dieser Datei und mit -I (dann liegt auch ein Nachbarmodul nicht im Suchpfad)."""
+    try:
+        import platzbelegung
+    except ModuleNotFoundError as fehler:
+        if fehler.name != "platzbelegung":
+            raise
+        print("platzbelegung.json  uebersprungen (platzbelegung.py nicht gefunden)")
+        return
+    platzbelegung.schreibe(OUT / "platzbelegung.json",
+                           platzbelegung.baue(alle, datetime.date.today(), sys.modules[__name__]))
+
+
 def main():
     stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     alle = list(lade_spiele())
@@ -894,6 +909,7 @@ def main():
     for g in GRUPPEN:
         schreibe_app_seite(g, [r for r in alle if TEAMS[r["team"]]["gruppe"] == g])
     schreibe_index()
+    schreibe_platzbelegung(alle)
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
 
 
