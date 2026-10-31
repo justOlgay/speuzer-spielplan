@@ -937,8 +937,10 @@ Browser die freien Zeiten ausrechnet. Die Seite liest `https://justolgay.github.
 zur Laufzeit; hier entsteht nur die Datei, gerechnet und gezeichnet wird im Browser.
 
 * **Erzeugung.** `build_ics.py` ruft am Ende jedes Laufs `platzbelegung.py` auf (`schreibe_platzbelegung()`); die
-  GitHub-Aktion baut die Datei täglich um 04:12 UTC mit den Kalendern und committet sie unter `docs/`. Eine Änderung an
-  `platzbelegung.py` startet die Aktion ebenfalls (`paths` in `build.yml`). Fehlt `platzbelegung.py` neben `build_ics.py`,
+  GitHub-Aktion baut die Datei täglich um 04:12 UTC mit den Kalendern und committet sie unter `docs/`. Eine Änderung nur
+  an `platzbelegung.py` startet die Aktion nicht von selbst (`paths` in `build.yml` nennt nur `spiele.csv` und
+  `build_ics.py`): sie wirkt beim nächsten täglichen Lauf, oder die Aktion wird auf GitHub von Hand gestartet (Actions,
+  „Run workflow“). Fehlt `platzbelegung.py` neben `build_ics.py`,
   überspringt der Lauf nur diese Datei: so bleibt der Probelauf von `tools/nachtrag.py` (Kopie nur mit `build_ics.py`, mit
   `python -I`) unverändert lauffähig. „erzeugt“ und „stand.spiele“ sind der Tag des Laufs (auf GitHub nach UTC).
 * **Quellen.** Aus `build_ics.py`: `TRAINING` (Training auf dem Platz; wer in `ORT_EXTERN` steht, trainiert auswärts und

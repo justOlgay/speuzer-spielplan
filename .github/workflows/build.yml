@@ -3,7 +3,7 @@ name: Spielplan-Kalender bauen
 on:
   push:
     branches: [main]
-    paths: ["spiele.csv", "build_ics.py", "platzbelegung.py", ".github/workflows/build.yml"]
+    paths: ["spiele.csv", "build_ics.py", ".github/workflows/build.yml"]
   schedule:
     - cron: "12 4 * * *"
   workflow_dispatch:
