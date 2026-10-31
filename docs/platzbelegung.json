@@ -189,10 +189,11 @@
   },
   "minFrei": 60,
   "dauer": {
-   "D": 105,
-   "E": 90,
-   "F": 75,
-   "G": 75,
+   "D": 90,
+   "C": 90,
+   "E": 60,
+   "F": 60,
+   "G": 60,
    "A": 120,
    "Herren": 120
   },
@@ -587,7 +588,7 @@
    "w": "Freundschaftsspiel",
    "g": "SV Blau-Gelb Frankfurt 1",
    "nr": "65",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -598,7 +599,7 @@
    "w": "Meisterschaft",
    "g": "FSV 1910 Bergen 3",
    "nr": "1",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -609,7 +610,7 @@
    "w": "Meisterschaft",
    "g": "Spvgg. Kickers 1916 4",
    "nr": "1",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -620,7 +621,7 @@
    "w": "Meisterschaft",
    "g": "VfL Germania 1894 1",
    "nr": "1",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -631,7 +632,7 @@
    "w": "Meisterschaft",
    "g": "VfL Germania 1894 2",
    "nr": "4",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -642,7 +643,7 @@
    "w": "Meisterschaft",
    "g": "VfR Bockenheim 2",
    "nr": "4",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -653,7 +654,7 @@
    "w": "Meisterschaft",
    "g": "FG Seckbach 1",
    "nr": "4",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -675,7 +676,7 @@
    "w": "Kreispokal",
    "g": "1. Rödelheimer FC 02 1",
    "nr": "24",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -686,7 +687,7 @@
    "w": "Meisterschaft",
    "g": "TSG Frankfurter Berg I",
    "nr": "10",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -697,7 +698,7 @@
    "w": "Meisterschaft",
    "g": "FFC Olympia 07 I",
    "nr": "10",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -719,7 +720,7 @@
    "w": "Kinderfestival",
    "g": "",
    "nr": "62",
-   "dauer": 75,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -763,7 +764,7 @@
    "w": "Kinderfestival",
    "g": "",
    "nr": "142",
-   "dauer": 75,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -774,7 +775,7 @@
    "w": "Meisterschaft",
    "g": "SG Harheim 2",
    "nr": "10",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -785,7 +786,7 @@
    "w": "Meisterschaft",
    "g": "SG Bornheim / GW 3",
    "nr": "10",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -796,7 +797,7 @@
    "w": "Meisterschaft",
    "g": "SG Bornheim / GW 2",
    "nr": "10",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -807,7 +808,7 @@
    "w": "Meisterschaft",
    "g": "TV Preungesheim 1",
    "nr": "22",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -818,7 +819,7 @@
    "w": "Meisterschaft",
    "g": "Concordia Eschersheim II",
    "nr": "22",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -829,7 +830,7 @@
    "w": "Meisterschaft",
    "g": "Concordia Eschersheim",
    "nr": "22",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -840,7 +841,7 @@
    "w": "Freundschaftsspiel",
    "g": "Hellas Rüsselsheim 1",
    "nr": "143",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -851,7 +852,7 @@
    "w": "Freundschaftsspiel",
    "g": "SC Dortelweil 1",
    "nr": "140",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -862,7 +863,7 @@
    "w": "Freundschaftsspiel",
    "g": "SC Dortelweil 3 (FS)",
    "nr": "179",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -895,7 +896,7 @@
    "w": "Kinderfestival",
    "g": "",
    "nr": "237",
-   "dauer": 75,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -939,7 +940,7 @@
    "w": "Freundschaftsspiel",
    "g": "FC Germ. 08 Ginnheim 1",
    "nr": "197",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -961,7 +962,7 @@
    "w": "Freundschaftsspiel",
    "g": "SFD Schwanheim E2",
    "nr": "202",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -972,7 +973,7 @@
    "w": "Kinderfestival",
    "g": "",
    "nr": "283",
-   "dauer": 75,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -994,7 +995,7 @@
    "w": "Kreispokal",
    "g": "TSG Frankfurter Berg I",
    "nr": "40",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1005,7 +1006,7 @@
    "w": "Kinderfestival",
    "g": "",
    "nr": "343",
-   "dauer": 75,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1016,7 +1017,7 @@
    "w": "Meisterschaft",
    "g": "BSC SW 1919 Frankfurt 3",
    "nr": "9",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1027,7 +1028,7 @@
    "w": "Meisterschaft",
    "g": "FC Germania 1911 Enkheim 4",
    "nr": "9",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1038,7 +1039,7 @@
    "w": "Meisterschaft",
    "g": "BSC SW 1919 Frankfurt 1",
    "nr": "9",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1060,7 +1061,7 @@
    "w": "Meisterschaft",
    "g": "SG Bornheim / GW 2",
    "nr": "46",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1071,7 +1072,7 @@
    "w": "Freundschaftsspiel",
    "g": "SV 09 Hofheim 2",
    "nr": "299",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1082,7 +1083,7 @@
    "w": "Meisterschaft",
    "g": "FSV 1910 Bergen 1",
    "nr": "46",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1093,7 +1094,7 @@
    "w": "Freundschaftsspiel",
    "g": "SpVgg 05/99 Bomber HG 2",
    "nr": "300",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1104,7 +1105,7 @@
    "w": "Freundschaftsspiel",
    "g": "SV Bosnien-Herzegowina FFM 2 (FS)",
    "nr": "225",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1126,7 +1127,7 @@
    "w": "Meisterschaft",
    "g": "TG Sachsenhausen IV",
    "nr": "19",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1137,7 +1138,7 @@
    "w": "Meisterschaft",
    "g": "Spvgg. Oberrad IV",
    "nr": "19",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1148,7 +1149,7 @@
    "w": "Meisterschaft",
    "g": "Spvgg. Oberrad",
    "nr": "19",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1159,7 +1160,7 @@
    "w": "Kinderfestival",
    "g": "",
    "nr": "3",
-   "dauer": 75,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1170,7 +1171,7 @@
    "w": "Freundschaftsspiel",
    "g": "TuS Makkabi Frankfurt 5",
    "nr": "284",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1203,7 +1204,7 @@
    "w": "Meisterschaft",
    "g": "VfR Bockenheim 2",
    "nr": "29",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1214,7 +1215,7 @@
    "w": "Meisterschaft",
    "g": "SC Weiss-Blau Frankfurt II",
    "nr": "29",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1225,7 +1226,7 @@
    "w": "Meisterschaft",
    "g": "TG Sachsenhausen I",
    "nr": "29",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1236,7 +1237,7 @@
    "w": "Meisterschaft",
    "g": "SV Griesheim Tarik",
    "nr": "58",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1247,7 +1248,7 @@
    "w": "Meisterschaft",
    "g": "Spvgg. 03 Fechenheim",
    "nr": "58",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1258,7 +1259,7 @@
    "w": "Meisterschaft",
    "g": "Spvgg. Kickers 1916 1",
    "nr": "58",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1280,7 +1281,7 @@
    "w": "Freundschaftsspiel",
    "g": "SGK Bad Homburg 2",
    "nr": "215",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1313,7 +1314,7 @@
    "w": "Meisterschaft",
    "g": "1. Rödelheimer FC 02 4",
    "nr": "49",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1324,7 +1325,7 @@
    "w": "Meisterschaft",
    "g": "TSG Frankfurter Berg I",
    "nr": "49",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1357,7 +1358,7 @@
    "w": "Meisterschaft",
    "g": "FV 09 Eschersheim II",
    "nr": "57",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1368,7 +1369,7 @@
    "w": "Meisterschaft",
    "g": "FC Kalbach II",
    "nr": "57",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1379,7 +1380,7 @@
    "w": "Meisterschaft",
    "g": "FV 09 Eschersheim I",
    "nr": "57",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1390,7 +1391,7 @@
    "w": "Meisterschaft",
    "g": "TuS Makkabi Frankfurt 6",
    "nr": "81",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1401,7 +1402,7 @@
    "w": "Meisterschaft",
    "g": "SV 1894 Sachsenhausen 1",
    "nr": "81",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1412,7 +1413,7 @@
    "w": "Meisterschaft",
    "g": "FC Germania 1911 Enkheim 1",
    "nr": "81",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1434,7 +1435,7 @@
    "w": "Meisterschaft",
    "g": "SV Blau-Gelb Frankfurt 2",
    "nr": "85",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1445,7 +1446,7 @@
    "w": "Meisterschaft",
    "g": "SV Blau-Gelb Frankfurt 3",
    "nr": "85",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1456,7 +1457,7 @@
    "w": "Meisterschaft",
    "g": "FC JUZ Fechenheim 1",
    "nr": "85",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1489,7 +1490,7 @@
    "w": "Meisterschaft",
    "g": "FG Seckbach 3",
    "nr": "66",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1500,7 +1501,7 @@
    "w": "Meisterschaft",
    "g": "Spvgg. Kickers 1916 2",
    "nr": "66",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1511,7 +1512,7 @@
    "w": "Meisterschaft",
    "g": "Spvgg. Kickers 1916 1",
    "nr": "66",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1544,7 +1545,7 @@
    "w": "Meisterschaft",
    "g": "Spvgg. Oberrad IV",
    "nr": "101",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1555,7 +1556,7 @@
    "w": "Meisterschaft",
    "g": "SG Harheim 2",
    "nr": "101",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1566,7 +1567,7 @@
    "w": "Meisterschaft",
    "g": "TSG Niederrad 1898 2",
    "nr": "77",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1577,7 +1578,7 @@
    "w": "Meisterschaft",
    "g": "SV Blau-Gelb Frankfurt 4",
    "nr": "77",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1588,7 +1589,7 @@
    "w": "Meisterschaft",
    "g": "SV Blau-Gelb Frankfurt 1",
    "nr": "77",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1610,7 +1611,7 @@
    "w": "Meisterschaft",
    "g": "TSG 51 Frankfurt II",
    "nr": "103",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1621,7 +1622,7 @@
    "w": "Meisterschaft",
    "g": "FC Fortuna Frankfurt",
    "nr": "103",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1632,7 +1633,7 @@
    "w": "Meisterschaft",
    "g": "FC Germ. 08 Ginnheim 1",
    "nr": "103",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1665,7 +1666,7 @@
    "w": "Meisterschaft",
    "g": "FSV 1910 Bergen 3",
    "nr": "110",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1676,7 +1677,7 @@
    "w": "Meisterschaft",
    "g": "1. Rödelheimer FC 02 2",
    "nr": "110",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1687,7 +1688,7 @@
    "w": "Meisterschaft",
    "g": "1. Rödelheimer FC 02 1",
    "nr": "110",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1698,7 +1699,7 @@
    "w": "Meisterschaft",
    "g": "Concordia Eschersheim II",
    "nr": "85",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1709,7 +1710,7 @@
    "w": "Meisterschaft",
    "g": "SG Bornheim / GW 4",
    "nr": "85",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1720,7 +1721,7 @@
    "w": "Meisterschaft",
    "g": "SG Bornheim / GW 1",
    "nr": "85",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1742,7 +1743,7 @@
    "w": "Meisterschaft",
    "g": "SV Niederursel 3",
    "nr": "89",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1753,7 +1754,7 @@
    "w": "Meisterschaft",
    "g": "SC Riedberg IV",
    "nr": "89",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1764,7 +1765,7 @@
    "w": "Meisterschaft",
    "g": "SG Rot-Weiss Frankfurt",
    "nr": "89",
-   "dauer": 90,
+   "dauer": 60,
    "ort": "u",
    "feld": "halb"
   },
@@ -1786,7 +1787,7 @@
    "w": "Meisterschaft",
    "g": "DJK SW Griesheim 4",
    "nr": "119",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1797,7 +1798,7 @@
    "w": "Meisterschaft",
    "g": "FC Germ. 08 Ginnheim 2",
    "nr": "119",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },
@@ -1808,7 +1809,7 @@
    "w": "Meisterschaft",
    "g": "FV 09 Eschersheim 2",
    "nr": "119",
-   "dauer": 105,
+   "dauer": 90,
    "ort": "u",
    "feld": "ganz"
   },

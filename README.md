@@ -950,14 +950,15 @@ zur Laufzeit; hier entsteht nur die Datei, gerechnet und gezeichnet wird im Brow
   steht der Ort vor dem ersten Komma; der Gegnername ist mit `bereinige_gegner()` wie auf den App-Spielplanseiten
   bereinigt („Ffm“ wird „Frankfurt“). In
   `platzbelegung.py` selbst: `BELEGT` (andere Nutzung), die Platzteile, die Mannschaftsliste mit den Ids der Seite und die
-  Rechenregeln (Fenster werktags 15:30–21:30 und am Wochenende 09:00–18:00, freie Zeit ab 60 Minuten, Spieldauer D 105,
-  E 90, F und G 75, A und Herren 120 Minuten, Kinderfestival 75).
+  Rechenregeln (Fenster werktags 15:30–21:30 und am Wochenende 09:00–18:00, freie Zeit ab 60 Minuten) und die
+  Spieldauern: D und C 90, E und F und G 60 Minuten, Herren und A 120, Kinderfestival 60 (Angaben der Jugendabteilung);
+  G wie F und das Kinderfestival wie F sind eine Annahme.
 * **Abgesagte Spiele, Feldbedarf.** Zeilen mit dem Vermerk `abgesagt` in der Spalte `ergebnis` (so schreibt ihn
   `tools/nachtrag.py`; ein Zurücknehmen leert die Spalte) fehlen in `spiele` und zählen für `regeln.navigation` nicht
-  mit. Jedes Spiel auf unserem Platz trägt als letzten Schlüssel `feld`: `"halb"` für E, F und G, `"ganz"` für D, A und
-  Herren (Tabelle `FELD` in `platzbelegung.py`; E und D laut Vorgabe vom 31.10.2026, F und G wie E sind eine Annahme),
-  bei anderem Spielort `null`. Welche Platzhälfte ein `"halb"`-Spiel belegt, wählt die Seite im Browser, nicht der
-  Generator.
+  mit. Jedes Spiel auf unserem Platz trägt als letzten Schlüssel `feld`: `"halb"` für E, F und G, `"ganz"` für C, D, A und
+  Herren (Tabelle `FELD` in `platzbelegung.py`; E und D laut Vorgabe vom 31.10.2026, F und G wie E sowie C wie D sind eine
+  Annahme), bei anderem Spielort `null`. Welche Platzhälfte ein `"halb"`-Spiel belegt, wählt die Seite im Browser, nicht
+  der Generator.
 * **Pflege.** `BELEGT` pflegt Olgay von Hand nach der Excel „Aufteilung Trainingsplatz 26-27“: jeder Block, der keiner
   Mannschaft gehört, mit Wochentag, von, bis und Platzteil. Bei jeder Änderung an `BELEGT`, `TRAINING`, `HALLE` oder `FREI`
   den `TRAINING_STAND` in `build_ics.py` auf das Datum setzen (er steht auf der Seite als Stand des Plans). Eine neue

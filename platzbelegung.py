@@ -71,15 +71,22 @@ IDS = {csv_kuerzel: ident for ident, _, _, csv_kuerzel in MANNSCHAFTEN}
 # Regeln, nach denen die Seite rechnet (Annahmen des Vereins, nicht aus spiele.csv).
 FENSTER = {"werktag": ("15:30", "21:30"), "wochenende": ("09:00", "18:00")}   # Öffnungsfenster für freie Zeiten
 MIN_FREI = 60                        # Minuten; eine kürzere Lücke zählt nicht als frei
-DAUER = {"D": 105, "E": 90, "F": 75, "G": 75, "A": 120, "Herren": 120}        # Spieldauer in Minuten je Klasse
-DAUER_FESTIVAL = 75                  # Kinderfestival
+
+# Spieldauer eines Heimspiels in Minuten je Klasse (mit Halbzeitpause und Puffer). Quelle: Angaben der Jugendabteilung
+# vom 31.10.2026: D 1,5 Stunden (2×30 Minuten, 10 Minuten Pause, Puffer), E 2×25 Minuten plus Pause, F eine Stunde;
+# C wie D (der Verein hat zurzeit keine C-Jugend, die Regel gilt trotzdem). Vorher D 105, E 90, F und G 75. ANNAHMEN (so
+# nicht vorgegeben): G (keine Heimspiele auf unserem Platz, jünger als F) wie F; das Kinderfestival gehört zu F und G
+# und gilt wie F (vorher 75). A und Herren bleiben bei 120.
+DAUER = {"D": 90, "C": 90, "E": 60, "F": 60, "G": 60, "A": 120, "Herren": 120}
+DAUER_FESTIVAL = 60                  # Kinderfestival
 
 # Feldbedarf eines Heimspiels auf unserem Platz je Klasse: "halb" = eine Platzhälfte (zwei der vier Tore), "ganz" = der
 # ganze Platz (Tor 1 bis 4). Quelle: Rückmeldung zur Seite „Platzbelegung“ vom 31.10.2026 („E-Jugend braucht nur das
-# Halbfeld, ab D-Jugend das ganze Feld“). ANNAHME: F und G sind jünger als E und deshalb wie E auf "halb" gesetzt (so
-# nicht vorgegeben). Welche Hälfte (links oder rechts) ein "halb"-Spiel belegt, steht nicht in spiele.csv; das wählt die
-# Seite im Browser, nicht dieser Generator.
-FELD = {"D": "ganz", "E": "halb", "F": "halb", "G": "halb", "A": "ganz", "Herren": "ganz"}
+# Halbfeld, ab D-Jugend das ganze Feld“). ANNAHMEN (so nicht vorgegeben): F und G sind jünger als E und deshalb wie E
+# auf "halb" gesetzt; C (der Verein hat zurzeit keine C-Jugend) ist älter als D und braucht wie D das ganze Feld ("ab
+# D-Jugend" schließt die älteren Klassen ein). Welche Hälfte (links oder rechts) ein "halb"-Spiel belegt, steht nicht in
+# spiele.csv; das wählt die Seite im Browser, nicht dieser Generator.
+FELD = {"D": "ganz", "C": "ganz", "E": "halb", "F": "halb", "G": "halb", "A": "ganz", "Herren": "ganz"}
 
 # Andere Nutzung des Platzes (nicht das Training einer Mannschaft): Wochentag, von, bis, Platzangabe (Schreibweise wie
 # in BELEGUNG). Jeder Eintrag: andere Nutzung, öffentlich ohne Angabe, wer; darum steht hier auch kein Name.
@@ -141,14 +148,15 @@ def ort_kurz(spielstaette):
 
 
 def spieldauer(csv_kuerzel, wettbewerb, festival):
-    """Spieldauer in Minuten: Kinderfestival DAUER_FESTIVAL, sonst nach Klasse (D, E, F, G, A, Herren)."""
+    """Spieldauer in Minuten: Kinderfestival DAUER_FESTIVAL, sonst nach Klasse (C, D, E, F, G, A, Herren)."""
     if wettbewerb == festival:
         return DAUER_FESTIVAL
     return DAUER["Herren" if csv_kuerzel == "HERREN" else csv_kuerzel[0]]
 
 
 def feldbedarf(csv_kuerzel):
-    """Feldbedarf eines Heimspiels auf unserem Platz nach Klasse (Tabelle FELD): "halb" oder "ganz"."""
+    """Feldbedarf eines Heimspiels auf unserem Platz nach Klasse (C, D, E, F, G, A, Herren; Tabelle FELD): "halb" oder
+    "ganz"."""
     return FELD["Herren" if csv_kuerzel == "HERREN" else csv_kuerzel[0]]
 
 

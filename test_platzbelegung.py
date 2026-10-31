@@ -14,8 +14,12 @@ Die Beispieldatei der Schnittstelle (aus dem Prototyp, Stand 30.10.2026) liegt n
 (tools/cache/orchestrierung-platzbelegung/schnittstelle/). Der Vergleich der statischen Teile läuft nur, wenn sie
 gefunden wird (Pfad per Umgebungsvariable PLATZ_BEISPIELDATEI änderbar) und ihr Plan-Stand dem TRAINING_STAND des
 Generators entspricht; sonst steht in der Ausgabe, dass er übersprungen wurde (der Plan hat sich dann rechtmäßig geändert).
-Die Beispieldatei kennt weder feld noch lässt sie abgesagte Spiele aus: Die Spiele werden ohne feld verglichen, abgesagte
-Spiele, die dort noch stehen, erscheinen in der Ausgabe als erwartete Abweichung (kein Fehler).
+Die Beispieldatei kennt weder feld noch lässt sie abgesagte Spiele aus und hat noch die alten Spieldauern: Die Spiele werden
+ohne feld und ohne dauer verglichen, regeln ohne navigation und ohne dauer (die neuen Spieldauern prüft der Abschnitt Zahlen
+unabhängig davon); abgesagte Spiele, die dort noch stehen, erscheinen in der Ausgabe als erwartete Abweichung (kein Fehler).
+
+Reine Information, keine Prüfung: Der Abschnitt Zahlen nennt auch die Heimspiele auf unserem Platz, die sich zeitlich
+überschneiden (gleicher Tag, Anstoß bis Anstoß plus dauer), mit den Paaren.
 """
 import codecs
 import collections
@@ -32,6 +36,7 @@ import sys
 import tempfile
 import types
 import unittest
+from unittest import mock
 
 sys.dont_write_bytecode = True
 HIER = os.path.dirname(os.path.abspath(__file__))
@@ -65,7 +70,7 @@ S_MANNSCHAFT = ["id", "kurz", "name", "csv"]
 S_REGELN = ["trainingVon", "trainingBis", "frei", "fenster", "minFrei", "dauer", "unserPlatz", "navigation"]
 S_FREI = ["von", "bis", "name"]
 S_FENSTER = ["werktag", "wochenende"]
-S_DAUER = ["D", "E", "F", "G", "A", "Herren"]
+S_DAUER = ["D", "C", "E", "F", "G", "A", "Herren"]
 S_TRAINING = ["t", "tag", "von", "bis", "platz", "teile"]
 S_HALLE = ["t", "tag", "von", "bis", "ort", "ab", "bisDatum"]
 S_BELEGT = ["tag", "von", "bis", "teile"]
@@ -78,7 +83,9 @@ BELEGUNG_SOLL = {
 }
 ID_JE_KUERZEL = {"HERREN": "herren", "A": "a-jugend", "D1": "d1", "D2": "d2", "D3": "d3", "E1": "e1", "E2": "e2",
                  "E3": "e3", "F1": "f1", "F2": "f2", "G1": "g-jugend"}
-DAUER_JE_KLASSE = {"HERREN": 120, "A": 120, "D": 105, "E": 90, "F": 75, "G": 75}       # Kinderfestival: 75
+# Spieldauer je Klasse, bewusst einzeln und unabhängig von DAUER in platzbelegung.py hingeschrieben (Angaben der
+# Jugendabteilung vom 31.10.2026: D 90, E 60, F 60, C wie D; G wie F ist eine Annahme). C gibt es im Verein zurzeit nicht.
+DAUER_JE_KLASSE = {"HERREN": 120, "A": 120, "D": 90, "C": 90, "E": 60, "F": 60, "G": 60}       # Kinderfestival: 60
 # Feldbedarf auf unserem Platz je Mannschaft (Kürzel in spiele.csv), bewusst einzeln und unabhängig von FELD in
 # platzbelegung.py hingeschrieben: E braucht das halbe Feld, ab D das ganze; F und G wie E (Annahme).
 FELD_JE_TEAM = {"HERREN": "ganz", "A": "ganz", "D1": "ganz", "D2": "ganz", "D3": "ganz", "E1": "halb", "E2": "halb",
@@ -176,7 +183,7 @@ def erwartetes_spiel(r):
     staette = r["spielstaette"].strip()
     bei_uns = staette.startswith("Mainzer Landstr. 480")
     if bei_uns:
-        dauer = 75 if wettbewerb == "Kinderfestival" else DAUER_JE_KLASSE[team if team == "HERREN" else team[0]]
+        dauer = 60 if wettbewerb == "Kinderfestival" else DAUER_JE_KLASSE[team if team == "HERREN" else team[0]]
         ort = "u"
         feld = FELD_JE_TEAM[team]
     else:
@@ -199,6 +206,34 @@ def klasse_von(team):
 def montag_von(iso):
     d = datetime.date.fromisoformat(iso)
     return d - datetime.timedelta(days=d.weekday())
+
+
+def minuten_von(uhrzeit):
+    """Minuten seit Mitternacht aus HH:MM."""
+    stunde, minute = uhrzeit.split(":")
+    return int(stunde) * 60 + int(minute)
+
+
+def uhrzeit_von(minuten):
+    """HH:MM aus Minuten seit Mitternacht."""
+    return "%02d:%02d" % (minuten // 60, minuten % 60)
+
+
+def ueberschneidungen(spiele):
+    """Paare von Heimspielen auf unserem Platz (ort u), die sich zeitlich überschneiden: gleicher Tag, und der Zeitbereich
+    z bis z + dauer des einen beginnt vor dem Ende des anderen (wer genau beim Ende des anderen anfängt, überschneidet sich
+    nicht). Nur Information für die Ausgabe, bewusst einfach und unabhängig von platzbelegung.py geschrieben. Liefert die
+    Paare (a, b) in der Reihenfolge der Liste."""
+    bei_uns = [s for s in spiele if s["ort"] == "u"]
+    return [(a, b) for i, a in enumerate(bei_uns) for b in bei_uns[i + 1:]
+            if a["d"] == b["d"] and minuten_von(a["z"]) < minuten_von(b["z"]) + b["dauer"]
+            and minuten_von(b["z"]) < minuten_von(a["z"]) + a["dauer"]]
+
+
+def zeitblock(s):
+    """Ein Heimspiel für die Ausgabe der Überschneidungen: von-bis, Mannschaft, Spielnummer, Feldbedarf."""
+    von = minuten_von(s["z"])
+    return "%s-%s %s Nr. %s (%s)" % (s["z"], uhrzeit_von(von + s["dauer"]), s["t"], s["nr"], s["feld"])
 
 
 def lauf(ordner, mit_isolation, modul):
@@ -250,8 +285,9 @@ def pruefungen():
     p.pruefe(list(r["fenster"]) == S_FENSTER and r["fenster"] == {"werktag": ["15:30", "21:30"],
                                                                   "wochenende": ["09:00", "18:00"]}, "regeln: fenster")
     p.pruefe(r["minFrei"] == 60 and r["unserPlatz"] == "Mainzer Landstr. 480", "regeln: minFrei, unserPlatz")
-    p.pruefe(list(r["dauer"]) == S_DAUER and r["dauer"] == {"D": 105, "E": 90, "F": 75, "G": 75, "A": 120, "Herren": 120},
-             "regeln: dauer je Klasse")
+    p.pruefe(list(r["dauer"]) == S_DAUER
+             and r["dauer"] == {"D": 90, "C": 90, "E": 60, "F": 60, "G": 60, "A": 120, "Herren": 120},
+             "regeln: dauer je Klasse (D 90, C 90, E 60, F 60, G 60, A 120, Herren 120)")
     alle_tage = [s["d"] for s in daten["spiele"]] + [r["trainingVon"], r["trainingBis"]]
     nav = r["navigation"]
     p.pruefe(len(nav) == 2 and all(montag_von(x) == datetime.date.fromisoformat(x) for x in nav),
@@ -310,9 +346,9 @@ def pruefungen():
                   and not r["spielstaette"].strip().startswith("Mainzer Landstr. 480")],
              "kein Heimspiel mit abweichender Schreibweise unseres Platzes")
     klasse = {m["id"]: ("HERREN" if m["csv"] == "HERREN" else m["csv"][0]) for m in daten["mannschaften"]}
-    p.pruefe(all((type(s["dauer"]) is int and s["dauer"] == (75 if s["w"] == "Kinderfestival" else DAUER_JE_KLASSE[klasse[s["t"]]]))
+    p.pruefe(all((type(s["dauer"]) is int and s["dauer"] == (60 if s["w"] == "Kinderfestival" else DAUER_JE_KLASSE[klasse[s["t"]]]))
                  if s["ort"] == "u" else s["dauer"] is None for s in daten["spiele"]),
-             "dauer: ganzzahlig nach Klasse bei ort u, sonst null")
+             "dauer: ganzzahlig nach Klasse bei ort u (D 90, E 60, F 60, Kinderfestival 60, A und Herren 120), sonst null")
     kuerzel_je_id = {ident: kuerzel for kuerzel, ident in ID_JE_KUERZEL.items()}
     p.pruefe(set(FELD_JE_TEAM) == set(ID_JE_KUERZEL) and {s["feld"] for s in daten["spiele"]} <= {"ganz", "halb", None}
              and all(s["feld"] == (FELD_JE_TEAM[kuerzel_je_id[s["t"]]] if s["ort"] == "u" else None) for s in daten["spiele"]),
@@ -337,6 +373,31 @@ def pruefungen():
                   heim=len(daten["spiele"]), bei_uns=sum(1 for s in daten["spiele"] if s["ort"] == "u"),
                   abgesagt=len(abgesagte), je_klasse=dict(sorted(je_klasse.items())), je_feld=dict(sorted(je_feld.items())),
                   woanders=sum(1 for s in daten["spiele"] if s["ort"] != "u"))
+
+    # Information, keine Prüfung: Heimspiele auf unserem Platz, die sich zeitlich überschneiden (nur die Spiele
+    # untereinander, ohne Training und andere Nutzung). Vorher eine Gegenprobe der Zählung mit erfundenen Spielen.
+    def spiel_um(tag, uhr, dauer, ort="u"):
+        return {"d": tag, "z": uhr, "dauer": dauer, "ort": ort, "t": "e1", "nr": "1", "feld": "halb"}
+    p.pruefe(len(ueberschneidungen([spiel_um("2026-09-05", "10:00", 60), spiel_um("2026-09-05", "10:59", 60)])) == 1
+             and len(ueberschneidungen([spiel_um("2026-09-05", "10:00", 60), spiel_um("2026-09-05", "10:00", 90)])) == 1
+             and len(ueberschneidungen([spiel_um("2026-09-05", "10:00", 90), spiel_um("2026-09-05", "10:30", 60),
+                                        spiel_um("2026-09-05", "10:45", 60)])) == 3
+             and not ueberschneidungen([spiel_um("2026-09-05", "10:00", 60), spiel_um("2026-09-05", "11:00", 60)])
+             and not ueberschneidungen([spiel_um("2026-09-05", "10:00", 60), spiel_um("2026-09-06", "10:00", 60)])
+             and not ueberschneidungen([spiel_um("2026-09-05", "10:00", 60),
+                                        spiel_um("2026-09-05", "10:00", None, "Am Römerhof 9")]),
+             "Gegenprobe Überschneidungen: eine Minute Überlapp zählt, gleicher Anstoß zählt, drei Spiele ergeben drei Paare; "
+             "Ende gleich Anstoß, anderer Tag und Spiel auf anderer Anlage zählen nicht")
+    paare = ueberschneidungen(daten["spiele"])
+    beide_halb = sum(1 for a, b in paare if a["feld"] == b["feld"] == "halb")
+    mit_ganz = len(paare) - beide_halb
+    print("   Überschneidungen (nur Information, kein Fehler): %s von Heimspielen auf unserem Platz überschneiden sich "
+          "zeitlich (gleicher Tag, Anstoß bis Anstoß plus dauer; Ende gleich Anstoß des anderen zählt nicht)%s"
+          % ("%d Paare" % len(paare) if paare else "keine Paare",
+             "; beide halbes Feld %d, mindestens ein ganzes Feld %d" % (beide_halb, mit_ganz) if paare else ""))
+    for a, b in paare:
+        print("     %s  %s  /  %s" % (a["d"], zeitblock(a), zeitblock(b)))
+    zahlen.update(ueberschneidungen=len(paare), ueberschneidungen_halb=beide_halb, ueberschneidungen_ganz=mit_ganz)
 
     # ------------------------------------------------------------------------------------------------ Datenschutz
     p.abschnitt("Datenschutz")
@@ -373,16 +434,21 @@ def pruefungen():
         p.pruefe(list(beispiel) == list(daten), "oberste Schlüsselfolge wie die Beispieldatei")
         for k in ("version", "saison", "platz", "teile", "belegung", "mannschaften", "training", "halle", "belegt"):
             p.pruefe(j(daten[k]) == j(beispiel[k]), "%s gleich der Beispieldatei (Werte und Reihenfolge)" % k)
-        p.pruefe(j({k: v for k, v in daten["regeln"].items() if k != "navigation"})
-                 == j({k: v for k, v in beispiel["regeln"].items() if k != "navigation"}),
-                 "regeln außer navigation gleich der Beispieldatei")
+        # Die Beispieldatei (Stand 30.10.2026) hat noch die alten Spieldauern (regeln.dauer und dauer je Spiel): dauer
+        # wird deshalb nicht verglichen; die neuen Werte prüft der Abschnitt Zahlen unabhängig davon.
+        p.pruefe(j({k: v for k, v in daten["regeln"].items() if k not in ("navigation", "dauer")})
+                 == j({k: v for k, v in beispiel["regeln"].items() if k not in ("navigation", "dauer")}),
+                 "regeln außer navigation und dauer gleich der Beispieldatei")
         # Die Beispieldatei enthält die Gegnernamen roh aus DFBnet; für den Vergleich der Spiele werden sie wie in
         # platzbelegung.py mit bereinige_gegner() angeglichen, damit nur echte Änderungen an spiele.csv übrig bleiben.
-        # Sie kennt außerdem kein feld und lässt abgesagte Spiele nicht aus: Die Spiele von jetzt werden ohne feld
-        # verglichen, und was nur in der Beispieldatei steht, wird gekennzeichnet, wenn spiele.csv es als abgesagt führt.
+        # Sie kennt außerdem kein feld, lässt abgesagte Spiele nicht aus und hat die alte dauer: Die Spiele werden ohne
+        # feld und ohne dauer verglichen, und was nur in der Beispieldatei steht, wird gekennzeichnet, wenn spiele.csv es
+        # als abgesagt führt.
         roh_in_beispiel = sum(1 for s in beispiel["spiele"] if B.bereinige_gegner(s["g"]) != s["g"])
-        neu = collections.Counter(j({k: v for k, v in s.items() if k != "feld"}) for s in daten["spiele"])
-        alt = collections.Counter(j(dict(s, g=B.bereinige_gegner(s["g"]))) for s in beispiel["spiele"])
+        ohne = ("feld", "dauer")                 # in der Beispieldatei fehlend (feld) oder veraltet (dauer)
+        neu = collections.Counter(j({k: v for k, v in s.items() if k not in ohne}) for s in daten["spiele"])
+        alt = collections.Counter(j({k: v for k, v in dict(s, g=B.bereinige_gegner(s["g"])).items() if k not in ohne})
+                                  for s in beispiel["spiele"])
         abgesagt_in_csv = {(e[0], e[1], e[2], e[5]) for e in map(erwartetes_spiel, abgesagte)}     # d, z, t, nr
 
         def in_csv_abgesagt(zeichenkette):
@@ -390,8 +456,11 @@ def pruefungen():
             return (s["d"], s["z"], s["t"], s["nr"]) in abgesagt_in_csv
         nur_jetzt, nur_beispiel = neu - alt, alt - neu
         nur_beispiel_abgesagt = sum(n for z, n in nur_beispiel.items() if in_csv_abgesagt(z))
-        print("   Die Beispieldatei kennt kein feld und lässt abgesagte Spiele nicht aus: verglichen werden die Spiele ohne "
-              "feld; abgesagte Spiele der CSV, die dort noch stehen, sind unten gekennzeichnet (erwartet, kein Fehler)")
+        print("   Die Beispieldatei kennt kein feld, lässt abgesagte Spiele nicht aus und hat die alte dauer: verglichen werden "
+              "die Spiele ohne feld und ohne dauer; abgesagte Spiele der CSV, die dort noch stehen, sind unten gekennzeichnet "
+              "(erwartet, kein Fehler)")
+        print("   regeln.dauer (nicht verglichen; die neuen Werte prüft der Abschnitt Zahlen): Beispieldatei %s, jetzt %s"
+              % (j(beispiel["regeln"]["dauer"]), j(daten["regeln"]["dauer"])))
         print("   Unterschiede zur Beispieldatei, erwartet (jetzt / Beispieldatei): stand.spiele %s / %s%s; navigation %s / %s "
               "(dort der früheste und späteste Termin, hier der Montag dieser Wochen)" % (
                   daten["stand"]["spiele"], beispiel["stand"]["spiele"],
@@ -472,8 +541,23 @@ def pruefungen():
 
     def spiel(**felder):
         return spiele_von(**felder)[0]
-    p.pruefe(spiel(wettbewerb="Kinderfestival")["dauer"] == 75 and spiel()["dauer"] == 90 and spiel(team="HERREN")["dauer"] == 120,
-             "Kinderfestival dauert 75 Minuten auch bei einer E-Mannschaft, E-Spiel 90, Herren 120")
+    p.pruefe(spiel(wettbewerb="Kinderfestival")["dauer"] == 60 and spiel()["dauer"] == 60 and spiel(team="D1")["dauer"] == 90
+             and spiel(team="A")["dauer"] == 120 and spiel(team="HERREN")["dauer"] == 120,
+             "Kinderfestival dauert 60 Minuten auch bei einer E-Mannschaft, E-Spiel 60, D-Spiel 90, A und Herren 120")
+    # C-Jugend: der Verein hat zurzeit keine, die Regeln gelten trotzdem. Erfundenes Kürzel C1; für das Spielobjekt werden
+    # MANNSCHAFTEN und IDS nur innerhalb dieses Tests ergänzt (mock.patch), der Produktionscode bleibt unberührt.
+    p.pruefe(P.spieldauer("C1", "Meisterschaft", B.FESTIVAL) == 90 and P.feldbedarf("C1") == "ganz"
+             and P.spieldauer("C1", B.FESTIVAL, B.FESTIVAL) == 60
+             and set(P.DAUER) == set(P.FELD) == {"C", "D", "E", "F", "G", "A", "Herren"},
+             "C-Jugend (erfundenes Kürzel C1): spieldauer 90 Minuten, feldbedarf ganz, Kinderfestival 60; DAUER und FELD "
+             "führen dieselben Klassen C, D, E, F, G, A, Herren")
+    with mock.patch.object(P, "MANNSCHAFTEN", P.MANNSCHAFTEN + [("c1", "C1", "C1-Jugend", "C1")]), \
+            mock.patch.object(P, "IDS", dict(P.IDS, C1="c1")):
+        c_spiel = spiel(team="C1")
+    p.pruefe(c_spiel["t"] == "c1" and c_spiel["dauer"] == 90 and c_spiel["feld"] == "ganz" and c_spiel["ort"] == "u"
+             and list(c_spiel) == S_SPIEL and "C1" not in P.IDS,
+             "Heimspiel einer erfundenen C-Mannschaft C1 auf unserem Platz: dauer 90, feld ganz (Tabellen danach wieder "
+             "ohne C1)")
     p.pruefe(spiel()["z"] == "09:30", "Uhrzeit wird auf HH:MM gebracht")
     p.pruefe(spiel(spielstaette="")["ort"] == "Ort offen" and spiel(spielstaette="")["dauer"] is None,
              "Heimspiel ohne Spielstätte: ort „Ort offen“, dauer null")
@@ -558,8 +642,11 @@ def main():
           "Abgesagte Heimspiele, nicht in der Datei: %d"
           % (", ".join("%s %d" % (k, v) for k, v in zahlen["je_klasse"].items()),
              ", ".join("%s %d" % (k, v) for k, v in zahlen["je_feld"].items()), zahlen["woanders"], zahlen["abgesagt"]))
+    print("Überschneidungen der Heimspiele auf unserem Platz untereinander (nur Information, Paare im Abschnitt Zahlen): "
+          "%d Paare, davon beide halbes Feld %d, mindestens ein ganzes Feld %d"
+          % (zahlen["ueberschneidungen"], zahlen["ueberschneidungen_halb"], zahlen["ueberschneidungen_ganz"]))
     if "spiele_nur_jetzt" in zahlen:
-        print("Beispieldatei: spiele %d -> %d (Gegnernamen dort vorher bereinigt, feld nicht verglichen); abweichende "
+        print("Beispieldatei: spiele %d -> %d (Gegnernamen dort vorher bereinigt, feld und dauer nicht verglichen); abweichende "
               "Einträge: %d nur jetzt, %d nur in der Beispieldatei, davon %d in spiele.csv abgesagt (Einzelheiten oben; "
               "spiele.csv ist lebendig, die Beispieldatei ein Stand vom 30.10.2026)"
               % (zahlen["spiele_beispiel"], zahlen["heim"], zahlen["spiele_nur_jetzt"], zahlen["spiele_nur_beispiel"],
