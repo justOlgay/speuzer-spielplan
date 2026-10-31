@@ -555,7 +555,8 @@
    "g": "SC Blau Weiß Neu-Isenburg",
    "nr": "96",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2026-08-08",
@@ -565,7 +566,8 @@
    "g": "JSG Dieburg-Klein-Zimmern 1",
    "nr": "4",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2026-08-15",
@@ -575,7 +577,8 @@
    "g": "SC Riedberg",
    "nr": "5",
    "dauer": null,
-   "ort": "Holzhecke 16 / Sandhöfer Wiesen"
+   "ort": "Holzhecke 16 / Sandhöfer Wiesen",
+   "feld": null
   },
   {
    "d": "2026-08-20",
@@ -585,7 +588,8 @@
    "g": "SV Blau-Gelb Frankfurt 1",
    "nr": "65",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-08-22",
@@ -595,7 +599,8 @@
    "g": "FSV 1910 Bergen 3",
    "nr": "1",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-08-22",
@@ -605,7 +610,8 @@
    "g": "Spvgg. Kickers 1916 4",
    "nr": "1",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-08-22",
@@ -615,7 +621,8 @@
    "g": "VfL Germania 1894 1",
    "nr": "1",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-08-23",
@@ -625,7 +632,8 @@
    "g": "VfL Germania 1894 2",
    "nr": "4",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-08-23",
@@ -635,7 +643,8 @@
    "g": "VfR Bockenheim 2",
    "nr": "4",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-08-23",
@@ -645,7 +654,8 @@
    "g": "FG Seckbach 1",
    "nr": "4",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-08-23",
@@ -655,7 +665,8 @@
    "g": "SG Praunheim 1908",
    "nr": "38",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2026-08-26",
@@ -665,17 +676,8 @@
    "g": "1. Rödelheimer FC 02 1",
    "nr": "24",
    "dauer": 90,
-   "ort": "u"
-  },
-  {
-   "d": "2026-08-30",
-   "z": "10:00",
-   "t": "d3",
-   "w": "Meisterschaft",
-   "g": "SC Weiss-Blau Frankfurt 3",
-   "nr": "10",
-   "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-08-30",
@@ -685,7 +687,8 @@
    "g": "TSG Frankfurter Berg I",
    "nr": "10",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-08-30",
@@ -695,7 +698,8 @@
    "g": "FFC Olympia 07 I",
    "nr": "10",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-09-02",
@@ -705,7 +709,8 @@
    "g": "Concordia Eschersheim",
    "nr": "15",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2026-09-05",
@@ -715,7 +720,8 @@
    "g": "",
    "nr": "62",
    "dauer": 75,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-09-05",
@@ -725,7 +731,8 @@
    "g": "SV Viktoria Preussen 1",
    "nr": "20",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2026-09-06",
@@ -735,7 +742,8 @@
    "g": "DJK SW Griesheim",
    "nr": "56",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2026-09-09",
@@ -745,7 +753,8 @@
    "g": "TSG Niederrad 1898",
    "nr": "65",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2026-09-12",
@@ -755,7 +764,8 @@
    "g": "",
    "nr": "142",
    "dauer": 75,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-09-12",
@@ -765,7 +775,8 @@
    "g": "SG Harheim 2",
    "nr": "10",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-09-12",
@@ -775,7 +786,8 @@
    "g": "SG Bornheim / GW 3",
    "nr": "10",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-09-12",
@@ -785,7 +797,8 @@
    "g": "SG Bornheim / GW 2",
    "nr": "10",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-09-13",
@@ -795,7 +808,8 @@
    "g": "TV Preungesheim 1",
    "nr": "22",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-09-13",
@@ -805,7 +819,8 @@
    "g": "Concordia Eschersheim II",
    "nr": "22",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-09-13",
@@ -815,7 +830,8 @@
    "g": "Concordia Eschersheim",
    "nr": "22",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-09-13",
@@ -825,7 +841,8 @@
    "g": "Hellas Rüsselsheim 1",
    "nr": "143",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-09-19",
@@ -835,7 +852,8 @@
    "g": "SC Dortelweil 1",
    "nr": "140",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-09-19",
@@ -845,7 +863,8 @@
    "g": "SC Dortelweil 3 (FS)",
    "nr": "179",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-09-19",
@@ -855,7 +874,8 @@
    "g": "TuS Makkabi Frankfurt 1",
    "nr": "34",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2026-09-20",
@@ -865,7 +885,8 @@
    "g": "SC Riedberg",
    "nr": "83",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2026-09-26",
@@ -875,7 +896,8 @@
    "g": "",
    "nr": "237",
    "dauer": 75,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-10-03",
@@ -885,7 +907,8 @@
    "g": "Spvgg. Neu-Isenburg 2",
    "nr": "48",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2026-10-04",
@@ -895,7 +918,8 @@
    "g": "FV 1920 Hausen",
    "nr": "101",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2026-10-17",
@@ -905,7 +929,8 @@
    "g": "Karbener SV 2",
    "nr": "55",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2026-10-18",
@@ -915,7 +940,8 @@
    "g": "FC Germ. 08 Ginnheim 1",
    "nr": "197",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-10-18",
@@ -925,7 +951,8 @@
    "g": "FC Croatia Frankfurt",
    "nr": "119",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2026-10-19",
@@ -935,7 +962,8 @@
    "g": "SFD Schwanheim E2",
    "nr": "202",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-10-24",
@@ -945,7 +973,8 @@
    "g": "",
    "nr": "283",
    "dauer": 75,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-10-25",
@@ -955,7 +984,8 @@
    "g": "FC Corumspor Frankfurt",
    "nr": "128",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2026-10-28",
@@ -965,7 +995,8 @@
    "g": "TSG Frankfurter Berg I",
    "nr": "40",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-10-31",
@@ -975,7 +1006,8 @@
    "g": "",
    "nr": "343",
    "dauer": 75,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-10-31",
@@ -985,7 +1017,8 @@
    "g": "BSC SW 1919 Frankfurt 3",
    "nr": "9",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-10-31",
@@ -995,7 +1028,8 @@
    "g": "FC Germania 1911 Enkheim 4",
    "nr": "9",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-10-31",
@@ -1005,7 +1039,8 @@
    "g": "BSC SW 1919 Frankfurt 1",
    "nr": "9",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-10-31",
@@ -1015,7 +1050,8 @@
    "g": "FC Bayern Alzenau 2",
    "nr": "69",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2026-11-01",
@@ -1025,17 +1061,8 @@
    "g": "SG Bornheim / GW 2",
    "nr": "46",
    "dauer": 105,
-   "ort": "u"
-  },
-  {
-   "d": "2026-11-01",
-   "z": "11:30",
-   "t": "d2",
-   "w": "Meisterschaft",
-   "g": "FC Union Niederrad 3",
-   "nr": "46",
-   "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-11-01",
@@ -1045,7 +1072,8 @@
    "g": "SV 09 Hofheim 2",
    "nr": "299",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-11-01",
@@ -1055,7 +1083,8 @@
    "g": "FSV 1910 Bergen 1",
    "nr": "46",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-11-01",
@@ -1065,7 +1094,8 @@
    "g": "SpVgg 05/99 Bomber HG 2",
    "nr": "300",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-11-01",
@@ -1075,7 +1105,8 @@
    "g": "SV Bosnien-Herzegowina FFM 2 (FS)",
    "nr": "225",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-11-08",
@@ -1085,7 +1116,8 @@
    "g": "SG Harheim II",
    "nr": "146",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2026-11-14",
@@ -1095,7 +1127,8 @@
    "g": "TG Sachsenhausen IV",
    "nr": "19",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-11-14",
@@ -1105,7 +1138,8 @@
    "g": "Spvgg. Oberrad IV",
    "nr": "19",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-11-14",
@@ -1115,7 +1149,8 @@
    "g": "Spvgg. Oberrad",
    "nr": "19",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-11-14",
@@ -1125,7 +1160,8 @@
    "g": "",
    "nr": "3",
    "dauer": 75,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-11-15",
@@ -1135,7 +1171,8 @@
    "g": "TuS Makkabi Frankfurt 5",
    "nr": "284",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-11-15",
@@ -1145,7 +1182,8 @@
    "g": "VfR Bockenheim",
    "nr": "156",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2026-11-21",
@@ -1155,7 +1193,8 @@
    "g": "JFV Nidda / Schotten 1",
    "nr": "83",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2026-11-28",
@@ -1165,7 +1204,8 @@
    "g": "VfR Bockenheim 2",
    "nr": "29",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-11-28",
@@ -1175,7 +1215,8 @@
    "g": "SC Weiss-Blau Frankfurt II",
    "nr": "29",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-11-28",
@@ -1185,7 +1226,8 @@
    "g": "TG Sachsenhausen I",
    "nr": "29",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-11-29",
@@ -1195,7 +1237,8 @@
    "g": "SV Griesheim Tarik",
    "nr": "58",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-11-29",
@@ -1205,7 +1248,8 @@
    "g": "Spvgg. 03 Fechenheim",
    "nr": "58",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-11-29",
@@ -1215,7 +1259,8 @@
    "g": "Spvgg. Kickers 1916 1",
    "nr": "58",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-11-29",
@@ -1225,7 +1270,8 @@
    "g": "TSG 51 Frankfurt",
    "nr": "176",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2026-12-13",
@@ -1235,7 +1281,8 @@
    "g": "SGK Bad Homburg 2",
    "nr": "215",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2027-02-05",
@@ -1245,7 +1292,8 @@
    "g": "TG Sachsenhausen",
    "nr": "170",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2027-02-14",
@@ -1255,7 +1303,8 @@
    "g": "FC Karben II",
    "nr": "172",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2027-02-20",
@@ -1265,7 +1314,8 @@
    "g": "1. Rödelheimer FC 02 4",
    "nr": "49",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2027-02-20",
@@ -1275,7 +1325,8 @@
    "g": "TSG Frankfurter Berg I",
    "nr": "49",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2027-02-21",
@@ -1285,7 +1336,8 @@
    "g": "SV Pars Neu-Isenburg II",
    "nr": "179",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2027-02-27",
@@ -1295,7 +1347,8 @@
    "g": "FV Bad Vilbel 1",
    "nr": "98",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2027-03-06",
@@ -1305,7 +1358,8 @@
    "g": "FV 09 Eschersheim II",
    "nr": "57",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2027-03-06",
@@ -1315,7 +1369,8 @@
    "g": "FC Kalbach II",
    "nr": "57",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2027-03-06",
@@ -1325,7 +1380,8 @@
    "g": "FV 09 Eschersheim I",
    "nr": "57",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2027-03-07",
@@ -1335,7 +1391,8 @@
    "g": "TuS Makkabi Frankfurt 6",
    "nr": "81",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2027-03-07",
@@ -1345,7 +1402,8 @@
    "g": "SV 1894 Sachsenhausen 1",
    "nr": "81",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2027-03-07",
@@ -1355,7 +1413,8 @@
    "g": "FC Germania 1911 Enkheim 1",
    "nr": "81",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2027-03-07",
@@ -1365,7 +1424,8 @@
    "g": "Spvgg. 02 Griesheim II",
    "nr": "216",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2027-03-14",
@@ -1375,7 +1435,8 @@
    "g": "SV Blau-Gelb Frankfurt 2",
    "nr": "85",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2027-03-14",
@@ -1385,7 +1446,8 @@
    "g": "SV Blau-Gelb Frankfurt 3",
    "nr": "85",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2027-03-14",
@@ -1395,7 +1457,8 @@
    "g": "FC JUZ Fechenheim 1",
    "nr": "85",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2027-03-20",
@@ -1405,7 +1468,8 @@
    "g": "1. FC 1906 Erlensee 2",
    "nr": "116",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2027-03-21",
@@ -1415,7 +1479,8 @@
    "g": "SV Niederursel",
    "nr": "232",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2027-04-10",
@@ -1425,7 +1490,8 @@
    "g": "FG Seckbach 3",
    "nr": "66",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2027-04-10",
@@ -1435,7 +1501,8 @@
    "g": "Spvgg. Kickers 1916 2",
    "nr": "66",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2027-04-10",
@@ -1445,7 +1512,8 @@
    "g": "Spvgg. Kickers 1916 1",
    "nr": "66",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2027-04-10",
@@ -1455,7 +1523,8 @@
    "g": "Spvgg. Oberrad 1",
    "nr": "128",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2027-04-11",
@@ -1465,7 +1534,8 @@
    "g": "FC Tempo Frankfurt II",
    "nr": "248",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2027-04-18",
@@ -1475,7 +1545,8 @@
    "g": "Spvgg. Oberrad IV",
    "nr": "101",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2027-04-18",
@@ -1485,7 +1556,8 @@
    "g": "SG Harheim 2",
    "nr": "101",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2027-04-24",
@@ -1495,7 +1567,8 @@
    "g": "TSG Niederrad 1898 2",
    "nr": "77",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2027-04-24",
@@ -1505,7 +1578,8 @@
    "g": "SV Blau-Gelb Frankfurt 4",
    "nr": "77",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2027-04-24",
@@ -1515,7 +1589,8 @@
    "g": "SV Blau-Gelb Frankfurt 1",
    "nr": "77",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2027-04-24",
@@ -1525,7 +1600,8 @@
    "g": "SG Oberhoechstadt 1",
    "nr": "146",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2027-04-25",
@@ -1535,7 +1611,8 @@
    "g": "TSG 51 Frankfurt II",
    "nr": "103",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2027-04-25",
@@ -1545,7 +1622,8 @@
    "g": "FC Fortuna Frankfurt",
    "nr": "103",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2027-04-25",
@@ -1555,7 +1633,8 @@
    "g": "FC Germ. 08 Ginnheim 1",
    "nr": "103",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2027-04-25",
@@ -1565,7 +1644,8 @@
    "g": "SV Eritrea Frankfurt",
    "nr": "264",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2027-05-08",
@@ -1575,7 +1655,8 @@
    "g": "FSV Bischofsheim 1",
    "nr": "158",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2027-05-09",
@@ -1585,7 +1666,8 @@
    "g": "FSV 1910 Bergen 3",
    "nr": "110",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2027-05-09",
@@ -1595,7 +1677,8 @@
    "g": "1. Rödelheimer FC 02 2",
    "nr": "110",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2027-05-09",
@@ -1605,7 +1688,8 @@
    "g": "1. Rödelheimer FC 02 1",
    "nr": "110",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2027-05-15",
@@ -1615,7 +1699,8 @@
    "g": "Concordia Eschersheim II",
    "nr": "85",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2027-05-15",
@@ -1625,7 +1710,8 @@
    "g": "SG Bornheim / GW 4",
    "nr": "85",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2027-05-15",
@@ -1635,7 +1721,8 @@
    "g": "SG Bornheim / GW 1",
    "nr": "85",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2027-05-15",
@@ -1645,7 +1732,8 @@
    "g": "Concordia Eschersheim II",
    "nr": "297",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2027-05-22",
@@ -1655,7 +1743,8 @@
    "g": "SV Niederursel 3",
    "nr": "89",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2027-05-22",
@@ -1665,7 +1754,8 @@
    "g": "SC Riedberg IV",
    "nr": "89",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2027-05-22",
@@ -1675,7 +1765,8 @@
    "g": "SG Rot-Weiss Frankfurt",
    "nr": "89",
    "dauer": 90,
-   "ort": "u"
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2027-05-22",
@@ -1685,7 +1776,8 @@
    "g": "JSG Kirdorf 1",
    "nr": "163",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   },
   {
    "d": "2027-05-23",
@@ -1695,7 +1787,8 @@
    "g": "DJK SW Griesheim 4",
    "nr": "119",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2027-05-23",
@@ -1705,7 +1798,8 @@
    "g": "FC Germ. 08 Ginnheim 2",
    "nr": "119",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2027-05-23",
@@ -1715,7 +1809,8 @@
    "g": "FV 09 Eschersheim 2",
    "nr": "119",
    "dauer": 105,
-   "ort": "u"
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2027-06-05",
@@ -1725,7 +1820,8 @@
    "g": "Spvgg. Langenselbold 1",
    "nr": "176",
    "dauer": null,
-   "ort": "Am Römerhof 9"
+   "ort": "Am Römerhof 9",
+   "feld": null
   }
  ]
 }

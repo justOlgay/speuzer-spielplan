@@ -7,12 +7,15 @@ Aufruf (aus dem Repo-Stamm):  python3 test_platzbelegung.py          Exit 0 = al
 
 Gelesen werden die echte spiele.csv und die Tabellen aus build_ics.py. Die Prüfungen folgen der Schnittstelle: Aufbau
 und Schlüsselfolge, Verweise, Zahlen, Datenschutz, Beispieldatei, Format und Wiederholbarkeit, dazu zwei Läufe von
-build_ics.py in Wegwerf-Ordnern (mit dem Modul und ohne, wie der Probelauf von tools/nachtrag.py).
+build_ics.py in Wegwerf-Ordnern (mit dem Modul und ohne, wie der Probelauf von tools/nachtrag.py). Abgesagte Spiele
+(Spalte ergebnis = abgesagt) fehlen in der Datei; jedes Spiel auf unserem Platz hat feld (halb oder ganz), andere null.
 
 Die Beispieldatei der Schnittstelle (aus dem Prototyp, Stand 30.10.2026) liegt nicht im Repo, sondern im Website-Repo
 (tools/cache/orchestrierung-platzbelegung/schnittstelle/). Der Vergleich der statischen Teile läuft nur, wenn sie
 gefunden wird (Pfad per Umgebungsvariable PLATZ_BEISPIELDATEI änderbar) und ihr Plan-Stand dem TRAINING_STAND des
 Generators entspricht; sonst steht in der Ausgabe, dass er übersprungen wurde (der Plan hat sich dann rechtmäßig geändert).
+Die Beispieldatei kennt weder feld noch lässt sie abgesagte Spiele aus: Die Spiele werden ohne feld verglichen, abgesagte
+Spiele, die dort noch stehen, erscheinen in der Ausgabe als erwartete Abweichung (kein Fehler).
 """
 import codecs
 import collections
@@ -66,7 +69,7 @@ S_DAUER = ["D", "E", "F", "G", "A", "Herren"]
 S_TRAINING = ["t", "tag", "von", "bis", "platz", "teile"]
 S_HALLE = ["t", "tag", "von", "bis", "ort", "ab", "bisDatum"]
 S_BELEGT = ["tag", "von", "bis", "teile"]
-S_SPIEL = ["d", "z", "t", "w", "g", "nr", "dauer", "ort"]
+S_SPIEL = ["d", "z", "t", "w", "g", "nr", "dauer", "ort", "feld"]
 TEIL_IDS = ["tor1", "tor2", "tor3", "tor4", "kaefig", "court"]
 BELEGUNG_SOLL = {
     "ganzer Platz": ["tor1", "tor2", "tor3", "tor4"], "linke Hälfte": ["tor1", "tor2"], "rechte Hälfte": ["tor3", "tor4"],
@@ -76,6 +79,10 @@ BELEGUNG_SOLL = {
 ID_JE_KUERZEL = {"HERREN": "herren", "A": "a-jugend", "D1": "d1", "D2": "d2", "D3": "d3", "E1": "e1", "E2": "e2",
                  "E3": "e3", "F1": "f1", "F2": "f2", "G1": "g-jugend"}
 DAUER_JE_KLASSE = {"HERREN": 120, "A": 120, "D": 105, "E": 90, "F": 75, "G": 75}       # Kinderfestival: 75
+# Feldbedarf auf unserem Platz je Mannschaft (Kürzel in spiele.csv), bewusst einzeln und unabhängig von FELD in
+# platzbelegung.py hingeschrieben: E braucht das halbe Feld, ab D das ganze; F und G wie E (Annahme).
+FELD_JE_TEAM = {"HERREN": "ganz", "A": "ganz", "D1": "ganz", "D2": "ganz", "D3": "ganz", "E1": "halb", "E2": "halb",
+                "E3": "halb", "F1": "halb", "F2": "halb", "G1": "halb"}
 UHRZEIT = re.compile(r"^([01]\d|2[0-3]):[0-5]\d$")
 
 
@@ -153,6 +160,12 @@ def treffer(s):
     return t
 
 
+def abgesagt(r):
+    """Vermerk „abgesagt“ in der Spalte ergebnis einer CSV-Zeile (getrimmt, Groß-/Kleinschreibung egal), bewusst
+    unabhängig von platzbelegung.py geschrieben."""
+    return (r.get("ergebnis") or "").strip().lower() == "abgesagt"
+
+
 def erwartetes_spiel(r):
     """Ein Heimspiel aus der CSV nach den Regeln der Schnittstelle, bewusst noch einmal einfach und unabhängig von
     platzbelegung.py geschrieben (zweite Meinung). Nur die Bereinigung des Gegnernamens kommt aus build_ics.py: dessen
@@ -165,15 +178,22 @@ def erwartetes_spiel(r):
     if bei_uns:
         dauer = 75 if wettbewerb == "Kinderfestival" else DAUER_JE_KLASSE[team if team == "HERREN" else team[0]]
         ort = "u"
+        feld = FELD_JE_TEAM[team]
     else:
         dauer = None
         ort = re.sub(r"\s*/\s*", " / ", staette.split(",")[0]).strip() or "Ort offen"
+        feld = None
     return (datetime.date(jahr, monat, tag).isoformat(), r["zeit"].strip(), ID_JE_KUERZEL[team], wettbewerb,
-            B.bereinige_gegner(r["gast"].strip()), r["spielnr"].strip(), dauer, ort)
+            B.bereinige_gegner(r["gast"].strip()), r["spielnr"].strip(), dauer, ort, feld)
 
 
 def als_tupel(s):
     return tuple(s[k] for k in S_SPIEL)
+
+
+def klasse_von(team):
+    """Klasse aus dem Kürzel einer Mannschaft in spiele.csv (D1 -> D, E2 -> E, G1 -> G, A -> A, HERREN -> HERREN)."""
+    return team if team == "HERREN" else team[0]
 
 
 def montag_von(iso):
@@ -194,7 +214,9 @@ def pruefungen():
     zeilen = list(B.lade_spiele())
     daten = P.baue(zeilen, HEUTE)
     roh = lies_csv()
-    heim = [r for r in roh if r["heim"].strip().startswith("FFV Sportfreunde 04")]
+    alle_heim = [r for r in roh if r["heim"].strip().startswith("FFV Sportfreunde 04")]
+    abgesagte = [r for r in alle_heim if abgesagt(r)]            # fehlen in der Datei
+    heim = [r for r in alle_heim if not abgesagt(r)]
     zahlen = {}
 
     # ------------------------------------------------------------------------------------------------ Aufbau
@@ -276,7 +298,11 @@ def pruefungen():
                  "Plan-Stand %s: 23 training, 3 halle, 8 belegt" % STAND_BEISPIEL)
     else:
         print("   (Plan-Stand %s statt %s: feste Zahlen 23/3/8 nicht geprüft)" % (daten["stand"]["plan"], STAND_BEISPIEL))
-    p.pruefe(len(daten["spiele"]) == len(heim), "spiele = Zeilen mit heim FFV Sportfreunde 04…: %d" % len(heim))
+    p.pruefe(len(daten["spiele"]) == len(heim),
+             "spiele = Zeilen mit heim FFV Sportfreunde 04… ohne abgesagte: %d (%d abgesagte Heimspiele fehlen)"
+             % (len(heim), len(abgesagte)))
+    p.pruefe(not {erwartetes_spiel(r) for r in abgesagte} & {als_tupel(s) for s in daten["spiele"]},
+             "kein abgesagtes Heimspiel (ergebnis = abgesagt) steht in spiele: alle %d Zeilen der CSV fehlen" % len(abgesagte))
     bei_uns = [r for r in heim if r["spielstaette"].strip().startswith("Mainzer Landstr. 480")]
     p.pruefe(sum(1 for s in daten["spiele"] if s["ort"] == "u") == len(bei_uns),
              "ort u genau bei Spielstätte Mainzer Landstr. 480…: %d" % len(bei_uns))
@@ -287,8 +313,18 @@ def pruefungen():
     p.pruefe(all((type(s["dauer"]) is int and s["dauer"] == (75 if s["w"] == "Kinderfestival" else DAUER_JE_KLASSE[klasse[s["t"]]]))
                  if s["ort"] == "u" else s["dauer"] is None for s in daten["spiele"]),
              "dauer: ganzzahlig nach Klasse bei ort u, sonst null")
+    kuerzel_je_id = {ident: kuerzel for kuerzel, ident in ID_JE_KUERZEL.items()}
+    p.pruefe(set(FELD_JE_TEAM) == set(ID_JE_KUERZEL) and {s["feld"] for s in daten["spiele"]} <= {"ganz", "halb", None}
+             and all(s["feld"] == (FELD_JE_TEAM[kuerzel_je_id[s["t"]]] if s["ort"] == "u" else None) for s in daten["spiele"]),
+             "feld: bei ort u halb (E, F, G) oder ganz (D, A, Herren) je Mannschaft, bei anderem Spielort null")
+    je_klasse = collections.Counter(klasse[s["t"]] for s in daten["spiele"] if s["ort"] == "u")
+    je_feld = collections.Counter(s["feld"] for s in daten["spiele"] if s["ort"] == "u")
+    p.pruefe(je_klasse == collections.Counter(klasse_von(r["team"].strip()) for r in bei_uns),
+             "Spiele auf unserem Platz je Klasse wie in spiele.csv: %s" % dict(sorted(je_klasse.items())))
+    p.pruefe(je_feld == collections.Counter(FELD_JE_TEAM[r["team"].strip()] for r in bei_uns),
+             "Spiele auf unserem Platz je feld wie in spiele.csv (je Klasse gezählt): %s" % dict(sorted(je_feld.items())))
     p.pruefe(collections.Counter(als_tupel(s) for s in daten["spiele"]) == collections.Counter(erwartetes_spiel(r) for r in heim),
-             "jedes Heimspiel stimmt mit der unabhängigen Rechnung aus spiele.csv überein (d, z, t, w, g, nr, dauer, ort)")
+             "jedes Heimspiel stimmt mit der unabhängigen Rechnung aus spiele.csv überein (d, z, t, w, g, nr, dauer, ort, feld)")
     p.pruefe(collections.Counter(s["g"] for s in daten["spiele"])
              == collections.Counter(B.bereinige_gegner(r["gast"].strip()) for r in heim),
              "Gegnernamen wie auf den App-Spielplanseiten: g = bereinige_gegner(gast der CSV-Zeile) bei jedem Heimspiel")
@@ -298,7 +334,9 @@ def pruefungen():
     p.pruefe([(s["d"], s["z"], s["t"]) for s in daten["spiele"]] == sorted((s["d"], s["z"], s["t"]) for s in daten["spiele"]),
              "spiele nach Tag, Uhrzeit, Mannschaft sortiert")
     zahlen.update(training=len(daten["training"]), halle=len(daten["halle"]), belegt=len(daten["belegt"]),
-                  heim=len(daten["spiele"]), bei_uns=sum(1 for s in daten["spiele"] if s["ort"] == "u"))
+                  heim=len(daten["spiele"]), bei_uns=sum(1 for s in daten["spiele"] if s["ort"] == "u"),
+                  abgesagt=len(abgesagte), je_klasse=dict(sorted(je_klasse.items())), je_feld=dict(sorted(je_feld.items())),
+                  woanders=sum(1 for s in daten["spiele"] if s["ort"] != "u"))
 
     # ------------------------------------------------------------------------------------------------ Datenschutz
     p.abschnitt("Datenschutz")
@@ -340,27 +378,40 @@ def pruefungen():
                  "regeln außer navigation gleich der Beispieldatei")
         # Die Beispieldatei enthält die Gegnernamen roh aus DFBnet; für den Vergleich der Spiele werden sie wie in
         # platzbelegung.py mit bereinige_gegner() angeglichen, damit nur echte Änderungen an spiele.csv übrig bleiben.
+        # Sie kennt außerdem kein feld und lässt abgesagte Spiele nicht aus: Die Spiele von jetzt werden ohne feld
+        # verglichen, und was nur in der Beispieldatei steht, wird gekennzeichnet, wenn spiele.csv es als abgesagt führt.
         roh_in_beispiel = sum(1 for s in beispiel["spiele"] if B.bereinige_gegner(s["g"]) != s["g"])
-        neu = collections.Counter(j(s) for s in daten["spiele"])
+        neu = collections.Counter(j({k: v for k, v in s.items() if k != "feld"}) for s in daten["spiele"])
         alt = collections.Counter(j(dict(s, g=B.bereinige_gegner(s["g"]))) for s in beispiel["spiele"])
+        abgesagt_in_csv = {(e[0], e[1], e[2], e[5]) for e in map(erwartetes_spiel, abgesagte)}     # d, z, t, nr
+
+        def in_csv_abgesagt(zeichenkette):
+            s = json.loads(zeichenkette)
+            return (s["d"], s["z"], s["t"], s["nr"]) in abgesagt_in_csv
+        nur_jetzt, nur_beispiel = neu - alt, alt - neu
+        nur_beispiel_abgesagt = sum(n for z, n in nur_beispiel.items() if in_csv_abgesagt(z))
+        print("   Die Beispieldatei kennt kein feld und lässt abgesagte Spiele nicht aus: verglichen werden die Spiele ohne "
+              "feld; abgesagte Spiele der CSV, die dort noch stehen, sind unten gekennzeichnet (erwartet, kein Fehler)")
         print("   Unterschiede zur Beispieldatei, erwartet (jetzt / Beispieldatei): stand.spiele %s / %s%s; navigation %s / %s "
               "(dort der früheste und späteste Termin, hier der Montag dieser Wochen)" % (
                   daten["stand"]["spiele"], beispiel["stand"]["spiele"],
                   "" if daten["erzeugt"] == beispiel["erzeugt"] else "; erzeugt %s / %s" % (daten["erzeugt"], beispiel["erzeugt"]),
                   daten["regeln"]["navigation"], beispiel["regeln"]["navigation"]))
-        print("   spiele: %d in der Beispieldatei, %d jetzt; nur jetzt %d, nur in der Beispieldatei %d (Gegnernamen der "
-              "Beispieldatei vorher mit bereinige_gegner() angeglichen; dort noch roh: %d Einträge)"
-              % (len(beispiel["spiele"]), len(daten["spiele"]), sum((neu - alt).values()), sum((alt - neu).values()),
-                 roh_in_beispiel))
-        for z in sorted(neu - alt):
+        print("   spiele: %d in der Beispieldatei, %d jetzt; nur jetzt %d, nur in der Beispieldatei %d, davon in spiele.csv "
+              "abgesagt %d (Gegnernamen der Beispieldatei vorher mit bereinige_gegner() angeglichen; dort noch roh: %d "
+              "Einträge)" % (len(beispiel["spiele"]), len(daten["spiele"]), sum(nur_jetzt.values()),
+                             sum(nur_beispiel.values()), nur_beispiel_abgesagt, roh_in_beispiel))
+        for z in sorted(nur_jetzt):
             s = json.loads(z)
             print("     + %s %s %s Nr. %s (%s)" % (s["d"], s["z"], s["t"], s["nr"], s["w"]))
-        for z in sorted(alt - neu):
+        for z in sorted(nur_beispiel):
             s = json.loads(z)
-            print("     - %s %s %s Nr. %s (%s)" % (s["d"], s["z"], s["t"], s["nr"], s["w"]))
+            print("     - %s %s %s Nr. %s (%s)%s" % (s["d"], s["z"], s["t"], s["nr"], s["w"],
+                                                   " [in spiele.csv abgesagt]" if in_csv_abgesagt(z) else ""))
         zahlen["spiele_beispiel"] = len(beispiel["spiele"])
-        zahlen["spiele_nur_jetzt"] = sum((neu - alt).values())
-        zahlen["spiele_nur_beispiel"] = sum((alt - neu).values())
+        zahlen["spiele_nur_jetzt"] = sum(nur_jetzt.values())
+        zahlen["spiele_nur_beispiel"] = sum(nur_beispiel.values())
+        zahlen["spiele_nur_beispiel_abgesagt"] = nur_beispiel_abgesagt
 
     # ------------------------------------------------------------------------------------------------ Format, Wiederholung
     p.abschnitt("Format und Wiederholbarkeit")
@@ -377,6 +428,10 @@ def pruefungen():
              and not dateien[0].endswith(b"\n\n"), "UTF-8 ohne BOM, Zeilenende \\n, genau ein Zeilenumbruch am Ende")
     p.pruefe(text == json.dumps(daten, ensure_ascii=False, indent=1) + "\n" and "\\u" not in text and "Käfig" in text,
              "Format: ensure_ascii=False, indent=1")
+    p.pruefe(text.count('"feld": null') == zahlen["woanders"] and text.count('"feld": "halb"') == je_feld["halb"]
+             and text.count('"feld": "ganz"') == je_feld["ganz"],
+             "feld steht in der Datei als null (%d), \"halb\" (%d) und \"ganz\" (%d)"
+             % (zahlen["woanders"], je_feld["halb"], je_feld["ganz"]))
     p.pruefe(json.loads(text) == daten, "die Datei enthält genau die Daten von baue()")
     p.pruefe(P.baue(list(B.lade_spiele()), HEUTE, B) == daten, "baue() mit übergebenem Generator-Modul = Standard")
     p.pruefe(P.baue(list(B.lade_spiele()), datetime.datetime(2026, 10, 31, 23, 59)) == daten, "heute als datetime gilt als Tag")
@@ -402,11 +457,21 @@ def pruefungen():
     # ------------------------------------------------------------------------------------------------ Einzelfälle
     p.abschnitt("Einzelfälle (erfundene Zeilen, die die echte CSV heute nicht enthält)")
 
-    def spiel(**felder):
+    def zeile_mit(**felder):
         zeile = dict(zeilen[0], heim="FFV Sportfreunde 04 I", gast="Gegner", spielnr="1", datum="05.09.2026", zeit="9:30",
-                     spielstaette="Mainzer Landstr. 480, 60326 Frankfurt am Main", wettbewerb="Meisterschaft", team="E1")
+                     spielstaette="Mainzer Landstr. 480, 60326 Frankfurt am Main", wettbewerb="Meisterschaft", team="E1",
+                     ergebnis="")
         zeile.update(felder)
-        return P.baue([zeile], HEUTE)["spiele"][0]
+        return zeile
+
+    def daten_mit(**felder):
+        return P.baue([zeile_mit(**felder)], HEUTE)
+
+    def spiele_von(**felder):
+        return daten_mit(**felder)["spiele"]
+
+    def spiel(**felder):
+        return spiele_von(**felder)[0]
     p.pruefe(spiel(wettbewerb="Kinderfestival")["dauer"] == 75 and spiel()["dauer"] == 90 and spiel(team="HERREN")["dauer"] == 120,
              "Kinderfestival dauert 75 Minuten auch bei einer E-Mannschaft, E-Spiel 90, Herren 120")
     p.pruefe(spiel()["z"] == "09:30", "Uhrzeit wird auf HH:MM gebracht")
@@ -420,6 +485,39 @@ def pruefungen():
     p.pruefe(spiel(wettbewerb="Kinderfestival", gast="")["g"] == "", "Kinderfestival ohne Gegner: g bleibt leer")
     p.pruefe(P.baue([dict(zeilen[0], heim="TSG 51 Ffm", gast="FFV Sportfreunde 04 FFM")], HEUTE)["spiele"] == [],
              "Auswärtsspiel kommt nicht in spiele")
+
+    # abgesagte Spiele: fehlen in der Ausgabe, auch in regeln.navigation
+    p.pruefe(spiele_von(ergebnis="abgesagt") == [] and spiele_von(ergebnis="Abgesagt") == [],
+             "ergebnis „abgesagt“ und „Abgesagt“: das Heimspiel fehlt in der Ausgabe")
+    p.pruefe(all(spiele_von(ergebnis=v) == [] for v in ("ABGESAGT", "  abgesagt ", "abgesagt\t")),
+             "ergebnis „ABGESAGT“ und mit Leerzeichen: das Heimspiel fehlt ebenfalls (getrimmt, Groß-/Kleinschreibung egal)")
+    p.pruefe(all(len(spiele_von(ergebnis=v)) == 1 for v in ("", None, "2:1", "3:1", "0:0")),
+             "leeres ergebnis (auch fehlend) und ein Ergebnis wie 2:1 ändern nichts: das Heimspiel erscheint")
+    p.pruefe(P.baue([zeile_mit(ergebnis="abgesagt", spielstaette="")], HEUTE)["spiele"] == [],
+             "abgesagt gilt auch bei Heimspielen auf anderer Anlage oder ohne Spielstätte")
+    leer = P.baue([], HEUTE)["regeln"]["navigation"]
+    spaet, frueh = "04.03.2031", "07.01.2020"
+    p.pruefe(daten_mit(ergebnis="abgesagt", datum=spaet)["regeln"]["navigation"] == leer
+             and daten_mit(ergebnis="abgesagt", datum=frueh)["regeln"]["navigation"] == leer
+             and daten_mit(ergebnis="", datum=spaet)["regeln"]["navigation"] == [leer[0], montag_von("2031-03-04").isoformat()]
+             and daten_mit(ergebnis="", datum=frueh)["regeln"]["navigation"] == [montag_von("2020-01-07").isoformat(), leer[1]],
+             "ein abgesagtes Spiel weit vor oder nach dem Plan verlängert regeln.navigation nicht (ohne Vermerk schon)")
+    p.pruefe(P.baue(zeilen + [zeile_mit(ergebnis="abgesagt", datum=spaet), zeile_mit(ergebnis="Abgesagt", datum=frueh)],
+                    HEUTE) == daten,
+             "zwei zusätzliche abgesagte Heimspielzeilen ändern die Datei nicht (Spiele und navigation)")
+
+    # feld: Feldbedarf je Klasse auf unserem Platz, bei anderem Spielort null
+    p.pruefe(len(FELD_JE_TEAM) == 11 and all(spiel(team=t)["feld"] == f for t, f in FELD_JE_TEAM.items()),
+             "feld auf unserem Platz je Mannschaft: D1, D2, D3, A, HERREN ganz; E1, E2, E3, F1, F2, G1 halb")
+    p.pruefe(spiel(team="F1", wettbewerb="Kinderfestival", gast="")["feld"] == "halb"
+             and spiel(team="D1", wettbewerb="Kreispokal")["feld"] == "ganz",
+             "feld hängt an der Klasse, nicht am Wettbewerb (Kinderfestival der F1 halb, Kreispokal der D1 ganz)")
+    fremd_ort = "Am Römerhof 9, 60486 Frankfurt am Main"
+    p.pruefe(all(spiel(team=t, spielstaette=fremd_ort)["feld"] is None for t in FELD_JE_TEAM)
+             and spiel(spielstaette="")["feld"] is None and spiel(spielstaette="")["ort"] == "Ort offen",
+             "anderer Spielort (auch „Ort offen“): feld null bei jeder Mannschaft")
+    p.pruefe(S_SPIEL[-1] == "feld" and list(spiel()) == S_SPIEL and list(spiel(spielstaette=fremd_ort)) == S_SPIEL,
+             "Schlüsselfolge des Spielobjekts: d, z, t, w, g, nr, dauer, ort, feld (feld zuletzt, auch bei null)")
 
     # ------------------------------------------------------------------------------------------------ build_ics.py
     p.abschnitt("build_ics.py (zwei Läufe in Wegwerf-Ordnern)")
@@ -456,10 +554,16 @@ def main():
     print("Prüfungen: %d, bestanden: %d, fehlgeschlagen: %d" % (p.anzahl, p.anzahl - len(p.fehler), len(p.fehler)))
     print("Zahlen: training %(training)d, halle %(halle)d, belegt %(belegt)d, Heimspiele gesamt %(heim)d, "
           "davon auf unserem Platz %(bei_uns)d" % zahlen)
+    print("Auf unserem Platz je Klasse: %s; je feld: %s. Heimspiele auf anderer Anlage (feld null): %d. "
+          "Abgesagte Heimspiele, nicht in der Datei: %d"
+          % (", ".join("%s %d" % (k, v) for k, v in zahlen["je_klasse"].items()),
+             ", ".join("%s %d" % (k, v) for k, v in zahlen["je_feld"].items()), zahlen["woanders"], zahlen["abgesagt"]))
     if "spiele_nur_jetzt" in zahlen:
-        print("Beispieldatei: spiele %d -> %d (Gegnernamen dort vorher bereinigt); abweichende Einträge: %d nur jetzt, "
-              "%d nur in der Beispieldatei (Einzelheiten oben; spiele.csv ist lebendig, die Beispieldatei ein Stand vom 30.10.2026)"
-              % (zahlen["spiele_beispiel"], zahlen["heim"], zahlen["spiele_nur_jetzt"], zahlen["spiele_nur_beispiel"]))
+        print("Beispieldatei: spiele %d -> %d (Gegnernamen dort vorher bereinigt, feld nicht verglichen); abweichende "
+              "Einträge: %d nur jetzt, %d nur in der Beispieldatei, davon %d in spiele.csv abgesagt (Einzelheiten oben; "
+              "spiele.csv ist lebendig, die Beispieldatei ein Stand vom 30.10.2026)"
+              % (zahlen["spiele_beispiel"], zahlen["heim"], zahlen["spiele_nur_jetzt"], zahlen["spiele_nur_beispiel"],
+                 zahlen["spiele_nur_beispiel_abgesagt"]))
     return 1 if p.fehler else 0
 
 

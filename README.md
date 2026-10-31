@@ -945,12 +945,19 @@ zur Laufzeit; hier entsteht nur die Datei, gerechnet und gezeichnet wird im Brow
   `python -I`) unverändert lauffähig. „erzeugt“ und „stand.spiele“ sind der Tag des Laufs (auf GitHub nach UTC).
 * **Quellen.** Aus `build_ics.py`: `TRAINING` (Training auf dem Platz; wer in `ORT_EXTERN` steht, trainiert auswärts und
   fehlt, heute die Herren), `HALLE`, `FREI`, `TRAINING_VON`, `TRAINING_BIS`, `TRAINING_STAND` und `SPORTPLATZ`. Aus
-  `spiele.csv`: jede Zeile, deren `heim` mit „FFV Sportfreunde 04“ beginnt; beginnt die Spielstätte mit „Mainzer
-  Landstr. 480“, ist es unser Platz (`ort` = `u`, mit Spieldauer), sonst steht der Ort vor dem ersten Komma; der
-  Gegnername ist mit `bereinige_gegner()` wie auf den App-Spielplanseiten bereinigt („Ffm“ wird „Frankfurt“). In
+  `spiele.csv`: jede Zeile, deren `heim` mit „FFV Sportfreunde 04“ beginnt, ohne die als `abgesagt` vermerkten (siehe
+  unten); beginnt die Spielstätte mit „Mainzer Landstr. 480“, ist es unser Platz (`ort` = `u`, mit Spieldauer), sonst
+  steht der Ort vor dem ersten Komma; der Gegnername ist mit `bereinige_gegner()` wie auf den App-Spielplanseiten
+  bereinigt („Ffm“ wird „Frankfurt“). In
   `platzbelegung.py` selbst: `BELEGT` (andere Nutzung), die Platzteile, die Mannschaftsliste mit den Ids der Seite und die
   Rechenregeln (Fenster werktags 15:30–21:30 und am Wochenende 09:00–18:00, freie Zeit ab 60 Minuten, Spieldauer D 105,
   E 90, F und G 75, A und Herren 120 Minuten, Kinderfestival 75).
+* **Abgesagte Spiele, Feldbedarf.** Zeilen mit dem Vermerk `abgesagt` in der Spalte `ergebnis` (so schreibt ihn
+  `tools/nachtrag.py`; ein Zurücknehmen leert die Spalte) fehlen in `spiele` und zählen für `regeln.navigation` nicht
+  mit. Jedes Spiel auf unserem Platz trägt als letzten Schlüssel `feld`: `"halb"` für E, F und G, `"ganz"` für D, A und
+  Herren (Tabelle `FELD` in `platzbelegung.py`; E und D laut Vorgabe vom 31.10.2026, F und G wie E sind eine Annahme),
+  bei anderem Spielort `null`. Welche Platzhälfte ein `"halb"`-Spiel belegt, wählt die Seite im Browser, nicht der
+  Generator.
 * **Pflege.** `BELEGT` pflegt Olgay von Hand nach der Excel „Aufteilung Trainingsplatz 26-27“: jeder Block, der keiner
   Mannschaft gehört, mit Wochentag, von, bis und Platzteil. Bei jeder Änderung an `BELEGT`, `TRAINING`, `HALLE` oder `FREI`
   den `TRAINING_STAND` in `build_ics.py` auf das Datum setzen (er steht auf der Seite als Stand des Plans). Eine neue

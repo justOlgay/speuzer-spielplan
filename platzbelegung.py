@@ -2,9 +2,10 @@
 """Platzbelegung: baut docs/platzbelegung.json, die öffentlichen Daten der Seite „Platzbelegung“ (Website und App).
 
 Die Datei sagt, wer wann welchen Platzteil nutzt (Training auf dem Platz, Winterhalle, andere Nutzung), nennt alle
-Heimspiele mit Spielort und enthält die Regeln, nach denen die Seite im Browser die freien Zeiten ausrechnet. Die
-Seite liest sie zur Laufzeit von https://justolgay.github.io/speuzer-spielplan/platzbelegung.json. Hier wird nur die
-Datei gebaut, gerechnet und gezeichnet wird im Browser.
+Heimspiele mit Spielort (ohne die abgesagten; auf unserem Platz mit Dauer und Feldbedarf) und enthält die Regeln, nach
+denen die Seite im Browser die freien Zeiten ausrechnet. Die Seite liest sie zur Laufzeit von
+https://justolgay.github.io/speuzer-spielplan/platzbelegung.json. Hier wird nur die Datei gebaut, gerechnet und
+gezeichnet wird im Browser.
 
 Aufruf: build_ics.py ruft baue() und schreibe() am Ende jedes Laufs auf (dort schreibe_platzbelegung()); die
 GitHub-Aktion tut das täglich mit den Kalendern. Nur Python 3, nur Standardbibliothek. Test: test_platzbelegung.py.
@@ -16,9 +17,9 @@ Quellen (die Tabellen stehen in build_ics.py und werden hier nicht noch einmal g
   FREI                               Ferien und Feiertage ohne Training
   TRAINING_VON, TRAINING_BIS         Zeitraum des Plans
   TRAINING_STAND                     Stand des Plans, steht als stand.plan auch auf der Seite
-  Zeilen aus spiele.csv              Heimspiele (build_ics.lade_spiele())
+  Zeilen aus spiele.csv              Heimspiele (build_ics.lade_spiele()); Zeilen mit ergebnis = abgesagt fehlen
 Hier stehen nur die Angaben, die es sonst nirgends gibt: BELEGT (andere Nutzung), Platzteile, Mannschaftsliste mit den
-Ids der Seite und die Rechenregeln der Seite (Öffnungsfenster, Mindestlänge einer freien Zeit, Spieldauer).
+Ids der Seite und die Rechenregeln der Seite (Öffnungsfenster, Mindestlänge einer freien Zeit, Spieldauer, Feldbedarf).
 
 ÖFFENTLICH, OHNE NAMEN: Die Datei und dieses Repo sind öffentlich. Keine Namen von Personen oder Firmen, keine
 Telefonnummern, E-Mail-Adressen, Zellkoordinaten oder Kommentare aus der Excel, auch nicht in Kommentaren hier.
@@ -32,6 +33,7 @@ VERSION = 1                          # Die Seite zeigt bei einer anderen Zahl de
 SAISON = "2026/27"
 UNSER_PLATZ = "Mainzer Landstr. 480"  # so beginnt die Spielstätte in spiele.csv bei einem Spiel auf unserem Platz
 ORT_OFFEN = "Ort offen"              # Anzeige, wenn ein Heimspiel keine Spielstätte hat
+ABGESAGT = "abgesagt"                # Vermerk in der Spalte ergebnis von spiele.csv (so schreibt ihn tools/nachtrag.py)
 
 # Platzteile in der Reihenfolge der Anzeige (links nach rechts). Tor 1 bis 4 sind die Platzviertel (links Tor 1 und 2,
 # rechts Tor 3 und 4); Käfig und Court liegen neben dem Feld.
@@ -71,6 +73,13 @@ FENSTER = {"werktag": ("15:30", "21:30"), "wochenende": ("09:00", "18:00")}   # 
 MIN_FREI = 60                        # Minuten; eine kürzere Lücke zählt nicht als frei
 DAUER = {"D": 105, "E": 90, "F": 75, "G": 75, "A": 120, "Herren": 120}        # Spieldauer in Minuten je Klasse
 DAUER_FESTIVAL = 75                  # Kinderfestival
+
+# Feldbedarf eines Heimspiels auf unserem Platz je Klasse: "halb" = eine Platzhälfte (zwei der vier Tore), "ganz" = der
+# ganze Platz (Tor 1 bis 4). Quelle: Rückmeldung zur Seite „Platzbelegung“ vom 31.10.2026 („E-Jugend braucht nur das
+# Halbfeld, ab D-Jugend das ganze Feld“). ANNAHME: F und G sind jünger als E und deshalb wie E auf "halb" gesetzt (so
+# nicht vorgegeben). Welche Hälfte (links oder rechts) ein "halb"-Spiel belegt, steht nicht in spiele.csv; das wählt die
+# Seite im Browser, nicht dieser Generator.
+FELD = {"D": "ganz", "E": "halb", "F": "halb", "G": "halb", "A": "ganz", "Herren": "ganz"}
 
 # Andere Nutzung des Platzes (nicht das Training einer Mannschaft): Wochentag, von, bis, Platzangabe (Schreibweise wie
 # in BELEGUNG). Jeder Eintrag: andere Nutzung, öffentlich ohne Angabe, wer; darum steht hier auch kein Name.
@@ -138,6 +147,18 @@ def spieldauer(csv_kuerzel, wettbewerb, festival):
     return DAUER["Herren" if csv_kuerzel == "HERREN" else csv_kuerzel[0]]
 
 
+def feldbedarf(csv_kuerzel):
+    """Feldbedarf eines Heimspiels auf unserem Platz nach Klasse (Tabelle FELD): "halb" oder "ganz"."""
+    return FELD["Herren" if csv_kuerzel == "HERREN" else csv_kuerzel[0]]
+
+
+def ist_abgesagt(zeile):
+    """Steht in der Spalte ergebnis der Vermerk „abgesagt“ (getrimmt, Groß-/Kleinschreibung egal)? tools/nachtrag.py
+    schreibt ihn bei einem Spiel, das bei fussball.de abgesetzt ist, bei „zg.“ und bei Nichtantritt; ein Zurücknehmen
+    leert die Spalte. Andere Werte (ein Ergebnis wie 3:1, leer) ändern nichts."""
+    return _f(zeile, "ergebnis").lower() == ABGESAGT
+
+
 def montag(tag):
     """Montag der Woche, in der der Tag (JJJJ-MM-TT) liegt, als JJJJ-MM-TT."""
     d = datetime.date.fromisoformat(tag)
@@ -148,7 +169,8 @@ def baue(zeilen, heute, quelle=None):
     """Die Daten der Seite als dict; die Schlüssel stehen in der festen Reihenfolge der Schnittstelle (nicht umsortieren,
     sonst zeigt der tägliche Lauf Änderungen, die keine sind).
 
-    zeilen: alle Zeilen aus spiele.csv (build_ics.lade_spiele()), Heim- und Auswärtsspiele aller Mannschaften
+    zeilen: alle Zeilen aus spiele.csv (build_ics.lade_spiele()), Heim- und Auswärtsspiele aller Mannschaften; Zeilen
+            mit ergebnis = abgesagt werden übersprungen (auch für regeln.navigation, die aus den übrigen Spielen kommt)
     heute:  Tag des Laufs (datetime.date), steht als „erzeugt“ und als Stand der Spiele in der Datei
     quelle: Modul mit den Tabellen und bereinige_gegner() des Generators; Standard build_ics (build_ics.py übergibt
             sich selbst)
@@ -179,11 +201,12 @@ def baue(zeilen, heute, quelle=None):
     belegt = [{"tag": g.WOCHENTAG[wochentag], "von": von, "bis": bis, "teile": _teile(platz, "BELEGT")}
               for wochentag, von, bis, platz in BELEGT]
 
-    # Alle Heimspiele (heim beginnt mit unserem Vereinsnamen), auch die auf anderer Anlage. Der Gegnername ist wie auf
-    # den App-Spielplanseiten bereinigt (bereinige_gegner() in build_ics.py, nur Anzeige: spiele.csv bleibt unverändert).
+    # Alle Heimspiele (heim beginnt mit unserem Vereinsnamen), auch die auf anderer Anlage, aber ohne die abgesagten
+    # (die Kalender zeigen sie mit „· abgesagt“, die Platzbelegung zeigt sie gar nicht). Der Gegnername ist wie auf den
+    # App-Spielplanseiten bereinigt (bereinige_gegner() in build_ics.py, nur Anzeige: spiele.csv bleibt unverändert).
     spiele = []
     for z in zeilen:
-        if not _f(z, "heim").startswith(g.VEREIN):
+        if not _f(z, "heim").startswith(g.VEREIN) or ist_abgesagt(z):
             continue
         datum = datetime.datetime.strptime(_f(z, "datum"), "%d.%m.%Y").date()
         stunde, minute = (int(x) for x in _f(z, "zeit").split(":"))
@@ -199,6 +222,7 @@ def baue(zeilen, heute, quelle=None):
             "nr": _f(z, "spielnr"),
             "dauer": spieldauer(_f(z, "team"), wettbewerb, g.FESTIVAL) if bei_uns else None,
             "ort": "u" if bei_uns else (ort_kurz(spielstaette) or ORT_OFFEN),
+            "feld": feldbedarf(_f(z, "team")) if bei_uns else None,      # bleibt der letzte Schlüssel
         })
     spiele.sort(key=lambda s: (s["d"], s["z"], s["t"]))      # stabil: bei gleicher Zeit bleibt die Reihenfolge der CSV
 
