@@ -2,22 +2,29 @@
 """Spielplan-Abgleich: spiele.csv gegen die öffentlichen Mannschafts-Spielpläne bei fussball.de.
 
 Prüft die Spieltermine in spiele.csv (daraus baut build_ics.py die Kalender-Abos) gegen die öffentlichen Spielpläne der elf
-Mannschaften des FFV Sportfreunde 04 Frankfurt und berichtet NUR die Unterschiede (Markdown). Das Skript ist REIN LESEND: Es
-schreibt nie in spiele.csv oder sonst ins Repo, committet und pusht nichts und sendet keine Mails. Es gehört nicht zum
-Kalender-Workflow (.github/workflows/build.yml), der fussball.de bewusst nicht ausliest.
+Mannschaften des FFV Sportfreunde 04 Frankfurt und berichtet NUR die Unterschiede (Markdown). Die D3 hat eine Zusatzquelle: die
+Freundschaftsspiele der fussball.de-Mannschaft D4 stehen in spiele.csv unter D3 (ZUSATZQUELLEN, quellen()); beide Pläne werden
+zusammengeführt und gemeinsam mit den D3-Zeilen der CSV verglichen. Das Skript ist REIN LESEND: Es schreibt nie in spiele.csv
+oder sonst ins Repo, committet und pusht nichts und sendet keine Mails. Es gehört nicht zum Kalender-Workflow
+(.github/workflows/build.yml), der fussball.de bewusst nicht ausliest.
 
 Rücksicht auf fussball.de:
   - nur die öffentlichen Mannschafts-Spielpläne (ajax.team.matchplan), erkennbarer User-Agent, 3 s Pause zwischen den Abrufen
-  - höchstens ein Abruf je Mannschaft und Woche: liegt ein Abruf jünger als 6 Tage im Cache, wird er benutzt und nichts
-    abgerufen (eine Option zum Erzwingen gibt es absichtlich nicht); nach einem Fehlschlag keine weiteren Abrufe im Lauf
+  - höchstens ein Abruf je Plan und Woche (zwölf Pläne: elf Mannschaften plus die Zusatzquelle D4): liegt ein Abruf jünger als
+    6 Tage im Cache, wird er benutzt und nichts abgerufen (eine Option zum Erzwingen gibt es absichtlich nicht); nach einem
+    Fehlschlag keine weiteren Abrufe im Lauf
   - Rohdaten und Bericht landen nie im Repo: Cache im Benutzer-Cache-Ordner, Bericht standardmäßig im temporären Ordner
 
 Aufruf (aus dem Repo-Stamm):
   python3 -I tools/abgleich.py [--csv DATEI] [--bericht-ordner ORDNER] [--cache ORDNER] [--nur-cache]
                                [--heute JJJJ-MM-TT] [--saison JJJJ] [--kein-wochenvergleich]
-  --nur-cache              nichts abrufen, den neuesten Cache-Stand je Mannschaft nehmen (zum erneuten Auswerten)
+  --nur-cache              nichts abrufen, den neuesten Cache-Stand je Plan nehmen (zum erneuten Auswerten)
   --kein-wochenvergleich   keinen Vergleich mit dem Bericht der Vorwoche anstellen (z. B. wenn jeder Lauf ohne Vorlauf startet)
-Exit-Code: 0 = Bericht erstellt, 2 = Bericht erstellt, aber mindestens eine Mannschaft nicht ausgewertet, 1 = Fehler.
+Fällt der eigene Plan einer Mannschaft aus, ist sie nicht ausgewertet (ihre Zusatzquellen werden dann nicht abgerufen). Fällt nur eine
+Zusatzquelle aus, wird die Mannschaft mit den übrigen Plänen ausgewertet; ihr Abschnitt nennt den Ausfall, und die Spiele der
+Zusatzquelle erscheinen als „nur in der CSV“.
+Exit-Code: 0 = Bericht erstellt, 2 = Bericht erstellt, aber mindestens eine Mannschaft nicht ausgewertet oder eine Zusatzquelle
+ausgefallen, 1 = Fehler.
 """
 import argparse
 import csv
@@ -65,6 +72,12 @@ TEAMS = [
     ('F2', 'f2', 'F2', '011MIDEKDC000000VTVG0001VTR8C1K7'),
     ('G1', 'g-jugend', 'G1', '02ILVG354G000000VS5489B1VSO9MMK0'),
 ]
+# Zusatzquellen: fussball.de-Pläne, deren Spiele in spiele.csv unter dem Kürzel einer Mannschaft aus TEAMS stehen (keine eigene
+# Mannschaft in der CSV). Aufbau wie TEAMS: Kürzel der CSV-Mannschaft, Slug (Cache-Ordner), Anzeigename, fussball.de-Team-ID.
+# D4 = „FFV Sportfreunde 04 (FS) IV“ (D-Junioren, nur Freundschaftsspiele): zweites Spielteam des D3-Kaders. Vereinsentscheidung
+# vom 31.10.2026: keine eigene Mannschaft, ihre Spiele stehen als D3 in der CSV und damit in Kalender, Terminseite und App der D3.
+ZUSATZQUELLEN = [('D3', 'd4', 'D4 (Freundschaftsspiele der D3)', '0316LKDK8S000000VS5489BRVVV10ESU')]
+
 ART_CODE = {'ME': 'Meisterschaft', 'PO': 'Kreispokal', 'FS': 'Freundschaftsspiel'}
 WOCHENTAG = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So']
 DIFF_TITEL = {
@@ -122,6 +135,11 @@ def sha256(pfad):
         return hashlib.sha256(f.read()).hexdigest()
 
 
+def quellen(team):
+    """Alle fussball.de-Pläne einer CSV-Mannschaft: zuerst ihr eigener, dann ihre Zusatzquellen (ZUSATZQUELLEN mit demselben Kürzel)."""
+    return [team] + [q for q in ZUSATZQUELLEN if q[0] == team[0]]
+
+
 # ---------------------------------------------------------------- Abruf mit Wochensperre
 
 def cache_stand(cache, slug):
@@ -136,7 +154,8 @@ def cache_stand(cache, slug):
 
 
 def hole(cache, team, von, bis, nur_cache, jetzt, abbruch, url_vorlage=URL):
-    """Gibt (html, Quelle, Zeitstempel, Fehler) zurück. Ruft höchstens einmal je MIN_ABSTAND_TAGE ab.
+    """Gibt (html, Quelle, Zeitstempel, Fehler) zurück. Ruft höchstens einmal je MIN_ABSTAND_TAGE ab. `team`: ein Tupel
+    wie in TEAMS, auch eine Zusatzquelle (eigener Slug, eigene Wochensperre, eigene Fehlversuch-Marke).
     Wird ein Abruf abgewiesen oder scheitert er, landet der Grund in `abbruch`; danach wird gar nichts mehr abgerufen.
     Nach einem Fehlversuch gibt es für diese Mannschaft 20 Stunden lang keinen neuen Versuch."""
     kuerzel, slug, name, tid = team
@@ -502,6 +521,10 @@ def team_abschnitt(team, ergebnis, heute):
     kopf = '### %s – fussball.de %d Spiele · CSV %d Zeilen' % (name, ergebnis['n_fb'], ergebnis['n_csv'])
     kopf += ' · **keine Unterschiede**' if not diffs else ' · %d kommend, %d vergangen' % (len(kom), len(verg))
     out += [kopf, '']
+    if ergebnis.get('quellen'):
+        out += ['Zusammengeführt aus %d fussball.de-Plänen: %s.' % (1 + len(ergebnis['quellen']), ' und '.join([name] + ergebnis['quellen'])), '']
+    for qname, grund in ergebnis.get('zusatz_fehler', []):
+        out += ['**Zusatzquelle ausgefallen:** %s – %s; ihre Spiele sind in diesem Lauf nicht verglichen und erscheinen deshalb als „nur in der CSV“.' % (qname, grund), '']
     if any(s['kennz'] != 'ok' for s in staffeln):
         out += ['Staffeln (Spiele gesamt / ab heute):', '', '| Staffel | Wettbewerb (fussball.de) | Art | fussball.de | CSV | Urteil |', '|---|---|---|---:|---:|---|']
         for s in staffeln:
@@ -579,6 +602,9 @@ def kurzfassung(ergebnisse, alle, heute_dt, vorher, wochenvergleich=True):
         x = d['fb'] or d['csv']
         naechste.append('- %s · %s · %s · %s' % (fmt(x['datum'], x['zeit']), next(t[2] for t in TEAMS if t[0] == d['team']), paarung(x), DIFF_TITEL[d['art']]))
     out = zeilen + ['']
+    for team in TEAMS:
+        for qname, grund in ergebnisse[team[0]].get('zusatz_fehler', []):
+            out += ['**Zusatzquelle ausgefallen:** %s – %s; ihre Spiele erscheinen bei %s als „nur in der CSV“.' % (qname, grund, team[2]), '']
     if kommend:
         out.append('Kommend (Spiele ab heute): **%d Unterschiede**, davon %d fehlende Spiele in der CSV, %d überzählige und %d abweichende. In der Vergangenheit (nur zur Kenntnis): %d.' % (
             len(kommend), tot['fehlt'], tot['nur'], tot['abw'], tot['verg']))
@@ -608,6 +634,22 @@ def stand_laden(ordner, heute):
 
 
 # ---------------------------------------------------------------- Hauptprogramm
+
+def plan_lesen(cache, quelle, von, bis, nur_cache, jetzt, abbruch, url_vorlage):
+    """Einen fussball.de-Plan holen (Cache oder Abruf, siehe hole) und lesen -> (Spiele, Fehlertext oder None, Zeile für
+    „Abrufe dieses Laufs“). `quelle`: ein Tupel wie in TEAMS, also auch eine Zusatzquelle."""
+    name = quelle[2]
+    text, herkunft, stempel, fehler = hole(cache, quelle, von, bis, nur_cache, jetzt, abbruch, url_vorlage)
+    if fehler:
+        if not fehler.startswith('nicht abgerufen'):
+            print('  %s: Abruf fehlgeschlagen (%s); weitere Abrufe in diesem Lauf entfallen' % (name, fehler), file=sys.stderr)
+        return [], fehler, '%s: FEHLER (%s)' % (name, fehler)
+    zeile = '%s: %s %s' % (name, herkunft, stempel.strftime('%d.%m.%Y %H:%M'))
+    fb = [fb_normalisieren(g) for g in parse_spielplan(text)]
+    if not fb:
+        return [], 'fussball.de lieferte keine Spielzeilen (Seitenaufbau geändert oder Plan leer)', zeile
+    return fb, None, zeile
+
 
 def main():
     ap = argparse.ArgumentParser(description='Spielplan-Abgleich spiele.csv gegen fussball.de (rein lesend)')
@@ -643,34 +685,42 @@ def main():
     ergebnisse, abrufe, abbruch = {}, [], []
     for team in TEAMS:
         kuerzel, slug, name, tid = team
-        text, quelle, stempel, fehler = hole(a.cache, team, von, bis, a.nur_cache, jetzt, abbruch, a.url_vorlage)
-        if fehler:
+        fb, fehler, zeile = plan_lesen(a.cache, team, von, bis, a.nur_cache, jetzt, abbruch, a.url_vorlage)
+        abrufe.append(zeile)
+        if fehler:        # fällt der eigene Plan aus, werden die Zusatzquellen dieser Mannschaft in diesem Lauf nicht abgerufen
             ergebnisse[kuerzel] = dict(fehler=fehler)
-            abrufe.append('%s: FEHLER (%s)' % (name, fehler))
-            if not fehler.startswith('nicht abgerufen'):
-                print('  %s: Abruf fehlgeschlagen (%s); weitere Abrufe in diesem Lauf entfallen' % (name, fehler), file=sys.stderr)
             continue
-        abrufe.append('%s: %s %s' % (name, quelle, stempel.strftime('%d.%m.%Y %H:%M')))
-        fb = [fb_normalisieren(g) for g in parse_spielplan(text)]
+        gelesen, zusatz_fehler = [], []
+        for zusatz in quellen(team)[1:]:
+            try:
+                zfb, zfehler, zzeile = plan_lesen(a.cache, zusatz, von, bis, a.nur_cache, jetzt, abbruch, a.url_vorlage)
+            except Exception as ex:  # ein kaputter Zusatzplan darf die Mannschaft nie mitreißen
+                zfb, zfehler = [], 'unerwarteter Fehler (%s: %s)' % (type(ex).__name__, ex)
+                zzeile = '%s: FEHLER (%s)' % (zusatz[2], zfehler)
+            abrufe.append(zzeile)
+            if zfehler:
+                zusatz_fehler.append((zusatz[2], zfehler))
+            else:
+                fb = fb + zfb
+                gelesen.append(zusatz[2])
         diffs, staffeln, info, ohne_termin = vergleiche(team, fb, csv_je.get(kuerzel, []), heute)
         n_fb = sum(1 for g in fb if g['status'] in ('angesetzt', 'nichtantritt'))
         ergebnisse[kuerzel] = dict(diffs=diffs, staffeln=staffeln, info=info, ohne_termin=ohne_termin, n_fb=n_fb,
                                    n_csv=sum(1 for r in csv_je.get(kuerzel, []) if not r['abgesagt']), csv_ausserhalb=ausserhalb.get(kuerzel, 0),
-                                   zeilen=len(fb))
-        if not fb:
-            ergebnisse[kuerzel]['fehler'] = 'fussball.de lieferte keine Spielzeilen (Seitenaufbau geändert oder Plan leer)'
+                                   zeilen=len(fb), quellen=gelesen, zusatz_fehler=zusatz_fehler)
     alle = [d for e in ergebnisse.values() if not e.get('fehler') for d in e['diffs']]
 
     vorher = None if a.kein_wochenvergleich else stand_laden(a.bericht_ordner, heute)
     kf = kurzfassung(ergebnisse, alle, jetzt, vorher, not a.kein_wochenvergleich)
-    n_fehler = sum(1 for e in ergebnisse.values() if e.get('fehler'))
+    n_fehler = sum(1 for e in ergebnisse.values() if e.get('fehler')) + sum(len(e.get('zusatz_fehler', ())) for e in ergebnisse.values())
     n_cache = sum(1 for z in abrufe if ': Cache ' in z)
     n_abruf = sum(1 for z in abrufe if ': Abruf ' in z)
 
     md = ['# Spielplan-Abgleich · spiele.csv gegen fussball.de · %s' % h.strftime('%d.%m.%Y'), '',
           'Rein lesender Bericht der Unterschiede. Nichts wurde in `spiele.csv` geschrieben, committet oder gepusht.', '',
           '- **Quelle CSV:** `%s` (%d Zeilen, Saisonfenster %s bis %s); %s' % (a.csv, len(csv_alle), kurz_datum(von) + str(sj), kurz_datum(bis) + str(sj + 1), git_info(a.csv)),
-          '- **Quelle fussball.de:** öffentlicher Mannschafts-Spielplan je Mannschaft (`ajax.team.matchplan`), ein Abruf je Mannschaft und Woche. Dieser Lauf: %d Abrufe, %d aus dem Cache, %d fehlgeschlagen.' % (n_abruf, n_cache, n_fehler),
+          '- **Quelle fussball.de:** öffentlicher Mannschafts-Spielplan je Mannschaft (`ajax.team.matchplan`), ein Abruf je Plan und Woche. Zusatzquellen: %s. Dieser Lauf: %d Abrufe, %d aus dem Cache, %d fehlgeschlagen.' % (
+              '; '.join('%s, in der CSV bei %s' % (q[2], q[0]) for q in ZUSATZQUELLEN) or 'keine', n_abruf, n_cache, n_fehler),
           '- **Schlüssel des Vergleichs:** Staffelkennung + Spielnummer; verglichen werden Datum, Uhrzeit, Heim/Auswärts, Gegner, Wettbewerbsart und Absagen. „Kommend“ heißt: Spieldatum heute (%s) oder später.' % h.strftime('%d.%m.%Y'), '',
           '## Kurzfassung', ''] + kf + ['']
     if unbekannt:

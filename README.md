@@ -81,7 +81,7 @@ Heim/Auswärts, Gegner, Wettbewerbsart und Spielnummer, ein Staffelwechsel mit m
 
 ## Automatische Aktualisierung (`tools/nachtrag.py`)
 
-Das Skript schreibt `spiele.csv` aus den Mannschaftsplänen von fussball.de fort (Stand 26.10.2026). Es liest den Cache von
+Das Skript schreibt `spiele.csv` aus den Mannschaftsplänen von fussball.de fort (Stand 31.10.2026). Es liest den Cache von
 `tools/abgleich.py` (füllt der tägliche Mac-Task), vergleicht mit der CSV und ändert **nur** dies; alles andere wird gemeldet,
 nie gelöscht:
 
@@ -100,6 +100,18 @@ neu gelesen und `build_ics.py` in einer temporären Kopie gebaut (Zahl der Termi
 Gewalt, nur bei sauberem Arbeitsbaum; scheitert der Push, bleibt der Commit lokal und wird am nächsten Tag nachgeholt. Der Arbeitsbaum
 dieses Repos muss dafür sauber bleiben (keine lokalen Änderungen, z. B. nach einem lokalen `build_ics.py`), sonst meldet der Nachtrag
 „Arbeitsbaum nicht sauber“ und schreibt nichts.
+
+**Zusatzquelle D4 (seit 31.10.2026).** Die fussball.de-Mannschaft „FFV Sportfreunde 04 (FS) IV“ (D-Junioren, nur Freundschaftsspiele,
+im Verein „D4“) ist das zweite Spielteam des D3-Kaders und hat keinen eigenen Kalender: ihre Spiele stehen in `spiele.csv` als **D3**
+und erscheinen bei der D3 (Kalender, Terminseite, App). Eingerichtet ist das in `tools/abgleich.py`: `ZUSATZQUELLEN` (Kürzel der
+CSV-Mannschaft, Slug, Name, Team-ID) und `quellen(team)` (eigener Plan zuerst, dann die Zusatzquellen). `nachtrag.py` liest den
+D4-Plan **nur aus dem Cache** (`d4/`, nie ein Abruf, auch im Anwendungsmodus nicht), führt ihn mit dem D3-Plan zusammen und behandelt
+alle D3-Zeilen gleich (ergänzt, verlegt, abgesagt, wieder angesetzt; Mengenbremse und Plausibilität gelten für die D3 als Ganzes).
+Den Cache füllt der tägliche Mac-Task: `NACHTRAG_SLUGS` in `aktualisieren.py` braucht dafür den Eintrag `"D4": "d4"`. Fällt der
+D4-Plan aus (kein, veralteter, unbrauchbarer oder unplausibler Cache), läuft die D3 mit ihrem eigenen Plan weiter; der Nachtrag meldet
+nur einen Hinweis („… ihre Spiele sind in diesem Lauf nicht geprüft“). Der Wochen-Abgleich `tools/abgleich.py` ruft die D4 mit ab (ein
+Abruf mehr: zwölf Pläne statt elf, je Plan höchstens einmal in sechs Tagen) und vergleicht die D3 gegen beide Pläne zusammen; fällt nur
+der D4-Plan aus, nennt der D3-Abschnitt den Ausfall (die D4-Zeilen erscheinen dann als „nur in der CSV“), und der Exit-Code ist 2.
 
 **Aufruf** (aus dem Repo-Stamm, immer `python3 -I`):
 - ohne Optionen: nur Bericht; nichts wird geschrieben, abgerufen oder gepusht (`--nur-cache --heute JJJJ-MM-TT` zum Testen)

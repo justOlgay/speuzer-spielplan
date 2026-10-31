@@ -7,8 +7,12 @@ Einige Tests starten tools/nachtrag.py als Unterprozess (Lauf-Sperre, Signale) o
 Sicherheitsnetz); auch sie arbeiten nur in Wegwerf-Ordnern und ohne Netzwerk.
 
 Aufruf (aus dem Repo-Stamm):  python3 -I -m unittest discover -s tools -p 'test_nachtrag.py'
+Einzelne Klassen:             python3 -I -m unittest discover -s tools -p 'test_nachtrag.py' -k TestZusatzquelleNachtrag
 Ein Zusatztest liest den lokalen Cache des Abgleichs (~/Library/Caches/speuzer-spielplan-abgleich) und wird übersprungen,
 wenn er fehlt.
+
+Die Zusatzquelle D4 (abgleich.ZUSATZQUELLEN: ihre Spiele stehen in der CSV als D3) prüfen TestZusatzquelleNachtrag (nachtrag.py) und
+TestZusatzquelleAbgleich (abgleich.main mit Wegwerf-Cache); in der synthetischen Welt hat die D4 zunächst einen Plan ohne Spiele.
 """
 import contextlib
 import errno
@@ -61,7 +65,7 @@ def _gesperrt(*a, **k):
 def setUpModule():
     """Jeder Netzwerkzugriff im Test scheitert und wird gezählt; tearDownModule verlangt null Versuche."""
     global _patches
-    # abgleich.hole lässt die Fehlversuch-Marke ungeschlossen (abgleich.py bleibt unverändert): die Warnung hier nicht zeigen
+    # abgleich.hole lässt die Fehlversuch-Marke ungeschlossen (hole bleibt, wie es ist): die Warnung hier nicht zeigen
     warnings.filterwarnings('ignore', category=ResourceWarning, module='abgleich')
     _patches = [mock.patch.object(socket.socket, 'connect', _gesperrt), mock.patch.object(socket, 'getaddrinfo', _gesperrt),
                 mock.patch.object(socket, 'create_connection', _gesperrt), mock.patch.object(A, 'PAUSE_SEKUNDEN', 0)]
@@ -79,6 +83,9 @@ def tearDownModule():
 
 TEAMS = [t[0] for t in A.TEAMS]
 SLUG = {t[0]: t[1] for t in A.TEAMS}
+SLUG.update({q[1]: q[1] for q in A.ZUSATZQUELLEN})     # Zusatzquellen (D4) lassen sich unter ihrem Slug ansprechen, z. B. cache_datei(w, 'd4', ...)
+D4_SLUG, D4_NAME = A.ZUSATZQUELLEN[0][1], A.ZUSATZQUELLEN[0][2]
+EIGEN_D4 = 'FFV Sportfreunde 04 (FS) IV'       # so heißt die D4 bei fussball.de; in der CSV stehen ihre Spiele als D3
 EIGEN = {'HERREN': 'FFV Sportfreunde 04 FFM', 'A': 'FFV Sportfreunde 04 1', 'D1': 'FFV Sportfreunde 04 I', 'D2': 'FFV Sportfreunde 04 II',
          'D3': 'FFV Sportfreunde 04 III', 'E1': 'FFV Sportfreunde 04 I', 'E2': 'FFV Sportfreunde 04 II', 'E3': 'FFV Sportfreunde 04 III',
          'F1': 'FFV Sportfreunde 04 I', 'F2': 'FFV Sportfreunde 04 II', 'G1': 'FFV Sportfreunde 04 I'}
@@ -99,6 +106,7 @@ KOPF = '''<div data-ng-controller="AjaxController" id="id-team-matchplan-table">
 <table class="table table-striped table-full-width"><thead><tr class="thead hidden-small"><th>Datum | Zeit</th></tr></thead><tbody>
 '''
 FUSS = '</tbody></table></div></div>\n'
+FUELLTEXT = '<!-- ' + 'Filterformular und Legende ' * 20 + '-->'     # ein Plan ohne Spiele muss trotzdem länger als 500 Zeichen sein (wie echte Seiten)
 
 
 class Spiel:
@@ -179,10 +187,16 @@ class Welt:
     def __init__(self):
         self.csv = {t: basis_spiele(t) for t in TEAMS}
         self.seite = {t: basis_spiele(t) for t in TEAMS}
+        self.zusatz = {q[1]: [] for q in A.ZUSATZQUELLEN}      # Plan jeder Zusatzquelle (D4): zunächst ohne Spiele, die CSV-Zeilen stehen bei der Mannschaft
 
     def beide(self, team, spiel):
         self.csv[team].append(spiel)
         self.seite[team].append(deepcopy(spiel))
+
+    def beide_zusatz(self, slug, spiel):
+        """Ein Spiel einer Zusatzquelle: in der CSV unter dem Kürzel der Mannschaft (spiel.team) und im Plan der Zusatzquelle."""
+        self.csv[spiel.team].append(spiel)
+        self.zusatz[slug].append(deepcopy(spiel))
 
     def spiel(self, liste, team, nr, staffel=None):
         return next(s for s in liste[team] if s.nr == nr and (staffel is None or s.staffel == staffel))
@@ -205,6 +219,16 @@ class Welt:
             text = (ersetze or {}).get(t)
             if text is None:
                 text = seite_aus(self.seite[t])
+            with open(os.path.join(ziel, stempel.strftime('%Y%m%d-%H%M%S') + '.html'), 'w', encoding='utf-8') as f:
+                f.write(text)
+        for slug, spiele in self.zusatz.items():          # Zusatzquellen: in ersetze und ohne zählt ihr Slug (z. B. 'd4')
+            if slug in ohne:
+                continue
+            ziel = os.path.join(ordner, slug)
+            os.makedirs(ziel, exist_ok=True)
+            text = (ersetze or {}).get(slug)
+            if text is None:
+                text = seite_aus(spiele, zusatz=FUELLTEXT)
             with open(os.path.join(ziel, stempel.strftime('%Y%m%d-%H%M%S') + '.html'), 'w', encoding='utf-8') as f:
                 f.write(text)
 
@@ -3549,11 +3573,593 @@ class TestKleinteile(TestBasis):
             self.assertIsNone(re.search(r'\+?\d[\d /-]{8,}\d|@|https?://|www\.', ohne_adressen), ohne_adressen)
 
 
+# ---------------------------------------------------------------- AP-1: die D4 als Zusatzquelle der D3
+
+def d4_spiel(nr=143, datum='2026-11-29', zeit='11:30', gast='SV 09 Hofheim 2', **kw):
+    """Ein Spiel der D4: bei fussball.de heißt unsere Mannschaft „FFV Sportfreunde 04 (FS) IV“, in der CSV steht es als D3
+    (Freundschaftsspiel in der Staffel der D3-Freundschaftsspiele, Heimspiel auf dem Vereinsplatz)."""
+    return Spiel('D3', FREUND['D3'], nr, datum, zeit, EIGEN_D4, gast, 'Freundschaftsspiel', ort=HEIMORT['D3'], **kw)
+
+
+def d4_im_plan(w, *spiele):
+    """Spiele, die nur im Plan der D4 stehen (die CSV kennt sie nicht); der Cache wird neu geschrieben."""
+    w.welt.zusatz[D4_SLUG] += spiele
+    w.cache_neu()
+
+
+def d4_in_csv_und_plan(w, *spiele):
+    """Spiele in der CSV (als D3) und im Plan der D4; CSV und Cache werden neu geschrieben."""
+    for s in spiele:
+        w.welt.beide_zusatz(D4_SLUG, s)
+    csv_schreiben(w)
+    w.cache_neu()
+
+
+def d3_neues_spiel(w, nr=40, datum='2026-11-29', zeit='13:00', gast='FC Neu 1'):
+    """Ein Meisterschaftsspiel nur im eigenen Plan der D3 (die CSV kennt es nicht); den Cache schreibt der Aufrufer neu."""
+    s = Spiel('D3', LIGA['D3'], nr, datum, zeit, EIGEN['D3'], gast)
+    w.welt.seite['D3'].append(s)
+    return s
+
+
+D4_ERGAENZT = 'ergänzt: D3 So 29.11. 11:30 Freundschaftsspiel, Heim gegen SV 09 Hofheim 2'
+D4_PAARUNG = 'Freundschaftsspiel, Heim gegen SV 09 Hofheim 2'
+
+
+class TestZusatzquellenKonfiguration(unittest.TestCase):
+    def test_teams_bleibt_und_die_d4_ist_die_zusatzquelle_der_d3(self):
+        self.assertEqual(len(A.TEAMS), 11)
+        self.assertEqual(A.ZUSATZQUELLEN, [('D3', 'd4', 'D4 (Freundschaftsspiele der D3)', '0316LKDK8S000000VS5489BRVVV10ESU')])
+        d3 = next(t for t in A.TEAMS if t[0] == 'D3')
+        self.assertEqual(A.quellen(d3), [d3, A.ZUSATZQUELLEN[0]], 'der eigene Plan zuerst')
+        for t in A.TEAMS:
+            self.assertIs(A.quellen(t)[0], t)
+            if t[0] != 'D3':
+                self.assertEqual(A.quellen(t), [t])
+
+    def test_zusatzquellen_haben_ein_kuerzel_aus_teams_und_eigenen_slug_und_eigene_id(self):
+        for q in A.ZUSATZQUELLEN:
+            self.assertEqual(len(q), 4)
+            self.assertIn(q[0], TEAMS)
+            self.assertNotIn(q[1], [t[1] for t in A.TEAMS])
+            self.assertNotIn(q[3], [t[3] for t in A.TEAMS])
+        self.assertEqual(len({q[1] for q in A.ZUSATZQUELLEN}), len(A.ZUSATZQUELLEN), 'Slugs eindeutig')
+        self.assertEqual(len({q[3] for q in A.ZUSATZQUELLEN}), len(A.ZUSATZQUELLEN), 'Team-IDs eindeutig')
+
+
+class TestZusatzquelleNachtrag(TestBasis):
+    def zeile(self, w, nr, staffel=None, team='D3'):
+        zeilen = zeilen_von(w.csv_lesen())
+        return next(i for i, z in enumerate(zeilen) if z.startswith('%s;%s;%d;' % (team, staffel or FREUND['D3'], nr)))
+
+    # (a) ein neues, kommendes Freundschaftsspiel der D4 wird als D3-Zeile ergänzt
+    def test_neues_d4_spiel_wird_als_d3_ergaenzt(self):
+        w = self.werkstatt()
+        for s in w.welt.csv['D3']:                    # der Heimort kommt aus den Heimzeilen der D3, nicht aus einem festen Wert
+            if s.ort == HEIMORT['D3']:
+                s.ort = 'Sonderplatz 5, 60000 Frankfurt am Main'
+        csv_schreiben(w)
+        s = d4_spiel(143, '2026-11-29', '11:30')
+        d4_im_plan(w, s)
+        vorher = w.csv_lesen()
+        e = w.anwenden()
+        zeilen = zeilen_von(vorher)
+        letzte = max(i for i, z in enumerate(zeilen) if z.startswith('D3;%s;' % FREUND['D3']))
+        neue = 'D3;%s;143;29.11.2026;11:30;%s;SV 09 Hofheim 2;Sonderplatz 5, 60000 Frankfurt am Main;;%s;Freundschaftsspiel' % (FREUND['D3'], EIGEN_D4, s.fbid)
+        self.assertNurDiese(vorher, w.csv_lesen(), eingefuegt={letzte: [neue]})
+        self.assertEqual(e['schluss'], 'NACHTRAG: 1 geändert (1 ergänzt), nicht gepusht')
+        self.assertEqual(e['zeilen'], [D4_ERGAENZT])
+        self.assertEqual((e['hinweise'], e['fehler'], e['uebersprungen']), ([], [], []))
+        self.assertEqual(N.validiere(vorher, w.csv_lesen(), e['aenderungen'], w.repo), [])
+        self.assertEqual(e['stand'][D4_NAME], STAND, 'die D4 steht mit ihrem Stand unter den Quellen')
+        self.assertEqual(w.anwenden()['schluss'], 'NACHTRAG: unverändert', 'ein zweiter Lauf ändert nichts')
+
+    def test_neues_d4_spiel_im_berichtsmodus_zeigt_die_csv_zeile_und_schreibt_nichts(self):
+        w = self.werkstatt()
+        s = d4_spiel(143, '2026-11-29', '11:30')
+        d4_im_plan(w, s)
+        vorher = w.csv_lesen()
+        e = w.lauf()
+        self.pruefe_unveraendert(w, vorher)
+        self.assertEqual(e['zeilen'][0], 'Vorschlag ' + D4_ERGAENZT)
+        self.assertTrue(e['zeilen'][1].startswith('    CSV Zeile ') and e['zeilen'][1].endswith(
+            ';'.join(['D3', FREUND['D3'], '143', '29.11.2026', '11:30', EIGEN_D4, 'SV 09 Hofheim 2', HEIMORT['D3'], '', s.fbid, 'Freundschaftsspiel'])), e['zeilen'][1])
+        self.assertEqual(e['schluss'], 'NACHTRAG: Nur-Bericht – 1 Änderung vorgeschlagen, nichts geschrieben')
+
+    # (b) D4-Zeilen schon in der CSV und passender D4-Plan: kein Fehlalarm
+    def test_d4_zeilen_in_der_csv_mit_passendem_plan_sind_kein_fehlalarm(self):
+        w = self.werkstatt()
+        d4_in_csv_und_plan(w, d4_spiel(143, '2026-11-01', '11:30'), d4_spiel(299, '2026-12-06', '10:00', 'FC Hellas 1'))
+        vorher = w.csv_lesen()
+        for modus in ({}, {'anwenden': True}):
+            e = w.lauf(**modus)
+            self.assertEqual((e['zeilen'], e['hinweise'], e['fehler'], e['schluss'], e['code']), ([], [], [], 'NACHTRAG: unverändert', 0))
+            self.assertFalse([t for t in e['hinweise'] if 'nur in der CSV' in t])
+        self.pruefe_unveraendert(w, vorher)
+
+    def test_vergangene_d4_zeilen_erzeugen_ebenfalls_keinen_hinweis(self):
+        w = self.werkstatt()
+        d4_in_csv_und_plan(w, d4_spiel(143, '2026-09-13', '14:30', 'Hellas Rüsselsheim 1'))
+        e = w.anwenden()
+        self.assertEqual((e['hinweise'], e['stumm'], e['schluss']), ([], [], 'NACHTRAG: unverändert'))
+
+    # (c) kein D4-Cache: die D3 läuft mit ihrem eigenen Plan weiter
+    def test_ohne_d4_cache_werden_die_d3_aenderungen_trotzdem_geschrieben(self):
+        w = self.werkstatt()
+        s = d3_neues_spiel(w)
+        w.welt.spiel(w.welt.seite, 'D3', 10).zeit = '13:30'
+        w.cache_neu(ohne=(D4_SLUG,))
+        vorher = w.csv_lesen()
+        zeilen = zeilen_von(vorher)
+        i10 = self.zeile(w, 10, LIGA['D3'])
+        letzte = max(i for i, z in enumerate(zeilen) if z.startswith('D3;%s;' % LIGA['D3']))
+        neue = 'D3;%s;40;29.11.2026;13:00;%s;FC Neu 1;%s;;%s;Meisterschaft' % (LIGA['D3'], EIGEN['D3'], HEIMORT['D3'], s.fbid)
+        b = w.lauf()
+        self.assertEqual((len(b['aenderungen']), b['hinweise']), (2, [D4_NAME + ': kein Cache-Stand vorhanden; ihre Spiele sind in diesem Lauf nicht geprüft']))
+        e = w.anwenden()
+        self.assertNurDiese(vorher, w.csv_lesen(), ersetzt={i10: zeilen[i10].replace(';01.11.2026;11:00;', ';01.11.2026;13:30;')}, eingefuegt={letzte: [neue]})
+        self.assertEqual(e['schluss'], 'NACHTRAG: 2 geändert (1 ergänzt, 1 verlegt), nicht gepusht, 1 Hinweis')
+        self.assertEqual(e['hinweise'], [D4_NAME + ': kein Cache-Stand vorhanden; ihre Spiele sind in diesem Lauf nicht geprüft'])
+        self.assertEqual((e['fehler'], e['uebersprungen'], e['code']), ([], [], 0))
+        self.assertNotIn(D4_NAME, e['stand'])
+
+    def test_ohne_d4_cache_bleiben_die_d4_zeilen_der_csv_unberuehrt_und_werden_nur_gemeldet(self):
+        w = self.werkstatt()
+        d4_in_csv_und_plan(w, d4_spiel(143, '2026-11-01', '11:30'), d4_spiel(299, '2026-12-06', '10:00', 'FC Hellas 1'))
+        w.cache_neu(ohne=(D4_SLUG,))
+        vorher = w.csv_lesen()
+        e = w.anwenden()
+        self.pruefe_unveraendert(w, vorher)
+        self.assertEqual(e['hinweise'][0], D4_NAME + ': kein Cache-Stand vorhanden; ihre Spiele sind in diesem Lauf nicht geprüft')
+        nur_csv = [h for h in e['hinweise'][1:] if h.endswith('nur in der CSV, bei fussball.de nicht (mehr) vorhanden: nicht gelöscht')]
+        self.assertEqual((len(nur_csv), len(e['hinweise'])), (2, 3))
+        self.assertEqual((e['uebersprungen'], e['fehler'], e['code']), ([], [], 2))
+
+    def d4_stand_umstempeln(self, w, stunden_alt):
+        """Der Cache-Stand der D4 bekommt ein anderes Alter (negativ: liegt in der Zukunft)."""
+        os.rename(os.path.join(w.cache, D4_SLUG, STAND.strftime('%Y%m%d-%H%M%S') + '.html'),
+                  os.path.join(w.cache, D4_SLUG, (JETZT - timedelta(hours=stunden_alt)).strftime('%Y%m%d-%H%M%S') + '.html'))
+
+    def test_ausfallarten_der_d4_sind_nur_hinweise_nie_ein_ausfall_der_d3(self):
+        faelle = (('Sperrseite', {'ersetze': {D4_SLUG: SPERRSEITE}}, None,
+                   'kein brauchbarer Cache-Stand (26.10. 05:10: kein Spielplan erkannt (Seitenaufbau geändert oder Sperrseite))'),
+                  ('kurze Seite', {'ersetze': {D4_SLUG: '<html>x</html>'}}, None, 'kein brauchbarer Cache-Stand (26.10. 05:10: Seite zu kurz (14 Zeichen))'),
+                  ('Zukunft', {}, -3, 'Cache-Stand vom 26.10.2026 10:10 liegt in der Zukunft (Systemuhr falsch?)'),
+                  ('veraltet', {}, 50, 'Cache-Stand vom 24.10. 05:10 ist 50 Stunden alt (Grenze 30)'))
+        for name, cache_args, stunden, grund in faelle:
+            with self.subTest(name):
+                w = self.werkstatt()
+                d3_neues_spiel(w)
+                w.cache_neu(**cache_args)
+                if stunden is not None:
+                    self.d4_stand_umstempeln(w, stunden)
+                e = w.anwenden()
+                self.assertEqual(e['hinweise'], ['%s: %s; ihre Spiele sind in diesem Lauf nicht geprüft' % (D4_NAME, grund)])
+                self.assertEqual((e['fehler'], e['uebersprungen'], e['angewendet']), ([], [], True))
+                self.assertEqual(e['schluss'], 'NACHTRAG: 1 geändert (1 ergänzt), nicht gepusht, 1 Hinweis')
+
+    def test_ist_der_neueste_d4_stand_unbrauchbar_zaehlt_der_aeltere_gute(self):
+        w = self.werkstatt()
+        d4_im_plan(w, d4_spiel(143, '2026-11-29', '11:30'))
+        cache_datei(w, D4_SLUG, JETZT - timedelta(hours=1), SPERRSEITE)
+        e = w.anwenden()
+        self.assertEqual(e['schluss'], 'NACHTRAG: 1 geändert (1 ergänzt), nicht gepusht, 1 Hinweis')
+        self.assertTrue(e['hinweise'][0].startswith(D4_NAME + ': neuester Cache-Stand vom 26.10. 06:10 unbrauchbar ('), e['hinweise'])
+        self.assertTrue(e['hinweise'][0].endswith('der Stand vom 26.10. 05:10 wird genommen'), e['hinweise'])
+        self.assertEqual(e['stand'][D4_NAME], STAND)
+
+    # (d) die D4-Seite nennt unseren Verein nicht
+    def test_d4_seite_ohne_unseren_verein_wird_verworfen_die_d3_laeuft_weiter(self):
+        w = self.werkstatt()
+        d3_neues_spiel(w)
+        fremd = [Spiel('D3', FREUND['D3'], 143, '2026-11-29', '11:30', 'FC Fremd 1', 'SV Fremd 2', 'Freundschaftsspiel')]
+        w.cache_neu(ersetze={D4_SLUG: seite_aus(fremd, zusatz=FUELLTEXT)})
+        e = w.anwenden()
+        self.assertEqual(e['hinweise'], [D4_NAME + ': Quelle unplausibel (die Seite nennt unseren Verein nur in 0 von 1 Spielen (falsche Mannschaft?)); '
+                                         'ihre Spiele sind in diesem Lauf nicht geprüft'])
+        self.assertEqual((e['fehler'], e['uebersprungen'], e['angewendet']), ([], [], True))
+        zeilen = zeilen_von(w.csv_lesen())
+        self.assertTrue(any(z.startswith('D3;%s;40;' % LIGA['D3']) for z in zeilen), 'die eigene Ergänzung der D3 wurde geschrieben')
+        self.assertFalse(any('Fremd' in z for z in zeilen), 'das fremde Spiel wurde nicht übernommen')
+
+    def test_d4_seite_mit_defektem_aufbau_wird_verworfen(self):
+        w = self.werkstatt()
+        d3_neues_spiel(w)
+        d4_im_plan(w, d4_spiel(143, '2026-11-29', '11:30'))
+        echt = N.spiel_marken
+        with mock.patch.object(N, 'spiel_marken', side_effect=lambda text: [] if EIGEN_D4 in text else echt(text)):
+            e = w.anwenden()
+        self.assertEqual(e['hinweise'], [D4_NAME + ': Quelle unplausibel (Seitenaufbau unerwartet (1 Spiele, 0 Spiel-Markierungen)); '
+                                         'ihre Spiele sind in diesem Lauf nicht geprüft'])
+        self.assertEqual((e['fehler'], e['uebersprungen']), ([], []))
+        self.assertEqual(e['schluss'], 'NACHTRAG: 1 geändert (1 ergänzt), nicht gepusht, 1 Hinweis')
+
+    # (e) Verlegung und Absetzung eines D4-Spiels
+    def test_verlegung_eines_d4_spiels_wird_in_der_d3_zeile_nachgezogen(self):
+        w = self.werkstatt()
+        d4_in_csv_und_plan(w, d4_spiel(143, '2026-11-01', '11:30'))
+        w.welt.zusatz[D4_SLUG][0].zeit = '13:00'
+        w.cache_neu()
+        vorher = w.csv_lesen()
+        i = self.zeile(w, 143)
+        e = w.anwenden()
+        self.assertNurDiese(vorher, w.csv_lesen(), ersetzt={i: zeilen_von(vorher)[i].replace(';01.11.2026;11:30;', ';01.11.2026;13:00;')})
+        self.assertEqual(e['schluss'], 'NACHTRAG: 1 geändert (1 verlegt), nicht gepusht')
+        self.assertEqual(e['zeilen'], ['verlegt: D3 So 01.11. 11:30 → 13:00 · ' + D4_PAARUNG])
+
+    def test_verlegung_eines_d4_spiels_auf_ein_anderes_datum(self):
+        w = self.werkstatt()
+        d4_in_csv_und_plan(w, d4_spiel(143, '2026-11-01', '11:30'))
+        w.welt.zusatz[D4_SLUG][0].datum = '2026-11-08'
+        w.cache_neu()
+        vorher = w.csv_lesen()
+        i = self.zeile(w, 143)
+        e = w.anwenden()
+        self.assertNurDiese(vorher, w.csv_lesen(), ersetzt={i: zeilen_von(vorher)[i].replace(';01.11.2026;11:30;', ';08.11.2026;11:30;')})
+        self.assertEqual(e['zeilen'], ['verlegt: D3 So 01.11. 11:30 → So 08.11. 11:30 · ' + D4_PAARUNG])
+
+    def test_absetzung_eines_d4_spiels_wird_als_abgesagt_in_der_d3_zeile_eingetragen(self):
+        w = self.werkstatt()
+        d4_in_csv_und_plan(w, d4_spiel(143, '2026-11-01', '11:30'))
+        w.welt.zusatz[D4_SLUG][0].status = 'Absetzung'
+        w.cache_neu()
+        vorher = w.csv_lesen()
+        i = self.zeile(w, 143)
+        e = w.anwenden()
+        alt = zeilen_von(vorher)[i].split(';')
+        alt[8] = 'abgesagt'
+        self.assertNurDiese(vorher, w.csv_lesen(), ersetzt={i: ';'.join(alt)})
+        self.assertEqual(e['schluss'], 'NACHTRAG: 1 geändert (1 abgesagt), nicht gepusht')
+        self.assertEqual(e['zeilen'], ['abgesagt: D3 So 01.11. 11:30 · ' + D4_PAARUNG + ' (bei fussball.de abgesetzt)'])
+
+    # (f) Wiederansetzen eines D4-Spiels: nur mit früherer Absetzung im Verlauf der D4
+    def test_wieder_ansetzen_eines_d4_spiels_mit_absetzung_im_d4_verlauf(self):
+        w = self.werkstatt()
+        d4_in_csv_und_plan(w, d4_spiel(143, '2026-11-01', '11:30'))
+        w.welt.spiel(w.welt.csv, 'D3', 143).ergebnis = 'abgesagt'
+        csv_schreiben(w)
+        alt = deepcopy(w.welt.zusatz[D4_SLUG])
+        alt[0].status = 'Absetzung'
+        w.frueherer_stand(D4_SLUG, alt)           # ein Stand von gestern zeigte das Spiel als abgesetzt, der heutige zeigt es wieder angesetzt
+        vorher = w.csv_lesen()
+        i = self.zeile(w, 143)
+        e = w.anwenden()
+        neu = zeilen_von(vorher)[i].split(';')
+        neu[8] = ''
+        self.assertNurDiese(vorher, w.csv_lesen(), ersetzt={i: ';'.join(neu)})
+        self.assertEqual(e['schluss'], 'NACHTRAG: 1 geändert (1 wieder angesetzt), nicht gepusht')
+        self.assertEqual(e['zeilen'], ['wieder angesetzt: D3 So 01.11. 11:30 · ' + D4_PAARUNG])
+
+    def test_wieder_ansetzen_eines_d4_spiels_ohne_verlauf_nur_hinweis(self):
+        w = self.werkstatt()
+        d4_in_csv_und_plan(w, d4_spiel(143, '2026-11-01', '11:30'))
+        w.welt.spiel(w.welt.csv, 'D3', 143).ergebnis = 'abgesagt'
+        csv_schreiben(w)
+        vorher = w.csv_lesen()
+        e = w.anwenden()
+        self.pruefe_unveraendert(w, vorher)
+        self.assertEqual(e['hinweise'], ['D3 So 01.11. 11:30 · ' + D4_PAARUNG + ': in der CSV „abgesagt“, bei fussball.de angesetzt, '
+                                         'aber dort früher nie abgesetzt (von Hand abgesagt?): nicht geändert'])
+        self.assertTrue(e['schluss'].startswith('NACHTRAG: Auffällig, nicht übernommen – 1 Hinweis'))
+
+    def test_der_verlauf_wird_je_plan_mit_dem_zeitstempel_seines_verwendeten_standes_geprueft(self):
+        w = self.werkstatt()
+        d4_in_csv_und_plan(w, d4_spiel(143, '2026-11-01', '11:30'))
+        w.welt.spiel(w.welt.csv, 'D3', 143).ergebnis = 'abgesagt'
+        csv_schreiben(w)
+        alt = deepcopy(w.welt.zusatz[D4_SLUG])
+        alt[0].status = 'Absetzung'
+        w.frueherer_stand(D4_SLUG, alt, stunden=24)
+        self.d4_stand_umstempeln(w, 3)               # der verwendete Stand der D4 ist 3 Stunden alt, der der D3 nur 2 (STAND): zwei verschiedene Grenzen
+        d4_stand = JETZT - timedelta(hours=3)
+        aufrufe = []
+        echt = N.frueher_abgesetzt
+
+        def spion(cache, slug, key, vor):
+            aufrufe.append((slug, vor))
+            return echt(cache, slug, key, vor)
+        with mock.patch.object(N, 'frueher_abgesetzt', side_effect=spion):
+            e = w.anwenden()
+        self.assertEqual(e['schluss'], 'NACHTRAG: 1 geändert (1 wieder angesetzt), nicht gepusht')
+        self.assertEqual(aufrufe, [('d3', STAND), (D4_SLUG, d4_stand)], 'erst der eigene Plan, dann die Zusatzquelle, je mit dem Zeitstempel des eigenen Standes')
+
+    # (g) veralteter D4-Cache im Anwendungsmodus
+    def test_veralteter_d4_cache_im_anwendungsmodus_ist_ein_hinweis_die_d3_laeuft_weiter(self):
+        w = self.werkstatt()
+        d3_neues_spiel(w)
+        w.cache_neu()
+        os.rename(os.path.join(w.cache, D4_SLUG, STAND.strftime('%Y%m%d-%H%M%S') + '.html'),
+                  os.path.join(w.cache, D4_SLUG, (JETZT - timedelta(hours=50)).strftime('%Y%m%d-%H%M%S') + '.html'))
+        b = w.lauf()               # Berichtsmodus: der alte Stand wird genommen und nur vermerkt
+        self.assertEqual(b['hinweise'], [D4_NAME + ': Cache-Stand vom 24.10. 05:10 ist 50 Stunden alt (Grenze 30); im Anwendungsmodus wären ihre Spiele nicht geprüft'])
+        e = w.anwenden()
+        self.assertEqual(e['hinweise'], [D4_NAME + ': Cache-Stand vom 24.10. 05:10 ist 50 Stunden alt (Grenze 30); ihre Spiele sind in diesem Lauf nicht geprüft'])
+        self.assertEqual((e['uebersprungen'], e['fehler'], e['angewendet'], e['code']), ([], [], True, 0))
+        self.assertEqual(e['schluss'], 'NACHTRAG: 1 geändert (1 ergänzt), nicht gepusht, 1 Hinweis')
+        b2 = w.lauf(nur_cache=True)
+        self.assertEqual(b2['hinweise'], [], 'mit --nur-cache gilt im Berichtsmodus keine Altersgrenze')
+
+    # weitere Schutzregeln
+    def test_faellt_der_eigene_plan_aus_bleibt_auch_die_d4_ungenutzt_und_unerwaehnt(self):
+        w = self.werkstatt()
+        d4_im_plan(w, d4_spiel(143, '2026-11-29', '11:30'))          # ein neues Spiel der D4, das nicht übernommen werden darf
+        w.cache_neu(ersetze={'D3': SPERRSEITE})
+        vorher = w.csv_lesen()
+        e = w.anwenden()
+        self.pruefe_unveraendert(w, vorher)
+        self.assertEqual(e['uebersprungen'], ['D3'])
+        self.assertEqual(len(e['fehler']), 1)
+        self.assertFalse(any('D4' in t for t in e['hinweise'] + e['fehler'] + e['stumm']), (e['hinweise'], e['fehler'], e['stumm']))
+        self.assertNotIn(D4_NAME, e['stand'])
+
+    def test_ist_der_gesamtplan_unplausibel_wird_die_d3_uebersprungen_ohne_meldung_zur_d4(self):
+        w = self.werkstatt()
+        fremd = [Spiel('D3', LIGA['D3'], s.nr, s.datum, s.zeit, 'FC Fremd %d' % i, 'SV Fremd %d' % i, s.art, ort=s.ort) for i, s in enumerate(basis_spiele('D3'))]
+        w.cache_neu(ersetze={'D3': seite_aus(fremd)}, ohne=(D4_SLUG,))
+        vorher = w.csv_lesen()
+        e = w.anwenden()
+        self.pruefe_unveraendert(w, vorher)
+        self.assertEqual(e['uebersprungen'], ['D3'])
+        self.assertRegex(e['fehler'][0], r'^D3 übersprungen: Quelle unplausibel \(die Seite nennt unseren Verein nur in 0 von \d+ Spielen')
+        self.assertFalse(any('D4' in t for t in e['hinweise'] + e['stumm']), (e['hinweise'], e['stumm']))
+
+    def test_ist_der_eigene_plan_unlesbar_wird_die_d3_uebersprungen_auch_wenn_die_d4_passt(self):
+        w = self.werkstatt()
+        w.welt.beide('D3', Spiel('D3', LIGA['D3'], 41, '2026-12-13', '10:00', EIGEN['D3'], 'Nur Dreier FC 1'))      # nur auf der Seite der D3 zu finden
+        csv_schreiben(w)
+        d4_im_plan(w, d4_spiel(143, '2026-11-29', '11:30'))                  # ein neues Spiel der D4, das nicht übernommen werden darf
+        vorher = w.csv_lesen()
+        echt = N.spiel_marken
+        with mock.patch.object(N, 'spiel_marken', side_effect=lambda text: [] if 'Nur Dreier FC 1' in text else echt(text)):
+            e = w.anwenden()
+        self.pruefe_unveraendert(w, vorher)
+        self.assertEqual(e['uebersprungen'], ['D3'])
+        self.assertRegex(e['fehler'][0], r'^D3 übersprungen: Quelle unplausibel \(Seitenaufbau unerwartet')
+        self.assertFalse(any('D4' in t for t in e['hinweise'] + e['stumm']), (e['hinweise'], e['stumm']))
+        self.assertNotIn(D4_NAME, e['stand'])
+
+    def test_die_plausibilitaet_gilt_dem_gesamtplan_aus_d3_und_d4(self):
+        """Stehen viele D4-Zeilen in der CSV, erklärt erst der Plan der D4 sie: der eigene Plan allein hätte weniger als 60 % der
+        Zeilen. Ohne den D4-Plan wird die D3, wie bei jedem unplausiblen Plan, übersprungen (nichts wird geändert oder gelöscht)."""
+        w = self.werkstatt()
+        d4_in_csv_und_plan(w, *[d4_spiel(200 + i, (date(2026, 11, 1) + timedelta(days=7 * i)).isoformat(), '11:30', 'FC Hellas %d' % i) for i in range(10)])
+        e = w.anwenden()
+        self.assertEqual((e['schluss'], e['fehler'], e['hinweise'], e['uebersprungen']), ('NACHTRAG: unverändert', [], [], []))
+        w.cache_neu(ohne=(D4_SLUG,))
+        vorher = w.csv_lesen()
+        e2 = w.anwenden()
+        self.pruefe_unveraendert(w, vorher)
+        self.assertEqual(e2['uebersprungen'], ['D3'])
+        self.assertIn('D3 übersprungen: Quelle unplausibel (nur 6 Spiele gelesen, die CSV hat 16 Zeilen', e2['fehler'][0])
+
+    def test_die_mengenbremse_zaehlt_d3_und_d4_zusammen(self):
+        def welt(n_d3, n_d4):
+            w = self.werkstatt()
+            for i in range(n_d3):
+                d3_neues_spiel(w, 40 + i, (date(2026, 11, 29) + timedelta(days=7 * i)).isoformat(), '11:00', 'FC Neu %d' % (40 + i))
+            w.welt.zusatz[D4_SLUG] += [d4_spiel(143 + i, (date(2026, 12, 6) + timedelta(days=7 * i)).isoformat(), '11:30', 'FC Hellas %d' % i) for i in range(n_d4)]
+            w.cache_neu()
+            return w
+        w = welt(3, 4)
+        vorher = w.csv_lesen()
+        e = w.anwenden()
+        self.pruefe_unveraendert(w, vorher)
+        self.assertEqual(e['schluss'], 'NACHTRAG: Auffällig, nicht übernommen – 7 Änderungen bei D3 in einem Lauf (Grenze 6 je Mannschaft)')
+        w2 = welt(3, 3)
+        e2 = w2.anwenden()
+        self.assertEqual(e2['schluss'], 'NACHTRAG: 6 geändert (6 ergänzt), nicht gepusht')
+        self.assertEqual(sum(1 for z in zeilen_von(w2.csv_lesen()) if z.startswith('D3;') and ';FC Hellas ' in z), 3)
+
+    def test_gleiche_staffel_und_nummer_in_beiden_plaenen_wird_nicht_geaendert(self):
+        """Dieselbe Staffel + Nummer im Plan der D3 und im Plan der D4: mehrdeutig, also blockiert (nur Hinweis, keine Änderung)."""
+        w = self.werkstatt()
+        d4_im_plan(w, d4_spiel(50, '2026-12-13', '10:00', 'FC Doppelt 1'))        # D3-Freundschaft Nr. 50 steht schon in der CSV
+        vorher = w.csv_lesen()
+        e = w.anwenden()
+        self.pruefe_unveraendert(w, vorher)
+        self.assertTrue(any('nicht eindeutig' in h for h in e['hinweise']), e['hinweise'])
+        self.assertEqual(e['aenderungen'], [])
+
+    def test_unerwartete_ausnahme_in_der_zusatzquelle_laesst_die_d3_weiterlaufen(self):
+        w = self.werkstatt()
+        d3_neues_spiel(w)
+        w.cache_neu()
+        echt = N.quelle_holen
+
+        def kaputt(team, *a, **k):
+            if team[1] == D4_SLUG:
+                raise OSError('Absicht')
+            return echt(team, *a, **k)
+        with mock.patch.object(N, 'quelle_holen', side_effect=kaputt):
+            e = w.anwenden()
+        self.assertEqual(e['hinweise'], [D4_NAME + ': unerwarteter Fehler (OSError: Absicht); ihre Spiele sind in diesem Lauf nicht geprüft'])
+        self.assertEqual((e['fehler'], e['uebersprungen'], e['angewendet']), ([], [], True))
+
+    def test_ohne_kommende_csv_zeilen_ist_ein_fehlender_d4_cache_nur_eine_stille_notiz(self):
+        w = self.werkstatt()
+        w.cache_neu(ohne=(D4_SLUG,))
+        e = w.anwenden(heute='2027-07-15')
+        self.assertEqual((e['schluss'], e['code'], e['fehler'], e['hinweise']), ('NACHTRAG: unverändert', 0, [], []))
+        self.assertIn(D4_NAME + ': keine kommenden Spiele in der CSV und kein Cache-Stand vorhanden, nichts zu tun', e['stumm'])
+
+    def test_die_d4_wird_nie_abgerufen_auch_nicht_wenn_ihre_mannschaft_selbst_abruft(self):
+        w = self.werkstatt()
+        d4_in_csv_und_plan(w, d4_spiel(143, '2026-11-01', '11:30'))
+        w.cache_neu(stempel=JETZT - timedelta(hours=26))          # alle Pläne sind älter als 20 Stunden, aber noch nicht zu alt
+        aufrufe = []
+
+        def antwort(req, timeout=None):
+            aufrufe.append(req.full_url)
+            tid = req.full_url.rsplit('team-id/', 1)[1]
+            team = next(t[0] for t in A.TEAMS if t[3] == tid)
+            return FalscheAntwort(seite_aus(w.welt.seite[team]))
+        with mock.patch.object(N, 'SELBST_ABRUFEN', ('G1', 'D3')), mock.patch.object(urllib.request, 'urlopen', side_effect=antwort):
+            e = w.anwenden(abrufen=True)
+        self.assertEqual(len(aufrufe), 2, 'G1 und D3 (so konfiguriert), die D4 nie')
+        self.assertFalse(any(A.ZUSATZQUELLEN[0][3] in url for url in aufrufe), aufrufe)
+        self.assertEqual(e['hinweise'], [])
+        with mock.patch.object(urllib.request, 'urlopen', side_effect=AssertionError('Abruf!')) as m:      # Standardbetrieb: nur die G-Jugend
+            w.anwenden(abrufen=True, nur_cache=True)
+            w.lauf(abrufen=True)
+        self.assertEqual(m.call_count, 0)
+
+    def test_die_d4_steht_unter_quellen_im_bericht(self):
+        w = self.werkstatt()
+        d4_im_plan(w, d4_spiel(143, '2026-11-29', '11:30'))
+        main_aufrufen(argv_fuer(w, '--anwenden'))
+        dateien = os.listdir(w.berichte)
+        self.assertEqual(len(dateien), 1)
+        with open(os.path.join(w.berichte, dateien[0]), encoding='utf-8') as f:
+            text = f.read()
+        self.assertIn('- D3: Cache-Stand 26.10.2026 05:10', text)
+        self.assertIn('- %s: Cache-Stand 26.10.2026 05:10' % D4_NAME, text)
+        self.assertIn('- ' + D4_ERGAENZT, text)
+
+
+class TestZusatzquelleAbgleich(TestBasis):
+    """tools/abgleich.py: je Mannschaft alle Quellen (eigener Plan zuerst), Plan = alle gelesenen Quellen zusammen."""
+
+    def abgleich(self, w, *extra, heute=HEUTE):
+        out, err = io.StringIO(), io.StringIO()
+        argv = ['abgleich.py', '--csv', w.csv, '--cache', w.cache, '--bericht-ordner', w.berichte, '--heute', heute, '--kein-wochenvergleich'] + list(extra)
+        with mock.patch.object(sys, 'argv', argv), contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            code = A.main()
+        with open(os.path.join(w.berichte, 'bericht-%s.md' % heute), encoding='utf-8') as f:
+            bericht = f.read()
+        return code, out.getvalue(), err.getvalue(), bericht
+
+    @staticmethod
+    def abschnitt(bericht, name):
+        """Der Abschnitt „### <name> – …“ des Berichts bis zum nächsten Abschnitt."""
+        kopf = '### %s – ' % name
+        anfang = bericht.index(kopf)
+        ende = min([i for i in (bericht.find('\n### ', anfang + 1), bericht.find('\n## ', anfang + 1)) if i >= 0] or [len(bericht)])
+        return bericht[anfang:ende]
+
+    @staticmethod
+    def abrufe(bericht):
+        return bericht.split('## Abrufe dieses Laufs', 1)[1].split('## Kontrolle', 1)[0]
+
+    @staticmethod
+    def tabellenzeile(text, name):
+        """Die Zellen der Zeile „| <name> | …“ der Kurzfassung."""
+        zeile = next(z for z in text.splitlines() if z.startswith('| %s |' % name))
+        return [c.strip() for c in zeile.strip('|').split('|')]
+
+    def d4_welt(self):
+        w = self.werkstatt()
+        d4_in_csv_und_plan(w, d4_spiel(143, '2026-11-01', '11:30'), d4_spiel(299, '2026-12-06', '10:00', 'FC Hellas 1'))
+        return w
+
+    # (h) Abgleich mit Wegwerf-Cache und --nur-cache
+    def test_d4_zeilen_erscheinen_nicht_als_nur_in_der_csv_und_die_abrufe_nennen_die_d4(self):
+        w = self.d4_welt()
+        code, out, err, bericht = self.abgleich(w, '--nur-cache')
+        self.assertEqual(code, 0, err)
+        d3 = self.abschnitt(bericht, 'D3')
+        self.assertNotIn('nur in der csv', d3.lower())
+        self.assertIn('**keine Unterschiede**', d3.splitlines()[0])
+        self.assertIn('Zusammengeführt aus 2 fussball.de-Plänen: D3 und %s.' % D4_NAME, d3)
+        self.assertNotIn('Zusatzquelle ausgefallen', bericht)
+        zeilen = self.tabellenzeile(out, 'D3')
+        self.assertEqual(zeilen[3:6], ['0', '0', '0'], 'fehlt in CSV, nur in CSV, abweichend')
+        self.assertIn('- %s: Cache 26.10.2026 05:10' % D4_NAME, self.abrufe(bericht).splitlines())
+        self.assertIn('Spielplan-Abgleich 26.10.2026 – 0 Abrufe, 12 aus dem Cache, 0 fehlgeschlagen', out)
+        self.assertEqual(len([z for z in self.abrufe(bericht).splitlines() if z.startswith('- ')]), 12, 'elf Mannschaften und die D4')
+
+    def test_ohne_d4_cache_nennt_der_d3_abschnitt_den_ausfall_und_der_exitcode_ist_2(self):
+        w = self.d4_welt()
+        w.cache_neu(ohne=(D4_SLUG,))
+        code, out, err, bericht = self.abgleich(w, '--nur-cache')
+        self.assertEqual(code, 2)
+        d3 = self.abschnitt(bericht, 'D3')
+        satz = ('**Zusatzquelle ausgefallen:** %s – kein Cache-Stand vorhanden (--nur-cache); ihre Spiele sind in diesem Lauf nicht verglichen '
+                'und erscheinen deshalb als „nur in der CSV“.' % D4_NAME)
+        self.assertIn(satz, d3.splitlines())
+        self.assertNotIn('Zusammengeführt', d3)
+        self.assertIn('Nur in der CSV (bei fussball.de nicht vorhanden)** (2)', d3)
+        self.assertTrue('SV 09 Hofheim 2' in d3 and 'FC Hellas 1' in d3)
+        self.assertIn('- %s: FEHLER (kein Cache-Stand vorhanden (--nur-cache))' % D4_NAME, self.abrufe(bericht).splitlines())
+        self.assertIn('0 Abrufe, 11 aus dem Cache, 1 fehlgeschlagen', out)
+        self.assertIn('**Zusatzquelle ausgefallen:** %s – kein Cache-Stand vorhanden (--nur-cache); ihre Spiele erscheinen bei D3 als „nur in der CSV“.' % D4_NAME, out)
+        self.assertEqual(self.tabellenzeile(out, 'D3')[4], '2', 'nur in CSV')
+        self.assertTrue(all('nicht ausgewertet' not in z for z in out.splitlines()), 'die D3 wird ausgewertet')
+
+    def test_eine_d4_ohne_spielzeilen_ist_ein_ausfall_der_zusatzquelle(self):
+        w = self.d4_welt()
+        w.welt.zusatz[D4_SLUG] = []
+        w.cache_neu()
+        code, out, err, bericht = self.abgleich(w, '--nur-cache')
+        self.assertEqual(code, 2)
+        self.assertIn('**Zusatzquelle ausgefallen:** %s – fussball.de lieferte keine Spielzeilen' % D4_NAME, self.abschnitt(bericht, 'D3'))
+        self.assertIn('1 fehlgeschlagen', out)
+
+    def test_faellt_der_eigene_plan_aus_wird_die_d4_nicht_gelesen_und_nicht_abgerufen(self):
+        w = self.d4_welt()
+        w.cache_neu(ohne=('D3',))
+        code, out, err, bericht = self.abgleich(w, '--nur-cache')
+        self.assertEqual(code, 2)
+        self.assertTrue(self.abschnitt(bericht, 'D3').startswith('### D3 – nicht ausgewertet'))
+        abrufe = self.abrufe(bericht)
+        self.assertIn('- D3: FEHLER (kein Cache-Stand vorhanden (--nur-cache))', abrufe.splitlines())
+        self.assertNotIn(D4_NAME, abrufe)
+        self.assertIn('1 fehlgeschlagen', out)
+
+    def test_andere_mannschaften_bleiben_unveraendert(self):
+        w = self.d4_welt()
+        code, out, err, bericht = self.abgleich(w, '--nur-cache')
+        for t in A.TEAMS:
+            if t[0] != 'D3':
+                self.assertNotIn('Zusammengeführt', self.abschnitt(bericht, t[2]))
+                self.assertIn('**keine Unterschiede**', self.abschnitt(bericht, t[2]).splitlines()[0])
+
+    def test_der_abgleich_ruft_die_d4_mit_ab_ein_abruf_mehr_mit_eigener_wochensperre(self):
+        w = self.d4_welt()
+        shutil.rmtree(w.cache)                          # leerer Cache: jeder Plan wird abgerufen
+        aufrufe = []
+
+        def antwort(req, timeout=None):
+            aufrufe.append(req.full_url)
+            tid = req.full_url.rsplit('team-id/', 1)[1]
+            if tid == A.ZUSATZQUELLEN[0][3]:
+                return FalscheAntwort(seite_aus(w.welt.zusatz[D4_SLUG], zusatz=FUELLTEXT))
+            return FalscheAntwort(seite_aus(w.welt.seite[next(t[0] for t in A.TEAMS if t[3] == tid)]))
+        with mock.patch.object(urllib.request, 'urlopen', side_effect=antwort):
+            code, out, err, bericht = self.abgleich(w)
+            self.assertEqual((code, len(aufrufe)), (0, 12), err)
+            self.assertEqual(len([u for u in aufrufe if A.ZUSATZQUELLEN[0][3] in u]), 1)
+            self.assertIn('12 Abrufe, 0 aus dem Cache, 0 fehlgeschlagen', out)
+            self.assertEqual(len(os.listdir(os.path.join(w.cache, D4_SLUG))), 1, 'die D4 hat ihren eigenen Cache-Ordner')
+            self.abgleich(w)                            # zweiter Lauf: alles jünger als 6 Tage, nichts wird abgerufen
+            self.assertEqual(len(aufrufe), 12)
+            shutil.rmtree(os.path.join(w.cache, D4_SLUG))     # nur die D4 fehlt: genau ein Abruf, und zwar ihrer
+            self.abgleich(w)
+            self.assertEqual(len(aufrufe), 13)
+            self.assertIn(A.ZUSATZQUELLEN[0][3], aufrufe[-1])
+
+    def test_scheitert_der_abruf_der_d4_wird_die_d3_trotzdem_ausgewertet(self):
+        w = self.d4_welt()
+        w.cache_neu(stempel=datetime.now() - timedelta(hours=1))      # main() rechnet mit der echten Uhr: die Pläne sind frisch (unter 6 Tage)
+        shutil.rmtree(os.path.join(w.cache, D4_SLUG))                 # nur die D4 muss abgerufen werden
+        fehler403 = urllib.error.HTTPError('u', 403, 'Verboten', {}, io.BytesIO(b''))
+        self.addCleanup(fehler403.close)
+        with mock.patch.object(urllib.request, 'urlopen', side_effect=fehler403) as m:
+            code, out, err, bericht = self.abgleich(w)
+        self.assertEqual((code, m.call_count), (2, 1))
+        self.assertIn('- %s: FEHLER (HTTP 403)' % D4_NAME, self.abrufe(bericht).splitlines())
+        self.assertIn('**Zusatzquelle ausgefallen:** %s – HTTP 403;' % D4_NAME, self.abschnitt(bericht, 'D3'))
+        self.assertIn('Abruf fehlgeschlagen (HTTP 403)', err)
+        self.assertIn('1 fehlgeschlagen', out)
+        self.assertTrue(os.path.exists(os.path.join(w.cache, D4_SLUG, 'fehlversuch.txt')), 'eigene Fehlversuch-Marke der D4')
+        self.assertFalse(os.path.exists(os.path.join(w.cache, 'd3', 'fehlversuch.txt')))
+
+
 # ---------------------------------------------------------------- Rekonstruktion an den echten Daten (übersprungen ohne Cache)
 
-def rekonstruktion(csv_pfad, cache):
+def rekonstruktion(csv_pfad, cache, mit_zusatz=True):
     """Rechnet alle Spiele, die in der CSV und im Cache vorkommen, in CSV-Zeilen um (Konventionen jeweils ohne die Zeile
-    selbst abgeleitet) und vergleicht -> dict mit Zählern und einer Liste der Abweichungen."""
+    selbst abgeleitet) und vergleicht -> dict mit Zählern und einer Liste der Abweichungen. Der Plan einer Mannschaft besteht aus
+    ihrem eigenen Plan und den Zusatzquellen, deren Cache vorhanden ist (mit_zusatz=False: nur der eigene Plan)."""
     with open(csv_pfad, 'rb') as f:
         datei = N.CsvDatei(f.read())
     rows, _ = A.csv_lesen(csv_pfad)
@@ -3561,10 +4167,15 @@ def rekonstruktion(csv_pfad, cache):
     z = dict(csv=len(rows), gepaart=0, nicht_angesetzt=0, umgerechnet=0, identisch=0, ohne_spiel=0, ort_gleich=0, ort_leer_abgeleitet=0,
              ort_anders=0, fbid_gleich=0, fbid_nur_fussball_de=0, fbid_anders=0, abweichungen=[])
     for team in A.TEAMS:
-        stand = A.cache_stand(cache, team[1])
-        with open(stand[0], encoding='utf-8') as f:
-            fb, fehler = N.seite_lesen(f.read())
-        assert not fehler, (team[0], fehler)
+        fb = []
+        for i, quelle in enumerate(A.quellen(team) if mit_zusatz else [team]):
+            stand = A.cache_stand(cache, quelle[1])
+            if stand is None and i:             # eine Zusatzquelle ohne Cache: ihre CSV-Zeilen zählen dann als „ohne_spiel“
+                continue
+            with open(stand[0], encoding='utf-8') as f:
+                fb_quelle, fehler = N.seite_lesen(f.read())
+            assert not fehler, (team[0], quelle[2], fehler)
+            fb += fb_quelle
         gruppen = {}
         for g in fb:
             if g['nr'] is not None and g['status'] != 'spielfrei':
@@ -3637,11 +4248,33 @@ class TestRekonstruktionEchteDaten(unittest.TestCase):
             for feld in zeile.split(';'):
                 self.assertIsNone(N.zeichenfehler(feld), zeile)
         for team in A.TEAMS:
-            with open(A.cache_stand(CACHE_ECHT, team[1])[0], encoding='utf-8') as f:
-                fb, fehler = N.seite_lesen(f.read())
-            self.assertIsNone(fehler, team[0])
-            for g in fb:
-                self.assertIsNone(N.namen_problem(g), (team[0], g['heim'], g['gast']))
+            for i, quelle in enumerate(A.quellen(team)):
+                stand = A.cache_stand(CACHE_ECHT, quelle[1])
+                if stand is None and i:         # eine Zusatzquelle (D4) ohne Cache wird übersprungen
+                    continue
+                with open(stand[0], encoding='utf-8') as f:
+                    fb, fehler = N.seite_lesen(f.read())
+                self.assertIsNone(fehler, quelle[2])
+                for g in fb:
+                    self.assertIsNone(N.namen_problem(g), (quelle[2], g['heim'], g['gast']))
+
+    @unittest.skipUnless(A.cache_stand(CACHE_ECHT, D4_SLUG) is not None, 'kein D4-Cache im lokalen Cache des Abgleichs')
+    def test_zeilen_der_zusatzquelle_zaehlen_als_gepaart_und_nicht_als_ohne_spiel(self):
+        with open(A.cache_stand(CACHE_ECHT, D4_SLUG)[0], encoding='utf-8') as f:
+            fb, fehler = N.seite_lesen(f.read())
+        self.assertIsNone(fehler)
+        schluessel = {(g['staffel'], g['nr']) for g in fb if g['nr'] is not None and g['status'] != 'spielfrei'}
+        zeilen, _ = A.csv_lesen(CSV_ECHT)
+        d4_zeilen = [r for r in zeilen if r['team'] == A.ZUSATZQUELLEN[0][0] and (r['staffel'], r['nr']) in schluessel]
+        if not d4_zeilen:
+            self.skipTest('die CSV enthält keine Zeile mehr, die zum Plan der D4 gehört')
+        mit, ohne = rekonstruktion(CSV_ECHT, CACHE_ECHT), rekonstruktion(CSV_ECHT, CACHE_ECHT, mit_zusatz=False)
+        n = len(d4_zeilen)
+        self.assertEqual((mit['ohne_spiel'], mit['gepaart']), (ohne['ohne_spiel'] - n, ohne['gepaart'] + n), 'die D4-Zeilen sind gepaart, nicht ohne Spiel')
+        for r in d4_zeilen:
+            kopf = '%s %s·%s ' % (r['team'], r['staffel'], r['nr'])
+            self.assertFalse([a for a in mit['abweichungen'] if a.startswith(kopf) and 'kein Spiel' in a], r)
+        self.assertGreaterEqual(mit['identisch'], ohne['identisch'], 'die Zusatzquelle verschlechtert keine Zeile')     # lebende Daten: nur die Paarung wird verlangt
 
 
 if __name__ == '__main__':

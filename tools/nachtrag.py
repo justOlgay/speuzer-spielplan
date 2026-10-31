@@ -18,6 +18,13 @@ erkennt, und eine Absetzung zu einem anderen Termin als dem der CSV-Zeile. Eine 
 wenn fussball.de das Spiel in einem früheren Cache-Stand selbst als abgesetzt gezeigt hat (sonst könnte eine von Hand eingetragene
 Absage über Nacht verschwinden; Schalter WIEDER_ANSETZEN_NUR_MIT_VERLAUF).
 
+Zusatzquellen: Eine Mannschaft kann neben ihrem eigenen Plan weitere fussball.de-Pläne haben (abgleich.ZUSATZQUELLEN). Die
+Freundschaftsspiele der fussball.de-Mannschaft D4 stehen in der CSV unter D3; der Plan der D4 wird mit dem der D3 zusammengeführt
+(nur aus dem Cache, nie abgerufen). Neue Zeilen tragen das Kürzel der Mannschaft (D3); Mengenbremse, Verlauf und Plausibilität
+gelten für die Mannschaft als Ganzes. Fällt der eigene Plan aus, bleiben auch die Zusatzquellen ungenutzt. Fällt nur eine
+Zusatzquelle aus (kein, veralteter, unbrauchbarer oder unplausibler Cache, Plan nennt unseren Verein nicht), wird die Mannschaft
+nie übersprungen: die Quelle wird mit einem Hinweis weggelassen („ihre Spiele sind in diesem Lauf nicht geprüft“).
+
 Schutzregeln: Mengenbremse (mehr als 10 Änderungen insgesamt oder mehr als 6 je Mannschaft: nichts schreiben); Quelle
 muss plausibel sein (sonst Mannschaft überspringen); je Mannschaft zählt der neueste brauchbare Cache-Stand (beschädigte Dateien
 und Sperrseiten werden übersprungen, eine beim Abruf erhaltene Sperrseite kommt als *.html.fehler beiseite); ohne kommende
@@ -26,9 +33,10 @@ Byte gleich (CRLF, BOM, Spalten); Prüfung vor dem Schreiben (CSV neu lesen, bui
 Termine); Git nur für spiele.csv und ohne Gewalt, liegen gebliebene Commits nur, wenn sie von diesem Werkzeug stammen (Betreff,
 nur spiele.csv) und die Prüfung bestehen; Not-Aus-Datei.
 
-Rücksicht auf fussball.de: Dieses Skript ruft nur die G-Jugend ab (die übrigen Pläne liegen schon im Cache), höchstens
-einmal je 20 Stunden über abgleich.hole (erkennbarer User-Agent, nur ajax.team.matchplan, nach einem Fehlschlag kein
-neuer Versuch binnen 20 Stunden) und nur im Anwendungsmodus. Berichtsmodus, --nur-cache und --heute rufen nie ab.
+Rücksicht auf fussball.de: Dieses Skript ruft nur die G-Jugend ab (die übrigen Pläne liegen schon im Cache, auch der Plan der
+Zusatzquelle D4: er kommt aus dem Cache des täglichen Mac-Tasks und wird hier nie abgerufen), höchstens einmal je 20 Stunden
+über abgleich.hole (erkennbarer User-Agent, nur ajax.team.matchplan, nach einem Fehlschlag kein neuer Versuch binnen
+20 Stunden) und nur im Anwendungsmodus. Berichtsmodus, --nur-cache und --heute rufen nie ab.
 
 Aufruf (aus dem Repo-Stamm; unter python3 -I trägt sich das eigene Verzeichnis selbst in sys.path ein):
   python3 -I tools/nachtrag.py [--csv DATEI] [--cache ORDNER] [--heute JJJJ-MM-TT] [--bericht-ordner ORDNER]
@@ -76,7 +84,7 @@ except ImportError:  # pragma: no cover
 HIER = os.path.dirname(os.path.abspath(__file__))
 if HIER not in sys.path:  # unter python3 -I fehlt das Skriptverzeichnis in sys.path
     sys.path.insert(0, HIER)
-import abgleich as A  # noqa: E402  (Parser, CSV-Leser, Vergleich, Cache; abgleich.py bleibt unverändert)
+import abgleich as A  # noqa: E402  (Parser, CSV-Leser, Vergleich, Cache, Mannschaftsliste TEAMS und Zusatzquellen A.quellen())
 
 REPO = os.path.dirname(HIER)
 CSV_STANDARD = os.path.join(REPO, 'spiele.csv')
@@ -95,7 +103,8 @@ MIN_ANTEIL = 0.6             # Quelle plausibel: gelesene Spiele mindestens 60 %
 MIN_EIGENE = 0.8             # Quelle plausibel: so viele Spiele müssen unseren Verein nennen
 MAX_ALTER_STUNDEN = 30       # ein Cache-Stand gilt bis zu diesem Alter als frisch
 ABRUF_ABSTAND_STUNDEN = 20   # eigener Abruf (G-Jugend) höchstens einmal in dieser Zeit
-SELBST_ABRUFEN = ('G1',)     # Mannschaften, deren Plan nicht der tägliche Mac-Task liefert
+SELBST_ABRUFEN = ('G1',)     # Mannschaften, deren Plan nicht der tägliche Mac-Task liefert (Zusatzquellen werden nie abgerufen)
+ZUSATZ_NICHT_GEPRUEFT = 'ihre Spiele sind in diesem Lauf nicht geprüft'   # Folge einer ausgefallenen Zusatzquelle
 ZEIT_VON, ZEIT_BIS = '07:00', '22:00'   # außerhalb ist eine Anstoßzeit unplausibel (z. B. 00:00 als Platzhalter)
 USER_AGENT = 'Mozilla/5.0 (compatible; SpeuzerSpielplanNachtrag/1.0; rein lesend, ein Abruf je Tag für die G-Jugend)'
 NUR_MELDEN = ('heimgast', 'gegner', 'wettbewerb', 'nummer', 'csv_doppelt')   # Abweichungen, die nie geändert werden
@@ -1157,9 +1166,10 @@ def quarantaene(cache, slug, stempel):
 
 
 def quelle_holen(team, opt, jetzt, von, bis, abbruch, anwendungsmodus, abrufen):
-    """-> (Text, Zeitstempel, Ausfall, Notizen). Ausfall = (Art, Text, Stand): Mannschaft überspringen (Art 'kein_cache', 'unbrauchbar',
-    'zukunft' oder 'veraltet'). Notizen: Liste von (Art, Text) zum Vermerken ('veraltet' = Berichtsmodus mit zu altem Stand, 'abruf' =
-    Abruf nicht möglich oder unbrauchbar, 'cache' = neuester Stand unbrauchbar, ein älterer wird genommen)."""
+    """-> (Text, Zeitstempel, Ausfall, Notizen). Ausfall = (Art, Text, Stand): Mannschaft überspringen, bei einer Zusatzquelle diese
+    weglassen (Art 'kein_cache', 'unbrauchbar', 'zukunft' oder 'veraltet'). Notizen: Liste von (Art, Text) zum Vermerken
+    ('veraltet' = Berichtsmodus mit zu altem Stand, 'abruf' = Abruf nicht möglich oder unbrauchbar, 'cache' = neuester Stand
+    unbrauchbar, ein älterer wird genommen)."""
     kuerzel, slug, name, tid = team
     notizen = []
     if kuerzel in SELBST_ABRUFEN and abrufen:
@@ -1203,6 +1213,48 @@ def quelle_holen(team, opt, jetzt, von, bis, abbruch, anwendungsmodus, abrufen):
             return None, None, ('veraltet', grund, stempel), notizen
         notizen.append(('veraltet', grund))
     return text, stempel, None, notizen
+
+
+def zusatzquellen_lesen(team, opt, jetzt, von, bis, abbruch, anwendungsmodus, kommend):
+    """Die Zusatzquellen einer Mannschaft (abgleich.quellen(team)[1:], z. B. die D4 der D3) aus dem Cache lesen -> dict(fb, stand,
+    verlauf, meldungen): fb = Spiele aller brauchbaren Zusatzquellen, stand = {Name: Zeitstempel} der gelesenen Stände, verlauf =
+    [(Slug, Zeitstempel)] der verwendeten Quellen, meldungen = [(Art, Text)] mit Art 'hinweis' oder 'stumm'. Eine Zusatzquelle wird
+    NIE abgerufen (abrufen=False, auch nicht, wenn ihre Mannschaft in SELBST_ABRUFEN stünde): der Plan kommt aus dem Cache des
+    Mac-Tasks, mit denselben Regeln wie der eigene Plan (neuester brauchbarer Stand, Altersgrenze, Zukunft). Fällt sie aus (kein,
+    unbrauchbarer, veralteter oder unplausibler Stand, unerwartete Ausnahme), wird sie weggelassen und gemeldet; die Mannschaft
+    bleibt dabei nie auf der Strecke. Ohne kommende CSV-Zeilen der Mannschaft sind Cache-Sorgen nur eine stille Notiz."""
+    z = dict(fb=[], stand={}, verlauf=[], meldungen=[])
+
+    def melden(art, text):
+        z['meldungen'].append((art, text))
+    for quelle in A.quellen(team)[1:]:
+        slug, qname = quelle[1], quelle[2]
+        try:
+            text, stempel, ausfall, notizen = quelle_holen(quelle, opt, jetzt, von, bis, abbruch, anwendungsmodus, False)
+            for art, notiz in notizen:
+                if not kommend:
+                    melden('stumm', '%s: %s' % (qname, notiz))
+                elif art == 'veraltet':
+                    melden('hinweis', '%s: %s; im Anwendungsmodus wären ihre Spiele nicht geprüft' % (qname, notiz))
+                else:
+                    melden('hinweis', '%s: %s' % (qname, notiz))
+            if ausfall:
+                if not kommend and ausfall[0] in ('kein_cache', 'unbrauchbar', 'veraltet'):
+                    melden('stumm', '%s: keine kommenden Spiele in der CSV und %s, nichts zu tun' % (qname, ausfall[1]))
+                else:
+                    melden('hinweis', '%s: %s; %s' % (qname, ausfall[1], ZUSATZ_NICHT_GEPRUEFT))
+                continue
+            z['stand'][qname] = stempel
+            fb, grund = seite_lesen(text)
+            grund = grund or quelle_plausibel(fb, [])      # lesbar und „nennt unseren Verein“ (die CSV-Zeilen der Mannschaft gehören dem Gesamtplan)
+            if grund:
+                melden('hinweis', '%s: Quelle unplausibel (%s); %s' % (qname, grund, ZUSATZ_NICHT_GEPRUEFT))
+                continue
+            z['fb'] += fb
+            z['verlauf'].append((slug, stempel))
+        except Exception as ex:   # eine kaputte Zusatzquelle darf die Mannschaft nie mitreißen
+            melden('hinweis', '%s: unerwarteter Fehler (%s: %s); %s' % (qname, type(ex).__name__, ex, ZUSATZ_NICHT_GEPRUEFT))
+    return z
 
 
 # ---------------------------------------------------------------- Lauf
@@ -1351,7 +1403,7 @@ def _lauf(opt, jetzt, e, sperre):
     ctx = dict(konv=Konventionen(tabelle_aus(csv_alle, datei)), datei=datei, bis=bis, neu=set(), neue_staffeln=set(),
                schluessel={(r['staffel'], r['nr']) for r in csv_alle})
 
-    # 3. Je Mannschaft: Quelle holen, prüfen, Änderungen planen; eine kaputte Mannschaft hält die anderen nicht auf
+    # 3. Je Mannschaft: Quelle holen (dazu ihre Zusatzquellen aus dem Cache), prüfen, Änderungen planen; eine kaputte Mannschaft hält die anderen nicht auf
     plaene, abbruch, veraltet, ausfaelle = {}, [], [], []
     for team in A.TEAMS:
         kuerzel, slug, name, tid = team
@@ -1374,11 +1426,21 @@ def _lauf(opt, jetzt, e, sperre):
                 continue
             e['stand'][name] = stempel
             fb, grund = seite_lesen(text)
-            grund = grund or quelle_plausibel(fb, csv_je.get(kuerzel, []))
+            zusatz = None
+            if not grund:       # die Zusatzquellen nur, wenn der eigene Plan lesbar ist; die Plausibilität gilt dem Gesamtplan
+                zusatz = zusatzquellen_lesen(team, opt, jetzt, von, bis, abbruch, schreiben, kommend)
+                fb = fb + zusatz['fb']
+                grund = quelle_plausibel(fb, csv_je.get(kuerzel, []))
             if grund:
                 ausfaelle.append((name, 'unplausibel', 'Quelle unplausibel (%s)' % grund, None))
                 continue
-            ctx['verlauf'] = lambda key, slug=slug, stand=stempel: frueher_abgesetzt(opt.cache, slug, key, stand)
+            for art, notiz in zusatz['meldungen']:      # erst jetzt: fällt die Mannschaft aus, bleiben ihre Zusatzquellen unerwähnt
+                (hinweise if art == 'hinweis' else stumm).append(notiz)
+            e['stand'].update(zusatz['stand'])
+            # Verlauf (Wiederansetzen nur mit früherer Absetzung): über alle verwendeten Pläne, je Plan vor dem Zeitstempel seines Stands
+            staende_genutzt = tuple([(slug, stempel)] + zusatz['verlauf'])
+            ctx['verlauf'] = lambda key, staende_genutzt=staende_genutzt: any(
+                frueher_abgesetzt(opt.cache, q, key, vor) for q, vor in staende_genutzt)
             plaene[kuerzel] = plane(team, fb, csv_je.get(kuerzel, []), heute, ctx)
         except Exception as ex:
             ausfaelle.append((name, 'ausnahme', 'unerwarteter Fehler (%s: %s)' % (type(ex).__name__, ex), None))
