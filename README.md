@@ -111,7 +111,10 @@ Den Cache füllt der tägliche Mac-Task: `NACHTRAG_SLUGS` in `aktualisieren.py` 
 D4-Plan aus (kein, veralteter, unbrauchbarer oder unplausibler Cache), läuft die D3 mit ihrem eigenen Plan weiter; der Nachtrag meldet
 nur einen Hinweis („… ihre Spiele sind in diesem Lauf nicht geprüft“). Der Wochen-Abgleich `tools/abgleich.py` ruft die D4 mit ab (ein
 Abruf mehr: zwölf Pläne statt elf, je Plan höchstens einmal in sechs Tagen) und vergleicht die D3 gegen beide Pläne zusammen; fällt nur
-der D4-Plan aus, nennt der D3-Abschnitt den Ausfall (die D4-Zeilen erscheinen dann als „nur in der CSV“), und der Exit-Code ist 2.
+der D4-Plan aus, nennt der D3-Abschnitt den Ausfall (die D4-Zeilen erscheinen dann als „nur in der CSV“), und der Exit-Code ist 2. Die D4
+wird erst nach den elf Mannschaften abgerufen, ein Fehlschlag bei ihr hält also keine andere Mannschaft auf (nach einem früheren
+Fehlschlag heißt es bei ihr wie bei jeder Quelle „nicht abgerufen“, also Ausfall). Ein gültiger D4-Plan ohne Spiele (Seite erkennbar, im
+Saisonfenster noch kein Freundschaftsspiel) ist kein Ausfall: der D3-Abschnitt vermerkt „ohne Spiele“, der Exit-Code bleibt 0.
 
 **Aufruf** (aus dem Repo-Stamm, immer `python3 -I`):
 - ohne Optionen: nur Bericht; nichts wird geschrieben, abgerufen oder gepusht (`--nur-cache --heute JJJJ-MM-TT` zum Testen)

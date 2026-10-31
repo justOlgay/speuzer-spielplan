@@ -4051,6 +4051,24 @@ class TestZusatzquelleAbgleich(TestBasis):
         d4_in_csv_und_plan(w, d4_spiel(143, '2026-11-01', '11:30'), d4_spiel(299, '2026-12-06', '10:00', 'FC Hellas 1'))
         return w
 
+    D4_TID = A.ZUSATZQUELLEN[0][3]
+    G1_TID = dict((t[0], t[3]) for t in A.TEAMS)['G1']
+
+    def seiten_attrappe(self, w, aufrufe, sonder=None):
+        """urlopen-Attrappe: liefert den Plan der Mannschaft zur Team-ID in der URL (die D4 aus w.welt.zusatz) und merkt sich die URLs.
+        `sonder`: {Team-ID: Ausnahme oder Antwort} für einzelne Pläne."""
+        def antwort(req, timeout=None):
+            aufrufe.append(req.full_url)
+            tid = req.full_url.rsplit('team-id/', 1)[1]
+            if tid in (sonder or {}):
+                if isinstance(sonder[tid], BaseException):
+                    raise sonder[tid]
+                return sonder[tid]
+            if tid == self.D4_TID:
+                return FalscheAntwort(seite_aus(w.welt.zusatz[D4_SLUG], zusatz=FUELLTEXT))
+            return FalscheAntwort(seite_aus(w.welt.seite[next(t[0] for t in A.TEAMS if t[3] == tid)]))
+        return antwort
+
     # (h) Abgleich mit Wegwerf-Cache und --nur-cache
     def test_d4_zeilen_erscheinen_nicht_als_nur_in_der_csv_und_die_abrufe_nennen_die_d4(self):
         w = self.d4_welt()
@@ -4085,14 +4103,56 @@ class TestZusatzquelleAbgleich(TestBasis):
         self.assertEqual(self.tabellenzeile(out, 'D3')[4], '2', 'nur in CSV')
         self.assertTrue(all('nicht ausgewertet' not in z for z in out.splitlines()), 'die D3 wird ausgewertet')
 
-    def test_eine_d4_ohne_spielzeilen_ist_ein_ausfall_der_zusatzquelle(self):
+    def test_eine_d4_ohne_spielzeilen_und_ohne_rahmen_ist_ein_ausfall_der_zusatzquelle(self):
+        """Ohne Spielzeilen zählt nur ein erkennbarer, gültiger Plan als Plan mit 0 Spielen (siehe die Tests zum leeren Plan); eine Seite
+        ohne Rahmen-Merkmal (Sperrseite, zu kurz) oder mit Spielzeilen, die sich nicht lesen lassen (Aufbau geändert), bleibt ein Ausfall."""
+        faelle = (('Sperrseite', SPERRSEITE),
+                  ('zu kurz', '<div id="id-team-matchplan-table"></div>'),
+                  ('Aufbau geändert', seite_aus(['<tr class="odd row-competition hidden-small"><td>kaputt</td></tr>'], zusatz=FUELLTEXT)))
+        for name, seite in faelle:
+            with self.subTest(name):
+                w = self.d4_welt()
+                w.cache_neu(ersetze={D4_SLUG: seite})
+                code, out, err, bericht = self.abgleich(w, '--nur-cache')
+                self.assertEqual(code, 2)
+                self.assertIn('**Zusatzquelle ausgefallen:** %s – fussball.de lieferte keine Spielzeilen und keinen erkennbaren Plan' % D4_NAME, self.abschnitt(bericht, 'D3'))
+                self.assertIn('1 fehlgeschlagen', out)
+                self.assertNotIn('Zusammengeführt', self.abschnitt(bericht, 'D3'))
+
+    def test_ein_leerer_gueltiger_d4_plan_ist_kein_ausfall_und_wird_vermerkt(self):
+        w = self.werkstatt()                      # in der Testwelt hat die D4 einen gültigen Plan ohne Spiele, die CSV keine D4-Zeile
+        code, out, err, bericht = self.abgleich(w, '--nur-cache')
+        self.assertEqual(code, 0, err)
+        d3 = self.abschnitt(bericht, 'D3')
+        self.assertIn('Zusammengeführt aus 2 fussball.de-Plänen: D3 und %s, ohne Spiele.' % D4_NAME, d3.splitlines())
+        self.assertIn('**keine Unterschiede**', d3.splitlines()[0])
+        self.assertNotIn('Zusatzquelle ausgefallen', bericht + out)
+        self.assertIn('0 Abrufe, 12 aus dem Cache, 0 fehlgeschlagen', out)
+        self.assertIn('- %s: Cache 26.10.2026 05:10' % D4_NAME, self.abrufe(bericht).splitlines())
+
+    def test_ein_leerer_d4_plan_bei_d4_zeilen_in_der_csv_ist_ein_echter_unterschied_und_kein_ausfall(self):
         w = self.d4_welt()
-        w.welt.zusatz[D4_SLUG] = []
+        w.welt.zusatz[D4_SLUG] = []               # die D4 hat nichts mehr im Plan, die CSV noch zwei Zeilen
         w.cache_neu()
         code, out, err, bericht = self.abgleich(w, '--nur-cache')
+        self.assertEqual(code, 0, err)
+        d3 = self.abschnitt(bericht, 'D3')
+        self.assertNotIn('Zusatzquelle ausgefallen', bericht + out)
+        self.assertIn('Zusammengeführt aus 2 fussball.de-Plänen: D3 und %s, ohne Spiele.' % D4_NAME, d3.splitlines())
+        self.assertIn('Nur in der CSV (bei fussball.de nicht vorhanden)** (2)', d3)
+        self.assertEqual(self.tabellenzeile(out, 'D3')[4], '2', 'nur in CSV')
+
+    def test_ein_leerer_eigener_plan_bleibt_ein_ausfall_der_mannschaft(self):
+        """Nur Zusatzquellen dürfen leer sein: der eigene Plan ohne Spielzeilen bleibt „nicht ausgewertet“ (wie bisher)."""
+        w = self.werkstatt()
+        w.cache_neu(ersetze={'D1': seite_aus([], zusatz=FUELLTEXT)})
+        code, out, err, bericht = self.abgleich(w, '--nur-cache')
         self.assertEqual(code, 2)
-        self.assertIn('**Zusatzquelle ausgefallen:** %s – fussball.de lieferte keine Spielzeilen' % D4_NAME, self.abschnitt(bericht, 'D3'))
+        d1 = self.abschnitt(bericht, 'D1')
+        self.assertTrue(d1.startswith('### D1 – nicht ausgewertet'))
+        self.assertIn('Grund: fussball.de lieferte keine Spielzeilen (Seitenaufbau geändert oder Plan leer).', d1)
         self.assertIn('1 fehlgeschlagen', out)
+        self.assertIn('Zusammengeführt aus 2 fussball.de-Plänen: D3 und %s, ohne Spiele.' % D4_NAME, self.abschnitt(bericht, 'D3'))
 
     def test_faellt_der_eigene_plan_aus_wird_die_d4_nicht_gelesen_und_nicht_abgerufen(self):
         w = self.d4_welt()
@@ -4128,6 +4188,9 @@ class TestZusatzquelleAbgleich(TestBasis):
             code, out, err, bericht = self.abgleich(w)
             self.assertEqual((code, len(aufrufe)), (0, 12), err)
             self.assertEqual(len([u for u in aufrufe if A.ZUSATZQUELLEN[0][3] in u]), 1)
+            self.assertIn(A.ZUSATZQUELLEN[0][3], aufrufe[-1], 'die D4 kommt erst nach den elf eigenen Plänen')
+            zeilen = [z for z in self.abrufe(bericht).splitlines() if z.startswith('- ')]
+            self.assertTrue(zeilen[-1].startswith('- %s: Abruf ' % D4_NAME) and all(': Abruf ' in z for z in zeilen), zeilen)
             self.assertIn('12 Abrufe, 0 aus dem Cache, 0 fehlgeschlagen', out)
             self.assertEqual(len(os.listdir(os.path.join(w.cache, D4_SLUG))), 1, 'die D4 hat ihren eigenen Cache-Ordner')
             self.abgleich(w)                            # zweiter Lauf: alles jünger als 6 Tage, nichts wird abgerufen
@@ -4152,6 +4215,98 @@ class TestZusatzquelleAbgleich(TestBasis):
         self.assertIn('1 fehlgeschlagen', out)
         self.assertTrue(os.path.exists(os.path.join(w.cache, D4_SLUG, 'fehlversuch.txt')), 'eigene Fehlversuch-Marke der D4')
         self.assertFalse(os.path.exists(os.path.join(w.cache, 'd3', 'fehlversuch.txt')))
+
+    # Runde 2: die Zusatzquellen kommen nach allen eigenen Plänen
+    def test_scheitert_der_abruf_der_d4_sind_alle_elf_eigenen_plaene_abgerufen_und_ausgewertet(self):
+        faelle = (('HTTP 404', urllib.error.HTTPError('u', 404, 'Nicht gefunden', {}, io.BytesIO(b'')), 'HTTP 404'),
+                  ('HTTP 503', urllib.error.HTTPError('u', 503, 'Nicht erreichbar', {}, io.BytesIO(b'')), 'HTTP 503'),
+                  ('Verbindung', urllib.error.URLError('Verbindung gesperrt'), 'URLError: <urlopen error Verbindung gesperrt>'),
+                  ('zu kurze Antwort', FalscheAntwort('x' * 499), 'unerwartete Antwort (Status 200, 499 Zeichen)'))      # ein Zeichen unter der Mindestlänge
+        for name, wirkung, grund in faelle:
+            with self.subTest(name):
+                if isinstance(wirkung, urllib.error.HTTPError):
+                    self.addCleanup(wirkung.close)
+                w = self.d4_welt()
+                shutil.rmtree(w.cache)                       # leerer Cache wie in der Cloud: alle zwölf Pläne müssen abgerufen werden
+                aufrufe = []
+                with mock.patch.object(urllib.request, 'urlopen', side_effect=self.seiten_attrappe(w, aufrufe, {self.D4_TID: wirkung})):
+                    code, out, err, bericht = self.abgleich(w)
+                self.assertEqual(code, 2)
+                self.assertEqual(len(aufrufe), 12, 'alle elf eigenen Pläne und der D4-Versuch')
+                self.assertIn(self.D4_TID, aufrufe[-1], 'die D4 kommt zuletzt')
+                self.assertEqual(sorted(u.rsplit('team-id/', 1)[1] for u in aufrufe[:-1]), sorted(t[3] for t in A.TEAMS))
+                self.assertIn('11 Abrufe, 0 aus dem Cache, 1 fehlgeschlagen', out)
+                self.assertNotIn('nicht ausgewertet', bericht + out, 'alle elf Mannschaften sind ausgewertet')
+                for t in A.TEAMS:
+                    if t[0] != 'D3':
+                        self.assertIn('**keine Unterschiede**', self.abschnitt(bericht, t[2]).splitlines()[0])
+                satz = ('**Zusatzquelle ausgefallen:** %s – %s; ihre Spiele sind in diesem Lauf nicht verglichen und erscheinen deshalb als „nur in der CSV“.'
+                        % (D4_NAME, grund))
+                ausfaelle = [z for z in bericht.splitlines() if z.startswith('**Zusatzquelle ausgefallen:**')]
+                self.assertEqual(len(ausfaelle), 2, 'der Ausfall steht in der Kurzfassung und im D3-Abschnitt, sonst nirgends')
+                self.assertTrue(all(D4_NAME in z and grund in z for z in ausfaelle), ausfaelle)
+                self.assertIn(satz, self.abschnitt(bericht, 'D3').splitlines())
+                zeilen = [z for z in self.abrufe(bericht).splitlines() if z.startswith('- ')]
+                self.assertEqual((len(zeilen), len([z for z in zeilen if ': Abruf ' in z])), (12, 11))
+                self.assertEqual(zeilen[-1], '- %s: FEHLER (%s)' % (D4_NAME, grund), 'die D4 steht als Letzte unter den Abrufen')
+                self.assertIn('Abruf fehlgeschlagen (%s)' % grund, err)
+                self.assertTrue(os.path.exists(os.path.join(w.cache, D4_SLUG, 'fehlversuch.txt')))
+                self.assertTrue(all(len(glob.glob(os.path.join(w.cache, t[1], '*.html'))) == 1 for t in A.TEAMS), 'alle elf Pläne liegen im Cache')
+
+    def test_ein_frueherer_fehlschlag_trifft_die_d4_wie_jede_quelle_nicht_abgerufen_ist_ausgefallen(self):
+        w = self.d4_welt()
+        shutil.rmtree(w.cache)
+        fehler = urllib.error.HTTPError('u', 403, 'Verboten', {}, io.BytesIO(b''))
+        self.addCleanup(fehler.close)
+        aufrufe = []
+        with mock.patch.object(urllib.request, 'urlopen', side_effect=self.seiten_attrappe(w, aufrufe, {self.G1_TID: fehler})):
+            code, out, err, bericht = self.abgleich(w)
+        self.assertEqual(code, 2)
+        self.assertEqual(len(aufrufe), 11, 'zehn Pläne und der fehlgeschlagene der G1; die D4 wird gar nicht erst angefragt')
+        self.assertFalse(any(self.D4_TID in u for u in aufrufe))
+        self.assertTrue(self.abschnitt(bericht, 'G1').startswith('### G1 – nicht ausgewertet'))
+        satz = ('**Zusatzquelle ausgefallen:** %s – nicht abgerufen, weil ein vorheriger Abruf scheiterte (G1: HTTP 403); ihre Spiele sind in diesem Lauf nicht '
+                'verglichen und erscheinen deshalb als „nur in der CSV“.' % D4_NAME)
+        self.assertIn(satz, self.abschnitt(bericht, 'D3').splitlines())
+        self.assertIn('10 Abrufe, 0 aus dem Cache, 2 fehlgeschlagen', out)
+        self.assertFalse(os.path.exists(os.path.join(w.cache, D4_SLUG)), 'ohne Anfrage keine Fehlversuch-Marke und kein Cache-Ordner der D4')
+
+    def test_faellt_ein_eigener_plan_beim_abruf_aus_wird_seine_zusatzquelle_nicht_gelesen_und_nicht_gelistet(self):
+        """Die D3 selbst scheitert (HTTP 404): die D4 hätte keine Mannschaft, sie taucht weder als Abruf noch als Ausfall auf."""
+        w = self.d4_welt()
+        shutil.rmtree(w.cache)
+        d3_tid = dict((t[0], t[3]) for t in A.TEAMS)['D3']
+        fehler = urllib.error.HTTPError('u', 404, 'Nicht gefunden', {}, io.BytesIO(b''))
+        self.addCleanup(fehler.close)
+        aufrufe = []
+        with mock.patch.object(urllib.request, 'urlopen', side_effect=self.seiten_attrappe(w, aufrufe, {d3_tid: fehler})):
+            code, out, err, bericht = self.abgleich(w)
+        self.assertEqual(code, 2)
+        self.assertFalse(any(self.D4_TID in u for u in aufrufe), 'die D4 wird für eine Mannschaft ohne eigenen Plan nicht abgerufen')
+        self.assertTrue(self.abschnitt(bericht, 'D3').startswith('### D3 – nicht ausgewertet'))
+        self.assertNotIn(D4_NAME, self.abrufe(bericht))
+        self.assertNotIn('Zusatzquelle ausgefallen', bericht + out)
+
+
+class TestSeitenmerkmale(unittest.TestCase):
+    """Die Merkmale einer matchplan-Seite stehen nur in abgleich.py; nachtrag.py verwendet dieselben."""
+    LEER = seite_aus([], zusatz=FUELLTEXT)
+
+    def test_nachtrag_nutzt_die_merkmale_aus_abgleich(self):
+        self.assertIs(N.ZEILEN_MARKEN, A.ZEILEN_MARKEN)
+        self.assertIs(N.RAHMEN_MARKEN, A.RAHMEN_MARKEN)
+        self.assertEqual(A.MIN_SEITENLAENGE, 500)
+        for text in (self.LEER, SPERRSEITE, '', '<html>x</html>', seite_aus(basis_spiele('D1')), '<div id="id-team-matchplan-table"></div>'):
+            self.assertEqual(N.seite_defekt(text), A.seite_defekt(text))
+
+    def test_leerer_plan(self):
+        self.assertTrue(A.leerer_plan(self.LEER))
+        self.assertTrue(A.leerer_plan('<div id="fixtures-matches-table"></div>' + ' ' * 600))
+        self.assertFalse(A.leerer_plan(seite_aus(basis_spiele('D1'))), 'ein Plan mit Spielen ist nicht leer')
+        for text in (SPERRSEITE, '', None, '<div id="id-team-matchplan-table"></div>',
+                     seite_aus(['<tr class="row-competition"><td>x</td></tr>'], zusatz=FUELLTEXT)):
+            self.assertFalse(A.leerer_plan(text), text)
+        self.assertEqual(N.seite_lesen(self.LEER), ([], None), 'nachtrag.py liest denselben leeren Plan ohne Fehler')
 
 
 # ---------------------------------------------------------------- Rekonstruktion an den echten Daten (übersprungen ohne Cache)

@@ -23,7 +23,8 @@ Freundschaftsspiele der fussball.de-Mannschaft D4 stehen in der CSV unter D3; de
 (nur aus dem Cache, nie abgerufen). Neue Zeilen tragen das Kürzel der Mannschaft (D3); Mengenbremse, Verlauf und Plausibilität
 gelten für die Mannschaft als Ganzes. Fällt der eigene Plan aus, bleiben auch die Zusatzquellen ungenutzt. Fällt nur eine
 Zusatzquelle aus (kein, veralteter, unbrauchbarer oder unplausibler Cache, Plan nennt unseren Verein nicht), wird die Mannschaft
-nie übersprungen: die Quelle wird mit einem Hinweis weggelassen („ihre Spiele sind in diesem Lauf nicht geprüft“).
+nie übersprungen: die Quelle wird mit einem Hinweis weggelassen („ihre Spiele sind in diesem Lauf nicht geprüft“). Ein gültiger Plan
+ohne Spiele (abgleich.leerer_plan) ist kein Ausfall, sondern ein Plan mit 0 Spielen.
 
 Schutzregeln: Mengenbremse (mehr als 10 Änderungen insgesamt oder mehr als 6 je Mannschaft: nichts schreiben); Quelle
 muss plausibel sein (sonst Mannschaft überspringen); je Mannschaft zählt der neueste brauchbare Cache-Stand (beschädigte Dateien
@@ -126,8 +127,8 @@ MOJIBAKE = re.compile(r'[ÃÂ][\u0080-\u00bf\u0152\u0153\u0160\u0161\u0178\u017d
 PLATZHALTER = re.compile(r'\b(Sieger|Verlierer|Gewinner|Freilos|spielfrei)\b|(?<![A-Za-z])N\.?\s?N\.?(?![A-Za-z])', re.I)   # „Sieger Spiel 12“, „N.N.“
 GIT_SPERREN = ('rebase-merge', 'rebase-apply', 'MERGE_HEAD', 'CHERRY_PICK_HEAD', 'REVERT_HEAD')
 FALLBACK_AUTOR = ('Spielplan-Nachtrag (automatisch)', 'nachtrag@speuzer.invalid')   # nur, wenn Git keine Identität kennt
-ZEILEN_MARKEN = ('row-headline', 'row-competition')                       # Spielzeilen einer matchplan-Seite
-RAHMEN_MARKEN = ('id-team-matchplan-table', 'fixtures-matches-table')    # Rahmen auch eines Plans ohne Spiele
+ZEILEN_MARKEN = A.ZEILEN_MARKEN      # Spielzeilen einer matchplan-Seite (die Merkmale einer Seite sind nur in abgleich.py definiert)
+RAHMEN_MARKEN = A.RAHMEN_MARKEN      # Rahmen auch eines Plans ohne Spiele
 ART_TEXT = (('ergaenzt', 'ergänzt'), ('verlegt', 'verlegt'), ('abgesagt', 'abgesagt'), ('wieder_angesetzt', 'wieder angesetzt'))
 
 
@@ -311,12 +312,9 @@ def spiel_marken(s):
 
 def seite_defekt(text):
     """Grund, warum `text` kein Mannschaftsplan von fussball.de sein kann (zu kurz, Sperr- oder Fehlerseite), sonst None. Ein
-    gültiger Plan ohne Spiele (Sommerpause) ist kein Defekt."""
-    if len(text or '') < 500:
-        return 'Seite zu kurz (%d Zeichen)' % len(text or '')
-    if not any(m in text for m in ZEILEN_MARKEN + RAHMEN_MARKEN):
-        return 'kein Spielplan erkannt (Seitenaufbau geändert oder Sperrseite)'
-    return None
+    gültiger Plan ohne Spiele (Sommerpause) ist kein Defekt. Die Merkmale stehen in abgleich.py (seite_defekt, leerer_plan): der
+    Abgleich erkennt damit den leeren Plan einer Zusatzquelle, dieses Skript den Defekt einer Cache-Datei."""
+    return A.seite_defekt(text)
 
 
 def seite_lesen(text):
@@ -324,7 +322,7 @@ def seite_lesen(text):
     grund = seite_defekt(text)
     if grund:
         return [], grund
-    if not any(m in text for m in ZEILEN_MARKEN):
+    if A.leerer_plan(text):
         return [], None           # ein gültiger, aber leerer Spielplan (z. B. Sommerpause)
     try:
         roh = A.parse_spielplan(text)

@@ -20,9 +20,12 @@ Aufruf (aus dem Repo-Stamm):
                                [--heute JJJJ-MM-TT] [--saison JJJJ] [--kein-wochenvergleich]
   --nur-cache              nichts abrufen, den neuesten Cache-Stand je Plan nehmen (zum erneuten Auswerten)
   --kein-wochenvergleich   keinen Vergleich mit dem Bericht der Vorwoche anstellen (z. B. wenn jeder Lauf ohne Vorlauf startet)
-Fällt der eigene Plan einer Mannschaft aus, ist sie nicht ausgewertet (ihre Zusatzquellen werden dann nicht abgerufen). Fällt nur eine
-Zusatzquelle aus, wird die Mannschaft mit den übrigen Plänen ausgewertet; ihr Abschnitt nennt den Ausfall, und die Spiele der
-Zusatzquelle erscheinen als „nur in der CSV“.
+Reihenfolge und Ausfälle: Zuerst werden die eigenen Pläne aller Mannschaften geholt, danach in einem zweiten Durchgang die Zusatzquellen
+(nur für Mannschaften, deren eigener Plan gelesen wurde); der Fehlschlag einer Zusatzquelle hält so keine Mannschaft vom Abruf ab. Fällt
+der eigene Plan einer Mannschaft aus, ist sie nicht ausgewertet. Fällt nur eine Zusatzquelle aus (auch mit „nicht abgerufen“ nach einem
+früheren Fehlschlag), wird die Mannschaft mit den übrigen Plänen ausgewertet; ihr Abschnitt nennt den Ausfall, und die Spiele der
+Zusatzquelle erscheinen als „nur in der CSV“. Ein gültiger Plan ohne Spiele (Rahmen der Seite erkennbar, keine Spielzeilen) ist bei einer
+Zusatzquelle kein Ausfall, sondern ein Plan mit 0 Spielen (der Abschnitt vermerkt „ohne Spiele“); bei einem eigenen Plan bleibt er ein Ausfall.
 Exit-Code: 0 = Bericht erstellt, 2 = Bericht erstellt, aber mindestens eine Mannschaft nicht ausgewertet oder eine Zusatzquelle
 ausgefallen, 1 = Fehler.
 """
@@ -57,6 +60,10 @@ URL = ('https://www.fussball.de/ajax.team.matchplan/-/datum-von/{von}/datum-bis/
        '/max/999/offset/0/mode/PAGE/team-id/{tid}')
 EIGEN = 'sportfreunde 04'          # unser Vereinsname in normalisierter Schreibweise
 AEHNLICH = 0.88                    # ab hier gilt ein Namensunterschied nur als Schreibweise
+# Merkmale einer matchplan-Seite (nur hier definiert, nachtrag.py verwendet dieselben): ein Plan ohne Spiele hat nur den Rahmen
+ZEILEN_MARKEN = ('row-headline', 'row-competition')                       # Spielzeilen
+RAHMEN_MARKEN = ('id-team-matchplan-table', 'fixtures-matches-table')    # Rahmen der Seite, auch eines Plans ohne Spiele
+MIN_SEITENLAENGE = 500                                                    # kürzere Antworten sind keine Spielplanseite
 
 # Kürzel in spiele.csv, Slug, Anzeigename, fussball.de-Team-ID (Mannschaftsliste des Vereins bei fussball.de)
 TEAMS = [
@@ -181,7 +188,7 @@ def hole(cache, team, von, bis, nur_cache, jetzt, abbruch, url_vorlage=URL):
     try:
         with urllib.request.urlopen(req, timeout=60) as r:
             text = r.read().decode('utf-8', 'replace')
-            if r.status != 200 or len(text) < 500:
+            if r.status != 200 or len(text) < MIN_SEITENLAENGE:
                 fehler = 'unerwartete Antwort (Status %s, %d Zeichen)' % (r.status, len(text))
     except urllib.error.HTTPError as e:
         fehler = 'HTTP %s' % e.code
@@ -209,6 +216,23 @@ def hole(cache, team, von, bis, nur_cache, jetzt, abbruch, url_vorlage=URL):
 
 
 # ---------------------------------------------------------------- fussball.de-Spielplan lesen
+
+def seite_defekt(text):
+    """Grund, warum `text` kein Mannschaftsplan von fussball.de sein kann (zu kurz, Sperr- oder Fehlerseite), sonst None. Ein
+    gültiger Plan ohne Spiele (Sommerpause, noch kein Termin) ist kein Defekt."""
+    if len(text or '') < MIN_SEITENLAENGE:
+        return 'Seite zu kurz (%d Zeichen)' % len(text or '')
+    if not any(m in text for m in ZEILEN_MARKEN + RAHMEN_MARKEN):
+        return 'kein Spielplan erkannt (Seitenaufbau geändert oder Sperrseite)'
+    return None
+
+
+def leerer_plan(text):
+    """True, wenn `text` ein gültiger Mannschaftsplan ohne ein einziges Spiel ist: lang genug, Rahmen der Seite vorhanden, keine
+    Spielzeilen (z. B. eine Mannschaft, die nur Freundschaftsspiele hat, solange nichts angesetzt ist). Eine Sperrseite oder eine
+    Seite mit geändertem Aufbau (auch Spielzeilen, die sich nicht lesen lassen) ist kein leerer Plan."""
+    return seite_defekt(text) is None and not any(m in text for m in ZEILEN_MARKEN)
+
 
 def parse_spielplan(s):
     """Zerlegt ajax.team.matchplan in Spiele. Zeilen mit Klasse „odd row-competition“ werden mitgezählt.
@@ -522,7 +546,8 @@ def team_abschnitt(team, ergebnis, heute):
     kopf += ' · **keine Unterschiede**' if not diffs else ' · %d kommend, %d vergangen' % (len(kom), len(verg))
     out += [kopf, '']
     if ergebnis.get('quellen'):
-        out += ['Zusammengeführt aus %d fussball.de-Plänen: %s.' % (1 + len(ergebnis['quellen']), ' und '.join([name] + ergebnis['quellen'])), '']
+        namen = [name] + [q + (', ohne Spiele' if n == 0 else '') for q, n in ergebnis['quellen']]
+        out += ['Zusammengeführt aus %d fussball.de-Plänen: %s.' % (len(namen), ' und '.join(namen)), '']
     for qname, grund in ergebnis.get('zusatz_fehler', []):
         out += ['**Zusatzquelle ausgefallen:** %s – %s; ihre Spiele sind in diesem Lauf nicht verglichen und erscheinen deshalb als „nur in der CSV“.' % (qname, grund), '']
     if any(s['kennz'] != 'ok' for s in staffeln):
@@ -635,9 +660,11 @@ def stand_laden(ordner, heute):
 
 # ---------------------------------------------------------------- Hauptprogramm
 
-def plan_lesen(cache, quelle, von, bis, nur_cache, jetzt, abbruch, url_vorlage):
+def plan_lesen(cache, quelle, von, bis, nur_cache, jetzt, abbruch, url_vorlage, leer_erlaubt=False):
     """Einen fussball.de-Plan holen (Cache oder Abruf, siehe hole) und lesen -> (Spiele, Fehlertext oder None, Zeile für
-    „Abrufe dieses Laufs“). `quelle`: ein Tupel wie in TEAMS, also auch eine Zusatzquelle."""
+    „Abrufe dieses Laufs“). `quelle`: ein Tupel wie in TEAMS, also auch eine Zusatzquelle. `leer_erlaubt` (nur für Zusatzquellen):
+    eine Seite, die als gültiger Plan ohne Spiele erkennbar ist (leerer_plan), gilt als Plan mit 0 Spielen und ist kein Ausfall; ein
+    eigener Plan ohne Spielzeilen bleibt ein Fehler."""
     name = quelle[2]
     text, herkunft, stempel, fehler = hole(cache, quelle, von, bis, nur_cache, jetzt, abbruch, url_vorlage)
     if fehler:
@@ -647,7 +674,10 @@ def plan_lesen(cache, quelle, von, bis, nur_cache, jetzt, abbruch, url_vorlage):
     zeile = '%s: %s %s' % (name, herkunft, stempel.strftime('%d.%m.%Y %H:%M'))
     fb = [fb_normalisieren(g) for g in parse_spielplan(text)]
     if not fb:
-        return [], 'fussball.de lieferte keine Spielzeilen (Seitenaufbau geändert oder Plan leer)', zeile
+        if not leer_erlaubt:
+            return [], 'fussball.de lieferte keine Spielzeilen (Seitenaufbau geändert oder Plan leer)', zeile
+        if not leerer_plan(text):
+            return [], 'fussball.de lieferte keine Spielzeilen und keinen erkennbaren Plan (Seitenaufbau geändert oder Sperrseite)', zeile
     return fb, None, zeile
 
 
@@ -682,32 +712,52 @@ def main():
     bekannte = {t[0] for t in TEAMS}
     unbekannt = sorted(set(csv_je) - bekannte)
 
-    ergebnisse, abrufe, abbruch = {}, [], []
+    abrufe, abbruch = [], []
+
+    # 1. Durchgang: die eigenen Pläne aller Mannschaften. Fällt einer aus, ist diese Mannschaft nicht ausgewertet und ihre Zusatzquellen
+    #    werden in diesem Lauf nicht abgerufen. Ein Fehlschlag setzt `abbruch`: danach wird nichts mehr abgerufen (siehe hole).
+    eigene = {}                      # Kürzel -> (Spiele, Fehlertext oder None)
     for team in TEAMS:
-        kuerzel, slug, name, tid = team
         fb, fehler, zeile = plan_lesen(a.cache, team, von, bis, a.nur_cache, jetzt, abbruch, a.url_vorlage)
         abrufe.append(zeile)
-        if fehler:        # fällt der eigene Plan aus, werden die Zusatzquellen dieser Mannschaft in diesem Lauf nicht abgerufen
-            ergebnisse[kuerzel] = dict(fehler=fehler)
+        eigene[team[0]] = (fb, fehler)
+
+    # 2. Durchgang: die Zusatzquellen der Mannschaften mit gelesenem eigenen Plan. Sie kommen erst nach allen eigenen Plänen, damit der
+    #    Fehlschlag einer Zusatzquelle keine Mannschaft am Abruf hindert; ein früherer Fehlschlag trifft sie wie jede Quelle („nicht
+    #    abgerufen …“, also ausgefallen). Ein gültiger Plan ohne Spiele ist bei einer Zusatzquelle kein Ausfall (leer_erlaubt).
+    zusatz = {}                      # Kürzel -> dict(fb, gelesen=[(Name, Zahl der Spiele)], ausgefallen=[(Name, Grund)])
+    for team in TEAMS:
+        if eigene[team[0]][1]:
             continue
-        gelesen, zusatz_fehler = [], []
-        for zusatz in quellen(team)[1:]:
+        z = zusatz[team[0]] = dict(fb=[], gelesen=[], ausgefallen=[])
+        for quelle in quellen(team)[1:]:
             try:
-                zfb, zfehler, zzeile = plan_lesen(a.cache, zusatz, von, bis, a.nur_cache, jetzt, abbruch, a.url_vorlage)
+                zfb, zfehler, zzeile = plan_lesen(a.cache, quelle, von, bis, a.nur_cache, jetzt, abbruch, a.url_vorlage, leer_erlaubt=True)
             except Exception as ex:  # ein kaputter Zusatzplan darf die Mannschaft nie mitreißen
                 zfb, zfehler = [], 'unerwarteter Fehler (%s: %s)' % (type(ex).__name__, ex)
-                zzeile = '%s: FEHLER (%s)' % (zusatz[2], zfehler)
+                zzeile = '%s: FEHLER (%s)' % (quelle[2], zfehler)
             abrufe.append(zzeile)
             if zfehler:
-                zusatz_fehler.append((zusatz[2], zfehler))
+                z['ausgefallen'].append((quelle[2], zfehler))
             else:
-                fb = fb + zfb
-                gelesen.append(zusatz[2])
+                z['fb'] += zfb
+                z['gelesen'].append((quelle[2], len(zfb)))
+
+    # 3. Je Mannschaft: den Plan aus allen gelesenen Quellen zusammenführen und mit den CSV-Zeilen vergleichen
+    ergebnisse = {}
+    for team in TEAMS:
+        kuerzel = team[0]
+        fb, fehler = eigene[kuerzel]
+        if fehler:
+            ergebnisse[kuerzel] = dict(fehler=fehler)
+            continue
+        z = zusatz[kuerzel]
+        fb = fb + z['fb']
         diffs, staffeln, info, ohne_termin = vergleiche(team, fb, csv_je.get(kuerzel, []), heute)
         n_fb = sum(1 for g in fb if g['status'] in ('angesetzt', 'nichtantritt'))
         ergebnisse[kuerzel] = dict(diffs=diffs, staffeln=staffeln, info=info, ohne_termin=ohne_termin, n_fb=n_fb,
                                    n_csv=sum(1 for r in csv_je.get(kuerzel, []) if not r['abgesagt']), csv_ausserhalb=ausserhalb.get(kuerzel, 0),
-                                   zeilen=len(fb), quellen=gelesen, zusatz_fehler=zusatz_fehler)
+                                   zeilen=len(fb), quellen=z['gelesen'], zusatz_fehler=z['ausgefallen'])
     alle = [d for e in ergebnisse.values() if not e.get('fehler') for d in e['diffs']]
 
     vorher = None if a.kein_wochenvergleich else stand_laden(a.bericht_ordner, heute)
