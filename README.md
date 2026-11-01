@@ -38,12 +38,14 @@ dafür, dass die Vereins-App (Appack) sie als externen iCal-Kalender akzeptiert.
 | `docs/import-<team>.ics` | **nicht abonnieren, sondern hochladen** – erzeugt in appack echte App-Termine mit Zu-/Absage (Start = Treffpunkt) |
 | `docs/training-<team>.ics` | Trainingszeiten als Einzeltermine, ohne Ferien und Feiertage – zum Abonnieren **und** zum Importieren |
 | `.github/workflows/build.yml` | baut bei jeder Änderung an `spiele.csv` neu, zusätzlich täglich |
+| `tools/nachtrag-aktion.yml` | Vorlage der Cloud-Sicherung des Nachtrags (GitHub-Aktion), **nicht aktiv**: Vorlage unter `tools/`; nach dem Verschieben liegt die Datei unter `.github/workflows/nachtrag.yml` (Abschnitt „Cloud-Sicherung des Nachtrags“) |
 
 ## Pflege im Alltag
 
 **Standard ist die tägliche automatische Fortschreibung:** `tools/nachtrag.py` läuft im täglichen Mac-Task, liest die ohnehin
 abgerufenen fussball.de-Pläne und trägt neue, verlegte und abgesagte Spiele in `spiele.csv` ein (Abschnitt „Automatische
-Aktualisierung“); gemeldet werden nur Änderungen und Auffälligkeiten. Von Hand bleiben die Sonderfälle: die Neuanlage einer
+Aktualisierung“); gemeldet werden nur Änderungen und Auffälligkeiten. Für den Fall, dass der Mac ausfällt, ist eine Cloud-Sicherung des
+Nachtrags vorbereitet, aber noch nicht aktiv (Abschnitt „Cloud-Sicherung des Nachtrags“). Von Hand bleiben die Sonderfälle: die Neuanlage einer
 Saison über DFBnet, ein Staffelwechsel mit mehr als sechs neuen Spielen je Mannschaft, Spielstätten und Auswärtsadressen
 nachtragen sowie Ergebnisse. Unabhängig vom Skript kontrolliert der rein lesende Wochen-Abgleich `tools/abgleich.py`
 (Donnerstag, Cloud-Routine) die Tabelle gegen fussball.de, und die Not-Aus-Datei
@@ -125,6 +127,83 @@ Die letzte Ausgabezeile ist maschinenlesbar: `NACHTRAG: unverändert` · `n geä
 `Fehler – …`. **Not-Aus:** Existiert `~/Library/Application Support/speuzer-spielplan-nachtrag/AUS`, bleibt es beim Bericht (auch in
 der Sommerpause nützlich). Von Hand geänderte Termine überschreibt das Skript, sobald fussball.de etwas anderes zeigt.
 Tests: `python3 -I -B -m unittest discover -s tools -p 'test_nachtrag.py'` (kein Netzwerk, synthetische Seiten, Wegwerf-Klone).
+
+## Cloud-Sicherung des Nachtrags (GitHub-Aktion, vorbereitet)
+
+**Stand: vorbereitet 31.10.2026, noch nicht aktiv.** Der Nachtrag (`tools/nachtrag.py`) läuft bisher nur im täglichen Mac-Task; fällt der Mac
+aus, bleibt `spiele.csv` stehen. Als Sicherung daneben ist eine GitHub-Aktion vorbereitet, die dasselbe in der Cloud tut. Sie liegt nur als
+Vorlage unter `tools/nachtrag-aktion.yml` und läuft erst, wenn sie nach `.github/workflows/nachtrag.yml` verschoben ist (Inbetriebnahme unten).
+**Sicher voreingestellt:** Standard ist der Bericht. Geschrieben und gepusht wird nur auf ausdrückliche Freigabe: bei einem manuellen Lauf mit
+angehaktem Kästchen, beim Zeitplan nur, wenn die Repository-Variable `NACHTRAG_SCHREIBEN` auf `1` steht; jedes andere Ereignis und jeder andere
+Wert ergibt den Bericht.
+
+**Ablauf** (`tools/nachtrag_aktion.py`, ein Aufruf, ein Prozess; Zeitplan täglich `17 6 * * *` UTC, also 07:17 Uhr MEZ oder 08:17 Uhr MESZ):
+1. `tools/abgleich.py` holt die zwölf öffentlichen Mannschaftspläne (elf Mannschaften und die D4) in einen frischen Cache im Temp-Ordner des
+   Runners, außerhalb des Repos; zu Beginn werden dort nur die Unterordner dieser zwölf Pläne gelöscht. Enthält der Cache-Ordner irgendetwas anderes
+   oder ist es der Cache des Mac-Tasks (oder ein Ordner darüber oder darin), endet der Lauf mit einem Fehler, ohne etwas zu löschen. Nach einem
+   Fehlschlag oder einer unbrauchbaren Antwort (Sperrseite, geänderter Seitenaufbau) werden keine weiteren Pläne abgerufen.
+2. `tools/nachtrag.py --anwenden --push` schreibt `spiele.csv` fort und pusht sie. Er liest dabei nur diesen Cache (`--nur-cache`) und ruft
+   nichts selbst ab. Beim Probelauf (`--nur-bericht`) gibt es nur den Bericht: nichts geschrieben, nichts committet, nichts gepusht.
+3. Die Schlusszeile des Nachtrags wird bewertet (ok, Warnung oder Fehler; sein Exit-Code dient als Gegenprobe) und der Aktion gemeldet. Nur wenn
+   `spiele.csv` neu gepusht wurde, startet die Aktion `build.yml` (`gh workflow run`), auch wenn der Lauf rot endet. Kalender baut sie nie selbst:
+   ein eigener Lauf-Zähler würde `SEQUENCE` der Termine senken, und Kalender-Clients könnten Änderungen ignorieren. (Pushes mit dem `GITHUB_TOKEN`
+   lösen `build.yml` nicht aus, der Start per `workflow_dispatch` ist die dokumentierte Ausnahme.)
+
+**Zusammenspiel mit dem Mac-Task.** Beide können nebeneinander laufen: der Nachtrag ist idempotent (ein zweiter Lauf ändert nichts) und holt vor dem
+Lesen per `pull --rebase` den neuesten Stand von GitHub. Die Aktion läuft täglich unabhängig vom Mac und schreibt selbst, wenn sie vor ihm fertig
+ist; hat ein Lauf schon geschrieben, findet der andere nichts mehr zu tun. Der Mac bleibt der schnelle Weg, die Cloud sichert ab, wenn er ausfällt.
+
+**Inbetriebnahme** (erst nach Freigabe durch den Verein):
+1. Auf github.com die Datei `tools/nachtrag-aktion.yml` öffnen (Stift-Symbol), den Dateinamen in `.github/workflows/nachtrag.yml` ändern und
+   committen. (Das Zugangs-Token des Betreuers darf Workflow-Dateien nicht pushen; deshalb liegt die Vorlage unter `tools/`.) Der Zeitplan läuft
+   ab jetzt, aber nur als Bericht: das Protokoll sagt es in der Zeile „Zeitplan läuft nur als Bericht …“.
+2. Den Probelauf von Hand starten: *Actions* › *Spielplan-Nachtrag (Cloud-Sicherung)* › *Run workflow*, im Dialog „Use workflow from: main“ lassen und
+   das Kästchen „Schreiben und pushen (leer = nur Bericht, nichts wird geschrieben)“ (die Eingabe `schreiben`) leer lassen. Das Protokoll lesen: die
+   zwölf Abrufe (keine Sperrseite, kein Abruf-Fehler), die letzte Zeile `NACHTRAG-AKTION: ok – NACHTRAG: …` und die Zusammenfassung des Laufs. Der Probelauf holt die
+   Pläne bei fussball.de, erprobt aber weder Push noch Kalender-Anstoß.
+3. Erst bei Erfolg die Repository-Variable `NACHTRAG_SCHREIBEN` = `1` anlegen (Settings › Secrets and variables › Actions › Variables): der
+   Zeitplan schreibt ab dann.
+4. Empfohlener Schreibtest, damit Push und Kalender-Anstoß nicht erst am Tag eines Mac-Ausfalls zum ersten Mal laufen: in `spiele.csv` bei einem
+   kommenden Spiel die Uhrzeit um eine Stunde ändern und committen, dann *Run workflow* mit angehaktem Kästchen. Erwartet: die letzte Zeile
+   `NACHTRAG-AKTION: ok – NACHTRAG: 1 geändert (1 verlegt), gepusht`, ein Commit „Spieltabelle automatisch aktualisiert (1 Änderung)“ von
+   `github-actions`, danach ein Lauf von „Spielplan-Kalender bauen“ mit dem Ereignis `workflow_dispatch`, und `spiele.csv` ist wieder wie vorher.
+
+**Not-Aus und Schreibfreigabe:** Zwei Repository-Variablen (Settings › Secrets and variables › Actions › Variables) steuern die Aktion.
+`NACHTRAG_AUS` = `1` hält alles an: der Job wird übersprungen, auch der Abruf. `NACHTRAG_SCHREIBEN` ungleich `1` (oder nicht angelegt) heißt: der
+Zeitplan liefert nur den Bericht; auf `1` schreibt und pusht er. Wieder zulassen: Variable löschen oder auf einen anderen Wert setzen. Der Job läuft
+nur auf `main`: im Dialog „Use workflow from: main“ lassen, andere Zweige werden übersprungen. Der Not-Aus des Mac-Tasks (die Datei `AUS`) gilt nur dort.
+
+**Rücknahme:** die Datei `.github/workflows/nachtrag.yml` löschen oder in *Actions* den Workflow deaktivieren (kurzfristig `NACHTRAG_AUS` = `1`).
+
+**Grenzen.**
+- GitHub startet Zeitpläne oft Stunden verspätet (und lässt gelegentlich einen aus): die Aktion ist eine Sicherung hinter dem Mac, kein Ersatz.
+- Die Aktion ist zustandslos (kein Zwischenspeicher, kein Verlauf). Eine Absage, die zuerst die Cloud einträgt, geht nur zurück, wenn der Cache des
+  Mac-Tasks die Absetzung selbst gezeigt hat (Verlauf). Sonst bleibt sie stehen, und es erscheint nur der Hinweis „in der CSV „abgesagt“, bei
+  fussball.de angesetzt, aber dort früher nie abgesetzt (von Hand abgesagt?): nicht geändert“: im Protokoll des Laufs als Zeile „Hinweis: …“ und in
+  der Zusammenfassung des Laufs, der Lauf bleibt grün, es kommt keine Mail. Dann den Hinweis lesen und die Zeile in `spiele.csv` von Hand
+  korrigieren (Spalte `ergebnis` leeren).
+- Saisonwechsel: Enthält `spiele.csv` schon Zeilen der neuen Saison, und fussball.de zeigt noch leere oder zu kurze Pläne, endet der Lauf täglich
+  rot („Quelle unplausibel …, Mannschaften übersprungen“), bis fussball.de die Pläne füllt; in dieser Phase `NACHTRAG_AUS` = `1` setzen (die echte
+  Sommerpause ohne neue CSV-Zeilen bleibt grün).
+- Ob fussball.de die Pläne an GitHub-Server ausliefert, ist bis zum Probelauf ungetestet.
+- Zusätzliche Last für fussball.de: zwölf Abrufe pro Tag, erkennbarer User-Agent („SpeuzerSpielplanNachtrag … GitHub Actions“), 3 Sekunden Pause,
+  nach einem Fehlschlag oder einer unbrauchbaren Antwort (Sperrseite, geänderter Seitenaufbau) kein weiterer Abruf.
+- Die Protokolle eines öffentlichen Repos sind öffentlich; es erscheinen nur öffentliche Spieldaten (Mannschaften, Gegner, Termine).
+- Warnungen (grün) lösen keine Mail aus; ein roter Lauf nur, wenn die Actions-Benachrichtigungen des Kontos an sind.
+- Fällt nur ein Plan aus, schreibt der Nachtrag die Mannschaften, deren Plan vorher ankam, und meldet die übrigen als übersprungen: der Lauf ist rot.
+  Wurde dabei etwas gepusht, stößt die Aktion `build.yml` trotzdem an (der Schritt läuft mit `!cancelled()`), damit Kalender und App-Seiten nicht bis
+  zum nächsten Lauf warten.
+
+**Fehlersuche.** Ein roter Lauf bedeutet eine Mail von GitHub (bei eingeschalteten Actions-Benachrichtigungen); im Protokoll steht zuletzt
+`NACHTRAG-AKTION: fehler – …` (davor `::error::…`). Häufige Ursachen: *Fehler – … Mannschaften übersprungen, kein Cache-Stand vorhanden* (fussball.de
+hat einen Abruf abgewiesen oder eine unbrauchbare Antwort geliefert; davor steht im Protokoll „Abruf fehlgeschlagen (HTTP …)“ oder „unbrauchbare
+Antwort (…)“, danach wird nichts mehr abgerufen; der Mac-Lauf oder der nächste Tag holt es nach), *Abruf/Abgleich fehlgeschlagen* (ein Fehler im
+Abgleich selbst, z. B. eine unlesbare `spiele.csv`: der Nachtrag läuft dann gar nicht), *Auffällig, nicht übernommen – … Änderungen in einem Lauf*
+(Mengenbremse: nichts geschrieben; die Vorschläge stehen im Protokoll und lassen sich von Hand prüfen und eintragen), *Fehler – … übersprungen* (Plan
+nicht lesbar oder unplausibel) und *Push fehlgeschlagen* oder *abgelehnt*: nichts ist verloren, der nächste Lauf rechnet neu und wiederholt es (die
+Meldung „der nächste Lauf pusht ihn nach“ aus `nachtrag.py` gilt in der Cloud nicht). Eine Warnung (`::warning::`, Lauf grün) sind bloße Hinweise des
+Nachtrags: alltäglich, nichts wurde geändert.
+Tests: `python3 -I -B -m unittest discover -s tools -p 'test_nachtrag_aktion.py'` (kein Netzwerk außer 127.0.0.1, lokaler Server, Wegwerf-Klone).
 
 ## Spielstätten
 

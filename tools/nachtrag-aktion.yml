@@ -1,0 +1,80 @@
+# Spielplan-Nachtrag (Cloud-Sicherung) – VORLAGE, noch nicht aktiv
+#
+# Zweck: Sicherung neben dem täglichen Mac-Task. Der Nachtrag (tools/nachtrag.py) schreibt spiele.csv aus den öffentlichen
+# fussball.de-Mannschaftsplänen fort; fällt der Mac aus, bliebe die Tabelle stehen. Diese Aktion holt die zwölf Pläne selbst und
+# schreibt sie fort (tools/nachtrag_aktion.py ruft tools/abgleich.py zum Holen und tools/nachtrag.py zum Schreiben auf). Wurde
+# spiele.csv geändert und gepusht, stößt die Aktion danach den Kalender-Workflow build.yml an, auch wenn der Lauf wegen eines
+# teilweisen Ausfalls rot endet (der Schritt läuft mit !cancelled()): was auf main liegt, soll gebaut werden. Kalender baut sie nie
+# selbst: SEQUENCE kommt aus github.run_number von build.yml, ein eigener Lauf-Zähler würde sie senken.
+#
+# Sicher voreingestellt: Standard ist der Bericht (nichts wird geschrieben, nichts gepusht). Geschrieben wird nur auf ausdrückliche
+# Freigabe: bei einem manuellen Lauf mit angehaktem Kästchen „Schreiben und pushen“, beim Zeitplan nur, wenn die Repository-Variable
+# NACHTRAG_SCHREIBEN auf 1 steht. Jedes andere Ereignis und jeder andere Wert ergibt den Bericht. Der Job läuft nur auf main und nicht,
+# wenn die Repository-Variable NACHTRAG_AUS auf 1 steht (Settings › Secrets and variables › Actions › Variables).
+#
+# Diese Datei ist die Vorlage. Sie liegt unter tools/, weil das Zugangs-Token des Betreuers Workflow-Dateien nicht pushen darf; nach dem
+# Verschieben liegt die Datei unter .github/workflows/nachtrag.yml.
+# Zum Aktivieren: auf github.com die Datei öffnen (Stift-Symbol), den Dateinamen in
+# `.github/workflows/nachtrag.yml` ändern, committen. Der Zeitplan läuft ab dann, aber nur als Bericht.
+#
+# Nach jeder Änderung die Syntax prüfen (die Tests prüfen nur die Struktur, die Standardbibliothek hat keinen YAML-Leser):
+#   ruby -ryaml -e 'YAML.load_file(ARGV[0]); puts "YAML ok"' <diese Datei>
+# Zeitplan: täglich 06:17 UTC; GitHub startet Zeitpläne oft Stunden verspätet, die Aktion ist eine Sicherung hinter dem Mac, kein Ersatz.
+# Einzelheiten im README, Abschnitt „Cloud-Sicherung des Nachtrags“.
+
+name: Spielplan-Nachtrag (Cloud-Sicherung)
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+    inputs:
+      schreiben:
+        description: "Schreiben und pushen (leer = nur Bericht, nichts wird geschrieben)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: spielplan-nachtrag
+  cancel-in-progress: false
+
+jobs:
+  nachtrag:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: ${{ vars.NACHTRAG_AUS != '1' && github.ref == 'refs/heads/main' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Git-Identitaet setzen
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+
+      - name: Nachtrag ausfuehren
+        id: nachtrag
+        env:
+          EVENT: ${{ github.event_name }}
+          SCHREIBEN: ${{ inputs.schreiben }}
+          ZEITPLAN: ${{ vars.NACHTRAG_SCHREIBEN }}
+        run: |
+          if { [ "$EVENT" = "workflow_dispatch" ] && [ "$SCHREIBEN" = "true" ]; } || { [ "$EVENT" = "schedule" ] && [ "$ZEITPLAN" = "1" ]; }; then
+            python3 -I tools/nachtrag_aktion.py
+          else
+            if [ "$EVENT" = "schedule" ]; then
+              echo "::notice::Zeitplan läuft nur als Bericht: die Repository-Variable NACHTRAG_SCHREIBEN steht nicht auf 1"
+            fi
+            python3 -I tools/nachtrag_aktion.py --nur-bericht
+          fi
+
+      - name: Kalender-Workflow anstossen
+        if: ${{ !cancelled() && steps.nachtrag.outputs.geaendert == 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run build.yml --ref main
