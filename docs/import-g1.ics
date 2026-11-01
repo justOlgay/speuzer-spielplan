@@ -29,25 +29,9 @@ RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:340221-142-app@speuzer.sportfreunde04.de
-DTSTAMP:20261031T101843Z
-SEQUENCE:106
-DTSTART;TZID=Europe/Berlin:20261031T100000
-DTEND;TZID=Europe/Berlin:20261031T130000
-SUMMARY:Speuzer G1 · Kinderfestival bei SG Harheim 2 / 2
-DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Beginn 11:
- 00 Uhr · auswärts\nKinderfestival bei SG Harheim 2 / 2\nTreffpunkt: 10
- :00 Uhr\nBeginn: 11:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielstät
- te: Riedhalsstr.\, 60437 Frankfurt am Main\nBitte per Daumen hoch / Frag
- ezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist – am b
- esten bis zum Abend vor dem Spiel.
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
 UID:340221-151-app@speuzer.sportfreunde04.de
-DTSTAMP:20261031T101843Z
-SEQUENCE:106
+DTSTAMP:20261101T060649Z
+SEQUENCE:107
 DTSTART;TZID=Europe/Berlin:20261107T080000
 DTEND;TZID=Europe/Berlin:20261107T110000
 SUMMARY:Speuzer G1 · Kinderfestival bei BSC SW 1919 Ffm. 2

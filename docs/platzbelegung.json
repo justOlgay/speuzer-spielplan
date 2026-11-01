@@ -1,10 +1,10 @@
 {
  "version": 1,
  "saison": "2026/27",
- "erzeugt": "2026-10-31",
+ "erzeugt": "2026-11-01",
  "stand": {
   "plan": "19.10.2026",
-  "spiele": "31.10.2026"
+  "spiele": "01.11.2026"
  },
  "platz": {
   "kurz": "Mainzer Landstr. 480",
@@ -1105,6 +1105,17 @@
    "w": "Freundschaftsspiel",
    "g": "SV Bosnien-Herzegowina FFM 2 (FS)",
    "nr": "225",
+   "dauer": 60,
+   "ort": "u",
+   "feld": "halb"
+  },
+  {
+   "d": "2026-11-04",
+   "z": "17:30",
+   "t": "e1",
+   "w": "Freundschaftsspiel",
+   "g": "TuS Makkabi Frankfurt 2",
+   "nr": "226",
    "dauer": 60,
    "ort": "u",
    "feld": "halb"
