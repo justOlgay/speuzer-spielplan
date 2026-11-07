@@ -1,10 +1,10 @@
 {
  "version": 1,
  "saison": "2026/27",
- "erzeugt": "2026-11-06",
+ "erzeugt": "2026-11-07",
  "stand": {
   "plan": "19.10.2026",
-  "spiele": "06.11.2026"
+  "spiele": "07.11.2026"
  },
  "platz": {
   "kurz": "Mainzer Landstr. 480",
@@ -1189,6 +1189,17 @@
   {
    "d": "2026-11-15",
    "z": "14:30",
+   "t": "d3",
+   "w": "Freundschaftsspiel",
+   "g": "Riedberger SV 2",
+   "nr": "323",
+   "dauer": 90,
+   "ort": "u",
+   "feld": "ganz"
+  },
+  {
+   "d": "2026-11-15",
+   "z": "14:30",
    "t": "herren",
    "w": "Meisterschaft",
    "g": "VfR Bockenheim",
@@ -1196,6 +1207,28 @@
    "dauer": null,
    "ort": "Am Römerhof 9",
    "feld": null
+  },
+  {
+   "d": "2026-11-15",
+   "z": "16:00",
+   "t": "d3",
+   "w": "Freundschaftsspiel",
+   "g": "KV Mühlheim II",
+   "nr": "322",
+   "dauer": 90,
+   "ort": "u",
+   "feld": "ganz"
+  },
+  {
+   "d": "2026-11-15",
+   "z": "17:30",
+   "t": "d2",
+   "w": "Freundschaftsspiel",
+   "g": "DJK SF Bad Homburg 2",
+   "nr": "321",
+   "dauer": 90,
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-11-21",
