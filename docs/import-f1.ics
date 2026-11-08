@@ -29,25 +29,9 @@ RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:340233-373-app@speuzer.sportfreunde04.de
-DTSTAMP:20261107T105909Z
-SEQUENCE:118
-DTSTART;TZID=Europe/Berlin:20261107T100000
-DTEND;TZID=Europe/Berlin:20261107T130000
-SUMMARY:Speuzer F1 · Kinderfestival bei TSG 51 Frankfurt II
-DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Beginn 11:
- 00 Uhr · auswärts\nKinderfestival bei TSG 51 Frankfurt II\nTreffpunkt:
-  10:00 Uhr\nBeginn: 11:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielst
- ätte: Niedwiesenstr. 124\, 60431 Frankfurt am Main\nBitte per Daumen ho
- ch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei ist
-  – am besten bis zum Abend vor dem Spiel.
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
 UID:340530-3-app@speuzer.sportfreunde04.de
-DTSTAMP:20261107T105909Z
-SEQUENCE:118
+DTSTAMP:20261108T111312Z
+SEQUENCE:119
 DTSTART;TZID=Europe/Berlin:20261114T123000
 DTEND;TZID=Europe/Berlin:20261114T153000
 SUMMARY:Speuzer F1 · Kinderfestival zu Hause

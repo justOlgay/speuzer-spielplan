@@ -28,20 +28,4 @@ DTSTART:19701025T030000
 RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
-BEGIN:VEVENT
-UID:340231-270-app@speuzer.sportfreunde04.de
-DTSTAMP:20261107T105909Z
-SEQUENCE:118
-DTSTART;TZID=Europe/Berlin:20261107T100000
-DTEND;TZID=Europe/Berlin:20261107T130000
-SUMMARY:Speuzer F2 · Kinderfestival bei FC Tempo Ffm 2
-DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 10:00 Uhr · Beginn 11:
- 00 Uhr · auswärts\nKinderfestival bei FC Tempo Ffm 2\nTreffpunkt: 10:0
- 0 Uhr\nBeginn: 11:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielstätte
- : Am Ginnheimer Wäldchen 9\, 60431 Frankfurt am Main\nBitte per Daumen 
- hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind dabei i
- st – am besten bis zum Abend vor dem Spiel.
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
 END:VCALENDAR

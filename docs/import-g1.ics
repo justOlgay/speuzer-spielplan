@@ -28,20 +28,4 @@ DTSTART:19701025T030000
 RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
-BEGIN:VEVENT
-UID:340221-151-app@speuzer.sportfreunde04.de
-DTSTAMP:20261107T105909Z
-SEQUENCE:118
-DTSTART;TZID=Europe/Berlin:20261107T080000
-DTEND;TZID=Europe/Berlin:20261107T110000
-SUMMARY:Speuzer G1 · Kinderfestival bei BSC SW 1919 Ffm. 2
-DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 08:00 Uhr · Beginn 09:
- 00 Uhr · auswärts\nKinderfestival bei BSC SW 1919 Ffm. 2\nTreffpunkt: 
- 08:00 Uhr\nBeginn: 09:00 Uhr\nAuswärtsspiel · Kinderfestival\nSpielst
- ätte: Eschersheimer Landstr. 328\, 60320 Frankfurt am Main\nBitte per D
- aumen hoch / Fragezeichen / Daumen runter zurückmelden\, ob euer Kind d
- abei ist – am besten bis zum Abend vor dem Spiel.
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
 END:VCALENDAR
