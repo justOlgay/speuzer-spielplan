@@ -1,10 +1,10 @@
 {
  "version": 1,
  "saison": "2026/27",
- "erzeugt": "2026-11-10",
+ "erzeugt": "2026-11-11",
  "stand": {
   "plan": "19.10.2026",
-  "spiele": "10.11.2026"
+  "spiele": "11.11.2026"
  },
  "platz": {
   "kurz": "Mainzer Landstr. 480",
@@ -1240,6 +1240,50 @@
    "dauer": null,
    "ort": "Am Römerhof 9",
    "feld": null
+  },
+  {
+   "d": "2026-11-22",
+   "z": "13:00",
+   "t": "d1",
+   "w": "Freundschaftsspiel",
+   "g": "DJK SW Griesheim 2",
+   "nr": "336",
+   "dauer": 90,
+   "ort": "u",
+   "feld": "ganz"
+  },
+  {
+   "d": "2026-11-22",
+   "z": "14:30",
+   "t": "d3",
+   "w": "Freundschaftsspiel",
+   "g": "FSC Eschborn FS",
+   "nr": "334",
+   "dauer": 90,
+   "ort": "u",
+   "feld": "ganz"
+  },
+  {
+   "d": "2026-11-22",
+   "z": "16:00",
+   "t": "d3",
+   "w": "Freundschaftsspiel",
+   "g": "SV Rot-Weiss Walldorf 4",
+   "nr": "333",
+   "dauer": 90,
+   "ort": "u",
+   "feld": "ganz"
+  },
+  {
+   "d": "2026-11-22",
+   "z": "17:30",
+   "t": "d2",
+   "w": "Freundschaftsspiel",
+   "g": "SG Bornheim / GW 2",
+   "nr": "335",
+   "dauer": 90,
+   "ort": "u",
+   "feld": "ganz"
   },
   {
    "d": "2026-11-28",
