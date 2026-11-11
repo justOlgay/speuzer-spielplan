@@ -179,16 +179,20 @@ A;540202;48;06.02.2027;16:00;VFR Bockenheim 1;FFV Sportfreunde 04 1;;;032LC1372S
 D1;540072;140;19.09.2026;11:00;FFV Sportfreunde 04 I;SC Dortelweil 1;Mainzer Landstr. 480, 60326 Frankfurt am Main;;031URLOBCK000000VS5489BTVT7QHFUC;Freundschaftsspiel
 D1;540072;179;19.09.2026;11:00;FFV Sportfreunde 04 I;SC Dortelweil 3 (FS);Mainzer Landstr. 480, 60326 Frankfurt am Main;;0323M7B4AK000000VS5489BUVSORQI22;Freundschaftsspiel
 D1;540072;284;15.11.2026;13:00;FFV Sportfreunde 04 I;TuS Makkabi Frankfurt 5;Mainzer Landstr. 480, 60326 Frankfurt am Main;;032FJFT7TS000000VS5489BUVSGKI48U;Freundschaftsspiel
+D1;540072;336;22.11.2026;13:00;FFV Sportfreunde 04 I;DJK SW Griesheim 2;Mainzer Landstr. 480, 60326 Frankfurt am Main;;032LN4UG7C000000VS5489BUVT7T9F23;Freundschaftsspiel
 D1;540129;85;10.10.2026;11:00;Spvgg. Langenselbold 1;FFV Sportfreunde 04 I;;;032AD7CKUG000000VS5489BUVV5V31CI;Freundschaftsspiel
 D1;940397;28;04.11.2026;18:30;FSV 1910 Bergen 1;FFV Sportfreunde 04 I;;;03200NMP34000000VS5489BUVSORQI22;Kreispokal
 D2;540072;230;03.10.2026;12:30;1. Rödelheimer FC 02 3;FFV Sportfreunde 04 II;Bottenhorner Weg, 60489 Frankfurt am Main;;03286B3D30000000VS5489BTVUCVBQ5B;Freundschaftsspiel
 D2;540072;300;01.11.2026;14:30;FFV Sportfreunde 04 II;SpVgg 05/99 Bomber HG 2;Mainzer Landstr. 480, 60326 Frankfurt am Main;;032HIGCQTC000000VS5489BUVSGKI48U;Freundschaftsspiel
 D2;540072;321;15.11.2026;17:30;FFV Sportfreunde 04 II;DJK SF Bad Homburg 2;Mainzer Landstr. 480, 60326 Frankfurt am Main;;032KE98GMO000000VS5489BTVSIO88SN;Freundschaftsspiel
+D2;540072;335;22.11.2026;17:30;FFV Sportfreunde 04 II;SG Bornheim / GW 2;Mainzer Landstr. 480, 60326 Frankfurt am Main;;032LN4N2H0000000VS5489BUVT7T9F23;Freundschaftsspiel
 D3;540072;133;29.08.2026;12:00;TSG Frankfurter Berg III;FFV Sportfreunde 04 III;;;031T8IO838000000VS5489BUVSORQI22;Freundschaftsspiel
 D3;540072;143;13.09.2026;14:30;FFV Sportfreunde 04 (FS) IV;Hellas Rüsselsheim 1;Mainzer Landstr. 480, 60326 Frankfurt am Main;;031V5VHO30000000VS5489BUVSORQI22;Freundschaftsspiel
 D3;540072;299;01.11.2026;11:30;FFV Sportfreunde 04 (FS) IV;SV 09 Hofheim 2;Mainzer Landstr. 480, 60326 Frankfurt am Main;;032HIFETTC000000VS5489BUVSGKI48U;Freundschaftsspiel
 D3;540072;323;15.11.2026;14:30;FFV Sportfreunde 04 (FS) IV;Riedberger SV 2;Mainzer Landstr. 480, 60326 Frankfurt am Main;;032KE9QHFC000000VS5489BTVSIO88SN;Freundschaftsspiel
 D3;540072;322;15.11.2026;16:00;FFV Sportfreunde 04 III;KV Mühlheim II;Mainzer Landstr. 480, 60326 Frankfurt am Main;;032KE9I4Q0000000VS5489BTVSIO88SN;Freundschaftsspiel
+D3;540072;334;22.11.2026;14:30;FFV Sportfreunde 04 (FS) IV;FSC Eschborn FS;Mainzer Landstr. 480, 60326 Frankfurt am Main;;032LN4DPGS000000VS5489BUVT7T9F23;Freundschaftsspiel
+D3;540072;333;22.11.2026;16:00;FFV Sportfreunde 04 III;SV Rot-Weiss Walldorf 4;Mainzer Landstr. 480, 60326 Frankfurt am Main;;032LN42N90000000VS5489BUVT7T9F23;Freundschaftsspiel
 E1;540072;233;03.10.2026;11:00;FC Germ. 08 Ginnheim 2;FFV Sportfreunde 04 I;;;03286D2FRC000000VS5489BTVUCVBQ5B;Freundschaftsspiel
 E1;540210;183;11.10.2026;12:00;FV 09 Eschersheim I;FFV Sportfreunde 04 I;;;032AEOJHH8000000VS5489BTVU989P58;Freundschaftsspiel
 E1;540210;197;18.10.2026;12:00;FFV Sportfreunde 04 I;FC Germ. 08 Ginnheim 1;Mainzer Landstr. 480, 60326 Frankfurt am Main;;032CMJN08G000000VS5489BTVU989P58;Freundschaftsspiel
@@ -218,6 +222,7 @@ E2;540210;186;11.10.2026;10:00;SV Bosnien-Herzegowina FFM 2 (FS);FFV Sportfreund
 E2;540210;202;19.10.2026;18:00;FFV Sportfreunde 04 II;SFD Schwanheim E2;Mainzer Landstr. 480, 60326 Frankfurt am Main;;032DLDVE10000000VS5489BUVSGKI48U;Freundschaftsspiel
 E2;540210;215;13.12.2026;11:00;FFV Sportfreunde 04 II;SGK Bad Homburg 2;Mainzer Landstr. 480, 60326 Frankfurt am Main;;032FJG6HD0000000VS5489BUVSGKI48U;Freundschaftsspiel
 E2;540210;225;01.11.2026;16:00;FFV Sportfreunde 04 II;SV Bosnien-Herzegowina FFM 2 (FS);Mainzer Landstr. 480, 60326 Frankfurt am Main;;032HRLOR5K000000VS5489BTVU989P58;Freundschaftsspiel
+E2;540210;250;29.11.2026;12:00;1. Rödelheimer FC 02 4;FFV Sportfreunde 04 II;;;032LNP26JC000000VS5489BUVT7T9F23;Freundschaftsspiel
 E2;341538;2;24.10.2026;09:30;SV Blau-Gelb FFM 4;FFV Sportfreunde 04 II;;;0328D7NA64000000VS5489BUVUFHD2VV;Meisterschaft
 E2;341538;9;31.10.2026;11:30;FFV Sportfreunde 04 II;BSC SW 1919 Ffm. 3;Mainzer Landstr. 480, 60326 Frankfurt am Main;;0328D7NA34000000VS5489BUVUFHD2VV;Meisterschaft
 E2;341538;14;07.11.2026;09:00;SC Riedberg IV;FFV Sportfreunde 04 II;;;0328D7N9U0000000VS5489BUVUFHD2VV;Meisterschaft
