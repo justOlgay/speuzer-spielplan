@@ -28,20 +28,4 @@ DTSTART:19701025T030000
 RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
-BEGIN:VEVENT
-UID:340530-3-app@speuzer.sportfreunde04.de
-DTSTAMP:20261114T112316Z
-SEQUENCE:128
-DTSTART;TZID=Europe/Berlin:20261114T123000
-DTEND;TZID=Europe/Berlin:20261114T153000
-SUMMARY:Speuzer F1 · Kinderfestival zu Hause
-DESCRIPTION:Untertitel (zum Kopieren): Treffpunkt 12:30 Uhr · Beginn 13:
- 30 Uhr · bei uns\nKinderfestival bei uns\nTreffpunkt: 12:30 Uhr\nBeginn
- : 13:30 Uhr\nHeimspiel · Kinderfestival\nSpielstätte: Mainzer Landstr.
-  480\, 60326 Frankfurt am Main\nBitte per Daumen hoch / Fragezeichen / D
- aumen runter zurückmelden\, ob euer Kind dabei ist – am besten bis zu
- m Abend vor dem Spiel.
-CATEGORIES:Fussball
-TRANSP:OPAQUE
-END:VEVENT
 END:VCALENDAR
