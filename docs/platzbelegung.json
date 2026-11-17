@@ -1,10 +1,10 @@
 {
  "version": 1,
  "saison": "2026/27",
- "erzeugt": "2026-11-16",
+ "erzeugt": "2026-11-17",
  "stand": {
   "plan": "19.10.2026",
-  "spiele": "16.11.2026"
+  "spiele": "17.11.2026"
  },
  "platz": {
   "kurz": "Mainzer Landstr. 480",
@@ -1229,6 +1229,17 @@
    "dauer": 90,
    "ort": "u",
    "feld": "ganz"
+  },
+  {
+   "d": "2026-11-18",
+   "z": "17:30",
+   "t": "e1",
+   "w": "Freundschaftsspiel",
+   "g": "FV 09 Eschersheim I",
+   "nr": "210",
+   "dauer": 60,
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2026-11-21",
