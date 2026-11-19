@@ -1,10 +1,10 @@
 {
  "version": 1,
  "saison": "2026/27",
- "erzeugt": "2026-11-18",
+ "erzeugt": "2026-11-19",
  "stand": {
   "plan": "19.10.2026",
-  "spiele": "18.11.2026"
+  "spiele": "19.11.2026"
  },
  "platz": {
   "kurz": "Mainzer Landstr. 480",
@@ -1372,6 +1372,17 @@
    "dauer": null,
    "ort": "Am Römerhof 9",
    "feld": null
+  },
+  {
+   "d": "2026-12-03",
+   "z": "17:30",
+   "t": "e1",
+   "w": "Freundschaftsspiel",
+   "g": "SG Rot-Weiss Frankfurt III",
+   "nr": "269",
+   "dauer": 60,
+   "ort": "u",
+   "feld": "halb"
   },
   {
    "d": "2027-01-30",
