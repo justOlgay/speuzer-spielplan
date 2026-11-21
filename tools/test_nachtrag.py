@@ -14,6 +14,7 @@ wenn er fehlt.
 Die Zusatzquelle D4 (abgleich.ZUSATZQUELLEN: ihre Spiele stehen in der CSV als D3) prüfen TestZusatzquelleNachtrag (nachtrag.py) und
 TestZusatzquelleAbgleich (abgleich.main mit Wegwerf-Cache); in der synthetischen Welt hat die D4 zunächst einen Plan ohne Spiele.
 """
+import ast
 import contextlib
 import errno
 import glob
@@ -62,13 +63,29 @@ def _gesperrt(*a, **k):
     raise OSError('Netzwerk im Test gesperrt')
 
 
+WARTE_VERSUCHE = []                    # Wiederholungspausen ohne eingespritzten Schlaf: jede wäre eine echte Pause von 60 s und mehr
+_ECHT_WARTEN = A.Wiederholung.warten
+
+
+def _warten_falle(self, sekunden):
+    """Wächter für alle Tests dieser Datei (setUpModule): A.Wiederholung.warten ohne eingespritzten Schlaf würde 60 s und mehr wirklich warten. Eine solche
+    Pause scheitert sofort mit AssertionError und wird in WARTE_VERSUCHE vermerkt; tearDownModule verlangt eine leere Liste, damit auch eine Ausnahme, die
+    ein Aufrufer verschluckt (main() fängt sie bei einer Zusatzquelle ab), nicht unbemerkt bleibt. Mit eingespritztem Schlaf läuft alles wie sonst."""
+    if self._schlaf is None:
+        WARTE_VERSUCHE.append(sekunden)
+        raise AssertionError('echte Wiederholungspause im Test (%s s): --zeitrahmen 0 setzen oder Uhr und Schlaf einspritzen' % sekunden)
+    return _ECHT_WARTEN(self, sekunden)
+
+
 def setUpModule():
-    """Jeder Netzwerkzugriff im Test scheitert und wird gezählt; tearDownModule verlangt null Versuche."""
+    """Jeder Netzwerkzugriff im Test scheitert und wird gezählt; tearDownModule verlangt null Versuche. Eine echte Wiederholungspause von abgleich scheitert
+    sofort (siehe _warten_falle); die kurzen time.sleep-Aufrufe der Tests bleiben unberührt."""
     global _patches
     # abgleich.hole lässt die Fehlversuch-Marke ungeschlossen (hole bleibt, wie es ist): die Warnung hier nicht zeigen
     warnings.filterwarnings('ignore', category=ResourceWarning, module='abgleich')
     _patches = [mock.patch.object(socket.socket, 'connect', _gesperrt), mock.patch.object(socket, 'getaddrinfo', _gesperrt),
-                mock.patch.object(socket, 'create_connection', _gesperrt), mock.patch.object(A, 'PAUSE_SEKUNDEN', 0)]
+                mock.patch.object(socket, 'create_connection', _gesperrt), mock.patch.object(A, 'PAUSE_SEKUNDEN', 0),
+                mock.patch.object(A.Wiederholung, 'warten', _warten_falle)]
     for p in _patches:
         p.start()
 
@@ -77,6 +94,7 @@ def tearDownModule():
     for p in _patches:
         p.stop()
     assert not NETZ_VERSUCHE, 'Netzwerkzugriffe im Test: %s' % NETZ_VERSUCHE
+    assert not WARTE_VERSUCHE, 'echte Wiederholungspausen im Test (Sekunden): %s' % WARTE_VERSUCHE
 
 
 # ---------------------------------------------------------------- Synthetische Welt: CSV und fussball.de-Seiten
@@ -1343,6 +1361,37 @@ class TestAbruf(TestBasis):
         self.assertEqual(len(e['fehler']), 1)
         self.assertTrue(e['fehler'][0].startswith('G1 übersprungen: Cache-Stand vom'), e['fehler'])
 
+    def test_g1_abruf_bei_vorubergehender_stoerung_ein_versuch_ohne_wiederholung_und_ohne_wartezeit(self):
+        """Die Aufrufstelle des Mac-Nachtrags (anwenden(abrufen=True) -> quelle_holen -> abgleich.hole) hat kein Wiederholungsobjekt: bei jeder vorübergehenden
+        Störung gibt es genau einen urlopen-Aufruf je Plan und keine Pause (der Prozess hat ein hartes Zeitlimit von 300 s). Der Test überwacht das Warten selbst:
+        jede Wiederholungspause und jedes time.sleep ab einer Sekunde würde in `geschlafen` landen (der Wächter von setUpModule ist dafür ersetzt)."""
+        faelle = (('HTTP 503', lambda: urllib.error.HTTPError('u', 503, 'Nicht erreichbar', {}, io.BytesIO(b''))),
+                  ('TimeoutError', lambda: TimeoutError('timed out')),
+                  ('ConnectionResetError', lambda: ConnectionResetError(54, 'Connection reset by peer')),
+                  ('HTTP 522', lambda: urllib.error.HTTPError('u', 522, 'Connection timed out', {}, io.BytesIO(b''))),
+                  ('Verbindung abgelehnt', lambda: urllib.error.URLError(ConnectionRefusedError(61, 'Connection refused'))))
+        for name, erzeuge in faelle:
+            with self.subTest(name):
+                w = self.werkstatt()
+                w.cache_neu()
+                os.rename(os.path.join(w.cache, 'g-jugend', STAND.strftime('%Y%m%d-%H%M%S') + '.html'),
+                          os.path.join(w.cache, 'g-jugend', (JETZT - timedelta(hours=25)).strftime('%Y%m%d-%H%M%S') + '.html'))
+                geschlafen, aufrufe = [], []
+
+                def werfen(req, timeout=None):
+                    aufrufe.append(req.full_url)
+                    raise erzeuge()
+                with contextlib.ExitStack() as stapel:
+                    stapel.enter_context(mock.patch.object(urllib.request, 'urlopen', side_effect=werfen))
+                    stapel.enter_context(mock.patch.object(A.Wiederholung, 'warten', lambda self, sekunden: geschlafen.append(sekunden)))
+                    stapel.enter_context(mock.patch.object(time, 'sleep', lambda sekunden: geschlafen.append(sekunden) if sekunden >= 1 else None))
+                    e = w.anwenden(abrufen=True)
+                self.assertEqual(len(aufrufe), 1, 'genau ein Versuch: %s' % aufrufe)
+                self.assertEqual(geschlafen, [], 'keine Pause')
+                self.assertEqual(e['fehler'], [])
+                self.assertTrue(any(h.startswith('G1: Abruf nicht möglich') for h in e['hinweise']), e['hinweise'])
+                self.assertTrue(os.path.exists(os.path.join(w.cache, 'g-jugend', 'fehlversuch.txt')))
+
     def test_berichtsmodus_und_nur_cache_rufen_nie_ab(self):
         w = self.werkstatt()
         w.cache_neu(stempel=JETZT - timedelta(hours=26))
@@ -1911,6 +1960,22 @@ class TestFormat(TestBasis):
             self.assertNotIn(verboten, quelle, verboten)
         self.assertNotIn('requests', quelle)
         self.assertNotIn('urlopen', quelle, 'Abrufe laufen ausschließlich über abgleich.hole')
+
+    def test_jeder_aufruf_von_abgleich_hole_hat_kein_wiederholungsobjekt_und_hoechstens_acht_positionsargumente(self):
+        """Der Mac-Nachtrag (ein Prozess mit hartem Zeitlimit von 300 s, danach Abbruch mitten im Git-Vorgang) darf nie eine Wiederholung auslösen: Der Aufruf
+        von abgleich.hole bleibt positional ohne Wiederholungsobjekt, es gibt kein Schlüsselwort (auch kein **), kein * und keinen Bezug auf abgleich.Wiederholung."""
+        with open(os.path.join(HIER, 'nachtrag.py'), encoding='utf-8') as f:
+            baum = ast.parse(f.read())
+        aufrufe = [k for k in ast.walk(baum) if isinstance(k, ast.Call) and (
+            (isinstance(k.func, ast.Attribute) and k.func.attr == 'hole') or (isinstance(k.func, ast.Name) and k.func.id == 'hole'))]
+        self.assertTrue(aufrufe, 'der Abruf der G-Jugend läuft über abgleich.hole')
+        for k in aufrufe:
+            self.assertLessEqual(len(k.args), 8, 'cache, team, von, bis, nur_cache, jetzt, abbruch, url_vorlage: mehr gibt es nicht')
+            self.assertEqual([a for a in k.args if isinstance(a, ast.Starred)], [], 'kein *-Argument')
+            self.assertEqual([kw.arg for kw in k.keywords], [], 'kein Schlüsselwort, insbesondere nicht wiederholung (und kein **)')
+        namen = {k.id for k in ast.walk(baum) if isinstance(k, ast.Name)} | {k.attr for k in ast.walk(baum) if isinstance(k, ast.Attribute)}
+        for verboten in ('Wiederholung', 'plan_lesen', 'WIEDERHOLUNG_PAUSEN', 'ZEITRAHMEN_STANDARD'):
+            self.assertNotIn(verboten, namen)
 
     def test_abgleich_wird_nicht_dauerhaft_veraendert(self):
         vorher = (A.MIN_ABSTAND_TAGE, A.USER_AGENT, A.URL)
@@ -4216,6 +4281,38 @@ class TestZusatzquelleAbgleich(TestBasis):
         self.assertTrue(os.path.exists(os.path.join(w.cache, D4_SLUG, 'fehlversuch.txt')), 'eigene Fehlversuch-Marke der D4')
         self.assertFalse(os.path.exists(os.path.join(w.cache, 'd3', 'fehlversuch.txt')))
 
+    def test_waechter_eine_503_ohne_vorkehrung_scheitert_sofort_mit_assertionerror_statt_60_s_zu_warten(self):
+        """Selbsttest des Wächters von setUpModule: Der Herren-Plan antwortet mit HTTP 503, der Aufruf von main() setzt weder --zeitrahmen 0 noch Uhr und Schlaf
+        ein: die erste Wiederholungspause (60 s) scheitert sofort mit AssertionError, statt zu warten. (Bei einer Zusatzquelle fängt main() jede Ausnahme ab: dort
+        bleibt nur der Vermerk in WARTE_VERSUCHE, den tearDownModule prüft.)"""
+        w = self.d4_welt()
+        shutil.rmtree(w.cache)
+        aufrufe = []
+        fehler503 = urllib.error.HTTPError('u', 503, 'Nicht erreichbar', {}, io.BytesIO(b''))
+        self.addCleanup(fehler503.close)
+        gemeldet = len(WARTE_VERSUCHE)
+        beginn = time.monotonic()
+        with mock.patch.object(urllib.request, 'urlopen', side_effect=self.seiten_attrappe(w, aufrufe, {A.TEAMS[0][3]: fehler503})):
+            with self.assertRaises(AssertionError) as r:
+                self.abgleich(w)
+        self.assertIn('echte Wiederholungspause im Test (60 s)', str(r.exception))
+        self.assertEqual(len(aufrufe), 1, 'ein Abruf, dann meldet der Wächter die erste Pause')
+        self.assertEqual(WARTE_VERSUCHE[gemeldet:], [60])
+        self.assertLess(time.monotonic() - beginn, 5, 'es wurde nicht gewartet')
+        del WARTE_VERSUCHE[gemeldet:]                       # absichtlich ausgelöst: tearDownModule soll es nicht als Fehler zählen
+
+    def test_waechter_laesst_eingespritzten_schlaf_und_kurzes_time_sleep_durch_und_meldet_jede_pause_ohne_schlaf(self):
+        gesehen = []
+        A.Wiederholung(450, uhr=lambda: 0.0, schlaf=gesehen.append).warten(7)
+        self.assertEqual(gesehen, [7], 'ein eingespritzter Schlaf läuft wie sonst')
+        vorher = len(WARTE_VERSUCHE)
+        time.sleep(0.01)                                       # ein gewöhnliches time.sleep der Tests ist kein Fall für den Wächter
+        self.assertEqual(len(WARTE_VERSUCHE), vorher)
+        with self.assertRaises(AssertionError):
+            A.Wiederholung(450).warten(0.5)                    # jede Wiederholungspause ohne eingespritzten Schlaf wäre echt, auch eine kurze
+        self.assertEqual(WARTE_VERSUCHE[vorher:], [0.5])
+        del WARTE_VERSUCHE[vorher:]
+
     # Runde 2: die Zusatzquellen kommen nach allen eigenen Plänen
     def test_scheitert_der_abruf_der_d4_sind_alle_elf_eigenen_plaene_abgerufen_und_ausgewertet(self):
         faelle = (('HTTP 404', urllib.error.HTTPError('u', 404, 'Nicht gefunden', {}, io.BytesIO(b'')), 'HTTP 404'),
@@ -4229,8 +4326,12 @@ class TestZusatzquelleAbgleich(TestBasis):
                 w = self.d4_welt()
                 shutil.rmtree(w.cache)                       # leerer Cache wie in der Cloud: alle zwölf Pläne müssen abgerufen werden
                 aufrufe = []
+                # HTTP 503 ist eine vorübergehende Störung: abgleich.py würde den Abruf nach 60, 120 und 240 s Pause wiederholen (das prüft
+                # test_abgleich.py). Dieser Test prüft den Ausfall der Zusatzquelle, nicht die Wiederholung: --zeitrahmen 0 = jeder Abruf nur einmal
+                # (die übrigen Fälle sind endgültige Fehler und brauchen die Option nicht).
+                extra = ('--zeitrahmen', '0') if name == 'HTTP 503' else ()
                 with mock.patch.object(urllib.request, 'urlopen', side_effect=self.seiten_attrappe(w, aufrufe, {self.D4_TID: wirkung})):
-                    code, out, err, bericht = self.abgleich(w)
+                    code, out, err, bericht = self.abgleich(w, *extra)
                 self.assertEqual(code, 2)
                 self.assertEqual(len(aufrufe), 12, 'alle elf eigenen Pläne und der D4-Versuch')
                 self.assertIn(self.D4_TID, aufrufe[-1], 'die D4 kommt zuletzt')

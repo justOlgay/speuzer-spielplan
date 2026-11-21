@@ -10,18 +10,28 @@ nicht als Ersatz. Es ändert weder nachtrag.py noch abgleich.py und ruft beide i
      findet nichts Altes.
   2. tools/nachtrag.py schreibt mit --anwenden --push fort und pusht spiele.csv; mit --nur-bericht gibt es nur den Bericht (kein
      --anwenden, kein Commit, kein Push). Der Nachtrag liest dabei nur den Cache (--nur-cache): sein eigener Abruf der G-Jugend bleibt
-     aus, damit ein Lauf nie mehr als einen Abruf-Durchgang macht und nach einem Fehlschlag oder einer unbrauchbaren Antwort nichts
-     wiederholt.
+     aus, damit ein Lauf nie mehr als einen Abruf-Durchgang macht und nach einem endgültigen Fehlschlag oder einer unbrauchbaren Antwort
+     nichts wiederholt (nur ein einzelner Abruf, der an einer vorübergehenden Störung scheitert, wird von abgleich.py selbst wiederholt,
+     siehe unten).
   3. Die Schlusszeile des Nachtrags wird bewertet (bewerten) und der Aktion über GITHUB_OUTPUT gemeldet: geaendert=true|false und
      status=<Schlusszeile>. Nur bei geaendert=true stößt die Aktion danach build.yml an, auch wenn der Lauf rot endet. Kalender baut dieses
      Skript nie: build_ics.py setzt SEQUENCE aus github.run_number von build.yml, ein eigener Lauf-Zähler würde sie senken.
 
-Rücksicht auf fussball.de: nur die öffentlichen Mannschaftspläne (ajax.team.matchplan), ein Durchgang je Lauf (höchstens zwölf Abrufe),
-erkennbarer User-Agent (SpeuzerSpielplanNachtrag, GitHub Actions), 3 s Pause zwischen den Abrufen (abgleich.PAUSE_SEKUNDEN, hier
-unverändert) und nach einem Fehlschlag oder einer unbrauchbaren Antwort (HTTP 200 mit Sperr- oder Einwilligungsseite, geänderter Seitenaufbau)
-keine weiteren Abrufe und keine Wiederholung. Für HTTP- und Netzfehler gilt die Abbruchregel von abgleich.py unverändert; eine unbrauchbare
-Antwort zählt abgleich.py nicht als Fehlschlag, deshalb legt der Wrapper für die Dauer des Aufrufs eine Wache um abgleich.hole: sie trägt den
-Grund in die Abbruchliste ein. Ein gültiger Plan ohne Spiele (Rahmen der Seite erkennbar, keine Spielzeilen) löst die Wache nicht aus.
+Rücksicht auf fussball.de: nur die öffentlichen Mannschaftspläne (ajax.team.matchplan), ein Durchgang je Lauf (zwölf Pläne, jeder einmal), erkennbarer
+User-Agent (SpeuzerSpielplanNachtrag, GitHub Actions) und 3 s Pause zwischen den Abrufen (abgleich.PAUSE_SEKUNDEN, hier unverändert). Scheitert ein
+einzelner Abruf an einer vorübergehenden Störung (HTTP 408, 429, 500, 502, 503, 504, 520 bis 524, Zeitüberschreitung, abgebrochene oder verweigerte
+Verbindung, unvollständige Antwort, Netz oder Host nicht erreichbar, vorübergehender Fehler der Namensauflösung, Abbruch beim TLS-Handshake,
+Proxy-Meldung „Tunnel connection failed“ mit 429, 500, 502, 503 oder 504), wiederholt abgleich.py genau diesen Abruf nach 60, 120 und 240 s Pause
+(höchstens vier Versuche je Plan), solange der neue Versuch spätestens 450 s nach Beginn der Abrufe beginnt (abgleich.WIEDERHOLUNG_PAUSEN und
+ZEITRAHMEN_STANDARD, hier unverändert: der Aufruf übergibt kein --zeitrahmen). Bei diesen Standardwerten gibt es höchstens sieben zusätzliche Anfragen je
+Lauf, und die Abrufphase endet im ungünstigsten Fall nach höchstens 540 s, solange jeder Verbindungsaufbau nach 60 s aufgibt (löst der Servername zu
+mehreren Adressen auf, die alle nicht antworten, kann ein Versuch je weiterer Adresse bis zu 60 s länger dauern; das Zeitlimit der Aktion beträgt 15
+Minuten). Endgültig ist ein Fehlschlag, wenn er nicht vorübergehend ist (HTTP 403 und 404, Zertifikat, andere Fehler der Namensauflösung, „Tunnel
+connection failed: 403“ oder „407“) oder die Wiederholungen aufgebraucht sind; nach einem endgültigen Fehlschlag oder einer unbrauchbaren Antwort (HTTP
+200 mit Sperr- oder Einwilligungsseite, geänderter Seitenaufbau) gibt es keine weiteren Abrufe und keine Wiederholung. Für HTTP- und Netzfehler gilt die
+Abbruchregel von abgleich.py unverändert (sie greift erst nach dem letzten Versuch); eine unbrauchbare Antwort zählt abgleich.py nicht als Fehlschlag,
+deshalb legt der Wrapper für die Dauer des Aufrufs eine Wache um abgleich.hole: sie trägt den Grund in die Abbruchliste ein. Ein gültiger Plan ohne
+Spiele (Rahmen der Seite erkennbar, keine Spielzeilen) löst die Wache nicht aus.
 
 Aufruf (aus dem Repo-Stamm; unter python3 -I trägt sich das eigene Verzeichnis selbst in sys.path ein):
   python3 -I tools/nachtrag_aktion.py [--csv DATEI] [--cache ORDNER] [--bericht-ordner ORDNER] [--zustand-ordner ORDNER] [--nur-bericht]
@@ -315,10 +325,12 @@ def antwort_unbrauchbar(text):
 
 
 def hole_mit_wache(hole):
-    """Hülle um abgleich.hole (nur für die Dauer des Abgleichs): hole zählt nur HTTP- und Netzfehler als Fehlschlag, trägt dann den Grund in die
-    Liste `abbruch` ein, und danach wird nichts mehr abgerufen. Eine Antwort mit HTTP 200, die kein Plan ist (Sperrseite, geänderter Seitenaufbau),
-    ginge sonst durch, und die übrigen Pläne würden trotzdem abgerufen. Die Wache trägt für eine frisch abgerufene, unbrauchbare Antwort denselben
-    Grund ein; Cache-Stände und Fehlschläge (die hole selbst meldet) lässt sie in Ruhe."""
+    """Hülle um abgleich.hole (nur für die Dauer des Abgleichs): hole zählt nur HTTP- und Netzfehler als Fehlschlag (nach den Wiederholungen bei
+    vorübergehenden Störungen, die innerhalb von hole laufen), trägt dann den Grund in die Liste `abbruch` ein, und danach wird nichts mehr
+    abgerufen. Eine Antwort mit HTTP 200, die kein Plan ist (Sperrseite, geänderter Seitenaufbau), ginge sonst durch, und die übrigen Pläne würden
+    trotzdem abgerufen. Die Wache trägt für eine frisch abgerufene, unbrauchbare Antwort denselben Grund ein; Cache-Stände und Fehlschläge (die
+    hole selbst meldet) lässt sie in Ruhe. Sie sieht nur das Endergebnis und reicht alle Argumente unverändert durch, auch das Wiederholungsobjekt
+    (ein Schlüsselwortargument, das abgleich.main über plan_lesen an hole gibt)."""
     def mit_wache(cache, team, von, bis, nur_cache, jetzt, abbruch, *weitere, **benannte):
         ergebnis = hole(cache, team, von, bis, nur_cache, jetzt, abbruch, *weitere, **benannte)
         text, herkunft, _, fehler = ergebnis
@@ -335,7 +347,8 @@ def abgleich_ausfuehren(csv, cache, berichte, url_vorlage=None):
     """tools/abgleich.py im selben Prozess: holt die zwölf Pläne in den (leeren) Cache -> Exit-Code des Abgleichs (0 = Bericht, 2 =
     Bericht, aber ein Plan fehlt; ein Fehler gleich welcher Art ist 1). User-Agent, sys.argv und die Wache um abgleich.hole (hole_mit_wache)
     gelten nur für diesen Aufruf und stehen danach wieder, wie sie waren, auch nach einer Ausnahme; die Pause zwischen den Abrufen, die
-    Wochensperre und die Abbruchregel von abgleich.py bleiben, wie sie sind."""
+    Wochensperre, die Abbruchregel und die Regeln der Wiederholung bei vorübergehenden Störungen von abgleich.py bleiben, wie sie sind (kein
+    --zeitrahmen, es gilt der Standard)."""
     argv = ['abgleich.py', '--csv', csv, '--cache', cache, '--bericht-ordner', berichte, '--kein-wochenvergleich']
     if url_vorlage:
         argv += ['--url-vorlage', url_vorlage]
@@ -421,7 +434,7 @@ def main(argv=None):
     except OSError as ex:
         return abschliessen('fehler', 'Arbeitsordner nicht vorbereitet (%s)' % type(ex).__name__, modus=modus)
 
-    abgleich = abgleich_ausfuehren(csv, cache, berichte, opt.url_vorlage)      # genau ein Abruf-Durchgang, keine Wiederholung
+    abgleich = abgleich_ausfuehren(csv, cache, berichte, opt.url_vorlage)      # genau ein Abruf-Durchgang; nur einzelne Abrufe werden bei einer Störung wiederholt
     if abgleich not in (0, 2):
         return abschliessen('fehler', 'Abruf/Abgleich fehlgeschlagen (Exit %s)' % abgleich, modus=modus)
 

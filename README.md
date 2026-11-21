@@ -118,6 +118,29 @@ wird erst nach den elf Mannschaften abgerufen, ein Fehlschlag bei ihr hält also
 Fehlschlag heißt es bei ihr wie bei jeder Quelle „nicht abgerufen“, also Ausfall). Ein gültiger D4-Plan ohne Spiele (Seite erkennbar, im
 Saisonfenster noch kein Freundschaftsspiel) ist kein Ausfall: der D3-Abschnitt vermerkt „ohne Spiele“, der Exit-Code bleibt 0.
 
+**Abrufregeln des Wochen-Abgleichs: Wiederholung bei vorübergehenden Störungen (`tools/abgleich.py`).** Der Abgleich ruft je Plan höchstens einmal in
+sechs Tagen ab, mit 3 s Pause zwischen den Abrufen und erkennbarem User-Agent. Scheitert ein Abruf an einer **vorübergehenden Störung** von fussball.de
+(HTTP 408, 429, 500, 502, 503 oder 504, die Cloudflare-Fehlerseiten 520 bis 524, Zeitüberschreitung, abgebrochene Verbindung, abgelehnte Verbindung
+(„Verbindung abgelehnt“, `ConnectionRefusedError`), unvollständige Antwort (`IncompleteRead`), Netz oder Host nicht erreichbar, vorübergehender Fehler der
+Namensauflösung, Verbindungsabbruch beim TLS-Handshake, Proxy-Meldung „Tunnel connection failed: 429/500/502/503/504“), wird derselbe Plan nach
+**60, 120 und 240 s** Pause noch bis zu dreimal abgerufen (höchstens vier Versuche je Plan); nennt die Antwort ein längeres `Retry-After`, gilt dieses.
+Ein weiterer Versuch beginnt nur, wenn er spätestens **450 s nach Beginn der Abrufe** des Laufs anfängt (Option `--zeitrahmen SEKUNDEN`, Standard 450,
+`0` = keine Wiederholung). **Bei den Standardwerten** endet die Abrufphase auch im ungünstigsten Fehlerfall nach höchstens 540 s, solange jeder
+Verbindungsaufbau nach 60 s aufgibt; löst der Servername zu mehreren Adressen auf, die alle nicht antworten, kann ein Versuch je weiterer Adresse bis zu
+60 s länger dauern (urllib probiert jede Adresse mit eigenem Zeitlimit). Ebenfalls **bei den Standardwerten** stellt ein Lauf höchstens sieben zusätzliche
+Anfragen. Der Zeitrahmen gilt für den ganzen Lauf, nicht je Plan: wer erst später im Lauf scheitert (die D4 kommt zuletzt), bekommt weniger Versuche; der
+vierte Versuch passt nur hinein, wenn der Plan in den ersten rund 30 Sekunden des Laufs scheitert. Alles andere gilt sofort als **endgültig** und wird nicht
+wiederholt: andere HTTP-Fehler (403, 404, 501, 505 …), Zertifikats- und andere TLS-Fehler, andere Fehler der Namensauflösung, „Tunnel connection failed:
+403“ oder „407“ (die Netzfreigabe der Cloud-Umgebung fehlt) und eine unbrauchbare Antwort (Sperrseite, geänderter Seitenaufbau). Erst ein endgültiger
+Fehlschlag beendet die Abrufe des Laufs (Fehlertext unverändert, z. B. „HTTP 503“, Fehlversuch-Marke wie bisher, Exit-Code 2); eine Störung, die die
+Wiederholung überbrückt, lässt den Lauf wie ohne Störung enden. Jede Wiederholung steht sofort auf stderr
+(`Herren: HTTP 503 – neuer Versuch in 60 s (Versuch 2 von höchstens 4)`) und im Bericht unter „Abrufe dieses Laufs“: je wiederholtem Plan eine Zeile mit dem
+Grund jedes Versuchs (bei HTTP-Fehlern mit Diagnose: Kopfzeilen Server, Retry-After und Via, Titel der Fehlerseite), den Pausen und dem Ausgang (Erfolg im
+n. Versuch, endgültig gescheitert, Retry-After länger als der Zeitrahmen, Zeitrahmen erschöpft); die Zählzeilen („Dieser Lauf“ und die erste Ausgabezeile)
+bekommen den Zusatz „n wiederholt“. Ohne Wiederholung bleiben Ausgabe und Bericht unverändert. Der Mac-Nachtrag (`tools/nachtrag.py`) ruft `abgleich.hole`
+weiter ohne Wiederholungsobjekt auf: ein Versuch, nach einem Fehlschlag kein neuer binnen 20 Stunden (zwei Tests in `test_nachtrag.py` sichern das ab).
+Tests: `python3 -I -B -m unittest discover -s tools -p 'test_abgleich.py'` (kein Netzwerk außer 127.0.0.1, lokaler Server, keine echten Pausen).
+
 **Aufruf** (aus dem Repo-Stamm, immer `python3 -I`):
 - ohne Optionen: nur Bericht; nichts wird geschrieben, abgerufen oder gepusht (`--nur-cache --heute JJJJ-MM-TT` zum Testen)
 - `--anwenden`: die CSV schreiben (Arbeitsbaum danach „schmutzig“: `git diff spiele.csv` ansehen, verwerfen mit `git checkout -- spiele.csv`)
@@ -138,10 +161,14 @@ angehaktem Kästchen, beim Zeitplan nur, wenn die Repository-Variable `NACHTRAG_
 Wert ergibt den Bericht.
 
 **Ablauf** (`tools/nachtrag_aktion.py`, ein Aufruf, ein Prozess; Zeitplan täglich `17 6 * * *` UTC, also 07:17 Uhr MEZ oder 08:17 Uhr MESZ):
-1. `tools/abgleich.py` holt die zwölf öffentlichen Mannschaftspläne (elf Mannschaften und die D4) in einen frischen Cache im Temp-Ordner des
-   Runners, außerhalb des Repos; zu Beginn werden dort nur die Unterordner dieser zwölf Pläne gelöscht. Enthält der Cache-Ordner irgendetwas anderes
-   oder ist es der Cache des Mac-Tasks (oder ein Ordner darüber oder darin), endet der Lauf mit einem Fehler, ohne etwas zu löschen. Nach einem
-   Fehlschlag oder einer unbrauchbaren Antwort (Sperrseite, geänderter Seitenaufbau) werden keine weiteren Pläne abgerufen.
+1. `tools/abgleich.py` holt die zwölf öffentlichen Mannschaftspläne (elf Mannschaften und die D4) in einen frischen Cache im Temp-Ordner des Runners,
+   außerhalb des Repos; zu Beginn werden dort nur die Unterordner dieser zwölf Pläne gelöscht. Enthält der Cache-Ordner irgendetwas anderes oder ist es
+   der Cache des Mac-Tasks (oder ein Ordner darüber oder darin), endet der Lauf mit einem Fehler, ohne etwas zu löschen. Vorübergehende Störungen (HTTP
+   408, 429, 500, 502, 503, 504, 520 bis 524, Zeitüberschreitung, abgebrochene oder abgelehnte Verbindung, unvollständige Antwort, Netz oder Host nicht
+   erreichbar, vorübergehender Fehler der Namensauflösung, Abbruch beim TLS-Handshake, Proxy-Meldung „Tunnel connection failed“ mit 429, 500, 502, 503
+   oder 504) überbrückt der Abgleich selbst: derselbe Abruf wird nach 60, 120 und 240 s Pause wiederholt, höchstens bis 450 s nach Beginn der Abrufe
+   (Abschnitt „Automatische Aktualisierung“). Nach einem endgültigen Fehlschlag oder einer unbrauchbaren Antwort (Sperrseite, geänderter Seitenaufbau)
+   werden keine weiteren Pläne abgerufen.
 2. `tools/nachtrag.py --anwenden --push` schreibt `spiele.csv` fort und pusht sie. Er liest dabei nur diesen Cache (`--nur-cache`) und ruft
    nichts selbst ab. Beim Probelauf (`--nur-bericht`) gibt es nur den Bericht: nichts geschrieben, nichts committet, nichts gepusht.
 3. Die Schlusszeile des Nachtrags wird bewertet (ok, Warnung oder Fehler; sein Exit-Code dient als Gegenprobe) und der Aktion gemeldet. Nur wenn
@@ -187,7 +214,12 @@ nur auf `main`: im Dialog „Use workflow from: main“ lassen, andere Zweige we
   Sommerpause ohne neue CSV-Zeilen bleibt grün).
 - Ob fussball.de die Pläne an GitHub-Server ausliefert, ist bis zum Probelauf ungetestet.
 - Zusätzliche Last für fussball.de: zwölf Abrufe pro Tag, erkennbarer User-Agent („SpeuzerSpielplanNachtrag … GitHub Actions“), 3 Sekunden Pause,
-  nach einem Fehlschlag oder einer unbrauchbaren Antwort (Sperrseite, geänderter Seitenaufbau) kein weiterer Abruf.
+  nach einem endgültigen Fehlschlag oder einer unbrauchbaren Antwort (Sperrseite, geänderter Seitenaufbau) kein weiterer Abruf. An Tagen mit einer
+  vorübergehenden Störung von fussball.de kommen bei den Standardwerten höchstens sieben Wiederholungen dazu (Pausen von 60, 120 und 240 s, höchstens
+  bis 450 s nach Beginn der Abrufe); ein längeres `Retry-After` der Antwort wird eingehalten.
+- Laufzeit: Die Abrufphase dauert ohne Störung rund eine halbe Minute. Bei den Standardwerten dauert sie mit Wiederholungen höchstens neun Minuten (540 s),
+  solange jeder Verbindungsaufbau nach 60 s aufgibt; löst der Servername zu mehreren Adressen auf, die alle nicht antworten, kann ein Versuch je weiterer
+  Adresse bis zu 60 s länger dauern (urllib probiert jede Adresse mit eigenem Zeitlimit). Das Zeitlimit des Jobs liegt bei 15 Minuten.
 - Die Protokolle eines öffentlichen Repos sind öffentlich; es erscheinen nur öffentliche Spieldaten (Mannschaften, Gegner, Termine).
 - Warnungen (grün) lösen keine Mail aus; ein roter Lauf nur, wenn die Actions-Benachrichtigungen des Kontos an sind.
 - Fällt nur ein Plan aus, schreibt der Nachtrag die Mannschaften, deren Plan vorher ankam, und meldet die übrigen als übersprungen: der Lauf ist rot.
@@ -197,7 +229,9 @@ nur auf `main`: im Dialog „Use workflow from: main“ lassen, andere Zweige we
 **Fehlersuche.** Ein roter Lauf bedeutet eine Mail von GitHub (bei eingeschalteten Actions-Benachrichtigungen); im Protokoll steht zuletzt
 `NACHTRAG-AKTION: fehler – …` (davor `::error::…`). Häufige Ursachen: *Fehler – … Mannschaften übersprungen, kein Cache-Stand vorhanden* (fussball.de
 hat einen Abruf abgewiesen oder eine unbrauchbare Antwort geliefert; davor steht im Protokoll „Abruf fehlgeschlagen (HTTP …)“ oder „unbrauchbare
-Antwort (…)“, danach wird nichts mehr abgerufen; der Mac-Lauf oder der nächste Tag holt es nach), *Abruf/Abgleich fehlgeschlagen* (ein Fehler im
+Antwort (…)“, bei einer vorübergehenden Störung (z. B. HTTP 503) außerdem je Wiederholung eine Zeile „… neuer Versuch in 60 s (Versuch 2 von höchstens 4)“
+mit der Diagnose darunter: der Abruf scheiterte dann viermal, an einem endgültigen Fehler oder weil der Zeitrahmen nicht mehr reichte, danach wird nichts
+mehr abgerufen; der Mac-Lauf oder der nächste Tag holt es nach), *Abruf/Abgleich fehlgeschlagen* (ein Fehler im
 Abgleich selbst, z. B. eine unlesbare `spiele.csv`: der Nachtrag läuft dann gar nicht), *Auffällig, nicht übernommen – … Änderungen in einem Lauf*
 (Mengenbremse: nichts geschrieben; die Vorschläge stehen im Protokoll und lassen sich von Hand prüfen und eintragen), *Fehler – … übersprungen* (Plan
 nicht lesbar oder unplausibel) und *Push fehlgeschlagen* oder *abgelehnt*: nichts ist verloren, der nächste Lauf rechnet neu und wiederholt es (die

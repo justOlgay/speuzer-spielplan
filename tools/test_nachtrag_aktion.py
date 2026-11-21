@@ -25,6 +25,7 @@ Aufruf (aus dem Repo-Stamm):  python3 -I -B -m unittest discover -s tools -p 'te
 """
 import ast
 import contextlib
+import functools
 import http.server
 import inspect
 import io
@@ -71,6 +72,8 @@ UA_ERWARTET = 'Mozilla/5.0 (compatible; SpeuzerSpielplanNachtrag/1.0; GitHub Act
 UA_ABGLEICH = A.USER_AGENT      # der Stand beim Import: so muss abgleich nach jedem Lauf des Wrappers wieder aussehen (ein Leck früherer Tests
 ARGV_START = list(sys.argv)     # stünde sonst schon im Vergleichswert, wenn man ihn erst vor dem Lauf liest)
 HOLE_ORIGINAL = A.hole          # abgleich.hole beim Import: der Wrapper umhüllt es nur für die Dauer des Abgleichs
+WARTE_VERSUCHE = []             # Wiederholungspausen ohne eingespritzten Schlaf: jede wäre eine echte Pause von 60 s und mehr
+_ECHT_WARTEN = A.Wiederholung.warten
 
 NETZ_VERSUCHE = []
 LOOPBACK = ('127.0.0.1', '::1', 'localhost')
@@ -106,9 +109,21 @@ def _connect(self, adresse):
     return _ECHT_CONNECT(self, adresse)
 
 
+def _warten_falle(self, sekunden):
+    """Wächter für alle Tests dieser Datei (setUpModule): A.Wiederholung.warten ohne eingespritzten Schlaf würde 60 s und mehr wirklich warten. Eine solche
+    Pause scheitert sofort mit AssertionError und wird in WARTE_VERSUCHE vermerkt; tearDownModule verlangt eine leere Liste, damit auch eine Ausnahme, die
+    ein Aufrufer verschluckt (der Wrapper fängt sie ab und meldet den Abgleich als fehlgeschlagen), nicht unbemerkt bleibt. Mit eingespritztem Schlaf
+    (ohne_echte_wartezeit) läuft alles wie sonst."""
+    if self._schlaf is None:
+        WARTE_VERSUCHE.append(sekunden)
+        raise AssertionError('echte Wiederholungspause im Test (%s s): Uhr und Schlaf einspritzen (ohne_echte_wartezeit)' % sekunden)
+    return _ECHT_WARTEN(self, sekunden)
+
+
 def setUpModule():
     """Netz nur nach 127.0.0.1, HOME und Git-Konfiguration im Wegwerf-Ordner, Standardpfade von abgleich und nachtrag auf einen Wächter-Ordner,
-    keine Pause zwischen den Abrufen (ein eigener Test prüft, dass der Wrapper sie nicht verändert)."""
+    keine Pause zwischen den Abrufen (ein eigener Test prüft, dass der Wrapper sie nicht verändert); eine echte Wiederholungspause von abgleich
+    scheitert sofort (siehe _warten_falle)."""
     global _waechter, _home, _standard, _warnungen
     _warnungen = warnings.catch_warnings()
     _warnungen.__enter__()
@@ -125,6 +140,7 @@ def setUpModule():
     _stuetzen[:] = [
         mock.patch.object(socket, 'getaddrinfo', _addrinfo), mock.patch.object(socket, 'create_connection', _create_connection),
         mock.patch.object(socket.socket, 'connect', _connect), mock.patch.object(A, 'PAUSE_SEKUNDEN', 0),
+        mock.patch.object(A.Wiederholung, 'warten', _warten_falle),
         mock.patch.dict(os.environ, umgebung),
         mock.patch.object(A, 'CACHE_STANDARD', os.path.join(_standard, 'abgleich-cache')),
         mock.patch.object(A, 'BERICHTE_STANDARD', os.path.join(_standard, 'abgleich-berichte')),
@@ -141,12 +157,13 @@ def setUpModule():
 
 
 def tearDownModule():
-    netz, home, standard = list(NETZ_VERSUCHE), os.listdir(_home), os.path.exists(_standard)
+    netz, home, standard, warten = list(NETZ_VERSUCHE), os.listdir(_home), os.path.exists(_standard), list(WARTE_VERSUCHE)
     for p in reversed(_stuetzen):
         p.stop()
     _warnungen.__exit__(None, None, None)
     shutil.rmtree(_waechter, ignore_errors=True)
     assert not netz, 'Netzwerkzugriffe im Test (außer 127.0.0.1): %s' % netz
+    assert not warten, 'echte Wiederholungspausen im Test (Sekunden): %s' % warten
     assert not home, 'etwas im Wegwerf-HOME angelegt: %s' % home
     assert not standard, 'ein Standardpfad von abgleich oder nachtrag wurde benutzt (der Wächter-Ordner ist nicht leer)'
 
@@ -167,6 +184,54 @@ def feste_uhr():
     passen so zusammen (sonst meldete quelle_holen „Cache-Stand liegt in der Zukunft“ oder „veraltet“ und übersprünge die Mannschaft)."""
     with mock.patch.object(N, 'datetime', Fest), mock.patch.object(A, 'datetime', Fest):
         yield
+
+
+@contextlib.contextmanager
+def ohne_echte_wartezeit():
+    """Die Wiederholungen von abgleich (Pausen von 60 s und mehr bei einer vorübergehenden Störung) warten nicht wirklich: Uhr und Schlaf des
+    Wiederholungsobjekts sind simuliert, jede Pause lässt nur die simulierte Uhr weiterlaufen. Der Wrapper bleibt unverändert, er reicht den
+    Zeitrahmen (Standard 450 s) nicht selbst weiter. -> die Liste der Pausen."""
+    stand, pausen = [0.0], []
+
+    def schlafen(sekunden):
+        pausen.append(sekunden)
+        stand[0] += sekunden
+    with mock.patch.object(A, 'Wiederholung', functools.partial(A.Wiederholung, uhr=lambda: stand[0], schlaf=schlafen)):
+        yield pausen
+
+
+class AbrufAntwort:
+    """Eine Antwort, wie urlopen sie liefert (Kontextmanager mit status und read()), mit dem Text einer Seite."""
+
+    def __init__(self, text):
+        self.text, self.status = text, 200
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *a):
+        return False
+
+    def read(self):
+        return self.text.encode('utf-8')
+
+
+def http_503():
+    """Wirft eine frische HTTP-503-Antwort, wie urlopen sie wirft."""
+    raise urllib.error.HTTPError('http://127.0.0.1/plan', 503, 'Nicht erreichbar', {}, io.BytesIO(b''))
+
+
+class AbrufFolge:
+    """Ersatz für urllib.request.urlopen in Tests von abgleich_ausfuehren ohne Server und ohne Wegwerf-Repo (leicht und schnell): der n-te Aufruf führt den
+    n-ten Eintrag aus (eine Funktion ohne Argumente, die eine Ausnahme wirft oder eine Antwort liefert), der letzte Eintrag gilt weiter."""
+
+    def __init__(self, *folge):
+        self.folge, self.aufrufe = folge, []
+
+    def __call__(self, req, timeout=None):
+        eintrag = self.folge[min(len(self.aufrufe), len(self.folge) - 1)]
+        self.aufrufe.append(req.full_url)
+        return eintrag()
 
 
 # ---------------------------------------------------------------- Läufe des Wrappers
@@ -231,6 +296,9 @@ def abgleich_unveraendert(test):
     """Nach jedem Lauf des Wrappers steht abgleich wieder, wie es war: User-Agent, Wochensperre, Pause (im Test 0), hole (ohne die Wache) und sys.argv."""
     test.assertIn('SpeuzerSpielplanAbgleich', UA_ABGLEICH)
     test.assertEqual((A.USER_AGENT, A.MIN_ABSTAND_TAGE, A.PAUSE_SEKUNDEN), (UA_ABGLEICH, 6, 0), 'abgleich bleibt unverändert')
+    test.assertEqual((A.WIEDERHOLUNG_PAUSEN, A.ZEITRAHMEN_STANDARD, A.VORUEBERGEHEND_HTTP),
+                     ((60, 120, 240), 450, (408, 429, 500, 502, 503, 504, 520, 521, 522, 523, 524)),
+                     'auch die Regeln der Wiederholung bei vorübergehenden Störungen bleiben unverändert')
     test.assertIs(A.hole, HOLE_ORIGINAL, 'abgleich.hole ist wieder die ursprüngliche Funktion (ohne Wache)')
     test.assertEqual(sys.argv, ARGV_START, 'sys.argv bleibt unverändert')
 
@@ -1016,6 +1084,72 @@ class TestAblauf(TestAktion):
                      'unbrauchbaren Antwort', 'Wache um abgleich.hole'):
             self.assertIn(text, ' '.join(NA.__doc__.split()))
 
+    # Wiederholung bei vorübergehenden Störungen: Wache und Wächter über abgleich_ausfuehren mit einer urlopen-Attrappe (ohne Server, ohne Wegwerf-Repo)
+    def abgleich_mit(self, abrufe, mit_wartezeit=True):
+        """NA.abgleich_ausfuehren (der echte abgleich.main mit der Wache um hole) gegen eine urlopen-Attrappe -> (Exit-Code, stderr, Pausen); `mit_wartezeit`:
+        Uhr und Schlaf der Wiederholung sind simuliert (ohne_echte_wartezeit), sonst gilt der Wächter von setUpModule."""
+        err = io.StringIO()
+        with contextlib.ExitStack() as stapel:
+            pausen = stapel.enter_context(ohne_echte_wartezeit()) if mit_wartezeit else None
+            stapel.enter_context(mock.patch.object(urllib.request, 'urlopen', abrufe))
+            stapel.enter_context(contextlib.redirect_stderr(err))
+            stapel.enter_context(contextlib.redirect_stdout(io.StringIO()))
+            code = NA.abgleich_ausfuehren(self.csv, self.cache, self.berichte)
+        return code, err.getvalue(), pausen
+
+    def test_dauerhaftes_503_ist_nach_vier_versuchen_endgueltig_kein_weiterer_abruf(self):
+        abrufe = AbrufFolge(http_503)
+        code, err, pausen = self.abgleich_mit(abrufe)
+        self.assertEqual((code, len(abrufe.aufrufe), pausen), (2, 4, [60, 120, 240]), 'Exit 2: Bericht erstellt, aber kein Plan ausgewertet')
+        self.assertIn('Herren: HTTP 503 – kein weiterer Versuch: endgültig gescheitert nach 4 Versuchen', err)
+        self.assertTrue(err.rstrip().endswith('weitere Abrufe in diesem Lauf entfallen'), err)
+
+    def test_sperrseite_nach_einer_503_stoppt_den_abruf_die_wache_greift_auch_nach_der_wiederholung(self):
+        """Die D1 antwortet erst mit HTTP 503, dann mit HTTP 200 und einer Sperrseite: die Wiederholung gelingt aus Sicht von abgleich.hole, die Wache
+        erkennt die unbrauchbare Antwort trotzdem und beendet die Abrufe wie sonst."""
+        plan = lambda: AbrufAntwort(T.seite_aus(T.basis_spiele('D1')))           # noqa: E731
+        sperre = lambda: AbrufAntwort(T.SPERRSEITE)                              # noqa: E731
+        abrufe = AbrufFolge(plan, plan, http_503, sperre)
+        code, err, pausen = self.abgleich_mit(abrufe)
+        self.assertEqual(len(abrufe.aufrufe), 4, 'Herren, A-Jugend, D1 (503) und der zweite Versuch der D1: danach wird nichts mehr abgerufen')
+        self.assertEqual((code, pausen), (2, [60]))
+        self.assertIn('D1: unbrauchbare Antwort (kein Spielplan erkannt', err)
+        self.assertIn('weitere Abrufe in diesem Lauf entfallen', err)
+
+    def test_waechter_eine_503_ohne_vorkehrung_wird_sofort_gemeldet_statt_60_s_zu_warten(self):
+        """Selbsttest des Wächters von setUpModule: Der Herren-Plan antwortet mit HTTP 503, der Lauf setzt weder Uhr noch Schlaf ein (kein ohne_echte_wartezeit):
+        die erste Wiederholungspause (60 s) scheitert sofort mit AssertionError, statt zu warten. Der Wrapper fängt die Ausnahme ab und meldet den Abgleich
+        als fehlgeschlagen (Exit 1); der Wächter hat die Pause vermerkt."""
+        gemeldet = len(WARTE_VERSUCHE)
+        abrufe = AbrufFolge(http_503)
+        code, err, _ = self.abgleich_mit(abrufe, mit_wartezeit=False)
+        self.assertEqual((code, len(abrufe.aufrufe)), (1, 1), 'ein Abruf, dann meldet der Wächter die erste Pause')
+        self.assertEqual(WARTE_VERSUCHE[gemeldet:], [60])
+        self.assertIn('AssertionError: echte Wiederholungspause im Test (60 s)', err)
+        del WARTE_VERSUCHE[gemeldet:]                       # absichtlich ausgelöst: tearDownModule soll es nicht als Fehler zählen
+
+    def test_waechter_laesst_den_eingespritzten_schlaf_von_ohne_echte_wartezeit_durch(self):
+        vorher = len(WARTE_VERSUCHE)
+        with ohne_echte_wartezeit() as pausen:
+            A.Wiederholung(450).warten(60)
+        self.assertEqual((pausen, len(WARTE_VERSUCHE)), ([60], vorher))
+
+    def test_der_docstring_nennt_die_wiederholung_bei_vorubergehenden_stoerungen_und_behauptet_keine_wiederholungsfreiheit_mehr(self):
+        doku = ' '.join(NA.__doc__.split())
+        for text in ('vorübergehenden Störung (HTTP 408, 429, 500, 502, 503, 504, 520 bis 524, Zeitüberschreitung, abgebrochene oder verweigerte Verbindung, '
+                     'unvollständige Antwort, Netz oder Host nicht erreichbar, vorübergehender Fehler der Namensauflösung, Abbruch beim TLS-Handshake, '
+                     'Proxy-Meldung „Tunnel connection failed“ mit 429, 500, 502, 503 oder 504)', '„Tunnel connection failed: 403“ oder „407“',
+                     'nach 60, 120 und 240 s Pause', '450 s nach Beginn der Abrufe', 'der Aufruf übergibt kein --zeitrahmen',
+                     'Bei diesen Standardwerten gibt es höchstens sieben zusätzliche Anfragen je Lauf',
+                     'endet im ungünstigsten Fall nach höchstens 540 s, solange jeder Verbindungsaufbau nach 60 s aufgibt',
+                     'kann ein Versuch je weiterer Adresse bis zu 60 s länger dauern', 'das Zeitlimit der Aktion beträgt 15 Minuten',
+                     'nach einem endgültigen Fehlschlag oder einer unbrauchbaren Antwort', 'keine weiteren Abrufe und keine Wiederholung'):
+            self.assertIn(text, doku)
+        self.assertNotIn('weit unter dem Zeitlimit', doku, 'bei mehreren nicht antwortenden Adressen kann ein Versuch länger dauern')
+        self.assertNotIn('ein Durchgang je Lauf (höchstens zwölf Abrufe)', doku)
+        self.assertIn('Wiederholungsobjekt', ' '.join(NA.hole_mit_wache.__doc__.split()))
+        self.assertIn('Regeln der Wiederholung bei vorübergehenden Störungen', ' '.join(NA.abgleich_ausfuehren.__doc__.split()))
+
 
 # ---------------------------------------------------------------- Ende zu Ende: lokaler Server, Wegwerf-Remote, echter Abgleich und Nachtrag
 
@@ -1030,10 +1164,11 @@ class _Server(http.server.ThreadingHTTPServer):
 class Planserver:
     """Lokaler HTTP-Server auf 127.0.0.1: liefert je fussball.de-Team-ID den synthetischen Plan der Welt (die D4 aus welt.zusatz) und zählt
     jede Anfrage. `status`: {Team-ID: HTTP-Status} für Pläne, die der Server abweist. `ersatz`: {Team-ID: Text} statt des Plans, mit HTTP 200
-    (z. B. eine Sperrseite)."""
+    (z. B. eine Sperrseite). `vorab`: {Team-ID: [HTTP-Status, …]}: die nächsten Anfragen an diese Team-ID bekommen der Reihe nach diese Status (zum
+    Beispiel einmal 503), danach gilt wieder `status` oder der Plan."""
 
     def __init__(self, welt):
-        self.welt, self.anfragen, self.status, self.ersatz = welt, [], {}, {}
+        self.welt, self.anfragen, self.status, self.ersatz, self.vorab = welt, [], {}, {}, {}
         planserver = self
 
         class Handler(http.server.BaseHTTPRequestHandler):
@@ -1041,7 +1176,8 @@ class Planserver:
                 teile = self.path.split('?')[0].strip('/').split('/')
                 tid = teile[1] if len(teile) > 1 and teile[0] == 'plan' else ''
                 planserver.anfragen.append((tid, self.headers.get('User-Agent', '')))
-                status, text = planserver.status.get(tid, 200), planserver.seite(tid)
+                vorab = planserver.vorab.get(tid)
+                status, text = (vorab.pop(0) if vorab else planserver.status.get(tid, 200)), planserver.seite(tid)
                 if status != 200 or text is None:
                     self.send_error(status if status != 200 else 404)
                     return
@@ -1250,13 +1386,60 @@ class TestEndeZuEnde(unittest.TestCase):
         self.assertIn('HTTP 403', r.err, 'der Abgleich nennt den Grund auf stderr')
         self.pruefe_nichts_geschrieben(vorher)
 
+    # (4b) Vorübergehende Störung: der Abgleich überbrückt sie selbst
+    def test_503_bei_einem_plan_wird_wiederholt_die_aktion_laeuft_normal_durch(self):
+        """Die D1 antwortet einmal mit HTTP 503, danach mit dem Plan: abgleich wiederholt den Abruf nach 60 s (simuliert), alle zwölf Pläne
+        kommen an, der Nachtrag läuft wie ohne Störung, und es gibt genau eine zusätzliche Anfrage. Die Wache um abgleich.hole reicht das
+        Wiederholungsobjekt durch."""
+        a = self.a
+        d1 = A.TEAMS[2][3]
+        a.server.vorab[d1] = [503]
+        vorher = a.stand()
+        with ohne_echte_wartezeit() as pausen:
+            r = a.lauf()
+        anfragen = [t for t, _ in a.server.anfragen]
+        self.assertEqual(len(anfragen), 13, 'zwölf Pläne und genau eine zusätzliche Anfrage')
+        self.assertEqual(anfragen.count(d1), 2)
+        self.assertEqual(sorted(set(anfragen)), sorted([t[3] for t in A.TEAMS] + [q[3] for q in A.ZUSATZQUELLEN]), 'jeder Plan wurde abgerufen')
+        self.assertEqual(pausen, [60])
+        self.assertEqual(r.code, 0, r.alles)
+        self.assertEqual(r.letzte, 'NACHTRAG-AKTION: ok – NACHTRAG: unverändert')
+        self.assertEqual(r.ausgabe_zeilen, ['geaendert=false', 'status=NACHTRAG: unverändert'])
+        self.assertIn('  D1: HTTP 503 – neuer Versuch in 60 s (Versuch 2 von höchstens 4)', r.err)
+        self.assertNotIn('Abruf fehlgeschlagen', r.err)
+        self.assertFalse([z for z in r.zeilen if z.startswith('::')], 'keine Anmerkung, kein Fehler')
+        self.pruefe_nichts_geschrieben(vorher)
+
+    def test_503_einmal_und_ein_neues_spiel_wird_trotzdem_eingetragen_committet_und_gepusht(self):
+        a = self.a
+        a.welt.seite['D1'].append(neues_spiel())
+        a.server.vorab[A.TEAMS[0][3]] = [503]            # schon der erste Plan (Herren) braucht einen zweiten Versuch
+        log_vorher = a.remote_log()
+        with ohne_echte_wartezeit() as pausen:
+            r = a.lauf()
+        schluss = 'NACHTRAG: 1 geändert (1 ergänzt), gepusht'
+        self.assertEqual(len(a.server.anfragen), 13)
+        self.assertEqual(pausen, [60])
+        self.assertEqual(r.code, 0, r.alles)
+        self.assertEqual(r.letzte, 'NACHTRAG-AKTION: ok – ' + schluss)
+        self.assertEqual(r.ausgabe_zeilen, ['geaendert=true', 'status=' + schluss])
+        self.assertEqual(a.remote_log(), ['Spieltabelle automatisch aktualisiert (1 Änderung)'] + log_vorher)
+        self.assertIn('FC Neu 1', T.git_ok(a.bare, 'show', 'main:spiele.csv'))
+
     def test_ein_fehlschlag_mitten_im_lauf_ruft_danach_nichts_mehr_ab(self):
+        """HTTP 500 ist eine vorübergehende Störung: abgleich wiederholt den fünften Plan nach 60, 120 und 240 s Pause (hier simuliert, es wird nicht
+        gewartet), also vier Versuche; scheitert auch der vierte, ist der Fehlschlag endgültig und danach wird nichts mehr abgerufen. (Vor der
+        Wiederholung stand hier genau ein Abruf des fünften Plans.)"""
         a = self.a
         a.server.status[A.TEAMS[4][3]] = 500
-        r = a.lauf()
-        self.assertEqual([t for t, _ in a.server.anfragen], [t[3] for t in A.TEAMS[:5]])
+        with ohne_echte_wartezeit() as pausen:
+            r = a.lauf()
+        self.assertEqual([t for t, _ in a.server.anfragen], [t[3] for t in A.TEAMS[:4]] + [A.TEAMS[4][3]] * 4,
+                         'vier Pläne, dann der fünfte viermal, danach kein weiterer Abruf (auch nicht die D4)')
+        self.assertEqual(pausen, [60, 120, 240])
         self.assertEqual(r.code, 1, r.alles)
         self.assertEqual(r.ausgabe_zeilen[0], 'geaendert=false')
+        self.assertIn('HTTP 500', r.err, 'der Abgleich nennt den Grund auf stderr')
 
     def test_ein_spaeterer_plan_faellt_aus_gepushtes_wird_gemeldet_der_lauf_bleibt_rot(self):
         """Der Server liefert für die erste bis fünfte Mannschaft Pläne (bei der D1 mit einem neuen Spiel) und für die sechste (E1) 403: der Abgleich

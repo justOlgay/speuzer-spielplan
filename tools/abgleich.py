@@ -12,14 +12,35 @@ Rücksicht auf fussball.de:
   - nur die öffentlichen Mannschafts-Spielpläne (ajax.team.matchplan), erkennbarer User-Agent, 3 s Pause zwischen den Abrufen
   - höchstens ein Abruf je Plan und Woche (zwölf Pläne: elf Mannschaften plus die Zusatzquelle D4): liegt ein Abruf jünger als
     6 Tage im Cache, wird er benutzt und nichts abgerufen (eine Option zum Erzwingen gibt es absichtlich nicht); nach einem
-    Fehlschlag keine weiteren Abrufe im Lauf
+    endgültigen Fehlschlag keine weiteren Abrufe im Lauf
+  - Wiederholung nur bei einer vorübergehenden Störung: Scheitert ein Abruf an HTTP 408, 429, 500, 502, 503, 504 oder 520 bis 524, an einer
+    Zeitüberschreitung, einer abgebrochenen oder verweigerten Verbindung (ConnectionRefusedError, „Verbindung abgelehnt“), einer
+    unvollständigen Antwort (IncompleteRead), einem nicht erreichbaren Netz oder Host (ENETUNREACH, EHOSTUNREACH), einem vorübergehenden
+    Fehler der Namensauflösung (EAI_AGAIN), einem Verbindungsabbruch beim TLS-Handshake (SSLEOFError) oder an der Proxy-Meldung „Tunnel
+    connection failed: 429/500/502/503/504“, wird derselbe Plan nach 60, 120 und 240 s Pause noch bis zu dreimal abgerufen (höchstens vier
+    Versuche je Plan); nennt die Antwort ein längeres Retry-After, gilt dieses.
+    Ein weiterer Versuch beginnt nur, wenn er spätestens 450 s nach Beginn der Abrufe des Laufs anfängt (--zeitrahmen; der Zeitrahmen
+    gilt für den ganzen Lauf, nicht je Plan: wer später im Lauf scheitert, bekommt weniger Versuche). Bei den Standardwerten
+    (--zeitrahmen 450) endet die Abrufphase auch im ungünstigsten Fehlerfall nach höchstens 540 s, solange jeder Verbindungsaufbau nach
+    60 s aufgibt (Zeitlimit von urlopen); löst der Servername zu mehreren Adressen auf, die alle nicht antworten, kann ein Versuch je
+    weiterer Adresse bis zu 60 s länger dauern (urllib probiert jede Adresse mit eigenem Zeitlimit). Ebenfalls bei den Standardwerten
+    gibt es höchstens sieben zusätzliche Anfragen je Lauf. Alles andere gilt sofort als endgültig und wird nicht wiederholt: andere
+    HTTP-Fehler (403, 404, 501, 505 …), Zertifikats- und andere TLS-Fehler, andere Fehler der Namensauflösung, „Tunnel connection
+    failed: 403“ oder „407“ (die Netzfreigabe fehlt) und eine unbrauchbare Antwort. Erst der endgültige Fehlschlag beendet die Abrufe
+    des Laufs (Fehlertext unverändert, z. B. „HTTP 503“). Jede Wiederholung steht sofort auf stderr, im Bericht unter „Abrufe dieses
+    Laufs“ (mit Diagnose: Kopfzeilen Server, Retry-After und Via, Titel der Fehlerseite) und als Zusatz „n wiederholt“ in den
+    Zählzeilen. Ohne Wiederholung bleiben Ausgabe und Bericht unverändert.
+  - Wer hole() ohne Wiederholungsobjekt aufruft (tools/nachtrag.py, der Mac-Tageslauf mit hartem Zeitlimit), bekommt wie bisher genau
+    einen Versuch je Plan
   - Rohdaten und Bericht landen nie im Repo: Cache im Benutzer-Cache-Ordner, Bericht standardmäßig im temporären Ordner
 
 Aufruf (aus dem Repo-Stamm):
   python3 -I tools/abgleich.py [--csv DATEI] [--bericht-ordner ORDNER] [--cache ORDNER] [--nur-cache]
-                               [--heute JJJJ-MM-TT] [--saison JJJJ] [--kein-wochenvergleich]
+                               [--heute JJJJ-MM-TT] [--saison JJJJ] [--kein-wochenvergleich] [--zeitrahmen SEKUNDEN]
   --nur-cache              nichts abrufen, den neuesten Cache-Stand je Plan nehmen (zum erneuten Auswerten)
   --kein-wochenvergleich   keinen Vergleich mit dem Bericht der Vorwoche anstellen (z. B. wenn jeder Lauf ohne Vorlauf startet)
+  --zeitrahmen SEKUNDEN    Zeitrahmen der Wiederholungen in Sekunden ab Beginn der Abrufe (ganze Zahl, Standard 450); 0 = keine Wiederholung,
+                           jeder Abruf nur einmal. Die Pausen (60, 120, 240 s) lassen sich nicht verkürzen. Bei --nur-cache ohne Wirkung.
 Reihenfolge und Ausfälle: Zuerst werden die eigenen Pläne aller Mannschaften geholt, danach in einem zweiten Durchgang die Zusatzquellen
 (nur für Mannschaften, deren eigener Plan gelesen wurde); der Fehlschlag einer Zusatzquelle hält so keine Mannschaft vom Abruf ab. Fällt
 der eigene Plan einer Mannschaft aus, ist sie nicht ausgewertet. Fällt nur eine Zusatzquelle aus (auch mit „nicht abgerufen“ nach einem
@@ -30,14 +51,20 @@ Exit-Code: 0 = Bericht erstellt, 2 = Bericht erstellt, aber mindestens eine Mann
 ausgefallen, 1 = Fehler.
 """
 import argparse
+import calendar
 import csv
 import difflib
+import email.utils
+import errno
 import glob
 import hashlib
 import html
+import http.client
 import json
+import math
 import os
 import re
+import socket
 import subprocess
 import sys
 import tempfile
@@ -48,6 +75,11 @@ import urllib.request
 from collections import defaultdict
 from datetime import date, datetime, timedelta
 
+try:
+    import ssl
+except ImportError:      # Python ohne TLS-Unterstützung: dann gibt es auch keine ssl-Fehler zu unterscheiden
+    ssl = None
+
 HOME = os.path.expanduser('~')
 CSV_STANDARD = 'spiele.csv'        # relativ zum aktuellen Verzeichnis (Repo-Stamm)
 BERICHTE_STANDARD = os.path.join(tempfile.gettempdir(), 'speuzer-spielplan-abgleich', 'berichte')
@@ -55,6 +87,15 @@ CACHE_STANDARD = (os.path.join(HOME, 'Library', 'Caches', 'speuzer-spielplan-abg
                   else os.path.join(HOME, '.cache', 'speuzer-spielplan-abgleich'))
 MIN_ABSTAND_TAGE = 6
 PAUSE_SEKUNDEN = 3
+# Wiederholung bei vorübergehenden Störungen von fussball.de (Klasse Wiederholung, hole): Pausen in Sekunden vor dem 2., 3. und 4. Versuch
+# desselben Plans, Zeitrahmen in Sekunden ab Beginn der Abrufe eines Laufs (ein neuer Versuch beginnt nur bis dahin) und die HTTP-Status, die
+# als vorübergehend gelten: 408 Request Timeout, 429 Too Many Requests, 500, 502, 503, 504 und die Fehlerseiten 520 bis 524 von Cloudflare
+# (unbekannter Fehler, Server down, Verbindung abgelehnt, nicht erreichbar, Zeitüberschreitung). Es gibt bewusst keine Option, die Pausen
+# zu verkürzen.
+WIEDERHOLUNG_PAUSEN = (60, 120, 240)
+ZEITRAHMEN_STANDARD = 450
+VORUEBERGEHEND_HTTP = (408, 429, 500, 502, 503, 504, 520, 521, 522, 523, 524)
+DIAGNOSE_SEKUNDEN = 10             # begrenzt das Warten auf jedes einzelne Datenpaket beim Lesen einer HTTP-Fehlerseite (Diagnose), nicht die Gesamtdauer
 USER_AGENT = 'Mozilla/5.0 (compatible; SpeuzerSpielplanAbgleich/1.0; rein lesend, ein Abruf je Mannschaft und Woche)'
 URL = ('https://www.fussball.de/ajax.team.matchplan/-/datum-von/{von}/datum-bis/{bis}'
        '/max/999/offset/0/mode/PAGE/team-id/{tid}')
@@ -147,6 +188,242 @@ def quellen(team):
     return [team] + [q for q in ZUSATZQUELLEN if q[0] == team[0]]
 
 
+# ---------------------------------------------------------------- Wiederholung bei vorübergehenden Störungen
+
+TUNNEL_STOERUNG = re.compile(r'Tunnel connection failed: (?:429|50[0234])\b')     # der Proxy meldet eine Störung des Ziels (403, 407: Netzfreigabe fehlt)
+EAI_AGAIN = getattr(socket, 'EAI_AGAIN', None)                                     # „Temporary failure in name resolution“
+NETZ_NICHT_ERREICHBAR = (errno.ENETUNREACH, errno.EHOSTUNREACH)                    # kein Weg zum Netz oder zum Host (OSError, kein ConnectionError)
+
+
+def voruebergehend(e):
+    """True, wenn ein Abruf, der mit der Ausnahme `e` scheiterte, an einer vorübergehenden Störung scheiterte und eine Wiederholung lohnt:
+    HTTPError mit einem Status aus VORUEBERGEHEND_HTTP; Zeitüberschreitung (TimeoutError, socket.timeout); abgebrochene oder verweigerte
+    Verbindung (ConnectionError mit allen Unterklassen, auch http.client.RemoteDisconnected und ConnectionRefusedError); unvollständige
+    Antwort (http.client.IncompleteRead); Verbindungsabbruch beim TLS-Handshake (ssl.SSLEOFError); vorübergehender Fehler der
+    Namensauflösung (socket.gaierror mit dem Code EAI_AGAIN); OSError ENETUNREACH oder EHOSTUNREACH (Netz oder Host nicht erreichbar);
+    jeweils auch als Grund einer URLError; URLError oder OSError mit der Proxy-Meldung „Tunnel connection failed: 429/500/502/503/504 …“.
+    Alles andere ist endgültig: andere HTTP-Status (403, 404, 501, 505 …), Zertifikats- und andere ssl-Fehler, andere Fehler der
+    Namensauflösung (zum Beispiel EAI_NONAME), „Tunnel connection failed: 403 …“ oder „407 …“ (die Netzfreigabe der Umgebung fehlt) und
+    jede sonstige Ausnahme."""
+    if isinstance(e, urllib.error.HTTPError):
+        return e.code in VORUEBERGEHEND_HTTP
+    grund = e.reason if isinstance(e, urllib.error.URLError) else e
+    if isinstance(grund, (TimeoutError, socket.timeout, ConnectionError, http.client.IncompleteRead)):
+        return True
+    if ssl is not None and isinstance(grund, ssl.SSLEOFError):
+        return True
+    if isinstance(grund, socket.gaierror):
+        return EAI_AGAIN is not None and grund.errno == EAI_AGAIN
+    if isinstance(grund, OSError) and grund.errno in NETZ_NICHT_ERREICHBAR:
+        return True
+    return isinstance(e, OSError) and TUNNEL_STOERUNG.search(str(grund)) is not None
+
+
+def sekunden(x):
+    """Sekundenzahl für Meldungen (ganze Zahlen ohne Komma)."""
+    return str(int(x)) if x == int(x) else '%g' % x
+
+
+def bereinigt(text, n=80):
+    """Text aus einer fremden Antwort für eine Zeile des Berichts: ohne HTML, Entitäten aufgelöst, Leerraum zusammengefasst, nur druckbare
+    Zeichen, höchstens `n` Zeichen."""
+    t = sauber(re.sub(r'<[^>]*>', '', sauber(text)))
+    t = ''.join(c for c in t if c.isprintable())
+    return t if len(t) <= n else t[:n - 1].rstrip() + '…'
+
+
+def kopfzeilen(kopf, name):
+    """Alle Werte der Kopfzeile `name` (Groß- und Kleinschreibung egal) aus einer Mail-Message, einem dict oder None; wirft nie."""
+    try:
+        return [str(v) for k, v in kopf.items() if str(k).lower() == name.lower()]
+    except Exception:
+        return []
+
+
+def retry_after(werte, wanduhr):
+    """Retry-After (Sekundenzahl oder HTTP-Datum; bei mehreren Kopfzeilen die längste Angabe) -> Sekunden, aufgerundet, mindestens 1 und
+    höchstens 10**7, oder None, wenn nichts Brauchbares dasteht (leer, ungültig, negativ, Datum in der Vergangenheit). `wanduhr`: die
+    Zeit in Sekunden seit 1970."""
+    beste = None
+    for wert in werte:
+        try:
+            wert = wert.strip()
+            if re.fullmatch(r'[0-9]+(?:\.[0-9]+)?', wert):
+                sek = float(wert)
+            else:
+                t = email.utils.parsedate_tz(wert)
+                if t is None:
+                    continue
+                sek = calendar.timegm(t[:6]) - (t[9] or 0) - wanduhr()
+            sek = 10 ** 7 if sek > 10 ** 7 else math.ceil(sek)
+        except Exception:
+            continue
+        if sek > 0 and (beste is None or sek > beste):
+            beste = sek
+    return beste
+
+
+def fehlerseite_titel(e):
+    """Titel (<title>) der Fehlerseite einer HTTPError-Antwort, bereinigt auf höchstens 80 Zeichen, sonst ''. Liest höchstens 4096 Bytes;
+    DIAGNOSE_SEKUNDEN begrenzt das Warten auf jedes einzelne Datenpaket, nicht die Gesamtdauer (eine Fehlerseite, die Byte für Byte
+    tropft, hält das Lesen länger auf). Schließt die Antwort und wirft nie eine Ausnahme."""
+    titel = ''
+    try:
+        try:
+            e.fp.fp.raw._sock.settimeout(DIAGNOSE_SEKUNDEN)       # HTTPResponse -> BufferedReader -> SocketIO -> Socket, soweit vorhanden
+        except Exception:
+            pass
+        roh = e.read(4096)
+        text = roh.decode('utf-8', 'replace') if isinstance(roh, (bytes, bytearray)) else str(roh)
+        m = re.search(r'<title[^>]*>(.*?)(?:</title>|$)', text, re.I | re.S)
+        titel = bereinigt(m.group(1)) if m else ''
+    except Exception:
+        titel = ''
+    schliessen(e)
+    return titel
+
+
+def diagnose_von(e, wanduhr):
+    """-> (Diagnosetext, Retry-After in Sekunden oder None) zur Antwort eines HTTP-Fehlers: die Kopfzeilen Server, Retry-After und Via (soweit
+    vorhanden) und der Titel der Fehlerseite; für jede andere Ausnahme ('', None). Liest höchstens 4096 Bytes der Fehlerseite (siehe
+    fehlerseite_titel: DIAGNOSE_SEKUNDEN gilt je Datenpaket, nicht für die Gesamtdauer), schließt die Antwort und wirft nie eine Ausnahme."""
+    if not isinstance(e, urllib.error.HTTPError):
+        return '', None
+    teile, wartezeit = [], None
+    try:
+        kopf = e.headers
+        for name in ('Server', 'Retry-After', 'Via'):
+            wert = bereinigt(', '.join(kopfzeilen(kopf, name)))
+            if wert:
+                teile.append('%s: %s' % (name, wert))
+        wartezeit = retry_after(kopfzeilen(kopf, 'Retry-After'), wanduhr)
+    except Exception:
+        pass
+    titel = fehlerseite_titel(e)
+    if titel:
+        teile.append('Seitentitel: „%s“' % titel)
+    return '; '.join(teile), wartezeit
+
+
+def schliessen(e):
+    """Die Antwort eines HTTP-Fehlers schließen (nie eine Ausnahme, mehrfaches Schließen schadet nicht)."""
+    if isinstance(e, urllib.error.HTTPError):
+        try:
+            e.close()
+        except Exception:
+            pass
+
+
+class Wiederholung:
+    """Die Wiederholungen eines Laufs. main() legt ein Objekt je Lauf an (direkt vor dem ersten Abruf) und reicht es über plan_lesen an hole;
+    hole fragt es nach jedem gescheiterten Versuch (nach_fehler), wartet die genannte Pause (warten) und meldet am Ende den Ausgang des Plans
+    (abschliessen). Ohne dieses Objekt gibt es in hole genau einen Versuch.
+
+    Regeln: Nach einer vorübergehenden Störung (voruebergehend) gibt es noch einen Versuch, wenn für ihn noch eine Pause in WIEDERHOLUNG_PAUSEN
+    übrig ist (der n-te Fehlversuch löst die n-te Pause aus, also höchstens vier Versuche je Plan) und die seit `start` vergangene Zeit plus
+    Pause höchstens `zeitrahmen` Sekunden beträgt; die Pause ist die längere aus der Tabelle und dem Retry-After der Antwort. Sonst ist der
+    Fehlschlag endgültig. Ein `zeitrahmen` von 0 schaltet alles ab: keine Wiederholung, keine Meldung, kein Protokoll.
+
+    Merkmale: `start` (Stand der Uhr beim Anlegen), `zeitrahmen`, `notizen` (je Plan, bei dem eine vorübergehende Störung auftrat, eine Zeile für
+    den Bericht) und `zaehler` (Zahl der Pläne, die mehr als einen Versuch brauchten). Uhr (`uhr`, Standard time.monotonic), Schlaf (`schlaf`,
+    time.sleep) und Wanduhr (`wanduhr`, time.time, nur für ein Retry-After als HTTP-Datum) lassen sich für Tests ersetzen; ohne Angabe wird die
+    Funktion des time-Moduls erst beim Aufruf nachgeschlagen."""
+
+    def __init__(self, zeitrahmen=None, uhr=None, schlaf=None, wanduhr=None):
+        self.zeitrahmen = ZEITRAHMEN_STANDARD if zeitrahmen is None else zeitrahmen
+        self._uhr, self._schlaf, self._wanduhr = uhr, schlaf, wanduhr
+        self.start = self.jetzt()
+        self.beginn = datetime.now()               # Uhrzeit in den Zeilen des Berichts: beginn plus die seit start vergangene Zeit
+        self.notizen = []
+        self.zaehler = 0
+
+    def jetzt(self):
+        return (self._uhr or time.monotonic)()
+
+    def wandzeit(self):
+        return (self._wanduhr or time.time)()
+
+    def warten(self, sekunden_):
+        (self._schlaf or time.sleep)(sekunden_)
+
+    def uhrzeit(self):
+        return (self.beginn + timedelta(seconds=self.jetzt() - self.start)).strftime('%H:%M:%S')
+
+    def beginnen(self, name):
+        """Das Protokoll eines Plans (`name` wie in den Zeilen des Berichts), den hole jetzt abruft."""
+        return dict(name=name, versuche=[], ausgang=None, aktiv=False)
+
+    def nach_fehler(self, verlauf, versuch, fehler, ausnahme):
+        """Der Versuch Nummer `versuch` (ab 1) ist gescheitert: `fehler` ist der Fehlertext, `ausnahme` die Ausnahme dahinter (None bei einer
+        unbrauchbaren Antwort) -> Sekunden bis zum nächsten Versuch oder None, wenn der Fehlschlag endgültig ist. Tritt eine vorübergehende
+        Störung auf, legt es das Protokoll des Plans an, liest bei einem HTTP-Fehler die Diagnose aus der Antwort und meldet jede Wiederholung
+        (und jeden Verzicht darauf) sofort auf stderr. Ein Fehlschlag, der gleich endgültig ist, bleibt ohne Meldung."""
+        if self.zeitrahmen <= 0:
+            return None
+        stoerung = ausnahme is not None and voruebergehend(ausnahme)
+        if not stoerung and not verlauf['aktiv']:
+            return None
+        verlauf['aktiv'] = True
+        diagnose, wartezeit = diagnose_von(ausnahme, self.wandzeit)
+        eintrag = dict(nr=versuch, um=self.uhrzeit(), text=fehler + (' [%s]' % diagnose if diagnose else ''), pause=None)
+        verlauf['versuche'].append(eintrag)
+        grund = pause = None
+        if not stoerung:
+            grund = 'endgültig gescheitert'
+        elif versuch > len(WIEDERHOLUNG_PAUSEN):
+            grund = 'endgültig gescheitert nach %d Versuchen' % versuch
+        else:
+            standard = WIEDERHOLUNG_PAUSEN[versuch - 1]
+            pause = max(standard, wartezeit or 0)
+            verbraucht = self.jetzt() - self.start
+            if verbraucht + pause > self.zeitrahmen:
+                if wartezeit and wartezeit > standard:
+                    grund = 'Retry-After länger als der Zeitrahmen (Retry-After %s s, im Zeitrahmen von %s s noch %d s übrig)' % (
+                        sekunden(wartezeit), sekunden(self.zeitrahmen), max(0, self.zeitrahmen - verbraucht))
+                else:
+                    grund = 'Zeitrahmen erschöpft (%d s von %s s verbraucht, nächste Pause %s s)' % (
+                        verbraucht, sekunden(self.zeitrahmen), sekunden(pause))
+                pause = None
+        name = verlauf['name']
+        if pause is None:
+            verlauf['ausgang'] = grund
+            print('  %s: %s – kein weiterer Versuch: %s' % (name, fehler, grund), file=sys.stderr)
+        else:
+            eintrag['pause'] = pause
+            print('  %s: %s – neuer Versuch in %s s (Versuch %d von höchstens %d)' % (
+                name, fehler, sekunden(pause), versuch + 1, len(WIEDERHOLUNG_PAUSEN) + 1), file=sys.stderr)
+        if diagnose:
+            print('    Diagnose: %s' % diagnose, file=sys.stderr)
+        return pause
+
+    def abschliessen(self, verlauf, versuch, fehler):
+        """Der Plan ist abgeschlossen (Erfolg, wenn `fehler` None ist, sonst endgültig gescheitert) nach `versuch` Versuchen: zählt ihn als
+        wiederholt, wenn es mehr als einen gab, und legt seine Zeile für den Bericht an, falls eine vorübergehende Störung auftrat."""
+        if versuch > 1:
+            self.zaehler += 1
+        if not verlauf['aktiv']:
+            return
+        if fehler is None:
+            verlauf['versuche'].append(dict(nr=versuch, um=self.uhrzeit(), text='Erfolg', pause=None))
+            verlauf['ausgang'] = 'Erfolg im %d. Versuch' % versuch
+        teile = []
+        for v in verlauf['versuche']:
+            pause = ', Pause %s s' % sekunden(v['pause']) if v['pause'] is not None else ''
+            teile.append('Versuch %d (%s): %s%s' % (v['nr'], v['um'], v['text'], pause))
+        self.notizen.append('%s: Wiederholung – %s · Ausgang: %s' % (verlauf['name'], ' · '.join(teile), verlauf['ausgang']))
+
+
+def ganze_sekunden(text):
+    """Wert von --zeitrahmen: eine ganze Zahl von mindestens 0."""
+    try:
+        n = int(text)
+    except ValueError:
+        raise argparse.ArgumentTypeError('keine ganze Zahl: %r' % text)
+    if n < 0:
+        raise argparse.ArgumentTypeError('muss mindestens 0 sein: %d' % n)
+    return n
+
+
 # ---------------------------------------------------------------- Abruf mit Wochensperre
 
 def cache_stand(cache, slug):
@@ -160,11 +437,30 @@ def cache_stand(cache, slug):
     return None
 
 
-def hole(cache, team, von, bis, nur_cache, jetzt, abbruch, url_vorlage=URL):
+def abruf_versuch(req):
+    """Ein einzelner Abruf -> (Text, Fehlertext oder None, Ausnahme oder None). Die Fehlertexte sind die, die hole seit jeher meldet
+    („HTTP 503“, „TimeoutError: …“, „unerwartete Antwort (Status …)“)."""
+    fehler, text, ausnahme = None, '', None
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r:
+            text = r.read().decode('utf-8', 'replace')
+            if r.status != 200 or len(text) < MIN_SEITENLAENGE:
+                fehler = 'unerwartete Antwort (Status %s, %d Zeichen)' % (r.status, len(text))
+    except urllib.error.HTTPError as e:
+        fehler, ausnahme = 'HTTP %s' % e.code, e
+    except Exception as e:  # Netz, Zeitüberschreitung, Zertifikat …
+        fehler, ausnahme = '%s: %s' % (type(e).__name__, e), e
+    return text, fehler, ausnahme
+
+
+def hole(cache, team, von, bis, nur_cache, jetzt, abbruch, url_vorlage=URL, wiederholung=None):
     """Gibt (html, Quelle, Zeitstempel, Fehler) zurück. Ruft höchstens einmal je MIN_ABSTAND_TAGE ab. `team`: ein Tupel
     wie in TEAMS, auch eine Zusatzquelle (eigener Slug, eigene Wochensperre, eigene Fehlversuch-Marke).
-    Wird ein Abruf abgewiesen oder scheitert er, landet der Grund in `abbruch`; danach wird gar nichts mehr abgerufen.
-    Nach einem Fehlversuch gibt es für diese Mannschaft 20 Stunden lang keinen neuen Versuch."""
+    Wird ein Abruf abgewiesen oder scheitert er endgültig, landet der Grund in `abbruch`; danach wird gar nichts mehr abgerufen.
+    Nach einem Fehlversuch gibt es für diese Mannschaft 20 Stunden lang keinen neuen Versuch.
+    `wiederholung`: das Objekt der Klasse Wiederholung, das main je Lauf anlegt. Mit ihm wird ein Abruf, der an einer vorübergehenden Störung
+    scheitert, nach Pausen wiederholt (Regeln dort); `abbruch` und die Fehlversuch-Marke bekommen nur den endgültigen Fehlschlag, der Fehlertext
+    bleibt der des letzten Versuchs. Ohne `wiederholung` (so ruft nachtrag.py auf) gibt es genau einen Versuch."""
     kuerzel, slug, name, tid = team
     stand = cache_stand(cache, slug)
     if stand and (nur_cache or jetzt - stand[1] < timedelta(days=MIN_ABSTAND_TAGE)):
@@ -184,16 +480,18 @@ def hole(cache, team, von, bis, nur_cache, jetzt, abbruch, url_vorlage=URL):
     url = url_vorlage.format(von=von, bis=bis, tid=tid)
     req = urllib.request.Request(url, headers={'User-Agent': USER_AGENT, 'Accept-Language': 'de-DE,de;q=0.9',
                                                 'Accept': 'text/html'})
-    fehler, text = None, ''
-    try:
-        with urllib.request.urlopen(req, timeout=60) as r:
-            text = r.read().decode('utf-8', 'replace')
-            if r.status != 200 or len(text) < MIN_SEITENLAENGE:
-                fehler = 'unerwartete Antwort (Status %s, %d Zeichen)' % (r.status, len(text))
-    except urllib.error.HTTPError as e:
-        fehler = 'HTTP %s' % e.code
-    except Exception as e:  # Netz, Zeitüberschreitung, Zertifikat …
-        fehler = '%s: %s' % (type(e).__name__, e)
+    verlauf = wiederholung.beginnen(name) if wiederholung is not None else None
+    versuch = 1
+    while True:
+        text, fehler, ausnahme = abruf_versuch(req)
+        pause = wiederholung.nach_fehler(verlauf, versuch, fehler, ausnahme) if wiederholung is not None and fehler else None
+        schliessen(ausnahme)
+        if pause is None:
+            break
+        wiederholung.warten(pause)
+        versuch += 1
+    if wiederholung is not None:
+        wiederholung.abschliessen(verlauf, versuch, fehler)
     ordner = os.path.join(cache, slug)
     os.makedirs(ordner, exist_ok=True)
     if fehler:
@@ -660,13 +958,15 @@ def stand_laden(ordner, heute):
 
 # ---------------------------------------------------------------- Hauptprogramm
 
-def plan_lesen(cache, quelle, von, bis, nur_cache, jetzt, abbruch, url_vorlage, leer_erlaubt=False):
+def plan_lesen(cache, quelle, von, bis, nur_cache, jetzt, abbruch, url_vorlage, leer_erlaubt=False, wiederholung=None):
     """Einen fussball.de-Plan holen (Cache oder Abruf, siehe hole) und lesen -> (Spiele, Fehlertext oder None, Zeile für
     „Abrufe dieses Laufs“). `quelle`: ein Tupel wie in TEAMS, also auch eine Zusatzquelle. `leer_erlaubt` (nur für Zusatzquellen):
     eine Seite, die als gültiger Plan ohne Spiele erkennbar ist (leerer_plan), gilt als Plan mit 0 Spielen und ist kein Ausfall; ein
-    eigener Plan ohne Spielzeilen bleibt ein Fehler."""
+    eigener Plan ohne Spielzeilen bleibt ein Fehler. `wiederholung`: das Objekt des Laufs (Klasse Wiederholung), das als
+    Schlüsselwortargument an hole geht (so reicht es auch die Wache in nachtrag_aktion.py durch); ohne es gibt es einen Versuch je Plan."""
     name = quelle[2]
-    text, herkunft, stempel, fehler = hole(cache, quelle, von, bis, nur_cache, jetzt, abbruch, url_vorlage)
+    mehr = {'wiederholung': wiederholung} if wiederholung is not None else {}
+    text, herkunft, stempel, fehler = hole(cache, quelle, von, bis, nur_cache, jetzt, abbruch, url_vorlage, **mehr)
     if fehler:
         if not fehler.startswith('nicht abgerufen'):
             print('  %s: Abruf fehlgeschlagen (%s); weitere Abrufe in diesem Lauf entfallen' % (name, fehler), file=sys.stderr)
@@ -690,6 +990,14 @@ def main():
     ap.add_argument('--heute', help='JJJJ-MM-TT (nur zum Testen)')
     ap.add_argument('--saison', type=int, help='Startjahr der Saison, Standard: aus dem Datum')
     ap.add_argument('--kein-wochenvergleich', action='store_true', help='keinen Vergleich mit dem Vorwochenbericht, keine Standdatei')
+    ap.add_argument('--zeitrahmen', type=ganze_sekunden, default=ZEITRAHMEN_STANDARD, metavar='SEKUNDEN',
+                    help='Zeitrahmen der Wiederholungen in Sekunden ab Beginn der Abrufe (Standard: %(default)s): scheitert ein Abruf an einer '
+                         'vorübergehenden Störung von fussball.de (HTTP 408, 429, 500, 502, 503, 504, 520 bis 524, Zeitüberschreitung, '
+                         'abgebrochene oder verweigerte Verbindung, unvollständige Antwort, Netz oder Host nicht erreichbar, vorübergehender '
+                         'Fehler der Namensauflösung, Abbruch beim TLS-Handshake, Proxy-Meldung „Tunnel connection failed“ mit 429, 500, 502, '
+                         '503 oder 504), wird er nach 60, 120 und 240 s Pause erneut versucht, solange '
+                         'der neue Versuch noch in diesem Zeitrahmen beginnt; 0 = keine Wiederholung, jeder Abruf nur einmal. Die Pausen lassen '
+                         'sich nicht verkürzen. Bei --nur-cache ohne Wirkung.')
     ap.add_argument('--url-vorlage', default=URL, help=argparse.SUPPRESS)  # nur für Tests gegen einen lokalen Server
     a = ap.parse_args()
 
@@ -713,12 +1021,13 @@ def main():
     unbekannt = sorted(set(csv_je) - bekannte)
 
     abrufe, abbruch = [], []
+    wiederholung = Wiederholung(a.zeitrahmen)     # ein Objekt je Lauf, direkt vor dem ersten Abruf: der Zeitrahmen zählt ab hier
 
     # 1. Durchgang: die eigenen Pläne aller Mannschaften. Fällt einer aus, ist diese Mannschaft nicht ausgewertet und ihre Zusatzquellen
     #    werden in diesem Lauf nicht abgerufen. Ein Fehlschlag setzt `abbruch`: danach wird nichts mehr abgerufen (siehe hole).
     eigene = {}                      # Kürzel -> (Spiele, Fehlertext oder None)
     for team in TEAMS:
-        fb, fehler, zeile = plan_lesen(a.cache, team, von, bis, a.nur_cache, jetzt, abbruch, a.url_vorlage)
+        fb, fehler, zeile = plan_lesen(a.cache, team, von, bis, a.nur_cache, jetzt, abbruch, a.url_vorlage, wiederholung=wiederholung)
         abrufe.append(zeile)
         eigene[team[0]] = (fb, fehler)
 
@@ -732,7 +1041,8 @@ def main():
         z = zusatz[team[0]] = dict(fb=[], gelesen=[], ausgefallen=[])
         for quelle in quellen(team)[1:]:
             try:
-                zfb, zfehler, zzeile = plan_lesen(a.cache, quelle, von, bis, a.nur_cache, jetzt, abbruch, a.url_vorlage, leer_erlaubt=True)
+                zfb, zfehler, zzeile = plan_lesen(a.cache, quelle, von, bis, a.nur_cache, jetzt, abbruch, a.url_vorlage, leer_erlaubt=True,
+                                                  wiederholung=wiederholung)
             except Exception as ex:  # ein kaputter Zusatzplan darf die Mannschaft nie mitreißen
                 zfb, zfehler = [], 'unerwarteter Fehler (%s: %s)' % (type(ex).__name__, ex)
                 zzeile = '%s: FEHLER (%s)' % (quelle[2], zfehler)
@@ -765,12 +1075,13 @@ def main():
     n_fehler = sum(1 for e in ergebnisse.values() if e.get('fehler')) + sum(len(e.get('zusatz_fehler', ())) for e in ergebnisse.values())
     n_cache = sum(1 for z in abrufe if ': Cache ' in z)
     n_abruf = sum(1 for z in abrufe if ': Abruf ' in z)
+    wdh = ', %d wiederholt' % wiederholung.zaehler if wiederholung.zaehler else ''      # Zusatz nur, wenn ein Abruf wiederholt wurde
 
     md = ['# Spielplan-Abgleich · spiele.csv gegen fussball.de · %s' % h.strftime('%d.%m.%Y'), '',
           'Rein lesender Bericht der Unterschiede. Nichts wurde in `spiele.csv` geschrieben, committet oder gepusht.', '',
           '- **Quelle CSV:** `%s` (%d Zeilen, Saisonfenster %s bis %s); %s' % (a.csv, len(csv_alle), kurz_datum(von) + str(sj), kurz_datum(bis) + str(sj + 1), git_info(a.csv)),
-          '- **Quelle fussball.de:** öffentlicher Mannschafts-Spielplan je Mannschaft (`ajax.team.matchplan`), ein Abruf je Plan und Woche. Zusatzquellen: %s. Dieser Lauf: %d Abrufe, %d aus dem Cache, %d fehlgeschlagen.' % (
-              '; '.join('%s, in der CSV bei %s' % (q[2], q[0]) for q in ZUSATZQUELLEN) or 'keine', n_abruf, n_cache, n_fehler),
+          '- **Quelle fussball.de:** öffentlicher Mannschafts-Spielplan je Mannschaft (`ajax.team.matchplan`), ein Abruf je Plan und Woche. Zusatzquellen: %s. Dieser Lauf: %d Abrufe, %d aus dem Cache, %d fehlgeschlagen%s.' % (
+              '; '.join('%s, in der CSV bei %s' % (q[2], q[0]) for q in ZUSATZQUELLEN) or 'keine', n_abruf, n_cache, n_fehler, wdh),
           '- **Schlüssel des Vergleichs:** Staffelkennung + Spielnummer; verglichen werden Datum, Uhrzeit, Heim/Auswärts, Gegner, Wettbewerbsart und Absagen. „Kommend“ heißt: Spieldatum heute (%s) oder später.' % h.strftime('%d.%m.%Y'), '',
           '## Kurzfassung', ''] + kf + ['']
     if unbekannt:
@@ -780,7 +1091,7 @@ def main():
     md += ['## Je Mannschaft', '']
     for team in TEAMS:
         md += team_abschnitt(team, ergebnisse[team[0]], heute)
-    md += ['## Abrufe dieses Laufs', ''] + ['- ' + z for z in abrufe] + ['']
+    md += ['## Abrufe dieses Laufs', ''] + ['- ' + z for z in abrufe] + ['- ' + z for z in wiederholung.notizen] + ['']
     hash_nachher = sha256(a.csv)
     md += ['## Kontrolle', '', '- `spiele.csv` vor und nach dem Lauf identisch: %s (SHA-256 %s…).' % ('ja' if hash_vorher == hash_nachher else 'NEIN – SOFORT PRÜFEN', hash_nachher[:16]), '']
     if hash_vorher != hash_nachher:
@@ -793,7 +1104,7 @@ def main():
         with open(os.path.join(a.bericht_ordner, 'stand-%s.json' % heute), 'w', encoding='utf-8') as f:
             json.dump(dict(datum=h.strftime('%d.%m.%Y'), ids=sorted(d['id'] for d in alle if d['kommend'])), f, ensure_ascii=False, indent=1)
 
-    print('Spielplan-Abgleich %s – %d Abrufe, %d aus dem Cache, %d fehlgeschlagen\n' % (h.strftime('%d.%m.%Y'), n_abruf, n_cache, n_fehler))
+    print('Spielplan-Abgleich %s – %d Abrufe, %d aus dem Cache, %d fehlgeschlagen%s\n' % (h.strftime('%d.%m.%Y'), n_abruf, n_cache, n_fehler, wdh))
     print('\n'.join(kf))
     print('\nBericht: %s' % bericht)
     return 2 if n_fehler else 0
