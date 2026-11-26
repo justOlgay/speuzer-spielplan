@@ -1364,7 +1364,7 @@
   },
   {
    "d": "2026-11-29",
-   "z": "14:30",
+   "z": "15:00",
    "t": "herren",
    "w": "Meisterschaft",
    "g": "TSG 51 Frankfurt",
@@ -1380,6 +1380,28 @@
    "w": "Freundschaftsspiel",
    "g": "SG Rot-Weiss Frankfurt III",
    "nr": "269",
+   "dauer": 60,
+   "ort": "u",
+   "feld": "halb"
+  },
+  {
+   "d": "2026-12-10",
+   "z": "17:30",
+   "t": "e1",
+   "w": "Freundschaftsspiel",
+   "g": "SC Riedberg V",
+   "nr": "302",
+   "dauer": 60,
+   "ort": "u",
+   "feld": "halb"
+  },
+  {
+   "d": "2026-12-17",
+   "z": "17:30",
+   "t": "e1",
+   "w": "Freundschaftsspiel",
+   "g": "TSG Niederrad 1898 1",
+   "nr": "301",
    "dauer": 60,
    "ort": "u",
    "feld": "halb"
