@@ -1,10 +1,10 @@
 {
  "version": 1,
  "saison": "2026/27",
- "erzeugt": "2026-11-26",
+ "erzeugt": "2026-11-27",
  "stand": {
   "plan": "19.10.2026",
-  "spiele": "26.11.2026"
+  "spiele": "27.11.2026"
  },
  "platz": {
   "kurz": "Mainzer Landstr. 480",
@@ -1328,17 +1328,6 @@
    "dauer": 60,
    "ort": "u",
    "feld": "halb"
-  },
-  {
-   "d": "2026-11-29",
-   "z": "10:00",
-   "t": "d3",
-   "w": "Meisterschaft",
-   "g": "SV Griesheim Tarik",
-   "nr": "58",
-   "dauer": 90,
-   "ort": "u",
-   "feld": "ganz"
   },
   {
    "d": "2026-11-29",
